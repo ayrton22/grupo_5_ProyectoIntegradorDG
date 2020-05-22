@@ -12,9 +12,31 @@ al publico le damos la posibilidad de poder comprar juegos fisicos usados por ot
 el precio de los juegos usados sera el un 50% mas barato al precio del juego nuevo
 
 Inspiración en referentes del mercado:
-1) Steam: La forma en que muestran los juegos en oferta, su precio y porcentaje de descuento.
-2) Twitch: Tomamos el slice al inicio donde muestran diferentes transmisiones, y a partir de acá mostrar un slice de los juegos más destacados con imagen dinámica/video.
-3) Epic Games: El detalle de los juegos, que son mostrados con un video, debajo de este el logo y una breve descripción. al final te da las posibilidad de comprarlo.
-4) Netflix party: Los colores de fondo por ser friendly.
-5) League of Legends:
 
+1) Steam:
+link: https://store.steampowered.com/?l=spanish
+La forma en que muestran los juegos en oferta, su precio y porcentaje de descuento.
+
+2) Twitch:
+link: https://www.twitch.tv/
+Tomamos el slice al inicio donde muestran diferentes transmisiones, y a partir de acá mostrar un slice de los juegos más destacados con imagen dinámica/video.
+
+3) Epic Games:
+link: https://www.epicgames.com/store/en-US/
+El detalle de los juegos, que son mostrados con un video, debajo de este el logo y una breve descripción. al final te da las posibilidad de comprarlo.
+
+4) Netflix party:
+link: https://www.netflixparty.com/
+Los colores de fondo por ser friendly.
+
+5) League of Legends:
+link:
+
+
+6) Mercado Libre:
+link: https://www.mercadolibre.com.ar/
+Nos basamos en su formulario de registro y su formulario de compra
+
+7) Wish:
+link: https://www.wish.com/
+Tomamos de modelo su carrito de compra

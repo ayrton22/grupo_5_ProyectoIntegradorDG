@@ -3,14 +3,16 @@
 House of Video Games
 
 ¿Qué productos o servicios brindará nuestro sitio?
+
 Nuestro sitio va a brindar videojuegos (ps, xbox, pc) para descargar virtualmente y un espacio para poder vender juegos fisicos usados a un precio accesible para toda la comunidad de gamers
 
 ¿Quién será nuestra audiencia objetivo?
+
 Nuestra audiencia van a ser adolescentes y adultos jovenes.
 
 ¿Cómo ajustaremos nuestra oferta a ese público?
-Al publico le damos la posibilidad de poder comprar juegos fisicos usados por otros miembros de la comunidad(ps, xbox), a un precio accesible ya fijo. Pero también tienen la posibilidad de comprar el juego totalmente nuevo y recebirlo en sus casas en caso de que quieran pagar el envio. También pueden ir a buscarlo a nuestro local una vez realizada la compra, o comprarlo presencialmente, En caso de que la compra sea un juego de PC, el usuario puede realizarla y se habilitara una opción de descarga y podra descargarlo cuando quiera.
-El precio de los juegos usados sera el un 50% mas barato al precio del juego nuevo
+
+Al publico le damos la posibilidad de poder comprar juegos fisicos usados por otros miembros de la comunidad(ps, xbox), a un precio accesible ya fijo. Pero también tienen la posibilidad de comprar el juego totalmente nuevo y recebirlo en sus casas en caso de que quieran pagar el envio. También pueden ir a buscarlo a nuestro local una vez realizada la compra, o comprarlo presencialmente, En caso de que la compra sea un juego de PC, el usuario puede realizarla y se habilitara una opción de descarga y podra descargarlo cuando quiera. El precio de los juegos usados sera el un 50% mas barato al precio del juego nuevo
 
 Inspiración en referentes del mercado:
 

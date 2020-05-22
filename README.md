@@ -1,10 +1,15 @@
 # grupo_5_ProyectoIntegradorDG
 
-Nuestro sitio va a brindar videojuegos (ps, xbox, pc?) para descargar virtualmente.
+House of Video Games
+
+Nuestro sitio va a brindar videojuegos (ps, xbox, pc) para descargar virtualmente y un espacio para poder vender juegos fisicos usados a un precio accesible para toda la comunidad de gamers
 
 Nuestra audiencia van a ser adolescentes y adultos jovenes.
 
-¿Cómo adjustaremos nuestra oferta a ese público?
+¿Cómo ajustaremos nuestra oferta a ese público?
+al publico le damos la posibilidad de poder comprar juegos fisicos usados por otros miembros de la comunidad(ps, xbox), a un precio accesible ya fijo. Pero también tienen la posibilidad de comprar el juego totalmente nuevo y recebirlo en sus casas en caso de que quieran pagar el envio. También pueden ir a buscarlo a nuestro local una vez realizada la compra, o comprarlo presencialmente, En caso de que la compra sea un juego de PC, el usuario puede realizar la compra y se habilitara una opción de descarga y podra descargarlo cuando quiera.
+
+el precio de los juegos usados sera el un 50% mas barato al precio del juego nuevo
 
 Inspiración en referentes del mercado:
 1) Steam: La forma en que muestran los juegos en oferta, su precio y porcentaje de descuento.

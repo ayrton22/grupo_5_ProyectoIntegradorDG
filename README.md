@@ -57,3 +57,9 @@ Nos basamos en su formulario de registro y su formulario de compra
 link: https://www.wish.com/
 
 Tomamos de modelo su carrito de compra
+
+8) Marvel:
+
+link: https://i2.wp.com/impulsogeek.com/wp-content/uploads/2020/01/Panam-Marvel-Logo.png?resize=759%2C500&ssl=1
+
+Las imagenes dentro de las letras para nuestro logo

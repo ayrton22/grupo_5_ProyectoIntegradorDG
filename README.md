@@ -1,6 +1,6 @@
 # grupo_5_ProyectoIntegradorDG
 
-House of Video Games
+House of Games
 
 ¿Qué productos o servicios brindará nuestro sitio?
 

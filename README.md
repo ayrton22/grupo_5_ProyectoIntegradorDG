@@ -1,6 +1,6 @@
 # grupo_5_ProyectoIntegradorDG
 
-House of Games
+# House of Games
 
 ![House of Games(LOGO)](https://user-images.githubusercontent.com/62583730/84852852-3e67cf00-b034-11ea-9632-cc00557a42c5.png)
 

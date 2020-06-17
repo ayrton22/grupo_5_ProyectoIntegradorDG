@@ -2,6 +2,9 @@
 
 House of Games
 
+![House of Games(LOGO)](https://user-images.githubusercontent.com/62583730/84852852-3e67cf00-b034-11ea-9632-cc00557a42c5.png)
+
+
 ¿Qué productos o servicios brindará nuestro sitio?
 
 Nuestro sitio va a brindar videojuegos (ps, xbox, pc) para descargar virtualmente y un espacio para poder vender juegos fisicos usados a un precio accesible para toda la comunidad de gamers

@@ -76,3 +76,6 @@ Las imagenes dentro de las letras para nuestro logo
 ## Plataforma Trello para organización:
 
 https://trello.com/b/JcTYEC8x/planificacion-primera-tarea-pi
+
+## Fuente:
+Noto Sans JP

@@ -71,3 +71,8 @@ Tomamos de modelo su carrito de compra
 link: https://i2.wp.com/impulsogeek.com/wp-content/uploads/2020/01/Panam-Marvel-Logo.png?resize=759%2C500&ssl=1
 
 Las imagenes dentro de las letras para nuestro logo
+
+
+## Plataforma Trello para organización:
+
+https://trello.com/b/JcTYEC8x/planificacion-primera-tarea-pi

@@ -16,6 +16,7 @@ livereloadServer.server.once('connection', () => {
 app.use(connectLivereload());
 
 app.use(express.static(publicDirectory));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 

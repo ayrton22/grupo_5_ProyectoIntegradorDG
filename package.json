@@ -1,0 +1,26 @@
+{
+  "name": "grupo",
+  "version": "1.0.0",
+  "description": "![House of Games(LOGO)](https://user-images.githubusercontent.com/62583730/84852852-3e67cf00-b034-11ea-9632-cc00557a42c5.png)",
+  "main": "src/app.js",
+  "scripts": {
+    "nodemon": "nodemon --ext js,ejs,json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayrton22/grupo_5_ProyectoIntegradorDG.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayrton22/grupo_5_ProyectoIntegradorDG/issues"
+  },
+  "homepage": "https://github.com/ayrton22/grupo_5_ProyectoIntegradorDG#readme",
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "livereload": "^0.9.1"
+  }
+}

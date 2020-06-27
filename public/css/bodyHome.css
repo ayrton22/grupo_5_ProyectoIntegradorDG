@@ -1,0 +1,32 @@
+section.product-section {
+    display: flex;
+}
+
+section.product-section article.product-section__portrays {
+    width: 50%;
+    display: inline-block;
+}
+
+ul.aside--list {
+    list-style: none;
+}
+
+ul.aside--list .aside--list--items a,
+a:focus,
+a:active,
+a:hover{
+    text-decoration: none;
+    color: #000;
+}
+
+section.all-products{
+
+}
+
+section.all-products h2{
+
+}
+
+section.all-products article.all-products--game a img{
+    width: 18rem;
+}

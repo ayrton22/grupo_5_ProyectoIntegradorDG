@@ -4,29 +4,134 @@
     <%- include('partials/head') %>
 
 <body>
-    <nav>
-        <div>
-            <ul>
-                <li>
-                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Juegos</button>
-                </li>
-                <li><a href="">Noticias</a></li>
-                <li><a href="">Comunidad</a></li>
-                <li><a href="">Acerca de</a></li>
-                <li><a href="">Descarga la app</a></li>
-            </ul>
+    <div class="container-fluid pb-0 pl-5 pr-5 pt-3">
+        <!-- Header (Navs) -->
+        <header class="header">
+            <nav class="header-nav">
+                <div class="header-nav__left">
+                    <div class="header-nav__logo">
+                        <a href="#"><img src="img\House_of_GamesLOGO.png" alt="Logo-image"></a>
+                    </div>
+                    <!-- Nav Items Left -->
+                    <ul class="header-nav__list">
+                        <li class="header-nav__item">
+                            <button class="header-nav__dropdown-button">Juegos</button>
+                        </li>
+                        <li class="header-nav__item"><a href="#">Noticias</a></li>
+                        <li class="header-nav__item"><a href="#">Comunidad</a></li>
+                        <li class="header-nav__item"><a href="#">Acerca de</a></li>
+                        <li class="header-nav__item"><a href="#">Descarga la app</a></li>
+                    </ul>
+                </div>
+                <div class="header-nav__right">
+                    <!-- Nav Items Right -->
+                        <form action="" class="header-nav__form">
+                            <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
+                            <button class="" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                        <a href="#" class="user"><i class="fas fa-user-plus"></i></a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Products -->
+
+        <section class="product-section">
+            <!-- Products View Left -->     
+            <article class="product-section__portrays">
+                <div class="row">
+                    <div class="col-6">
+                        <p>Imagen 1</p>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Imagen 2</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Imagen 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Products View Right -->
+            <article class="product-section__portrays">
+                <div class="row">
+                    <div class="col-4">
+                        <p>Imagen 1</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Imagen 2</p>
+                    </div>
+                    <div class="col-4">
+                        <p>Imagen 3</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- All Products View -->
+        <div class="row p-5">
+            <aside class="col-3">
+                <ul class="aside--list">                   
+                    <li class="aside--list--items"><a href="#">Géneros</a></li>
+                    <li class="aside--list--items"><a href="">Plataformas</a></li>
+                    <li class="aside--list--items"><a href="">Ofertas</a></li>
+                    <li class="aside--list--items"><a href="#">Comunidad</a></li>
+                    <li class="aside--list--items"><a href="#">Próximamente</a></li>
+                    <li class="aside--list--items"><a href="#">Recomendaciones</a></li>
+                    <li class="aside--list--items"><a href="#">(Filtrados)</a></li>
+                </ul>
+            </aside>
+        
+            <section class="all-products col-9">
+                <h2 class="all-products--title">Juegos</h2>
+                <div class="row">
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                    <article class="all-products--game col-3">
+                        <a href=""><img src="img\House_of_GamesLOGO.png" alt=""></a>
+                        <p>hola</p>
+                    </article>
+                </div>
+         </section>
         </div>
-        <div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-    </nav>
-    
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+ 
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
 </body>
 </html>

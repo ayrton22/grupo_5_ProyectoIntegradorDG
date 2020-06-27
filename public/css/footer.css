@@ -1,0 +1,52 @@
+footer div.footer {
+    display: flex;
+    font-size: 16px;
+    padding: 0 12rem;
+    background-color: #C0392B;
+    border-radius: 8px 8px 0 0;
+    justify-content: space-evenly;
+    padding: 15px 15px 0 0;
+}
+
+footer div.footer div.footer-list__left {
+    display: inline-block;
+}
+
+footer div.footer div ul {
+    list-style-type: none;
+    
+}
+footer div.footer div ul li a,
+a:focus,
+a:active,
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+footer div.footer div.footer-list__left ul li div.header-nav__logo a img {
+    width: 15rem;
+}
+
+footer div.footer div.footer-info__right form button {
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    background-color:#48C9B0;
+    color: white;
+}
+
+footer div.footer div.footer-info__right ul li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+h4.info {
+    color: white;
+}
+
+
+
+
+
+

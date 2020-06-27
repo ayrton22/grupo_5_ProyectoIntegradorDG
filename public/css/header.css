@@ -1,0 +1,89 @@
+.header{
+    width: 100%;
+    padding: 0 12rem;
+}
+
+.header-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-nav__left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 60%;
+}
+
+.header-nav__item{
+    margin-left: 2rem;
+}
+
+nav div div.header-nav__logo a img {
+    width: 18rem;
+}
+
+nav div ul.header-nav__list {
+    display: inline-block;
+}
+
+nav div ul li{
+    display: inline-block;
+    font-size: 1.8rem;
+}
+
+nav div ul li a,
+a:focus,
+a:active,
+a:hover{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
+.header-nav__right{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: end;
+    align-items: center;
+    align-content: center;
+    width: 40%;
+}
+
+.header-nav__right form{
+    display: flex;
+    justify-content: end;
+    width: 80%
+}
+
+.header-nav__right form input{
+    margin: 0 1rem;
+    margin-right: -1.5rem;
+    width: 70%;
+    height: 3rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+}
+
+.header-nav__right form button{
+    border: none;
+    border-radius: none;
+    background-color: #ffffff;
+    cursor: pointer;
+    align-self: center;
+}
+
+.header-nav__right a{
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #000;
+}
+
+.header-nav__right a.user{
+    margin-left: 0;
+    color: #000;
+}

@@ -13,7 +13,8 @@ ul.aside--list {
 
 ul.aside--list .aside--list--items a{
     text-decoration: none;
-    color: #000;
+    color: white;
+    font-size: 1.7rem;
 }
 
 section.all-products{
@@ -21,7 +22,8 @@ section.all-products{
 }
 
 section.all-products h2{
-
+    color: white;
+    font-size: 3rem;
 }
 
 section.all-products article.all-products--game a img{

@@ -1,7 +1,6 @@
 .header{
     width: 100%;
     padding: 2.5rem 12rem;
-    background-color: #171A21;
     background-image: linear-gradient(to right, #171A21, #2D4681);
 }
 
@@ -100,7 +99,6 @@
 
 .header .header-nav__right .header-nav__form{
     display: flex;
-    justify-content: end;
     width: 80%;
     margin-right: 2.1rem;
     margin-left: auto;

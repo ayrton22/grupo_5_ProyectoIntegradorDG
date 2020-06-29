@@ -16,10 +16,7 @@ footer div.footer div ul {
     list-style-type: none;
     
 }
-footer div.footer div ul li a,
-a:focus,
-a:active,
-a:hover{
+footer div.footer div ul li a{
     text-decoration: none;
     color: white;
 }

@@ -11,10 +11,7 @@ ul.aside--list {
     list-style: none;
 }
 
-ul.aside--list .aside--list--items a,
-a:focus,
-a:active,
-a:hover{
+ul.aside--list .aside--list--items a{
     text-decoration: none;
     color: #000;
 }

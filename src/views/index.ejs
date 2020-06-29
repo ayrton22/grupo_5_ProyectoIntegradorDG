@@ -4,7 +4,7 @@
     <%- include('partials/head') %>
 
 <body>
-    <div class="container-fluid pb-0 pl-5 pr-5 pt-3">
+    <div class="container-fluid pb-0 pl-5 pr-5 pt-5">
         <!-- Header (Navs) -->
         <header class="header">
             <nav class="header-nav">
@@ -15,7 +15,13 @@
                     <!-- Nav Items Left -->
                     <ul class="header-nav__list">
                         <li class="header-nav__item">
-                            <button class="header-nav__dropdown-button">Juegos</button>
+                            <button class="header-nav__dropdown-button">Juegos<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
+                            <ul class="header-nav__sub-list">
+                                <li class="header-nav__sub-item"><a href="">genero</a></li>
+                                <li class="header-nav__sub-item"><a href="">plataforma</a></li>
+                                <li class="header-nav__sub-item"><a href="">ofertas</a></li>
+                                <li class="header-nav__sub-item"><a href="">Mas jugados</a></li>
+                            </ul>
                         </li>
                         <li class="header-nav__item"><a href="#">Noticias</a></li>
                         <li class="header-nav__item"><a href="#">Comunidad</a></li>
@@ -27,10 +33,28 @@
                     <!-- Nav Items Right -->
                         <form action="" class="header-nav__form">
                             <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
-                            <button class="" type="submit"><i class="fa fa-search"></i></button>
+                            <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                         </form>
                         <a href="#"><i class="fas fa-shopping-cart"></i></a>
                         <a href="#" class="user"><i class="fas fa-user-plus"></i></a>
+                        <ul>
+                            <li class="header-nav__language-item">
+                                <button class="header-nav__language-dropdown">Idioma<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>
+                                <ul class="header-nav__language-sub-list">
+                                    <li class="header-nav__language-sub-item"><a href="">Ingles</a></li>
+                                    <li class="header-nav__language-sub-item"><a href="">Portugues</a></li>
+                                    <li class="header-nav__language-sub-item"><a href="">Ruso</a></li>
+                                    <li class="header-nav__language-sub-item"><a href="">Frances</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--<a class="header-nav__language-dropdown"><p class="language">Idioma<i class="fas fa-caret-down header-nav__dropdown-icon"></i></p>
+                        <ul class="header-nav__language-sub-list">
+                            <li class="header-nav__language-sub-item"><a href="#">Ingles</a></li>
+                            <li class="header-nav__language-sub-item"><a href="#">Portugues</a></li>
+                            <li class="header-nav__language-sub-item"><a href="#">Ruso</a></li>
+                        </ul>
+                        </a>-->
                 </div>
             </nav>
         </header>

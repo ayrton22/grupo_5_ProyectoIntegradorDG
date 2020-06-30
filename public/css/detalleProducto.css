@@ -1,0 +1,154 @@
+body {
+    font-size: 2rem;
+    color: white;
+    background-color: #10131A;
+}
+
+div .compra {
+    height: 9rem;
+}
+
+.precio {
+    font-size: 7rem;
+}
+
+.detalle-juego {
+    margin: 0%;
+    padding: 0;
+}
+
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.contenedor-carrusel .flecha-derecha,
+.contenedor-carrusel .flecha-izquierda {
+    font-size: 20px;
+    position: absolute;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 50%;
+    top: calc(50%-25%);
+    line-height: 40px;
+    width: 20px;
+    color: white;
+    cursor: pointer;
+    z-index: 500;
+    transition: .2s ease all;
+
+}
+
+.contenedor-carrusel .flecha-left {
+    left: 0;
+}
+
+.contenedor-carrusel .flecha-izquierda {
+    right: 0;
+}
+
+.contenedor-carrusel .flecha-derecha:hover,
+.contenedor-carrusel .flecha-izquierda:hover {
+    color: black;
+    font-size: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.indicadores button {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    height: 3px;
+    width: 10px;
+    background-color: white;
+    cursor: pointer;
+    border: none;
+    margin-left: 2PX;
+}
+
+.contenedor-carrusel {
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+.contenedor-carrusel .carrusel-imagen {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.contenedor-carrusel .carrusel-imagen .imagen-gameplay {
+    min-width: 20%;
+    transition: .3s ease all;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+
+}
+
+.contenedor-carrusel .carrusel-imagen .imagen-gameplay:hover {
+
+    transform: scale(1.2);
+    transform-origin: center;
+
+}
+
+.contenedor-carrusel .carrusel-imagen .imagen-gameplay img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.compra {
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: flex-end;
+}
+
+.compra i {
+    color: whit;
+}
+
+
+section .detalle-juego {
+    justify-content: space-between;
+}
+
+i.rating {
+    color: goldenrod;
+}
+
+.otros-juegos {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+    grid-column-gap: 12rem;
+    grid-row-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.otros-juegos a article div img {
+
+    width: 20rem;
+}
+
+a {
+    color: white;
+}
+span{
+    color: grey;
+}
+h1{
+    margin-bottom: .8rem;
+}
+div.texto-container{
+    margin-top:2rem;
+    margin-bottom: 2rem;
+}
+div.texto-container div.texto-informativo{
+    
+color: grey;
+}

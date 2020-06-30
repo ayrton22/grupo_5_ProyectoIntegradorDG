@@ -1,20 +1,136 @@
-div.shopping-cart{
-    margin-bottom: 1.5rem;
+.carrito-container{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
 }
 
-div.shopping-cart form div.row div.col-12 h2.shopping-cart--title{
-    margin-bottom: 1rem;
+.carrito-container .carrito-container__aside{
+    padding: 5rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
 }
 
-div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--product--information{
-    margin-left: 1.5rem;
+.carrito-container .carrito-container__aside .carrito-container__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--product--information div.row div.col-12 h4{
-    font-size: 2rem;
+.carrito-container .carrito-container__aside .carrito-container__list .carrito-container__item a{
+    text-decoration: none;
+    color: #fff;
 }
 
-div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--summary {
-    background-color: black;
+.carrito-container .carrito-container__aside .carrito-container__list .carrito-container__item--logo{
+    margin-left: -2rem;
+}
+
+.carrito-container .carrito-container__aside .carrito-container__list .carrito-container__item a img{
+    width: 18rem;
+}
+
+.carrito-container__info{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
     padding: 2rem;
+    height: fit-content;
+}
+
+.carrito-container__info .carrito-container__info-cliente{
+    display: flex;
+    align-items: center;
+}
+
+.carrito-container__info .carrito-container__info-cliente .carrito-container__nombre{
+    color: grey;
+    font-weight: bold;
+}
+
+.carrito-container__info .carrito-container__info-cliente p{
+    font-size: 1.2rem;
+}
+
+.carrito-container__info .carrito-container__info-cliente a{
+    margin-left: auto;
+    font-size: 1.4rem;
+}
+
+.carrito-container__info .carrito-container__info-cliente--x div{
+    display: flex;
+    align-items: center;
+}
+
+.carrito-container__info .carrito-container__info-cliente--x div img{
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+}
+
+.carrito-container__info .carrito-container__dato{
+    background-color: #2568AC;
+    margin-bottom: 2rem;
+    padding: .8rem;
+    padding-left: 2rem;
+}
+
+.carrito-container__info .carrito-container__dato--margin{
+    margin-bottom: 3.5rem;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego{
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego:last-child{
+    margin-bottom: 0;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__img-cont img{
+    width: 15rem;
+    margin-right: 2rem;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont{
+    margin-left: 6rem;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont .carrito-container__btn{
+    border: none;
+    color: #fff;
+    background-color: transparent;
+}
+
+.carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont .carrito-container__select{
+    margin-right: 2rem;
+}
+
+.carrito-container__resumen{
+    margin-top: 3rem;
+    margin-right: 20rem;
+    padding: 2rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.carrito-container__resumen .carrito-container__resumen-dato{
+    background-color: #2568AC;
+    padding: .8rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carrito-container .carrito-container__resumen .carrito-container__btn{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    padding: .6rem;
+    align-self: center;
+    border-radius: 7px;
+}
+
+.carrito-container .carrito-container__resumen{
+    background-image: linear-gradient(to bottom, #223052, #191E29);
 }

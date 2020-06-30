@@ -10,6 +10,7 @@ div.product-section-1 {
     display: flex;
     height: 30rem;
     width: 60rem;
+    margin-right: 8rem;
 }
 
 .product-section-1 .product-section__portrays{
@@ -74,10 +75,12 @@ div.product-section-1 {
     border-radius: 7px;
     overflow: hidden;
     height: 50%;
+    /*margin-left: 2rem;*/
 }
 
 .product-section-1 .product-section__portrays .product-section__horizontal-boxes .product-section__box--horizontal img{
     height: 100%;
+    width: 38rem;
 }
 
 .product-section-1 .product-section__portrays .product-section__horizontal-boxes .product-section__box--horizontal:last-child{

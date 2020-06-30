@@ -84,11 +84,12 @@
 .carousel__overlay-text {
     flex: 0 0 70%;
     font-size: .9rem;
+    align-self: center;
 }
 
 .carousel__overlay-name {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 .carousel__overlay-title {
@@ -290,7 +291,7 @@
 .description-slider .buttons-cont{
     display: flex;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 1.8rem;
 }
 
 .description-slider .buttons-cont i{

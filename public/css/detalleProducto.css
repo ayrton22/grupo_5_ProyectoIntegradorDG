@@ -128,20 +128,21 @@ i.rating {
     grid-row-gap: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 10rem;
 }
 
 .otros-juegos a article div img {
-
     width: 20rem;
+    height: 25rem;
 }
 
-a {
+.otros-juegos a {
     color: white;
 }
-span{
+.span-detail {
     color: grey;
 }
-h1{
+.h1-detalle {
     margin-bottom: .8rem;
 }
 div.texto-container{
@@ -151,4 +152,30 @@ div.texto-container{
 div.texto-container div.texto-informativo{
     
 color: grey;
+}
+
+.shoping-cart-detalle{
+    margin-right: 2rem;
+}
+
+.icono-xbox{
+    margin-right: 1rem;
+}
+
+.icono-playstation{
+    margin-right: 1rem;
+}
+
+.padding-cont-detalle{
+    padding-top: 6rem;
+}
+
+div.especificaciones{
+    padding-top: 3rem;
+}
+
+.carrito-contenedor-link,
+.carrito-contenedor-link:hover{
+    text-decoration: none;
+    color: #fff;
 }

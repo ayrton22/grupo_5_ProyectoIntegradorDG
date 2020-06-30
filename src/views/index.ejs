@@ -27,32 +27,12 @@
                                             </div>
                                             <div class="carousel__overlay-text">
                                                 <div class="carousel__overlay-name">
-                                                    {{video.channelName}}
-                                                </div>
-                                                <div class="carousel__overlay-title">
-                                                    {{video.channelTitle}}
-                                                </div>
-                                                <div class="carousel__overlay-views">
-                                                    playing Music for {{video.channelViews}} viewers
+                                                    Nombre del juego
                                                 </div>
                                             </div>
-                                            <!--<div class="carousel__overlay-live">
-                                                <div class="record-button"></div>
-                                                <span class="u-inline-text">LIVE</span>
-                                            </div>-->
                                         </div>
                                         <i class="fas fa-play big-play" v-on:click="video.active = !video.active">
                                         </i>
-                                        <div class="carousel__overlay-bottom">
-                                            <!--<i class="fas fa-play" v-on:click="video.active = !video.active">
-                                            </i>-->
-                                            <!--<i
-                                                class="fas fa-volume-up carousel__overlay-icon carousel__overlay-icon--volume"></i>-->
-                                            <!--<i
-                                                class="fas fa-cog carousel__overlay-icon carousel__overlay-icon--settings"></i>-->
-                                            <!--<i
-                                                class="fas fa-arrows-alt-v carousel__overlay-icon carousel__overlay-icon--fullscreen"></i>-->
-                                        </div>
                                         <div class="description-slider">
                                             <article>
                                                 <p class="description">
@@ -61,7 +41,7 @@
                                                 </p>
                                                 <div class="buttons-cont">
                                                     <i class="fa fa-desktop plataform" aria-hidden="true"></i>
-                                                    <div class="a-btn"><a class="more" href="#">Ver más</a> </div>
+                                                    <div class="a-btn"><a class="more" href="/producto">Ver más</a> </div>
                                                 </div>
                                             </article>
                                         </div>
@@ -84,18 +64,18 @@
                 <!-- Products View Left -->
                 <div class="product-section__portrays">
                     <div class="product-section__box">
-                        <a href="#"><img src="img\fifa20.jpeg" alt="fifa"></a>
+                        <a href="/producto"><img src="img\fifa20.jpeg" alt="fifa"></a>
                         <div class="cartel-oferta"><p>15% OFF<p></div>
                     </div>
 
                     <div class="product-section__horizontal-boxes">
                         <div class="product-section__box--horizontal">
-                            <a href="#"><img src="img\gtaV.jpg" alt="gta"></a>
+                            <a href="/producto"><img src="img\gtaV.jpg" alt="gta"></a>
                             <div class="cartel-oferta__horizontal"><p>12% OFF<p></div>
                         </div>
     
                         <div class="product-section__box--horizontal">
-                            <a href="#"><img src="img\csgo.jpg" alt="csgo"></a>
+                            <a href="/producto"><img src="img\csgo.jpg" alt="csgo"></a>
                             <div class="cartel-oferta__horizontal"><p>34% OFF<p></div>
                         </div>
                     </div>
@@ -106,15 +86,15 @@
                 <!-- Products View Right -->
                 <div class="product-section-2__portrays">
                     <div class="product-section-2__box product-section-2__box--1">
-                        <img src="img\needForSpeedHeat2.jpeg" alt="fifa">
+                        <a href="/producto"><img src="img\needForSpeedHeat2.jpeg" alt="fifa"></a>
                     </div>
 
                     <div class="product-section-2__box product-section-2__box--2">
-                        <img src="img\skyrim.jpeg" alt="gta">
+                        <a href="/producto"><img src="img\skyrim.jpeg" alt="gta"></a>
                     </div>
-    
+                   
                     <div class="product-section-2__box product-section-2__box--3">
-                        <img src="img\starWarsBattlefront.jpeg" alt="csgo">
+                        <a href="/producto"><img src="img\starWarsBattlefront.jpeg" alt="csgo"></a>
                     </div>
                 </div>   
         </div>
@@ -136,16 +116,16 @@
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Juegos</h2>
                 <div class="juegos-container__products-container">
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\csgo2.jpeg" alt="">
+                                <img src="img\overwatch.jpg" alt="">
                             </div>
                             <p>Counter Strike: Global Offensive<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
                                 <img src="img\godOfWar.jpeg" alt="">
@@ -154,87 +134,87 @@
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\needForSpeedHeat2.jpeg" alt="">
+                                <img src="img\uncharted.jpg" alt="">
                             </div>
                             <p>Nead for Speed Heat<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\gtaV3.jpeg" alt="">
+                                <img src="img\titanfall.jpg" alt="">
                             </div>
                             <p>GTA V: Premium Online Edition<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">     
+                    <a href="/producto">     
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\starWarsBattlefront.jpeg"" alt="">
+                                <img src="img\bloodborne.jpeg"" alt="">
                             </div>
                             <p>Star Wars Battlefront 2<br>$0.00</p>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\skyrim.jpeg" alt="">
+                                <img src="img\wow.jpg" alt="">
                             </div>
                             <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\fifa20.jpeg" alt="">
+                                <img src="img\battlefield.jpg" alt="">
                             </div>
                             <p>Fifa 20<br>$0.00</p>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\csgo2.jpeg" alt="">
+                                <img src="img\call-of-duty-advanced-warfare.jpg" alt="">
                             </div>
                             <p>Counter Strike: Global Offensive<br>$0.00</p>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\godOfWar.jpeg" alt="">
+                                <img src="img\farcry.jpg" alt="">
                             </div>
                             <p>God of War: Deluxe Edition<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\needForSpeedHeat2.jpeg" alt="">
+                                <img src="img\halo4.jpg" alt="">
                             </div>
                             <p>Nead for Speed Heat<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\skyrim.jpeg" alt="">
+                                <img src="img\ResidentEvil.jpeg" alt="">
                             </div>
                             <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
                         </article>
                     </a>
 
-                    <a href="#">
+                    <a href="/producto">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\fifa20.jpeg" alt="">
+                                <img src="img\tomRaider.jpg" alt="">
                             </div>
                             <p>Fifa 20<br>$0.00</p>
                         </article>

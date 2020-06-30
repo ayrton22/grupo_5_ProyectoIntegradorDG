@@ -68,6 +68,7 @@
 
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item:active .header-nav__sub-list{
     display: block;
+    z-index: 1000;
 }
 
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__sub-list .header-nav__sub-item{

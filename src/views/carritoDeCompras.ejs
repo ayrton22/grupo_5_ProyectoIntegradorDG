@@ -2,116 +2,103 @@
 <html lang="en">
     <%- include('partials/head', {title: 'Carrito de Compras'}) %>
 <body>
-    <%- include('partials/header') %>
-    <div class="container form shopping-cart">
-        <form class="register" action="">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Carrito de compras</h1>
+
+    <div class="carrito-container">
+        <div class="carrito-container__aside">
+            <ul class="carrito-container__list">
+                <li class="carrito-container__item carrito-container__item--logo"><a href="/"><img src="../img/House_of_GamesLOGO.png" alt="logo"></a></li>
+                <li class="carrito-container__item"><a href="#">Juegos</a></li>
+                <li class="carrito-container__item"><a href="#">Noticias</a></li>
+                <li class="carrito-container__item"><a href="#">Acerca De</a></li>
+                <li class="carrito-container__item"><a href="#">Descarga la App</a></li>
+                <li class="carrito-container__item"><a href="#">Soporte</a></li>
+            </ul>
+        </div>
+
+        <div class="carrito-container__info">
+            <div class="carrito-container__dato">
+                Envio
+            </div>
+            <div class="carrito-container__info-cliente">
+                <div>
+                    <p class="carrito-container__nombre">Jeremias Luis Rodruigez De Leon</p>
+                    <p>Vicente Lopez, Agustin alvarez 2896, Capital, Buenos Aires, Argentina, 2397</p>
                 </div>
-                <div class="col-12">
-                    <h2>Envío: </h2>
+                <a href="#">cambiar</a>
+            </div>
+            <div class="carrito-container__dato">
+                Pago
+            </div>
+            <div class="carrito-container__info-cliente carrito-container__info-cliente--x">
+                <div>
+                    <img src="//main.cdn.wish.com/web/81b0afc94040/dist/cozy/03cf202c4e8213362898b37ef37265da.png">
+                    <p>*** Expira el 8/2034</p>
                 </div>
-                <div class="col-6">
-                    <label for="calle" class="form-label">Calle</label>
-                    <input type="text" name="calle" class="form-input" placeholder="Ej: Av. Corrientes 1700">
+                <a href="#">cambiar</a>
+            </div>
+
+            <div class="carrito-container__dato carrito-container__dato--margin">
+                Articulos del carrito
+            </div>
+            <div class="carrito-container__articulos">
+                <div class="carrito-container__juego">
+                    <div class="carrito-container__img-cont">
+                        <img src="../img/ResidentEvil.jpeg" alt="">
+                    </div>
+
+                    <div>
+                    <p>Nombre del juego</p>
+                    <p>Plataforma</p>
+                    <p>Estado: ???</p>
+                    <p>Precio: $$$</p>
+                    </div>
+
+                    <div class="carrito-container__select-cont">
+                        <select class="carrito-container__select" id="inputGroupSelect01">
+                            <option selected hidden>Cantidad...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <button class="carrito-container__btn">Quitar</button>
+                    </div>
                 </div>
-                <div class="col-6">
-                    <label for="numero" class="form-label">Número de telefono</label>
-                    <input type="number" name="numero" class="form-input" placeholder="Ej: 11 3562 4562">
-                </div>
-                <div class="col-6">
-                    <label for="depto" class="form-label">Depto</label>
-                    <input type="number" name="depto" class="form-input" placeholder="Ej: Piso 12B">
-                </div>
-                <div class="col-6">
-                    <label for="codigoPostal" class="form-label">Código postal</label>
-                    <input type="number" name="codigoPostal" class="form-input" placeholder="Ej: 1450">
-                </div>
-                <div class="col-6">
-                    <label for="localidad" class="form-label">Localidad</label>
-                    <input type="text" name="localidad" class="form-input" placeholder="Ej: Tigre"><br><br>
-                </div>
-                <div class="col-12">
-                    <h2>Método de pago: </h2>
-                </div>
-                <div class="col-6">
-                    <label for="tipoDeTarjeta" class="form-label"><h3>Tipo de tarjeta: </h3></label>
-                        <h3>Visa</h3><input type="radio" name="tipoDeTarjeta" value="visa">
-                        <h3>American Express</h3><input type="radio" name="tipoDeTarjeta" value="americanExpress">
-                </div>
-                <div class="col-6">
-                    <label for="numeroDeTarjeta" class="form-label">Número de tarjeta</label>
-                    <input type="number" name="numeroDeTarjeta" class="form-input" placeholder="Ej: 4565-5783-1146-7642">
-                </div>
-                <div class="col-6">
-                    <label for="codigoDeSeguridad" class="form-label">Código de seguridad</label>
-                    <input type="number" name="codigoDeSeguridad" class="form-input" placeholder="Ej: 140">
-                </div>
-                <div class="col-6">
-                    <label for="fechaDeVencimiento" class="form-label">Fecha de vencimiento</label>
-                    <input type="date" name="fechaDeVencimiento" class="form-input" id="datepicker">
-                </div>
-                <div class="col-12">
-                    <h2 class="shopping-cart--title">Artículos del carrito:</h2>
-                    <div class="row shopping-cart--product">
-                        <div class="col-2">
-                            <img src="https://http2.mlstatic.com/fifa-20-ps4-en-stock-fisico-nuevo-sellado-nextgames-D_NQ_NP_645352-MLA32250930535_092019-V.webp" alt="">
-                        </div>
-                        <div class="col-3 shopping-cart--product--information">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h4>Fifa 20</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h4>Plataforma: Play Station 4</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h4>Estado: Nuevo</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h4>Envío a domicilio</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h4>Precio: $0.00</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-1">
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                </div>
-                                <select class="custom-select" id="inputGroupSelect01">
-                                  <option selected>Cantidad...</option>
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="4">4</option>
-                                  <option value="5">5</option>
-                                  <option value="6">6</option>
-                                  <option value="7">7</option>
-                                  <option value="8">8</option>
-                                  <option value="9">9</option>
-                                </select>
-                              </div>
-                        </div>
-                        <div class="col-1">
-                            <button type="submit" class="action-button delete">ELIMINAR</button>
-                        </div>
-                        <div class="shopping-cart--summary">
-                            <h3>
-                                Resumen del carrito
-                            </h3>
-                            <h4>Total de los productos (dolar estadounidense): $0.00</h4>
-                            <h4>Envío (dolar estadounidense): $0.00</h4>
-                            <h4>Total del pedido: $0.00</h4>
-                            <h4>PesosARG: $0.00</h4>
-                            <button type="submit" class="">Comprar</button>
-                        </div>
+
+                <div class="carrito-container__juego">
+                    <div class="carrito-container__img-cont">
+                        <img src="../img/tomRaider.jpg" alt="">
+                    </div>
+                    <div>
+
+                    <p>Nombre del juego</p>
+                    <p>Plataforma</p>
+                    <p>Estado: ???</p>
+                    <p>Precio: $$$</p>
+                    </div>
+                    
+                    <div class="carrito-container__select-cont">
+                    <select class="carrito-container__select" id="inputGroupSelect01">
+                            <option selected hidden>Cantidad...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                    </select>
+                    <button class="carrito-container__btn">Quitar</button>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+
+        <div class="carrito-container__resumen">
+            <div class="carrito-container__resumen-dato">
+                <span>Resumen del pedido</span>
+            </div>
+            <p>total de los productos: <span>$200</span></p>
+            <p>Envio: <span>$20</span></p>
+            <p>Total del pedido: <span>$220</span></p>
+            <p>PesosArg(aprox): <span>$14100</span></p>
+            <button class="carrito-container__btn">Comprar</button>
+        </div>
     </div>
     <!-- Footer -->
     <%- include('partials/footer') %>

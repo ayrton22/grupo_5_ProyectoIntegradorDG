@@ -3,7 +3,6 @@ footer div.footer {
     font-size: 16px;
     padding: 0 12rem;
     background-image: linear-gradient(to right, #171A21, #2D4681);;
-    border-radius: 8px 8px 0 0;
     justify-content: space-evenly;
     padding: 15px 15px 0 0;
 }
@@ -29,7 +28,7 @@ footer div.footer div.footer-info__right form button {
     border: none;
     border-radius: 5px;
     width: 100px;
-    background-color:#48C9B0;
+    background-color:#10131A;
     color: white;
 }
 
@@ -42,6 +41,11 @@ h4.info {
     color: white;
 }
 
+.input-search-footer{
+    height: 3rem;
+    padding-left: 1rem;
+    border-radius: 6px;
+}
 
 
 

@@ -5,7 +5,7 @@ module.exports = {
     index: function(req, res) {
         res.render('index')
     },
-    carritoDeCompras: function(req, res){
+    shoppingCart: function(req, res){
         res.render('carritoDeCompras')
     },
     detail: function(req, res) {
@@ -14,7 +14,7 @@ module.exports = {
     register: function(req, res) {
         res.render('registro')
     },
-    cargarProducto: function(req, res) {
+    productLoad: function(req, res) {
         res.render('cargaDeProductos')
     }
 }

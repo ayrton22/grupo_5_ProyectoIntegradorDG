@@ -5,7 +5,7 @@ const router = express.Router();
 const controller = require('../controllers/controller')
 
 router.get('/', controller.detail);
-router.get('/cargaProducto', controller.cargarProducto)
+router.get('/load', controller.productLoad)
 
 
 module.exports = router;

@@ -28,7 +28,7 @@ const productsRouter = require('./routes/products')
 const userRouter = require('./routes/users')
 
 app.use('/', mainRouter);
-app.use('/producto', productsRouter);
+app.use('/product', productsRouter);
 app.use('/user', userRouter);
 
 app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000"));

@@ -8,7 +8,7 @@
     - Implementacion de SCSS
     - Elegir paleta de colores y tipografia
     - Crear repositorio local e implementar git pull y git push
-    -
+    - Implementar Live Share y crear la estructura de archivos css y ejs
   
   Hacer más:
     
@@ -21,8 +21,9 @@
     
   Hacer menos:
   
+    - 
     -
   
   Dejar de hacer:
   
-    -
+    - 

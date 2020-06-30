@@ -1,0 +1,29 @@
+label.checkbox-label {
+    font-size: 1.6em;
+}
+  
+input.checkbox {
+    display: inline-block;
+    width: 20%;
+    font-size: 3rem;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px #b8b8b8;
+
+.form-button-cargaProducto {
+    background-color: white;
+    font-size: 1.6em;
+    color: #000000;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 190px;
+}
+
+#submit {
+    color: #393939;
+}
+
+.form-slider {
+    color: white;
+}

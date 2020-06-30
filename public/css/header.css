@@ -2,6 +2,7 @@
     width: 100%;
     padding: 2.5rem 12rem;
     background-image: linear-gradient(to right, #171A21, #2D4681);
+    margin-top: 0;
 }
 
 .header-nav{
@@ -45,7 +46,7 @@
     border-radius: 3px;
     padding: .6rem;
     color: white;
-    background-color: #171A60;
+    background-color: transparent;
 }
 
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__sub-list{
@@ -53,7 +54,7 @@
     position: absolute;
     background-color: #1C2437;
     text-decoration: none;
-    color: #969696;
+    color: white;
     text-transform: uppercase;
     list-style: none;
     box-shadow: 0px 1px 3px 4px #1C2437;
@@ -84,7 +85,7 @@
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item a{
     display: inline-block;
     text-decoration: none;
-    color: #969696;
+    color: white;
     text-transform: uppercase;
 }
 
@@ -131,7 +132,7 @@
 .header .header-nav__right a{
     margin: 0 1rem;
     text-decoration: none;
-    color: #969696;
+    color: white;
     font-size: 1.5rem;
 }
 
@@ -154,7 +155,7 @@
     background-color: transparent;
     border-radius: none;
     font-size: 1.5rem;
-    color: #969696;
+    color: white;
 }
 
 .header .header-nav__language-dropdown{

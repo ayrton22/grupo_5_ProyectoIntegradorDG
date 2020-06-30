@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <%- include('partials/header') %>
+    <div class="container form shopping-cart">
+        <form action="">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Carrito de compras</h1>
+                </div>
+                <div class="col-12">
+                    <h2>Envío: </h2>
+                </div>
+                <div class="col-6">
+                    <label for="calle" class="form-label">Calle</label>
+                    <input type="text" name="calle" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="numero" class="form-label">Número</label>
+                    <input type="number" name="numero" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="depto" class="form-label">Depto</label>
+                    <input type="number" name="depto" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="codigoPostal" class="form-label">Código postal</label>
+                    <input type="number" name="codigoPostal" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="localidad" class="form-label">Localidad</label>
+                    <input type="text" name="localidad" class="form-input"><br><br>
+                </div>
+                <div class="col-12">
+                    <h2>Método de pago: </h2>
+                </div>
+                <div class="col-6">
+                    <label for="tipoDeTarjeta" class="form-label"><h3>Tipo de tarjeta: </h3></label>
+                        <h3>Visa</h3><input type="radio" name="tipoDeTarjeta" value="visa">
+                        <h3>American Express</h3><input type="radio" name="tipoDeTarjeta" value="americanExpress">
+                </div>
+                <div class="col-6">
+                    <label for="numeroDeTarjeta" class="form-label">Número de tarjeta</label>
+                    <input type="number" name="numeroDeTarjeta" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="codigoDeSeguridad" class="form-label">Código de seguridad</label>
+                    <input type="number" name="codigoDeSeguridad" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="fechaDeVencimiento" class="form-label">Fecha de vencimiento</label>
+                    <input type="date" name="fechaDeVencimiento" class="form-input" id="datepicker">
+                </div>
+                <div class="col-12">
+                    <h2 class="shopping-cart--title">Artículos del carrito:</h2>
+                    <div class="row shopping-cart--product">
+                        <div class="col-2">
+                            <img src="img\fifa20.jpeg" alt="">
+                        </div>
+                        <div class="col-4 shopping-cart--product--information">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h4>Fifa 20</h4>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Plataforma: Play Station 4</h4>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Estado: Nuevo</h4>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Envío a domicilio</h4>
+                                </div>
+                                <div class="col-12">
+                                    <h4>Precio: $0.00</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                </div>
+                                <select class="custom-select" id="inputGroupSelect01">
+                                  <option selected>Cantidad...</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                                  <option value="6">6</option>
+                                  <option value="7">7</option>
+                                  <option value="8">8</option>
+                                  <option value="9">9</option>
+                                </select>
+                              </div>
+                        </div>
+                        <div class="col-3">
+                            <button type="submit" class="action-button delete">ELIMINAR</button></form>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+ 
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+</body>
+</html>

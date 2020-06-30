@@ -1,0 +1,43 @@
+label.form-label {
+    display: block;
+    font-size: 1.6em;
+    margin: 10px 0;
+}
+  
+input.form-input {
+    display: block;
+    width: 90%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px #b8b8b8;
+    padding: 0 15px;
+}
+
+select.form-input {
+    display: block;
+    width: 90%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px #b8b8b8;
+    padding: 0 15px;
+}
+
+.form-button {
+    background-color: white;
+    font-size: 1.6em;
+    color: #000000;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 190px;
+}
+
+#submit {
+    color: #10131A;
+}

@@ -1,0 +1,15 @@
+div.shopping-cart{
+    margin-bottom: 1.5rem;
+}
+
+div.shopping-cart form div.row div.col-12 h2.shopping-cart--title{
+    margin-bottom: 1rem;
+}
+
+div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--product--information{
+    margin-left: 1.5rem;
+}
+
+div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--product--information div.row div.col-12 h4{
+    font-size: 2rem;
+}

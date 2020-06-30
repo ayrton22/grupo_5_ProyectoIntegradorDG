@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %>
+<body>
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <div class="container">
+        <form action="">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Formulario de Carga de Producto</h1>
+                </div>
+                <div class="col-6">
+                    <label for="nombre" class="form-label">Titulo del juego: </label>
+                    <input type="text" name="nombre" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="estado" class="form-label">Estado del juego: </label>
+                    <select class="form-input" name="estado">
+                        <option selected hidden>Elija el estado</option>
+                        <option value="1">Muy malo</option>
+                        <option value="2">Muy usado</option>
+                        <option value="3">Usado</option>
+                        <option value="4">Casi Nuevo</option>
+                        <option value="5">Nuevo</option>
+                    </select>
+                    <!--<input type="range" list="tickmarks">
+                    <datalist id="tickmarks">
+                    <option class="form-slider" value="0" label="Muy malo">
+                    <option class="form-slider" value="25" label="Malo">
+                    <option class="form-slider" value="50" label="Usado">
+                    <option class="form-slider" value="75" label="Casi nuevo">
+                    <option class="form-slider" value="100" label="Nuevo">
+                    </datalist>-->
+                </div>
+                <div class="col-6">
+                    <label for="plataforma" class="form-label">Plataforma: </label>
+                    <input type="checkbox" value="PC" name="plataforma" class="form-checkbox"> <label class="checkbox-label" for="plataforma">PC</label><br>
+                    <input type="checkbox" value="Xbox" name="plataforma" class="form-checkbox"> <label class="checkbox-label" for="plataforma">Xbox</label><br>
+                    <input type="checkbox" value="PS4" name="plataforma" class="form-checkbox"> <label class="checkbox-label" for="plataforma">Playstation</label>
+                </div>
+                <div class="col-6">
+                    <label for="categoria" class="form-label">Categorias: </label>
+                    <input type="checkbox" value="Accion" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Acción</label>
+                    <input type="checkbox" value="Aventura" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Aventura</label><br>
+                    <input type="checkbox" value="Carreras" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Carreras</label>
+                    <input type="checkbox" value="Deportes" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Deportes</label><br>
+                    <input type="checkbox" value="Arcade" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Arcade</label>
+                    <input type="checkbox" value="Simulacion" name="categoria" class="form-checkbox"> <label class="checkbox-label" for="categoria">Simulacion</label>
+                </div>
+                <div class="col-12">
+                    <label for="foto" class="form-label">Fotos del juego: </label>
+                    <input type="file" class="form-input" name="foto">
+                </div>
+                <div class="col-6">
+                    <label for="pagos" class="form-label">Metodos de pago aceptados: </label>
+                    <input type="checkbox" value="Visa" name="pagos" class="form-checkbox"> <label class="checkbox-label" for="categoria">Visa</label>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="form-checkbox"> <label class="checkbox-label" for="categoria">Mercado Pago</label><br>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="form-checkbox"> <label class="checkbox-label" for="categoria">Mastercard</label>
+                    <input type="checkbox" value="American" name="pagos" class="form-checkbox"> <label class="checkbox-label" for="categoria">American Express</label><br>
+                </div>
+                <div class="col-6">
+                    <label for="entrega" class="form-label">Opciones de entrega de Producto: </label>
+                    <input type="checkbox" value="Delivery" name="entrega" class="form-checkbox"> <label class="checkbox-label" for="categoria">Delivery</label>
+                    <input type="checkbox" value="Buscar" name="pagos" class="form-checkbox"> <label class="checkbox-label" for="categoria">Buscar</label>
+                </div>
+                <div class="col-6">
+                    <label for="precio" class="form-label">Precio del juego</label>
+                    <input type="text" name="precio" class="form-input">
+                </div>
+                <div class="col-6">
+                    <label for="" id="submit" class="form-label">Submit</label>
+                    <button type="submit" class="form-button">Publicar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+ 
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+</body>
+</html>

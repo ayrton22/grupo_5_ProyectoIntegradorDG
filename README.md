@@ -78,4 +78,16 @@ Las imagenes dentro de las letras para nuestro logo
 https://trello.com/b/JcTYEC8x/planificacion-primera-tarea-pi
 
 ## Fuente:
-Noto Sans JP
+Roboto
+
+## Rutas a Vistas:
+
+Home:'/'
+
+Detalle de producto:'/product'
+
+Form de carga de producto:'/product/load'
+
+Form de registro:'/user'
+
+Carrito de compras:'/user/cart'

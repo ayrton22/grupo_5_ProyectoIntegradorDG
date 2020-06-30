@@ -1,15 +1,28 @@
-form.register {
-    margin: 6rem 0;
-    padding-bottom: 7.2rem;
+.container-register{
+    font-size: 1.4rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
+    margin: 6rem auto;
 }
 
-label.form-label {
+form.register-form {
+    padding: 7rem 0;
+    margin-left: 10rem; 
+}
+
+form.register-form h1 {
+    padding-bottom: 3rem;
+}
+
+label.register-form-label {
     display: block;
     font-size: 1.6em;
     margin: 10px 0;
+    background-color: #2568AC;
+    padding: 1rem;
+    width: 90%;
 }
   
-input.form-input {
+input.register-form-input {
     display: block;
     width: 75%;
     height: 45px;
@@ -21,7 +34,7 @@ input.form-input {
     padding: 0 15px;
 }
 
-select.form-input {
+select.register-form-input {
     display: block;
     width: 90%;
     height: 45px;
@@ -32,16 +45,14 @@ select.form-input {
     padding: 0 15px;
 }
 
-.form-button {
+.register-form-button {
     background-color: white;
     font-size: 1.6em;
-    color: #000000;
+    background-color: #00A6FF;
+    color: white;
     border-radius: 5px;
     border: none;
-    padding: 10px 15px;
-    margin: 0 190px;
-}
-
-#submit {
-    color: #10131A;
+    padding: 1rem 5rem;
+    margin-top: 6.5rem;
+    margin-left: 12rem;
 }

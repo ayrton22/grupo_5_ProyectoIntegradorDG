@@ -1,38 +1,92 @@
-.container-cargaDeProducto{
+.container-productLoader{
     font-size: 1.4rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
+    margin: 6rem auto;
 }
 
-label.checkbox-label {
+form.productLoader-form {
+    padding: 7rem 0;
+    margin-left: 5rem;
+}
+
+form.productLoader-form h1 {
+    padding-bottom: 3rem;
+}
+
+label.productLoader-form-label {
+    display: block;
     font-size: 1.6em;
+    margin: 10px 0;
+    background-color: #2568AC;
+    padding: 1rem;
+    width: 90%;
+}
+
+label.productLoader-form-label-imgInput {
+    display: block;
+    font-size: 1.6em;
+    margin: 10px 0;
+    background-color: #2568AC;
+    padding: 1rem;
+    width: 44%;
+}
+
+label.productLoader-checkbox-label {
+    font-size: 1.3em;
 }
   
-input.form-checkbox {
+input.productLoader-form-checkbox {
     display: inline-block;
     border-radius: 8px;
     border: none;
 }
 
-.form-button-cargaProducto {
+.productLoader-form-button {
     background-color: white;
     font-size: 1.6em;
-    color: #000000;
+    background-color: #00A6FF;
+    color: white;
     border-radius: 5px;
     border: none;
-    padding: 10px 15px;
-    margin: 0 190px;
+    padding: 1rem 5rem;
+    margin-top: 6.5rem;
+    margin-left: 15rem;
+}
+
+input.productLoader-form-input {
+    display: block;
+    width: 75%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    border: solid 1px #b8b8b8;
+    padding: 0 15px;
 }
 
 /*.form-slider {
     color: white;
 }*/
 
-input.form-input-img {
+select.productLoader-form-input {
+    display: block;
+    width: 90%;
+    height: 45px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    border-radius: 8px;
+    border: none;
+    padding: 0 15px;
+}
+
+input.productLoader-form-input-img {
     display: block;
     background-color: grey;
     width: 30%;
     height: 45px;
     margin-bottom: 15px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     border-radius: 8px;
     border: none;
     border: solid 1px #b8b8b8;

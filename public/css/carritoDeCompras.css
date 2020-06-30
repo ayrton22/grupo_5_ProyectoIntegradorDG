@@ -126,9 +126,11 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     border: none;
-    padding: .6rem;
+    padding: 1rem 3rem;
     align-self: center;
     border-radius: 7px;
+    background-color: #00A6FF;
+    color: white;
 }
 
 .carrito-container .carrito-container__resumen{

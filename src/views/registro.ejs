@@ -7,43 +7,42 @@
 
     <%- include('partials/header') %>
 
-    <div class="container pb-5">
-        <form class="register" action="">
+    <div class="container pb-5 container-register">
+        <form class="register-form" action="">
             <div class="row">
                 <div class="col-12">
                     <h1>Formulario de Registro</h1>
                 </div>
-                <div class="col-6">
-                    <label for="nombre" class="form-label">Nombre: </label>
-                    <input type="text" name="nombre" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="nombre" class="register-form-label">Nombre: </label>
+                    <input type="text" name="nombre" class="register-form-input" placeholder="Ej: Juan">
                 </div>
-                <div class="col-6">
-                    <label for="apellido" class="form-label">Apellido: </label>
-                    <input type="text" name="apellido" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="apellido" class="register-form-label">Apellido: </label>
+                    <input type="text" name="apellido" class="register-form-input" placeholder="Ej: González">
                 </div>
-                <div class="col-6">
-                    <label for="avatar" class="form-label">Nombre de usuario: </label>
-                    <input type="text" name="avatar" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="avatar" class="register-form-label">Nombre de usuario: </label>
+                    <input type="text" name="avatar" class="register-form-input" placeholder="Ej: Juancito4052">
                 </div>
-                <div class="col-6">
-                    <label for="email" class="form-label">Email: </label>
-                    <input type="email" name="email" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="email" class="register-form-label">Email: </label>
+                    <input type="email" name="email" class="register-form-input" placeholder="Ej: juan.gonzalez@gmail.com">
                 </div>
-                <div class="col-6">
-                    <label for="password" class="form-label">Contraseña: </label>
-                    <input type="password" name="password" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="password" class="register-form-label">Contraseña: </label>
+                    <input type="password" name="password" class="register-form-input">
                 </div>
-                <div class="col-6">
-                    <label for="repassword" class="form-label">Contraseña: </label>
-                    <input type="password" name="repassword" class="form-input">
+                <div class="col-6 pb-5">
+                    <label for="repassword" class="register-form-label">Contraseña: </label>
+                    <input type="password" name="repassword" class="register-form-input">
                 </div>
-                <div class="col-6">
-                    <label for="date" class="form-label">Fecha de nacimiento: </label>
-                    <input type="date" name="date" class="form-input" id="datepicker">
+                <div class="col-6 pb-5">
+                    <label for="date" class="register-form-label">Fecha de nacimiento: </label>
+                    <input type="date" name="date" class="register-form-input" id="datepicker">
                 </div>
-                <div class="col-6">
-                    <label for="" id="submit" class="form-label">Submit</label>
-                    <button type="submit" class="form-button">Registrarse</button>
+                <div class="col-6 pb-5">
+                    <button type="submit" class="register-form-button">Registrarse</button>
                 </div>
             </div>
         </form>

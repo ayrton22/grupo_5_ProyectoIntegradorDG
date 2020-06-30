@@ -13,3 +13,8 @@ div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shoppin
 div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--product--information div.row div.col-12 h4{
     font-size: 2rem;
 }
+
+div.shopping-cart form div.row div.col-12 div.shopping-cart--product div.shopping-cart--summary {
+    background-color: black;
+    padding: 2rem;
+}

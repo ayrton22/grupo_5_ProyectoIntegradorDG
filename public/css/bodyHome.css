@@ -36,19 +36,24 @@ div.product-section-1 {
 }
 
 .cartel-oferta {
-    background-color: #08569B ;
+    background-color: #00A6FF;
     position: absolute;
     padding: 0 1rem;
     bottom: .02rem;
     left: 1.5rem;
+    border-radius: 5px 5px 0 0;
 }
 
 .cartel-oferta__horizontal {
-    background-color: #08569B ;
+    background-color: #00A6FF;
+    font-size: 12px;
     position: absolute;
-    padding: 0 1rem;
-    bottom: .02rem;
-    left: 1.5rem;
+    bottom: .5px;
+    left: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px 5px 0 0;
 }
 
 .cartel-oferta p {
@@ -131,51 +136,59 @@ div.product-section-1 {
     transform: scale(1.03);
 }
 
-.aside-juegos{
-    margin-top: 6rem;
+.juegos-container{
+    display: flex;
+    padding: 0 25rem;
+    justify-content: space-around;
 }
 
-div.lista-de-juegos{
-    padding: 0 40rem;
+.juegos-container .juegos-container__aside{
+    margin-right: 10rem;
+    margin-top: 5.8rem;
 }
 
-ul.aside--list {
-    list-style: none;
+
+.juegos-container .juegos-container__products-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 
-ul.aside--list .aside--list--items a{
+.juegos-container .juegos-container__products-container a{
     text-decoration: none;
-    color: white;
-    font-size: 1.7rem;
-}
-
-section.all-products h2{
-    color: white;
-    font-size: 3rem;
-    margin-bottom: 2.5rem; 
-    padding-bottom: 1rem;
-    border-bottom: 2px solid #2D4681;
-    width: 11rem;
-}
-
-section.all-products article.all-products--game{
-    margin-right: 6rem;
+    margin-right: 4rem;
     margin-bottom: 2rem;
 }
 
-section.all-products article.all-products--game a img{
-    width: 18rem;
+.juegos-container .juegos-container__products-container a article .juegos-container__img-cont{
+    width: 20rem;
+    height: 30rem;
+    margin-bottom: 1rem;
 }
 
-section.all-products article.all-products--game p{
+.juegos-container .juegos-container__products-container a article .juegos-container__img-cont img{
+    height: 100%;
+    width: 100%;
+}
+
+.juegos-container .juegos-container__aside .juegos-container__list{
+    list-style: none;
+    font-size: 2rem;
+}
+
+.juegos-container .juegos-container__aside .juegos-container__list .juegos-container__item a{
+    text-decoration: none;
     color: white;
+}
+
+.juegos-container__title{
+    border-bottom: 2px solid #2D4681;
+    width: 8rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.juegos-container .juegos-container__all-products .juegos-container__products-container a .juegos-container__product p{
+    text-decoration: none;
+    color: #ffff;
     font-size: 1.5rem;
 }
-
-section.all-products article.all-products--game div.all-products--game--img a img {
-    width: 18rem;
-    height: 21rem;
-}
-
-
-

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('partials/head') %>
+    <%- include('partials/head', {title: 'Inicio'}) %>
 <body>
+
+    <!-- Header (Navs) -->
+    <%- include('partials/header') %>
+
     <div class="container-fluid pb-0 pl-5 pr-5 pt-5">
-        <!-- Header (Navs) -->
-        <%- include('partials/header') %>
 
         <!-- Slider -->
         <div id="container">
@@ -82,19 +84,19 @@
                 <!-- Products View Left -->
                 <div class="product-section__portrays">
                     <div class="product-section__box">
-                        <img src="img\fifa20.jpeg" alt="fifa">
-                        <div class="cartel-oferta"><p>% OFF<p></div>
+                        <a href="#"><img src="img\fifa20.jpeg" alt="fifa"></a>
+                        <div class="cartel-oferta"><p>15% OFF<p></div>
                     </div>
 
                     <div class="product-section__horizontal-boxes">
                         <div class="product-section__box--horizontal">
-                            <img src="img\gtaV.jpg" alt="gta">
-                            <div class="cartel-oferta__horizontal"><p>% OFF<p></div>
+                            <a href="#"><img src="img\gtaV.jpg" alt="gta"></a>
+                            <div class="cartel-oferta__horizontal"><p>12% OFF<p></div>
                         </div>
     
                         <div class="product-section__box--horizontal">
-                            <img src="img\csgo.jpg" alt="csgo">
-                            <div class="cartel-oferta__horizontal"><p>% OFF<p></div>
+                            <a href="#"><img src="img\csgo.jpg" alt="csgo"></a>
+                            <div class="cartel-oferta__horizontal"><p>34% OFF<p></div>
                         </div>
                     </div>
                 </div>
@@ -118,85 +120,131 @@
         </div>
         </div>
 
-        <div class="lista-de-juegos">
-            <div class="row p-5">
-                <aside class="col-3 aside-juegos">
-                    <ul class="aside--list">                   
-                        <li class="aside--list--items"><a href="#">Géneros</a></li>
-                        <li class="aside--list--items"><a href="#">Plataformas</a></li>
-                        <li class="aside--list--items"><a href="#">Ofertas</a></li>
-                        <li class="aside--list--items"><a href="#">Comunidad</a></li>
-                        <li class="aside--list--items"><a href="#">Próximamente</a></li>
-                        <li class="aside--list--items"><a href="#">Recomendaciones</a></li>
-                        <li class="aside--list--items"><a href="#">(Filtrados)</a></li>
-                    </ul>
-                </aside>
-            
-                <section class="all-products col-9">
-                    <h2 class="all-products--title">Juegos</h2>
-                    <div class="row">
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\csgo2.jpeg" alt=""></a>
+
+        <div class="juegos-container">
+            <aside class="juegos-container__aside">
+                <ul class="juegos-container__list">                   
+                    <li class="juegos-container__item"><a href="#">Géneros</a></li>
+                    <li class="juegos-container__item"><a href="#">Plataformas</a></li>
+                    <li class="juegos-container__item"><a href="#">Ofertas</a></li>
+                    <li class="juegos-container__item"><a href="#">Comunidad</a></li>
+                    <li class="juegos-container__item"><a href="#">Próximamente</a></li>
+                    <li class="juegos-container__item"><a href="#">Recomendaciones</a></li>
+                    <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
+                </ul>
+            </aside>
+            <section class="juegos-container__all-products">
+                <h2 class="juegos-container__title">Juegos</h2>
+                <div class="juegos-container__products-container">
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\csgo2.jpeg" alt="">
                             </div>
                             <p>Counter Strike: Global Offensive<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\godOfWar.jpeg" alt=""></a>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\godOfWar.jpeg" alt="">
                             </div>
-                            <p>God of War: deluxe edition<br>$0.00</p>
+                            <p>God of War: Deluxe Edition<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\needForSpeedHeat2.jpeg" alt=""></a>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\needForSpeedHeat2.jpeg" alt="">
                             </div>
                             <p>Nead for Speed Heat<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\gtaV3.jpeg" alt=""></a>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\gtaV3.jpeg" alt="">
                             </div>
                             <p>GTA V: Premium Online Edition<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\starWarsBattlefront.jpeg" alt=""></a>
+                    </a>
+
+                    <a href="#">     
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\starWarsBattlefront.jpeg"" alt="">
                             </div>
                             <p>Star Wars Battlefront 2<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\skyrim.jpeg" alt=""></a>
+                    </a>
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\skyrim.jpeg" alt="">
                             </div>
                             <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\fifa20.jpeg" alt=""></a>
+                    </a>
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\fifa20.jpeg" alt="">
                             </div>
                             <p>Fifa 20<br>$0.00</p>
                         </article>
-                        <article class="all-products--game col-3">
-                            <div class="all-products--game--img">
-                                <a href=""><img src="img\csgo2.jpeg" alt=""></a>
+                    </a>
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\csgo2.jpeg" alt="">
                             </div>
                             <p>Counter Strike: Global Offensive<br>$0.00</p>
                         </article>
-                    </div>
-             </section>
+                    </a>
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\godOfWar.jpeg" alt="">
+                            </div>
+                            <p>God of War: Deluxe Edition<br>$0.00</p>
+                        </article>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\needForSpeedHeat2.jpeg" alt="">
+                            </div>
+                            <p>Nead for Speed Heat<br>$0.00</p>
+                        </article>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\skyrim.jpeg" alt="">
+                            </div>
+                            <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
+                        </article>
+                    </a>
+
+                    <a href="#">
+                        <article class="juegos-container__product">
+                            <div class="juegos-container__img-cont">
+                                <img src="img\fifa20.jpeg" alt="">
+                            </div>
+                            <p>Fifa 20<br>$0.00</p>
+                        </article>
+                    </a>
+                </div>
+            </section>
         </div>
-        </div>
-        
-
-        <!-- Products -->
-        <div class="container">
-            
-
-            <!-- All Products View -->
-           
-
     </div>
+        
+        <!-- Products -->
 
      <!-- Footer -->
      <%- include('partials/footer') %>

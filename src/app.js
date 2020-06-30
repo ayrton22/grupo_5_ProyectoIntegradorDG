@@ -24,19 +24,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 const mainRouter = require('./routes/index');
+const productsRouter = require('./routes/products')
+const userRouter = require('./routes/users')
 
 app.use('/', mainRouter);
-app.use('/registro', function(req, res) {
-    res.render('registro')
-});
-
-app.use('/cargaDeProductos', function(req, res) {
-    res.render('cargaDeProductos')
-})
-
-app.use('/carritoDeCompras', function(req, res) {
-    res.render('carritoDeCompras')
-})
+app.use('/producto', productsRouter);
+app.use('/user', userRouter);
 
 app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000"));
 

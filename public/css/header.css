@@ -106,6 +106,7 @@
 }
 
 .header .header-nav__right .header-nav__form .search-input{
+    border: none;
     margin: 0 1rem;
     margin-right: -2.5rem;
     margin-left: auto;

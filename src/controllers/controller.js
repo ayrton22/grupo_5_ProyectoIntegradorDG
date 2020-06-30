@@ -7,5 +7,14 @@ module.exports = {
     },
     carritoDeCompras: function(req, res){
         res.render('carritoDeCompras')
+    },
+    detail: function(req, res) {
+        res.render('detalleProducto')
+    },
+    register: function(req, res) {
+        res.render('registro')
+    },
+    cargarProducto: function(req, res) {
+        res.render('cargaDeProductos')
     }
 }

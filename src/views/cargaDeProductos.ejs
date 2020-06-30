@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head') %>
+    <%- include('partials/head', {title: 'Carga de producto'}) %>
 <body>
     <!-- Header -->
     <%- include('partials/header') %>
 
-    <div class="container">
-        <form action="">
+    <div class="container pb-3">
+        <form class="register" action="">
             <div class="row">
                 <div class="col-12">
                     <h1>Formulario de Carga de Producto</h1>
                 </div>
                 <div class="col-6">
                     <label for="nombre" class="form-label">Titulo del juego: </label>
-                    <input type="text" name="nombre" class="form-input">
+                    <input type="text" name="nombre" class="form-input" placeholder="Ej: Fifa 20">
                 </div>
                 <div class="col-6">
                     <label for="estado" class="form-label">Estado del juego: </label>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-12">
                     <label for="foto" class="form-label">Fotos del juego: </label>
-                    <input type="file" class="form-input" name="foto">
+                    <input type="file" class="form-input-img" name="foto">
                 </div>
                 <div class="col-6">
                     <label for="pagos" class="form-label">Metodos de pago aceptados: </label>

@@ -176,6 +176,8 @@ div.product-section-1 {
     text-decoration: none;
     margin-right: 4rem;
     margin-bottom: 2rem;
+    width: 20rem;
+    height: 40rem;
 }
 
 .juegos-container .juegos-container__products-container a article .juegos-container__img-cont{
@@ -215,4 +217,13 @@ div.product-section-1 {
     text-decoration: none;
     color: #ffff;
     font-size: 1.5rem;
+}
+
+.juegos-container__product{
+    position: relative;
+}
+
+.absolute{
+    top: 0;
+    position: absolute;
 }

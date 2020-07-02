@@ -7,8 +7,8 @@
             <!-- Nav Items Left -->
             <ul class="header-nav__list">
                 <li class="header-nav__item">
-                    <button class="header-nav__dropdown-button">JUEGOS<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
-                    <ul class="header-nav__sub-list">
+                    <button onclick="show_hide()" class="header-nav__dropdown-button">JUEGOS<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
+                    <ul id="drop-cont" class="header-nav__sub-list show">
                         <li class="header-nav__sub-item"><a href="">TODOS LOS JUEGOS</a></li>
                         <li class="header-nav__sub-item"><a href="">POPULARES</a></li>
                         <li class="header-nav__sub-item"><a href="">OFERTAS</a></li>
@@ -31,8 +31,8 @@
                 <a href="/user" class="user"><i class="fas fa-user-plus"></i></a>
                 <ul>
                     <li class="header-nav__language-item">
-                        <button class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>
-                        <ul class="header-nav__language-sub-list">
+                        <button onclick="show_hide2()" class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>
+                        <ul id="drop-cont2" class="header-nav__language-sub-list">
                             <li class="header-nav__language-sub-item"><a href="">INGLES</a></li>
                             <li class="header-nav__language-sub-item"><a href="">PORTUGUES</a></li>
                             <li class="header-nav__language-sub-item"><a href="">ESPAÑOL</a></li>

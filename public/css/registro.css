@@ -46,13 +46,39 @@ select.register-form-input {
 }
 
 .register-form-button {
-    background-color: white;
+    position: relative;
     font-size: 1.6em;
-    background-color: #00A6FF;
+    background-color: #2568AC;
     color: white;
     border-radius: 5px;
     border: none;
     padding: 1rem 5rem;
     margin-top: 6.5rem;
     margin-left: 12rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.register-form-button:before {
+    content: "";
+    position: absolute;
+    background-color: #00A6FF;
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+
+}
+
+.register-form-button:hover:before {
+    height: 100%;
+}
+
+.register-form-button:hover {
+    transform: scale(1.05);
 }

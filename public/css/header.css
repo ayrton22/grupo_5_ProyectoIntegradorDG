@@ -66,11 +66,6 @@
     display: none;
 }
 
-.header .header-nav .header-nav__left .header-nav__list .header-nav__item:active .header-nav__sub-list{
-    display: block;
-    z-index: 1000;
-}
-
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__sub-list .header-nav__sub-item{
     margin-bottom: .7rem;
 }
@@ -182,8 +177,4 @@
 
 .header .header-nav__right .header-nav__language-sub-lis .header-nav__language-sub-item:last-child{
     margin-bottom: 0;
-}
-
-.header .header-nav .header-nav__right ul .header-nav__language-item:active .header-nav__language-sub-list{
-    display: block;
 }

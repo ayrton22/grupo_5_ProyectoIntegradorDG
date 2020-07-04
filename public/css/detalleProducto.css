@@ -11,18 +11,18 @@ div .compra {
     padding: 0;
 }
 
-.contenedor-carrusel {
+.contenedor-principal {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.contenedor-carrusel .flecha-derecha,
-.contenedor-carrusel .flecha-izquierda {
-    font-size: 20px;
+.contenedor-principal .flecha-derecha,
+.contenedor-principal .flecha-izquierda {
     position: absolute;
+    font-size: 20px;
     border: none;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: black;
     height: 50%;
     top: calc(50%-25%);
     line-height: 40px;
@@ -34,19 +34,20 @@ div .compra {
 
 }
 
-.contenedor-carrusel .flecha-left {
+.contenedor-principal .flecha-left {
     left: 0;
 }
 
-.contenedor-carrusel .flecha-izquierda {
+.contenedor-principal .flecha-izquierda {
     right: 0;
 }
 
-.contenedor-carrusel .flecha-derecha:hover,
-.contenedor-carrusel .flecha-izquierda:hover {
-    color: black;
+.contenedor-principal .flecha-derecha:hover,
+.contenedor-principal .flecha-izquierda:hover {
+    background-color: rgb(255, 255, 255,0.5);
+    color: whitesmoke;
     font-size: 25px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.5);
 
 }
 
@@ -67,28 +68,28 @@ div .compra {
     scroll-behavior: smooth;
 }
 
-.contenedor-carrusel .carrusel-imagen {
+.contenedor-carrusel{
     padding: 0;
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.contenedor-carrusel .carrusel-imagen .imagen-gameplay {
+.contenedor-carrusel .imagen-gameplay {
     min-width: 20%;
     transition: .3s ease all;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 
 }
 
-.contenedor-carrusel .carrusel-imagen .imagen-gameplay:hover {
+.contenedor-carrusel .imagen-gameplay:hover {
 
     transform: scale(1.2);
     transform-origin: center;
 
 }
 
-.contenedor-carrusel .carrusel-imagen .imagen-gameplay img {
+.contenedor-carrusel .imagen-gameplay img {
     width: 100%;
     vertical-align: top;
 }
@@ -122,7 +123,7 @@ i.rating {
     grid-row-gap: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 10rem;
+    padding-bottom: 6rem;
 }
 
 .otros-juegos a article div img {

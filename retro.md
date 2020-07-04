@@ -27,3 +27,28 @@
   Dejar de hacer:
   
     - 
+    
+   ## 2do Sprint:
+
+  Empezar a hacer:
+  
+    - Metodos get y post
+    - Datos json
+  
+  Hacer más:
+    
+    - Trabajar por separado
+  
+  Seguir haciendo:
+    
+    - Planificaion en Trello
+    - Reuniones por Discord
+    
+  Hacer menos:
+  
+    - Ser impuntuales
+    - No dar nuestras opiniones
+  
+  Dejar de hacer:
+  
+    - Arrancar tarde con el Sprint 

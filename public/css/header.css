@@ -63,6 +63,7 @@
     word-break: keep-all;
     width: 10.5rem;
     border-radius: 1px;
+    z-index: 1000;
     display: none;
 }
 

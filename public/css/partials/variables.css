@@ -1,0 +1,7 @@
+:root {
+    --main-bg-color :#10131A;
+    --secodary-bg-color: linear-gradient(to right, #171A21, #2D4681);
+    --button-bg-color: #00A6FF;
+    --button-border-radius: 5px;
+}
+

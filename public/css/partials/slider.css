@@ -301,8 +301,9 @@
 }
 
 .description-slider .buttons-cont .a-btn{
-    background-color: #223153;
-    border-radius: 3px;
+    background-color: var(--button-bg-color);
+    padding: 5px;
+    border-radius: var(--button-border-radius);
 } 
 
 .description-slider .buttons-cont .a-btn .more{

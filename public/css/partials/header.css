@@ -1,7 +1,7 @@
 .header{
     width: 100%;
     padding: 2.5rem 12rem;
-    background-image: linear-gradient(to right, #171A21, #2D4681);
+    background-image: var(--secodary-bg-color);
     margin-top: 0;
 }
 
@@ -19,9 +19,27 @@
     width: 60%;
 }
 
-.header-nav__item{
+.header-nav__item {
     margin-left: 2rem;
     position: relative;
+    z-index: 1;
+    transition: .2s ease-in;
+}
+
+.header-nav__item:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    bottom: 0;
+    height: 10%;
+    width: 0px;
+    z-index: -1;
+    transition: .2s ease-in;
+}
+
+.header-nav__item:hover:before {
+    width: 100%;
 }
 
 .header .header-nav .header-nav__left div.header-nav__logo{
@@ -43,7 +61,7 @@
 
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__dropdown-button{
     border: none;
-    border-radius: 3px;
+    border-radius: var(--button-border-radius);
     padding: .6rem;
     color: white;
     background-color: transparent;
@@ -110,7 +128,7 @@
     width: 70%;
     height: 3.5rem;
     padding-left: 1rem;
-    border-radius: 5px;
+    border-radius: var(--button-border-radius);
     font-size: 1.5rem;
 }
 
@@ -144,9 +162,10 @@
     margin-left: .5rem;
 }
 
-.header .header-nav__language-dropdown{
+.header .header-nav__language-dropdown {
     display: flex;
-    padding-right: 1rem;
+    padding: .5rem 1rem;
+    overflow: hidden;
     align-items: center;
     position: relative;
     border: none;
@@ -154,6 +173,24 @@
     border-radius: none;
     font-size: 1.5rem;
     color: white;
+    z-index: 1;
+    transition: .2s ease-in;
+}
+
+.header .header-nav__language-dropdown:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    bottom: 0;
+    height: 10%;
+    width: 0px;
+    z-index: -1;
+    transition: .2s ease-in;
+}
+
+.header .header-nav__language-dropdown:hover:before {
+    width: 100%;
 }
 
 .header .header-nav__language-dropdown{

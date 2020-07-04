@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Formulario de inicio de sesión'}) %>
+<body>
+    
+    <!-- Header -->
+
+    <%- include('partials/header') %>
+    <div class="container pb-5 container-signIn">
+        <form class="px-4 py-3 signIn-form">
+            <h1>Iniciar Sesión:</h1>
+          <div class="form-group">
+            <label class="signIn-form-label" for="exampleDropdownFormUsername1">Nombre de usuario:</label>
+            <input type="text" class="form-control" id="signIn-form-input" placeholder="Nombre de usuario">
+          </div>
+          <div class="form-group">
+            <label class="signIn-form-label" for="exampleDropdownFormPassword1">Contraseña:</label>
+            <input type="password" class="form-control" id="signIn-form-input" placeholder="Contraseña">
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="dropdownCheck">
+              <label class="form-check-label" for="dropdownCheck">
+                Recordarme
+              </label>
+            </div>
+          </div>
+          <div style="float:right;">
+              <button class="signIn-form-button" type="button">Iniciar Sesión</button>
+          </div>
+          <br><br><br>
+        </form>
+        <div class="dropdown-divider"></div>
+        <div class="signIn-bottom">
+            <a class="signIn-bottom-link" href="#">¿Nuevo por acá? Registrate</a><br>
+            <a class="signIn-bottom-link" href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+    <script src="javascript/registerForm.js"></script>   
+</body>
+</html>

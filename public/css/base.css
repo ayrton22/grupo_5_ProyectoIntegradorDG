@@ -14,6 +14,6 @@ body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
-    background-color:#10131A;
+    background-color:var(--main-bg-color);
     color: white;
 }

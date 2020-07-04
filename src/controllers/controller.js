@@ -14,6 +14,9 @@ module.exports = {
     register: function(req, res) {
         res.render('registro')
     },
+    signIn: function(req, res) {
+        res.render('login')
+    },
     productLoad: function(req, res) {
         res.render('cargaDeProductos')
     }

@@ -2,7 +2,7 @@ footer div.footer {
     display: flex;
     font-size: 16px;
     padding: 0 12rem;
-    background-image: linear-gradient(to right, #171A21, #2D4681);;
+    background-image: var(--secodary-bg-color);
     justify-content: space-evenly;
     padding: 15px 15px 0 0;
 }
@@ -26,9 +26,9 @@ footer div.footer div.footer-list__left ul li div.header-nav__logo a img {
 
 footer div.footer div.footer-info__right form button {
     border: none;
-    border-radius: 5px;
+    border-radius: var(--button-border-radius);
     width: 100px;
-    background-color:#10131A;
+    background-color: var(--button-bg-color);
     color: white;
 }
 

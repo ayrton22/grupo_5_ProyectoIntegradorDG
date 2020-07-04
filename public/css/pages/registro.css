@@ -61,7 +61,7 @@ input#register-form-input {
   
   /* Mark the steps that are finished and valid: */
   .step.finish {
-    background-color: #4CAF50;
+    background-color: var(--button-bg-color);
   }
 
 .register-form-button {
@@ -82,7 +82,7 @@ input#register-form-input {
 .register-form-button:before {
     content: "";
     position: absolute;
-    background-color: #00A6FF;
+    background-color: var(--button-bg-color);
     border-radius: 5px;
     left: 0;
     bottom: 0;

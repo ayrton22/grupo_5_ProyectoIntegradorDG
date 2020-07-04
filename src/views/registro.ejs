@@ -8,50 +8,43 @@
     <%- include('partials/header') %>
 
     <div class="container pb-5 container-register">
-        <form class="register-form" action="">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Formulario de Registro</h1>
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="nombre" class="register-form-label">Nombre: </label>
-                    <input type="text" name="nombre" class="register-form-input" placeholder="Ej: Juan">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="apellido" class="register-form-label">Apellido: </label>
-                    <input type="text" name="apellido" class="register-form-input" placeholder="Ej: González">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="avatar" class="register-form-label">Nombre de usuario: </label>
-                    <input type="text" name="avatar" class="register-form-input" placeholder="Ej: Juancito4052">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="email" class="register-form-label">Email: </label>
-                    <input type="email" name="email" class="register-form-input" placeholder="Ej: juan.gonzalez@gmail.com">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="password" class="register-form-label">Contraseña: </label>
-                    <input type="password" name="password" class="register-form-input">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="repassword" class="register-form-label">Contraseña: </label>
-                    <input type="password" name="repassword" class="register-form-input">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="date" class="register-form-label">Fecha de nacimiento: </label>
-                    <input type="date" name="date" class="register-form-input" id="datepicker">
-                </div>
-                <div class="col-6 pb-5">
-                    <button type="submit" class="register-form-button">Registrarse</button>
-                </div>
+        <form id="regForm" class="register-form" action="/action_page.php">
+            <h1>Register:</h1>
+            <!-- One "tab" for each step in the form: -->
+            <div class="tab">
+                <label class="register-form-label" for="name">Nombre:</label>
+                <input id="register-form-input" type="text" oninput="this.className = ''" name="name">
+                <label class="register-form-label" for="surname">Apellido:</label>
+                <input id="register-form-input" type="text" oninput="this.className = ''" name="surname">
+                <label class="register-form-label" for="username">Nombre de usuario:</label>
+                <input id="register-form-input" type="text" oninput="this.className = ''" name="username">
             </div>
-        </form>
+            <div class="tab">
+                <label class="register-form-label" for="email">Email:</label>
+                <input id="register-form-input" type="email" oninput="this.className = ''" name="email">
+                <label class="register-form-label" for="surname">Contraseña:</label>
+                <input id="register-form-input" type="password" oninput="this.className = ''" name="surname">
+                <label class="register-form-label" for="username">Repetir contraseña:</label>
+                <input id="register-form-input" type="password" oninput="this.className = ''" name="repassword">
+            </div>
+            <div style="overflow:auto;">
+              <div style="float:right;">
+                <button class="register-form-button" id="prevBtn" type="button" onclick="nextPrev(-1)">Previous</button>
+                <button class="register-form-button" id="nextBtn" type="button" onclick="nextPrev(1)">Next</button>
+              </div>
+            </div>
+            <!-- Circles which indicates the steps of the form: -->
+            <div style="text-align:center;margin-top:40px;">
+              <span class="step"></span>
+              <span class="step"></span>
+            </div>
+          </form>
     </div>
 
     <!-- Footer -->
     <%- include('partials/footer') %>
- 
     <!-- Scripts -->
     <%- include('partials/scripts') %>
+    <script src="javascript/registerForm.js"></script>   
 </body>
 </html>

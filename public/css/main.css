@@ -1,10 +1,20 @@
+/* Base CSS */
+
 @import url('./base.css');
-@import url('./bodyHome.css');
-@import url('./header.css');
-@import url('./footer.css');
-@import url('./slider.css');
-@import url('./registro.css');
-@import url('./carritoDeCompras.css');
-@import url('./cargaProductos.css');
-@import url('./responsive.css');
-@import url('./detalleProducto.css')
+
+/* Pages */
+
+@import url('./pages/home.css');
+@import url('./pages/detalleProducto.css');
+@import url('./pages/registro.css');
+@import url('./pages/carritoDeCompras.css');
+@import url('./pages/cargaProductos.css');
+@import url('./pages/login.css');
+
+/* Partials */
+
+@import url('./partials/responsive.css');
+@import url('./partials/variables.css');
+@import url('./partials/header.css');
+@import url('./partials/footer.css');
+@import url('./partials/slider.css');

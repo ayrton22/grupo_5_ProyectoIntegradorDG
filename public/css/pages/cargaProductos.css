@@ -1,6 +1,6 @@
 .container-productLoader{
     font-size: 1.4rem;
-    background-image: linear-gradient(to bottom, #223052, #191E29);
+    background-image: var(--secodary-bg-color);
     margin: 6rem auto;
 }
 
@@ -44,9 +44,9 @@ input.productLoader-form-checkbox {
 .productLoader-form-button {
     background-color: white;
     font-size: 1.6em;
-    background-color: #00A6FF;
+    background-color: var(--button-bg-color);
     color: white;
-    border-radius: 5px;
+    border-radius: var(--button-border-radius);
     border: none;
     padding: 1rem 5rem;
     margin-top: 6.5rem;

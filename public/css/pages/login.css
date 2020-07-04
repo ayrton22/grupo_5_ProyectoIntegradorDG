@@ -1,0 +1,76 @@
+.container-signIn{
+  font-size: 1.4rem;
+  background-image: linear-gradient(to bottom, #223052, #191E29);
+  margin: 6rem auto;
+  width: 30%;
+  align-content: center;
+  border-radius: 5px;
+}
+
+form.signIn-form {
+  align-self: center;
+  margin: 0 2rem;
+  padding-top: 5rem;
+}
+
+form.signIn-form h1 {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 40px;
+}
+
+label.signIn-form-label {
+  display: block;
+  font-size: 1.6em;
+  margin: 10px 0;
+}
+
+input#signIn-form-input {
+  display: block;
+  width: 100%;
+  height: 45px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 10px;
+}
+
+button.signIn-form-button {
+  position: relative;
+  display: block;
+  font-size: 1.6rem;
+  background-color: #2568AC;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin: 1.5rem 1rem;
+  padding: 1rem 5rem;
+  cursor: pointer;
+  z-index: 1;
+  transition: .2s ease-in;
+  transition: .4s;
+}
+
+button.signIn-form-button:before {
+  content: "";
+  position: absolute;
+  background-color: var(--button-bg-color);
+  border-radius: 5px;
+  left: 0;
+  bottom: 0;
+  height: 0px;
+  width: 100%;
+  z-index: -1;
+  transition: .2s ease-in;
+
+}
+
+button.signIn-form-button:hover:before {
+  height: 100%;
+}
+
+a.signIn-bottom-link{
+    text-decoration: none;
+    color: #fff;
+}

@@ -129,11 +129,11 @@
     border: none;
     padding: 1rem 3rem;
     align-self: center;
-    border-radius: 7px;
-    background-color: #00A6FF;
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-bg-color);
     color: white;
 }
 
 .carrito-container .carrito-container__resumen{
-    background-image: linear-gradient(to bottom, #223052, #191E29);
+    background-image: var(--secodary-bg-color);
 }

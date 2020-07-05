@@ -123,6 +123,10 @@
     margin-bottom: 2rem;
 }
 
+div.carrito-container__btn-container{
+    text-align: center;
+}
+
 .carrito-container .carrito-container__resumen .carrito-container__btn{
     margin-top: 2rem;
     margin-bottom: 2rem;

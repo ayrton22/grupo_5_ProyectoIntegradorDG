@@ -2,10 +2,9 @@ const path = require('path');
 const express = require('express');
 const router = express.Router();
 
-const controller = require('../controllers/usersController')
+const controller = require('../controllers/controller')
 
-
-router.get('/register', controller.register);
+router.get('/', controller.register);
 router.get('/cart', controller.shoppingCart);
 router.get('/signIn', controller.signIn);
 

@@ -144,11 +144,19 @@
     font-size: 1.5rem;
 }
 
-.header .header-nav__right a{
+.header .header-nav__right a {
     margin: 0 1rem;
     text-decoration: none;
     color: white;
     font-size: 1.5rem;
+}
+
+.header .header-nav__right a.nav__icons {
+    transition: .2s ease-in;
+}
+
+.header .header-nav__right a.nav__icons:hover {
+    color: var(--button-bg-color);
 }
 
 .header .header-nav__right a.user{

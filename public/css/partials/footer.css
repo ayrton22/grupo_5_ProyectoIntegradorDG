@@ -15,6 +15,38 @@ footer div.footer div ul {
     list-style-type: none;
     
 }
+
+footer div.footer div ul li {
+    display: flex;
+    padding: .5rem 1rem;
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+    border: none;
+    background-color: transparent;
+    border-radius: none;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 1;
+    transition: .2s ease-in;
+}
+
+footer div.footer div ul li:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    bottom: 0;
+    height: 10%;
+    width: 0px;
+    z-index: -1;
+    transition: .2s ease-in;
+}
+
+footer div.footer div ul li:hover:before {
+    width: 100%;
+}
+
 footer div.footer div ul li a{
     text-decoration: none;
     color: white;
@@ -30,6 +62,14 @@ footer div.footer div.footer-info__right form button {
     width: 100px;
     background-color: var(--button-bg-color);
     color: white;
+}
+
+footer div.footer div.footer-info__right ul.social-icons li a {
+    transition: .2s ease-in;
+}
+
+footer div.footer div.footer-info__right ul.social-icons li a:hover {
+    color: var(--button-bg-color);
 }
 
 footer div.footer div.footer-info__right ul li {

@@ -115,22 +115,19 @@ div.product-section-1 {
     height: 100%;
     transform: translateX(12rem);
     z-index: 1;
-    border: 10px solid #1C2437;
     box-shadow: 0 1px 5px 3px #000;
 }
 
 .product-section-2 .product-section-2__portrays .product-section-2__box--2{
     height: 100%;
-    transform: translateX(8rem);
-    z-index: 2;
-    border: 10px solid #1C2437;
+    transform: translateX(6rem);
+    z-index: 5;
     box-shadow: 0 1px 5px 3px #000;
 }
 
 .product-section-2 .product-section-2__portrays .product-section-2__box--3{
     height: 100%;
     z-index: 3;
-    border: 10px solid #1C2437;
     box-shadow: 0 1px 5px 3px #000;
 }
 

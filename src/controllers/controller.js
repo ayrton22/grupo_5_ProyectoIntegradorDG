@@ -37,5 +37,8 @@ module.exports = {
     },
     productLoad: function(req, res) {
         res.render('cargaDeProductos')
+    },
+    thankYouPage: function(req, res){
+        res.redirect('')
     }
 }

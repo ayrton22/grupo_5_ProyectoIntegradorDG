@@ -6,8 +6,8 @@ let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8
 usuarios = JSON.parse(usuarios);
 
 module.exports = {
-    index: function(req, res) {
-        res.render('index')
+    home: function(req, res) {
+        res.render('home')
     },
     shoppingCart: function(req, res){
         res.render('carritoDeCompras')

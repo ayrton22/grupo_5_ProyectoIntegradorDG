@@ -5,15 +5,16 @@ const livereload = require('livereload');
 const connectLivereload = require('connect-Livereload');
 
 const publicDirectory = path.resolve(__dirname, '../public');
-let livereloadServer = livereload.createServer();
+
+/*let livereloadServer = livereload.createServer();
 livereloadServer.watch(publicDirectory);
 livereloadServer.server.once('connection', () => {
     setTimeout(() =>{
         livereloadServer.refresh("/");
     }, 10);
-});
+});*/
 
-app.use(connectLivereload());
+/*app.use(connectLivereload());*/
 
 app.use(express.static(publicDirectory));
 app.use(express.static(path.join(__dirname, '../public')));

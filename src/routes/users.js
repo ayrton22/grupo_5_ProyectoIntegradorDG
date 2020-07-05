@@ -4,8 +4,16 @@ const router = express.Router();
 
 const controller = require('../controllers/controller')
 
-router.get('/', controller.register);
+router.get('/', function(req, res) {
+    res.render('registro')
+});
+router.post('/', controller.register);
+
 router.get('/cart', controller.shoppingCart);
-router.get('/signIn', controller.signIn);
+
+router.get('/login', function(req, res) {
+    res.render('login')
+})
+router.post('/login', controller.login);
 
 module.exports = router;

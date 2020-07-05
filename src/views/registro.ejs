@@ -8,7 +8,7 @@
     <%- include('partials/header') %>
 
     <div class="container pb-5 container-register">
-        <form id="regForm" class="register-form" action="/action_page.php">
+        <form id="regForm" class="register-form" action="" method="POST">
             <h1>Register:</h1>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
@@ -22,9 +22,9 @@
             <div class="tab">
                 <label class="register-form-label" for="email">Email:</label>
                 <input id="register-form-input" type="email" oninput="this.className = ''" name="email">
-                <label class="register-form-label" for="surname">Contraseña:</label>
-                <input id="register-form-input" type="password" oninput="this.className = ''" name="surname">
-                <label class="register-form-label" for="username">Repetir contraseña:</label>
+                <label class="register-form-label" for="password">Contraseña:</label>
+                <input id="register-form-input" type="password" oninput="this.className = ''" name="password">
+                <label class="register-form-label" for="repassword">Repetir contraseña:</label>
                 <input id="register-form-input" type="password" oninput="this.className = ''" name="repassword">
             </div>
             <div style="overflow:auto;">

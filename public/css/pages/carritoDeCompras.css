@@ -112,7 +112,7 @@
     margin-right: 20rem;
     padding: 2rem;
     height: fit-content;
-    display: flex;
+    display: table;
     flex-direction: column;
 }
 

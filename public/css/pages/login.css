@@ -71,6 +71,14 @@ button.signIn-form-button:hover:before {
 }
 
 a.signIn-bottom-link{
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
+}
+
+label.form-check-label{
+  margin-left: 4px;
+}
+
+input.form-check-input{
+  margin-top: 5px;
 }

@@ -11,7 +11,7 @@ router.post('/', controller.register);
 
 router.get('/cart', controller.shoppingCart);
 
-router.get('/thanksForBuying', controller.thankYouPage);
+router.get('/thanks', controller.thankYouPage);
 
 router.get('/login', function(req, res) {
     res.render('login')

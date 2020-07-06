@@ -40,6 +40,6 @@ module.exports = {
         res.render('cargaDeProductos')
     },
     thankYouPage: function(req, res){
-        res.redirect('')
+        res.redirect('graciasPorComprar')
     }
 }

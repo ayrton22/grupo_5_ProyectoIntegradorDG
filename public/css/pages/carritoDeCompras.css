@@ -135,7 +135,11 @@ div.carrito-container__btn-container{
     align-self: center;
     border-radius: var(--button-border-radius);
     background-color: var(--button-bg-color);
-    color: white;
+}
+
+.carrito-container .carrito-container__resumen .carrito-container__btn a{
+    text-decoration: none;
+    color: #fff;
 }
 
 .carrito-container .carrito-container__resumen{

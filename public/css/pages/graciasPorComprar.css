@@ -1,0 +1,32 @@
+.container .message-box {
+    font-size: 1.7rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
+    margin: 6rem auto;
+    width: 40%;
+    align-content: center;
+    border-radius: 5px;
+}
+
+.message-box__content{
+}
+
+h1 {
+    font-size: 4.5rem;
+    text-align: center;
+}
+
+.message-box__content--body{
+}
+
+p {
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 2rem;
+}
+
+
+a {
+    text-decoration:none;
+    color: white;
+}

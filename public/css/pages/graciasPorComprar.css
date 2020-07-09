@@ -7,18 +7,12 @@
     border-radius: 5px;
 }
 
-.message-box__content{
-}
-
-h1 {
+h1.message-box__content--title {
     font-size: 4.5rem;
     text-align: center;
 }
 
-.message-box__content--body{
-}
-
-p {
+p.message-box__content--body--text {
     text-align: center;
     margin-left: 5rem;
     margin-right: 5rem;
@@ -26,7 +20,7 @@ p {
 }
 
 
-a {
+a.message-box__content--body__link {
     text-decoration:none;
     color: white;
 }

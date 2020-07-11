@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+let productos = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
+productos = JSON.parse(productos);
 
 let producto = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 producto = JSON.parse(producto);
@@ -64,5 +66,11 @@ module.exports = {
 				res.redirect('/products?status=ok')
 			}
 		}
-	}
+	},
+    allProducts: function(req, res) {
+        res.render('productos')
+    },
+    productLoad: function(req, res) {
+        res.render();
+    }
 }

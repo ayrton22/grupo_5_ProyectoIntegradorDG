@@ -5,9 +5,14 @@ const bcrypt = require('bcrypt');
 let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 usuarios = JSON.parse(usuarios);
 
+let producto = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
+producto = JSON.parse(producto);
+
 module.exports = {
     home: function(req, res) {
-        res.render('home')
+        res.render('home', {
+            producto: producto
+        })
     },
     shoppingCart: function(req, res){
         res.render('carritoDeCompras')

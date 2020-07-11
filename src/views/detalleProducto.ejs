@@ -6,7 +6,7 @@
 <body>
     <%- include('partials/header') %>
     <div class="container mt-3 padding-cont-detalle">
-        <div class="row ">
+        <div class="row">
             <iframe class="col-8 detalle-juego" height="470px" src="https://www.youtube.com/embed/_g6XCLNQl_w"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -18,10 +18,16 @@
                     gráficos última generación. Experimenta un combate dinámico y lleno de acción, cazando monstruos,
                     eliminando jefes y derrotando a tus enemigos para llegar a la cima de este mundo.</p>
                     <div class="col-12">
-
                         <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> 4.9</h1>
                     </div>
                     <p class="col mt-3 precio">0$</p>
+                    <!--
+                    <div class="botones-administrador">
+                        <a href="/products/edit/" class="action-button edit">EDITAR PRODUCTO</a>
+                        <form action="/products/delete/?_method=delete" method="POST" style="display: inline-flex">
+                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                        </form>
+                    </div>-->
             </section>
         <div class=" contenedor-principal col-8 mb-5 detalle-juego">
             <button role="button" id="flecha-derecha" class="flecha-izquierda"><i

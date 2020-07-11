@@ -36,6 +36,10 @@ input#register-form-input {
     padding: 0 10px;
   }
 
+  input.valid{
+    background-color: green;
+  }
+
   input.invalid {
     background-color: #C36363;
   }

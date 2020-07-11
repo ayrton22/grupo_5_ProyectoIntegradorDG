@@ -10,9 +10,21 @@ producto = JSON.parse(producto);
 
 module.exports = {
     home: function(req, res) {
+        let destacado = producto.filter(function(elemento) {
+			return elemento.category == "Destacado";
+		});
+		let destacadoHorizontal = producto.filter(function(elemento) {
+			return elemento.category == "Destacado-Horizontal";
+        });
+        let destacado2 = producto.filter(function(elemento) {
+			return elemento.category == "Destacado-2";
+		});
         res.render('home', {
-            producto: producto
-        })
+            producto: producto,
+            productoDestacado: destacado,
+            productoDestacadoHorizontal: destacadoHorizontal,
+            destacado2: destacado2
+        },)
     },
     shoppingCart: function(req, res){
         res.render('carritoDeCompras')

@@ -1,0 +1,129 @@
+.container-registerEdit{
+    font-size: 1.4rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
+    margin: 6rem auto;
+    width: 30%;
+    align-content: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 3px #010212;
+}
+
+form.registerEdit-form {
+    align-self: center;
+    margin: 0 2rem;
+    padding-top: 5rem;
+}
+
+form.registerEdit-form h1 {
+    text-align: center;
+    padding-bottom: 3rem;
+    font-size: 40px;
+}
+
+form.registerEdit-form h2 {
+    text-align: right;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+    font-size: 32px;
+    background-color: #2568AC;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+label.registerEdit-form-label {
+    display: block;
+    font-size: 1.6em;
+    margin: 10px 0;
+  }
+
+input.registerEdit-form-input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+  }
+
+input.registerEdit-form-label__avatar {
+    background-image: url(https://www.w3schools.com/howto/img_avatar.png);
+}
+
+select.registerEdit-form-input {
+    display: block;
+    width: 100%;
+    height: 45px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+  }
+
+.registerEdit-form-button {
+    position: relative;
+    font-size: 1.6em;
+    background-color: #2568AC;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 1.5rem 1rem;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.registerEdit-form-button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+
+}
+
+.registerEdit-form-button:hover:before {
+    height: 100%;
+}
+
+.area {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://www.w3schools.com/howto/img_avatar.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 128px;
+    text-align: center;
+}
+
+
+.area:hover,
+.area.dragging,
+.area.uploading {
+    filter: alpha(opacity=100);
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+.area input {
+    width: 400%;
+    height: 100%;
+    margin-left: -300%;
+    border: none;
+    cursor: pointer;
+    padding: 5rem 0;
+}
+
+.area input:focus {
+    outline: none;
+}

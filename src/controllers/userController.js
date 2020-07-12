@@ -41,23 +41,35 @@ module.exports = {
     },
     
     editSave: function(req, res) {
+
+        let usuarioEditado = {
+            id: req.params.id,
+            first_name: req.body.name,
+            last_name: req.body.surname,
+            username: req.body.username,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.password, 10),
+            birth_date: req.body.date,
+            age: birth_date - Date.now(),
+            adress: `${req.body.adress_country}, ${req.body.adress_province}, ${req.body.adress_city}, ${req.body.adress_home} `
+        };
+        
         for(let i = 0; i < usuarios.length; i++) {
-            if(req.params.id == usuarios[i].id ) {
-                let usuarioEditado = {
-                    id: req.params.id,
-                    first_name: req.body.name,
-                    last_name: req.body.surname,
-                    username: req.body.username,
-                    email: req.body.email,
-                    password: bcrypt.hashSync(req.body.password, 10),
-                    birth_date: req.body.date,
-                    age: birth_date - Date.now(),
-                    adress: `${req.body.adress_country}, ${req.body.adress_province}, ${req.body.adress_city}, ${req.body.adress_home} `
-                };
-                usuarios.push(usuarioEditado);
+            if(usuarios[i].id == req.params.id ) {
+                usuarios[i] = usuarioEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
-                res.redirect('/registerEdit/' + req.params.id, {
+                res.redirect('/user/profile/' + usuarioEditado.id, {
                     usuario: usuario[i]
+                })
+            }
+        }
+    },
+
+    profile: function(req, res) {
+        for(let i = 0; i < usuarios.length; i++) {
+            if(req.params.id == usuarios[i].id) {
+                res.render('userProfile', {
+                    usuario: usuarios[i]
                 })
             }
         }

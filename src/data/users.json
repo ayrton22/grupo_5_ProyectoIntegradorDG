@@ -956,10 +956,14 @@
     "age": 46,
     "avatar": "user_87.jpg"
 }, {
-    "id": 88,
-    "first_name": "joaquin",
-    "last_name": "perles",
+    "id": "88",
+    "first_name": "Joaquin",
+    "last_name": "Perles",
     "username": "Joaco",
     "email": "joaquiperles@live.com.ar",
-    "password": "$2b$10$LmJt0qJz7Z.3fUJ4xkGEkeO1Hi8XT.869yJtNy8dSh/pp36miZrWm"
+    "gender": "Male",
+    "password": "$2b$10$g0JNVreu1P.v0O.G71OXEuhB2CQRlxID3PVtlt1U2W9W66h4oI90a",
+    "birth_date": "2001-07-06",
+    "age": null,
+    "address": "Argentina, Buenos Aires, Tigre, Av de los Lagos 5850 "
 }]

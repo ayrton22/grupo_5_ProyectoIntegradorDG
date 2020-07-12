@@ -20,3 +20,40 @@
     border-bottom: 1px solid black;
     width: 90%;
 }
+
+.profile-button {
+    position: relative;
+    font-size: 1.6em;
+    background-color: #2568AC;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 1.5rem 11rem;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.profile-button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+}
+
+.profile-button:hover:before {
+    height: 100%;
+}
+
+.profile-button a {
+    text-decoration: none;
+    color: white;
+}

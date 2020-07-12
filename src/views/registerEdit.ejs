@@ -7,8 +7,8 @@
 
     <%- include('partials/header') %>
 
-    <div class="container pb-5 container-registerEdit">
-        <form class="registerEdit-form" action="" method="POST">
+    <div class="container pb-5 container-userEdit">
+        <form class="userEdit-form" action="/user/profile/<%= usuario.id %>?_method=put" method="POST">
             <h1>Editar o agregar información</h1>
 
             <h2>General</h2>
@@ -17,33 +17,33 @@
                 <input type="file" id="upload" />
             </div>
 
-            <label class="registerEdit-form-label" for="name">Nombre</label>
-            <input class="registerEdit-form-input" type="text" value="<%= usuario.first_name %>" name="name">
+            <label class="userEdit-form-label" for="name">Nombre</label>
+            <input class="userEdit-form-input" type="text" value="<%= usuario.first_name %>" name="name">
 
-            <label class="registerEdit-form-label" for="surname">Apellido</label>
-            <input class="registerEdit-form-input" type="text" value="<%= usuario.last_name %>" name="surname">
+            <label class="userEdit-form-label" for="surname">Apellido</label>
+            <input class="userEdit-form-input" type="text" value="<%= usuario.last_name %>" name="surname">
 
-            <label class="registerEdit-form-label" for="username">Nombre de usuario</label>
-            <input class="registerEdit-form-input" type="text" value="<%= usuario.username %>" name="username">
+            <label class="userEdit-form-label" for="username">Nombre de usuario</label>
+            <input class="userEdit-form-input" type="text" value="<%= usuario.username %>" name="username">
 
-            <label class="registerEdit-form-label" for="email">Email</label>
-            <input class="registerEdit-form-input" type="email" value="<%= usuario.email %>" name="email">
+            <label class="userEdit-form-label" for="email">Email</label>
+            <input class="userEdit-form-input" type="email" value="<%= usuario.email %>" name="email">
 
             <h2>Cambiar contraseña</h2>
 
-            <label class="registerEdit-form-label" for="name">Nueva contraseña</label>
-            <input class="registerEdit-form-input" type="password" name="name">
+            <label class="userEdit-form-label" for="name">Nueva contraseña</label>
+            <input class="userEdit-form-input" type="password" name="name">
 
-            <label class="registerEdit-form-label" for="repassword">Repetir contraseña</label>
-            <input class="registerEdit-form-input" type="text" name="repassword">
+            <label class="userEdit-form-label" for="repassword">Repetir contraseña</label>
+            <input class="userEdit-form-input" type="text" name="repassword">
 
             <h2>Más información</h2>
 
-            <label class="registerEdit-form-label" for="date">Fecha de nacimiento</label>
-            <input class="registerEdit-form-input" type="date" name="date" value="<%= usuario.date %>" max="2018-12-31">
+            <label class="userEdit-form-label" for="date">Fecha de nacimiento</label>
+            <input class="userEdit-form-input" type="date" name="date" value="<%= usuario.date %>" max="2018-12-31">
 
-            <label class="registerEdit-form-label" for="gender">Género</label>
-            <select class="registerEdit-form-input" name="gender">
+            <label class="userEdit-form-label" for="gender">Género</label>
+            <select class="userEdit-form-input" name="gender">
                 <option value = "H" hidden>Eliga un Género</option>
                 <option value = "H">Male</option>
                 <option value = "M">Female</option>
@@ -52,19 +52,19 @@
 
             <h2>Ubicación</h2>
 
-            <label class="registerEdit-form-label" for="adress_country">País</label>
-            <input class="registerEdit-form-input" type="text" value="" name="adress_country">
+            <label class="userEdit-form-label" for="adress_country">País</label>
+            <input class="userEdit-form-input" type="text" value="" name="adress_country">
 
-            <label class="registerEdit-form-label" for="adress_country">Provincia o Estado</label>
-            <input class="registerEdit-form-input" type="text" value="" name="adress_province">
+            <label class="userEdit-form-label" for="adress_country">Provincia o Estado</label>
+            <input class="userEdit-form-input" type="text" value="" name="adress_province">
 
-            <label class="registerEdit-form-label" for="adress_country">Localidad o ciudad</label>
-            <input class="registerEdit-form-input" type="text" value="" name="adress_city">
+            <label class="userEdit-form-label" for="adress_country">Localidad o ciudad</label>
+            <input class="userEdit-form-input" type="text" value="" name="adress_city">
 
-            <label class="registerEdit-form-label" for="adress_country">Dirección</label>
-            <input class="registerEdit-form-input" type="text" value="" name="adress_home">
+            <label class="userEdit-form-label" for="adress_country">Dirección</label>
+            <input class="userEdit-form-input" type="text" value="" name="adress_home">
 
-            <button class="registerEdit-form-button" type="submit">Submit</button>
+            <button class="userEdit-form-button" type="submit">Submit</button>
           </form>
     </div>
 

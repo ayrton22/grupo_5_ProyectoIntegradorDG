@@ -22,7 +22,9 @@
         <h2 class="profile-subtitle">Fecha de nacimiento: <%= usuario.birth_date %></h2>
         <h2 class="profile-subtitle">Dirección: <%= usuario.address %></h2>
     </div>
-
+    <div class="container container-profile">
+        <button class="profile-button" type="button"><a href="/user/edit/<%= usuario.id %>">Editar Información</a></button>
+    </div>
     <!-- Footer -->
     <%- include('partials/footer') %>
     <!-- Scripts -->

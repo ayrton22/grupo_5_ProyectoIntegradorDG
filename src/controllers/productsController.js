@@ -5,8 +5,8 @@ let producto = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'u
 producto = JSON.parse(producto);
 
 module.exports = {
-    root: (req, res) => {
-		res.render('products', {
+    allProducts: (req, res) => {
+		res.render('productos', {
 			producto: producto
 		})
 	},
@@ -64,10 +64,25 @@ module.exports = {
 			}
 		}
 	},
-    allProducts: function(req, res) {
-        res.render('productos')
-    },
+
     productLoad: function(req, res) {
+        res.render('cargaDeProductos');
+    },
+    productUpdate: function(req, res) {
+        let nuevoProducto = {
+            id: productos.length + 1,
+            tittle: req.body.nombre,
+            statement: req.body.estado,
+            plataform: req.body.plataforma,
+            category: req.body.categoria,
+            picture: req.body.foto,
+            pagyFomr:  req.body.pagos,
+            delivery:  req.body.entrega,
+            price:  req.body.precio
+        };
+        productos.push(nuevoProducto);
+        fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos));
+        res.redirect('/')
         res.render();
     }
 }

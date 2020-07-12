@@ -91,7 +91,7 @@ div.product-section-1 {
 }
 
 .product-section-1 .product-section__portrays .product-section__horizontal-boxes .product-section__box--horizontal img{
-    height: 100%;
+    height: 14rem;
     width: 38rem;
 }
 
@@ -215,6 +215,7 @@ div.product-section-1 {
     text-decoration: none;
     color: #ffff;
     font-size: 1.5rem;
+    margin: 0;
 }
 
 .juegos-container__product{

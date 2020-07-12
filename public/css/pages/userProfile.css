@@ -1,0 +1,22 @@
+.container-profile {
+    font-size: 1.4rem;
+    background-image: linear-gradient(to bottom, #223052, #191E29);
+    margin: 6rem auto;
+    width: 30%;
+    align-content: center;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 10px 3px #010100;
+}
+
+.container-profile h1 {
+    padding: 3rem 0;
+    font-size: 42px;
+}
+
+.profile-subtitle {
+    font-size: 30px;
+    padding: 1rem 0;
+    border-bottom: 1px solid black;
+    width: 90%;
+}

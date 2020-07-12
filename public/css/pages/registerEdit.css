@@ -1,4 +1,4 @@
-.container-registerEdit{
+.container-userEdit{
     font-size: 1.4rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
     margin: 6rem auto;
@@ -8,19 +8,19 @@
     box-shadow: 0 0 10px 3px #010212;
 }
 
-form.registerEdit-form {
+form.userEdit-form {
     align-self: center;
     margin: 0 2rem;
     padding-top: 5rem;
 }
 
-form.registerEdit-form h1 {
+form.userEdit-form h1 {
     text-align: center;
     padding-bottom: 3rem;
     font-size: 40px;
 }
 
-form.registerEdit-form h2 {
+form.userEdit-form h2 {
     text-align: right;
     margin-top: 8rem;
     margin-bottom: 3rem;
@@ -31,13 +31,13 @@ form.registerEdit-form h2 {
 }
 
 
-label.registerEdit-form-label {
+label.userEdit-form-label {
     display: block;
     font-size: 1.6em;
     margin: 10px 0;
   }
 
-input.registerEdit-form-input {
+input.userEdit-form-input {
     display: block;
     width: 100%;
     height: 45px;
@@ -48,11 +48,11 @@ input.registerEdit-form-input {
     padding: 0 10px;
   }
 
-input.registerEdit-form-label__avatar {
+input.userEdit-form-label__avatar {
     background-image: url(https://www.w3schools.com/howto/img_avatar.png);
 }
 
-select.registerEdit-form-input {
+select.userEdit-form-input {
     display: block;
     width: 100%;
     height: 45px;
@@ -63,7 +63,7 @@ select.registerEdit-form-input {
     padding: 0 10px;
   }
 
-.registerEdit-form-button {
+.userEdit-form-button {
     position: relative;
     font-size: 1.6em;
     background-color: #2568AC;
@@ -78,7 +78,7 @@ select.registerEdit-form-input {
     transition: .4s;
 }
 
-.registerEdit-form-button:before {
+.userEdit-form-button:before {
     content: "";
     position: absolute;
     background-color: var(--button-bg-color);
@@ -92,7 +92,7 @@ select.registerEdit-form-input {
 
 }
 
-.registerEdit-form-button:hover:before {
+.userEdit-form-button:hover:before {
     height: 100%;
 }
 

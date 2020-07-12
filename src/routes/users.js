@@ -11,8 +11,7 @@ router.get('/', function(req, res) {
 router.post('/', controller.register);
 
 router.get('/edit/:id?', controller.edit);
-
-router.post('/edit/:id', controller.edit)
+router.put('/edit/:id', controller.edit)
 
 router.get('/cart', controller.shoppingCart);
 
@@ -20,7 +19,10 @@ router.get('/thanks', controller.thankYouPage);
 
 router.get('/login', function(req, res) {
     res.render('login')
-})
+});
+
 router.post('/login', controller.login);
+
+router.get('/profile/:id', controller.profile);
 
 module.exports = router;

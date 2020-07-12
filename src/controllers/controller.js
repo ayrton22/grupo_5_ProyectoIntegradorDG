@@ -37,7 +37,6 @@ module.exports = {
     shoppingCart: function(req, res){
         res.render('carritoDeCompras')
     },
-    
     register: function(req, res) {
         let nuevoUsuario = {
             id: usuarios.length + 1,
@@ -59,7 +58,6 @@ module.exports = {
         }
         res.redirect('/user');
     },
-
     thankYouPage: function(req, res){
         res.redirect('graciasPorComprar')
     }

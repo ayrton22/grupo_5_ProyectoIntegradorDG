@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-let productos = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
-productos = JSON.parse(productos);
 
-let producto = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
+let producto = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
 producto = JSON.parse(producto);
 
 module.exports = {
@@ -25,12 +23,11 @@ module.exports = {
         res.render('cargaDeProductos');
     },
     detail: function(req, res) {
-        res.render('detalleProducto');
         let idProducto = req.params.productId;
 		for (let i = 0; i < producto.length; i++) {
 			if (producto[i].id == idProducto) {
 				res.render('detalleProducto', {
-					producto: producto[i]
+					productoDetalle: producto[i]
 				})
 			}
 		}
@@ -50,8 +47,8 @@ module.exports = {
 			...req.body
 		}
 		for (let i = 0; i < producto.length; i++) {
-			if (productosParseados[i].id == productoActualizado.id) {
-				productosParseados[i] = productoActualizado;
+			if (producto[i].id == productoActualizado.id) {
+				producto[i] = productoActualizado;
 				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(producto));
 				res.redirect('/products/detail/' + producto.id)
 			}
@@ -59,8 +56,8 @@ module.exports = {
 	},
     destroy: (req, res) => {
 		for (let i = 0; i < producto.length; i++) {
-			if (productosParseados[i].id == req.params.productId) {
-				let index = producto.indexOf(productosParseados[i]);
+			if (producto[i].id == req.params.productId) {
+				let index = producto.indexOf(producto[i]);
 				producto.splice(index, 1);
 				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(producto));
 				res.redirect('/products?status=ok')

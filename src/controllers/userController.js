@@ -18,14 +18,21 @@ module.exports = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10)
         };
-        usuarios.push(nuevoUsuario);
-        fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
-        res.redirect('/')
+        for(let i = 0; i < usuarios.length; i++) {
+            if(req.body.username == usuarios[i].username || req.body.email == usuarios[i].email || bcrypt.compareSync(req.body.password, usuarios[i].password)) {
+                return res.redirect('/user');
+            }
+        }
+        if(req.body.password == req.body.repassword) {
+            usuarios.push(nuevoUsuario);
+            fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
+            res.redirect('/user/login')
+        }
     },
     login: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].username == req.body.username && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                return res.redirect('/');
+                return res.redirect('/user/profile/' + usuarios[i].id);
             }
         }
         res.redirect('/user');
@@ -48,19 +55,18 @@ module.exports = {
             last_name: req.body.surname,
             username: req.body.username,
             email: req.body.email,
+            gender: req.body.gender,
             password: bcrypt.hashSync(req.body.password, 10),
             birth_date: req.body.date,
-            age: birth_date - Date.now(),
-            adress: `${req.body.adress_country}, ${req.body.adress_province}, ${req.body.adress_city}, ${req.body.adress_home} `
+            age: Date.now() - req.body.date,
+            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `
         };
         
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].id == req.params.id ) {
                 usuarios[i] = usuarioEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
-                res.redirect('/user/profile/' + usuarioEditado.id, {
-                    usuario: usuario[i]
-                })
+                res.redirect('/user/profile/' + usuarioEditado.id)
             }
         }
     },

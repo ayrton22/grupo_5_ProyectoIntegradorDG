@@ -53,6 +53,9 @@ function validateForm() {
       // and set the current valid status to false
       valid = false;
     }
+    if(y[i].value != ""){
+      y[i].className += " valid";
+    }
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {

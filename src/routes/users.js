@@ -7,7 +7,12 @@ const controller = require('../controllers/userController')
 router.get('/', function(req, res) {
     res.render('registro')
 });
+
 router.post('/', controller.register);
+
+router.get('/edit/:id?', controller.edit);
+
+router.post('/edit/:id', controller.edit)
 
 router.get('/cart', controller.shoppingCart);
 

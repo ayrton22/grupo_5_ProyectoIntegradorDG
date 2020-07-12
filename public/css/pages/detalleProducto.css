@@ -3,7 +3,11 @@ div .compra {
 }
 
 .precio {
-    font-size: 7rem;
+    font-size: 4.5rem; /*7rem*/
+}
+
+.botones-administrador{
+    float: right;
 }
 
 .detalle-juego {
@@ -31,7 +35,6 @@ div .compra {
     cursor: pointer;
     z-index: 500;
     transition: .2s ease all;
-
 }
 
 .contenedor-principal .flecha-left {

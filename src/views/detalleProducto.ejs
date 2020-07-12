@@ -6,7 +6,7 @@
 <body>
     <%- include('partials/header') %>
     <div class="container mt-3 padding-cont-detalle">
-        <div class="row ">
+        <div class="row">
             <iframe class="col-8 detalle-juego" height="470px" src="https://www.youtube.com/embed/_g6XCLNQl_w"
                 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -18,10 +18,16 @@
                     gráficos última generación. Experimenta un combate dinámico y lleno de acción, cazando monstruos,
                     eliminando jefes y derrotando a tus enemigos para llegar a la cima de este mundo.</h3>
                     <div class="col-12">
-
                         <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> 4.9</h1>
                     </div>
                     <p class="col mt-3 precio">0$</p>
+                    <!--
+                    <div class="botones-administrador">
+                        <a href="/products/edit/" class="action-button edit">EDITAR PRODUCTO</a>
+                        <form action="/products/delete/?_method=delete" method="POST" style="display: inline-flex">
+                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                        </form>
+                    </div>-->
             </section>
         <div class=" contenedor-principal col-8 mb-5 detalle-juego">
             <button role="button" id="flecha-derecha" class="flecha-izquierda"><i
@@ -129,7 +135,7 @@
 
         <div class="otros-juegos">
 
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="https://cdn1.epicgames.com/epic/offer/EGS_AmongTrees_FJRDInteractive_S2_Logo1-860x1148-826a72c956a2cbe8b7f042aa05a18221.png?h=854&resize=1&w=640"
@@ -139,7 +145,7 @@
                 </article>
             </a>
 
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="https://cdn1.epicgames.com/1e58a1653e6846d3a05cccb2ae5b7385/offer/EGS_MissileCommandRecharged_NickervisionStudios_S6-1200x1600-13dce142b015db18d28b54c6d1515f6c.jpg?h=854&resize=1&w=640"
@@ -149,7 +155,7 @@
                 </article>
             </a>
 
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="../img/dota1.jpg" alt="">
@@ -157,7 +163,7 @@
                     <p>Lorem ipsum dolor sit amet.</p>
                 </article>
             </a>
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="../img/Minecraft.webp" alt="">
@@ -165,7 +171,7 @@
                     <p>Lorem ipsum dolor sit amet.</p>
                 </article>
             </a>
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="../img/doom.jpg" alt="">
@@ -173,7 +179,7 @@
                     <p>Lorem ipsum dolor sit amet.</p>
                 </article>
             </a>
-            <a href="/product">
+            <a href="/product/detail">
                 <article>
                     <div>
                         <img src="../img/Destiny.png" alt="">

@@ -61,20 +61,21 @@
             <div class="product-section-1">
                 <!-- Products View Left -->
                 <div class="product-section__portrays">
+                    <% for(let i = 0; i < productoDestacado.length; i++) { %>
                     <div class="product-section__box">
-                        <a href="/product"><img src="img\fifa20.jpeg" alt="fifa"></a>
-                        <div class="cartel-oferta"><p>15% OFF<p></div>
+                        <a href="/product/detail" alt="fifa"><img src="img/<%= productoDestacado[i].image %>"></a>
+                        <div class="cartel-oferta"><p><%= productoDestacado[i].DESC %>% OFF<p></div>
                     </div>
+                    <% } %>
 
                     <div class="product-section__horizontal-boxes">
-                        <div class="product-section__box--horizontal">
-                            <a href="/product"><img src="img\gtaV.jpg" alt="gta"></a>
-                            <div class="cartel-oferta__horizontal"><p>12% OFF<p></div>
-                        </div>
-    
-                        <div class="product-section__box--horizontal">
-                            <a href="/product"><img src="img\csgo.jpg" alt="csgo"></a>
-                            <div class="cartel-oferta__horizontal"><p>34% OFF<p></div>
+                        <div class="product-section__horizontal-boxes">
+                            <% for(let i = 0; i < productoDestacadoHorizontal.length; i++) { %>
+                                <div class="product-section__box--horizontal">
+                                    <a href="/product/detail"><img src="../img/<%= productoDestacadoHorizontal[i].image %>" alt="gta"></a>
+                                    <div class="cartel-oferta__horizontal"><p><%= productoDestacadoHorizontal[i].DESC %>% OFF<p></div>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -83,17 +84,23 @@
         <div class="product-section-2">
                 <!-- Products View Right -->
                 <div class="product-section-2__portrays">
+                    <% for(let i = 0; i < destacado2.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--1">
-                        <a href="/product"><img src="img\needForSpeedHeat2.jpeg" alt="fifa"></a>
+                        <a href="/product/detail"><img src="img/<%= destacado2[i].image %>" alt="fifa"></a>
                     </div>
+                    <% } %>
 
+                    <% for(let i = 0; i < destacado3.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--2">
-                        <a href="/product"><img src="img\skyrim.jpeg" alt="gta"></a>
+                        <a href="/product/detail"><img src="img/<%= destacado3[i].image %>" alt="gta"></a>
                     </div>
-                   
+                    <% } %>
+
+                    <% for(let i = 0; i < destacado4.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--3">
-                        <a href="/product"><img src="img\starWarsBattlefront.jpeg" alt="csgo"></a>
+                        <a href="/product/detail"><img src="img/<%= destacado4[i].image %>" alt="csgo"></a>
                     </div>
+                    <% } %>
                 </div>   
         </div>
         </div>
@@ -114,109 +121,17 @@
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Juegos</h2>
                 <div class="juegos-container__products-container">
-                    <a href="/product">
+                    <% for(let i = 0; i < 12; i++) { %>
+                    <a href="/product/detail">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img\overwatch.jpg" alt="">
+                                <img src="img\<%= producto[i].image %>" alt="">
                             </div>
-                            <p>Counter Strike: Global Offensive<br>$0.00</p>
+                            <p><%= producto[i].title %></p>
+                            <p><%= producto[i].price %>$</p>
                         </article>
                     </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\godOfWar.jpeg" alt="">
-                            </div>
-                            <p>God of War: Deluxe Edition<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\uncharted.jpg" alt="">
-                            </div>
-                            <p>Nead for Speed Heat<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\titanfall.jpg" alt="">
-                            </div>
-                            <p>GTA V: Premium Online Edition<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">     
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\bloodborne.jpeg"" alt="">
-                            </div>
-                            <p>Star Wars Battlefront 2<br>$0.00</p>
-                        </article>
-                    </a>
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\wow.jpg" alt="">
-                            </div>
-                            <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
-                        </article>
-                    </a>
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\battlefield.jpg" alt="">
-                            </div>
-                            <p>Fifa 20<br>$0.00</p>
-                        </article>
-                    </a>
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\call-of-duty-advanced-warfare.jpg" alt="">
-                            </div>
-                            <p>Counter Strike: Global Offensive<br>$0.00</p>
-                        </article>
-                    </a>
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\farcry.jpg" alt="">
-                            </div>
-                            <p>God of War: Deluxe Edition<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\halo4.jpg" alt="">
-                            </div>
-                            <p>Nead for Speed Heat<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\ResidentEvil.jpeg" alt="">
-                            </div>
-                            <p>The Elder Scrolls V: Skyrim - Dawnguard<br>$0.00</p>
-                        </article>
-                    </a>
-
-                    <a href="/product">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img\tomRaider.jpg" alt="">
-                            </div>
-                            <p>Fifa 20<br>$0.00</p>
-                        </article>
-                    </a>
+                    <% } %>
                 </div>
             </section>
         </div>

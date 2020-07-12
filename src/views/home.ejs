@@ -63,7 +63,7 @@
                 <div class="product-section__portrays">
                     <% for(let i = 0; i < productoDestacado.length; i++) { %>
                     <div class="product-section__box">
-                        <a href="/product/detail/<%= productoDestacado[i].id %>" alt="fifa"><img src="img/<%= productoDestacado[i].image %>"></a>
+                        <a href="/product/detail/<%= productoDestacado[i].id %>" alt="<%= productoDestacado[i].title %>"><img src="img/<%= productoDestacado[i].image %>"></a>
                         <div class="cartel-oferta"><p><%= productoDestacado[i].DESC %>% OFF<p></div>
                     </div>
                     <% } %>

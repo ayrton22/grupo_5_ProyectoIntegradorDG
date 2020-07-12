@@ -95,6 +95,7 @@ div .compra {
 .contenedor-carrusel .imagen-gameplay img {
     width: 100%;
     vertical-align: top;
+    height: 9rem;
 }
 
 .compra {
@@ -177,4 +178,8 @@ div.especificaciones{
 .carrito-contenedor-link:hover{
     text-decoration: none;
     color: #fff;
+}
+
+.imagen-detalle{
+    height: 17rem;
 }

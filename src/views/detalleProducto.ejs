@@ -10,11 +10,9 @@
                 <iframe class="col-8 detalle-juego" height="470px" src="https://www.youtube.com/embed/<%=productoDetalle.video%>" frameborder="0" allowfullscreen></iframe>
             <section class="col-4 detalle-juego">
                 <div>
-                    <img class="imagen-detalle col-12 mb-5"
-                        src="https://steamcdn-a.akamaihd.net/steam/apps/706220/header.jpg?t=1592945102" alt=""></div>
-                <h3 class="col-12">Black Desert Online es un MMORPG de mundo abierto masivo. Cuenta con impresionantes
-                    gráficos última generación. Experimenta un combate dinámico y lleno de acción, cazando monstruos,
-                    eliminando jefes y derrotando a tus enemigos para llegar a la cima de este mundo. </p>
+                    <img class="imagen-detalle col-12 mb-5" src="/img/<%= productoDetalle.imagenDetalle %>" alt="">
+                </div>
+                <h3 class="col-12"><%= productoDetalle.description %></p>
                     <div class="col-12">
                         <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> 4.9</h1>
                     </div>
@@ -62,26 +60,26 @@
             <section class="row col-9">
                 <div class="col-4">
                     <span class="span-detail informacion">Desarrolladora:</span>
-                    <p>Pearl Abyss</p>
+                    <p><%= productoDetalle.Desarrolladora %></p>
                 </div>
                 <div class="col-4">
                     <span class="span-detail informacion">Editora:</span>
-                    <p>RedFox Games</p>
+                    <p> <%= productoDetalle.Editora %></p>
                 </div>
                 <div class="col-4">
                     <span class="span-detail informacion">Fecha de lanzamiento:</span>
-                    <p>23 Jul.2016</p>
+                    <p> <%= productoDetalle.Lanzamiento %>6</p>
                 </div>
                 <div class="col-4">
                     <span class="span-detail informacion">Etiquetas:</span>
-                    <p>MMORPG</p>
+                    <p> <%= productoDetalle.Etiquetas %></p>
                 </div>
                 <div class="col-4">
                     <span class="span-detail informacion">Clasificacion:</span>
-                    <p>MATURE 17+</p>
+                    <p> <%= productoDetalle.Clasificacion %></p>
                 </div>
                 <div class="texto-container">
-                    <h1 class="h1-detalle col-12">Black Desert Online</h1>
+                    <h1 class="h1-detalle col-12"><%= productoDetalle.title %></h1>
                     <div class="texto-informativo col-12 ">
                         Black Desert Online se desarrolla en un entorno de alta fantasía y gira en torno al conflicto
                         entre dos naciones rivales, la República de Calpheon y el Reino de Valencia13​. Calpheon es muy

@@ -13,14 +13,14 @@
                     <img class="imagen-detalle col-12 mb-5" src="/img/<%= productoDetalle.imagenDetalle %>" alt="">
                 </div>
                 <h3 class="col-12"><%= productoDetalle.description %></p>
-                    <div class="col-12">
+                    <div class="col-1.2">
                         <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> 4.9</h1>
                     </div>
                     <p class="col mt-3 precio"><%= productoDetalle.price %>$</p>
                     <div class="botones-administrador">
-                        <a href="/products/edit/" class="action-button edit">EDITAR PRODUCTO</a>
-                        <form action="/products/delete/?_method=delete" method="POST" style="display: inline-flex">
-                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                        <button class="detail--action-button"><a href="/product/edit/<%= productoDetalle.id %>">EDITAR PRODUCTO</a></button>
+                        <form action="/product/delete/?_method=delete" method="POST" style="display: inline-flex">
+                        <button type="submit" class="detail--action-button">ELIMINAR</button>
                         </form>
                     </div>
             </section>

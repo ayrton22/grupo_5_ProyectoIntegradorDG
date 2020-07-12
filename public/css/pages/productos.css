@@ -1,0 +1,13 @@
+.juegos-container2{
+
+}
+
+.juegos-container__aside2{
+    left: 14rem;
+    justify-content: start;
+    position: absolute;
+    z-index: 400;
+    flex-direction: column;
+}
+
+

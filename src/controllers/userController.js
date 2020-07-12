@@ -31,6 +31,6 @@ module.exports = {
         res.redirect('/user');
     },
     thankYouPage: function(req, res){
-        res.render('graciasPorComprar')
+        res.render('graciasPorComprar');
     }
 }

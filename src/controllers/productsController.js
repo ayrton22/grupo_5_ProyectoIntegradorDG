@@ -23,7 +23,7 @@ module.exports = {
         res.render('cargaDeProductos');
     },
     detail: function(req, res) {
-        let idProducto = req.params.productId;
+        let idProducto = req.params.id;
 		for (let i = 0; i < producto.length; i++) {
 			if (producto[i].id == idProducto) {
 				res.render('detalleProducto', {

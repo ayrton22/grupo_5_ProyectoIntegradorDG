@@ -10,11 +10,11 @@
                 <iframe class="col-8 detalle-juego" height="470px" src="https://www.youtube.com/embed/<%=productoDetalle.video%>" frameborder="0" allowfullscreen></iframe>
             <section class="col-4 detalle-juego">
                 <div>
-                    <img class="imagen-detalle col-12 mb-5" src="/img/<%= productoDetalle.imagenDetalle %>" alt="">
+                    <img class="imagen-detalle col-12 mb-5" src="/img/<%= productoDetalle.imagen_detalle %>" alt="">
                 </div>
                 <h3 class="col-12"><%= productoDetalle.description %></p>
-                    <div class="col-1.2">
-                        <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> 4.9</h1>
+                    <div class="col-12">
+                        <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> <%= productoDetalle.rating %></h1>
                     </div>
                     <p class="col mt-3 precio"><%= productoDetalle.price %>$</p>
                     <div class="botones-administrador">
@@ -81,23 +81,11 @@
                 <div class="texto-container">
                     <h1 class="h1-detalle col-12"><%= productoDetalle.title %></h1>
                     <div class="texto-informativo col-12 ">
-                        Black Desert Online se desarrolla en un entorno de alta fantasía y gira en torno al conflicto
-                        entre dos naciones rivales, la República de Calpheon y el Reino de Valencia13​. Calpheon es muy
-                        materialista, mientras que Valencia es muy espiritual.
+                        <%= productoDetalle.big_description %>
                     </div>
+                    <br>
                     <div class="texto-informativo col-12 ">
-                        Hace mucho tiempo, las cuatro áreas principales, Calpheon, Serendia, Balenos y Mediah,
-                        han estado en paz. Todo esto cambió cuando la Muerte Negra comenzó a propagarse a través de
-                        comerciantes de Valencia, un área al este de Mediah que controla el comercio. Muchos en todo el
-                        mundo mueren debido a la plaga. Algunos de los que no, fueron expulsados debido a la paranoia.
-                        inalmente, las tres áreas principales formaron una alianza y comenzaron una guerra que duró 30
-                        años, y Mediah se benefició más al cosechar piedras negras y comerciar con todos. Después de la
-                        guerra, la alianza comenzó a comerciar lentamente con Valencia otra vez. Las tensiones volvieron
-                        a aumentar cuando los demás descubrieron la importancia de las piedras negras. Desesperados por
-                        ganar riqueza, los otros comenzaron a buscar piedras negras. Calpheon no tiene un área que
-                        albergue las preciadas piedras negras y, debido a esto, comenzaron a robarlas a los demás.
-                        Esto plantea conflictos con Valencia debido al vasto Desierto Negro de Valencia que contiene
-                        las piedras negras.
+                        <%= productoDetalle.medium_description %>
                     </div>
             </section>
 

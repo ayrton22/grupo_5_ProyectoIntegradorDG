@@ -27,6 +27,8 @@ module.exports = {
             usuarios.push(nuevoUsuario);
             fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
             res.redirect('/user/login')
+        } else {
+            res.redirect('/user')
         }
     },
     login: function(req, res) {

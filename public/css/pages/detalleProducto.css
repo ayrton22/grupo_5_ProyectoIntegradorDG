@@ -2,28 +2,113 @@ div .compra {
     height: 9rem;
 }
 
-.precio {
-    font-size: 3.8rem; /*7rem*/
+.detalle-container__mediaInfo{
+    display: flex;
+    margin-bottom: 10rem;
+    background-image: var(--secodary-bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 3px #010212;
+}
+
+.detalle-container__part-1{
+    margin-right: 2rem;
+}
+
+.detalle-container__part-2{
+    display: flex;
+    flex-direction: column;
+}
+
+.detalle-container__part-2 p{
+    font-size: 3rem;
+    font-weight: 100;
+}
+
+.detalle-container__part-2 h3{
+    margin-bottom: 2rem;
+}
+
+.detalle-container__rating{
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
 }
 
 .botones-administrador{
-    float: right;
+    margin-bottom: auto;
+    justify-content: flex-end;
+}
+
+.detalle-container__plataform-buyButtons{
     display: flex;
 }
 
-.detalle-juego {
-    margin: 0%;
-    padding: 0;
+.detalle-container__plataform-buyButtons i{
+    font-size: 2rem;
 }
 
-.contenedor-principal {
+.detalle-container__plataform-buttons{
+    margin-right: auto;
+}
+
+.botones-administrador{
     display: flex;
+}
+
+.detalle-container__cotenedor-slider {
+    display: flex;
+    margin-top: -8px;
     align-items: center;
     position: relative;
+    width: 800px;
 }
 
-.contenedor-principal .flecha-derecha,
-.contenedor-principal .flecha-izquierda {
+.detalle-container__data-description{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10rem;
+}
+
+.span-detail {
+    color: grey;
+    margin-right: auto;
+}
+
+.detalle-container__full-info{
+    width: 85rem;
+}
+
+.detalle-container__devInfo{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3rem;
+}
+
+.detalle-container__more-games{
+    display: flex;
+}
+
+.otros-juegos {
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+    grid-column-gap: 12rem;
+    grid-row-gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 6rem;
+}
+
+.otros-juegos a article div img {
+    width: 20rem;
+    height: 25rem;
+}
+
+.otros-juegos a {
+    color: white;
+}
+
+.flecha-derecha,
+.flecha-izquierda {
     position: absolute;
     font-size: 20px;
     border: none;
@@ -38,11 +123,11 @@ div .compra {
     transition: .2s ease all;
 }
 
-.contenedor-principal .flecha-left {
+.flecha-left {
     left: 0;
 }
 
-.contenedor-principal .flecha-izquierda {
+.flecha-izquierda {
     right: 0;
 }
 
@@ -52,7 +137,6 @@ div .compra {
     color: whitesmoke;
     font-size: 25px;
     background-color: rgba(255, 255, 255, 0.5);
-
 }
 
 .indicadores button {
@@ -77,6 +161,7 @@ div .compra {
     margin: 0;
     display: flex;
     flex-wrap: nowrap;
+    width: 800px;
 }
 
 .contenedor-carrusel .imagen-gameplay {
@@ -99,18 +184,9 @@ div .compra {
     height: 9rem;
 }
 
-.compra {
-
-    display: flex;
-    justify-content: space-between;
-    font-size: 25px;
-    align-items: flex-end;
-}
-
 .compra i {
     color: white;
 }
-
 
 section .detalle-juego {
     justify-content: space-between;
@@ -120,28 +196,7 @@ i.rating {
     color: goldenrod;
 }
 
-.otros-juegos {
-    margin-top: 5rem;
-    margin-bottom: 1rem;
-    margin-left: 4rem;
-    grid-column-gap: 12rem;
-    grid-row-gap: 3rem;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 6rem;
-}
 
-.otros-juegos a article div img {
-    width: 20rem;
-    height: 25rem;
-}
-
-.otros-juegos a {
-    color: white;
-}
-.span-detail {
-    color: grey;
-}
 .h1-detalle {
     margin-bottom: .8rem;
 }
@@ -183,6 +238,8 @@ div.especificaciones{
 
 .imagen-detalle{
     height: 17rem;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
 button.detail--action-button {
@@ -193,8 +250,8 @@ button.detail--action-button {
     color: white;
     border-radius: 5px;
     border: none;
-    margin: 1.5rem 1rem;
-    padding: 1rem 5rem;
+    margin-left: 1.5rem;
+    padding: 1rem ;
     cursor: pointer;
     z-index: 1;
     transition: .2s ease-in;

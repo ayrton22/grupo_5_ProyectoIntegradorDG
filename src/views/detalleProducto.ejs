@@ -1,167 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head', {title: 'detalleProducto'}) %>
-
-
+    <%- include('partials/head', {title: 'detalleProducto'}) %>
 <body>
     <%- include('partials/header') %>
     <div class="container mt-3 padding-cont-detalle">
-        <div class="row">
-                <iframe class="col-8 detalle-juego" height="470px" src="https://www.youtube.com/embed/<%=productoDetalle.video%>" frameborder="0" allowfullscreen></iframe>
-            <section class="col-4 detalle-juego">
-                <div>
-                    <img class="imagen-detalle col-12 mb-5" src="/img/<%= productoDetalle.imagen_detalle %>" alt="">
-                </div>
-                <h3 class="col-12"><%= productoDetalle.description %></p>
-                    <div class="col-12">
-                        <h1 class="h1-detalle-precio"><i class="fas fa-star mb-2 rating"></i> <%= productoDetalle.rating %></h1>
+        <div class="detalle-container">
+            <div class="detalle-container__mediaInfo">
+                <div class="detalle-container__part-1">
+                    <iframe class="detalle-container__video" src="https://www.youtube.com/embed/<%=productoDetalle.video%>" height="449px" width="800px" frameborder="0"></iframe>
+                    <div class="detalle-container__cotenedor-slider">
+                    <button role="button" id="flecha-derecha" class="flecha-izquierda">
+                        <i class="fas fa-angle-right"></i>
+                    </button>
+                    <div class="contenedor-carrusel">
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image1 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image2 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image3 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image4 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image5 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image6 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image7 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image8 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image9 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image10 %>" alt="imagen-gameplay"></div>
                     </div>
-                    <p class="col mt-3 precio"><%= productoDetalle.price %>$</p>
-                    <div class="botones-administrador">
+                    <button role="button" id="flecha-izquierda" class="flecha-derecha"> 
+                        <i class="fas fa-angle-left"></i>
+                    </button>
+                    </div>
+                </div>
+                <article class="detalle-container__part-2">
+                       <div class="">
+                        <img class="imagen-detalle" src="/img/<%= productoDetalle.imagen_detalle %>" alt="">
+                       </div>
+                       <h3><%= productoDetalle.description %></h3>
+                       <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productoDetalle.rating %></div>
+                       <p><%= productoDetalle.price %>$</p>
+                       <div class="botones-administrador">
                         <button class="detail--action-button"><a href="/product/edit/<%= productoDetalle.id %>">EDITAR PRODUCTO</a></button>
                         <form action="/product/delete/?_method=delete" method="POST" style="display: inline-flex">
                         <button type="submit" class="detail--action-button">ELIMINAR</button>
                         </form>
-                    </div>
-            </section>
-        <div class=" contenedor-principal col-8 mb-5 detalle-juego">
-            <button role="button" id="flecha-derecha" class="flecha-izquierda"><i
-                    class="fas fa-angle-right"></i></button>
-            <div class="contenedor-carrusel detalle-juego">
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image1 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image2 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image3 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image4 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image5 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image6 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image7 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image8 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image9 %>" alt="imagen-gameplay"></div>
-                <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image10 %>" alt="imagen-gameplay"></div>
+                       </div>
+                       <div class="detalle-container__plataform-buyButtons">
+                            <div class="detalle-container__plataform-buttons">
+                                <% if(productoDetalle.playstation == "si") { %>
+                                    <i class="<%= productoDetalle.icon_playstation %>"></i>
+                                <% } %>
+        
+                                <% if(productoDetalle.xbox == "si") { %>
+                                    <i class="<%= productoDetalle.icon_xbox %>"></i>
+                                <% } %>
+                           
+                                <% if(productoDetalle.pc == "si") { %>
+                                    <i class="<%= productoDetalle.icon_pc %>"></i>
+                                <% } %>
+                            </div>
+                            <div class="">
+                                <a href="/user/cart" class="carrito-contenedor-link"><i class="fas fa-shopping-cart shoping-cart-detalle" aria-hidden="true"></i></a>
+                                <a href="#" class="btn btn-primary btn-lg">Comprar</a>
+                            </div>
+                        </div>
+                </article>
             </div>
-            <button role="button" id="flecha-izquierda" class="flecha-derecha"> <i
-                    class="fas fa-angle-left"></i></button>
+            <div class="detalle-container__data-description">
+                    <span class="span-detail">Sobre el juego</span>
+                    <div class="detalle-container__full-info">
+                        <div class="detalle-container__devInfo">
+                            <div class="">
+                                <span class="span-detail informacion">Desarrolladora:</span>
+                                <p><%= productoDetalle.Desarrolladora %></p>
+                            </div>
+                            <div class="">
+                                <span class="span-detail informacion">Editora:</span>
+                                <p> <%= productoDetalle.Editora %></p>
+                            </div>
+                            <div class="">
+                                <span class="span-detail informacion">Fecha de lanzamiento:</span>
+                                <p> <%= productoDetalle.Lanzamiento %>6</p>
+                            </div>
+                            <div class="">
+                                <span class="span-detail informacion">Etiquetas:</span>
+                                <p> <%= productoDetalle.Etiquetas %></p>
+                            </div>
+                            <div class="">
+                                <span class="span-detail informacion">Clasificacion:</span>
+                                <p> <%= productoDetalle.Clasificacion %></p>
+                            </div>
+                        </div>
+                        <section class="">
+                            <div class="texto-container">
+                                <h1 class="h1-detalle"><%= productoDetalle.title %></h1>
+                                <div class="texto-informativo">
+                                    <%= productoDetalle.big_description %>
+                                </div>
+                                <br>
+                                <div class="texto-informativo">
+                                    <%= productoDetalle.medium_description %>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
             </div>
-            <div class="compra col-4">
-                <div>
-                    <% if(productoDetalle.playstation == "si") { %>
-                        <i class="<%= productoDetalle.icon_playstation %>"></i>
-                    <% } %>
-
-                    <% if(productoDetalle.xbox == "si") { %>
-                        <i class="<%= productoDetalle.icon_xbox %>"></i>
-                    <% } %>
-                   
-                    <% if(productoDetalle.pc == "si") { %>
-                        <i class="<%= productoDetalle.icon_pc %>"></i>
-                    <% } %>
+            <div class="detalle-container__more-games">
+                <span class="span-detail">Otros juegos</span>
+                <div class="otros-juegos">
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="https://cdn1.epicgames.com/epic/offer/EGS_AmongTrees_FJRDInteractive_S2_Logo1-860x1148-826a72c956a2cbe8b7f042aa05a18221.png?h=854&resize=1&w=640"
+                                    alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
+        
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="https://cdn1.epicgames.com/1e58a1653e6846d3a05cccb2ae5b7385/offer/EGS_MissileCommandRecharged_NickervisionStudios_S6-1200x1600-13dce142b015db18d28b54c6d1515f6c.jpg?h=854&resize=1&w=640"
+                                    alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
+        
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="../../img/dota1.jpg" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="../../img/Minecraft.png" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="../../img/doom.jpg" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
+                    <a href="/product/detail">
+                        <article>
+                            <div>
+                                <img src="../../img/Destiny.png" alt="">
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                        </article>
+                    </a>
                 </div>
-                <div>
-                    <a href="/user/cart" class="carrito-contenedor-link"><i
-                            class="fas fa-shopping-cart shoping-cart-detalle" aria-hidden="true"></i></a>
-                    <a href="#" class="btn btn-primary btn-lg">Comprar</a>
-                </div>
-        </div>
-        </div>
-        <div class="row especificaciones ">
-            <span class="span-detail col-3">Sobre el juego</span>
-            <section class="row col-9">
-                <div class="col-4">
-                    <span class="span-detail informacion">Desarrolladora:</span>
-                    <p><%= productoDetalle.Desarrolladora %></p>
-                </div>
-                <div class="col-4">
-                    <span class="span-detail informacion">Editora:</span>
-                    <p> <%= productoDetalle.Editora %></p>
-                </div>
-                <div class="col-4">
-                    <span class="span-detail informacion">Fecha de lanzamiento:</span>
-                    <p> <%= productoDetalle.Lanzamiento %>6</p>
-                </div>
-                <div class="col-4">
-                    <span class="span-detail informacion">Etiquetas:</span>
-                    <p> <%= productoDetalle.Etiquetas %></p>
-                </div>
-                <div class="col-4">
-                    <span class="span-detail informacion">Clasificacion:</span>
-                    <p> <%= productoDetalle.Clasificacion %></p>
-                </div>
-                <div class="texto-container">
-                    <h1 class="h1-detalle col-12"><%= productoDetalle.title %></h1>
-                    <div class="texto-informativo col-12 ">
-                        <%= productoDetalle.big_description %>
-                    </div>
-                    <br>
-                    <div class="texto-informativo col-12 ">
-                        <%= productoDetalle.medium_description %>
-                    </div>
-            </section>
-
-            <div>
             </div>
-            <span class="span-detail col-3">Otros juegos</span>
         </div>
-
-        <div class="otros-juegos">
-
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="https://cdn1.epicgames.com/epic/offer/EGS_AmongTrees_FJRDInteractive_S2_Logo1-860x1148-826a72c956a2cbe8b7f042aa05a18221.png?h=854&resize=1&w=640"
-                            alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="https://cdn1.epicgames.com/1e58a1653e6846d3a05cccb2ae5b7385/offer/EGS_MissileCommandRecharged_NickervisionStudios_S6-1200x1600-13dce142b015db18d28b54c6d1515f6c.jpg?h=854&resize=1&w=640"
-                            alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="../../img/dota1.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="../../img/Minecraft.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="../../img/doom.jpg" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-            <a href="/product/detail">
-                <article>
-                    <div>
-                        <img src="../../img/Destiny.png" alt="">
-                    </div>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </article>
-            </a>
-        </div>
-
-
-
     </div>
-
     <!-- Footer -->
     <%- include('partials/footer') %>
 

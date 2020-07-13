@@ -121,14 +121,14 @@
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Juegos</h2>
                 <div class="juegos-container__products-container">
-                    <% for(let i = 0; i < 12; i++) { %>
+                    <% for(let i = 0; i < masVendido.length; i++) { %>
                     <a href="/product/detail/<%= producto[i].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
                                 <img src="img\<%= producto[i].image %>" alt="">
                             </div>
-                            <p><%= producto[i].title %></p>
-                            <p><%= producto[i].price %>$</p>
+                            <p><%= masVendido[i].title %></p>
+                            <p><%= masVendido[i].price %>$</p>
                         </article>
                     </a>
                     <% } %>

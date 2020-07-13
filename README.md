@@ -84,10 +84,20 @@ Roboto
 
 Home:'/'
 
-Detalle de producto:'/product'
+Listado de productos: '/roduct'
+
+Detalle de producto:'/product/detail/:id'
 
 Form de carga de producto:'/product/load'
 
-Form de registro:'/user'
+Formulario de edición de producto: '/product/edit/:id'
 
 Carrito de compras:'/user/cart'
+
+Formulario de registro:'/user'
+
+Formulario de login: '/user/login'
+
+Formulario de edicion de usuario: '/user/edit/:id'
+
+Perfil de usuario: '/user/profile/:id'

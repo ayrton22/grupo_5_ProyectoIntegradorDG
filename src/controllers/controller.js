@@ -10,6 +10,9 @@ producto = JSON.parse(producto);
 
 module.exports = {
     home: function(req, res) {
+        let masVendido = producto.filter(function(elemento) {
+			return elemento.category == "mas-vendidos";
+		});
         let destacado = producto.filter(function(elemento) {
 			return elemento.category == "Destacado";
 		});
@@ -27,6 +30,7 @@ module.exports = {
 		});
         res.render('home', {
             producto: producto,
+            masVendido: masVendido,
             productoDestacado: destacado,
             productoDestacadoHorizontal: destacadoHorizontal,
             destacado2: destacado2,

@@ -2,6 +2,8 @@
     font-size: 1.4rem;
     background-image: var(--secodary-bg-color);
     margin: 6rem auto;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
 }
 
 form.productLoader-form {
@@ -50,7 +52,7 @@ input.productLoader-form-checkbox {
     border: none;
     padding: 1rem 5rem;
     margin-top: 6.5rem;
-    margin-left: 15rem;
+    margin-left: 38rem;
 }
 
 input.productLoader-form-input {

@@ -13,7 +13,7 @@ router.get('/load', controller.load);
 router.post('/load', controller.store);
 
 router.get('/edit/:id', controller.edit);
-/*router.put('/edit/:id', controller.save);*/
+router.put('/edit/:id', controller.update);
 
 
 

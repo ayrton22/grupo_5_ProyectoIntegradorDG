@@ -35,19 +35,19 @@ module.exports = {
             id: productos.length + 1,
             title: req.body.title,
             description: req.body.description,
-            /*medium-description: req.body.username,
-            big-description: req.body.email,*/
-			price: `$${req.body.price}`,
+            medium_description: req.body.medium_description,
+            big_description: req.body.big_description,
+			price: `$ ${req.body.price}`,
 			image: req.body.image,
 			video: req.body.video,
-			editora: req.body.editora,
-			lanzamiento: req.body.lanzamiento,
-			desarrolladora: req.body.desarrolladora,
-			etiquetas: req.body.etiquetas,
-			clasificacion: req.body.clasificacion,
-			genre: req.body.genre,
+			editor: req.body.editor,
+			launch_date: req.body.launch_date,
+			developer: req.body.developer,
+			tags: req.body.tags,
+			classification: req.body.classification,
 			category: req.body.category,
-			rating: req.body.rating
+			rating: req.body.rating,
+			platforms: req.body.platforms
         };
         for(let i = 0; i < productos.length; i++) {
             if(req.body.title == productos[i].title || req.body.image == productos[i].image || req.body.description == productos[i].description) {
@@ -60,11 +60,43 @@ module.exports = {
     },
 	
     edit: function(req, res) {
-		res.render('productEdit')
+		for(let i = 0; i < productos.length; i++) {
+            if(req.params.id == productos[i].id) {
+                return res.render('productEdit', {
+                    producto: productos[i]
+                })
+            }
+        } res.redirect('/product');
 	},
 	
 	update: function(req, res) {
 
+		let productoEditado = {
+            id: req.params.id,
+            title: req.body.title,
+            description: req.body.description,
+            medium_description: req.body.medium_description,
+            big_description: req.body.big_description,
+			price: `$ ${req.body.price}`,
+			image: req.body.image,
+			video: req.body.video,
+			editor: req.body.editor,
+			launch_date: req.body.launch_date,
+			developer: req.body.developer,
+			tags: req.body.tags,
+			classification: req.body.classification,
+			category: req.body.category,
+			rating: req.body.rating,
+			platforms: req.body.platforms
+        };
+        
+        for(let i = 0; i < productos.length; i++) {
+            if(productos[i].id == req.params.id ) {
+                productos[i] = productoEditado;
+                fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
+                res.redirect('/product/detail/' + productoEditado.id)
+            }
+        }
 	},
 
     destroy: (req, res) => {

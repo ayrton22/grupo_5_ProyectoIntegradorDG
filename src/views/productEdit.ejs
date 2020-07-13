@@ -6,14 +6,14 @@
     <%- include('partials/header') %>
 
     <div class="container pb-3 container-productLoader">
-        <form class="productLoader-form" action="" method="POST" >
+        <form class="productLoader-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST" >
             <div class="row">
                 <div class="col-12">
                     <h1>Formulario de Carga de Producto</h1>
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="nombre" class="productLoader-form-label">Titulo del juego: </label>
-                    <input type="text" name="nombre" class="productLoader-form-input" placeholder="Ej: Fifa 20">
+                    <label for="title" class="productLoader-form-label">Titulo del juego: </label>
+                    <input type="text" name="title" class="productLoader-form-input" value="<%= producto.title %>">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="estado" class="productLoader-form-label">Estado del juego: </label>
@@ -25,52 +25,80 @@
                         <option value="4">Casi Nuevo</option>
                         <option value="5">Nuevo</option>
                     </select>
-                    <!--<input type="range" list="tickmarks">
-                    <datalist id="tickmarks">
-                    <option class="form-slider" value="0" label="Muy malo">
-                    <option class="form-slider" value="25" label="Malo">
-                    <option class="form-slider" value="50" label="Usado">
-                    <option class="form-slider" value="75" label="Casi nuevo">
-                    <option class="form-slider" value="100" label="Nuevo">
-                    </datalist>-->
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="plataforma" class="productLoader-form-label">Plataforma: </label>
-                    <input type="checkbox" value="PC" name="plataforma" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="plataforma">PC</label><br>
-                    <input type="checkbox" value="Xbox" name="plataforma" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="plataforma">Xbox</label><br>
-                    <input type="checkbox" value="PS4" name="plataforma" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="plataforma">Playstation</label>
+                    <label for="platforms" class="productLoader-form-label">Plataformas: </label>
+                    <input type="checkbox" value="PC" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">PC</label><br>
+                    <input type="checkbox" value="Xbox" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Xbox</label><br>
+                    <input type="checkbox" value="PS4" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="categoria" class="productLoader-form-label">Categorias: </label>
-                    <input type="checkbox" value="Accion" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Acción</label>
-                    <input type="checkbox" value="Aventura" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Aventura</label><br>
-                    <input type="checkbox" value="Carreras" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Carreras</label>
-                    <input type="checkbox" value="Deportes" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Deportes</label><br>
-                    <input type="checkbox" value="Arcade" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Arcade</label>
-                    <input type="checkbox" value="Simulacion" name="categoria" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Simulacion</label>
+                    <label for="category" class="productLoader-form-label">Categorias: </label>
+                    <input type="checkbox" value="Accion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Acción</label>
+                    <input type="checkbox" value="Aventura" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Aventura</label><br>
+                    <input type="checkbox" value="Carreras" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Carreras</label>
+                    <input type="checkbox" value="Deportes" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Deportes</label><br>
+                    <input type="checkbox" value="Arcade" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Arcade</label>
+                    <input type="checkbox" value="Simulacion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Simulacion</label>
                 </div>
                 <div class="col-12 pb-5">
-                    <label for="foto" class="productLoader-form-label-imgInput">Fotos del juego: </label>
-                    <input type="file" class="productLoader-form-input-img" name="foto">
+                    <label for="image" class="productLoader-form-label-imgInput">Fotos del juego: </label>
+                    <input type="file" class="productLoader-form-input-img" name="image">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productLoader-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Visa</label>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Mercado Pago</label><br>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Mastercard</label>
-                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">American Express</label><br>
+                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Visa</label>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label>
+                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="entrega" class="productLoader-form-label">Opciones de entrega de Producto: </label>
-                    <input type="checkbox" value="Delivery" name="entrega" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Delivery</label><br>
-                    <input type="checkbox" value="Buscar" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="categoria">Buscar</label>
+                    <label for="receive" class="productLoader-form-label">Opciones de entrega de Producto: </label>
+                    <input type="checkbox" value="Delivery" name="receive" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="receive">Delivery</label><br>
+                    <input type="checkbox" value="Buscar" name="receive" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="receive">Buscar</label>
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="precio" class="productLoader-form-label">Precio del juego</label>
-                    <input type="text" name="precio" class="productLoader-form-input">
+                    <label for="price" class="productLoader-form-label">Precio del juego</label>
+                    <input type="text" name="price" class="productLoader-form-input" value="<%= producto.price %>">
                 </div>
                 <div class="col-6 pb-5">
-                    <button type="submit" class="productLoader-form-button">Publicar</button>
+                    <label for="editor" class="productLoader-form-label">Editora: </label>
+                    <input type="text" name="editor" class="productLoader-form-input" value="<%= producto.editor %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="developer" class="productLoader-form-label">Desarrolladora: </label>
+                    <input type="text" name="developer" class="productLoader-form-input" value="<%= producto.developer %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
+                    <input type="text" name="launch_date" class="productLoader-form-input" value="<%= producto.launch_date %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="description" class="productLoader-form-label">Descripcion de juego: </label>
+                    <input type="text" name="description" class="productLoader-form-input" value="<%= producto.description %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="medium_description" class="productLoader-form-label">Descripcion mediana: </label>
+                    <input type="text" name="medium_description" class="productLoader-form-input" value="<%= producto.medium_description %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="mbig_description" class="productLoader-form-label">Descripcion grande: </label>
+                    <input type="text" name="big_description" class="productLoader-form-input" value="<%= producto.big_description %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="tags" class="productLoader-form-label">Etiquetas: </label>
+                    <input type="text" name="tags" class="productLoader-form-input" value="<%= producto.tags %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="classification" class="productLoader-form-label">Clasificacion: </label>
+                    <input type="text" name="classification" class="productLoader-form-input" value="<%= producto.classification %>">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="rating" class="productLoader-form-label">Puntaje: </label>
+                    <input type="text" name="rating" class="productLoader-form-input" value="<%= producto.rating %>">
+                </div>
+                <div class="col-12 pb-5">
+                    <button type="submit" class="productLoader-form-button">Confirmar edición</button>
                 </div>
             </div>
         </form>

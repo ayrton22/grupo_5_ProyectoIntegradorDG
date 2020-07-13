@@ -5,6 +5,7 @@
   width: 30%;
   align-content: center;
   border-radius: 5px;
+  box-shadow: 0 0 10px 3px #010212;
 }
 
 form.signIn-form {

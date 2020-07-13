@@ -64,7 +64,6 @@ module.exports = {
 			}
 		}
 	},
-
     productLoad: function(req, res) {
         res.render('cargaDeProductos');
     },

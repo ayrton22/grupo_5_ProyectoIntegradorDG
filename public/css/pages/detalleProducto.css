@@ -81,7 +81,7 @@ div .compra {
 .detalle-container__devInfo{
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-gap: 3rem;
+    grid-gap: 2rem;
 }
 
 .detalle-container__more-games{
@@ -91,16 +91,47 @@ div .compra {
 .otros-juegos {
     margin-bottom: 1rem;
     margin-left: 4rem;
-    grid-column-gap: 12rem;
-    grid-row-gap: 3rem;
+    grid-column-gap: 12.5rem;
+    grid-row-gap: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     padding-bottom: 6rem;
 }
+
+.otros-juegos a article p {
+    text-decoration: none;
+    color: #ffff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.otros-juegos a{
+    width: 20rem;
+    height: 35rem;
+}
+
+.otros-juegos a article div{
+    margin-bottom: 1rem;
+}
+
+.otros-juegos a {
+    text-decoration: none;
+}
+/*
+text-decoration: none;
+    color: #ffff;
+    font-size: 1.5rem;
+    margin: 0;
+    */
 
 .otros-juegos a article div img {
     width: 20rem;
     height: 25rem;
+}
+.otros-juegos a article div img:hover{
+    box-shadow: 0 1px 6px 5px #000;
+    transition: all .2s;
 }
 
 .otros-juegos a {

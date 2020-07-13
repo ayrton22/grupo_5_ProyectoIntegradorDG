@@ -4,8 +4,7 @@
 
 <body>
     <%- include('partials/header') %>
-
-    <div class="juegos-container juegos-container2">
+    <div onclick="containerProductsHide()" class="juegos-container juegos-container2">
       <aside class="juegos-container__aside juegos-container__aside2">
           <ul class="juegos-container__list">                   
               <li class="juegos-container__item"><a href="#">Géneros</a></li>
@@ -20,7 +19,7 @@
       <section class="juegos-container__all-products">
           <h2 class="juegos-container__title">Juegos</h2>
           <div class="juegos-container__products-container ">
-            <% for(let i = 0; i < 20; i++) { %>
+            <% for(let i = 0; i < producto.length; i++) { %>
                 <a href="/product/detail/<%= producto[i].id %>">
                     <article class="juegos-container__product">
                         <div class="juegos-container__img-cont">
@@ -37,5 +36,6 @@
      <!-- Footer -->
      <%- include('partials/footer') %>
      <!-- Scripts -->
+     <%- include('partials/scripts') %>
 </body>
 </html>

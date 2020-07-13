@@ -226,3 +226,14 @@ div.product-section-1 {
     top: 0;
     position: absolute;
 }
+
+.juegos-container2 {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    padding-left: 50rem;
+    position: relative;
+}
+
+.juegos-container__aside2{
+    left: 35rem;
+}

@@ -20,7 +20,8 @@ module.exports = {
 		for (let i = 0; i < productos.length; i++) {
 			if (productos[i].id == idProducto) {
 				res.render('detalleProducto', {
-					productoDetalle: productos[i]
+					productoDetalle: productos[i],
+					productos
 				})
 			}
 		}

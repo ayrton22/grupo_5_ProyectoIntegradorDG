@@ -44,9 +44,17 @@
             </div>
             <div class="compra col-4">
                 <div>
-                    <i class="fab fa-xbox icono-xbox"></i>
-                    <i class="fab fa-playstation icono-playstation"></i>
-                    <i class="fas fa-desktop icono-desktop"></i>
+                    <% if(productoDetalle.playstation == "si") { %>
+                        <i class="<%= productoDetalle.icon_playstation %>"></i>
+                    <% } %>
+
+                    <% if(productoDetalle.xbox == "si") { %>
+                        <i class="<%= productoDetalle.icon_xbox %>"></i>
+                    <% } %>
+                   
+                    <% if(productoDetalle.pc == "si") { %>
+                        <i class="<%= productoDetalle.icon_pc %>"></i>
+                    <% } %>
                 </div>
                 <div>
                     <a href="/user/cart" class="carrito-contenedor-link"><i

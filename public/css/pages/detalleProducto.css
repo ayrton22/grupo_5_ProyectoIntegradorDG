@@ -8,6 +8,7 @@ div .compra {
 
 .botones-administrador{
     float: right;
+    display: flex;
 }
 
 .detalle-juego {
@@ -107,7 +108,7 @@ div .compra {
 }
 
 .compra i {
-    color: whit;
+    color: white;
 }
 
 
@@ -187,7 +188,7 @@ div.especificaciones{
 button.detail--action-button {
     position: relative;
     display: block;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     background-color: #2568AC;
     color: white;
     border-radius: 5px;

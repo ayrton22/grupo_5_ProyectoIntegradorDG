@@ -25,7 +25,12 @@
         "classification":"+12",
         "category": "Documentary",
         "rating": 4.2,
-        "platforms": "Cherokee"
+        "playstation": "si",
+        "xbox": "si",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 2,
@@ -54,7 +59,12 @@
         "classification":"MATURE +18",
         "category": "Comedy",
         "rating": 2.8,
-        "platforms": "Guamanian"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 3,
@@ -83,7 +93,12 @@
         "classification":"+16",
         "category": "Crime",
         "rating": 1.0,
-        "platforms": "Delaware"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 4,
@@ -112,7 +127,12 @@
         "classification":"+16",
         "category": "Comedy|Drama",
         "rating": 3.3,
-        "platforms": "Apache"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 5,
@@ -141,7 +161,12 @@
         "classification":"+14",
         "category": "Comedy",
         "rating": 5,
-        "platforms": "Laotian"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 6,
@@ -170,7 +195,12 @@
         "classification":"+14",
         "category": "Crime|Drama|Mystery",
         "rating": 5,
-        "platforms": "Crow"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 7,
@@ -199,7 +229,12 @@
         "classification":"+16",
         "category": "Action|Comedy|Horror|Sci-Fi|Thriller",
         "rating": 4.0,
-        "platforms": "Costa Rican"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 8,
@@ -228,7 +263,12 @@
         "classification":"+16",
         "category": "Drama|Musical|Romance",
         "rating": 4.1,
-        "platforms": "Dominican (Dominican Republic)"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 9,
@@ -257,7 +297,12 @@
         "classification":"+16",
         "category": "Comedy|Drama|Romance",
         "rating": 3.3,
-        "platforms": "Paiute"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 10,
@@ -286,7 +331,12 @@
         "classification":"+16",
         "category": "Comedy",
         "rating": 5,
-        "platforms": "Salvadoran"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 11,
@@ -315,7 +365,12 @@
         "classification":"+16",
         "category": "Comedy|Drama|Musical",
         "rating": 5,
-        "platforms": "Kiowa"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 12,
@@ -344,7 +399,12 @@
         "classification":"+16",
         "category": "Children|Comedy",
         "rating": 3.8,
-        "platforms": "Shoshone"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 13,
@@ -374,7 +434,12 @@
         "classification":"+13",
         "category": "Destacado",
         "rating": 5,
-        "platforms": "Yuman"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 14,
@@ -404,7 +469,12 @@
         "classification":"+18",
         "category": "Destacado-horizontal",
         "rating": 4.6,
-        "platforms": "Comanche"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 15,
@@ -434,7 +504,12 @@
         "classification":"+16",
         "category": "Destacado-horizontal",
         "rating": 4.3,
-        "platforms": "Navajo"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 16,
@@ -463,7 +538,12 @@
         "classification":"+14",
         "category": "Destacado-2",
         "rating": 5,
-        "platforms": "Black or African American"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 17,
@@ -492,7 +572,12 @@
         "classification":"+16",
         "category": "Destacado-3",
         "rating": 4.2,
-        "platforms": "Guatemalan"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 18,
@@ -521,7 +606,12 @@
         "classification":"+14",
         "category": "Destacado-4",
         "rating": 4,
-        "platforms": "Menominee"
+        "playstation": "si",
+        "xbox": "no",
+        "pc": "si",
+        "icon_playstation":"fab fa-playstation icono-playstation",
+        "icon_xbox":"fab fa-xbox icono-xbox",
+        "icon_pc":"fas fa-desktop icono-desktop"
     },
     {
         "id": 21,

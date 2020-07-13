@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 router.post('/', controller.register);
 
 router.get('/edit/:id?', controller.edit);
-router.put('/edit/:id', controller.editSave);
+router.put('/edit/:id', controller.save);
 
 router.get('/login', function(req, res) {
     res.render('login')

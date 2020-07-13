@@ -47,7 +47,7 @@ module.exports = {
         } res.redirect('/user');
     },
     
-    editSave: function(req, res) {
+    save: function(req, res) {
 
         let usuarioEditado = {
             id: req.params.id,

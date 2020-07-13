@@ -8,6 +8,7 @@ div .compra {
 
 .botones-administrador{
     float: right;
+    display: flex;
 }
 
 .detalle-juego {
@@ -107,7 +108,7 @@ div .compra {
 }
 
 .compra i {
-    color: whit;
+    color: white;
 }
 
 
@@ -183,3 +184,42 @@ div.especificaciones{
 .imagen-detalle{
     height: 17rem;
 }
+
+button.detail--action-button {
+    position: relative;
+    display: block;
+    font-size: 1.2rem;
+    background-color: #2568AC;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 1.5rem 1rem;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+  }
+
+  button.detail--action-button a {
+      color: white;
+      text-decoration: none;
+  }
+  
+  button.detail--action-button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+  
+  }
+  
+  button.detail--action-button:hover:before {
+    height: 100%;
+  }

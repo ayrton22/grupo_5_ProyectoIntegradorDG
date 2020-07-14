@@ -5,4 +5,11 @@
     "username": "Joaco",
     "email": "joaquiperles@live.com.ar",
     "password": "$2b$10$tlZ8j4HzBeCyJsv0A4QngOXteUbiIruNj.bUlFj.pgtB9t69N0shG"
+}, {
+    "id": 2,
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "ayrton22",
+    "email": "themasterayrx@hotmail.com",
+    "password": "$2b$10$PDbN/b4jWc.XYnE7NAqb1e/p0vtsJn.b8Zhf8XM9CL4JfSjoYGyiq"
 }]

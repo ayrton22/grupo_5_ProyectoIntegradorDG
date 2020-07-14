@@ -92,7 +92,7 @@ div .compra {
     margin-bottom: 1rem;
     margin-left: 4rem;
     grid-column-gap: 12.5rem;
-    grid-row-gap: 2rem;
+    grid-row-gap: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -127,7 +127,7 @@ text-decoration: none;
 
 .otros-juegos a article div img {
     width: 20rem;
-    height: 25rem;
+    height: 30rem;
 }
 .otros-juegos a article div img:hover{
     box-shadow: 0 1px 6px 5px #000;

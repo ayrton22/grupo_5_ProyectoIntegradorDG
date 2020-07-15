@@ -55,9 +55,10 @@ div .compra {
     display: flex;
 }
 
-.detalle-container__cotenedor-slider {
+.detalle-container__contenedor-slider {
+    background-color: black;
     display: flex;
-    margin-top: -8px;
+    margin-top: 0.5rem;
     align-items: center;
     position: relative;
     width: 800px;
@@ -188,8 +189,9 @@ text-decoration: none;
 }
 
 .contenedor-carrusel{
-    padding: 0;
-    margin: 0;
+    padding: 0 auto;
+    margin-left: 2rem;
+    margin-right: 2rem;
     display: flex;
     flex-wrap: nowrap;
     width: 800px;
@@ -208,7 +210,11 @@ text-decoration: none;
     transform-origin: center;
 
 }
-
+.contenedor-carrusel .imagen-gameplay iframe{
+    width: 100%;
+    vertical-align: top;
+    height: 9rem;
+}
 .contenedor-carrusel .imagen-gameplay img {
     width: 100%;
     vertical-align: top;
@@ -311,3 +317,29 @@ button.detail--action-button {
   button.detail--action-button:hover:before {
     height: 100%;
   }
+
+
+  .detalle-container__video img{
+    width: 80rem;
+    height: 45rem;
+  }
+
+
+  @keyframes fadeIn{
+      to{
+          opacity: 1;
+      }
+  }
+  .fade-in{
+      opacity:0;
+      animation: fadeIn 0.5s ease-in 1 forwards;
+  }
+
+@keyframes slider{
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+    25%{margin-left: -100%;}
+
+
+
+}

@@ -7,13 +7,13 @@
         <div class="detalle-container">
             <div class="detalle-container__mediaInfo">
                 <div class="detalle-container__part-1">
-                    <iframe class="detalle-container__video" src="https://www.youtube.com/embed/<%=productoDetalle.video%>" height="449px" width="800px" frameborder="0"></iframe>
-                    <div class="detalle-container__cotenedor-slider">
+                    <div class="detalle-container__video"><img src="../../img/<%= productoDetalle.image6 %>" alt="imagen-gameplay" id="current"></div>
+                    <div class="detalle-container__contenedor-slider">
                     <button role="button" id="flecha-derecha" class="flecha-izquierda">
                         <i class="fas fa-angle-right"></i>
                     </button>
                     <div class="contenedor-carrusel">
-                        <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image1 %>" alt="imagen-gameplay"></div>
+                        <div class="imagen-gameplay"><iframe class="detalle-container__video" src="https://www.youtube.com/embed/<%=productoDetalle.video%>"  frameborder="0"></iframe>  </div>                     
                         <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image2 %>" alt="imagen-gameplay"></div>
                         <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image3 %>" alt="imagen-gameplay"></div>
                         <div class="imagen-gameplay"><img src="../../img/<%= productoDetalle.image4 %>" alt="imagen-gameplay"></div>

@@ -109,7 +109,7 @@
                     <% let verificador = 0 %>
                     <% while(arraynumrandom.length < 6) { %>
                     <% let random = Math.floor(Math.random() * productos.length) %>
-                    <% if(arraynumrandom.length == 0){ %>
+                    <%  if ((arraynumrandom.length == 0) && (random != productoDetalle.id - 1)) { %>
                     <%  arraynumrandom.push(random) %>
                     <a href="/product/detail/<%= productos[random].id %>">
                         <article class="juegos-container__product">
@@ -127,7 +127,7 @@
                     <% } %>
         
                     <%  } %>
-                    <%  if(verificador == arraynumrandom.length ){  %>
+                    <%  if((verificador == arraynumrandom.length) && (random != productoDetalle.id - 1) ){  %>
                     <%  arraynumrandom.push(random) %>
                     <a href="/product/detail/<%= productos[random].id %>">
                         <article class="juegos-container__product">

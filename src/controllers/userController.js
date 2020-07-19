@@ -71,15 +71,10 @@ module.exports = {
             password: bcrypt.hashSync(req.body.password, 10),
             birth_date: req.body.date,
             age: Date.now() - req.body.date,
-<<<<<<< HEAD
-            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `
-        };        
-=======
             address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
             avatar: req.files[0].filename
         };
         
->>>>>>> 1854342d7dccc6277ddc4c7bfc87b297bf36dd08
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].id == req.params.id ) {
                 usuarios[i] = usuarioEditado;

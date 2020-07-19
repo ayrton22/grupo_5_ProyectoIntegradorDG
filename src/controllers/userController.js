@@ -15,8 +15,8 @@ module.exports = {
         res.render('registro')
     },
     save: function(req, res) {
-
         let errors = validationResult(req);
+        console.log(errors)
         if(errors.isEmpty()) {
             let nuevoUsuario = {
                 id: usuarios.length + 1,
@@ -35,7 +35,6 @@ module.exports = {
             res.render('registro', {
                 errors: errors.mapped()
             })
-            
         }
     },
     login: function(req, res) {

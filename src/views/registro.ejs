@@ -12,8 +12,11 @@
             <h1>Register:</h1>
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
+
                 <label class="register-form-label" for="name">Nombre:</label>
                 <input id="register-form-input" type="text" oninput="this.className = ''" name="name">
+                <small><%= (typeof errors != 'undefined' && errors.name) ? errors.name.msg : '' %></small>
+
                 <label class="register-form-label" for="surname">Apellido:</label>
                 <input id="register-form-input" type="text" oninput="this.className = ''" name="surname">
                 <label class="register-form-label" for="username">Nombre de usuario:</label>

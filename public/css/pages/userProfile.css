@@ -9,6 +9,16 @@
     box-shadow: 0 0 10px 3px #010100;
 }
 
+.profile-avatar-container{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.profile-avatar{
+    width: 100%;
+    height: 40rem;
+}
+
 .container-profile h1 {
     padding: 3rem 0;
     font-size: 42px;

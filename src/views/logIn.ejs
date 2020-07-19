@@ -12,14 +12,16 @@
           <div class="form-group">
             <label class="signIn-form-label" for="username">Nombre de usuario:</label>
             <input type="text" class="form-control" id="signIn-form-input" name="username">
+            <small><%= (typeof errors != 'undefined' && errors.username.msg) ? errors.username.msg : '' %></small>
           </div>
           <div class="form-group">
             <label class="signIn-form-label" for="password">Contraseña:</label>
             <input type="password" class="form-control" id="signIn-form-input" name="password">
+            <small><%= (typeof errors != 'undefined' && errors.password.msg) ? errors.password.msg : '' %></small>
           </div>
           <div class="form-group">
             <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="dropdownCheck">
+              <input type="checkbox" class="form-check-input" id="dropdownCheck" name="remember">
               <label class="form-check-label" for="dropdownCheck">
                 Recordarme
               </label>

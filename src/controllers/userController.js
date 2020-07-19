@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 
+const {check, validationResult, body} = require('express-validator');
+
 let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 usuarios = JSON.parse(usuarios);
 
@@ -37,13 +39,31 @@ module.exports = {
     login: function(req, res) {
         res.render('login')
     },
-    confirm: function(req, res) {
+    confirm: function(req, res, next) {
+        let errors = validationResult(req);
+        //if(errors.isEmpty()) {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].username == req.body.username && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                return res.redirect('/user/profile/' + usuarios[i].id);
+                /*req.session.usuario = {
+                    username: usuarios[i].username,
+                    password: usuarios[i].password
+                };
+                if(req.body.remember){
+                    res.cookie('nombreDeUsuario', usuarios[i].username, {maxAge: 60000 * 10})
+                }*/
+                return res.redirect('/user/profile/' + usuarios[i].id)
+            } else {
+                res.render('login', {
+                    errors: errors.mapped()
+                });
             }
         }
-        res.redirect('/user/register');
+       // return res.render('/')
+    /*} else {
+        res.render('login', {
+            errors: errors.mapped()
+        });
+    }*/
     },
     edit: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {

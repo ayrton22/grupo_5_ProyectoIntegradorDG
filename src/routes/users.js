@@ -2,11 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 const controller = require('../controllers/userController');
-<<<<<<< HEAD
 const loginValidation = require('../validations/loginValidation');
-=======
 const uploadImageMiddleware = require('../middlewares/uploadImageMiddleware');
->>>>>>> 1854342d7dccc6277ddc4c7bfc87b297bf36dd08
 
 router.get('/register', controller.register);
 router.post('/register', controller.save);

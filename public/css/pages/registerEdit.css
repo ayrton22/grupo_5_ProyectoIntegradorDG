@@ -130,7 +130,9 @@ select.userEdit-form-input {
 
 div.area{
     overflow: hidden;
-    border-radius: 100px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
 div.area img{
@@ -138,6 +140,7 @@ div.area img{
     width: 13rem;
     height: 13rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .area input:focus {

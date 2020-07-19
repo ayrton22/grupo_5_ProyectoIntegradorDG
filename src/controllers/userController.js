@@ -67,7 +67,8 @@ module.exports = {
             password: bcrypt.hashSync(req.body.password, 10),
             birth_date: req.body.date,
             age: Date.now() - req.body.date,
-            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `
+            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
+            avatar: req.files[0].filename
         };
         
         for(let i = 0; i < usuarios.length; i++) {

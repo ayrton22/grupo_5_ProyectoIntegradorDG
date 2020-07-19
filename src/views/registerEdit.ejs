@@ -8,13 +8,14 @@
     <%- include('partials/header') %>
 
     <div onclick="containerRegisterEditHide()" class="container pb-5 container-userEdit">
-        <form class="userEdit-form" action="/user/edit/<%= usuario.id %>?_method=put" method="POST">
+        <form class="userEdit-form" action="/user/edit/<%= usuario.id %>?_method=put" enctype="multipart/form-data" method="POST">
             <h1>Editar o agregar información</h1>
 
             <h2>General</h2>
 
             <div class="area">
-                <input type="file" id="upload" />
+                <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= usuario.avatar %>" alt="">
+                <input type="file" id="upload" name="avatar">
             </div>
 
             <label class="userEdit-form-label" for="name">Nombre</label>
@@ -65,7 +66,7 @@
             <input class="userEdit-form-input" type="text" value=" " name="address_home">
 
             <button class="userEdit-form-button" type="submit">Submit</button>
-          </form>
+        </form>
     </div>
 
     <!-- Footer -->

@@ -14,6 +14,11 @@
             <div class="tab">
                 <label class="register-form-label" for="name">Nombre:</label>
                 <input id="register-form-input" type="text" oninput="this.className = ''" name="name">
+                <small class="text-danger">
+                  <% if(typeof errors != undefined) { %>
+                      <%= errors.name.msg %>
+                  <% } %>
+                </small>
                 <label class="register-form-label" for="surname">Apellido:</label>
                 <input id="register-form-input" type="text" oninput="this.className = ''" name="surname">
                 <label class="register-form-label" for="username">Nombre de usuario:</label>
@@ -45,6 +50,6 @@
     <%- include('partials/footer') %>
     <!-- Scripts -->
     <%- include('partials/scripts') %>
-    <script src="scripts/registerForm.js"></script>   
+    <script src="/scripts/registerForm.js"></script>   
 </body>
 </html>

@@ -4,6 +4,8 @@ const path = require('path');
 const livereload = require('livereload');
 const connectLivereload = require('connect-Livereload');
 const methodOverride =  require('method-override');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
 const publicDirectory = path.resolve(__dirname, '../public');
 let livereloadServer = livereload.createServer();
@@ -20,6 +22,8 @@ app.use(express.static(publicDirectory));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(session({secret: 'May the force be with you!'}));
+app.use(cookieParser());
 app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');

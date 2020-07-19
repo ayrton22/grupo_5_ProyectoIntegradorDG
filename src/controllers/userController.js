@@ -10,6 +10,9 @@ module.exports = {
         res.render('carritoDeCompras')
     },
     register: function(req, res) {
+        res.render('registro')
+    },
+    save: function(req, res) {
         let nuevoUsuario = {
             id: usuarios.length + 1,
             first_name: req.body.name,
@@ -20,7 +23,7 @@ module.exports = {
         };
         for(let i = 0; i < usuarios.length; i++) {
             if(req.body.username == usuarios[i].username || req.body.email == usuarios[i].email || bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                return res.redirect('/user');
+                return res.redirect('/user/register');
             }
         }
         if(req.body.password == req.body.repassword) {
@@ -28,16 +31,19 @@ module.exports = {
             fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
             res.redirect('/user/login')
         } else {
-            res.redirect('/user')
+            res.redirect('/user/register')
         }
     },
     login: function(req, res) {
+        res.render('login')
+    },
+    confirm: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].username == req.body.username && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
                 return res.redirect('/user/profile/' + usuarios[i].id);
             }
         }
-        res.redirect('/user');
+        res.redirect('/user/register');
     },
     edit: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
@@ -46,10 +52,10 @@ module.exports = {
                     usuario: usuarios[i]
                 })
             }
-        } res.redirect('/user');
+        } res.redirect('/user/register');
     },
     
-    save: function(req, res) {
+    update: function(req, res) {
 
         let usuarioEditado = {
             id: req.params.id,

@@ -16,7 +16,10 @@ module.exports = {
     },
     save: function(req, res) {
         let errors = validationResult(req);
+<<<<<<< HEAD
         console.log(errors.mapped())
+=======
+>>>>>>> c85e7a685490f2a2899b2a4a9a992d2709954bfc
         if(errors.isEmpty()) {
             let nuevoUsuario = {
                 id: usuarios.length + 1,
@@ -26,14 +29,13 @@ module.exports = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
             };
-
             usuarios.push(nuevoUsuario);
             fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
             res.redirect('/user/login');
-
         } else {
             res.render('registro', {
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                old: req.body
             })
         }
     },
@@ -42,30 +44,37 @@ module.exports = {
     },
     confirm: function(req, res, next) {
         let errors = validationResult(req);
-        //if(errors.isEmpty()) {
+        if(errors.isEmpty()) {
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].username == req.body.username && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                /*req.session.usuario = {
-                    username: usuarios[i].username,
-                    password: usuarios[i].password
-                };
-                if(req.body.remember){
-                    res.cookie('nombreDeUsuario', usuarios[i].username, {maxAge: 60000 * 10})
-                }*/
+                req.session.usernameUser = usuarios[i].username
+                if(req.body.remember != undefined){
+                    res.cookie('authRemember', usuarios[i].username, {maxAge: 60000 * 10})
+                }
                 return res.redirect('/user/profile/' + usuarios[i].id)
-            } else {
-                res.render('login', {
-                    errors: errors.mapped()
-                });
-            }
+            } 
         }
-       // return res.render('/')
-    /*} else {
+        return res.render('login', {
+            errors: {
+                username: {
+                    msg: 'Credenciales inválidas. Inserta un email o usuario registrado y su respectica contraseña'
+                }
+            }
+        })
+    } else {
         res.render('login', {
-            errors: errors.mapped()
+            errors: errors.mapped(),
+            old: req.body
         });
-    }*/
+    }
     },
+
+    logout: function (req, res){
+        req.session.destroy();
+        res.cookie('authRemember', ''.email, {maxAge: -1});
+        res.redirect('/user/login');
+    },
+
     edit: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
             if(req.params.id == usuarios[i].id) {
@@ -77,7 +86,6 @@ module.exports = {
     },
     
     update: function(req, res) {
-
         let usuarioEditado = {
             id: req.params.id,
             first_name: req.body.name,

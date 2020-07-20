@@ -14,21 +14,26 @@
             <div class="tab">
 
                 <label class="register-form-label" for="name">Nombre:</label>
-                <input id="register-form-input" type="text" oninput="this.className = ''" name="name">
+                <input id="register-form-input" type="text" value="<%= (typeof old != 'undefined' && !errors.name) ? old.name : '' %>" oninput="this.className = ''" name="name">
                 <small><%= (typeof errors != 'undefined' && errors.name) ? errors.name.msg : '' %></small>
 
                 <label class="register-form-label" for="surname">Apellido:</label>
-                <input id="register-form-input" type="text" oninput="this.className = ''" name="surname">
+                <input id="register-form-input" value="<%= (typeof old != 'undefined' && !errors.surname) ? old.surname : '' %>" type="text" oninput="this.className = ''" name="surname">
+                <small><%= (typeof errors != 'undefined' && errors.surname) ? errors.surname.msg : '' %></small>
                 <label class="register-form-label" for="username">Nombre de usuario:</label>
-                <input id="register-form-input" type="text" oninput="this.className = ''" name="username">
+                <input id="register-form-input" value="<%= (typeof old != 'undefined' && !errors.username) ? old.username : '' %>" type="text" oninput="this.className = ''" name="username">
+                <small><%= (typeof errors != 'undefined' && errors.username) ? errors.username.msg : '' %></small>
             </div>
             <div class="tab">
                 <label class="register-form-label" for="email">Email:</label>
                 <input id="register-form-input" type="email" oninput="this.className = ''" name="email">
+                <small><%= (typeof errors != 'undefined' && errors.email) ? errors.email.msg : '' %></small>
                 <label class="register-form-label" for="password">Contraseña:</label>
                 <input id="register-form-input" type="password" oninput="this.className = ''" name="password">
+                <small><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
                 <label class="register-form-label" for="repassword">Repetir contraseña:</label>
                 <input id="register-form-input" type="password" oninput="this.className = ''" name="repassword">
+                <small><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
             </div>
             <div style="overflow:auto;">
               <div style="float:right;">

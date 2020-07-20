@@ -1,9 +1,7 @@
 const {check, validationResult, body} = require('express-validator');
 module.exports = [
     check('username')
-        .equals()
-            .withMessage('Puede ser que hays ecrito mal tu nombre de usuario'),
+        .isLength({min: 5, max: 20}).withMessage('Puede ser que hays ecrito mal tu nombre de usuario'),
     check('password')
-        .equals()
-            .withMessage('Puede ser que hays escrito mal tu contraseña')
+        .isLength({min: 6, max: 20}).withMessage('Puede ser que hays escrito mal tu contraseña')
 ]

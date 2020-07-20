@@ -16,7 +16,6 @@ module.exports = {
     },
     save: function(req, res) {
         let errors = validationResult(req);
-        console.log(errors)
         if(errors.isEmpty()) {
             let nuevoUsuario = {
                 id: usuarios.length + 1,
@@ -26,14 +25,13 @@ module.exports = {
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
             };
-
             usuarios.push(nuevoUsuario);
             fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
             res.redirect('/user/login');
-
         } else {
             res.render('registro', {
-                errors: errors.mapped()
+                errors: errors.mapped(),
+                old: req.body
             })
         }
     },
@@ -84,7 +82,6 @@ module.exports = {
     },
     
     update: function(req, res) {
-
         let usuarioEditado = {
             id: req.params.id,
             first_name: req.body.name,

@@ -3,7 +3,6 @@ const {check, validationResult, body} = require('express-validator');
 module.exports = [
     check('name')
         .isAlpha()
-            .withMessage('Tu nombre no puede tener números ni caracteres especiales')
         .isLength({max: 50})
             .withMessage('Tu nombre no puede tener números ni caracteres especiales, y un maximo de 50 caracteres'),
 
@@ -25,7 +24,7 @@ module.exports = [
         .isLength({min: 6, max: 20})
             .withMessage('Como mínimo la contraseña debe tener 4 caracteres. Como máximo 16'),
 
-    check('repassword')
+    /*check('repassword')
         .matches('password')
-            .withMessage('Las contraseñas no coinciden')
+            .withMessage('Las contraseñas no coinciden')*/
 ]

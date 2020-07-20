@@ -16,7 +16,7 @@ module.exports = {
     },
     save: function(req, res) {
         let errors = validationResult(req);
-        console.log(errors)
+        console.log(errors.mapped())
         if(errors.isEmpty()) {
             let nuevoUsuario = {
                 id: usuarios.length + 1,

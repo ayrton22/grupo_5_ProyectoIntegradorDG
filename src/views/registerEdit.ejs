@@ -7,7 +7,7 @@
 
     <%- include('partials/header') %>
 
-    <div onclick="containerRegisterEditHide()" class="container pb-5 container-userEdit">
+    <div onclick="containerHide()" class="container pb-5 container-userEdit">
         <form class="userEdit-form" action="/user/edit/<%= usuario.id %>?_method=put" enctype="multipart/form-data" method="POST">
             <h1>Editar o agregar información</h1>
 

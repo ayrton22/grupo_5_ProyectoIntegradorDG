@@ -82,6 +82,13 @@ module.exports = {
     },
     
     update: function(req, res) {
+        let usuarioRecuperado;
+        for(i = 0; i < usuarios.length; i++){
+            if(usuarios[i].id ==  req.params.id){
+                usuarioRecuperado = usuarios[i]
+            }
+        }
+
         let usuarioEditado = {
             id: req.params.id,
             first_name: req.body.name,
@@ -89,17 +96,19 @@ module.exports = {
             username: req.body.username,
             email: req.body.email,
             gender: req.body.gender,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: usuarioRecuperado.password,
             birth_date: req.body.date,
             age: Date.now() - req.body.date,
             address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
             avatar: req.files[0].filename
         };
+
+        req.session.usernameUser = usuarioEditado;
         
         for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].id == req.params.id ) {
+            if(usuarios[i].id == req.params.id) {
                 usuarios[i] = usuarioEditado;
-                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
+                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios));
                 res.redirect('/user/profile/' + usuarioEditado.id)
             }
         }

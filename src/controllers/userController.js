@@ -102,13 +102,12 @@ module.exports = {
             address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
             avatar: req.files[0].filename
         };
-
-        req.session.usernameUser = usuarioEditado;
         
         for(let i = 0; i < usuarios.length; i++) {
             if(usuarios[i].id == req.params.id) {
                 usuarios[i] = usuarioEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios));
+                req.session.usernameUser = usuarioEditado.username;
                 res.redirect('/user/profile/' + usuarioEditado.id)
             }
         }

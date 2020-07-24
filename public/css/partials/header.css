@@ -156,6 +156,24 @@
     transition: .2s ease-in;
 }
 
+.header .header-nav__right .nav__icons--cart{
+    position: relative;
+}
+
+span.icon-cart__products{
+    position: absolute;
+    z-index: 10;
+    background-color: red;
+    padding: 2px 4px;
+    padding-top: 0;
+    padding-bottom: 0px;
+    top: -1.2rem;
+    right: -1.1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    color: white;
+}
+
 .header .header-nav__right a.nav__icons:hover {
     color: var(--button-bg-color);
 }

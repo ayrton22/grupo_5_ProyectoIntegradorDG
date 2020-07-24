@@ -3,6 +3,7 @@ div .compra {
 }
 
 .detalle-container__mediaInfo{
+    position: relative;
     display: flex;
     margin-bottom: 10rem;
     background-image: var(--secodary-bg-color);
@@ -12,6 +13,7 @@ div .compra {
 }
 
 .detalle-container__part-1{
+    position: relative;
     margin-right: 2rem;
 }
 
@@ -57,6 +59,8 @@ div .compra {
 
 .detalle-container__contenedor-slider {
     background-color: black;
+    padding-left:3%;
+    padding-right:3%;
     display: flex;
     margin-top: 0.5rem;
     align-items: center;
@@ -141,6 +145,7 @@ text-decoration: none;
 
 .flecha-derecha,
 .flecha-izquierda {
+    padding: 0 auto;
     position: absolute;
     font-size: 20px;
     border: none;
@@ -149,30 +154,27 @@ text-decoration: none;
     top: calc(50%-25%);
     line-height: 40px;
     width: 20px;
-    color: white;
+    color: whitesmoke;
     cursor: pointer;
-    z-index: 500;
+    z-index: 1500;
     transition: .2s ease all;
 }
 
-.flecha-left {
+.flecha-derecha {
     left: 0;
+   
 }
 
 .flecha-izquierda {
     right: 0;
 }
 
-.contenedor-principal .flecha-derecha:hover,
-.contenedor-principal .flecha-izquierda:hover {
-    background-color: rgb(255, 255, 255,0.5);
-    color: whitesmoke;
-    font-size: 25px;
-    background-color: rgba(255, 255, 255, 0.5);
+.detalle-container__mediaInfo .flecha-derecha:hover,
+.detalle-container__mediaInfo .flecha-izquierda:hover {
+    font-size: 35px;
 }
 
 .indicadores button {
-    position: absolute;
     align-items: center;
     display: flex;
     height: 3px;
@@ -184,20 +186,21 @@ text-decoration: none;
 }
 
 .contenedor-carrusel {
+    background-color: var(--secodary-bg-color);
     overflow: hidden;
     scroll-behavior: smooth;
 }
 
 .contenedor-carrusel{
-    padding: 0 auto;
-    margin-left: 2rem;
-    margin-right: 2rem;
     display: flex;
     flex-wrap: nowrap;
     width: 800px;
 }
 
 .contenedor-carrusel .imagen-gameplay {
+    position: relative;
+    z-index: 500;
+    
     min-width: 20%;
     transition: .3s ease all;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
@@ -205,6 +208,7 @@ text-decoration: none;
 }
 
 .contenedor-carrusel .imagen-gameplay:hover {
+    z-index: 1000;
     cursor: pointer;
     transform: scale(1.2);
     transform-origin: center;
@@ -213,12 +217,12 @@ text-decoration: none;
 .contenedor-carrusel .imagen-gameplay iframe{
     width: 100%;
     vertical-align: top;
-    height: 9rem;
+    height: 8.4rem;
 }
 .contenedor-carrusel .imagen-gameplay img {
     width: 100%;
     vertical-align: top;
-    height: 9rem;
+    height: 8.4rem;
 }
 
 .compra i {
@@ -316,15 +320,21 @@ button.detail--action-button {
   
   button.detail--action-button:hover:before {
     height: 100%;
+    width: 100%;
   }
 
 
-  .detalle-container__video img{
+  .vista {
     width: 80rem;
     height: 45rem;
+
   }
-
-
+  .vista img, .vista iframe{
+      margin: 0;
+      width: 100%;
+      height: 100%  ;
+  }
+  
   @keyframes fadeIn{
       to{
           opacity: 1;
@@ -334,12 +344,24 @@ button.detail--action-button {
       opacity:0;
       animation: fadeIn 0.5s ease-in 1 forwards;
   }
+ .oculto{
+     display: none;
+     opacity:0;
+     animation: fadeIn 0.5s ease-in 1 forwards;
+ }
 
-@keyframes slider{
-    0%{margin-left: 0%;}
-    20%{margin-left: 0%;}
-    25%{margin-left: -100%;}
+ .bordeado{
+    border: 5px solid rgba(255, 255, 255, 0.4);
+ }
 
+ .logo {
+    left:35%;
+    top: 25%;
+    max-width: 40px;
+    max-height: 40px;
+    position: absolute;
+ }
+ .logo:hover{
+    display: none;
+ }
 
-
-}

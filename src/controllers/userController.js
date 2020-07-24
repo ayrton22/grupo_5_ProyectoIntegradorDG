@@ -82,14 +82,21 @@ module.exports = {
     },
     
     update: function(req, res) {
+        let usuarioRecuperado;
+        for(i = 0; i < usuarios.length; i++){
+            if(usuarios[i].id ==  req.params.id){
+                usuarioRecuperado = usuarios[i]
+            }
+        }
+        
         let usuarioEditado = {
             id: req.params.id,
             first_name: req.body.name,
             last_name: req.body.surname,
-            username: req.body.username,
+            username: usuarioRecuperado.username,
             email: req.body.email,
             gender: req.body.gender,
-            password: bcrypt.hashSync(req.body.password, 10),
+            password: usuarioRecuperado.password,
             birth_date: req.body.date,
             age: Date.now() - req.body.date,
             address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
@@ -97,10 +104,11 @@ module.exports = {
         };
         
         for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].id == req.params.id ) {
+            if(usuarios[i].id == req.params.id) {
                 usuarios[i] = usuarioEditado;
-                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
-                res.redirect('/user/profile/' + usuarioEditado.id)
+                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios));
+                req.session.usernameUser = usuarioEditado.username;
+                return res.redirect('/user/profile/' + usuarioEditado.id)
             }
         }
     },
@@ -108,7 +116,7 @@ module.exports = {
     profile: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
             if(req.params.id == usuarios[i].id) {
-                res.render('userProfile', {
+                return res.render('userProfile', {
                     usuario: usuarios[i]
                 })
             }

@@ -7,11 +7,13 @@
 
     <%- include('partials/header') %>
 
-    <div onclick="containerRegisterEditHide()" class="container pb-5 container-userEdit">
+    <div onclick="containerHide()" class="container pb-5 container-userEdit">
         <form class="userEdit-form" action="/user/edit/<%= usuario.id %>?_method=put" enctype="multipart/form-data" method="POST">
             <h1>Editar o agregar información</h1>
 
             <h2>General</h2>
+
+            <input class="userEdit-form-input" type="hidden" value="<%= usuario.username %>" name="username">
 
             <div class="area">
                 <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= usuario.avatar %>" alt="avatar">
@@ -20,59 +22,56 @@
 
             <label class="userEdit-form-label" for="name">Nombre</label>
             <input class="userEdit-form-input" type="text" value="<%= usuario.first_name %>" name="name">
-
+            
             <label class="userEdit-form-label" for="surname">Apellido</label>
             <input class="userEdit-form-input" type="text" value="<%= usuario.last_name %>" name="surname">
-
-            <label class="userEdit-form-label" for="username">Nombre de usuario</label>
-            <input class="userEdit-form-input" type="text" value="<%= usuario.username %>" name="username">
-
+            
             <label class="userEdit-form-label" for="email">Email</label>
             <input class="userEdit-form-input" type="email" value="<%= usuario.email %>" name="email">
+            
+            <h2 class=" d-none">Cambiar contraseña</h2>
+            
+            <!--<label class="userEdit-form-label" for="password">Nueva contraseña</label>
+                <input class="userEdit-form-input " type="password" name="password">
+                
+                <label class="userEdit-form-label" for="repassword">Repetir contraseña</label>
+                <input class="userEdit-form-input" type="password" name="repassword">-->
+                
+                <h2>Más información</h2>
+                
+                <label class="userEdit-form-label" for="date">Fecha de nacimiento</label>
+                <input class="userEdit-form-input" type="date" name="date" value="<%= usuario.date %>">
+                
+                <label class="userEdit-form-label" for="gender">Género</label>
+                <select class="userEdit-form-input" name="gender">
+                    <option value = "n" hidden>Eliga un Género</option>
+                    <option value = "Male">Male</option>
+                    <option value = "Female">Female</option>
+                    <option value = "Other">Otro</option>
+                </select>
+                
+                <h2>Ubicación</h2>
+                
+                <label class="userEdit-form-label" for="address_country">País</label>
+                <input class="userEdit-form-input" type="text" value=" " name="address_country">
+                
+                <label class="userEdit-form-label" for="address_country">Provincia o Estado</label>
+                <input class="userEdit-form-input" type="text" value=" " name="address_province">
+                
+                <label class="userEdit-form-label" for="address_country">Localidad o ciudad</label>
+                <input class="userEdit-form-input" type="text" value=" " name="address_city">
+                
+                <label class="userEdit-form-label" for="address_country">Dirección</label>
+                <input class="userEdit-form-input" type="text" value=" " name="address_home">
 
-            <h2 class="">Cambiar contraseña</h2>
-
-            <label class="userEdit-form-label " for="password">Nueva contraseña</label>
-            <input class="userEdit-form-input " type="password" name="password">
-
-            <label class="userEdit-form-label " for="repassword">Repetir contraseña</label>
-            <input class="userEdit-form-input " type="password" name="repassword">
-
-            <h2>Más información</h2>
-
-            <label class="userEdit-form-label" for="date">Fecha de nacimiento</label>
-            <input class="userEdit-form-input" type="date" name="date" value="<%= usuario.date %>">
-
-            <label class="userEdit-form-label" for="gender">Género</label>
-            <select class="userEdit-form-input" name="gender">
-                <option value = "n" hidden>Eliga un Género</option>
-                <option value = "Male">Male</option>
-                <option value = "Female">Female</option>
-                <option value = "Other">Otro</option>
-              </select>
-
-            <h2>Ubicación</h2>
-
-            <label class="userEdit-form-label" for="address_country">País</label>
-            <input class="userEdit-form-input" type="text" value=" " name="address_country">
-
-            <label class="userEdit-form-label" for="address_country">Provincia o Estado</label>
-            <input class="userEdit-form-input" type="text" value=" " name="address_province">
-
-            <label class="userEdit-form-label" for="address_country">Localidad o ciudad</label>
-            <input class="userEdit-form-input" type="text" value=" " name="address_city">
-
-            <label class="userEdit-form-label" for="address_country">Dirección</label>
-            <input class="userEdit-form-input" type="text" value=" " name="address_home">
-
-            <button class="userEdit-form-button" type="submit">Submit</button>
-        </form>
-    </div>
-
-    <!-- Footer -->
-    <%- include('partials/footer') %>
-    <!-- Scripts -->
-    <%- include('partials/scripts') %>
-    <script src="scripts/fileDrop.js"></script>   
-</body>
-</html>
+                <button class="userEdit-form-button" type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <!-- Footer -->
+        <%- include('partials/footer') %>
+        <!-- Scripts -->
+        <%- include('partials/scripts') %>
+        <script src="scripts/fileDrop.js"></script>   
+    </body>
+    </html>

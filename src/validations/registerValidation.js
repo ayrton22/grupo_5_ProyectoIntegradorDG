@@ -46,5 +46,5 @@ module.exports = [
             
     check('password')
         .isLength({min: 6, max: 20})
-            .withMessage('Como mínimo la contraseña debe tener 4 caracteres. Como máximo 16')
+            .withMessage('Como mínimo la contraseña debe tener 4 caracteres. Como máximo 16'),
 ]

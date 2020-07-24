@@ -71,6 +71,12 @@ module.exports = {
 	},
 	
 	update: function(req, res) {
+		let productoRecuperado;
+        for(i = 0; i < productos.length; i++){
+            if(productos[i].id ==  req.params.id){
+                productoRecuperado = productos[i]
+            }
+        }
 
 		let productoEditado = {
             id: req.params.id,
@@ -79,16 +85,34 @@ module.exports = {
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
 			price: `$ ${req.body.price}`,
-			image: req.body.image,
-			video: req.body.video,
+			image: productoRecuperado.image,
+			imagen_horizontal: productoRecuperado.imagen_horizontal,
+			image1: productoRecuperado.image1,
+			image2: productoRecuperado.image2,
+			image3: productoRecuperado.image3,
+			image4: productoRecuperado.image4,
+			image5: productoRecuperado.image5,
+			image6: productoRecuperado.image6,
+			image7: productoRecuperado.image7,
+			image8: productoRecuperado.image8,
+			image9: productoRecuperado.image9,
+			image10: productoRecuperado.image10,
+			imagen_detalle: productoRecuperado.imagen_detalle,
+			video: productoRecuperado.video,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
 			tags: req.body.tags,
 			classification: req.body.classification,
-			category: req.body.category,
+			category: productoRecuperado.category,
 			rating: req.body.rating,
-			platforms: req.body.platforms
+			platforms: req.body.platforms,
+			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
+			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
+			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
+			icon_playstation: productoRecuperado.icon_playstation,
+			icon_xbox: productoRecuperado.icon_xbox,
+			icon_pc: productoRecuperado.icon_pc
         };
         
         for(let i = 0; i < productos.length; i++) {

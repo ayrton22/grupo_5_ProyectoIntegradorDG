@@ -58,9 +58,9 @@ div .compra {
 }
 
 .detalle-container__contenedor-slider {
+    background-color: black;
     padding-left:3%;
     padding-right:3%;
-    position: absolute;
     display: flex;
     margin-top: 0.5rem;
     align-items: center;
@@ -217,12 +217,12 @@ text-decoration: none;
 .contenedor-carrusel .imagen-gameplay iframe{
     width: 100%;
     vertical-align: top;
-    height: 9rem;
+    height: 8.4rem;
 }
 .contenedor-carrusel .imagen-gameplay img {
     width: 100%;
     vertical-align: top;
-    height: 9rem;
+    height: 8.4rem;
 }
 
 .compra i {

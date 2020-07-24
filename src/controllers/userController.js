@@ -88,7 +88,7 @@ module.exports = {
                 usuarioRecuperado = usuarios[i]
             }
         }
-
+        
         let usuarioEditado = {
             id: req.params.id,
             first_name: req.body.name,

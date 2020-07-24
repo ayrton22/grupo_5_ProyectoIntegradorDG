@@ -1,96 +1,188 @@
-.container-productLoader{
-    font-size: 1.4rem;
-    background-image: var(--secodary-bg-color);
+.container-productLoader {
+    font-size: 18px;
     margin: 6rem auto;
-    border-radius: var(--button-border-radius);
-    box-shadow: 0 0 10px 3px #010212;
 }
 
 form.productLoader-form {
     padding: 7rem 0;
-    margin-left: 5rem;
+}
+
+form div.productLoader-form-1 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
+}
+
+form div.productLoader-form-2 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
+}
+
+form div.productLoader-form-3 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
+}
+
+form div.productLoader-form-4 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
 }
 
 form.productLoader-form h1 {
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+    margin-left: 1rem;
+    font-size: 42px;
 }
 
 label.productLoader-form-label {
     display: block;
     font-size: 1.6em;
-    margin: 10px 0;
-    background-color: #2568AC;
-    padding: 1rem;
+    margin-left: 1rem;
     width: 90%;
 }
 
 label.productLoader-form-label-imgInput {
     display: block;
     font-size: 1.6em;
-    margin: 10px 0;
-    background-color: #2568AC;
-    padding: 1rem;
-    width: 44%;
-}
+    margin-left: 1rem;
+    width: 90%;
 
-label.productLoader-checkbox-label {
-    font-size: 1.3em;
 }
   
 input.productLoader-form-checkbox {
     display: inline-block;
     border-radius: 8px;
     border: none;
+    margin-left: 1rem;
 }
 
-.productLoader-form-button {
+label.productLoader-checkbox-label {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+button.productLoader-form-button--submit {
     background-color: white;
     font-size: 1.6em;
-    background-color: var(--button-bg-color);
+    color: white;
+    border-radius: var(--button-border-radius);
+    background-color: #00A6FF;
+    border: none;
+    padding: 1rem 5rem;
+    margin: auto;
+    cursor: pointer;
+}
+
+button.productLoader-form-button--next {
+    position: relative;
+    background-color: white;
+    font-size: 1.6em;
+    background-color: #2568AC;
     color: white;
     border-radius: var(--button-border-radius);
     border: none;
     padding: 1rem 5rem;
-    margin-top: 6.5rem;
-    margin-left: 38rem;
+    margin: auto;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+button.productLoader-form-button--next a {
+    text-decoration: none;
+    color: white;
+}
+  
+button.productLoader-form-button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+  }
+  
+button.productLoader-form-button:hover:before {
+    height: 100%;
 }
 
 input.productLoader-form-input {
     display: block;
-    width: 75%;
-    height: 45px;
+    margin-left: 1rem;
     margin-bottom: 15px;
-    font-size: 1.5em;
     border-radius: 8px;
-    border: none;
-    border: solid 1px #b8b8b8;
-    padding: 0 15px;
+    border: solid 1.5px white;
+    background-color: #314981;
+    padding: 2rem;
+    color: white;
+    width: 90%;
+    height: 35%;
+    font-size: 20px;
 }
 
-/*.form-slider {
+textarea.productLoader-form-input__textarea {
+    display: block;
+    margin-left: 1rem;
+    border-radius: 8px;
+    border: solid 1.5px white;
+    background-color: #314981;
     color: white;
-}*/
+    padding-left: 1rem;
+    width: 90%;
+    font-size: 20px;
+}
+
+textarea.productLoader-form-input__bigTextarea {
+    display: block;
+    margin-left: 1rem;
+    border-radius: 8px;
+    border: solid 1.5px white;
+    background-color: #314981;
+    color: white;
+    width: 95%;
+    font-size: 20px;
+}
 
 select.productLoader-form-input {
     display: block;
-    width: 90%;
-    height: 45px;
     margin-bottom: 15px;
+    margin-left: 1rem;
     font-size: 1.5em;
     border-radius: 8px;
-    border: none;
+    border: solid 1.5px white;
+    background-color: #314981;
     padding: 0 15px;
+    border: solid 1.5px white;
+    color: white;
+    width: 90%;
+    height: 35%;
 }
 
 input.productLoader-form-input-img {
     display: block;
-    background-color: grey;
-    width: 30%;
-    height: 45px;
-    margin-bottom: 15px;
+    padding: 1rem 1.5rem;
+    margin-left: 1rem;
     font-size: 1.5rem;
     border-radius: 8px;
-    border: none;
-    border: solid 1px #b8b8b8;
-    padding: .5rem 2rem;
+    background-color: #314981;
+    border: solid 1.5px white;
+    color: white;
+    width: 90%;
+    height: 35%;
 }

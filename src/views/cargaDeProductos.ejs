@@ -7,49 +7,46 @@
 
     <div onclick="containerCargaHide()" class="container pb-3 container-productLoader">
         <form class="productLoader-form" action="" method="POST" >
-            <div class="row">
+            <div id="form1" class="row productLoader-form-1">
+                    <div class="col-12">
+                        <h1>Carga de Producto:</h1>
+                    </div>
+                    <div class="col-6 pb-5">
+                        <label for="title" class="productLoader-form-label">Título del juego: </label>
+                        <input type="text" name="title" class="productLoader-form-input">
+                    </div>
+                    <div class="col-6 pb-5">
+                        <label for="estado" class="productLoader-form-label">Estado del juego: </label>
+                        <select class="productLoader-form-input" name="estado">
+                            <option selected hidden>Elija el estado</option>
+                            <option value="1">Muy malo</option>
+                            <option value="2">Muy usado</option>
+                            <option value="3">Usado</option>
+                            <option value="4">Casi Nuevo</option>
+                            <option value="5">Nuevo</option>
+                        </select>
+                    </div>
+                    <div class="col-6 pb-5">
+                        <label for="platforms" class="productLoader-form-label">Plataformas: </label>
+                        <input type="checkbox" value="PC" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">PC</label><br>
+                        <input type="checkbox" value="Xbox" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Xbox</label><br>
+                        <input type="checkbox" value="PS4" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
+                    </div>
+                    <div class="col-6 pb-5">
+                        <label for="image" class="productLoader-form-label-imgInput">Fotos del juego: </label>
+                        <input type="file" class="productLoader-form-input-img" name="image">
+                    </div>
+                    <button type="button" class="productLoader-form-button--next mb-5"><a href="#form2">Siguiente</a></button>
+            </div>
+            <div id="form2" class="row productLoader-form-2">
                 <div class="col-12">
-                    <h1>Formulario de Carga de Producto</h1>
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="title" class="productLoader-form-label">Titulo del juego: </label>
-                    <input type="text" name="title" class="productLoader-form-input" placeholder="Ej: Fifa 20">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="estado" class="productLoader-form-label">Estado del juego: </label>
-                    <select class="productLoader-form-input" name="estado">
-                        <option selected hidden>Elija el estado</option>
-                        <option value="1">Muy malo</option>
-                        <option value="2">Muy usado</option>
-                        <option value="3">Usado</option>
-                        <option value="4">Casi Nuevo</option>
-                        <option value="5">Nuevo</option>
-                    </select>
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="platforms" class="productLoader-form-label">Plataformas: </label>
-                    <input type="checkbox" value="PC" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">PC</label><br>
-                    <input type="checkbox" value="Xbox" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Xbox</label><br>
-                    <input type="checkbox" value="PS4" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="category" class="productLoader-form-label">Categorias: </label>
-                    <input type="checkbox" value="Accion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Acción</label>
-                    <input type="checkbox" value="Aventura" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Aventura</label><br>
-                    <input type="checkbox" value="Carreras" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Carreras</label>
-                    <input type="checkbox" value="Deportes" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Deportes</label><br>
-                    <input type="checkbox" value="Arcade" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Arcade</label>
-                    <input type="checkbox" value="Simulacion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Simulacion</label>
-                </div>
-                <div class="col-12 pb-5">
-                    <label for="image" class="productLoader-form-label-imgInput">Fotos del juego: </label>
-                    <input type="file" class="productLoader-form-input-img" name="image">
+                    <h1>Características de pago:</h1>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productLoader-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Visa</label>
+                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
                     <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label><br>
                     <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
                 </div>
                 <div class="col-6 pb-5">
@@ -61,45 +58,68 @@
                     <label for="price" class="productLoader-form-label">Precio del juego</label>
                     <input type="text" name="price" class="productLoader-form-input">
                 </div>
-                <div class="col-6 pb-5">
-                    <label for="editor" class="productLoader-form-label">Editora: </label>
-                    <input type="text" name="editor" class="productLoader-form-input" placeholder="Ej: Fifa 20">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="developer" class="productLoader-form-label">Desarrolladora: </label>
-                    <input type="text" name="developer" class="productLoader-form-input" placeholder="Ej: Fifa 20">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
-                    <input type="text" name="launch_date" class="productLoader-form-input" placeholder="Ej: Fifa 20">
+                <button type="button" class="productLoader-form-button--next"><a href="#form3">Siguiente</a></button>
+            </div>
+            <div id="form3" class="row productLoader-form-3">
+                <div class="col-12">
+                    <h1>Descripcion del juego:</h1>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="description" class="productLoader-form-label">Descripcion de juego: </label>
-                    <textarea cols="63" rows="10" name="description" class="productLoader-form-input" placeholder="Ej: Fifa 20"></textarea>
+                    <textarea cols="55" rows="6" name="description" class="productLoader-form-input__textarea"></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="medium_description" class="productLoader-form-label">Descripcion mediana: </label>
-                    <textarea cols="63" rows="10" name="medium_description" class="productLoader-form-input" placeholder="Ej: Fifa 20"></textarea>
+                    <textarea cols="55" rows="6" name="medium_description" class="productLoader-form-input__textarea"></textarea>
+                </div>
+                <div class="col-12 pb-5">
+                    <label for="big_description" class="productLoader-form-label">Descripcion grande: </label>
+                    <textarea cols="55" rows="6"  name="big_description" class="productLoader-form-input__bigTextarea"></textarea>
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="big_description" class="productLoader-form-label">Descripcion grande: </label>
-                    <textarea cols="63" rows="10"  name="big_description" class="productLoader-form-input" placeholder="Ej: Fifa 20"></textarea>
+                    <label for="editor" class="productLoader-form-label">Editora: </label>
+                    <input type="text" name="editor" class="productLoader-form-input">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="developer" class="productLoader-form-label">Desarrolladora: </label>
+                    <input type="text" name="developer" class="productLoader-form-input">
+                </div>
+                <div class="col-6 pb-5">
+                    <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
+                    <input type="date" name="launch_date" class="productLoader-form-input">
+                </div>
+                <button type="button" class="productLoader-form-button--next"><a href="#form4">Siguiente</a></button>
+            </div>
+            <div id="form4" class="row productLoader-form-3">
+                <div class="col-6 pb-5">
+                    <label for="category" class="productLoader-form-label">Categorias: </label>
+                    <input type="checkbox" value="Accion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Acción</label><br>
+                    <input type="checkbox" value="Aventura" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Aventura</label><br>
+                    <input type="checkbox" value="Carreras" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Carreras</label><br>
+                    <input type="checkbox" value="Deportes" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Deportes</label><br>
+                    <input type="checkbox" value="Arcade" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Arcade</label><br>
+                    <input type="checkbox" value="Simulacion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Simulacion</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productLoader-form-label">Etiquetas: </label>
-                    <input type="text" name="tags" class="productLoader-form-input" placeholder="Ej: Fifa 20">
+                    <input type="text" name="tags" class="productLoader-form-input">
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="classification" class="productLoader-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productLoader-form-input" placeholder="Ej: Fifa 20">
+                    <label for="estado" class="productLoader-form-label">Clasificacion: </label>
+                    <select class="productLoader-form-input" name="estado">
+                        <option selected hidden>Edades:</option>
+                        <option value="1">+7</option>
+                        <option value="2">+13</option>
+                        <option value="3">+16</option>
+                        <option value="4">+18</option>
+                    </select>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productLoader-form-label">Puntaje: </label>
-                    <input type="text" name="rating" class="productLoader-form-input" placeholder="Ej: Fifa 20">
+                    <input type="text" name="rating" class="productLoader-form-input">
                 </div>
-                <div class="col-6 pb-5">
-                    <button type="submit" class="productLoader-form-button">Publicar</button>
-                </div>
+                <button type="submit" class="productLoader-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
+                <button type="submit" class="productLoader-form-button--submit mb-5">Cargar producto</button>
             </div>
         </form>
     </div>

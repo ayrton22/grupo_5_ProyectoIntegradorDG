@@ -1,1 +1,65 @@
-[{"id":"1","first_name":"Ayrton","last_name":"Peralta","username":"probemos22","email":"probemos22@hotmail.com","gender":"n","password":"$2b$10$wxmUtQmltc5CMdfLHljbwekyR9PnPVKjv8wJxbzT9yALHO/7/On9W","birth_date":"","age":1595214777597,"address":" ,  ,  ,  ","avatar":"avatar_undefined_1595214777535.jpeg"},{"id":2,"first_name":"Ayrton","last_name":"Peralta","username":"vamosaver","email":"themasterayrx@hotmail.com","password":"$2b$10$/BOt6uNY6wHgkvSf7VhbeufJZwdkGw8xQxIubbx3r58Gt5lDSfxoS"},{"id":3,"first_name":"Ayrton","last_name":"Peralta","username":"vamosaver","email":"themasterayrx@hotmail.com","password":"$2b$10$WI1v/BT.nG3mQ625Ht9.Q.t54DbN.yaoUWggrEuYY/KuMfbt/sUEq"},{"id":"4","first_name":"Ayrton","last_name":"Peralta","username":"prueba22","email":"prueba22@hotmail.com","gender":"n","password":"$2b$10$lDLDP0OQCJE203.QA9A8CufJ0BJ.8Wm2kfU5eSRcT5WO7bGAuv.mK","birth_date":"","age":1595260376649,"address":" ,  ,  ,  ","avatar":"avatar_undefined_1595260376559.jpg"},{"id":5,"first_name":"Ayrton","last_name":"Peralta","username":"vamosporfa2","email":"vamos231123@hotmail.com","password":"$2b$10$VqtxcJAPQxzsMQwgjF7x7efTPllWDGvsOBngq0HJDB64tpYkw/XPW"},{"id":"6","first_name":"Ayrton","last_name":"Peralta","username":"creosalio23","email":"vamosdaledale@hotmail.com","gender":"n","password":"$2b$10$zdO2/e8C6XH3Il7b/TY7z.Mw/Och96ljYccR0XMfmXf7pZ2bx/GuW","birth_date":"","age":1595263204319,"address":" ,  ,  ,  ","avatar":"avatar_undefined_1595263204213.jpg"}]
+[{
+    "id": "1",
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "probemos22",
+    "email": "probemos22@hotmail.com",
+    "gender": "n",
+    "password": "$2b$10$wxmUtQmltc5CMdfLHljbwekyR9PnPVKjv8wJxbzT9yALHO/7/On9W",
+    "birth_date": "",
+    "age": 1595214777597,
+    "address": " ,  ,  ,  ",
+    "avatar": "avatar_undefined_1595214777535.jpeg"
+}, {
+    "id": 2,
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "vamosaver",
+    "email": "themasterayrx@hotmail.com",
+    "password": "$2b$10$/BOt6uNY6wHgkvSf7VhbeufJZwdkGw8xQxIubbx3r58Gt5lDSfxoS"
+}, {
+    "id": 3,
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "vamosaver",
+    "email": "themasterayrx@hotmail.com",
+    "password": "$2b$10$WI1v/BT.nG3mQ625Ht9.Q.t54DbN.yaoUWggrEuYY/KuMfbt/sUEq"
+}, {
+    "id": "4",
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "prueba22",
+    "email": "prueba22@hotmail.com",
+    "gender": "n",
+    "password": "$2b$10$lDLDP0OQCJE203.QA9A8CufJ0BJ.8Wm2kfU5eSRcT5WO7bGAuv.mK",
+    "birth_date": "",
+    "age": 1595260376649,
+    "address": " ,  ,  ,  ",
+    "avatar": "avatar_undefined_1595260376559.jpg"
+}, {
+    "id": 5,
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "vamosporfa2",
+    "email": "vamos231123@hotmail.com",
+    "password": "$2b$10$VqtxcJAPQxzsMQwgjF7x7efTPllWDGvsOBngq0HJDB64tpYkw/XPW"
+}, {
+    "id": "6",
+    "first_name": "Ayrton",
+    "last_name": "Peralta",
+    "username": "creosalio23",
+    "email": "vamosdaledale@hotmail.com",
+    "gender": "n",
+    "password": "$2b$10$zdO2/e8C6XH3Il7b/TY7z.Mw/Och96ljYccR0XMfmXf7pZ2bx/GuW",
+    "birth_date": "",
+    "age": 1595263204319,
+    "address": " ,  ,  ,  ",
+    "avatar": "avatar_undefined_1595263204213.jpg"
+}, {
+    "id": 7,
+    "first_name": "joaquin",
+    "last_name": "perles",
+    "username": "Joaco",
+    "email": "joaquiperles@live.com.ar",
+    "password": "$2b$10$KLeRtfUqXle18t81A40V8uMql7lNX3DRyBky8IkyqVPIZ/3CgQye6"
+}]

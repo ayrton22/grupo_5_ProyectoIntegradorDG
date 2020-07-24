@@ -7,7 +7,6 @@ usuarios = JSON.parse(usuarios);
 module.exports = [
     check('name')
         .isAlpha()
-            .withMessage('Tu nombre no puede tener números ni caracteres especiales')
         .isLength({max: 50})
             .withMessage('Tu nombre no puede tener números ni caracteres especiales, y un maximo de 50 caracteres'),
 

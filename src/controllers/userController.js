@@ -108,7 +108,7 @@ module.exports = {
                 usuarios[i] = usuarioEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios));
                 req.session.usernameUser = usuarioEditado.username;
-                res.redirect('/user/profile/' + usuarioEditado.id)
+                return res.redirect('/user/profile/' + usuarioEditado.id)
             }
         }
     },
@@ -116,7 +116,7 @@ module.exports = {
     profile: function(req, res) {
         for(let i = 0; i < usuarios.length; i++) {
             if(req.params.id == usuarios[i].id) {
-                res.render('userProfile', {
+                return res.render('userProfile', {
                     usuario: usuarios[i]
                 })
             }

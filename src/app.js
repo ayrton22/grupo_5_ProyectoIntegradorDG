@@ -15,7 +15,7 @@ livereloadServer.watch(publicDirectory);
 livereloadServer.server.once('connection', () => {
     setTimeout(() =>{
         livereloadServer.refresh("/");
-    }, 10);
+    }, 1000);
 });
 
 app.use(connectLivereload());

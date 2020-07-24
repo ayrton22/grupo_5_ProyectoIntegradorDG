@@ -76,7 +76,10 @@ module.exports = {
             if(productos[i].id ==  req.params.id){
                 productoRecuperado = productos[i]
             }
-        }
+		}
+
+		let url = new URL(req.body.video);
+		let videoCode = new URLSearchParams(url.search).get("v");
 
 		let productoEditado = {
             id: req.params.id,
@@ -84,7 +87,7 @@ module.exports = {
             description: req.body.description,
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
-			price: `$ ${req.body.price}`,
+			price: req.body.price,
 			image: productoRecuperado.image,
 			imagen_horizontal: productoRecuperado.imagen_horizontal,
 			image1: productoRecuperado.image1,
@@ -98,7 +101,7 @@ module.exports = {
 			image9: productoRecuperado.image9,
 			image10: productoRecuperado.image10,
 			imagen_detalle: productoRecuperado.imagen_detalle,
-			video: productoRecuperado.video,
+			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,

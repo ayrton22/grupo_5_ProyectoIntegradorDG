@@ -1,13 +1,13 @@
-.container-productLoader {
+.container-productEdit {
     font-size: 18px;
     margin: 6rem auto;
 }
 
-form.productLoader-form {
+form.productEdit-form {
     padding: 7rem 0;
 }
 
-form div.productLoader-form-1 {
+form div.productEdit-form-1 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -15,7 +15,7 @@ form div.productLoader-form-1 {
     margin-bottom: 10rem;
 }
 
-form div.productLoader-form-2 {
+form div.productEdit-form-2 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -23,7 +23,7 @@ form div.productLoader-form-2 {
     margin-bottom: 10rem;
 }
 
-form div.productLoader-form-3 {
+form div.productEdit-form-3 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -31,48 +31,48 @@ form div.productLoader-form-3 {
     margin-bottom: 10rem;
 }
 
-form div.productLoader-form-4 {
+form div.productEdit-form-4 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
     box-shadow: 0 0 10px 3px #010212;
 }
 
-form.productLoader-form h1 {
+form.productEdit-form h1 {
     padding-top: 3rem;
     padding-bottom: 7rem;
     margin-left: 1rem;
     font-size: 42px;
 }
 
-label.productLoader-form-label {
+label.productEdit-form-label {
     display: block;
     font-size: 1.6em;
     margin-left: 1rem;
     width: 90%;
 }
 
-label.productLoader-form-label-img {
+label.productEdit-form-label-img {
     display: block;
     font-size: 1.6em;
     margin-left: 1rem;
     width: 90%;
 
 }
-
-input.productLoader-form-checkbox {
+  
+input.productEdit-form-checkbox {
     display: inline-block;
     border-radius: 8px;
     border: none;
     margin-left: 1rem;
 }
 
-label.productLoader-checkbox-label {
+label.productEdit-checkbox-label {
     margin-left: 10px;
     font-size: 20px;
 }
 
-button.productLoader-form-button--submit {
+button.productEdit-form-button--submit {
     background-color: white;
     font-size: 1.6em;
     color: white;
@@ -84,7 +84,7 @@ button.productLoader-form-button--submit {
     cursor: pointer;
 }
 
-button.productLoader-form-button--next {
+button.productEdit-form-button--next {
     position: relative;
     background-color: white;
     font-size: 1.6em;
@@ -100,12 +100,12 @@ button.productLoader-form-button--next {
     transition: .4s;
 }
 
-button.productLoader-form-button--next a {
+button.productEdit-form-button--next a {
     text-decoration: none;
     color: white;
 }
   
-button.productLoader-form-button--next:before {
+button.productEdit-form-button--next:before {
     content: "";
     position: absolute;
     background-color: var(--button-bg-color);
@@ -118,11 +118,11 @@ button.productLoader-form-button--next:before {
     transition: .2s ease-in;
   }
   
-button.productLoader-form-button--next:hover:before {
+button.productEdit-form-button--next:hover:before {
     height: 100%;
 }
 
-input.productLoader-form-input {
+input.productEdit-form-input {
     display: block;
     margin-left: 1rem;
     margin-bottom: 15px;
@@ -136,30 +136,31 @@ input.productLoader-form-input {
     font-size: 20px;
 }
 
-textarea.productLoader-form-input__textarea {
+textarea.productEdit-form-input__textarea {
     display: block;
     margin-left: 1rem;
     border-radius: 8px;
     border: solid 1.5px white;
     background-color: #314981;
-    color: white;
+    color: rgb(199, 199, 199);
     padding-left: 1rem;
     width: 90%;
     font-size: 20px;
 }
 
-textarea.productLoader-form-input__bigTextarea {
+textarea.productEdit-form-input__bigTextarea {
     display: block;
     margin-left: 1rem;
     border-radius: 8px;
     border: solid 1.5px white;
     background-color: #314981;
-    color: white;
+    color: rgb(199, 199, 199);
     width: 95%;
     font-size: 20px;
+    padding-left: 1rem;
 }
 
-select.productLoader-form-input {
+select.productEdit-form-input {
     display: block;
     margin-bottom: 15px;
     margin-left: 1rem;
@@ -174,7 +175,7 @@ select.productLoader-form-input {
     height: 35%;
 }
 
-input.productLoader-form-input-imgInput {
+input.productEdit-form-input-imgInput {
     display: block;
     padding: 1rem 1.5rem;
     margin-left: 1rem;

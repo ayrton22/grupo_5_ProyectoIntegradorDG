@@ -93,7 +93,7 @@ module.exports = {
             id: req.params.id,
             first_name: req.body.name,
             last_name: req.body.surname,
-            username: req.body.username,
+            username: usuarioRecuperado.username,
             email: req.body.email,
             gender: req.body.gender,
             password: usuarioRecuperado.password,

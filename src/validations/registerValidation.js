@@ -46,14 +46,5 @@ module.exports = [
             
     check('password')
         .isLength({min: 6, max: 20})
-            .withMessage('Como mínimo la contraseña debe tener 4 caracteres. Como máximo 16'),
-
-<<<<<<< HEAD
-    /*check('repassword')
-        .matches('password')
-=======
-    /*check('password')
-        .matches('repassword')
->>>>>>> c85e7a685490f2a2899b2a4a9a992d2709954bfc
-            .withMessage('Las contraseñas no coinciden')*/
+            .withMessage('Como mínimo la contraseña debe tener 4 caracteres. Como máximo 16')
 ]

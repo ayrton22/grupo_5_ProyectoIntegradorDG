@@ -7,7 +7,7 @@ form.productEdit-form {
     padding: 7rem 0;
 }
 
-form div.productEdit-form-1 {
+div.productEdit-form-1 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -15,7 +15,7 @@ form div.productEdit-form-1 {
     margin-bottom: 10rem;
 }
 
-form div.productEdit-form-2 {
+div.productEdit-form-2 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -23,7 +23,7 @@ form div.productEdit-form-2 {
     margin-bottom: 10rem;
 }
 
-form div.productEdit-form-3 {
+div.productEdit-form-3 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -31,7 +31,7 @@ form div.productEdit-form-3 {
     margin-bottom: 10rem;
 }
 
-form div.productEdit-form-4 {
+div.productEdit-form-4 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -39,7 +39,7 @@ form div.productEdit-form-4 {
     margin-bottom: 10rem;
 }
 
-form div.productEdit-form-5 {
+div.productEdit-form-5 {
     padding: 1rem;
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
@@ -235,7 +235,7 @@ iframe.productEdit-form-uploadVideo {
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
     width: 76%;
-    height: 20vh;
+    height:26vh;
     margin-left: 11.5rem;
     cursor: pointer;
 }
@@ -276,19 +276,31 @@ img.productEdit-form-uploadImage--horizontal {
     cursor: pointer;
 }
 
-.inactive {
+div.inactive_portray {
     display: none;
     position: absolute;
-    z-index: 10;
-    bottom: 1rem;
-    width: 95%;
 }
 
-.active {
+div.active_portray {
     display: block;
     position: absolute;
     top: 0;
     z-index: 10;
-    transition: .5s ease-in;
-    transform: scale(3);
+    transform: scale(3) translateX(120px) translateY(40px);
+}
+
+div.active_portray button {
+    position: absolute;
+    bottom: .5rem;
+    left: 6rem;
+    font-size: 10px;
+    padding: .5rem 2rem;
+}
+
+div.active_portray i {
+    position: absolute;
+    top: .5rem;
+    right: 0;
+    color: black;
+    cursor: pointer;
 }

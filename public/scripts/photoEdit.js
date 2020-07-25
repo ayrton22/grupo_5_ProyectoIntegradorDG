@@ -3,9 +3,10 @@ function qs(element) {
 }
 
 window.addEventListener('load', function() {
-    let portrayPhoto = qs('img.productLoader-form-uploadImage--portray');
-    let horizontalPhoto = qs('img.productLoader-form-uploadImage--horizontal');
-    let detailPhoto = qs('img.productLoader-form-uploadImage--detail');
+
+    let portrayPhoto = qs('img.productEdit-form-uploadImage--portray');
+    let horizontalPhoto = qs('img.productEdit-form-uploadImage--horizontal');
+    let detailPhoto = qs('img.productEdit-form-uploadImage--detail');
     let image1 = qs('img#one');
     let image2 = qs('img#two');
     let image3 = qs('img#three');
@@ -32,11 +33,37 @@ window.addEventListener('load', function() {
     let image10Input = qs('input#ten');
 
     let portrayZoom = qs('div#portrayZoom');
+    let portrayZoomImg = qs('div#portrayZoom img');
+    let portrayCross = qs('div#portrayZoom i');
+    let portrayBtn = qs('div#portrayZoom button');
 
-    portrayPhoto.addEventListener('click', function() {
-        portrayZoom.classList.remove('inactive');
-        portrayZoom.classList.add('active');
-    });
+
+    if(portrayPhoto.src == '/img/Logos/Portray-upload.jpg') {
+
+        portrayPhoto.addEventListener('click', function() {
+            portrayInput.click();
+        });
+
+    } else {
+
+        portrayPhoto.addEventListener('click', function() {
+            portrayZoom.classList.remove('inactive_portray');
+            portrayZoom.classList.add('active_portray');
+    
+            portrayCross.addEventListener('click', function() {
+                portrayZoom.classList.remove('active_portray');
+                portrayZoom.classList.add('inactive_portray');
+            })
+    
+            portrayBtn.addEventListener('click', function() {
+                portrayZoom.classList.remove('active_portray');
+                portrayZoom.classList.add('inactive_portray');
+                portrayPhoto.src = '/img/Logos/Portray-upload.jpg';
+            })
+    
+    
+        });
+    }
 
     /*horizontalPhoto.addEventListener('click', function() {
         horizontalInput.click()

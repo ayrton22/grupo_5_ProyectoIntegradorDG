@@ -58,8 +58,12 @@
                             <div class="form2-containerEdit--portray">
                                 <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
                                 <input type="file" id="portray" style="display: none;" name="image">
-                                <div id="portrayZoom" class="inactive">
-                                    <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
+                                <div id="portrayZoom" class="inactive_portray">
+                                    <i class="fas fa-times"></i>
+                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/<%= producto.image %>" alt="">
+                                    <form action="">
+                                        <button type="button" class="productEdit-form-button--next">Borrar foto</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -200,5 +204,6 @@
  
     <!-- Scripts -->
     <%- include('partials/scripts') %>
+    <script src="/scripts/photoEdit.js"></script>
 </body>
 </html>

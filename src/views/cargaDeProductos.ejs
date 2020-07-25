@@ -7,6 +7,8 @@
 
     <div onclick="containerHide()" class="container pb-3 container-productLoader">
         <form class="productLoader-form" action="" method="POST" >
+
+
             <div id="form1" class="row productLoader-form-1">
                     <div class="col-12">
                         <h1>Carga de Producto:</h1>
@@ -33,16 +35,73 @@
                         <input type="checkbox" value="PS4" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
                     </div>
                     <div class="col-6 pb-5">
-                        <label for="image" class="productLoader-form-label-img">Fotos del juego: </label>
-                        <input type="file" class="productLoader-form-input-imgInput" name="image">
-                    </div>
-                    <div class="col-6 pb-5">
-                        <label for="video" class="productEdit-form-label">Video: </label>
+                        <label for="video" class="productEdit-form-label">Código del video: </label>
                         <input type="text" name="video" class="productLoader-form-input">
                     </div>
                     <button type="button" class="productLoader-form-button--next mb-5"><a href="#form2">Siguiente</a></button>
             </div>
+
+
             <div id="form2" class="row productLoader-form-2">
+                <div class="col-12">
+                    <h1>Mostrá tu juego:</h1>
+                </div>
+                <div class="form2-container-all">
+                    <div class="row form2-container">
+                        <div class="col-4">
+                            <div class="form2-container--portray">
+                                <img class="productLoader-form-uploadImage--portray" src="/img/Logos/Portray-upload.jpg" alt="">
+                                <input type="file" id="portray" style="display: none;" name="image">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row form2-container--video">
+                                    <img class="productLoader-form-uploadImage--video" src="/img/Logos/Video-upload.jpg" alt="">
+                                    <input type="text" id="video" style="display: none;" name="video">
+                            </div>
+                            <div class="row form2-container--video">
+                                <img class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
+                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form2-container">
+                        <div class="col-8">
+                            <div class="form2-container--photo__left">
+                                <img class="productLoader-form-uploadImage" id="one" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="one" style="display: none;" name="image1">
+                                <img class="productLoader-form-uploadImage" id="two" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="two" style="display: none;" name="image2">
+                                <img class="productLoader-form-uploadImage" id="three" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="three" style="display: none;" name="image3">
+                                <img class="productLoader-form-uploadImage" id="four" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="four" style="display: none;" name="image4">
+                                <img class="productLoader-form-uploadImage" id="five" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="five" style="display: none;" name="image5">
+                                <img class="productLoader-form-uploadImage" id="six" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="six" style="display: none;" name="image6">
+                                <img class="productLoader-form-uploadImage" id="seven" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="seven" style="display: none;" name="image7">
+                                <img class="productLoader-form-uploadImage" id="eight" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="eight" style="display: none;" name="image8">
+                                <img class="productLoader-form-uploadImage" id="nine" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="nine" style="display: none;" name="image9">
+                                <img class="productLoader-form-uploadImage" id="ten" src="/img/Logos/Photo-upload.jpg" alt="">
+                                <input type="file" id="ten" style="display: none;" name="image10">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form2-container--photo__right">
+                                <img class="productLoader-form-uploadImage--detail" src="/img/Logos/Detail-upload.jpg" alt="">
+                                <input type="file" id="detail" style="display: none;" name="imagen_detalle">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="form3" class="row productLoader-form-3">
                 <div class="col-12">
                     <h1>Características de pago:</h1>
                 </div>
@@ -64,7 +123,9 @@
                 </div>
                 <button type="button" class="productLoader-form-button--next"><a href="#form3">Siguiente</a></button>
             </div>
-            <div id="form3" class="row productLoader-form-3">
+
+
+            <div id="form4" class="row productLoader-form-4">
                 <div class="col-12">
                     <h1>Descripcion del juego:</h1>
                 </div>
@@ -94,7 +155,9 @@
                 </div>
                 <button type="button" class="productLoader-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
-            <div id="form4" class="row productLoader-form-3">
+
+
+            <div id="form5" class="row productLoader-form-5">
                 <div class="col-6 pb-5">
                     <label for="category" class="productLoader-form-label">Categorias: </label>
                     <input type="checkbox" value="Accion" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category">Acción</label><br>
@@ -133,5 +196,6 @@
  
     <!-- Scripts -->
     <%- include('partials/scripts') %>
+    <script src="/scripts/photoUpload.js"></script>
 </body>
 </html>

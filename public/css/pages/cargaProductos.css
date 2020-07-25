@@ -38,6 +38,13 @@ form div.productLoader-form-4 {
     box-shadow: 0 0 10px 3px #010212;
 }
 
+form div.productLoader-form-5 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
+}
+
 form.productLoader-form h1 {
     padding-top: 3rem;
     padding-bottom: 7rem;
@@ -58,6 +65,18 @@ label.productLoader-form-label-img {
     margin-left: 1rem;
     width: 90%;
 
+}
+
+input.productLoader-form-input-imgInput {
+    display: none;
+    padding: 1rem 1.5rem;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: solid 1.5px white;
+    color: white;
+    width: 90%;
+    height: 35%;
 }
 
 input.productLoader-form-checkbox {
@@ -174,15 +193,67 @@ select.productLoader-form-input {
     height: 35%;
 }
 
-input.productLoader-form-input-imgInput {
+div.form2-container-all {
+    margin-left: 3rem;
+}
+
+div.form2-container {
+    margin: 0 5rem;
+}
+
+div.form2-container--portray {
+    margin: 1rem 0;
+}
+
+div.form2-container--video {
+    margin: 1rem;
+}
+
+div.form2-container--photo__left {
+    margin: 1rem 0;
+}
+
+div.form2-container--photo__right {
+    margin: 1rem 0;
+}
+
+img.productLoader-form-uploadImage--portray {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    cursor: pointer;
+}
+
+img.productLoader-form-uploadImage--video {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    width: 80%;
+    margin-left: 9rem;
+    cursor: pointer;
+}
+
+img.productLoader-form-uploadImage {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    margin: 1rem 0;
+    width: 18%;
+    cursor: pointer;
+}
+
+img.productLoader-form-uploadImage--detail {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    margin: 1rem 1rem 0 3.5rem;
+    width: 75%;
+    cursor: pointer;
+}
+
+img.productLoader-form-uploadImage--horizontal {
     display: block;
-    padding: 1rem 1.5rem;
-    margin-left: 1rem;
-    font-size: 1.5rem;
-    border-radius: 8px;
-    background-color: #314981;
-    border: solid 1.5px white;
-    color: white;
-    width: 90%;
-    height: 35%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    margin-top: 3.8rem;
+    right: 0;
+    width: 80%;
+    margin-left: 9rem;
+    cursor: pointer;
 }

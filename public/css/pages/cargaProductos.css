@@ -36,6 +36,7 @@ form div.productLoader-form-4 {
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
     box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
 }
 
 form div.productLoader-form-5 {

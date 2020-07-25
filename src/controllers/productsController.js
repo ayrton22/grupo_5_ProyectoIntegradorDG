@@ -38,8 +38,20 @@ module.exports = {
             description: req.body.description,
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
-			price: `$ ${req.body.price}`,
-			image: req.body.image,
+			price: req.body.price,
+			image: req.files[0].filename,
+			imagen_horizontal: req.files[0].filename,
+			image1: req.files[0].filename,
+			image2: req.files[0].filename,
+			image3: req.files[0].filename,
+			image4: req.files[0].filename,
+			image5: req.files[0].filename,
+			image6: req.files[0].filename,
+			image7: req.files[0].filename,
+			image8: req.files[0].filename,
+			image9: req.files[0].filename,
+			image10: req.files[0].filename,
+			imagen_detalle: req.files[0].filename,
 			video: req.body.video,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
@@ -48,8 +60,14 @@ module.exports = {
 			classification: req.body.classification,
 			category: req.body.category,
 			rating: req.body.rating,
-			platforms: req.body.platforms
-        };
+			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
+			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
+			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
+			icon_playstation: 'fab fa-playstation icono-playstation',
+			icon_xbox: 'fab fa-xbox icono-xbox',
+			icon_pc: 'fas fa-desktop icono-desktop'
+		};
+		console.log(req.files)
         for(let i = 0; i < productos.length; i++) {
             if(req.body.title == productos[i].title || req.body.image == productos[i].image || req.body.description == productos[i].description) {
                 return res.redirect('/product/load');

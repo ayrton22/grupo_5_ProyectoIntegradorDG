@@ -15,6 +15,4 @@ router.post('/load', controller.store);
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', controller.update);
 
-
-
 module.exports = router;

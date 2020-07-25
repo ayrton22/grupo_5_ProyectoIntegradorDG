@@ -36,6 +36,7 @@ form div.productLoader-form-4 {
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
     box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
 }
 
 form div.productLoader-form-5 {
@@ -193,27 +194,27 @@ select.productLoader-form-input {
     height: 35%;
 }
 
-div.form2-container-all {
+div.form2-containerLoader-all {
     margin-left: 3rem;
 }
 
-div.form2-container {
+div.form2-containerLoader {
     margin: 0 5rem;
 }
 
-div.form2-container--portray {
+div.form2-containerLoader--portray {
     margin: 1rem 0;
 }
 
-div.form2-container--video {
+div.form2-containerLoader--video {
     margin: 1rem;
 }
 
-div.form2-container--photo__left {
+div.form2-containerLoader--photo__left {
     margin: 1rem 0;
 }
 
-div.form2-container--photo__right {
+div.form2-containerLoader--photo__right {
     margin: 1rem 0;
 }
 
@@ -229,6 +230,14 @@ img.productLoader-form-uploadImage--video {
     width: 80%;
     margin-left: 9rem;
     cursor: pointer;
+}
+
+input.productLoader-form-uploadImage--video-input {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    top: 10rem;
 }
 
 img.productLoader-form-uploadImage {

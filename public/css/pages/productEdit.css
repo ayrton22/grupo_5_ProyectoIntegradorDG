@@ -36,6 +36,14 @@ form div.productEdit-form-4 {
     background-color: #2D4681;
     border-radius: var(--button-border-radius);
     box-shadow: 0 0 10px 3px #010212;
+    margin-bottom: 10rem;
+}
+
+form div.productEdit-form-5 {
+    padding: 1rem;
+    background-color: #2D4681;
+    border-radius: var(--button-border-radius);
+    box-shadow: 0 0 10px 3px #010212;
 }
 
 form.productEdit-form h1 {
@@ -186,4 +194,101 @@ input.productEdit-form-input-imgInput {
     color: white;
     width: 90%;
     height: 35%;
+}
+
+div.form2-containerEdit-all {
+    margin-left: 3rem;
+}
+
+div.form2-containerEdit {
+    margin: 0 5rem;
+}
+
+div.form2-containerEdit--portray {
+    margin: 1rem 0;
+}
+
+div.form2-containerEdit--video {
+    margin: 1rem;
+}
+
+div.form2-containerEdit {
+    margin-top: 2rem;
+}
+
+div.form2-containerEdit--photo__left {
+    margin: 1rem 0;
+}
+
+div.form2-containerEdit--photo__right {
+    margin: 1rem 0;
+}
+
+img.productEdit-form-uploadImage--portray {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    cursor: pointer;
+    width: 105%;
+}
+
+iframe.productEdit-form-uploadVideo {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    width: 76%;
+    height: 20vh;
+    margin-left: 11.5rem;
+    cursor: pointer;
+}
+
+input.productEdit-form-uploadImage--video-input {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    top: 10rem;
+}
+
+img.productEdit-form-uploadImage {
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    margin: 1rem 0;
+    width: 18%;
+    cursor: pointer;
+}
+
+img.productEdit-form-uploadImage--detail {
+    position: absolute;
+    right: 5.7rem;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    width: 90%;
+    cursor: pointer;
+}
+
+img.productEdit-form-uploadImage--horizontal {
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 2px #010212;
+    margin-top: 1rem;
+    width: 70%;
+    height: 15vh;
+    margin-left: 14rem;
+    cursor: pointer;
+}
+
+.inactive {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    bottom: 1rem;
+    width: 95%;
+}
+
+.active {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    transition: .5s ease-in;
+    transform: scale(3);
 }

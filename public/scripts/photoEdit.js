@@ -31,11 +31,14 @@ window.addEventListener('load', function() {
     let image9Input = qs('input#nine');
     let image10Input = qs('input#ten');
 
+    let portrayZoom = qs('div#portrayZoom');
+
     portrayPhoto.addEventListener('click', function() {
-        portrayInput.click();
+        portrayZoom.classList.remove('inactive');
+        portrayZoom.classList.add('active');
     });
 
-    horizontalPhoto.addEventListener('click', function() {
+    /*horizontalPhoto.addEventListener('click', function() {
         horizontalInput.click()
     });
 
@@ -72,6 +75,6 @@ window.addEventListener('load', function() {
     });
     image10.addEventListener('click', function() {
         image10Input.click()
-    });
+    });*/
 
 })

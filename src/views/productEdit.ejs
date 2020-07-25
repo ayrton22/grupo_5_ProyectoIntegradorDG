@@ -44,17 +44,74 @@
                         <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
                     <% } %>
                 </div>
-                <div class="col-6 pb-5">
-                    <label for="image" class="productEdit-form-label-img">Fotos del juego: </label>
-                    <input type="file" class="productEdit-form-input-imgInput" name="image">
-                </div>
-                <div class="col-6 pb-5">
-                    <label for="video" class="productEdit-form-label">Video: </label>
-                    <input type="text" name="video" class="productEdit-form-input" value="https://www.youtube.com/watch?v=<%= producto.video %>">
-                </div>
-                <button type="button" class="productEdit-form-button--next mb-5"><a href="#form2">Siguiente</a></button>
+                <button type="button" class="productEdit-form-button--next"><a href="#form2">Siguiente</a></button>
             </div>    
+
+
             <div id="form2" class="row productEdit-form-2">
+                <div class="col-12">
+                    <h1>Mostrá tu juego:</h1>
+                </div>
+                <div class="form2-containerEdit-all">
+                    <div class="row form2-containerEdit">
+                        <div class="col-4">
+                            <div class="form2-containerEdit--portray">
+                                <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
+                                <input type="file" id="portray" style="display: none;" name="image">
+                                <div id="portrayZoom" class="inactive">
+                                    <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="row form2-containerEdit--video">
+                                <iframe class="productEdit-form-uploadVideo" src="https://www.youtube.com/embed/<%=producto.video%>"  frameborder="0"></iframe>
+                                <!--<input type="text" id="video" class="productEdit-form-uploadImage--video-input" name="video">-->
+                            </div>
+                            <div class="row form2-containerEdit--horizontal">
+                                <img class="productEdit-form-uploadImage--horizontal" src="/img/<%= producto.imagen_horizontal %>" alt="">
+                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form2-containerEdit">
+                        <div class="col-8">
+                            <div class="form2-containerEdit--photo__left">
+                                <img class="productEdit-form-uploadImage" id="one" src="/img/<%= producto.image1 %>" alt="">
+                                <input type="file" id="one" style="display: none;" name="image1">
+                                <img class="productEdit-form-uploadImage" id="two" src="/img/<%= producto.image2 %>" alt="">
+                                <input type="file" id="two" style="display: none;" name="image2">
+                                <img class="productEdit-form-uploadImage" id="three" src="/img/<%= producto.image3 %>" alt="">
+                                <input type="file" id="three" style="display: none;" name="image3">
+                                <img class="productEdit-form-uploadImage" id="four" src="/img/<%= producto.image4 %>" alt="">
+                                <input type="file" id="four" style="display: none;" name="image4">
+                                <img class="productEdit-form-uploadImage" id="five" src="/img/<%= producto.image5 %>" alt="">
+                                <input type="file" id="five" style="display: none;" name="image5">
+                                <img class="productEdit-form-uploadImage" id="six" src="/img/<%= producto.image6 %>" alt="">
+                                <input type="file" id="six" style="display: none;" name="image6">
+                                <img class="productEdit-form-uploadImage" id="seven" src="/img/<%= producto.image7 %>" alt="">
+                                <input type="file" id="seven" style="display: none;" name="image7">
+                                <img class="productEdit-form-uploadImage" id="eight" src="/img/<%= producto.image8 %>" alt="">
+                                <input type="file" id="eight" style="display: none;" name="image8">
+                                <img class="productEdit-form-uploadImage" id="nine" src="/img/<%= producto.image9 %>" alt="">
+                                <input type="file" id="nine" style="display: none;" name="image9">
+                                <img class="productEdit-form-uploadImage" id="ten" src="/img/<%= producto.image10 %>" alt="">
+                                <input type="file" id="ten" style="display: none;" name="image10">
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form2-containerEdit--photo__right">
+                                <img class="productEdit-form-uploadImage--detail" src="/img/<%= producto.imagen_detalle %>" alt="">
+                                <input type="file" id="detail" style="display: none;" name="imagen_detalle">
+                            </div>
+                        </div>
+                        <button type="button" class="productEdit-form-button--next mb-5 mt-5"><a href="#form3">Siguiente</a></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="form3" class="row productEdit-form-3">
                 <div class="col-12">
                     <h1>Características de Pago:</h1>
                 </div>
@@ -74,9 +131,11 @@
                     <label for="price" class="productEdit-form-label">Precio del juego</label>
                     <input type="text" name="price" class="productEdit-form-input" value="<%= producto.price %>">
                 </div>
-                <button type="button" class="productEdit-form-button--next"><a href="#form3">Siguiente</a></button>
+                <button type="button" class="productEdit-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
-            <div id="form3" class="row productEdit-form-3">
+
+
+            <div id="form4" class="row productEdit-form-4">
                 <div class="col-12">
                     <h1>Descripción del juego:</h1>
                 </div>
@@ -104,9 +163,11 @@
                     <label for="launch_date" class="productEdit-form-label">Fecha de lanzamiento: </label>
                     <input type="text" name="launch_date" class="productEdit-form-input" value="<%= producto.launch_date %>">
                 </div>
-                <button type="button" class="productEdit-form-button--next"><a href="#form4">Siguiente</a></button>
+                <button type="button" class="productEdit-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>
-            <div id="form4" class="row productEdit-form-4">
+
+
+            <div id="form5" class="row productEdit-form-5">
                 <div class="col-6 pb-5">
                     <label for="category" class="productEdit-form-label">Categorias: </label>
                     <input type="checkbox" value="Accion" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Acción</label><br>

@@ -32,6 +32,10 @@ module.exports = {
 	},
 
 	store: function(req, res) {
+
+		let url = new URL(req.body.video);
+		let videoCode = new URLSearchParams(url.search).get("v");
+
 		let nuevoProducto = {
             id: productos.length + 1,
             title: req.body.title,
@@ -39,20 +43,20 @@ module.exports = {
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
 			price: req.body.price,
-			image: req.files[0].filename,
-			imagen_horizontal: req.files[0].filename,
-			image1: req.files[0].filename,
-			image2: req.files[0].filename,
-			image3: req.files[0].filename,
-			image4: req.files[0].filename,
-			image5: req.files[0].filename,
-			image6: req.files[0].filename,
-			image7: req.files[0].filename,
-			image8: req.files[0].filename,
-			image9: req.files[0].filename,
-			image10: req.files[0].filename,
-			imagen_detalle: req.files[0].filename,
-			video: req.body.video,
+			image: (req.files[0]) ? req.files[0].filename : 'default.png',
+			imagen_horizontal: (req.files[1]) ? req.files[1].filename : 'default.png',
+			image1: (req.files[2]) ? req.files[2].filename : 'default.png',
+			image2: (req.files[3]) ? req.files[3].filename : 'default.png',
+			image3: (req.files[4]) ? req.files[4].filename : 'default.png',
+			image4: (req.files[5]) ? req.files[5].filename : 'default.png',
+			image5: (req.files[6]) ? req.files[6].filename : 'default.png',
+			image6: (req.files[7]) ? req.files[7].filename : 'default.png',
+			image7: (req.files[8]) ? req.files[8].filename : 'default.png',
+			image8: (req.files[9]) ? req.files[9].filename : 'default.png',
+			image9: (req.files[10]) ? req.files[10].filename : 'default.png',
+			image10: (req.files[11]) ? req.files[11].filename : 'default.png',
+			imagen_detalle: (req.files[12]) ? req.files[12].filename : 'default.png',
+			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
@@ -127,7 +131,6 @@ module.exports = {
 			classification: req.body.classification,
 			category: productoRecuperado.category,
 			rating: req.body.rating,
-			platforms: req.body.platforms,
 			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
 			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
 			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',

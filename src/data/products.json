@@ -372,7 +372,8 @@
     "icon_playstation": "fab fa-playstation icono-playstation",
     "icon_xbox": "fab fa-xbox icono-xbox",
     "icon_pc": "fas fa-desktop icono-desktop"
-}, {
+},
+{
     "id": 12,
     "title": "Tomb Raider -  Definitive Edition",
     "description": "nec euismod scelerisque quam turpis adipiscing lorem vitae mattis nibh ligula nec sem duis aliquam convallis nunc proin at turpis",
@@ -394,19 +395,20 @@
     "imagen_detalle": "tombRaider9.jpeg",
     "video": "zF9m91y8Na0",
     "launch_date": "March 5, 2013",
-    "developer": "Crystal Dynamics",
-    "editor": "Crystal Dynamics",
-    "tags": "Action-adventure game",
-    "classification": "+16",
+    "developer":"Crystal Dynamics",
+    "editor":"Crystal Dynamics",
+    "tags":"Action-adventure game",
+    "classification":"+16",
     "category": "mas-vendidos",
     "rating": 3.8,
     "playstation": "si",
     "xbox": "no",
     "pc": "si",
-    "icon_playstation": "fab fa-playstation icono-playstation",
-    "icon_xbox": "fab fa-xbox icono-xbox",
-    "icon_pc": "fas fa-desktop icono-desktop"
-}, {
+    "icon_playstation":"fab fa-playstation icono-playstation",
+    "icon_xbox":"fab fa-xbox icono-xbox",
+    "icon_pc":"fas fa-desktop icono-desktop"
+},
+{
     "id": 13,
     "title": "Fifa 20",
     "description": "FIFA 20 is a football simulation video game published by Electronic Arts as part of the FIFA series. It is the 27th installment in the FIFA series.",
@@ -415,8 +417,8 @@
     "price": 3043.95,
     "DESC": 15,
     "image": "fifa20.jpeg",
-    "imagen_horizontal": "fifa2018.jpeg",
-    "image1": "fifa2010.jpg",
+    "imagen_horizontal": "fifa-horizontal.jpg",
+    "image1": "fifa2010.jpeg",
     "image2": "fifa2012.jpeg",
     "image3": "fifa2013.jpeg",
     "image4": "fifa2014.jpeg",

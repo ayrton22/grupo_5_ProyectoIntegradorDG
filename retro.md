@@ -51,4 +51,28 @@
   
   Dejar de hacer:
   
-    - Arrancar tarde con el Sprint 
+    - Arrancar tarde con el Sprint
+
+## 3er Sprint:
+  
+  Empezar a hacer:
+  
+    - Middlewares, session y cookies
+    - Rutas de huespedes y usuarios
+  
+  Hacer más:
+    
+    - Pulir detalles del proyecto
+  
+  Seguir haciendo:
+    
+    - Planificaion en Trello
+    - Reuniones por Discord
+    
+  Hacer menos:
+  
+    - Ser impuntuales
+  
+  Dejar de hacer:
+  
+    - No comunicarse bien entre los integrantes del grupo

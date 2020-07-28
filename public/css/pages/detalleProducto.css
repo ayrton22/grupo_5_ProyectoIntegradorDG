@@ -246,8 +246,8 @@ div.texto-container{
     margin-bottom: 2rem;
 }
 div.texto-container div.texto-informativo{
-    
-color: grey;
+    color: grey;
+    word-break: break-word;
 }
 
 .shoping-cart-detalle{

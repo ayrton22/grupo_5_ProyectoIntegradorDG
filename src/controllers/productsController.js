@@ -71,14 +71,14 @@ module.exports = {
 			icon_xbox: 'fab fa-xbox icono-xbox',
 			icon_pc: 'fas fa-desktop icono-desktop'
 		};
-		console.log(req.files)
         for(let i = 0; i < productos.length; i++) {
             if(req.body.title == productos[i].title || req.body.image == productos[i].image || req.body.description == productos[i].description) {
                 return res.redirect('/product/load');
             }
-        }
+		}
 		productos.push(nuevoProducto);
 		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
+		return console.log(req.files[11])
 		res.redirect('/')
     },
 	

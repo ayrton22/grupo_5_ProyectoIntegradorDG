@@ -78,7 +78,6 @@ module.exports = {
 		}
 		productos.push(nuevoProducto);
 		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
-		return console.log(req.files[11])
 		res.redirect('/')
     },
 	
@@ -143,7 +142,7 @@ module.exports = {
             if(productos[i].id == req.params.id ) {
                 productos[i] = productoEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
-                res.redirect('/product/detail/' + productoEditado.id)
+                return res.redirect('/product/detail/' + productoEditado.id)
             }
         }
 	},

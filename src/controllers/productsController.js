@@ -71,12 +71,11 @@ module.exports = {
 			icon_xbox: 'fab fa-xbox icono-xbox',
 			icon_pc: 'fas fa-desktop icono-desktop'
 		};
-		console.log(req.files)
         for(let i = 0; i < productos.length; i++) {
             if(req.body.title == productos[i].title || req.body.image == productos[i].image || req.body.description == productos[i].description) {
                 return res.redirect('/product/load');
             }
-        }
+		}
 		productos.push(nuevoProducto);
 		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
 		res.redirect('/')
@@ -143,7 +142,7 @@ module.exports = {
             if(productos[i].id == req.params.id ) {
                 productos[i] = productoEditado;
                 fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
-                res.redirect('/product/detail/' + productoEditado.id)
+                return res.redirect('/product/detail/' + productoEditado.id)
             }
         }
 	},

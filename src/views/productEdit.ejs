@@ -6,7 +6,7 @@
     <%- include('partials/header') %>
 
     <div onclick="containerHide()" class="container pb-3 container-productEdit">
-        <form class="productEdit-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST" >
+        <form class="productEdit-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST">
             <div id="form1" class="row productEdit-form-1">
                 <div class="col-12">
                     <h1>Edición de Producto</h1>
@@ -56,11 +56,11 @@
                     <div class="row form2-containerEdit">
                         <div class="col-4">
                             <div class="form2-containerEdit--portray">
-                                <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
+                                <img class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= producto.image %>" alt="">
                                 <input type="file" id="portray" style="display: none;" name="image">
                                 <div id="portrayZoom" class="inactive_portray">
                                     <i class="fas fa-times"></i>
-                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/<%= producto.image %>" alt="">
+                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/uploads/productsImage/<%= producto.image %>" alt="">
                                     <form action="">
                                         <button type="button" class="productEdit-form-button--next">Borrar foto</button>
                                     </form>
@@ -75,7 +75,7 @@
                                 <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%=producto.video%>">
                             </div>
                             <div class="row form2-containerEdit--horizontal">
-                                <img class="productEdit-form-uploadImage--horizontal" src="/img/<%= producto.imagen_horizontal %>" alt="">
+                                <img class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= producto.imagen_horizontal %>" alt="">
                                 <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal">
                             </div>
                         </div>
@@ -83,31 +83,31 @@
                     <div class="row form2-containerEdit">
                         <div class="col-8">
                             <div class="form2-containerEdit--photo__left">
-                                <img class="productEdit-form-uploadImage" id="one" src="/img/<%= producto.image1 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="one" src="/img/uploads/productsImage/<%= producto.image1 %>" alt="">
                                 <input type="file" id="one" style="display: none;" name="image1">
-                                <img class="productEdit-form-uploadImage" id="two" src="/img/<%= producto.image2 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="two" src="/img/uploads/productsImage/<%= producto.image2 %>" alt="">
                                 <input type="file" id="two" style="display: none;" name="image2">
-                                <img class="productEdit-form-uploadImage" id="three" src="/img/<%= producto.image3 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="three" src="/img/uploads/productsImage/<%= producto.image3 %>" alt="">
                                 <input type="file" id="three" style="display: none;" name="image3">
-                                <img class="productEdit-form-uploadImage" id="four" src="/img/<%= producto.image4 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="four" src="/img/uploads/productsImage/<%= producto.image4 %>" alt="">
                                 <input type="file" id="four" style="display: none;" name="image4">
-                                <img class="productEdit-form-uploadImage" id="five" src="/img/<%= producto.image5 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="five" src="/img/uploads/productsImage/<%= producto.image5 %>" alt="">
                                 <input type="file" id="five" style="display: none;" name="image5">
-                                <img class="productEdit-form-uploadImage" id="six" src="/img/<%= producto.image6 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="six" src="/img/uploads/productsImage/<%= producto.image6 %>" alt="">
                                 <input type="file" id="six" style="display: none;" name="image6">
-                                <img class="productEdit-form-uploadImage" id="seven" src="/img/<%= producto.image7 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="seven" src="/img/uploads/productsImage/<%= producto.image7 %>" alt="">
                                 <input type="file" id="seven" style="display: none;" name="image7">
-                                <img class="productEdit-form-uploadImage" id="eight" src="/img/<%= producto.image8 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="eight" src="/img/uploads/productsImage/<%= producto.image8 %>" alt="">
                                 <input type="file" id="eight" style="display: none;" name="image8">
-                                <img class="productEdit-form-uploadImage" id="nine" src="/img/<%= producto.image9 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="nine" src="/img/uploads/productsImage/<%= producto.image9 %>" alt="">
                                 <input type="file" id="nine" style="display: none;" name="image9">
-                                <img class="productEdit-form-uploadImage" id="ten" src="/img/<%= producto.image10 %>" alt="">
+                                <img class="productEdit-form-uploadImage" id="ten" src="/img/uploads/productsImage/<%= producto.image10 %>" alt="">
                                 <input type="file" id="ten" style="display: none;" name="image10">
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form2-containerEdit--photo__right">
-                                <img class="productEdit-form-uploadImage--detail" src="/img/<%= producto.imagen_detalle %>" alt="">
+                                <img class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= producto.imagen_detalle %>" alt="">
                                 <input type="file" id="detail" style="display: none;" name="imagen_detalle">
                             </div>
                         </div>

@@ -29,9 +29,9 @@
                     </div>
                     <div class="col-6 pb-5">
                         <label for="platforms" class="productLoader-form-label">Plataformas: </label>
-                        <input type="checkbox" value="PC" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">PC</label><br>
-                        <input type="checkbox" value="Xbox" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Xbox</label><br>
-                        <input type="checkbox" value="PS4" name="platforms" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
+                        <input type="checkbox" name="plataformPc" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">PC</label><br>
+                        <input type="checkbox" name="plataformXbox" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Xbox</label><br>
+                        <input type="checkbox" name="plataformPlay" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms">Playstation</label>
                     </div>
                     <button type="button" class="productLoader-form-button--next"><a href="#form2">Siguiente</a></button>
             </div>
@@ -171,14 +171,8 @@
                     <input type="text" name="tags" class="productLoader-form-input">
                 </div>
                 <div class="col-6 pb-5">
-                    <label for="estado" class="productLoader-form-label">Clasificacion: </label>
-                    <select class="productLoader-form-input" name="estado">
-                        <option selected hidden>Edades:</option>
-                        <option value="1">+7</option>
-                        <option value="2">+13</option>
-                        <option value="3">+16</option>
-                        <option value="4">+18</option>
-                    </select>
+                    <label for="classification" class="productEdit-form-label">Clasificacion: </label>
+                    <input type="text" name="classification" class="productEdit-form-input">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productLoader-form-label">Puntaje: </label>

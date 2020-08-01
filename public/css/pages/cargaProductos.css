@@ -227,8 +227,8 @@ img.productLoader-form-uploadImage--portray {
 img.productLoader-form-uploadImage--video {
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
-    width: 80%;
-    margin-left: 9rem;
+    width: 86%;
+    margin-left: 6.7rem;
     cursor: pointer;
 }
 
@@ -260,7 +260,7 @@ img.productLoader-form-uploadImage--horizontal {
     display: block;
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
-    margin-top: 3.8rem;
+    margin-top: 2rem;
     right: 0;
     width: 80%;
     margin-left: 9rem;
@@ -268,7 +268,13 @@ img.productLoader-form-uploadImage--horizontal {
 }
 
 .form2-containerEdit--link-video2{
-    margin-left: 9rem !important
+    position: absolute;
+    z-index: 10;
+    bottom: 8rem;
+    left: 8rem;
+    margin-left: 9rem !important;
+    height: 18vh;
+    width: 60%;
 }
 
 .productEdit-form-input--link-video2::placeholder{

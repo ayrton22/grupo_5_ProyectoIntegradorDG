@@ -5,7 +5,7 @@
     <!-- Header -->
     <%- include('partials/header') %>
 
-    <div onclick="containerHide()" class="container pb-3 container-productEdit">
+    <div class="container pb-3 container-productEdit">
         <form class="productEdit-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST">
             <div id="form1" class="row productEdit-form-1">
                 <div class="col-12">
@@ -196,8 +196,10 @@
                     <input type="text" name="rating" class="productEdit-form-input" value="<%= producto.rating %>">
                 </div>
                     <button type="button" class="productEdit-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
-                    <button type="submit" class="productEdit-form-button--submit mb-5">Confirmar edición</button>
+                    <!--<button type="submit" class="productEdit-form-button--submit mb-5">Confirmar edición</button>-->
+                    
             </div>
+            <input type="submit" value="enviar">
         </form>
     </div>
 
@@ -205,7 +207,7 @@
     <%- include('partials/footer') %>
  
     <!-- Scripts -->
-    <%- include('partials/scripts') %>
-    <script src="/scripts/photoEdit.js"></script>
+    <%#- include('partials/scripts') %>
+    <!--<script src="/scripts/photoEdit.js"></script>-->
 </body>
 </html>

@@ -36,6 +36,12 @@ module.exports = {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
+		let namesVideo = []
+
+		for(i = 0; i < req.files.length; i++){
+			console.log(req.files.fieldname)
+		}
+
 		let nuevoProducto = {
             id: productos.length + 1,
             title: req.body.title,

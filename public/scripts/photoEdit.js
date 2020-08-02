@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
     let portrayBtn = qs('div#portrayZoom button');
 
 
-    if(portrayPhoto.src == '/img/Logos/Portray-upload.jpg') {
+    if(portrayPhoto.src.match('/img/Logos/Portray-upload.jpg')) {
 
         portrayPhoto.addEventListener('click', function() {
             portrayInput.click();

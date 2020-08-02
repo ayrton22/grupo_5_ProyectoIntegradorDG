@@ -10,13 +10,13 @@ const cookieParser = require('cookie-parser');
 const authCookieMiddleware = require('./middlewares/authCookieMiddleware');
 
 const publicDirectory = path.resolve(__dirname, '../public');
-let livereloadServer = livereload.createServer();
+/*let livereloadServer = livereload.createServer();
 livereloadServer.watch(publicDirectory);
 livereloadServer.server.once('connection', () => {
     setTimeout(() =>{
         livereloadServer.refresh("/");
     }, 1000);
-});
+});*/
 
 app.use(connectLivereload());
 

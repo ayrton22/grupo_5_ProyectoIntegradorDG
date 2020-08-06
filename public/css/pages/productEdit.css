@@ -206,6 +206,7 @@ div.form2-containerEdit {
 
 div.form2-containerEdit--portray {
     margin: 1rem 0;
+    height: 100%;
 }
 
 div.form2-containerEdit--video {
@@ -228,7 +229,8 @@ img.productEdit-form-uploadImage--portray {
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
     cursor: pointer;
-    width: 105%;
+    width: 37rem;
+    height: 100%;
 }
 
 iframe.productEdit-form-uploadVideo {
@@ -252,7 +254,8 @@ img.productEdit-form-uploadImage {
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
     margin: 1rem 0;
-    width: 18%;
+    width: 11rem;
+    height: 7rem;
     cursor: pointer;
 }
 

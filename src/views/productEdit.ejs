@@ -5,15 +5,15 @@
     <!-- Header -->
     <%- include('partials/header') %>
 
-    <div onclick="containerHide()" class="container pb-3 container-productEdit">
-        <form class="productEdit-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST" >
+    <div class="container pb-3 container-productEdit">
+        <form class="productEdit-form" action="/product/edit/<%= producto.id %>?_method=put" method="POST">
             <div id="form1" class="row productEdit-form-1">
                 <div class="col-12">
                     <h1>Edición de Producto</h1>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="title" class="productEdit-form-label">Titulo del juego: </label>
-                    <input type="text" name="title" class="productEdit-form-input" value="<%= producto.title %>">
+                    <input type="text" name="title" class="productEdit-form-input" value="<%= producto.title %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="estado" class="productEdit-form-label">Estado del juego: </label>
@@ -29,19 +29,19 @@
                 <div class="col-6 pb-5">
                     <label for="platforms" class="productEdit-form-label">Plataformas: </label>
                     <% if(producto.pc == "si" ) { %>
-                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" checked> <label class="productEdit-checkbox-label" for="platforms">PC</label><br>
+                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">PC</label><br/>
                     <% } else { %>
-                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="platforms">PC</label><br>
+                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">PC</label><br/>
                     <% } %>
                     <% if(producto.xbox == "si" ) { %>
-                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" checked> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br>
+                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br/>
                     <% } else { %>
-                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br>
+                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br/>
                     <% } %>
                     <% if(producto.playstation == "si" ) { %>
-                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" checked> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
+                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
                     <% } else { %>
-                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
+                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
                     <% } %>
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form2">Siguiente</a></button>
@@ -56,11 +56,11 @@
                     <div class="row form2-containerEdit">
                         <div class="col-4">
                             <div class="form2-containerEdit--portray">
-                                <img class="productEdit-form-uploadImage--portray" src="/img/<%= producto.image %>" alt="">
-                                <input type="file" id="portray" style="display: none;" name="image">
+                                <img class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= producto.image %>" alt=""/>
+                                <input type="file" id="portray" style="display: none;" name="image"/>
                                 <div id="portrayZoom" class="inactive_portray">
                                     <i class="fas fa-times"></i>
-                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/<%= producto.image %>" alt="">
+                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/uploads/productsImage/<%= producto.image %>" alt=""/>
                                     <form action="">
                                         <button type="button" class="productEdit-form-button--next">Borrar foto</button>
                                     </form>
@@ -72,43 +72,43 @@
                                 <iframe class="productEdit-form-uploadVideo" src="https://www.youtube.com/embed/<%=producto.video%>"  frameborder="0"></iframe>
                             </div>
                             <div class="row form2-containerEdit--link-video">
-                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%=producto.video%>">
+                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%=producto.video%>"/>
                             </div>
                             <div class="row form2-containerEdit--horizontal">
-                                <img class="productEdit-form-uploadImage--horizontal" src="/img/<%= producto.imagen_horizontal %>" alt="">
-                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal">
+                                <img class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= producto.imagen_horizontal %>" alt=""/>
+                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal"/>
                             </div>
                         </div>
                     </div>
                     <div class="row form2-containerEdit">
                         <div class="col-8">
                             <div class="form2-containerEdit--photo__left">
-                                <img class="productEdit-form-uploadImage" id="one" src="/img/<%= producto.image1 %>" alt="">
-                                <input type="file" id="one" style="display: none;" name="image1">
-                                <img class="productEdit-form-uploadImage" id="two" src="/img/<%= producto.image2 %>" alt="">
-                                <input type="file" id="two" style="display: none;" name="image2">
-                                <img class="productEdit-form-uploadImage" id="three" src="/img/<%= producto.image3 %>" alt="">
-                                <input type="file" id="three" style="display: none;" name="image3">
-                                <img class="productEdit-form-uploadImage" id="four" src="/img/<%= producto.image4 %>" alt="">
-                                <input type="file" id="four" style="display: none;" name="image4">
-                                <img class="productEdit-form-uploadImage" id="five" src="/img/<%= producto.image5 %>" alt="">
-                                <input type="file" id="five" style="display: none;" name="image5">
-                                <img class="productEdit-form-uploadImage" id="six" src="/img/<%= producto.image6 %>" alt="">
-                                <input type="file" id="six" style="display: none;" name="image6">
-                                <img class="productEdit-form-uploadImage" id="seven" src="/img/<%= producto.image7 %>" alt="">
-                                <input type="file" id="seven" style="display: none;" name="image7">
-                                <img class="productEdit-form-uploadImage" id="eight" src="/img/<%= producto.image8 %>" alt="">
-                                <input type="file" id="eight" style="display: none;" name="image8">
-                                <img class="productEdit-form-uploadImage" id="nine" src="/img/<%= producto.image9 %>" alt="">
-                                <input type="file" id="nine" style="display: none;" name="image9">
-                                <img class="productEdit-form-uploadImage" id="ten" src="/img/<%= producto.image10 %>" alt="">
-                                <input type="file" id="ten" style="display: none;" name="image10">
+                                <img class="productEdit-form-uploadImage" id="one" src="/img/uploads/productsImage/<%= producto.image1 %>" alt="" />
+                                <input type="file" id="one" style="display: none;" name="image1"/>
+                                <img class="productEdit-form-uploadImage" id="two" src="/img/uploads/productsImage/<%= producto.image2 %>" alt=""/>
+                                <input type="file" id="two" style="display: none;" name="image2"/>
+                                <img class="productEdit-form-uploadImage" id="three" src="/img/uploads/productsImage/<%= producto.image3 %>" alt=""/>
+                                <input type="file" id="three" style="display: none;" name="image3"/>
+                                <img class="productEdit-form-uploadImage" id="four" src="/img/uploads/productsImage/<%= producto.image4 %>" alt=""/>
+                                <input type="file" id="four" style="display: none;" name="image4"/>
+                                <img class="productEdit-form-uploadImage" id="five" src="/img/uploads/productsImage/<%= producto.image5 %>" alt=""/>
+                                <input type="file" id="five" style="display: none;" name="image5"/>
+                                <img class="productEdit-form-uploadImage" id="six" src="/img/uploads/productsImage/<%= producto.image6 %>" alt=""/>
+                                <input type="file" id="six" style="display: none;" name="image6"/>
+                                <img class="productEdit-form-uploadImage" id="seven" src="/img/uploads/productsImage/<%= producto.image7 %>" alt=""/>
+                                <input type="file" id="seven" style="display: none;" name="image7"/>
+                                <img class="productEdit-form-uploadImage" id="eight" src="/img/uploads/productsImage/<%= producto.image8 %>" alt=""/>
+                                <input type="file" id="eight" style="display: none;" name="image8"/>
+                                <img class="productEdit-form-uploadImage" id="nine" src="/img/uploads/productsImage/<%= producto.image9 %>" alt=""/>
+                                <input type="file" id="nine" style="display: none;" name="image9"/>
+                                <img class="productEdit-form-uploadImage" id="ten" src="/img/uploads/productsImage/<%= producto.image10 %>" alt=""/>
+                                <input type="file" id="ten" style="display: none;" name="image10"/>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form2-containerEdit--photo__right">
-                                <img class="productEdit-form-uploadImage--detail" src="/img/<%= producto.imagen_detalle %>" alt="">
-                                <input type="file" id="detail" style="display: none;" name="imagen_detalle">
+                                <img class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= producto.imagen_detalle %>" alt="" />
+                                <input type="file" id="detail" style="display: none;" name="imagen_detalle" />
                             </div>
                         </div>
                         <button type="button" class="productEdit-form-button--next mb-5 mt-5"><a href="#form3">Siguiente</a></button>
@@ -123,19 +123,19 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productEdit-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br>
-                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br>
+                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
+                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productEdit-form-label">Opciones de entrega de Producto: </label>
-                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br>
-                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="receive">Buscar</label>
+                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br/>
+                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="receive">Buscar</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="price" class="productEdit-form-label">Precio del juego</label>
-                    <input type="text" name="price" class="productEdit-form-input" value="<%= producto.price %>">
+                    <input type="text" name="price" class="productEdit-form-input" value="<%= producto.price %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
@@ -159,15 +159,15 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="editor" class="productEdit-form-label">Editora: </label>
-                    <input type="text" name="editor" class="productEdit-form-input" value="<%= producto.editor %>">
+                    <input type="text" name="editor" class="productEdit-form-input" value="<%= producto.editor %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="developer" class="productEdit-form-label">Desarrolladora: </label>
-                    <input type="text" name="developer" class="productEdit-form-input" value="<%= producto.developer %>">
+                    <input type="text" name="developer" class="productEdit-form-input" value="<%= producto.developer %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="launch_date" class="productEdit-form-label">Fecha de lanzamiento: </label>
-                    <input type="text" name="launch_date" class="productEdit-form-input" value="<%= producto.launch_date %>">
+                    <input type="text" name="launch_date" class="productEdit-form-input" value="<%= producto.launch_date %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>
@@ -176,24 +176,24 @@
             <div id="form5" class="row productEdit-form-5">
                 <div class="col-6 pb-5">
                     <label for="category" class="productEdit-form-label">Categorias: </label>
-                    <input type="checkbox" value="Accion" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Acción</label><br>
-                    <input type="checkbox" value="Aventura" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Aventura</label><br>
-                    <input type="checkbox" value="Carreras" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Carreras</label><br>
-                    <input type="checkbox" value="Deportes" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Deportes</label><br>
-                    <input type="checkbox" value="Arcade" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Arcade</label><br>
-                    <input type="checkbox" value="Simulacion" name="category" class="productEdit-form-checkbox"> <label class="productEdit-checkbox-label" for="category">Simulacion</label>
+                    <input type="checkbox" value="Accion" name="category" class="productEdit-form-checkbox"/> <label class="productEdit-checkbox-label" for="category">Acción</label><br/>
+                    <input type="checkbox" value="Aventura" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Aventura</label><br/>
+                    <input type="checkbox" value="Carreras" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Carreras</label><br/>
+                    <input type="checkbox" value="Deportes" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Deportes</label><br/>
+                    <input type="checkbox" value="Arcade" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Arcade</label><br/>
+                    <input type="checkbox" value="Simulacion" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Simulacion</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productEdit-form-label">Etiquetas: </label>
-                    <input type="text" name="tags" class="productEdit-form-input" value="<%= producto.tags %>">
+                    <input type="text" name="tags" class="productEdit-form-input" value="<%= producto.tags %>"/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productEdit-form-input" value="<%= producto.classification %>">
+                    <input type="text" name="classification" class="productEdit-form-input" value="<%= producto.classification %>"/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productEdit-form-label">Puntaje: </label>
-                    <input type="text" name="rating" class="productEdit-form-input" value="<%= producto.rating %>">
+                    <input type="text" name="rating" class="productEdit-form-input" value="<%= producto.rating %>"/>
                 </div>
                     <button type="button" class="productEdit-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
                     <button type="submit" class="productEdit-form-button--submit mb-5">Confirmar edición</button>

@@ -6,9 +6,9 @@ usuarios = JSON.parse(usuarios);
 
 module.exports = [
     check('username')
-        .isLength({min: 5, max: 20}).withMessage('Puede ser que hays ecrito mal tu nombre de usuario'),
+        .isLength({min: 5, max: 20}).withMessage('Puede ser que hayas escrito mal tu nombre de usuario'),
     check('password')
-        .isLength({min: 6, max: 20}).withMessage('Puede ser que hays escrito mal tu contraseña'),
+        .isLength({min: 6, max: 20}).withMessage('Puede ser que hayas escrito mal tu contraseña'),
     body('username')
         .custom(function(value) {
         for(let i = 0; i < usuarios.length; i++) {

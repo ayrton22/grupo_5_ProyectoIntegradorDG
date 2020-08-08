@@ -25,8 +25,12 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "express-validator": "^6.6.0",
+    "faker": "^4.1.0",
     "livereload": "^0.9.1",
     "method-override": "^3.0.0",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.4",
+    "sequelize-cli": "^6.2.0"
   }
 }

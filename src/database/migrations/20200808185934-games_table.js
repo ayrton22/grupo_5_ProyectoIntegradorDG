@@ -53,22 +53,6 @@ module.exports = {
       stock: {
         type: Sequelize.DataTypes.INTEGER(100),
         allowNull: false
-      },
-      genre: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true
-      },
-      category: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true
-      },
-      platform: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true
-      },
-      img: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true
       }
     })
   },

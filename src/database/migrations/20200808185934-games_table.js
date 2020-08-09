@@ -10,8 +10,7 @@ module.exports = {
       },
       title: {
         type: Sequelize.DataTypes.STRING(60),
-        allowNull: false,
-        unique: true
+        allowNull: false
       },
       description: {
         type: Sequelize.DataTypes.STRING(100),
@@ -26,7 +25,7 @@ module.exports = {
         allowNull: false,
       },
       price: {
-        type:Sequelize.DataTypes.DECIMAL(5000, 2),
+        type:Sequelize.DataTypes.DECIMAL(50, 2),
         allowNull: false
       },
       createdAt: Sequelize.DataTypes.DATE,
@@ -57,23 +56,19 @@ module.exports = {
       },
       genre: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true,
-        autoIncrement: true
+        foreignKey: true
       },
       category: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true,
-        autoIncrement: true
+        foreignKey: true
       },
       platform: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true,
-        autoIncrement: true
+        foreignKey: true
       },
       img: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        foreignKey: true,
-        autoIncrement: true
+        foreignKey: true
       }
     })
   },

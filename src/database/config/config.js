@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "house_of_games",
-    //"port":"3306",
+    "port":"8889",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

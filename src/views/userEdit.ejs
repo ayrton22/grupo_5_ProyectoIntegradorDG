@@ -8,26 +8,26 @@
     <%- include('partials/header') %>
 
     <div onclick="containerHide()" class="container pb-5 container-userEdit">
-        <form class="userEdit-form" action="/user/edit/<%= usuario.id %>?_method=put" enctype="multipart/form-data" method="POST">
+        <form class="userEdit-form" action="/user/edit/<%= user.id %>?_method=put" enctype="multipart/form-data" method="POST">
             <h1>Editar o agregar información</h1>
 
             <h2>General</h2>
 
-            <input class="userEdit-form-input" type="hidden" value="<%= usuario.username %>" name="username">
+            <input class="userEdit-form-input" type="hidden" value="<%= user.username %>" name="username">
 
             <div class="area">
-                <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= usuario.avatar %>" alt="avatar">
+                <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= user.avatar %>" alt="avatar">
                 <input type="file" id="upload" name="avatar">
             </div>
 
             <label class="userEdit-form-label" for="name">Nombre</label>
-            <input class="userEdit-form-input" type="text" value="<%= usuario.first_name %>" name="name">
+            <input class="userEdit-form-input" type="text" value="<%= user.first_name %>" name="name">
             
             <label class="userEdit-form-label" for="surname">Apellido</label>
-            <input class="userEdit-form-input" type="text" value="<%= usuario.last_name %>" name="surname">
+            <input class="userEdit-form-input" type="text" value="<%= user.last_name %>" name="surname">
             
             <label class="userEdit-form-label" for="email">Email</label>
-            <input class="userEdit-form-input" type="email" value="<%= usuario.email %>" name="email">
+            <input class="userEdit-form-input" type="email" value="<%= user.email %>" name="email">
             
             <h2 class=" d-none">Cambiar contraseña</h2>
             
@@ -40,7 +40,7 @@
                 <h2>Más información</h2>
                 
                 <label class="userEdit-form-label" for="date">Fecha de nacimiento</label>
-                <input class="userEdit-form-input" type="date" name="date" value="<%= usuario.date %>">
+                <input class="userEdit-form-input" type="date" name="date" value="<%= user.date %>">
                 
                 <label class="userEdit-form-label" for="gender">Género</label>
                 <select class="userEdit-form-input" name="gender">

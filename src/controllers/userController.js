@@ -4,53 +4,53 @@ const bcrypt = require('bcrypt');
 
 const {check, validationResult, body} = require('express-validator');
 
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
-usuarios = JSON.parse(usuarios);
+let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
+users = JSON.parse(users);
 
 module.exports = {
-    shoppingCart: function(req, res){
-        res.render('carritoDeCompras')
+    cart: function(req, res){
+        res.render('userCart')
     },
     register: function(req, res) {
-        res.render('registro')
+        res.render('userRegister')
     },
     save: function(req, res) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-            let nuevoUsuario = {
-                id: usuarios.length + 1,
+            let newUser = {
+                id: users.length + 1,
                 first_name: req.body.name,
                 last_name: req.body.surname,
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
             };
-            usuarios.push(nuevoUsuario);
-            fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios))
+            users.push(newUser);
+            fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users))
             res.redirect('/user/login');
         } else {
-            res.render('registro', {
+            res.render('userRegister', {
                 errors: errors.mapped(),
                 old: req.body
             })
         }
     },
     login: function(req, res) {
-        res.render('login')
+        res.render('userLogin')
     },
     confirm: function(req, res, next) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].username == req.body.username && bcrypt.compareSync(req.body.password, usuarios[i].password)) {
-                req.session.usernameUser = usuarios[i].username
+        for(let i = 0; i < users.length; i++) {
+            if(users[i].username == req.body.username && bcrypt.compareSync(req.body.password, users[i].password)) {
+                req.session.usernameUser = users[i].username
                 if(req.body.remember != undefined){
-                    res.cookie('authRemember', usuarios[i].username, {maxAge: 60000 * 10})
+                    res.cookie('authRemember', users[i].username, {maxAge: 60000 * 10})
                 }
-                return res.redirect('/user/profile/' + usuarios[i].id)
+                return res.redirect('/user/profile/' + users[i].id)
             } 
         }
-        return res.render('login', {
+        return res.render('userLogin', {
             errors: {
                 username: {
                     msg: 'Credenciales inválidas. Inserta un email o usuario registrado y su respectica contraseña'
@@ -58,7 +58,7 @@ module.exports = {
             }
         })
     } else {
-        res.render('login', {
+        res.render('userLogin', {
             errors: errors.mapped(),
             old: req.body
         });
@@ -72,58 +72,58 @@ module.exports = {
     },
 
     edit: function(req, res) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(req.params.id == usuarios[i].id) {
-                return res.render('registerEdit', {
-                    usuario: usuarios[i]
+        for(let i = 0; i < users.length; i++) {
+            if(req.params.id == users[i].id) {
+                return res.render('userEdit', {
+                    user: users[i]
                 })
             }
         } res.redirect('/user/register');
     },
     
     update: function(req, res) {
-        let usuarioRecuperado;
-        for(i = 0; i < usuarios.length; i++){
-            if(usuarios[i].id ==  req.params.id){
-                usuarioRecuperado = usuarios[i]
+        let userToEdit;
+        for(i = 0; i < users.length; i++){
+            if(users[i].id ==  req.params.id){
+                userToEdit = users[i]
             }
         }
         
-        let usuarioEditado = {
+        let editedUser = {
             id: req.params.id,
             first_name: req.body.name,
             last_name: req.body.surname,
-            username: usuarioRecuperado.username,
+            username: userToEdit.username,
             email: req.body.email,
             gender: req.body.gender,
-            password: usuarioRecuperado.password,
+            password: userToEdit.password,
             birth_date: req.body.date,
             age: Date.now() - req.body.date,
             address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
             avatar: req.files[0].filename
         };
         
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].id == req.params.id) {
-                usuarios[i] = usuarioEditado;
-                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(usuarios));
-                req.session.usernameUser = usuarioEditado.username;
-                return res.redirect('/user/profile/' + usuarioEditado.id)
+        for(let i = 0; i < users.length; i++) {
+            if(users[i].id == req.params.id) {
+                users[i] = editedUser;
+                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users));
+                req.session.usernameUser = editedUser.username;
+                return res.redirect('/user/profile/' + editedUser.id)
             }
         }
     },
 
     profile: function(req, res) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(req.params.id == usuarios[i].id) {
+        for(let i = 0; i < users.length; i++) {
+            if(req.params.id == users[i].id) {
                 return res.render('userProfile', {
-                    usuario: usuarios[i]
+                    user: users[i]
                 })
             }
         }
     },
 
     thankYouPage: function(req, res){
-        res.render('graciasPorComprar');
+        res.render('thankYouPage');
     }
 }

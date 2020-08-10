@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {title: 'detalleProducto'}) %>
+    <%- include('partials/head', {title: 'Detalle de producto'}) %>
 <body>
     <%- include('partials/header') %>
     <div onclick="containerHide()" class="container mt-3 padding-cont-detalle">
         <div class="detalle-container">
             <div class="detalle-container__mediaInfo">
                 <div class="detalle-container__part-1 arrow">
-                    <div class="vista " ><img class="oculto" src="../../img/uploads/productsImage/<%= productoDetalle.image2 %>" alt="imagen-gameplay" id="current">
-                    <iframe class="detalle-container__video" name="videos" src="https://www.youtube.com/embed/<%=productoDetalle.video%>"  frameborder="0"></iframe>
+                    <div class="vista " ><img class="oculto" src="../../img/uploads/productsImage/<%= productDetail.image2 %>" alt="imagen-gameplay" id="current">
+                    <iframe class="detalle-container__video" name="videos" src="https://www.youtube.com/embed/<%=productDetail.video%>"  frameborder="0"></iframe>
                     </div> 
                     <div class="detalle-container__contenedor-slider">
                         <button role="button" id="flecha-derecha" class="flecha-izquierda">
@@ -16,18 +16,18 @@
                         </button>
                         <div class="contenedor-carrusel">
                             <div class="imagen-gameplay principal">
-                                <img class="videoPreview" src="../../img/uploads/productsImage/<%= productoDetalle.image1 %>" alt="imagen-gameplay">
+                                <img class="videoPreview" src="../../img/uploads/productsImage/<%= productDetail.image1 %>" alt="imagen-gameplay">
                                 <img class="logo videoPreview oculto" src="../../img/Logos/playvideo.png" alt="logo">
                             </div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image2 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image3 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image4 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image5 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image6 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image7 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image8 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image9 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productoDetalle.image10 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image2 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image3 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image4 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image5 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image6 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image7 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image8 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image9 %>" alt="imagen-gameplay"></div>
+                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image10 %>" alt="imagen-gameplay"></div>
                         </div>
                         <button role="button" id="flecha-izquierda" class="flecha-derecha"> 
                             <i class="fas fa-angle-left"></i>
@@ -36,29 +36,29 @@
                 </div>
                 <article class="detalle-container__part-2">
                        <div class="">
-                        <img class="imagen-detalle" src="/img/uploads/productsImage/<%= productoDetalle.imagen_detalle %>" alt="">
+                        <img class="imagen-detalle" src="/img/uploads/productsImage/<%= productDetail.imagen_detalle %>" alt="">
                        </div>
-                       <h3><%= productoDetalle.description %></h3>
-                       <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productoDetalle.rating %></div>
-                       <p><%= productoDetalle.price %>$</p>
+                       <h3><%= productDetail.description %></h3>
+                       <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productDetail.rating %></div>
+                       <p><%= productDetail.price %>$</p>
                        <div class="botones-administrador">
-                        <button class="detail--action-button"><a href="/product/edit/<%= productoDetalle.id %>">EDITAR PRODUCTO</a></button>
-                        <form action="/product/detail/<%= productoDetalle.id %>?_method=delete" method="POST" style="display: inline-flex">
+                        <button class="detail--action-button"><a href="/product/edit/<%= productDetail.id %>">EDITAR PRODUCTO</a></button>
+                        <form action="/product/detail/<%= productDetail.id %>?_method=delete" method="POST" style="display: inline-flex">
                         <button type="submit" class="detail--action-button">ELIMINAR</button>
                         </form>
                        </div>
                        <div class="detalle-container__plataform-buyButtons">
                             <div class="detalle-container__plataform-buttons">
-                                <% if(productoDetalle.playstation == "si") { %>
-                                    <i class="<%= productoDetalle.icon_playstation %>"></i>
+                                <% if(productDetail.playstation == "si") { %>
+                                    <i class="<%= productDetail.icon_playstation %>"></i>
                                 <% } %>
         
-                                <% if(productoDetalle.xbox == "si") { %>
-                                    <i class="<%= productoDetalle.icon_xbox %>"></i>
+                                <% if(productDetail.xbox == "si") { %>
+                                    <i class="<%= productDetail.icon_xbox %>"></i>
                                 <% } %>
                            
-                                <% if(productoDetalle.pc == "si") { %>
-                                    <i class="<%= productoDetalle.icon_pc %>"></i>
+                                <% if(productDetail.pc == "si") { %>
+                                    <i class="<%= productDetail.icon_pc %>"></i>
                                 <% } %>
                             </div>
                             <div class="">
@@ -74,34 +74,34 @@
                         <div class="detalle-container__devInfo">
                             <div class="">
                                 <span class="span-detail informacion">Desarrolladora:</span>
-                                <p><%= productoDetalle.developer %></p>
+                                <p><%= productDetail.developer %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Editora:</span>
-                                <p> <%= productoDetalle.editor %></p>
+                                <p> <%= productDetail.editor %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Fecha de lanzamiento:</span>
-                                <p> <%= productoDetalle.launch_date %></p>
+                                <p> <%= productDetail.launch_date %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Etiquetas:</span>
-                                <p> <%= productoDetalle.tags %></p>
+                                <p> <%= productDetail.tags %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Clasificacion:</span>
-                                <p> <%= productoDetalle.classification %></p>
+                                <p> <%= productDetail.classification %></p>
                             </div>
                         </div>
                         <section class="">
                             <div class="texto-container">
-                                <h1 class="h1-detalle"><%= productoDetalle.title %></h1>
+                                <h1 class="h1-detalle"><%= productDetail.title %></h1>
                                 <div class="texto-informativo">
-                                    <%= productoDetalle.big_description %>
+                                    <%= productDetail.big_description %>
                                 </div>
                                 <br>
                                 <div class="texto-informativo">
-                                    <%= productoDetalle.medium_description %>
+                                    <%= productDetail.medium_description %>
                                 </div>
                             </div>
                         </section>
@@ -113,16 +113,16 @@
                     <% let arraynumrandom = [] %>
                     <% let verificador = 0 %>
                     <% while(arraynumrandom.length < 6) { %>
-                    <% let random = Math.floor(Math.random() * productos.length) %>
-                    <%  if ((arraynumrandom.length == 0) && (random != productoDetalle.id - 1)) { %>
+                    <% let random = Math.floor(Math.random() * products.length) %>
+                    <%  if ((arraynumrandom.length == 0) && (random != productDetail.id - 1)) { %>
                     <%  arraynumrandom.push(random) %>
-                    <a href="/product/detail/<%= productos[random].id %>">
+                    <a href="/product/detail/<%= products[random].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="../../img/uploads/productsImage/<%= productos[random].image %>" alt="imagen-detalle">
+                                <img src="../../img/uploads/productsImage/<%= products[random].image %>" alt="imagen-detalle">
                             </div>
-                            <p><%= productos[random].title %></p>
-                            <p><%= productos[random].price %>$</p>
+                            <p><%= products[random].title %></p>
+                            <p><%= products[random].price %>$</p>
                         </article>
                     </a>
                     <%  }else{ %>
@@ -132,15 +132,15 @@
                     <% } %>
         
                     <%  } %>
-                    <%  if((verificador == arraynumrandom.length) && (random != productoDetalle.id - 1) ){  %>
+                    <%  if((verificador == arraynumrandom.length) && (random != productDetail.id - 1) ){  %>
                     <%  arraynumrandom.push(random) %>
-                    <a href="/product/detail/<%= productos[random].id %>">
+                    <a href="/product/detail/<%= products[random].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="../../img/uploads/productsImage/<%= productos[random].image %>" alt="imagen-detalle">
+                                <img src="../../img/uploads/productsImage/<%= products[random].image %>" alt="imagen-detalle">
                             </div>
-                            <p><%= productos[random].title %></p>
-                            <p><%= productos[random].price %>$</p>
+                            <p><%= products[random].title %></p>
+                            <p><%= products[random].price %>$</p>
                         </article>
                     </a>
                     <% } %>

@@ -1,34 +1,33 @@
+// Modules
 const fs = require('fs');
 const path = require('path');
 
-let productos = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
-productos = JSON.parse(productos);
+// JSON Parse
+let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
+products = JSON.parse(products);
 
+// Controller usage in module export
 module.exports = {
-    allProducts: (req, res) => {
-		res.render('productos', {
-			producto: productos
+    list: (req, res) => {
+		res.render('productList', {
+			products: products
 		})
-	},
-
-    shoppingCart: function(req, res){
-        res.render('carritoDeCompras')
 	},
 	
 	detail: function(req, res) {
-		let idProducto = req.params.id;
-		for (let i = 0; i < productos.length; i++) {
-			if (productos[i].id == idProducto) {
-				res.render('detalleProducto', {
-					productoDetalle: productos[i],
-					productos
+		let productId = req.params.id;
+		for (let i = 0; i < products.length; i++) {
+			if (products[i].id == productId) {
+				res.render('productDetail', {
+					productDetail: products[i],
+					products
 				})
 			}
 		}
 	},
 
     load: function(req, res) {
-		res.render('cargaDeProductos')
+		res.render('productLoad')
 	},
 
 	store: function(req, res) {
@@ -42,8 +41,8 @@ module.exports = {
 			console.log(req.files.fieldname)
 		}
 
-		let nuevoProducto = {
-            id: productos.length + 1,
+		let newProduct = {
+            id: products.length + 1,
             title: req.body.title,
             description: req.body.description,
             medium_description: req.body.medium_description,
@@ -77,88 +76,88 @@ module.exports = {
 			icon_xbox: 'fab fa-xbox icono-xbox',
 			icon_pc: 'fas fa-desktop icono-desktop'
 		};
-        for(let i = 0; i < productos.length; i++) {
-            if(req.body.title == productos[i].title || req.body.image == productos[i].image || req.body.description == productos[i].description) {
+        for(let i = 0; i < products.length; i++) {
+            if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description) {
                 return res.redirect('/product/load');
             }
 		}
-		productos.push(nuevoProducto);
-		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
+		products.push(newProduct);
+		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
 		res.redirect('/')
     },
 	
     edit: function(req, res) {
-		for(let i = 0; i < productos.length; i++) {
-            if(req.params.id == productos[i].id) {
+		for(let i = 0; i < products.length; i++) {
+            if(req.params.id == products[i].id) {
                 return res.render('productEdit', {
-                    producto: productos[i]
+                    product: products[i]
                 })
             }
         } res.redirect('/product');
 	},
 	
 	update: function(req, res) {
-		let productoRecuperado;
-        for(i = 0; i < productos.length; i++){
-            if(productos[i].id ==  req.params.id){
-                productoRecuperado = productos[i]
+		let productToEdit;
+        for(i = 0; i < products.length; i++){
+            if(products[i].id ==  req.params.id){
+                productToEdit = products[i]
             }
 		}
 
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let productoEditado = {
+		let editedProduct = {
             id: req.params.id,
             title: req.body.title,
             description: req.body.description,
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
 			price: req.body.price,
-			image: productoRecuperado.image,
-			imagen_horizontal: productoRecuperado.imagen_horizontal,
-			image1: productoRecuperado.image1,
-			image2: productoRecuperado.image2,
-			image3: productoRecuperado.image3,
-			image4: productoRecuperado.image4,
-			image5: productoRecuperado.image5,
-			image6: productoRecuperado.image6,
-			image7: productoRecuperado.image7,
-			image8: productoRecuperado.image8,
-			image9: productoRecuperado.image9,
-			image10: productoRecuperado.image10,
-			imagen_detalle: productoRecuperado.imagen_detalle,
+			image: productToEdit.image,
+			imagen_horizontal: productToEdit.imagen_horizontal,
+			image1: productToEdit.image1,
+			image2: productToEdit.image2,
+			image3: productToEdit.image3,
+			image4: productToEdit.image4,
+			image5: productToEdit.image5,
+			image6: productToEdit.image6,
+			image7: productToEdit.image7,
+			image8: productToEdit.image8,
+			image9: productToEdit.image9,
+			image10: productToEdit.image10,
+			imagen_detalle: productToEdit.imagen_detalle,
 			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
 			tags: req.body.tags,
 			classification: req.body.classification,
-			category: productoRecuperado.category,
+			category: productToEdit.category,
 			rating: req.body.rating,
 			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
 			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
 			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
-			icon_playstation: productoRecuperado.icon_playstation,
-			icon_xbox: productoRecuperado.icon_xbox,
-			icon_pc: productoRecuperado.icon_pc
+			icon_playstation: productToEdit.icon_playstation,
+			icon_xbox: productToEdit.icon_xbox,
+			icon_pc: productToEdit.icon_pc
         };
         
-        for(let i = 0; i < productos.length; i++) {
-            if(productos[i].id == req.params.id ) {
-                productos[i] = productoEditado;
-                fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos))
-                return res.redirect('/product/detail/' + productoEditado.id)
+        for(let i = 0; i < products.length; i++) {
+            if(products[i].id == req.params.id ) {
+                products[i] = editedProduct;
+                fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
+                return res.redirect('/product/detail/' + editedProduct.id)
             }
         }
 	},
 
     destroy: (req, res) => {
-		for (let i = 0; i < productos.length; i++) {
-			if (productos[i].id == req.params.id) {
-				let index = productos.indexOf(productos[i]);
-				productos.splice(index, 1);
-				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(productos));
+		for (let i = 0; i < products.length; i++) {
+			if (products[i].id == req.params.id) {
+				let index = products.indexOf(products[i]);
+				products.splice(index, 1);
+				fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products));
 				res.redirect('/')
 			}
 		}

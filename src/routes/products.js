@@ -1,11 +1,15 @@
-const path = require('path');
+// Express
 const express = require('express');
 const router = express.Router();
 
-const controller = require('../controllers/productsController.js')
+// Controller require
+const controller = require('../controllers/productsController.js');
+
+// Middleware require
 const uploadImageProductMiddleware = require('../middlewares/uploadImageProductMiddlware')
 
-router.get('/', controller.allProducts);
+// Router, controller and middleware usage
+router.get('/', controller.list);
 
 router.get('/detail/:id', controller.detail);
 router.delete('/detail/:id', controller.destroy)
@@ -16,4 +20,5 @@ router.post('/load', uploadImageProductMiddleware.any() ,controller.store);
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', controller.update);
 
+// Module export
 module.exports = router;

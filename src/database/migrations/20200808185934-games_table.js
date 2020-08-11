@@ -43,7 +43,7 @@ module.exports = {
         allowNull: false
       },
       clasification: {
-        type: Sequelize.DataTypes.STRING(10),
+        type: Sequelize.DataTypes.STRING(1),
         allowNull: false
       },
       rating: {

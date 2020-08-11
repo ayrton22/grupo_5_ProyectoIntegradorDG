@@ -1,13 +1,28 @@
+// Modules
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-
 const {check, validationResult, body} = require('express-validator');
 
+// Database
+
+const db = require('../database/models');
+
+// JSON Parse
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 users = JSON.parse(users);
 
+// Controller usage in module export
 module.exports = {
+    prueba: function(req, res) {
+        db.Users.findAll()
+        .then(function(result) {
+            res.send(result)
+        })
+        .catch(function(error) {
+            res.send(error)
+        })
+    },
     cart: function(req, res){
         res.render('userCart')
     },

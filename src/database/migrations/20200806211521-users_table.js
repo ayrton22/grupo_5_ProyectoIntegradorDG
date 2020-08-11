@@ -8,18 +8,47 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      name: {
+      first_name: {
         type: Sequelize.DataTypes.STRING(60),
         allowNull: false
       },
+      last_name: {
+        type: Sequelize.DataTypes.STRING(60),
+        allowNull: false
+      },
+      username: {
+        type: Sequelize.DataTypes.STRING(25),
+        allowNull: false,
+        unique: true
+      },
       email: {
-        type: Sequelize.DataTypes.STRING(100),
+        type: Sequelize.DataTypes.STRING(75),
         allowNull: false,
         unique: true
       },
       password: {
         type:Sequelize.DataTypes.STRING(100),
         allowNull: false
+      },
+      gender: {
+        type:Sequelize.DataTypes.CHAR(15),
+        defaultValue: 'Unspecified'
+      },
+      birth_date: {
+        type:Sequelize.DataTypes.DATE(),
+        allowNull: true
+      },
+      age: {
+        type:Sequelize.DataTypes.INTEGER(3).UNSIGNED,
+        allowNull: true
+      },
+      address: {
+        type:Sequelize.DataTypes.STRING(100),
+        defaultValue: 'Unspecified'
+      },
+      avatar: {
+        type:Sequelize.DataTypes.STRING(100),
+        defaultValue: '/image/defaultAvatar'
       },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE

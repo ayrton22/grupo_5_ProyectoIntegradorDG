@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {title: 'productos'}) %>
+    <%- include('partials/head', {title: 'Lista de productos'}) %>
 
 <body>
     <%- include('partials/header') %>
@@ -19,14 +19,14 @@
       <section class="juegos-container__all-products">
           <h2 class="juegos-container__title">Juegos</h2>
           <div class="juegos-container__products-container ">
-            <% for(let i = 0; i < producto.length; i++) { %>
-                <a href="/product/detail/<%= producto[i].id %>">
+            <% for(let i = 0; i < products.length; i++) { %>
+                <a href="/product/detail/<%= products[i].id %>">
                     <article class="juegos-container__product">
                         <div class="juegos-container__img-cont">
-                            <img src="img/uploads/productsImage/<%= producto[i].image %>" alt="">
+                            <img src="img/uploads/productsImage/<%= products[i].image %>" alt="">
                         </div>
-                        <p><%= producto[i].title %></p>
-                        <p><%= producto[i].price %>$</p>
+                        <p><%= products[i].title %></p>
+                        <p><%= products[i].price %>$</p>
                     </article>
                 </a>
                 <% } %>

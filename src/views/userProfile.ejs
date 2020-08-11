@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head', {title: 'Formulario de Registro'}) %>
+    <%- include('partials/head', {title: 'Perfil de usuario'}) %>
 <body>
     
     <!-- Header -->
@@ -8,25 +8,25 @@
     <%- include('partials/header') %>
 
     <div onclick="containerHide()" class="container container-profile">
-        <h1>Hola <%= usuario.first_name %></h1>
+        <h1>Hola <%= user.first_name %></h1>
     </div>
 
     <div class="container container-profile">
         <div class="profile-avatar-container">
-            <img class="profile-avatar" src="/img/uploads/avatars/<%= usuario.avatar %>" alt="">
+            <img class="profile-avatar" src="/img/uploads/avatars/<%= user.avatar %>" alt="">
         </div>
-        <h2 class="profile-subtitle">Nombre: <%= usuario.first_name %></h2>
-        <h2 class="profile-subtitle">Apellido: <%= usuario.last_name %></h2>
-        <h2 class="profile-subtitle">Nombre de Usuario: <%= usuario.username %></h2>
+        <h2 class="profile-subtitle">Nombre: <%= user.first_name %></h2>
+        <h2 class="profile-subtitle">Apellido: <%= user.last_name %></h2>
+        <h2 class="profile-subtitle">Nombre de usuario: <%= user.username %></h2>
     </div>
 
     <div class="container container-profile">
-        <h2 class="profile-subtitle">Email: <%= usuario.email %></h2>
-        <h2 class="profile-subtitle">Fecha de nacimiento: <%= usuario.birth_date %></h2>
-        <h2 class="profile-subtitle">Dirección: <%= usuario.address %></h2>
+        <h2 class="profile-subtitle">Email: <%= user.email %></h2>
+        <h2 class="profile-subtitle">Fecha de nacimiento: <%= user.birth_date %></h2>
+        <h2 class="profile-subtitle">Dirección: <%= user.address %></h2>
     </div>
     <div class="container container-profile">
-        <button class="profile-button" type="button"><a href="/user/edit/<%= usuario.id %>">Editar Información</a></button>
+        <button class="profile-button" type="button"><a href="/user/edit/<%= user.id %>">Editar Información</a></button>
         <a class="profile-button" type="button" href="/user/logout">Cerrar sesión</a>
     </div>
     <!-- Footer -->

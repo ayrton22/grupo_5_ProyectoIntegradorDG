@@ -61,19 +61,19 @@
             <div class="product-section-1">
                 <!-- Products View Left -->
                 <div class="product-section__portrays">
-                    <% for(let i = 0; i < productoDestacado.length; i++) { %>
+                    <% for(let i = 0; i < featuredProducts.length; i++) { %>
                     <div class="product-section__box">
-                        <a href="/product/detail/<%= productoDestacado[i].id %>" alt="<%= productoDestacado[i].title %>"><img src="img/uploads/productsImage/<%= productoDestacado[i].image %>"></a>
-                        <div class="cartel-oferta"><p><%= productoDestacado[i].DESC %>% OFF<p></div>
+                        <a href="/product/detail/<%= featuredProducts[i].id %>" alt="<%= featuredProducts[i].title %>"><img src="img/uploads/productsImage/<%= featuredProducts[i].image %>"></a>
+                        <div class="cartel-oferta"><p><%= featuredProducts[i].DESC %>% OFF<p></div>
                     </div>
                     <% } %>
 
                     <div class="product-section__horizontal-boxes">
                         <div class="product-section__horizontal-boxes">
-                            <% for(let i = 0; i < productoDestacadoHorizontal.length; i++) { %>
+                            <% for(let i = 0; i < featuredProductsHorizontal.length; i++) { %>
                                 <div class="product-section__box--horizontal">
-                                    <a href="/product/detail/<%= productoDestacadoHorizontal[i].id %>"><img src="/img/uploads/productsImage/<%= productoDestacadoHorizontal[i].imagen_horizontal %>" alt="gta"></a>
-                                    <div class="cartel-oferta__horizontal"><p><%= productoDestacadoHorizontal[i].DESC %>% OFF<p></div>
+                                    <a href="/product/detail/<%= featuredProductsHorizontal[i].id %>"><img src="/img/uploads/productsImage/<%= featuredProductsHorizontal[i].imagen_horizontal %>" alt="gta"></a>
+                                    <div class="cartel-oferta__horizontal"><p><%= featuredProductsHorizontal[i].DESC %>% OFF<p></div>
                                 </div>
                             <% } %>
                         </div>
@@ -84,21 +84,21 @@
         <div class="product-section-2">
                 <!-- Products View Right -->
                 <div class="product-section-2__portrays">
-                    <% for(let i = 0; i < destacado2.length; i++) { %>
+                    <% for(let i = 0; i < featured2.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--1">
-                        <a href="/product/detail/<%= destacado2[i].id %>"><img src="img/uploads/productsImage/<%= destacado2[i].image %>" alt="fifa"></a>
+                        <a href="/product/detail/<%= featured2[i].id %>"><img src="img/uploads/productsImage/<%= featured2[i].image %>" alt="fifa"></a>
                     </div>
                     <% } %>
 
-                    <% for(let i = 0; i < destacado3.length; i++) { %>
+                    <% for(let i = 0; i < featured3.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--2">
-                        <a href="/product/detail/<%= destacado3[i].id %>"><img src="img/uploads/productsImage/<%= destacado3[i].image %>" alt="gta"></a>
+                        <a href="/product/detail/<%= featured3[i].id %>"><img src="img/uploads/productsImage/<%= featured3[i].image %>" alt="gta"></a>
                     </div>
                     <% } %>
 
-                    <% for(let i = 0; i < destacado4.length; i++) { %>
+                    <% for(let i = 0; i < featured4.length; i++) { %>
                     <div class="product-section-2__box product-section-2__box--3">
-                        <a href="/product/detail/<%= destacado4[i].id %>"><img src="img/uploads/productsImage/<%= destacado4[i].image %>" alt="csgo"></a>
+                        <a href="/product/detail/<%= featured4[i].id %>"><img src="img/uploads/productsImage/<%= featured4[i].image %>" alt="csgo"></a>
                     </div>
                     <% } %>
                 </div>   
@@ -121,14 +121,14 @@
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Juegos</h2>
                 <div class="juegos-container__products-container">
-                    <% for(let i = 0; i < masVendido.length; i++) { %>
-                    <a href="/product/detail/<%= producto[i].id %>">
+                    <% for(let i = 0; i < bestSells.length; i++) { %>
+                    <a href="/product/detail/<%= products[i].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="img/uploads/productsImage/<%= producto[i].image %>" alt="">
+                                <img src="img/uploads/productsImage/<%= products[i].image %>" alt="">
                             </div>
-                            <p><%= masVendido[i].title %></p>
-                            <p><%= masVendido[i].price %>$</p>
+                            <p><%= bestSells[i].title %></p>
+                            <p><%= bestSells[i].price %>$</p>
                         </article>
                     </a>
                     <% } %>

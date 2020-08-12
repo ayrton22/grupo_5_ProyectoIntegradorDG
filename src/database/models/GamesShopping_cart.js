@@ -30,6 +30,6 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'gamesshopping_carts',
     };
 
-    const GamesShopping_carts = sequelize.define(alias, cols, config);
-    return GamesShopping_carts;
+    const GamesShopping_cart = sequelize.define(alias, cols, config);
+    return GamesShopping_cart;
 }

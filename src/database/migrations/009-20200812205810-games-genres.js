@@ -2,23 +2,27 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('message', {
+    return queryInterface.createTable('games-genres', {
       id: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
-      id_user: {
+      id_game: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'User.js',
+          model: 'Games',
           key: 'id'
         }
       },
-      message: {
-        type: Sequelize.DataTypes.STRING(500),
-        allowNull: false
+      id_genre: {
+        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+        allowNull: false,
+        references: {
+          model: 'Genres',
+          key: 'id'
+        }
       },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
@@ -26,6 +30,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('message');
+    return queryInterface.dropTable('games-genres')
   }
 };

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Games_Categories';
+    let alias = 'GamesTransactions';
 
     let cols = {
         id: {
@@ -8,19 +8,19 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
           },
           id_game: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false
           },
-          id_category: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+          id_transaction: {
+            type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false
           }
     };
 
     let config = {
-        tableName: 'games_categories',
+        tableName: 'games-transactions',
     };
 
-    const Games_Category = sequelize.define(alias, cols, config);
-    return Games_Category;
+    const GameTransaction = sequelize.define(alias, cols, config);
+    return GameTransaction;
 }

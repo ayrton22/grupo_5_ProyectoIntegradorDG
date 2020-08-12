@@ -8,19 +8,19 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      id_games: {
+      id_game: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'Game.js',
+          model: 'Games',
           key: 'id'
         }
       },
-      id_categories: {
+      id_categorie: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'Category.js',
+          model: 'Categories',
           key: 'id'
         }
       },

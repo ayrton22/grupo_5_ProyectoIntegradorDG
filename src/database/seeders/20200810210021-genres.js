@@ -1,4 +1,4 @@
-'use strict';
+/*'use strict';
 const faker = require('faker');
 
 module.exports = {
@@ -15,4 +15,4 @@ module.exports = {
   down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('genres', null, {})
   }
-};
+};*/

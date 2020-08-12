@@ -7,10 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
           },
-          name: {
-            type: dataTypes.STRING(30),
-            allowNull: false
-          }
+        name: {
+          type: dataTypes.STRING(30),
+          allowNull: false
+        }
     };
     let config = {
         tableName: 'genres',

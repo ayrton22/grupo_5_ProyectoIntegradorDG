@@ -53,6 +53,7 @@ module.exports = {
           model: 'Shopping_cart.js',
           key: 'id'
         }
+      },
 
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE

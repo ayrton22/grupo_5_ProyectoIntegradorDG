@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Games-shopping_carts';
+    let alias = 'GamesShopping_carts';
 
     let cols = {
         id: {
@@ -27,9 +27,9 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: 'games-platforms',
+        tableName: 'gamesshopping_carts',
     };
 
-    const Games_Platforms = sequelize.define(alias, cols, config);
-    return Games_Platforms;
+    const GamesShopping_carts = sequelize.define(alias, cols, config);
+    return GamesShopping_carts;
 }

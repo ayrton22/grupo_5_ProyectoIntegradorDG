@@ -12,7 +12,7 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-
+    
     home: function(req, res) {
         let masVendido = products.filter(function(elemento) {
 			return elemento.category == "mas-vendidos";

@@ -15,7 +15,7 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findAll()
+        db.Genres.findAll()
         .then(function(result) {
             res.send(result)
         })

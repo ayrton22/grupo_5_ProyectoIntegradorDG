@@ -3,7 +3,7 @@ const faker = require('faker');
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('genders', [
+    return queryInterface.bulkInsert('genres', [
       {
         name: faker.lorem.word(1),
         createdAt: new Date(),
@@ -13,6 +13,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('genders', null, {})
+    return queryInterface.bulkDelete('genres', null, {})
   }
 };

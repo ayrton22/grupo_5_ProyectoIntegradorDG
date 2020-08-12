@@ -287,23 +287,24 @@ div.inactive_portray {
 div.active_portray {
     display: block;
     position: absolute;
-    top: 0;
+    bottom: -30rem;
+    margin: 80%;
     z-index: 10;
-    transform: scale(3) translateX(120px) translateY(40px);
+    transform: scale(1.5);
 }
 
 div.active_portray button {
     position: absolute;
     bottom: .5rem;
-    left: 6rem;
-    font-size: 10px;
+    left: 13rem;
+    font-size: 18px;
     padding: .5rem 2rem;
 }
 
 div.active_portray i {
     position: absolute;
     top: .5rem;
-    right: 0;
+    right: 1rem;
     color: black;
     cursor: pointer;
 }

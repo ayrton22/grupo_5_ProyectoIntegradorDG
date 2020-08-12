@@ -2,25 +2,23 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('games-categories', {
+    return queryInterface.createTable('games-platforms', {
       id: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
       id_games: {
-        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
-        allowNull: false,
+        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         references: {
-          model: 'Game.js',
+          model: 'Games',
           key: 'id'
         }
       },
-      id_categories: {
-        type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
-        allowNull: false,
+      id_platforms: {
+        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         references: {
-          model: 'Category.js',
+          model: 'Platforms',
           key: 'id'
         }
       },
@@ -30,6 +28,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('games-categories')
+    return queryInterface.dropTable('games-platforms')
   }
 };

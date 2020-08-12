@@ -7,11 +7,11 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
           },
-          id_games: {
+          id_game: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
           },
-          id_categories: {
+          id_category: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
           }

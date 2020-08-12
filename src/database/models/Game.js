@@ -47,10 +47,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL(10, 2),
             allowNull: false
           },
-          stock: {
+          stock_user: {
               type: dataTypes.INTEGER(100),
               allowNull: false
-          }
+          },
+          stock_admin: {
+            type: dataTypes.INTEGER(100),
+            allowNull: false
+        }
     };
 
     let config = {

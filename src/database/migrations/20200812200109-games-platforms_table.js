@@ -10,7 +10,6 @@ module.exports = {
       },
       id_games: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        primaryKey: true,
         references: {
           model: 'Game.js',
           key: 'id'
@@ -18,7 +17,6 @@ module.exports = {
       },
       id_platforms: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        primaryKey: true,
         references: {
           model: 'Platform.js',
           key: 'id'

@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('categories', {
+    return queryInterface.createTable('games-categories', {
       id: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
@@ -11,12 +11,18 @@ module.exports = {
       id_games: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
-        references: {}
+        references: {
+          model: 'Game.js',
+          key: 'id'
+        }
       },
       id_categories: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
-        references: {}
+        references: {
+          model: 'Category.js',
+          key: 'id'
+        }
       },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
@@ -24,6 +30,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('categories')
+    return queryInterface.dropTable('games-categories')
   }
 };

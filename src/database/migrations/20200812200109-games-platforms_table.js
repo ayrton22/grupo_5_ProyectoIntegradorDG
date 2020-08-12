@@ -10,13 +10,17 @@ module.exports = {
       },
       id_games: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        primaryKey: true,
-        references: {}
+        references: {
+          model: 'Game.js',
+          key: 'id'
+        }
       },
       id_platforms: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        primaryKey: true,
-        references: {}
+        references: {
+          model: 'Platform.js',
+          key: 'id'
+        }
       },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE

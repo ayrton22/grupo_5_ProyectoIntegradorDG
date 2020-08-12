@@ -6,7 +6,6 @@ module.exports = {
     return queryInterface.bulkInsert('categories', [
       {
         name: faker.lorem.word(1),
-        description: faker.lorem.sentence(5),
         createdAt: new Date(),
         updatedAt: new Date()
       }

@@ -38,32 +38,29 @@ window.addEventListener('load', function() {
     let portrayBtn = qs('div#portrayZoom button');
 
 
-    if(portrayPhoto.src.match('/img/Logos/Portray-upload.jpg')) {
+    portrayPhoto.addEventListener('click', function() {
 
-        portrayPhoto.addEventListener('click', function() {
-            portrayInput.click();
-        });
+        if (portrayPhoto.dataset.status == "active") {
 
-    } else {
-
-        portrayPhoto.addEventListener('click', function() {
             portrayZoom.classList.remove('inactive_portray');
             portrayZoom.classList.add('active_portray');
-    
+
             portrayCross.addEventListener('click', function() {
                 portrayZoom.classList.remove('active_portray');
                 portrayZoom.classList.add('inactive_portray');
-            })
-    
+            });
+
             portrayBtn.addEventListener('click', function() {
+                portrayPhoto.dataset.status = "inactive"
+                portrayPhoto.src = "/img/Logos/Portray-upload.jpg"
                 portrayZoom.classList.remove('active_portray');
                 portrayZoom.classList.add('inactive_portray');
-                portrayPhoto.src = '/img/Logos/Portray-upload.jpg';
-            })
-    
-    
-        });
-    }
+            });
+
+        } else {
+            portrayInput.click();
+        };
+    });
 
     /*horizontalPhoto.addEventListener('click', function() {
         horizontalInput.click()

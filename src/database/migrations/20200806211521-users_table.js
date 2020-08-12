@@ -38,10 +38,6 @@ module.exports = {
         type:Sequelize.DataTypes.DATE(),
         allowNull: true
       },
-      age: {
-        type:Sequelize.DataTypes.INTEGER(3).UNSIGNED,
-        allowNull: true
-      },
       address: {
         type:Sequelize.DataTypes.STRING(100),
         defaultValue: 'Unspecified'

@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'Game.js',
+          model: 'Games',
           key: 'id'
         }
       },
@@ -20,27 +20,27 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'User.js',
+          model: 'Users',
           key: 'id'
         },
         game_status: {
-          type: dataTypes.STRING(60),
+          type: Sequelize.DataTypes.STRING(60),
           allowNull: false
         },
         payment: {
-          type: dataTypes.STRING(60),
+          type: Sequelize.DataTypes.STRING(60),
           allowNull: false
         },
         price: {
-          type: dataTypes.DECIMAL(50, 2),
+          type: Sequelize.DataTypes.DECIMAL(50, 2),
           allowNull: false
         },
         status_transaction: {
-          type: dataTypes.STRING(60),
+          type: Sequelize.DataTypes.STRING(60),
           allowNull: false
         },
         delivery_type: {
-          type: dataTypes.STRING(60),
+          type: Sequelize.DataTypes.STRING(60),
           allowNull: false
         },
         

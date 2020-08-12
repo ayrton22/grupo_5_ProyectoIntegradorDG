@@ -12,7 +12,7 @@ module.exports = {
       type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
       allowNull: false,
       references: {
-        model: 'User.js',
+        model: 'Users',
         key: 'id'
       }
     },
@@ -20,7 +20,7 @@ module.exports = {
       type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
       allowNull: false,
       references: {
-        model: 'User_sales.js',
+        model: 'User_sales',
         key: 'id'
       }
     },

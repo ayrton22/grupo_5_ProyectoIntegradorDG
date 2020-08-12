@@ -51,13 +51,15 @@ module.exports = {
         allowNull: false
       },
       stock_user: {
-        type: dataTypes.INTEGER(100),
+        type: Sequelize.DataTypes.INTEGER(100),
         allowNull: false
     },
     stock_admin: {
-      type: dataTypes.INTEGER(100),
+      type: Sequelize.DataTypes.INTEGER(100),
       allowNull: false
-  }
+  },
+    createdAt: Sequelize.DataTypes.DATE,
+      updatedAt: Sequelize.DataTypes.DATE
     })
   },
 

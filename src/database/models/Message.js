@@ -26,5 +26,9 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Message = sequelize.define(alias, cols, config);
+
+    Message.associate = function(models){
+      Message.belongsTo(models.Users, )
+    }
     return Message;
 }

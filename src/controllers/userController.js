@@ -18,7 +18,7 @@ module.exports = {
         db.Games.findByPk(1, {
             include: ['genres'],
             raw: true,
-            nest: true
+            nest: true,
         })
         .then(function(result) {
             res.send(result)

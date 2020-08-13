@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
           },
     
          id_game: {
-            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
               model: 'Games',
@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             }
           },
             id_user: {
-              type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+              type: dataTypes.INTEGER(100).UNSIGNED,
               allowNull: false,
               references: {
                 model: 'Users',

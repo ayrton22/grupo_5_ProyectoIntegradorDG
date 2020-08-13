@@ -30,7 +30,7 @@ CREATE TABLE `categories` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,8 +38,8 @@ CREATE TABLE `categories` (
 --
 
 LOCK TABLES `categories` WRITE;
-INSERT INTO categories VALUES (1,'best-sellers','2020-08-12 19:14:20','2020-08-12 19:14:20'),(2,'free-to-play','2020-08-13 00:14:02','2020-08-13 00:14:02'),(3,'coming-soon','2020-08-13 00:14:26','2020-08-13 00:14:26'),(4,'on-sale','2020-08-13 00:14:40','2020-08-13 00:14:40'),(5,'early-bird','2020-08-13 00:15:00','2020-08-13 00:15:00');
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'best-sellers','2020-08-12 19:14:20','2020-08-12 19:14:20'),(2,'free-to-play','2020-08-13 00:14:02','2020-08-13 00:14:02'),(3,'coming-soon','2020-08-13 00:14:26','2020-08-13 00:14:26'),(4,'on-sale','2020-08-13 00:14:40','2020-08-13 00:14:40'),(5,'early-bird','2020-08-13 00:15:00','2020-08-13 00:15:00');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +67,7 @@ CREATE TABLE `games` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,6 +76,7 @@ CREATE TABLE `games` (
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
+INSERT INTO `games` VALUES (1,'Overwatch','proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vita','A sequel, Overwatch 2, was announced in 2019 and will include new player versus environment (PvE) co-operative multiplayer modes. In addition, it will have a shared competitive multiplayer environment, allowing players of both games to play against each other. While it will be sold as a separate game, all-new heroes, maps, and competitive gamemodes will also exist in Overwatch.','Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. Described as a \"hero shooter\", Overwatch assigns players into two teams of six, with each player selecting from a roster of over 30 characters, known as \"heroes\", each with a unique style of play that is divided into three general roles that fit their purpose. Players on a team work togeth',39.99,'FqnKB22pOC0','2020-08-13 01:03:39','Iron Galaxy','+',7.80,0,0,'2020-08-13 01:03:39','2020-08-13 01:03:39');
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +128,7 @@ CREATE TABLE `games_genres` (
   KEY `id_genre` (`id_genre`),
   CONSTRAINT `games_genres_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
   CONSTRAINT `games_genres_ibfk_2` FOREIGN KEY (`id_genre`) REFERENCES `genres` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,6 +137,7 @@ CREATE TABLE `games_genres` (
 
 LOCK TABLES `games_genres` WRITE;
 /*!40000 ALTER TABLE `games_genres` DISABLE KEYS */;
+INSERT INTO `games_genres` VALUES (1,1,1,'2020-08-13 01:04:05','2020-08-13 01:04:05'),(2,1,6,'2020-08-13 01:04:43','2020-08-13 01:04:43');
 /*!40000 ALTER TABLE `games_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +244,7 @@ CREATE TABLE `genres` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,8 +252,8 @@ CREATE TABLE `genres` (
 --
 
 LOCK TABLES `genres` WRITE;
-INSERT INTO `genres` VALUES (1,'First Person','2020-08-12 16:58:43','2020-08-12 16:58:43'),(2,'MMO','2020-08-12 16:58:54','2020-08-12 16:58:54'),(3,'Action','2020-08-12 16:59:40','2020-08-12 16:59:40'),(4,'Adventure','2020-08-12 16:59:49','2020-08-12 16:59:49'),(5,'Roleplay','2020-08-12 17:00:30','2020-08-12 17:00:30'),(6,'Shooter','2020-08-12 17:01:53','2020-08-12 17:01:53'),(7,'Survival','2020-08-12 17:02:23','2020-08-12 17:02:23'),(8,'Horror','2020-08-12 17:02:32','2020-08-12 17:02:32'),(9,'Sports','2020-08-12 17:03:15','2020-08-12 17:03:15'),(10,'Racing','2020-08-12 17:03:47','2020-08-12 17:03:47'),(11,'Third person','2020-08-12 17:04:43','2020-08-12 17:04:43'),(12,'Indie','2020-08-12 17:04:59','2020-08-12 17:04:59'),(13,'MOBA','2020-08-12 17:05:53','2020-08-12 17:05:53'),(14,'Sandbox','2020-08-12 17:06:06','2020-08-12 17:06:06');
 /*!40000 ALTER TABLE `genres` DISABLE KEYS */;
+INSERT INTO `genres` VALUES (1,'First Person','2020-08-12 16:58:43','2020-08-12 16:58:43'),(2,'MMO','2020-08-12 16:58:54','2020-08-12 16:58:54'),(3,'Action','2020-08-12 16:59:40','2020-08-12 16:59:40'),(4,'Adventure','2020-08-12 16:59:49','2020-08-12 16:59:49'),(5,'Roleplay','2020-08-12 17:00:30','2020-08-12 17:00:30'),(6,'Shooter','2020-08-12 17:01:53','2020-08-12 17:01:53'),(7,'Survival','2020-08-12 17:02:23','2020-08-12 17:02:23'),(8,'Horror','2020-08-12 17:02:32','2020-08-12 17:02:32'),(9,'Sports','2020-08-12 17:03:15','2020-08-12 17:03:15'),(10,'Racing','2020-08-12 17:03:47','2020-08-12 17:03:47'),(11,'Third person','2020-08-12 17:04:43','2020-08-12 17:04:43'),(12,'Indie','2020-08-12 17:04:59','2020-08-12 17:04:59'),(13,'MOBA','2020-08-12 17:05:53','2020-08-12 17:05:53'),(14,'Sandbox','2020-08-12 17:06:06','2020-08-12 17:06:06');
 /*!40000 ALTER TABLE `genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -496,4 +498,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-13  0:47:10
+-- Dump completed on 2020-08-13  1:07:03

@@ -3,12 +3,12 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+        type: dataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
       id_user: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+        type: dataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
           model: 'Users',
@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
         }
       },
       message: {
-        type: Sequelize.DataTypes.STRING(500),
+        type: dataTypes.STRING(500),
         allowNull: false
       },
     };

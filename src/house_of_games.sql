@@ -58,10 +58,14 @@ CREATE TABLE `games` (
   `descriptionBig` varchar(400) NOT NULL,
   `price` decimal(50,2) NOT NULL,
   `video` varchar(100) NOT NULL,
+  `launch_date` datetime NOT NULL,
   `editor` varchar(50) NOT NULL,
-  `clasification` varchar(1) NOT NULL,
+  `classification` varchar(1) NOT NULL,
   `rating` decimal(10,2) NOT NULL,
-  `stock` int(100) NOT NULL,
+  `stock_user` int(100) NOT NULL,
+  `stock_admin` int(100) NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -72,7 +76,6 @@ CREATE TABLE `games` (
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
-INSERT INTO `games` VALUES (1,'Central Metrics Strategist','Vero temporibus quod.','Saepe unde reprehenderit inventore aut voluptas.','Recusandae voluptatem possimus dolor nulla exercitationem sunt. Beatae dolor illo non. Voluptatem rerum doloremque aliquid quo debitis. Rerum iusto numquam voluptatibus itaque odio totam ut. Quaerat asperiores nostrum. Aut possimus beatae maxime commodi laudantium eligendi et voluptas.',468.00,'https://elbert.org','iusto','m',793.00,24089);
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
 

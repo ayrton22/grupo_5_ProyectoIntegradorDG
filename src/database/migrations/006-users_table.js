@@ -50,7 +50,7 @@ module.exports = {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'Shopping_cart.js',
+          model: 'Shopping_carts',
           key: 'id'
         }
       },

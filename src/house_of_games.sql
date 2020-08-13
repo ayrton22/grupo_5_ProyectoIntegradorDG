@@ -253,6 +253,34 @@ INSERT INTO `genres` VALUES (1,'First Person','2020-08-12 16:58:43','2020-08-12 
 UNLOCK TABLES;
 
 --
+-- Table structure for table `images`
+--
+
+DROP TABLE IF EXISTS `images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `images` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(100) NOT NULL,
+  `img_url` varchar(200) DEFAULT NULL,
+  `id_game` int(100) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `img_url` (`img_url`),
+  KEY `id_game` (`id_game`),
+  CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `images`
+--
+
+LOCK TABLES `images` WRITE;
+/*!40000 ALTER TABLE `images` DISABLE KEYS */;
+/*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `messages`
 --
 
@@ -494,4 +522,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-12 19:05:12
+-- Dump completed on 2020-08-12 21:11:44

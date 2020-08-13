@@ -22,6 +22,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('shopping_carts')
+    return queryInterface.dropTable('shopping_carts');
   }
 };

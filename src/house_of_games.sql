@@ -98,7 +98,7 @@ CREATE TABLE `games_categories` (
   KEY `id_categorie` (`id_categorie`),
   CONSTRAINT `games_categories_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
   CONSTRAINT `games_categories_ibfk_2` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,6 +107,7 @@ CREATE TABLE `games_categories` (
 
 LOCK TABLES `games_categories` WRITE;
 /*!40000 ALTER TABLE `games_categories` DISABLE KEYS */;
+INSERT INTO `games_categories` VALUES (1,1,1,'2020-08-13 02:02:45','2020-08-13 02:02:45');
 /*!40000 ALTER TABLE `games_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -137,7 +138,7 @@ CREATE TABLE `games_genres` (
 
 LOCK TABLES `games_genres` WRITE;
 /*!40000 ALTER TABLE `games_genres` DISABLE KEYS */;
-INSERT INTO `games_genres` VALUES (1,1,1,'2020-08-13 01:04:05','2020-08-13 01:04:05'),(2,1,6,'2020-08-13 01:04:43','2020-08-13 01:04:43');
+INSERT INTO `games_genres` VALUES (1,1,1,'2020-08-13 02:05:23','2020-08-13 02:05:23'),(2,1,6,'2020-08-13 02:05:34','2020-08-13 02:05:34');
 /*!40000 ALTER TABLE `games_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,11 +270,13 @@ CREATE TABLE `images` (
   `description` varchar(100) NOT NULL,
   `img_url` varchar(200) DEFAULT NULL,
   `id_game` int(100) unsigned NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `img_url` (`img_url`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,6 +285,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'portray-image','overwatch.jpg',1,'2020-08-13','2020-08-13');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -360,6 +364,33 @@ LOCK TABLES `sequelizemeta` WRITE;
 /*!40000 ALTER TABLE `sequelizemeta` DISABLE KEYS */;
 INSERT INTO `sequelizemeta` VALUES ('001-games_table.js'),('002-categories_table.js'),('003-genres_table.js'),('004-platforms_table.js'),('006-users_table.js'),('007-message_table.js'),('008-games-categories_table.js'),('009-games-genres_table.js'),('010-games-platforms_table.js'),('011-games_users_table.js'),('012-images.js'),('013-messages_table.js'),('014-user_sales_table.js'),('015-user_purchases_table.js'),('016-transactions_table.js'),('017-games_transactions_table.js');
 /*!40000 ALTER TABLE `sequelizemeta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `shopping_carts`
+--
+
+DROP TABLE IF EXISTS `shopping_carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shopping_carts` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `total_cost` int(10) NOT NULL,
+  `quantity` int(1) NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shopping_carts`
+--
+
+LOCK TABLES `shopping_carts` WRITE;
+/*!40000 ALTER TABLE `shopping_carts` DISABLE KEYS */;
+INSERT INTO `shopping_carts` VALUES (1,676,1,'2020-08-12 19:14:21','2020-08-12 19:14:21');
+/*!40000 ALTER TABLE `shopping_carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -498,4 +529,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-13  1:07:03
+-- Dump completed on 2020-08-13  2:06:04

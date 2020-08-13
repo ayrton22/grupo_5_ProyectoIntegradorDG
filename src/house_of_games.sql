@@ -269,11 +269,13 @@ CREATE TABLE `images` (
   `description` varchar(100) NOT NULL,
   `img_url` varchar(200) DEFAULT NULL,
   `id_game` int(100) unsigned NOT NULL,
+  `createdAt` date DEFAULT NULL,
+  `updatedAt` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `img_url` (`img_url`),
   KEY `id_game` (`id_game`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -282,6 +284,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
+INSERT INTO `images` VALUES (1,'portray-image','overwatch.jpg',1,'2020-08-13','2020-08-13');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -498,4 +501,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-13  1:07:03
+-- Dump completed on 2020-08-13  1:36:57

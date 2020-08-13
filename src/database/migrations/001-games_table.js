@@ -40,7 +40,7 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(50),
         allowNull: false
       },
-      clasification: {
+      classification: {
         type: Sequelize.DataTypes.STRING(1),
         allowNull: false
       },
@@ -51,14 +51,14 @@ module.exports = {
       stock_user: {
         type: Sequelize.DataTypes.INTEGER(100),
         allowNull: false
-    },
-    stock_admin: {
-      type: Sequelize.DataTypes.INTEGER(100),
-      allowNull: false
-  },
-    createdAt: Sequelize.DataTypes.DATE,
+      },
+      stock_admin: {
+        type: Sequelize.DataTypes.INTEGER(100),
+        allowNull: false
+      },
+      createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
-    })
+      })
   },
 
   down: async (queryInterface, Sequelize) => {

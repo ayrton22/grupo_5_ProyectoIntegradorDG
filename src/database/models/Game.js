@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(50),
             allowNull: false
           },
-          clasification: {
+          classification: {
             type: dataTypes.STRING(1),
             allowNull: false
           },
@@ -62,5 +62,18 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Game = sequelize.define(alias, cols, config);
+
+    Game.associate = function (models) {
+      Game.belongsToMany(models.Genres, {
+
+        as: 'genres',
+        through: 'games-genres',
+        foreignKey: 'id_game',
+        otherKey: 'id_genre',
+        timestams: true
+      });
+
+    };
+
     return Game;
 }

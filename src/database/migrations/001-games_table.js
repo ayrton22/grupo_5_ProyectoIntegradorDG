@@ -28,16 +28,14 @@ module.exports = {
         type:Sequelize.DataTypes.DECIMAL(50, 2),
         allowNull: false
       },
-      //createdAt: Sequelize.DataTypes.DATE,
-      //updatedAt: Sequelize.DataTypes.DATE,
       video: {
         type: Sequelize.DataTypes.STRING(100),
         allowNull: false
       },
-      /*launch_date: {
+      launch_date: {
         type: Sequelize.DataTypes.DATE,
         allowNull: false
-      },*/
+      },
       editor: {
         type: Sequelize.DataTypes.STRING(50),
         allowNull: false

@@ -3,13 +3,13 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
           },
     
          id_games: {
-            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
               model: 'Game.js',
@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
             }
           },
             id_shopping_cart: {
-              type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+              type: dataTypes.INTEGER(100).UNSIGNED,
               allowNull: false,
               references: {
                 model: 'Shopping_cart.js',

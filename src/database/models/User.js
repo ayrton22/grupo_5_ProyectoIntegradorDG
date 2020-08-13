@@ -50,7 +50,7 @@ module.exports = (sequelize, dataTypes) => {
             defaultValue: '/image/defaultAvatar'
           },
           id_shopping_cart: {
-            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
               model: 'Shopping_cart.js',

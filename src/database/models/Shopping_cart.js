@@ -3,16 +3,16 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id: {
-            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            type: dataTypes.INTEGER(100).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
           },
           total_cost: {
-            type: Sequelize.DataTypes.INTEGER(10),
+            type: dataTypes.INTEGER(10),
             allowNull: false
           },
           quantity: {
-            type: Sequelize.DataTypes.INTEGER(1),
+            type: dataTypes.INTEGER(1),
             allowNull: false
       },
     };

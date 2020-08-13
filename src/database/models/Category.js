@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
         as: 'games',
         through: 'games_categories',
-        foreignKey: 'id_categorie',
+        foreignKey: 'id_category',
         otherKey: 'id_game',
         timestamps: true
       });

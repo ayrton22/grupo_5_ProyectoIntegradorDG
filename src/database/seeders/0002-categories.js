@@ -6,19 +6,19 @@ module.exports = {
       return queryInterface.bulkInsert('categories',[
         {
           id: 1,
-          name: 'best-sellers',
+          name: 'Best-sellers',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           id: 2,
-          name: 'free-to-play',
+          name: 'Free-to-play',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           id: 3,
-          name: 'coming-soon',
+          name: 'Coming-soon',
           createdAt: new Date(),
           updatedAt: new Date()
         },
@@ -30,13 +30,13 @@ module.exports = {
         },
         {
           id: 5,
-          name: 'early-bird',
+          name: 'Early-bird',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
           id: 6,
-          name: 'outstanding',
+          name: 'Outstanding',
           createdAt: new Date(),
           updatedAt: new Date()
         },

@@ -16,7 +16,7 @@ module.exports = {
           key: 'id'
         }
       },
-      id_categorie: {
+      id_category: {
         type: Sequelize.DataTypes.INTEGER(10).UNSIGNED,
         allowNull: false,
         references: {

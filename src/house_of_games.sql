@@ -39,7 +39,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'reiciendis','2020-08-12 19:14:20','2020-08-12 19:14:20');
+INSERT INTO `categories` VALUES (1,'best-sellers','2020-08-12 19:14:20','2020-08-12 19:14:20'),(2,'free-to-play','2020-08-13 00:14:02','2020-08-13 00:14:02'),(3,'coming-soon','2020-08-13 00:14:26','2020-08-13 00:14:26'),(4,'on-sale','2020-08-13 00:14:40','2020-08-13 00:14:40'),(5,'early-bird','2020-08-13 00:15:00','2020-08-13 00:15:00');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 

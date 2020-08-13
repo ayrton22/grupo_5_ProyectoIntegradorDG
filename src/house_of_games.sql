@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `house_of_games` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `house_of_games`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
 --
 -- Host: 127.0.0.1    Database: house_of_games
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.13-MariaDB
+-- Server version	5.7.26
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -67,7 +67,7 @@ CREATE TABLE `games` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -76,8 +76,157 @@ CREATE TABLE `games` (
 
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
-INSERT INTO `games` VALUES (1,'Overwatch','proin eu mi nulla ac enim in tempor turpis nec euismod scelerisque quam turpis adipiscing lorem vita','A sequel, Overwatch 2, was announced in 2019 and will include new player versus environment (PvE) co-operative multiplayer modes. In addition, it will have a shared competitive multiplayer environment, allowing players of both games to play against each other. While it will be sold as a separate game, all-new heroes, maps, and competitive gamemodes will also exist in Overwatch.','Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. Described as a \"hero shooter\", Overwatch assigns players into two teams of six, with each player selecting from a roster of over 30 characters, known as \"heroes\", each with a unique style of play that is divided into three general roles that fit their purpose. Players on a team work togeth',39.99,'FqnKB22pOC0','2020-08-13 01:03:39','Iron Galaxy','+',7.80,0,0,'2020-08-13 01:03:39','2020-08-13 01:03:39');
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `games-categories`
+--
+
+DROP TABLE IF EXISTS `games-categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `games-categories` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `id_game` int(10) unsigned NOT NULL,
+  `id_categorie` int(10) unsigned NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_game` (`id_game`),
+  KEY `id_categorie` (`id_categorie`),
+  CONSTRAINT `games-categories_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
+  CONSTRAINT `games-categories_ibfk_2` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `games-categories`
+--
+
+LOCK TABLES `games-categories` WRITE;
+/*!40000 ALTER TABLE `games-categories` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games-categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `games-genres`
+--
+
+DROP TABLE IF EXISTS `games-genres`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `games-genres` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `id_game` int(100) unsigned NOT NULL,
+  `id_genre` int(100) unsigned NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_game` (`id_game`),
+  KEY `id_genre` (`id_genre`),
+  CONSTRAINT `games-genres_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
+  CONSTRAINT `games-genres_ibfk_2` FOREIGN KEY (`id_genre`) REFERENCES `genres` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `games-genres`
+--
+
+LOCK TABLES `games-genres` WRITE;
+/*!40000 ALTER TABLE `games-genres` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games-genres` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `games-platforms`
+--
+
+DROP TABLE IF EXISTS `games-platforms`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `games-platforms` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `id_games` int(100) unsigned DEFAULT NULL,
+  `id_platforms` int(100) unsigned DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_games` (`id_games`),
+  KEY `id_platforms` (`id_platforms`),
+  CONSTRAINT `games-platforms_ibfk_1` FOREIGN KEY (`id_games`) REFERENCES `games` (`id`),
+  CONSTRAINT `games-platforms_ibfk_2` FOREIGN KEY (`id_platforms`) REFERENCES `platforms` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `games-platforms`
+--
+
+LOCK TABLES `games-platforms` WRITE;
+/*!40000 ALTER TABLE `games-platforms` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games-platforms` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `games-shopping_carts`
+--
+
+DROP TABLE IF EXISTS `games-shopping_carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `games-shopping_carts` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `id_games` int(100) unsigned NOT NULL,
+  `id_shopping_cart` int(100) unsigned NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_games` (`id_games`),
+  KEY `id_shopping_cart` (`id_shopping_cart`),
+  CONSTRAINT `games-shopping_carts_ibfk_1` FOREIGN KEY (`id_games`) REFERENCES `games` (`id`),
+  CONSTRAINT `games-shopping_carts_ibfk_2` FOREIGN KEY (`id_shopping_cart`) REFERENCES `shopping_carts` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `games-shopping_carts`
+--
+
+LOCK TABLES `games-shopping_carts` WRITE;
+/*!40000 ALTER TABLE `games-shopping_carts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games-shopping_carts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `games-transactions`
+--
+
+DROP TABLE IF EXISTS `games-transactions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `games-transactions` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `id_game` int(100) unsigned NOT NULL,
+  `id_transaction` int(100) unsigned NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_game` (`id_game`),
+  KEY `id_transaction` (`id_transaction`),
+  CONSTRAINT `games-transactions_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
+  CONSTRAINT `games-transactions_ibfk_2` FOREIGN KEY (`id_transaction`) REFERENCES `transactions` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `games-transactions`
+--
+
+LOCK TABLES `games-transactions` WRITE;
+/*!40000 ALTER TABLE `games-transactions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `games-transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -128,7 +277,7 @@ CREATE TABLE `games_genres` (
   KEY `id_genre` (`id_genre`),
   CONSTRAINT `games_genres_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
   CONSTRAINT `games_genres_ibfk_2` FOREIGN KEY (`id_genre`) REFERENCES `genres` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +286,6 @@ CREATE TABLE `games_genres` (
 
 LOCK TABLES `games_genres` WRITE;
 /*!40000 ALTER TABLE `games_genres` DISABLE KEYS */;
-INSERT INTO `games_genres` VALUES (1,1,1,'2020-08-13 01:04:05','2020-08-13 01:04:05'),(2,1,6,'2020-08-13 01:04:43','2020-08-13 01:04:43');
 /*!40000 ALTER TABLE `games_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -363,6 +511,33 @@ INSERT INTO `sequelizemeta` VALUES ('001-games_table.js'),('002-categories_table
 UNLOCK TABLES;
 
 --
+-- Table structure for table `shopping_carts`
+--
+
+DROP TABLE IF EXISTS `shopping_carts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shopping_carts` (
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
+  `total_cost` int(10) NOT NULL,
+  `quantity` int(1) NOT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `shopping_carts`
+--
+
+LOCK TABLES `shopping_carts` WRITE;
+/*!40000 ALTER TABLE `shopping_carts` DISABLE KEYS */;
+INSERT INTO `shopping_carts` VALUES (1,676,1,'2020-08-12 19:14:21','2020-08-12 19:14:21');
+/*!40000 ALTER TABLE `shopping_carts` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `transactions`
 --
 
@@ -498,4 +673,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-13  1:07:03
+-- Dump completed on 2020-08-13  1:43:19

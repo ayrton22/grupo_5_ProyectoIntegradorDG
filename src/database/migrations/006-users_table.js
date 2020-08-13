@@ -46,7 +46,10 @@ module.exports = {
         type:Sequelize.DataTypes.STRING(100),
         defaultValue: '/image/defaultAvatar'
       },
-
+      admin: {
+        type:Sequelize.DataTypes.BOOLEAN(1),
+        defaultValue: 0
+      },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
     })

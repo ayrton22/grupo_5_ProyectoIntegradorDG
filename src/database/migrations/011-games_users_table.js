@@ -26,8 +26,8 @@ module.exports = {
           }
         },
         
-      createdAt: Sequelize.DataTypes.DATE,
-      updatedAt: Sequelize.DataTypes.DATE
+        createdAt: Sequelize.DataTypes.DATE,
+        updatedAt: Sequelize.DataTypes.DATE
     })
 
   

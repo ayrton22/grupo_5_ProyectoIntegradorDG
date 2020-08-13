@@ -23,7 +23,9 @@ module.exports = {
           model: 'Games',
           key: 'id'
         }
-      }
+      },
+      createdAt: Sequelize.DataTypes.DATE,
+      updatedAt: Sequelize.DataTypes.DATE
     })
   },
 

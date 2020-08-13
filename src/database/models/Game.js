@@ -40,7 +40,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
           },
           classification: {
-            type: dataTypes.STRING(1),
+            type: dataTypes.STRING(10),
             allowNull: false
           },
           rating: {
@@ -77,7 +77,7 @@ module.exports = (sequelize, dataTypes) => {
         through: 'games_users',
         foreignKey: 'id_game',
         otherKey: 'id_user',
-        timestams: true
+        timestamps: true
       });
 
       Game.belongsToMany(models.Transactions, {
@@ -85,7 +85,7 @@ module.exports = (sequelize, dataTypes) => {
         through: 'games_transactions',
         foreignKey: 'id_game',
         otherKey: 'id_transaction',
-        timestams: true
+        timestamps: true
       });
 
       Game.hasMany(models.User_sales, {
@@ -103,7 +103,7 @@ module.exports = (sequelize, dataTypes) => {
         through: 'games_categories',
         foreignKey: 'id_game',
         otherKey: 'id_categorie',
-        timestams: true
+        timestamps: true
       })
     };
 

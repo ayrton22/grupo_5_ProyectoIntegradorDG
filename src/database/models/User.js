@@ -37,10 +37,6 @@ module.exports = (sequelize, dataTypes) => {
             type:dataTypes.DATE(),
             allowNull: true
           },
-          age: {
-            type:dataTypes.INTEGER(3).UNSIGNED,
-            allowNull: true
-          },
           address: {
             type:dataTypes.STRING(100),
             defaultValue: 'Unspecified'
@@ -48,6 +44,10 @@ module.exports = (sequelize, dataTypes) => {
           avatar: {
             type:dataTypes.STRING(100),
             defaultValue: '/image/defaultAvatar'
+          },
+          admin: {
+            type:dataTypes.BOOLEAN(1),
+            defaultValue: 0
           }
     };
 
@@ -64,7 +64,7 @@ module.exports = (sequelize, dataTypes) => {
         through: 'games_users',
         foreignKey: 'id_user',
         otherKey: 'id_game',
-        timestams: true
+        timestamps: true
       });
       
       User.hasMany(models.Messages, {

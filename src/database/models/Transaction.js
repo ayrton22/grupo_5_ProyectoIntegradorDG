@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
       through: 'games_transactions',
       foreignKey: 'id_transaction',
       otherKey: 'id_game',
-      timestams: true
+      timestamps: true
     });
     
     Transaction.belongsTo(models.Users, {

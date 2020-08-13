@@ -29,6 +29,7 @@
     "playstation": "si",
     "xbox": "si",
     "pc": "si",
+
     "icon_playstation": "fab fa-playstation icono-playstation",
     "icon_xbox": "fab fa-xbox icono-xbox",
     "icon_pc": "fas fa-desktop icono-desktop"

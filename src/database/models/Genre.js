@@ -17,5 +17,16 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Genre = sequelize.define(alias, cols, config);
+
+    Genre.associate = function (models) {
+      Game.belongsToMany(models.Games, {
+
+        as: 'games',
+        through: 'games_genres',
+        foreignKey: 'id_genre',
+        otherKey: 'id_game',
+        timestams: true
+      });
+
     return Genre;
 }

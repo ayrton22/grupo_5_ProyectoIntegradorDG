@@ -18,6 +18,18 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Category = sequelize.define(alias, cols, config);
+
+    Category.associate = function (models) {
+      Category.belongsToMany(models.Games, {
+
+        as: 'games',
+        through: 'games_categories',
+        foreignKey: 'id_categorie',
+        otherKey: 'id_game',
+        timestams: true
+      });
+
+    };
     
     return Category;
 }

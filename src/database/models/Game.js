@@ -65,12 +65,32 @@ module.exports = (sequelize, dataTypes) => {
 
     Game.associate = function (models) {
       Game.belongsToMany(models.Genres, {
-
         as: 'genres',
         through: 'games_genres',
         foreignKey: 'id_game',
         otherKey: 'id_genre',
         timestams: true
+      });
+
+      Game.belongsToMany(models.Users, {
+        as: 'users',
+        through: 'games_users',
+        foreignKey: 'id_game',
+        otherKey: 'id_user',
+        timestams: true
+      });
+
+      Game.belongsToMany(models.Transactions, {
+        as: 'transactions',
+        through: 'games_transactions',
+        foreignKey: 'id_game',
+        otherKey: 'id_transaction',
+        timestams: true
+      });
+
+      Game.hasMany(models.User_sales, {
+        as: 'user_sales',
+        foreignKey: "id_game"
       });
 
     };

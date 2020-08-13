@@ -28,7 +28,10 @@ module.exports = (sequelize, dataTypes) => {
     const Message = sequelize.define(alias, cols, config);
 
     Message.associate = function(models){
-      Message.belongsTo(models.Users, )
+      Message.belongsTo(models.Users, {
+        as: 'users',
+        foreignKey: "id_user"
+      } );
     }
     return Message;
 }

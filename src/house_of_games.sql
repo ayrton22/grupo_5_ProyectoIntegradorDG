@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `house_of_games` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `house_of_games`;
--- MySQL dump 10.13  Distrib 5.7.17, for macos10.12 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: house_of_games
 -- ------------------------------------------------------
--- Server version	5.7.26
+-- Server version	5.5.5-10.4.13-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -67,7 +67,7 @@ CREATE TABLE `games` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `games_categories` (
   KEY `id_categorie` (`id_categorie`),
   CONSTRAINT `games_categories_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
   CONSTRAINT `games_categories_ibfk_2` FOREIGN KEY (`id_categorie`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,6 +107,7 @@ CREATE TABLE `games_categories` (
 
 LOCK TABLES `games_categories` WRITE;
 /*!40000 ALTER TABLE `games_categories` DISABLE KEYS */;
+INSERT INTO `games_categories` VALUES (1,1,1,'2020-08-13 02:02:45','2020-08-13 02:02:45');
 /*!40000 ALTER TABLE `games_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +129,7 @@ CREATE TABLE `games_genres` (
   KEY `id_genre` (`id_genre`),
   CONSTRAINT `games_genres_ibfk_1` FOREIGN KEY (`id_game`) REFERENCES `games` (`id`),
   CONSTRAINT `games_genres_ibfk_2` FOREIGN KEY (`id_genre`) REFERENCES `genres` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,6 +138,7 @@ CREATE TABLE `games_genres` (
 
 LOCK TABLES `games_genres` WRITE;
 /*!40000 ALTER TABLE `games_genres` DISABLE KEYS */;
+INSERT INTO `games_genres` VALUES (1,1,1,'2020-08-13 02:05:23','2020-08-13 02:05:23'),(2,1,6,'2020-08-13 02:05:34','2020-08-13 02:05:34');
 /*!40000 ALTER TABLE `games_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -527,4 +529,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-08-13  1:43:19
+-- Dump completed on 2020-08-13  2:06:04

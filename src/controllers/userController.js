@@ -16,7 +16,7 @@ users = JSON.parse(users);
 module.exports = {
     prueba: function(req, res) {
         db.Games.findByPk(1, {
-            include: [{association:'categories'}],
+            include: [{association:'genres'}],
             raw: true,
             nest: true,
         })

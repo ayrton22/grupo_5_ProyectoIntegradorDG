@@ -58,10 +58,34 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config);
 
     User.associate = function(models){
+
+      User.belongsToMany(models.Games, {
+        as: 'games',
+        through: 'games_users',
+        foreignKey: 'id_user',
+        otherKey: 'id_game',
+        timestams: true
+      });
+      
       User.hasMany(models.Messages, {
         as: 'message',
         foreignKey: "id_user"
-      })
+      });
+
+      User.hasMany(models.Transactions, {
+        as: 'transactions',
+        foreignKey: "id_user"
+      });
+
+      User.hasMany(models.User_sales, {
+        as: 'user_sales',
+        foreignKey: "id_seller_user"
+      });
+
+      User.hasMany(models.User_purchases, {
+        as: 'user_purchases',
+        foreignKey: "id_buyer_user"
+      });
     }
     return User;
 }

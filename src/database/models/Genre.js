@@ -28,5 +28,6 @@ module.exports = (sequelize, dataTypes) => {
         timestams: true
       });
     }
+
     return Genre;
 }

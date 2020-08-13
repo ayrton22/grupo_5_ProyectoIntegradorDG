@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
           },
-          id_juego: {
+          id_game: {
             type: dataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
@@ -50,5 +50,23 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const User_sale = sequelize.define(alias, cols, config);
+
+    User_sale.associate = function(models){
+
+      User_sale.belongsTo(models.Users, {
+        as: 'users',
+        foreignKey: "id_seller_user"
+      } );
+
+      User_sale.belongsTo(models.Games, {
+        as: 'games',
+        foreignKey: "id_game"
+      });
+
+      User_sale.belongsTo(models.User_purchases, {
+        as: 'user_purchases',
+        foreignKey: "id_sales"
+      } );
+    }
     return User_sale;
 }

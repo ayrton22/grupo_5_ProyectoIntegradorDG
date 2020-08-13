@@ -78,6 +78,13 @@ module.exports = (sequelize, dataTypes) => {
         foreignKey: 'id_game'
       })
 
+      Game.belongsToMany(models.Categories, {
+        as: 'categories',
+        through: 'games_categories',
+        foreignKey: 'id_game',
+        otherKey: 'id_categorie',
+        timestams: true
+      })
     };
 
     return Game;

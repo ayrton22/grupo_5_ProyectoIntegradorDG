@@ -70,8 +70,14 @@ module.exports = (sequelize, dataTypes) => {
         through: 'games_genres',
         foreignKey: 'id_game',
         otherKey: 'id_genre',
-        timestams: true
+        timestamps: true
       });
+
+      Game.hasMany(models.Images, {
+        as: 'images',
+        foreignKey: 'id_game'
+      })
+
       Game.belongsToMany(models.Categories, {
         as: 'categories',
         through: 'games_categories',

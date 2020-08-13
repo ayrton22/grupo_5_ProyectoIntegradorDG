@@ -25,6 +25,6 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'messages',
     };
 
-    const Messages = sequelize.define(alias, cols, config);
-    return Messages;
+    const Message = sequelize.define(alias, cols, config);
+    return Message;
 }

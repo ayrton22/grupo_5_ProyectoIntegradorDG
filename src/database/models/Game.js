@@ -62,5 +62,6 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const Game = sequelize.define(alias, cols, config);
+    
     return Game;
 }

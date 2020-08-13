@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'GamesShopping_carts';
+    let alias = 'Games_Users';
 
     let cols = {
         id: {
@@ -8,28 +8,28 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true
           },
     
-         id_games: {
+         id_game: {
             type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
-              model: 'Game.js',
+              model: 'Games',
               key: 'id'
             }
           },
-            id_shopping_cart: {
+            id_user: {
               type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
               allowNull: false,
               references: {
-                model: 'Shopping_cart.js',
+                model: 'Users',
                 key: 'id'
               }
             },
     };
 
     let config = {
-        tableName: 'gamesshopping_carts',
+        tableName: 'games_users',
     };
 
-    const GamesShopping_cart = sequelize.define(alias, cols, config);
-    return GamesShopping_cart;
+    const Games_User = sequelize.define(alias, cols, config);
+    return Games_User;
 }

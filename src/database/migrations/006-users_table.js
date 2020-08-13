@@ -46,14 +46,6 @@ module.exports = {
         type:Sequelize.DataTypes.STRING(100),
         defaultValue: '/image/defaultAvatar'
       },
-      id_shopping_cart: {
-        type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
-        allowNull: false,
-        references: {
-          model: 'Shopping_carts',
-          key: 'id'
-        }
-      },
 
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE

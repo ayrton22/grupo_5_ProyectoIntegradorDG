@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) => {
             type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
-              model: 'User.js',
+              model: 'Users',
               key: 'id'
             }
           },
@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
             type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
             allowNull: false,
             references: {
-              model: 'User_sales.js',
+              model: 'User_Sales',
               key: 'id'
             }
           },
@@ -32,6 +32,10 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'user_purchases',
     };
 
-    const User_purchases = sequelize.define(alias, cols, config);
-    return User_purchases;
+    const User_purchase = sequelize.define(alias, cols, config);
+
+    User_purchase.associate = function(models){
+        
+    }
+    return User_purchase;
 }

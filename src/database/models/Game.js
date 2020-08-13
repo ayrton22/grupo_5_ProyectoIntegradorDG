@@ -105,6 +105,14 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: 'id_categorie',
         timestamps: true
       })
+
+      Game.belongsToMany(models.Platforms, {
+        as: 'platforms',
+        through: 'games_platforms',
+        foreignKey: 'id_game',
+        otherKey: 'id_platform',
+        timestamps: true
+      })
     };
 
     return Game;

@@ -17,19 +17,19 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'platforms',
     };
 
-    const Category = sequelize.define(alias, cols, config);
+    const Platform = sequelize.define(alias, cols, config);
 
-    Category.associate = function (models) {
-      Category.belongsToMany(models.Games, {
+    Platform.associate = function (models) {
+      Platform.belongsToMany(models.Games, {
 
         as: 'games',
-        through: 'games_categories',
-        foreignKey: 'id_categorie',
+        through: 'games_platforms',
+        foreignKey: 'id_platform',
         otherKey: 'id_game',
         timestamps: true
       });
 
     };
     
-    return Category;
+    return Platform;
 }

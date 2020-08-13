@@ -15,8 +15,13 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
+<<<<<<< HEAD
         db.Games.findByPk(5, {
             include: [{association:'categories'}],
+=======
+        db.Games.findByPk(1, {
+            include: [{association:'platform'}],
+>>>>>>> 62828267b5ce1beb696e0b3f3dba7b197dcdca7e
             raw: true,
             nest: true,
         })

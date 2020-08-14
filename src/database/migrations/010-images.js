@@ -2,23 +2,27 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return queryInterface.createTable('messages', {
+    return queryInterface.createTable('images', {
       id: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
       },
-      id_user: {
+      id_game: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
-          model: 'Users',
+          model: 'Games',
           key: 'id'
         }
       },
-      message: {
+      location: {
+        type: Sequelize.DataTypes.STRING(100),
+        allowNull: false,
+      },
+      img_url: {
         type: Sequelize.DataTypes.STRING(500),
-        allowNull: false
+        
       },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
@@ -26,6 +30,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('messages');
+    return queryInterface.dropTable('images')
   }
 };

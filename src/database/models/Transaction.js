@@ -7,6 +7,10 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
           },
+          id_user: {
+            type: dataTypes.INTEGER(100),
+            allowNull: false
+          },
           total_cost: {
             type: dataTypes.INTEGER(100),
             allowNull: false
@@ -15,18 +19,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(10),
             allowNull: false
           },
-          quantity: {
-            type: dataTypes.INTEGER(100),
-            allowNull: false
-          },
           payment: {
             type: dataTypes.STRING(50),
             allowNull: false
-          },
-          id_user: {
-            type: dataTypes.INTEGER(100),
-            allowNull: false
-          },
+          }
+         
     };
 
     let config = {

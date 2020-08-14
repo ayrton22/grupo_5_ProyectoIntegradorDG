@@ -16,17 +16,17 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
           },
           username: {
-            type: dataTypes.STRING(25),
+            type: dataTypes.STRING(100),
             allowNull: false,
             unique: true
           },
           email: {
-            type: dataTypes.STRING(75),
+            type: dataTypes.STRING(500),
             allowNull: false,
             unique: true
           },
           password: {
-            type:dataTypes.STRING(100),
+            type:dataTypes.STRING(500),
             allowNull: false
           },
           gender: {
@@ -38,11 +38,11 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true
           },
           address: {
-            type:dataTypes.STRING(100),
+            type:dataTypes.STRING(500),
             defaultValue: 'Unspecified'
           },
           avatar: {
-            type:dataTypes.STRING(100),
+            type:dataTypes.STRING(500),
             defaultValue: '/image/defaultAvatar'
           },
           admin: {
@@ -60,7 +60,7 @@ module.exports = (sequelize, dataTypes) => {
     User.associate = function(models){
 
       User.belongsToMany(models.Games, {
-        as: 'games',
+        as: 'games_shooping_cart',
         through: 'games_users',
         foreignKey: 'id_user',
         otherKey: 'id_game',
@@ -80,11 +80,6 @@ module.exports = (sequelize, dataTypes) => {
       User.hasMany(models.User_sales, {
         as: 'user_sales',
         foreignKey: "id_seller_user"
-      });
-
-      User.hasMany(models.User_purchases, {
-        as: 'user_purchases',
-        foreignKey: "id_buyer_user"
       });
     }
     return User;

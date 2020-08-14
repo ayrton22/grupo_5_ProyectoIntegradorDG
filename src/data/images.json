@@ -1,0 +1,1563 @@
+[
+    {
+        "image": "overwatch.jpg",
+        "gameId" : 1,
+        "ubicacion": "default"
+    },
+    {
+        "image": "overwatch1.jpg",
+        "gameId" : 1,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "overwatch1.jpg",
+        "gameId" : 1,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "overwatch11.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch12.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch13.jpg",
+        "gameId" : 1,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "overwatch14.png",
+        "gameId" : 1,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "overwatch15.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch16.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch17.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch18.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch19.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "overwatch20.jpg",
+        "gameId" : 1,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar.jpeg",
+        "gameId" : 2,
+        "ubicacion": "default"
+    },
+    {
+        "image": "godOfWar3.jpeg",
+        "gameId" : 2,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "godOfWar3.jpeg",
+        "gameId" : 2,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "godOfWar11.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar12.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar13.jpg",
+        "gameId" : 2,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "godOfWar14.jpg",
+        "gameId" : 2,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "godOfWar15.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar16.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar17.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar18.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar19.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "godOfWar20.jpg",
+        "gameId" : 2,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted.jpg",
+        "gameId" : 3,
+        "ubicacion": "default"
+    },
+    {
+        "image": "uncharted1.jpeg",
+        "gameId" : 3,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "uncharted1.jpeg",
+        "gameId" : 3,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "uncharted11.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted12.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted13.jpeg",
+        "gameId" : 3,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "uncharted14.jpg",
+        "gameId" : 3,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "uncharted15.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted16.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted17.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted18.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted19.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "uncharted20.jpg",
+        "gameId" : 3,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall.jpg",
+        "gameId" : 4,
+        "ubicacion": "default"
+    },
+    {
+        "image": "titanfall12.jpeg",
+        "gameId" : 4,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "titanfall12.jpeg",
+        "gameId" : 4,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "titanfall11.jpeg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall12.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall13.jpg",
+        "gameId" : 4,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "titanfall14.png",
+        "gameId" : 4,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "titanfall15.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall16.jpeg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall17.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall18.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall19.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "titanfall20.jpg",
+        "gameId" : 4,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne.jpg",
+        "gameId" : 5,
+        "ubicacion": "default"
+    },
+    {
+        "image": "bloodborne9.jpeg",
+        "gameId" : 5,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "bloodborne9.jpeg",
+        "gameId" : 5,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "bloodborne1.png",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne2.jpeg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne3.jpeg",
+        "gameId" : 5,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "bloodborne5.jpg",
+        "gameId" : 5,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "bloodborne11.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne12.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne13.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne14.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne15.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "bloodborne11.jpg",
+        "gameId" : 5,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow.jpg",
+        "gameId" : 6,
+        "ubicacion": "default"
+    },
+    {
+        "image": "wow4.jpeg",
+        "gameId" : 6,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "wow4.jpeg",
+        "gameId" : 6,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "wow11.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow12.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow13.jpg",
+        "gameId" : 6,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "wow14.jpg",
+        "gameId" : 6,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "wow15.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow16.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow17.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow18.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow19.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "wow20.jpg",
+        "gameId" : 6,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield.jpg",
+        "gameId" : 7,
+        "ubicacion": "default"
+    },
+    {
+        "image": "battlefield-8.jpeg",
+        "gameId" : 7,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "battlefield-8.jpeg",
+        "gameId" : 7,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "battlefield-11.jpg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-12.png",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-13.jpg",
+        "gameId" : 7,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "battlefield-14.webp",
+        "gameId" : 7,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "battlefield-15.jpeg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-16.jpg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-17.jpg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-18.jpeg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-19.jpg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "battlefield-1.jpg",
+        "gameId" : 7,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "call-of-duty-advanced-warfare.jpg",
+        "gameId" : 8,
+        "ubicacion": "default"
+    },
+    {
+        "image": "codAW21.jpeg",
+        "gameId" : 8,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "codAW21.jpeg",
+        "gameId" : 8,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "codAW11.jpg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW12.jpg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW13.jpeg",
+        "gameId" : 8,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "codAW14.jpg",
+        "gameId" : 8,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "codAW15.jpeg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW16.jpg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW17.jpg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW18.jpeg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW19.jpg",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "codAW20.png",
+        "gameId" : 8,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry.jpg",
+        "gameId" : 9,
+        "ubicacion": "default"
+    },
+    {
+        "image": "farcry21.jpg",
+        "gameId" : 9,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "farcry20.jpeg",
+        "gameId" : 9,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "farcry11.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry12.webp",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry13.webp",
+        "gameId" : 9,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "farcry14.jpg",
+        "gameId" : 9,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "farcry15.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry16.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry17.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry18.webp",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry19.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "farcry15.jpg",
+        "gameId" : 9,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4.jpg",
+        "gameId" : 10,
+        "ubicacion": "default"
+    },
+    {
+        "image": "halo4-1.jpeg",
+        "gameId" : 10,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "halo4-1.jpeg",
+        "gameId" : 10,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "halo4-11.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-12.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-13.jpeg",
+        "gameId" : 10,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "halo4-14.jpg",
+        "gameId" : 10,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "halo4-15.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-16.jpeg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-17.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-18.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-19.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "halo4-20.jpg",
+        "gameId" : 10,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "ResidentEvil.jpeg",
+        "gameId" : 11,
+        "ubicacion": "default"
+    },
+    {
+        "image": "residentEvil19.jpeg",
+        "gameId" : 11,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "residentEvil19.jpeg",
+        "gameId" : 11,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "residentEvil11.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil12.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil13.webp",
+        "gameId" : 11,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "residentEvil14.jpg",
+        "gameId" : 11,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "residentEvil15.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil16.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil17.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil18.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil19.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "residentEvil20.jpg",
+        "gameId" : 11,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider.jpg",
+        "gameId" : 12,
+        "ubicacion": "default"
+    },
+    {
+        "image": "tombRaider6.jpeg",
+        "gameId" : 12,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "tombRaider9.jpeg",
+        "gameId" : 12,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "tombRaider11.jpeg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider12.jpg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider13.jpg",
+        "gameId" : 12,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "tombRaider14.jpeg",
+        "gameId" : 12,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "tombRaider15.jpg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider16.jpeg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider17.jpg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider18.jpg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider19.jpeg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "tombRaider20.jpg",
+        "gameId" : 12,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa20.jpeg",
+        "gameId" : 13,
+        "ubicacion": "default"
+    },
+    {
+        "image": "fifa-horizontal.jpg",
+        "gameId" : 13,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "fifa2018.jpeg",
+        "gameId" : 13,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "fifa2010.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2012.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2013.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "fifa2014.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "fifa205.jpg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa206.jpg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2015.png",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2016.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2017.jpeg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "fifa2020.jpg",
+        "gameId" : 13,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV3.jpeg",
+        "gameId" : 14,
+        "ubicacion": "default"
+    },
+    {
+        "image": "gtaV.jpg",
+        "gameId" : 14,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "gtaV2.jpg",
+        "gameId" : 14,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "gtaV11.jpg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV12.jpg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV13.jpg",
+        "gameId" : 14,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "gtaV14.jpg",
+        "gameId" : 14,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "gtaV15.jpg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV16.webp",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV17.jpeg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV18.jpg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV19.jpg",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "gtaV20.webp",
+        "gameId" : 14,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo2.jpeg",
+        "gameId" : 15,
+        "ubicacion": "default"
+    },
+    {
+        "image": "csgo.jpeg",
+        "gameId" : 15,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "csgo5.jpeg",
+        "gameId" : 15,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "csgo11.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo12.png",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo13.jpg",
+        "gameId" : 15,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "csgo14.jpg",
+        "gameId" : 15,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "csgo15.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo16.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo17.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo18.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo19.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "csgo20.jpg",
+        "gameId" : 15,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeedHeat2.jpeg",
+        "gameId" : 16,
+        "ubicacion": "default"
+    },
+    {
+        "image": "needForSpeed5.jpeg",
+        "gameId" : 16,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "needForSpeed5.jpeg",
+        "gameId" : 16,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "needForSpeed11.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed12.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed13.jpg",
+        "gameId" : 16,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "needForSpeed14.jpg",
+        "gameId" : 16,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "needForSpeed15.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed16.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed17.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed18.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed19.webp",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "needForSpeed21.jpg",
+        "gameId" : 16,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim.jpeg",
+        "gameId" : 17,
+        "ubicacion": "default"
+    },
+    {
+        "image": "skyrim2.jpeg",
+        "gameId" : 17,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "skyrim2.jpeg",
+        "gameId" : 17,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "skyrim11.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim12.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim13.jpg",
+        "gameId" : 17,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "skyrim14.jpeg",
+        "gameId" : 17,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "skyrim15.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim16.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim17.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim18.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim19.jpeg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "skyrim20.jpg",
+        "gameId" : 17,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront.jpeg",
+        "gameId" : 18,
+        "ubicacion": "default"
+    },
+    {
+        "image": "starWarsBattlefront6.jpeg",
+        "gameId" : 18,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "starWarsBattlefront6.jpeg",
+        "gameId" : 18,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "starWarsBattlefront11.jpeg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront12.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront13.jpg",
+        "gameId" : 18,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "starWarsBattlefront14.jpg",
+        "gameId" : 18,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "starWarsBattlefront15.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront16.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront17.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront21.jpeg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront19.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "starWarsBattlefront20.jpg",
+        "gameId" : 18,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree12.webp",
+        "gameId" : 19,
+        "ubicacion": "default"
+    },
+    {
+        "image": "amongtree1.jpg",
+        "gameId" : 19,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "amongtree1.jpg",
+        "gameId" : 19,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "amongtree2.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree3.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree4.jpg",
+        "gameId" : 19,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "amongtree5.jpg",
+        "gameId" : 19,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "amongtree6.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree7.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree8.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree9.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree10.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "amongtree11.jpg",
+        "gameId" : 19,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand.webp",
+        "gameId" : 20,
+        "ubicacion": "default"
+    },
+    {
+        "image": "missleCommand12.jpg",
+        "gameId" : 20,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "missleCommand12.jpg",
+        "gameId" : 20,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "missleCommand1.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand2.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand3.jpg",
+        "gameId" : 20,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "missleCommand4.jpg",
+        "gameId" : 20,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "missleCommand5.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand6.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand7.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand8.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand9.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "missleCommand10.jpg",
+        "gameId" : 20,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota1.jpg",
+        "gameId" : 21,
+        "ubicacion": "default"
+    },
+    {
+        "image": "dota18.webp",
+        "gameId" : 21,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "dota18.webp",
+        "gameId" : 21,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "dota11.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota12.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota13.jpg",
+        "gameId" : 21,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "dota14.jpg",
+        "gameId" : 21,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "dota15.jpeg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota16.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota17.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota4.png",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota7.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "dota1.jpg",
+        "gameId" : 21,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "Minecraft.png",
+        "gameId" : 22,
+        "ubicacion": "default"
+    },
+    {
+        "image": "minecraft11.png",
+        "gameId" : 22,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "minecraft11.png",
+        "gameId" : 22,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "minecraft1.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft2.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft3.png",
+        "gameId" : 22,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "minecraft4.png",
+        "gameId" : 22,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "minecraft5.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft6.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft7.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft8.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft8.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "minecraft10.png",
+        "gameId" : 22,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom.jpg",
+        "gameId" : 23,
+        "ubicacion": "default"
+    },
+    {
+        "image": "doom21.jpeg",
+        "gameId" : 23,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "doom21.jpeg",
+        "gameId" : 23,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "doom1.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom2.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom3.jpg",
+        "gameId" : 23,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "doom4.jpg",
+        "gameId" : 23,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "doom5.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom6.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom7.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom8.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom9.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "doom1.jpg",
+        "gameId" : 23,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "Destiny.png",
+        "gameId" : 24,
+        "ubicacion": "default"
+    },
+    {
+        "image": "destiny21.png",
+        "gameId" : 24,
+        "ubicacion": "imagen_horizontal"
+    },
+    {
+        "image": "destiny21.png",
+        "gameId" : 24,
+        "ubicacion": "imagen_detalle"
+    },
+    {
+        "image": "destiny11.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny12.jpeg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny13.webp",
+        "gameId" : 24,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "destiny14.jpeg",
+        "gameId" : 24,
+        "ubicacion": "carrusel"
+    },
+    {
+        "image": "destiny15.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny16.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny17.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny18.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny19.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    },
+    {
+        "image": "destiny11.jpg",
+        "gameId" : 24,
+        "ubicacion": "carousel"
+    }
+    
+]

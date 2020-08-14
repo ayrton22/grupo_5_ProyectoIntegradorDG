@@ -22,12 +22,12 @@ module.exports = {
         unique: true
       },
       email: {
-        type: Sequelize.DataTypes.STRING(75),
+        type: Sequelize.DataTypes.STRING(500),
         allowNull: false,
         unique: true
       },
       password: {
-        type:Sequelize.DataTypes.STRING(100),
+        type:Sequelize.DataTypes.STRING(500),
         allowNull: false
       },
       gender: {
@@ -39,11 +39,11 @@ module.exports = {
         allowNull: true
       },
       address: {
-        type:Sequelize.DataTypes.STRING(100),
+        type:Sequelize.DataTypes.STRING(500),
         defaultValue: 'Unspecified'
       },
       avatar: {
-        type:Sequelize.DataTypes.STRING(100),
+        type:Sequelize.DataTypes.STRING(500),
         defaultValue: '/image/defaultAvatar'
       },
       admin: {

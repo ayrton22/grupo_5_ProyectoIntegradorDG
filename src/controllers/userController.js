@@ -15,10 +15,11 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Games.findByPk(req.params.id, {
-            include: [{association:'categories'},
-            {association:'genres'},
-            {association:'platforms'}]
+        db.Users.findAll({
+            include: [{association:'transactions'},
+            {association:'message'},
+            {association:'games_shooping_cart'},
+            {association:'user_sales'}]
         })
         .then(function(result) {
             res.send(result)

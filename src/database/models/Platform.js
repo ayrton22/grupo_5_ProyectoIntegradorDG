@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
           name: {
             type: dataTypes.STRING(50),
             allowNull: false
+          },
+          icono: {
+            type: dataTypes.STRING(100),
+            allowNull: false
           }
     };
 

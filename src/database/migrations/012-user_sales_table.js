@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         autoIncrement: true
       },
-      id_juego: {
+      id_game: {
         type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
         allowNull: false,
         references: {
@@ -22,6 +22,16 @@ module.exports = {
         references: {
           model: 'Users',
           key: 'id'
+        }
+      },
+      id_buyer_user:{
+            type: Sequelize.DataTypes.INTEGER(100).UNSIGNED,
+            allowNull: true,
+          references: {
+            model: 'Users',
+            key: 'id'
+            },
+            defaultValue: null
         },
         game_status: {
           type: Sequelize.DataTypes.STRING(60),
@@ -44,7 +54,6 @@ module.exports = {
           allowNull: false
         },
         
-      },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
     })

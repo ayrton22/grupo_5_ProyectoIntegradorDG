@@ -7,22 +7,22 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        description: {
-        type: dataTypes.STRING(100),
-        allowNull: false,
+        id_game: {
+            type: dataTypes.INTEGER(100).UNSIGNED,
+            allowNull: false,
+            references: {
+                model: 'Games',
+                key: 'id'
+              }
+        },
+        location: {
+            type: dataTypes.STRING(100),
+            allowNull: false,
         },
         img_url: {
-        type: dataTypes.STRING(200),
-        unique: true
-        },
-        id_game: {
-        type: dataTypes.INTEGER(100).UNSIGNED,
-        allowNull: false,
-        references: {
-            model: 'Games',
-            key: 'id'
-          }
+        type: dataTypes.STRING(500),
         }
+        
     };
 
     let config = {
@@ -37,6 +37,5 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'id_game'
         })
     }
-
     return Image;
 }

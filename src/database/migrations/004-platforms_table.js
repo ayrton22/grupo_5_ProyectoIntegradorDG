@@ -12,6 +12,10 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(50),
         allowNull: false
       },
+      icono: {
+        type: Sequelize.DataTypes.STRING(100),
+        allowNull: false
+      },
       createdAt: Sequelize.DataTypes.DATE,
       updatedAt: Sequelize.DataTypes.DATE
     })

@@ -40,6 +40,10 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(50),
         allowNull: false
       },
+      developer: {
+        type: Sequelize.DataTypes.STRING(50),
+        allowNull: false
+      },
       classification: {
         type: Sequelize.DataTypes.STRING(10),
         allowNull: false

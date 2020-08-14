@@ -7,7 +7,7 @@
         <div class="detalle-container">
             <div class="detalle-container__mediaInfo">
                 <div class="detalle-container__part-1 arrow">
-                    <div class="vista " ><img class="oculto" src="../../img/uploads/productsImage/<%= productDetail.image2 %>" alt="imagen-gameplay" id="current">
+                    <div class="vista " ><img class="oculto" src="<%= productDetail.images[1].img_url %>" alt="imagen-gameplay" id="current">
                     <iframe class="detalle-container__video" name="videos" src="https://www.youtube.com/embed/<%=productDetail.video%>"  frameborder="0"></iframe>
                     </div> 
                     <div class="detalle-container__contenedor-slider">
@@ -16,18 +16,14 @@
                         </button>
                         <div class="contenedor-carrusel">
                             <div class="imagen-gameplay principal">
-                                <img class="videoPreview" src="../../img/uploads/productsImage/<%= productDetail.image1 %>" alt="imagen-gameplay">
+                                <img class="videoPreview" src="<%= productDetail.images[1].img_url %>" alt="imagen-gameplay">
                                 <img class="logo videoPreview oculto" src="../../img/Logos/playvideo.png" alt="logo">
                             </div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image2 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image3 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image4 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image5 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image6 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image7 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image8 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image9 %>" alt="imagen-gameplay"></div>
-                            <div class="imagen-gameplay"><img src="../../img/uploads/productsImage/<%= productDetail.image10 %>" alt="imagen-gameplay"></div>
+                            <% for(let i = 0; i < productDetail.images.length; i++) { %>
+                                <% if(productDetail.images[i].location == "carousel") {%>
+                                    <div class="imagen-gameplay"><img src="<%= productDetail.images[i].img_url %>" alt="imagen-gameplay"></div>
+                            <% } %>
+                            <% } %>
                         </div>
                         <button role="button" id="flecha-izquierda" class="flecha-derecha"> 
                             <i class="fas fa-angle-left"></i>
@@ -36,7 +32,7 @@
                 </div>
                 <article class="detalle-container__part-2">
                        <div class="">
-                        <img class="imagen-detalle" src="/img/uploads/productsImage/<%= productDetail.imagen_detalle %>" alt="">
+                        <img class="imagen-detalle" src="<%= productDetail.images[1].img_url %>" alt="">
                        </div>
                        <h3><%= productDetail.description %></h3>
                        <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productDetail.rating %></div>
@@ -49,17 +45,10 @@
                        </div>
                        <div class="detalle-container__plataform-buyButtons">
                             <div class="detalle-container__plataform-buttons">
-                                <% if(productDetail.playstation == "si") { %>
-                                    <i class="<%= productDetail.icon_playstation %>"></i>
+                                <% for(let i = 0; i < productDetail.platforms.length; i++){ %>
+                                    <i class="<%= productDetail.platforms[i].icono%>"></i>
                                 <% } %>
         
-                                <% if(productDetail.xbox == "si") { %>
-                                    <i class="<%= productDetail.icon_xbox %>"></i>
-                                <% } %>
-                           
-                                <% if(productDetail.pc == "si") { %>
-                                    <i class="<%= productDetail.icon_pc %>"></i>
-                                <% } %>
                             </div>
                             <div class="">
                                 <a href="/user/cart" class="carrito-contenedor-link"><i class="fas fa-shopping-cart shoping-cart-detalle" aria-hidden="true"></i></a>
@@ -74,11 +63,11 @@
                         <div class="detalle-container__devInfo">
                             <div class="">
                                 <span class="span-detail informacion">Desarrolladora:</span>
-                                <p><%= productDetail.developer %></p>
+                                <p><%= productDetail.editor %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Editora:</span>
-                                <p> <%= productDetail.editor %></p>
+                                <p> <%= productDetail.developer %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Fecha de lanzamiento:</span>
@@ -86,7 +75,9 @@
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Etiquetas:</span>
-                                <p> <%= productDetail.tags %></p>
+                                <% for(let i = 0; i < productDetail.genres.length; i++){ %>
+                                    <p> <%= productDetail.genres[i].name %></p>
+                                <% } %>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Clasificacion:</span>
@@ -97,11 +88,11 @@
                             <div class="texto-container">
                                 <h1 class="h1-detalle"><%= productDetail.title %></h1>
                                 <div class="texto-informativo">
-                                    <%= productDetail.big_description %>
+                                    <%= productDetail.descriptionBig %>
                                 </div>
                                 <br>
                                 <div class="texto-informativo">
-                                    <%= productDetail.medium_description %>
+                                    <%= productDetail.descriptionMedium %>
                                 </div>
                             </div>
                         </section>
@@ -119,7 +110,11 @@
                     <a href="/product/detail/<%= products[random].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="../../img/uploads/productsImage/<%= products[random].image %>" alt="imagen-detalle">
+                                <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                    <% if(products[random].images[j].location == "default") {%>
+                                    <img src="<%= products[random].images[j].img_url %>" alt="imagen-detalle">
+                                <% } %>
+                                <% } %>
                             </div>
                             <p><%= products[random].title %></p>
                             <p><%= products[random].price %>$</p>
@@ -137,7 +132,11 @@
                     <a href="/product/detail/<%= products[random].id %>">
                         <article class="juegos-container__product">
                             <div class="juegos-container__img-cont">
-                                <img src="../../img/uploads/productsImage/<%= products[random].image %>" alt="imagen-detalle">
+                                <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                    <% if(products[random].images[j].location == "default") {%>
+                                    <img src="<%= products[random].images[j].img_url %>" alt="imagen-detalle">
+                                <% } %>
+                                <% } %>
                             </div>
                             <p><%= products[random].title %></p>
                             <p><%= products[random].price %>$</p>

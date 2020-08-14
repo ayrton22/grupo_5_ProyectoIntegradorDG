@@ -23,7 +23,11 @@
                 <a href="/product/detail/<%= products[i].id %>">
                     <article class="juegos-container__product">
                         <div class="juegos-container__img-cont">
-                            <img src="img/uploads/productsImage/<%= products[i].image %>" alt="">
+                            <% for(let j = 0; j < products[i].images.length; j++) { %>
+                                <% if(products[i].images[j].location == "default") {%>
+                                <img src="<%= products[i].images[j].img_url %>" alt="imagen/miniatura">
+                            <% } %>
+                            <% } %>
                         </div>
                         <p><%= products[i].title %></p>
                         <p><%= products[i].price %>$</p>

@@ -1,6 +1,8 @@
 // Modules
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+
 
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
@@ -8,14 +10,45 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-    list: (req, res) => {
-		res.render('productList', {
-			products: products
+
+    list: function(req,res) {
+		db.Games.findAll({
+			include: [{association: 'images'}]
+			})
+		.then(function(products){
+			res.render('productList', {
+				products: products
+
+			});
 		})
+		.catch(function(error) {
+				res.send(error)
+			});
 	},
-	
 	detail: function(req, res) {
-		let productId = req.params.id;
+		let productDetail = db.Games.findByPk(req.params.id,{
+				include: [{association: 'images'},
+				{association: 'platforms'},
+				{association: 'genres'}]
+			});
+
+		let products = db.Games.findAll({
+			include: [{association: 'images'},
+			{association: 'platforms'}]
+		});
+		Promise.all([productDetail,products])
+
+		.then(function(resultado){
+			res.render('productDetail', {
+				productDetail:resultado[0],
+				products:resultado[1]
+			})
+			//res.send(resultado[0]);
+		})
+		.catch(function(error) {
+				res.send(error)
+			});
+		/*let productId = req.params.id;
 		for (let i = 0; i < products.length; i++) {
 			if (products[i].id == productId) {
 				res.render('productDetail', {
@@ -23,7 +56,7 @@ module.exports = {
 					products
 				})
 			}
-		}
+		}*/
 	},
 
     load: function(req, res) {

@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const faker = require('faker');
 
 const games = [];
 
@@ -16,8 +17,9 @@ products.forEach(function(element){
     descriptionBig: element.big_description,
     price: element.price,
     video: element.video,
-    launch_date : new Date(),
+    launch_date : new Date(faker.date.between('2000-01-01', '2020-01-01')),
     editor: element.editor,
+    developer: element.developer,
     classification: element.classification,
     rating: element.rating,
     stock_user : Math.floor(Math.random() * 10),

@@ -200,12 +200,12 @@
         "ubicacion": "default"
     },
     {
-        "image": "titanfall12.jpeg",
+        "image": "titanfall2.jpeg",
         "gameId" : 4,
         "ubicacion": "imagen_horizontal"
     },
     {
-        "image": "titanfall12.jpeg",
+        "image": "titanfall2.jpeg",
         "gameId" : 4,
         "ubicacion": "imagen_detalle"
     },
@@ -260,7 +260,7 @@
         "ubicacion": "carousel"
     },
     {
-        "image": "bloodborne.jpg",
+        "image": "bloodborne.jpeg",
         "gameId" : 5,
         "ubicacion": "default"
     },
@@ -655,12 +655,12 @@
         "ubicacion": "default"
     },
     {
-        "image": "residentEvil19.jpeg",
+        "image": "residentEvil9.jpeg",
         "gameId" : 11,
         "ubicacion": "imagen_horizontal"
     },
     {
-        "image": "residentEvil19.jpeg",
+        "image": "residentEvil9.jpeg",
         "gameId" : 11,
         "ubicacion": "imagen_detalle"
     },
@@ -915,7 +915,7 @@
         "ubicacion": "default"
     },
     {
-        "image": "csgo.jpeg",
+        "image": "csgo.jpg",
         "gameId" : 15,
         "ubicacion": "imagen_horizontal"
     },
@@ -1235,7 +1235,7 @@
         "ubicacion": "carousel"
     },
     {
-        "image": "missleCommand.webp",
+        "image": "missleCommand13.webp",
         "gameId" : 20,
         "ubicacion": "default"
     },

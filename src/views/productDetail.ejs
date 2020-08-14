@@ -48,8 +48,8 @@
                                 <% for(let i = 0; i < productDetail.platforms.length; i++){ %>
                                     <i class="<%= productDetail.platforms[i].icono%>"></i>
                                 <% } %>
-        
-                            </div>
+                         
+                        </div>
                             <div class="">
                                 <a href="/user/cart" class="carrito-contenedor-link"><i class="fas fa-shopping-cart shoping-cart-detalle" aria-hidden="true"></i></a>
                                 <a href="#" class="btn btn-primary btn-lg">Comprar</a>
@@ -71,13 +71,15 @@
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Fecha de lanzamiento:</span>
-                                <p> <%= productDetail.launch_date %></p>
+                                <p> <%= productDetail.launch_date.getFullYear() %></p>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Etiquetas:</span>
+                                <div class="generos-button">
                                 <% for(let i = 0; i < productDetail.genres.length; i++){ %>
-                                    <p> <%= productDetail.genres[i].name %></p>
+                                    <button class="detail--action-button generos-button"><a href="/product/<%= productDetail.genres[i].id %>"><%= productDetail.genres[i].name %> </a></button>
                                 <% } %>
+                            </div>
                             </div>
                             <div class="">
                                 <span class="span-detail informacion">Clasificacion:</span>

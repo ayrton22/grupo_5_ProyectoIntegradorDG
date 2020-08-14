@@ -9,7 +9,7 @@ const controller = require('../controllers/productsController.js');
 const uploadImageProductMiddleware = require('../middlewares/uploadImageProductMiddlware')
 
 // Router, controller and middleware usage
-router.get('/', controller.list);
+router.get('/:id_genero?', controller.list);
 
 router.get('/detail/:id', controller.detail);
 router.delete('/detail/:id', controller.destroy)

@@ -12,18 +12,33 @@ products = JSON.parse(products);
 module.exports = {
 
     list: function(req,res) {
+		if(req.params.id_genero == undefined){
 		db.Games.findAll({
 			include: [{association: 'images'}]
 			})
 		.then(function(products){
 			res.render('productList', {
-				products: products
+				products: products,
+				genres: undefined
 
 			});
 		})
 		.catch(function(error) {
 				res.send(error)
 			});
+		}else {
+			db.Genres.findByPk(req.params.id_genero,{
+				include:[{association: 'games' , include:[{association: 'images'}]},
+			]
+			})
+			.then(function(genres){
+				res.render('productList', {
+					genres: genres,
+					products : undefined,
+				});
+			})
+			
+		}
 	},
 	detail: function(req, res) {
 		let productDetail = db.Games.findByPk(req.params.id,{

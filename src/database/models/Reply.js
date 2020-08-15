@@ -1,11 +1,19 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Messages';
+    let alias = 'Replys';
 
     let cols = {
         id: {
         type: dataTypes.INTEGER(100).UNSIGNED,
         primaryKey: true,
         autoIncrement: true
+      },
+      id_question: {
+        type: dataTypes.INTEGER(100).UNSIGNED,
+        allowNull: false,
+        references: {
+          model: 'Questions',
+          key: 'id'
+        }
       },
       id_user: {
         type: dataTypes.INTEGER(100).UNSIGNED,
@@ -22,16 +30,22 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: 'messages',
+        tableName: 'replys',
     };
 
-    const Message = sequelize.define(alias, cols, config);
+    const Reply = sequelize.define(alias, cols, config);
 
-    Message.associate = function(models){
-      Message.belongsTo(models.Users, {
+    Reply.associate = function(models){
+
+        Reply.belongsTo(models.Questions, {
+        as: 'questions',
+        foreignKey: "id_question"
+      } );
+      
+      Reply.belongsTo(models.Users, {
         as: 'users',
         foreignKey: "id_user"
       } );
     }
-    return Message;
+    return Reply;
 }

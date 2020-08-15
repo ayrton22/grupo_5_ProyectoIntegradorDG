@@ -15,12 +15,7 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findAll({
-            include: [{association:'transactions'},
-            {association:'message'},
-            {association:'games_shooping_cart'},
-            {association:'user_sales'}]
-        })
+        db.Users.findAll({include:[{association: 'questions',include:[{association:'replys'}]}]})
         .then(function(result) {
             res.send(result)
         })
@@ -145,5 +140,9 @@ module.exports = {
 
     thankYouPage: function(req, res){
         res.render('thankYouPage');
+    },
+    community: function(req,res){
+        res.render('community.ejs');
+
     }
 }

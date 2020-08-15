@@ -62,6 +62,7 @@ Vue.component('video-carousel', {
 		}
 	},
 	mounted: function() {
+		
 		//Generate array of fake carousel videos
 		for (i=0; i<5; i++) {
 			let videoId = videoIds[i];

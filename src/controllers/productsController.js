@@ -36,9 +36,8 @@ module.exports = {
 					genres: genres,
 					products : undefined,
 				});
-			})
-			
-		}
+			});
+		};
 	},
 	detail: function(req, res) {
 		let productDetail = db.Games.findByPk(req.params.id,{
@@ -58,20 +57,10 @@ module.exports = {
 				productDetail:resultado[0],
 				products:resultado[1]
 			})
-			//res.send(resultado[0]);
 		})
 		.catch(function(error) {
 				res.send(error)
 			});
-		/*let productId = req.params.id;
-		for (let i = 0; i < products.length; i++) {
-			if (products[i].id == productId) {
-				res.render('productDetail', {
-					productDetail: products[i],
-					products
-				})
-			}
-		}*/
 	},
 
     load: function(req, res) {

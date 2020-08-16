@@ -8,42 +8,34 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-function show_hide(){
-    let click = document.getElementById('drop-cont');
-    let click2 = document.getElementById('drop-cont2');
-    if(click.style.display === 'none'){
-        click.style.display = 'block';
-    } else {
-        click.style.display = 'none';
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
     }
 
-    if(click2.style.display = 'block'){
-        click2.style.display = 'none';
-    }
-}
-
-function show_hide2(){
-    let click = document.getElementById('drop-cont2');
-    let click2 = document.getElementById('drop-cont');
-    if(click.style.display === 'none'){
-        click.style.display = 'block';
-    } else {
-        click.style.display = 'none';
-    }
-
-    if(click2.style.display = 'block'){
-        click2.style.display = 'none';
-    }
-}
-
-function containerHide(){
-    let click = document.getElementById('drop-cont');
-    if (click.style.display === 'block'){
-        click.style.display = 'none'
+    function myFunction2() {
+        document.getElementById("drop-cont2").classList.toggle("show2");
+     }
+  
+  window.onclick = function(event) {
+    if (!event.target.matches('.header-nav__dropdown-button')) {
+      var dropdowns = document.getElementsByClassName("header-nav__sub-list");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
     }
 
-    let click2 = document.getElementById('drop-cont2');
-    if (click2.style.display === 'block'){
-        click2.style.display = 'none'
+    if (!event.target.matches('.header-nav__language-dropdown')) {
+        var dropdowns2 = document.getElementsByClassName("header-nav__language-sub-list");
+        var j;
+        for (j = 0; j < dropdowns2.length; j++) {
+          var openDropdown2 = dropdowns2[j];
+          if (openDropdown2.classList.contains('show2')) {
+            openDropdown2.classList.remove('show2');
+          }
+        }
     }
-}
+ }

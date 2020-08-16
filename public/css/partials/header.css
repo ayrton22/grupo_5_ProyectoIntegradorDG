@@ -85,6 +85,10 @@
     display: none;
 }
 
+ul.show {
+    display: block !important;
+}
+
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__sub-list .header-nav__sub-item{
     margin-bottom: .7rem;
 }
@@ -281,6 +285,10 @@ span.icon-cart__products{
     margin-bottom: .7rem;
     display: none;
     z-index: 1000;
+}
+
+ul.show2 {
+    display: block !important;
 }
 
 .header .header-nav__right .header-nav__language-sub-lis .header-nav__language-sub-item:last-child{

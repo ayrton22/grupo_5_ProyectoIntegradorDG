@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'User_sales';
+    let alias = 'UserSales';
 
     let cols = {
       id: {
@@ -58,19 +58,23 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'user_sales',
     };
 
-    const User_sale = sequelize.define(alias, cols, config);
+    const UserSale = sequelize.define(alias, cols, config);
 
-    User_sale.associate = function(models){
+    UserSale.associate = function(models){
 
-      User_sale.belongsTo(models.Users, {
-        as: 'users',
+      UserSale.belongsTo(models.Users, {
+        as: 'userssellers',
         foreignKey: "id_seller_user"
       } );
+      UserSale.belongsTo(models.Users, {
+        as: 'usersbuyers',
+        foreignKey: "id_buyer_user"
+      } );
 
-      User_sale.belongsTo(models.Games, {
+      UserSale.belongsTo(models.Games, {
         as: 'games',
         foreignKey: "id_game"
       });
     }
-    return User_sale;
+    return UserSale;
 }

@@ -75,7 +75,7 @@ Vue.component('video-carousel', {
 	},
 	mounted: function() {
 
-		//Generate array of fake carousel videos
+		//Generate randoms carrusel videos
 			let arraynumrandom = [];
 			let verificador = 0;
 			while(arraynumrandom.length < 5)

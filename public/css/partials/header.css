@@ -85,6 +85,10 @@
     display: none;
 }
 
+ul.show {
+    display: block !important;
+}
+
 .header .header-nav .header-nav__left .header-nav__list .header-nav__item .header-nav__sub-list .header-nav__sub-item{
     margin-bottom: .7rem;
 }
@@ -114,22 +118,43 @@
 }
 
 .header .header-nav__right .header-nav__form{
-    display: flex;
-    width: 80%;
+    width: 50px;
     margin-right: 2.1rem;
     margin-left: auto;
+    --size: 45px;
+    border: 2px solid #007DCF;
+    display: flex;
+    border-radius: 100vh;
+    overflow: hidden;
+    font-size: 1.25em;
+    position: relative;
+    height: var(--size);
+    margin-left: auto;
+    transition: width 450ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    background-color: white;
 }
 
 .header .header-nav__right .header-nav__form .search-input{
     border: none;
-    margin: 0 1rem;
-    margin-right: -2.5rem;
-    margin-left: auto;
-    width: 70%;
-    height: 3.5rem;
-    padding-left: 1rem;
+    flex-grow: 1;
     border-radius: var(--button-border-radius);
     font-size: 1.5rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    outline: 0;
+    opacity: 0;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.header .header-nav__right .header-nav__form:focus-within .search-input{
+    opacity: 1;
+    z-index: 0;
+    cursor: initial;
 }
 
 .header .header-nav__right .header-nav__form .search-input::placeholder{
@@ -137,12 +162,33 @@
 }
 
 .header .header-nav__right .header-nav__form .search-button{
+    position: absolute;
+    right: 0;
     border: none;
-    border-radius: none;
-    background-color: #ffffff;
+    border-radius: 100vh;
+    background: transparent;
     cursor: pointer;
     align-self: center;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    margin-right: .5rem;
+    width: calc(var(--size) - 10px);
+    height: calc(var(--size) - 10px);
+    transition: background 200ms ease-out;
+}
+
+.header .header-nav__right .header-nav__form:focus-within .search-button:hover,
+.header .header-nav__right .header-nav__form:focus-within .search-button:focus{
+    outline: 0;
+    transform: rotate(1turn);
+    box-shadow: 0 0 10px rgba(0,0,0,.65);
+}
+
+.header .header-nav__right .header-nav__form:focus-within .search-button{
+    background-color: #007DCF;
+}
+
+.header .header-nav__right .header-nav__form:focus-within{
+    width: 100%;
 }
 
 .header .header-nav__right a {
@@ -237,6 +283,10 @@ span.icon-cart__products{
     margin-bottom: .7rem;
     display: none;
     z-index: 1000;
+}
+
+ul.show2 {
+    display: block !important;
 }
 
 .header .header-nav__right .header-nav__language-sub-lis .header-nav__language-sub-item:last-child{

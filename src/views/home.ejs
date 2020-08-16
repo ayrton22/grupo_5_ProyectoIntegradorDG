@@ -7,11 +7,10 @@
 
     <!-- Header (Navs) -->
     <%- include('partials/header') %>
-    <%- include('partials/slider') %>
-    <div onclick=" containerHide()" class="container-fluid pb-0 pl-5 pr-5 pt-5">
-        <!-- Slider -->
 
-       
+    <div class="container-fluid pb-0 pl-5 pr-5 pt-5">
+        <!-- Slider -->
+        <%- include('partials/slider') %>
 
         <div class="container-ofertas">
 
@@ -34,8 +33,8 @@
                             </div>
                         <% } %>
                     <% } %>
-                </div>
-            </div>
+                
+            
 
 
             <div class="product-section__horizontal-boxes">
@@ -60,7 +59,8 @@
                     <% } %>
                 </div>
             </div>
-  
+        </div>
+    </div>
 
 
 
@@ -70,17 +70,33 @@
             <div class="product-section-2__portrays">
                 <% for(let i = 0; i < allCategories.length; i++){ %>
                     <%  if(allCategories[i].name == "Outstanding" ){ %>
-                        <% for(let j = 0; j < 3; j++){ %>
                             <div class="product-section-2__box product-section-2__box--1">
-                                <a href="/product/detail/<%= allCategories[i].games[j].id %>">
-                                    <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
-                                        <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
-                                            <img src="<%= allCategories[i].games[j].images[k].img_url %>" alt="imagen/miniatura">
+                                <a href="/product/detail/<%= allCategories[i].games[1].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[1].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[1].images[k].location == "default" ){ %>
+                                            <img src="<%= allCategories[i].games[1].images[k].img_url %>" alt="imagen/miniatura">
                                      <% } %>
                                     <% } %>
                                 </a>
                             </div>
-                        <% } %>
+                            <div class="product-section-2__box product-section-2__box--2">
+                                <a href="/product/detail/<%= allCategories[i].games[2].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[2].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[2].images[k].location == "default" ){ %>
+                                            <img src="<%= allCategories[i].games[2].images[k].img_url %>" alt="imagen/miniatura">
+                                     <% } %>
+                                    <% } %>
+                                </a>
+                            </div>
+                            <div class="product-section-2__box product-section-2__box--3">
+                                <a href="/product/detail/<%= allCategories[i].games[3].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[3].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[3].images[k].location == "default" ){ %>
+                                            <img src="<%= allCategories[i].games[3].images[k].img_url %>" alt="imagen/miniatura">
+                                     <% } %>
+                                    <% } %>
+                                </a>
+                            </div>
                     <% } %>
                 <% } %>
             </div>

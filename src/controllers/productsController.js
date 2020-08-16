@@ -75,7 +75,7 @@ module.exports = {
 		let namesVideo = []
 
 		for(i = 0; i < req.files.length; i++){
-			console.log(req.files.fieldname)
+			console.log(req.files[i].fieldname)
 		}
 
 		let newProduct = {

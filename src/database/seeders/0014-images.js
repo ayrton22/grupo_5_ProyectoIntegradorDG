@@ -22,7 +22,6 @@ images.forEach(function(element){
 module.exports = {
   up: async (queryInterface, Sequelize) => {
    return queryInterface.bulkInsert('images',Cargandoimagenes,{})
-   
   },
 
   down: async (queryInterface, Sequelize) => {

@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 
-
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
 products = JSON.parse(products);
@@ -29,7 +28,7 @@ module.exports = {
 				include: [{association: 'images'},
 				{association: 'platforms'},
 				{association: 'genres'}]
-			});
+		});
 
 		let products = db.Games.findAll({
 			include: [{association: 'images'},
@@ -45,7 +44,7 @@ module.exports = {
 		})
 		.catch(function(error) {
 				res.send(error)
-			});
+		});
 	},
 	genres: function(req,res){
 		db.Genres.findByPk(req.params.id_genero,{
@@ -72,47 +71,40 @@ module.exports = {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let namesVideo = []
+		let namesInputVideo = []
 
 		for(i = 0; i < req.files.length; i++){
-			console.log(req.files[i].fieldname)
+			namesInputVideo.push(req.files[i].fieldname)
 		}
 
-		let newProduct = {
-            id: products.length + 1,
+		console.log(namesInputVideo)
+
+		db.Games.create({
+            id: db.Games.max('id') + 1,
             title: req.body.title,
             description: req.body.description,
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
 			price: req.body.price,
-			image: (req.files[0]) ? req.files[0].filename : 'default.png',
-			imagen_horizontal: (req.files[1]) ? req.files[1].filename : 'default.png',
-			image1: (req.files[2]) ? req.files[2].filename : 'default.png',
-			image2: (req.files[3]) ? req.files[3].filename : 'default.png',
-			image3: (req.files[4]) ? req.files[4].filename : 'default.png',
-			image4: (req.files[5]) ? req.files[5].filename : 'default.png',
-			image5: (req.files[6]) ? req.files[6].filename : 'default.png',
-			image6: (req.files[7]) ? req.files[7].filename : 'default.png',
-			image7: (req.files[8]) ? req.files[8].filename : 'default.png',
-			image8: (req.files[9]) ? req.files[9].filename : 'default.png',
-			image9: (req.files[10]) ? req.files[10].filename : 'default.png',
-			image10: (req.files[11]) ? req.files[11].filename : 'default.png',
-			imagen_detalle: (req.files[12]) ? req.files[12].filename : 'default.png',
 			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
-			tags: req.body.tags,
 			classification: req.body.classification,
-			category: req.body.category,
-			rating: req.body.rating,
-			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
-			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
-			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
-			icon_playstation: 'fab fa-playstation icono-playstation',
-			icon_xbox: 'fab fa-xbox icono-xbox',
-			icon_pc: 'fas fa-desktop icono-desktop'
-		};
+			rating: req.body.rating
+		})
+
+		db.Images.create({
+			location: location, id_game: db.Games.max('id') + 1, img_url: img_url
+		}) * 13
+
+		db.Genres.create({
+
+		})
+		db.Games_Categories.create({
+
+		})
+
         for(let i = 0; i < products.length; i++) {
             if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description) {
                 return res.redirect('/product/load');

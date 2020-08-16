@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         img_url: {
-        type: dataTypes.STRING(500),
+            type: dataTypes.STRING(500),
         }
         
     };

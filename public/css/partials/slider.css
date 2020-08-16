@@ -280,12 +280,14 @@
 }
 
 .description-slider article{
-    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .description-slider article p{
     color: #000;
     font-size: 1.6rem;
+    margin-bottom: auto;
 }
 
 .description-slider .buttons-cont{

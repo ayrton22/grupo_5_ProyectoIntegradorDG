@@ -1,5 +1,7 @@
 'use strict';
 
+const { genres } = require("../../controllers/productsController");
+
 const dandoGeneros=[];
 for(let i = 1; i <=24 ;i++){
   //let cantidadAleatoria = (Math.floor(Math.random() * 3) + 1);
@@ -16,11 +18,17 @@ for(let i = 1; i <=24 ;i++){
     while(genero3 == genero2 || genero3 == genero1 ){
       genero3 = (Math.floor(Math.random() * 13) + 1);
     };
+
+    let genero4 = (Math.floor(Math.random() * 13) + 1);
+    while(genero4 == genero3 || genero4 == genero2 || genero4 == genero1 ){
+      genero4 = (Math.floor(Math.random() * 13) + 1);
+    };
     generos.push(genero1);
     generos.push(genero2);
     generos.push(genero3);
+    generos.push(genero4);
   
-      for(let j = 0; j<= (Math.floor(Math.random() * 3)); j++){
+      for(let j = 0; j< generos.length; j++){
         dandoGeneros.push({
             id_game: i,
             id_genre: generos[j],

@@ -1,0 +1,68 @@
+<div class="datos_slider d-none">
+<% for(let i = 0; i < gamesSlider.length; i++) { %>
+<div>
+    <span><%=gamesSlider[i].id %></span>
+    <span><%=gamesSlider[i].video %></span>
+    <span><%=gamesSlider[i].title%></span>
+    <span><%=gamesSlider[i].description%></span>
+    <% for(let j = 0; j < gamesSlider[i].images.length; j++) { %>
+    <% if(gamesSlider[i].images[j].location == "imagen_detalle") {%>
+        <span><%= gamesSlider[i].images[j].img_url %></span>
+    <% } %>
+    <% } %>
+</div>
+   <% } %>
+</div>
+  
+
+<div id="container">
+    <div class="content">
+        <div class="main-content">
+            <video-carousel inline-template class="carousel">
+                <div>
+                    <i class="fas fa-chevron-left carousel__chevron" @click="changeVideo('right')"></i>
+                    <div class="carousel__content">
+                        <div class="carousel__video" v-for="(video, i) in videos" :class="video.position">
+                            <div @click="changeVideo(0, video.position)" class="inactive" v-if="!video.active">
+                            </div>
+                            <div class="carousel__overlay" v-if="!video.active && video.position == 'main'">
+                                <div class="carousel__overlay-top">
+                                    <div class="carousel__overlay-picture">
+                                        <img :src="video.channelImage" alt="">
+                                    </div>
+                                    <div class="carousel__overlay-text">
+                                        <div class="carousel__overlay-name">
+                                            {{video.channelName}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <i class="fas fa-play big-play" v-on:click="video.active = !video.active">
+                                </i>
+                                <div class="description-slider">
+                                    <article>
+                                        <p class="description">
+                                            {{video.channelDescription}}
+                                        </p>
+                                        <div class="buttons-cont">
+                                            <i class="fa fa-desktop plataform" aria-hidden="true"></i>
+                                            <div class="a-btn ">
+                                                <a class="more " href="/product/">Ver más</a>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <img v-if="!video.active" :src="video.thumbnail" alt="" class="carousel__video-picture">
+                            <iframe v-if="video.active" id="ytplayer" type="text/html" width="100%" height="100%"
+                            :src="video.embed" frameborder="0"></iframe>
+                                
+                                
+                            <div class="carousel__placeholder-background" v-if="video.active"></div>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right carousel__chevron" @click="changeVideo('left')"></i>
+                </div>
+            </video-carousel>
+        </div>
+    </div>
+</div>

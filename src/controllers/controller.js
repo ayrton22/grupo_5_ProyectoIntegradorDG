@@ -2,6 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const db = require('../database/models');
+
 
 // JSON Parse
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
@@ -14,32 +16,19 @@ products = JSON.parse(products);
 module.exports = {
     
     home: function(req, res) {
-        let masVendido = products.filter(function(elemento) {
-			return elemento.category == "mas-vendidos";
-		});
-        let destacado = products.filter(function(elemento) {
-			return elemento.category == "Destacado";
-		});
-		let destacadoHorizontal = products.filter(function(elemento) {
-			return elemento.category == "Destacado-horizontal";
-        });
-        let destacado2 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-2";
-        });
-        let destacado3 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-3";
-        });
-        let destacado4 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-4";
-		});
-        res.render('home', {
-            products: products,
-            bestSells: masVendido,
-            featuredProducts: destacado,
-            featuredProductsHorizontal: destacadoHorizontal,
-            featured2: destacado2,
-            featured3: destacado3,
-            featured4: destacado4
-        },)
-    },
+        db.Categories.findAll({
+            include: [{association: 'games',include: [{association: 'images' }]
+        }]
+			})
+		.then(function(products){
+            //res.send(products);
+			res.render('home', {
+                allCategories: products,
+                gamesSlider: products[0].games
+			});
+		})
+		.catch(function(error) {
+				res.send(error)
+			});
+}
 }

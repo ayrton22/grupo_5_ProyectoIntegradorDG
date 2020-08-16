@@ -77,7 +77,7 @@
                                 <span class="span-detail informacion">Etiquetas:</span>
                                 <div class="generos-button">
                                 <% for(let i = 0; i < productDetail.genres.length; i++){ %>
-                                    <button class="detail--action-button generos-button"><a href="/product/<%= productDetail.genres[i].id %>"><%= productDetail.genres[i].name %> </a></button>
+                                    <button class="detail--action-button generos-button"><a href="/product/genres/<%= productDetail.genres[i].id %>"><%= productDetail.genres[i].name %> </a></button>
                                 <% } %>
                             </div>
                             </div>

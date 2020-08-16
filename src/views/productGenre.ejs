@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Lista de productos'}) %>
+
+<body>
+
+    <%- include('partials/header') %>
+    
+    <%- include('partials/slider') %>
+    
+
+    <div class="container juegos-container generos">
+    
+      <aside class="juegos-container__aside juegos-container__aside2">
+          <ul class="juegos-container__list">                   
+              <li class="juegos-container__item " ><a href="#">Géneros</a></li>
+              <li class="juegos-container__item"><a href="#">Plataformas</a></li>
+              <li class="juegos-container__item"><a href="#">Ofertas</a></li>
+              <li class="juegos-container__item"><a href="#">Comunidad</a></li>
+              <li class="juegos-container__item"><a href="#">Próximamente</a></li>
+              <li class="juegos-container__item"><a href="#">Recomendaciones</a></li>
+              <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
+          </ul>
+      </aside>
+
+      <section class="juegos-container__all-products">
+      <h2 class="juegos-container__title"> <%= genres.name.toUpperCase() %></h2>
+
+      <div class="juegos-container__products-container">
+          <% for(let i = 0; i < genres.games.length; i++) { %>
+          <a href="/product/detail/<%= genres.games[i].id %>">
+              <article class="juegos-container__product">
+                  <div class="juegos-container__img-cont">
+                      <% for(let j = 0; j < genres.games[i].images.length; j++) { %>
+                          <% if(genres.games[i].images[j].location == "default") {%>
+                          <img src="<%= genres.games[i].images[j].img_url %>" alt="imagen/miniatura">
+                      <% } %>
+                      <% } %>
+                  </div>
+                  <p><%= genres.games[i].title %></p>
+                  <p><%= genres.games[i].price %>$</p>
+              </article>
+          </a>
+          <% } %>
+    </div>
+
+      </section>
+  </div>
+     <!-- Footer -->
+     <%- include('partials/footer') %>
+     <!-- Scripts -->
+     <%- include('partials/scripts') %>
+</body>
+</html>
+
+            
+            

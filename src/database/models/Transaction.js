@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
     Transaction.associate = function (models) {
 
     Transaction.belongsToMany(models.Games, {
-      as: 'transactions',
+      as: 'transactions_games',
       through: 'games_transactions',
       foreignKey: 'id_transaction',
       otherKey: 'id_game',

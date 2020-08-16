@@ -92,7 +92,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true
       });
 
-      Game.hasMany(models.User_sales, {
+      Game.hasMany(models.UserSales, {
         as: 'user_sales',
         foreignKey: "id_game"
       });
@@ -109,7 +109,6 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: 'id_category',
         timestamps: true
       })
-
       Game.belongsToMany(models.Platforms, {
         as: 'platforms',
         through: 'games_platforms',
@@ -117,6 +116,11 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: 'id_platform',
         timestamps: true
       })
+      Game.hasMany(models.Discounts, {
+        as: 'discounts',
+        foreignKey: 'id_game'
+      });
+
     };
 
     return Game;

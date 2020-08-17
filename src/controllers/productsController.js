@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 
-
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
 products = JSON.parse(products);
@@ -29,7 +28,7 @@ module.exports = {
 				include: [{association: 'images'},
 				{association: 'platforms'},
 				{association: 'genres'}]
-			});
+		});
 
 		let products = db.Games.findAll({
 			include: [{association: 'images'},
@@ -45,7 +44,7 @@ module.exports = {
 		})
 		.catch(function(error) {
 				res.send(error)
-			});
+		});
 	},
 	genres: function(req,res){
 		db.Genres.findByPk(req.params.id_genero,{
@@ -68,42 +67,24 @@ module.exports = {
 	},
 
 	store: function(req, res) {
-
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let namesVideo = []
+		let gameId = db.Games.max('id') + 1;
 
-		for(i = 0; i < req.files.length; i++){
-			console.log(req.files[i].fieldname)
-		}
-
-		let newProduct = {
-            id: products.length + 1,
+		db.Games.create({
+            id: gameId,
             title: req.body.title,
             description: req.body.description,
             medium_description: req.body.medium_description,
             big_description: req.body.big_description,
 			price: req.body.price,
-			image: (req.files[0]) ? req.files[0].filename : 'default.png',
-			imagen_horizontal: (req.files[1]) ? req.files[1].filename : 'default.png',
-			image1: (req.files[2]) ? req.files[2].filename : 'default.png',
-			image2: (req.files[3]) ? req.files[3].filename : 'default.png',
-			image3: (req.files[4]) ? req.files[4].filename : 'default.png',
-			image4: (req.files[5]) ? req.files[5].filename : 'default.png',
-			image5: (req.files[6]) ? req.files[6].filename : 'default.png',
-			image6: (req.files[7]) ? req.files[7].filename : 'default.png',
-			image7: (req.files[8]) ? req.files[8].filename : 'default.png',
-			image8: (req.files[9]) ? req.files[9].filename : 'default.png',
-			image9: (req.files[10]) ? req.files[10].filename : 'default.png',
-			image10: (req.files[11]) ? req.files[11].filename : 'default.png',
-			imagen_detalle: (req.files[12]) ? req.files[12].filename : 'default.png',
 			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
-			tags: req.body.tags,
 			classification: req.body.classification,
+<<<<<<< HEAD
 			category: req.body.category,
 			rating: req.body.rating,
 			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
@@ -127,6 +108,50 @@ module.exports = {
 		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
 		//res.redirect('/')
 		res.render(req.files);
+=======
+			rating: req.body.rating
+		})
+
+		let namesInputVideo = [];
+
+		for(i = 0; i < req.files.length; i++){
+			namesInputVideo.push(req.files[i].fieldname)
+		}
+
+		function category (categoryGame) {
+
+			let idCategory;
+
+			if(categoryGame == 'Best-sellers'){
+				idCategory = 1
+			} else if (categoryGame == 'Free-to-play'){
+				idCategory = 2
+			} else if (categoryGame == 'Coming-soon'){
+				idCategory = 3
+			} else if (categoryGame == 'Early-bird'){
+				idCategory = 4
+			} else {
+				idCategory = 5
+			}
+		}
+		category(req.body.category)
+
+		db.Images.create({
+			location: (req.files.fieldname == 'image') ? 'default' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'imagen_detalle') ? 'imagen_detalle' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'imagen_horizontal') ? 'imagen_horizontal' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'carousel') ? 'carousel' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}` * 10
+		}) 
+		db.Games_Genres.create({
+			id_game: gameId, id_genre: algo
+		})
+		db.Games_Categories.create({
+			id_game: gameId, id_category: category()
+		})
+		.then(function (resultado){
+			res.redirect('/')
+		})
+>>>>>>> 34d865996f2c5d00bc29cbb4e9703dbd4f99c743
     },
 	
     edit: function(req, res) {

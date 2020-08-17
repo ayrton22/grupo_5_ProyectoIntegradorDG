@@ -1,5 +1,6 @@
 let videoIds = [];
 const juegos = document.querySelectorAll('.datos_slider div');
+
 juegos.forEach(function(element){
 	videoIds.push({
 		id:element.children[0].innerText,

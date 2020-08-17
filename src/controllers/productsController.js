@@ -67,20 +67,13 @@ module.exports = {
 	},
 
 	store: function(req, res) {
-
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let namesInputVideo = []
-
-		for(i = 0; i < req.files.length; i++){
-			namesInputVideo.push(req.files[i].fieldname)
-		}
-
-		console.log(namesInputVideo)
+		let gameId = db.Games.max('id') + 1;
 
 		db.Games.create({
-            id: db.Games.max('id') + 1,
+            id: gameId,
             title: req.body.title,
             description: req.body.description,
             medium_description: req.body.medium_description,
@@ -94,25 +87,45 @@ module.exports = {
 			rating: req.body.rating
 		})
 
+		let namesInputVideo = [];
+
+		for(i = 0; i < req.files.length; i++){
+			namesInputVideo.push(req.files[i].fieldname)
+		}
+
+		function category (categoryGame) {
+
+			let idCategory;
+
+			if(categoryGame == 'Best-sellers'){
+				idCategory = 1
+			} else if (categoryGame == 'Free-to-play'){
+				idCategory = 2
+			} else if (categoryGame == 'Coming-soon'){
+				idCategory = 3
+			} else if (categoryGame == 'Early-bird'){
+				idCategory = 4
+			} else {
+				idCategory = 5
+			}
+		}
+		category(req.body.category)
+
 		db.Images.create({
-			location: location, id_game: db.Games.max('id') + 1, img_url: img_url
-		}) * 13
-
-		db.Genres.create({
-
+			location: (req.files.fieldname == 'image') ? 'default' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'imagen_detalle') ? 'imagen_detalle' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'imagen_horizontal') ? 'imagen_horizontal' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}`,
+			location: (req.files.fieldname == 'carousel') ? 'carousel' : null, id_game: gameId, img_url: `../../img/productsImage/${req.files.filename}` * 10
+		}) 
+		db.Games_Genres.create({
+			id_game: gameId, id_genre: algo
 		})
 		db.Games_Categories.create({
-
+			id_game: gameId, id_category: category()
 		})
-
-        for(let i = 0; i < products.length; i++) {
-            if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description) {
-                return res.redirect('/product/load');
-            }
-		}
-		products.push(newProduct);
-		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
-		res.redirect('/')
+		.then(function (resultado){
+			res.redirect('/')
+		})
     },
 	
     edit: function(req, res) {

@@ -14,21 +14,30 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-    home: function(req, res) {
-        db.Categories.findAll({
-            include: [{association: 'games',include: [{association: 'images' }]
-        }]
-			})
-		.then(function(products){
-            //res.send(products);
-			res.render('home', {
-                allCategories: products,
-                gamesSlider: products[0].games
-			});
-		})
-		.catch(function(error) {
-				res.send(error)
-			});
+	home: function(req, res) {
+        let productCategory = db.Categories.findAll({
+            include: [{association: 'games',
+            include: [{association: 'images'}]}]
+    });
+    let productsDiscounts = db.Discounts.findAll({
+        include: [{association: 'games',include: [{association: 'images' }]
+    }]
+    });
+
+    Promise.all([productCategory,productsDiscounts])
+
+    .then(function(resultado){
+
+            res.render('home', {
+            allCategories: resultado[0],
+            discounts:resultado[1],
+
+            gamesSlider: resultado[0][0].games
+        })
+    })
+    .catch(function(error) {
+            res.send(error)
+        });
 	},
 
 	pruebaCheckboxView: function (req, res){
@@ -36,6 +45,6 @@ module.exports = {
 	},
 
 	pruebaCheckbox: function (req, res){
-		return res.send(req.body.checkbox)
+		res.send(req.body.chec)
 	}
 }

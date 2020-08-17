@@ -33,7 +33,7 @@
                   <div class="juegos-container__img-cont">
                       <% for(let j = 0; j < genres.games[i].images.length; j++) { %>
                           <% if(genres.games[i].images[j].location == "default") {%>
-                          <img src="<%= genres.games[i].images[j].img_url %>" alt="imagen/miniatura">
+                          <img src="../../img/uploads/productsImage/<%= genres.games[i].images[j].img_url %>" alt="imagen/miniatura">
                       <% } %>
                       <% } %>
                   </div>

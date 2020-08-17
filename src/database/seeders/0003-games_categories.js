@@ -1,14 +1,16 @@
 'use strict';
+const faker = require('faker');
+
 const dandoCategorias=[];
 for(let i = 1; i <=24 ;i++){
   //let cantidadAleatoria = (Math.floor(Math.random() * 3) + 1);
   
     let categories = [];
-    let category1 = (Math.floor(Math.random() * 5) + 1);
+    let category1 = (Math.floor(Math.random() * 6) + 1);
     
-    let category2 = (Math.floor(Math.random() * 5) + 1);
+    let category2 = (Math.floor(Math.random() * 6) + 1);
     while(category2 == category1){
-      category2 = (Math.floor(Math.random() * 5) + 1);
+      category2 = (Math.floor(Math.random() * 6) + 1);
     };
   
     let category3 = (Math.floor(Math.random(  ) * 5) + 1);
@@ -23,7 +25,7 @@ for(let i = 1; i <=24 ;i++){
         dandoCategorias.push({
             id_game: i,
             id_category: categories[j],
-            createdAt: new Date(),
+            createdAt:faker.date.between('2010-01-01', '2020-01-01'),
             updatedAt: new Date()
         });
   

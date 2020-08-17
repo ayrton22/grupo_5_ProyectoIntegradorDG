@@ -351,7 +351,7 @@ button.detail--action-button {
  }
 
  .bordeado{
-    border: 5px solid rgba(255, 255, 255, 0.4);
+    opacity: 1;
  }
 
  .logo {
@@ -361,9 +361,7 @@ button.detail--action-button {
     max-height: 40px;
     position: absolute;
  }
- .logo:hover{
-    display: none;
- }
+
  .generos-button button{
      margin: 0;
      padding: 0.6rem;

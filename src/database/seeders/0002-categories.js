@@ -30,10 +30,16 @@ module.exports = {
         },
         {
           id: 5,
-          name: 'Outstanding',
+          name: 'Featured',
           createdAt: new Date(),
           updatedAt: new Date()
         },
+        {
+          id: 6,
+          name: 'News',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
 
       ],{});
   },

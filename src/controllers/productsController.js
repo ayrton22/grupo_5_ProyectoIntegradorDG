@@ -13,7 +13,7 @@ module.exports = {
 
     list: function(req,res) {
 		db.Games.findAll({
-			include: [{association: 'images'}]
+			include: [{association: 'images'}], order:[['title', 'ASC']]
 			})
 		.then(function(products){
 			res.render('productList', {
@@ -51,8 +51,10 @@ module.exports = {
 
 	genres: function(req,res){
 		db.Genres.findByPk(req.params.id_genero,{
-			include:[{association: 'games' , include:[{association: 'images'}]},
-		]
+			include:[{association: 'games',  include:[{association: 'images'}]} 
+		],order: [
+            [ 'games', 'title', 'asc']
+          ]
 		})
 		.then(function(genres){
 			res.render('productGenre', {

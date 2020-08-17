@@ -14,37 +14,38 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-	home: function(req, res) {
-        let productCategory = db.Categories.findAll({
-            include: [{association: 'games',
-            include: [{association: 'images'}]}]
-    });
-    let productsDiscounts = db.Discounts.findAll({
-        include: [{association: 'games',include: [{association: 'images' }]
-    }]
-    });
+    home: function(req, res) {
+		let productCategory = db.Categories.findAll({
+			include: [{association: 'games',
+			include: [{association: 'images'}]
+		}],order: [
+			[ 'games', 'title', 'asc']]
+	});
+	let productsDiscounts = db.Discounts.findAll({
+		include: [{association: 'games',include: [{association: 'images' }]
+	}]
+	});
 
-    Promise.all([productCategory,productsDiscounts])
+	Promise.all([productCategory,productsDiscounts])
 
-    .then(function(resultado){
-
-            res.render('home', {
-            allCategories: resultado[0],
-            discounts:resultado[1],
-
-            gamesSlider: resultado[0][0].games
-        })
-    })
-    .catch(function(error) {
-            res.send(error)
-        });
+	.then(function(resultado){
+			res.render('home', {
+			allCategories: resultado[0],
+			discounts:resultado[1],
+			gamesSlider: resultado[0][0].games
+		})
+	})
+	.catch(function(error) {
+			res.send(error)
+		});
 	},
 
-	pruebaCheckboxView: function (req, res){
+	ruebaCheckboxView: function (req, res){
 		res.render('Zprueba');
 	},
 
 	pruebaCheckbox: function (req, res){
 		res.send(req.body.chec)
 	}
+        
 }

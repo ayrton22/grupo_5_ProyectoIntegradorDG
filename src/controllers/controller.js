@@ -14,7 +14,6 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-    
     home: function(req, res) {
         db.Categories.findAll({
             include: [{association: 'games',include: [{association: 'images' }]
@@ -30,5 +29,13 @@ module.exports = {
 		.catch(function(error) {
 				res.send(error)
 			});
-}
+	},
+
+	pruebaCheckboxView: function (req, res){
+		res.render('Zprueba');
+	},
+
+	pruebaCheckbox: function (req, res){
+		return res.send(req.body.checkbox)
+	}
 }

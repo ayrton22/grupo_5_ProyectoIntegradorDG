@@ -59,8 +59,8 @@ div .compra {
 
 .detalle-container__contenedor-slider {
     background-color: black;
-    padding-left:3%;
-    padding-right:3%;
+    padding-left:2.5%;
+    padding-right:2.5%;
     display: flex;
     margin-top: 0.5rem;
     align-items: center;

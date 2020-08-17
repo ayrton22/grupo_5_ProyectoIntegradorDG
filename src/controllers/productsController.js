@@ -12,7 +12,7 @@ module.exports = {
 
     list: function(req,res) {
 		db.Games.findAll({
-			include: [{association: 'images'}]
+			include: [{association: 'images'}],order:[['title', 'ASC']]
 			})
 		.then(function(products){
 			res.render('productList', {
@@ -48,8 +48,10 @@ module.exports = {
 	},
 	genres: function(req,res){
 		db.Genres.findByPk(req.params.id_genero,{
-			include:[{association: 'games' , include:[{association: 'images'}]},
-		]
+			include:[{association: 'games',  include:[{association: 'images'}]} 
+		],order: [
+            [ 'games', 'title', 'asc']
+          ]
 		})
 		.then(function(genres){
 			res.render('productGenre', {
@@ -84,31 +86,6 @@ module.exports = {
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
 			classification: req.body.classification,
-<<<<<<< HEAD
-			category: req.body.category,
-			rating: req.body.rating,
-			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
-			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
-			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
-			icon_playstation: 'fab fa-playstation icono-playstation',
-			icon_xbox: 'fab fa-xbox icono-xbox',
-			icon_pc: 'fas fa-desktop icono-desktop'
-		};
-        for(let i = 0; i < products.length; i++) {
-			if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description
-				
-				
-				
-				
-				) {
-                return res.redirect('/product/load');
-            }
-		}
-		products.push(newProduct);
-		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
-		//res.redirect('/')
-		res.render(req.files);
-=======
 			rating: req.body.rating
 		})
 
@@ -151,7 +128,6 @@ module.exports = {
 		.then(function (resultado){
 			res.redirect('/')
 		})
->>>>>>> 34d865996f2c5d00bc29cbb4e9703dbd4f99c743
     },
 	
     edit: function(req, res) {

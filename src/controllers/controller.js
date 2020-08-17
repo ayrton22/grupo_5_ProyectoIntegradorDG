@@ -19,9 +19,9 @@ module.exports = {
     home: function(req, res) {
 		let productCategory = db.Categories.findAll({
 			include: [{association: 'games',
-			order : [['createdAt', 'ASC']],
-			include: [{association: 'images'}] 
-		}]
+			include: [{association: 'images'}]
+		}],order: [
+			[ 'games', 'title', 'asc']]
 	});
 	let productsDiscounts = db.Discounts.findAll({
 		include: [{association: 'games',include: [{association: 'images' }]
@@ -40,6 +40,6 @@ module.exports = {
 	.catch(function(error) {
 			res.send(error)
 		});
-},
+}
         
 }

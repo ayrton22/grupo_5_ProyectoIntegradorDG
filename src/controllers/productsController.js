@@ -64,7 +64,7 @@ module.exports = {
 	},
 	
     load: function(req, res) {
-		res.render('productLoad')
+		res.render('productLoad');
 	},
 
 	store: function(req, res) {
@@ -114,13 +114,19 @@ module.exports = {
 			icon_pc: 'fas fa-desktop icono-desktop'
 		};
         for(let i = 0; i < products.length; i++) {
-            if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description) {
+			if(req.body.title == products[i].title || req.body.image == products[i].image || req.body.description == products[i].description
+				
+				
+				
+				
+				) {
                 return res.redirect('/product/load');
             }
 		}
 		products.push(newProduct);
 		fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
-		res.redirect('/')
+		//res.redirect('/')
+		res.render(req.files);
     },
 	
     edit: function(req, res) {

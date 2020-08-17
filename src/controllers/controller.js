@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const db = require('../database/models');
+const { group } = require('console');
 
 
 // JSON Parse
@@ -16,19 +17,29 @@ products = JSON.parse(products);
 module.exports = {
     
     home: function(req, res) {
-        db.Categories.findAll({
-            include: [{association: 'games',include: [{association: 'images' }]
-        }]
-			})
-		.then(function(products){
-            //res.send(products);
+		let productCategory = db.Categories.findAll({
+			include: [{association: 'games',
+			order : [['createdAt', 'ASC']],
+			include: [{association: 'images'}] 
+		}]
+	});
+	let productsDiscounts = db.Discounts.findAll({
+		include: [{association: 'games',include: [{association: 'images' }]
+	}]
+	});
+
+	Promise.all([productCategory,productsDiscounts])
+
+	.then(function(resultado){
 			res.render('home', {
-                allCategories: products,
-                gamesSlider: products[0].games
-			});
+			allCategories: resultado[0],
+			discounts:resultado[1],
+			gamesSlider: resultado[0][0].games
 		})
-		.catch(function(error) {
-				res.send(error)
-			});
-}
+	})
+	.catch(function(error) {
+			res.send(error)
+		});
+},
+        
 }

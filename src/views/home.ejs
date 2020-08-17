@@ -17,46 +17,61 @@
             <div class="product-section-1">
                 <!-- Products View Left -->
                 <div class="product-section__portrays">
-                    <% for(let i = 0; i < allCategories.length; i++) { %>
-                        <%  if(allCategories[i].name == "Outstanding" ){ %>
                             <div class="product-section__box">
-                                <a href="/product/detail/<%= allCategories[i].games[0].id %>">
-                                    <% for(let k = 0; k < allCategories[i].games[0].images.length; k++) { %>
-                                        <%  if( allCategories[i].games[0].images[k].location == "default" ){ %>
-                                            <img src="<%= allCategories[i].games[0].images[k].img_url %>" alt="imagen/miniatura">
+                                <% let primerDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                                <a href="/product/detail/<%=discounts[primerDescuento].games.id %>">
+                                    <% for(let k = 0; k < discounts[primerDescuento].games.images.length; k++) { %>
+                                        <%  if( discounts[primerDescuento].games.images[k].location == "default" ){ %>
+                                            <img src="../../img/uploads/productsImage/<%= discounts[primerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
                                         <% } %>
                                     <% } %>
                                 </a>
                                 <div class="cartel-oferta">
-                                    <p> 40%OFF<p>
+                                    <p> <%=discounts[primerDescuento].percentage_discount%>% OFF<p>
                                 </div>
                             </div>
-                        <% } %>
-                    <% } %>
                 
             
 
 
             <div class="product-section__horizontal-boxes">
                 <div class="product-section__horizontal-boxes">
-                    <% for(let i = 0; i < allCategories.length; i++) { %>
-                        <%  if(allCategories[i].name == "Outstanding" ){ %>
-                            <% for(let j = 0; j < 2; j++) { %>
+                    
+                    <% let segundoDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                    <% while(segundoDescuento == primerDescuento){ %>
+                        <%   segundoDescuento =  Math.floor(Math.random() * discounts.length) %>
+                        <% } %> 
                                 <div class="product-section__box--horizontal ">
-                                    <a href="/product/detail/<%=allCategories[i].games[j].id %>">
-                                        <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
-                                            <%  if( allCategories[i].games[j].images[k].location == "imagen_horizontal" ){ %>
-                                                <img src="<%= allCategories[i].games[j].images[k].img_url %>" alt="imagen/miniatura">
+                                    <a href="/product/detail/<%=discounts[segundoDescuento].games.id %>">
+                                        <% for(let k = 0; k <discounts[segundoDescuento].games.images.length; k++) { %>
+                                            <%  if( discounts[segundoDescuento].games.images[k].location == "imagen_horizontal" ){ %>
+                                                <img src="../../img/uploads/productsImage/<%= discounts[segundoDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
                                             <% } %>
                                         <% } %>
                                     </a>
                                     <div class="cartel-oferta__horizontal">
-                                        <p>40% OFF<p>
+                                        <p><%=discounts[segundoDescuento].percentage_discount%> OFF<p>
                                     </div>
                                 </div>
-                            <% } %>
-                        <% } %>
-                    <% } %>
+                                <% let tercerDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                                <% while(tercerDescuento == segundoDescuento || tercerDescuento == primerDescuento){ %>
+                                    <%   tercerDescuento =  Math.floor(Math.random() * discounts.length) %>
+                                    <% } %>
+                                <div class="product-section__box--horizontal ">
+                                    <a href="/product/detail/<%=discounts[tercerDescuento].games.id %>">
+                                        <% for(let k = 0; k <discounts[tercerDescuento].games.images.length; k++) { %>
+                                            <%  if( discounts[tercerDescuento].games.images[k].location == "imagen_horizontal" ){ %>
+                                                <img src="../../img/uploads/productsImage/<%=discounts[tercerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                            <% } %>
+                                        <% } %>
+                                    </a>
+                                    <div class="cartel-oferta__horizontal">
+                                        <p><%=discounts[tercerDescuento].percentage_discount%> OFF<p>
+                                    </div>
+                                </div>
+                            
+                       
+                   
                 </div>
             </div>
         </div>
@@ -69,12 +84,12 @@
             <!-- Products View Right -->
             <div class="product-section-2__portrays">
                 <% for(let i = 0; i < allCategories.length; i++){ %>
-                    <%  if(allCategories[i].name == "Outstanding" ){ %>
+                    <%  if(allCategories[i].name == "Featured" ){ %>
                             <div class="product-section-2__box product-section-2__box--1">
                                 <a href="/product/detail/<%= allCategories[i].games[1].id %>">
                                     <% for(let k = 0; k < allCategories[i].games[1].images.length; k++) { %>
                                         <%  if( allCategories[i].games[1].images[k].location == "default" ){ %>
-                                            <img src="<%= allCategories[i].games[1].images[k].img_url %>" alt="imagen/miniatura">
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[1].images[k].img_url %>" alt="imagen/miniatura">
                                      <% } %>
                                     <% } %>
                                 </a>
@@ -83,7 +98,7 @@
                                 <a href="/product/detail/<%= allCategories[i].games[2].id %>">
                                     <% for(let k = 0; k < allCategories[i].games[2].images.length; k++) { %>
                                         <%  if( allCategories[i].games[2].images[k].location == "default" ){ %>
-                                            <img src="<%= allCategories[i].games[2].images[k].img_url %>" alt="imagen/miniatura">
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[2].images[k].img_url %>" alt="imagen/miniatura">
                                      <% } %>
                                     <% } %>
                                 </a>
@@ -92,7 +107,7 @@
                                 <a href="/product/detail/<%= allCategories[i].games[3].id %>">
                                     <% for(let k = 0; k < allCategories[i].games[3].images.length; k++) { %>
                                         <%  if( allCategories[i].games[3].images[k].location == "default" ){ %>
-                                            <img src="<%= allCategories[i].games[3].images[k].img_url %>" alt="imagen/miniatura">
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[3].images[k].img_url %>" alt="imagen/miniatura">
                                      <% } %>
                                     <% } %>
                                 </a>
@@ -122,17 +137,17 @@
 
 
             <section class="juegos-container__all-products">
-                <h2 class="juegos-container__title">Compra Anticipada</h2>
+                <h2 class="juegos-container__title">Recientes</h2>
                 <div class="juegos-container__products-container">
                     <% for(let i = 0; i < allCategories.length; i++) { %>
-                        <%  if(allCategories[i].name == "Early-bird" ){ %>
-                            <% for(let j = 0; j < 12; j++) { %>
+                        <%  if(allCategories[i].name == "News" ){ %>
+                            <% for(let j = 0; j < allCategories[i].games.length; j++) { %>
                                 <a href="/product/detail/<%= allCategories[i].games[j].id %>">
                                     <article class="juegos-container__product">
                                         <div class="juegos-container__img-cont">
                                             <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
                                                 <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
-                                                    <img src="<%= allCategories[i].games[j].images[k].img_url %>" alt="imagen/miniatura">
+                                                    <img src="../../img/uploads/productsImage/<%=allCategories[i].games[j].images[k].img_url%>" alt="imagen/miniatura">
                                                 <% } %>
                                             <% } %>
                                         </div>

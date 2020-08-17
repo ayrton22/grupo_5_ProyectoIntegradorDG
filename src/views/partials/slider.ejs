@@ -7,7 +7,7 @@
     <span><%=gamesSlider[i].description%></span>
     <% for(let j = 0; j < gamesSlider[i].images.length; j++) { %>
     <% if(gamesSlider[i].images[j].location == "imagen_detalle") {%>
-        <span><%= gamesSlider[i].images[j].img_url %></span>
+        <span>../../img/uploads/productsImage/<%= gamesSlider[i].images[j].img_url %></span>
     <% } %>
     <% } %>
 </div>

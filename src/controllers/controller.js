@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const db = require('../database/models');
-const { group } = require('console');
 
 
 // JSON Parse
@@ -15,7 +14,6 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-    
     home: function(req, res) {
 		let productCategory = db.Categories.findAll({
 			include: [{association: 'games',
@@ -44,6 +42,14 @@ module.exports = {
 	.catch(function(error) {
 			res.send(error)
 		});
-}
+	},
+
+	pruebaCheckboxView: function (req, res){
+		res.render('Zprueba');
+	},
+
+	pruebaCheckbox: function (req, res){
+		res.send(req.body.chec)
+	}
         
 }

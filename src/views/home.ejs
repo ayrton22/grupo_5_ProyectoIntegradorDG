@@ -16,24 +16,21 @@
 
             <div class="product-section-1">
                 <!-- Products View Left -->
-                <div class="product-section__portrays">
-                            <div class="product-section__box">
-                                <% let primerDescuento =  Math.floor(Math.random() * discounts.length) %> 
-                                <a href="/product/detail/<%=discounts[primerDescuento].games.id %>">
-                                    <% for(let k = 0; k < discounts[primerDescuento].games.images.length; k++) { %>
-                                        <%  if( discounts[primerDescuento].games.images[k].location == "default" ){ %>
+            <div class="product-section__portrays">
+                    <div class="product-section__box">
+                        <% let primerDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                        <a href="/product/detail/<%=discounts[primerDescuento].games.id %>">
+                            <% for(let k = 0; k < discounts[primerDescuento].games.images.length; k++) { %>
+                                <%  if( discounts[primerDescuento].games.images[k].location == "default" ){ %>
                                             <img src="../../img/uploads/productsImage/<%= discounts[primerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
-                                        <% } %>
-                                    <% } %>
-                                </a>
-                                <div class="cartel-oferta">
-                                    <p> <%=discounts[primerDescuento].percentage_discount%>% OFF<p>
-                                </div>
-                            </div>
+                                <% } %>
+                            <% } %>
+                        </a>
+                        <div class="cartel-oferta">
+                            <p> <%=discounts[primerDescuento].percentage_discount%>% OFF<p>
+                        </div>
+                    </div>
                 
-            
-
-
             <div class="product-section__horizontal-boxes">
                 <div class="product-section__horizontal-boxes">
                     
@@ -69,18 +66,12 @@
                                         <p><%=discounts[tercerDescuento].percentage_discount%> OFF<p>
                                     </div>
                                 </div>
-                            
-                       
-                   
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-
-
-
-        <div class="product-section-2">
+            <div class="product-section-2">
             <!-- Products View Right -->
             <div class="product-section-2__portrays">
                 <% for(let i = 0; i < allCategories.length; i++){ %>

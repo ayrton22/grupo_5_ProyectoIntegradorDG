@@ -11,7 +11,7 @@ images.forEach(function(element){
   Cargandoimagenes.push({
     id_game : element.gameId,
     location : element.ubicacion,
-    img_url : "../../img/uploads/productsImage/" + element.image,
+    img_url : element.image,
     createdAt: new Date(),
     updatedAt: new Date()
   })
@@ -21,9 +21,7 @@ images.forEach(function(element){
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    console.log(images.game_id);
    return queryInterface.bulkInsert('images',Cargandoimagenes,{})
-   
   },
 
   down: async (queryInterface, Sequelize) => {

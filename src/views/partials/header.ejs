@@ -6,24 +6,23 @@
             </div>
             <!-- Nav Items Left -->
             <ul class="header-nav__list">
-                <li class="header-nav__item">
-                    <button onclick="show_hide()" class="header-nav__dropdown-button">JUEGOS<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
-                    <ul id="drop-cont" class="header-nav__sub-list">
+                <li class="header-nav__item header-nav__item--focus">
+                    <button onclick="myFunction()" class="header-nav__dropdown-button">JUEGOS<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
+                    <ul id="myDropdown" class="header-nav__sub-list">
                         <li class="header-nav__sub-item"><a href="/product">TODOS LOS JUEGOS</a></li>
                         <li class="header-nav__sub-item"><a href="#">POPULARES</a></li>
                         <li class="header-nav__sub-item"><a href="#">OFERTAS</a></li>
                         <li class="header-nav__sub-item"><a href="#">FREE TO PLAY</a></li>
                     </ul>
                 </li>
-                <li class="header-nav__item"><a href="#">Noticias</a></li>
-                <li class="header-nav__item"><a href="#">Comunidad</a></li>
+                <li class="header-nav__item"><a href="/user/community">Comunidad</a></li>
                 <li class="header-nav__item"><a href="#">Acerca de</a></li>
                 <li class="header-nav__item"><a href="#">Descarga la app</a></li>
             </ul>
         </div>
         <div class="header-nav__right">
             <!-- Nav Items Right -->
-                <form action="" class="header-nav__form">
+                <form action="/product/search/?buscar=<%= (typeof consulta != 'undefined') ? consulta : null %>" class="header-nav__form" method="POST">
                     <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
                     <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                 </form>
@@ -35,7 +34,7 @@
                 </a>
                 <ul>
                     <li class="header-nav__language-item">
-                        <button onclick="show_hide2()" class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>
+                        <button onclick="myFunction2()" class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>
                         <ul id="drop-cont2" class="header-nav__language-sub-list">
                             <li class="header-nav__language-sub-item"><a href="#">INGLES</a></li>
                             <li class="header-nav__language-sub-item"><a href="#">PORTUGUES</a></li>

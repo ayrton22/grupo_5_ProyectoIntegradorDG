@@ -1,114 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('partials/head', {title: 'Inicio'}) %>
-<body ">
+<%- include('partials/head', {title: 'Inicio'}) %>
+
+<body>
 
     <!-- Header (Navs) -->
     <%- include('partials/header') %>
-    <div onclick="containerHide()" class="container-fluid pb-0 pl-5 pr-5 pt-5">
+
+    <div class="container-fluid pb-0 pl-5 pr-5 pt-5">
         <!-- Slider -->
-        <div id="container">
-            <div class="content">
-                <div class="main-content">
-                    <video-carousel inline-template class="carousel">
-                        <div>
-                            <i class="fas fa-chevron-left carousel__chevron" @click="changeVideo('right')"></i>
-                            <div class="carousel__content">
-                                <div class="carousel__video" v-for="(video, i) in videos" :class="video.position">
-                                    <div @click="changeVideo(0, video.position)" class="inactive" v-if="!video.active">
-                                    </div>
-                                    <div class="carousel__overlay" v-if="!video.active && video.position == 'main'">
-                                        <div class="carousel__overlay-top">
-                                            <div class="carousel__overlay-picture">
-                                                <img :src="video.channelImage" alt="">
-                                            </div>
-                                            <div class="carousel__overlay-text">
-                                                <div class="carousel__overlay-name">
-                                                    Nombre del juego
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <i class="fas fa-play big-play" v-on:click="video.active = !video.active">
-                                        </i>
-                                        <div class="description-slider">
-                                            <article>
-                                                <p class="description">
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quos nulla illo sit tempore,
-                                                    distinctio non corporis modi quaerat ipsa explicabo velit, cum fuga, rem qui aliquam deserunt.
-                                                </p>
-                                                <div class="buttons-cont">
-                                                    <i class="fa fa-desktop plataform" aria-hidden="true"></i>
-                                                    <div class="a-btn d-none"><a class="more d-none" href="/product">Ver más</a> </div>
-                                                </div>
-                                            </article>
-                                        </div>
-                                    </div>
-                                    <img v-if="!video.active" :src="video.thumbnail" alt="" class="carousel__video-picture">
-                                    <iframe v-if="video.active" id="ytplayer" type="text/html" width="100%" height="100%"
-                                        :src="video.embed" frameborder="0"></iframe>
-                                    <div class="carousel__placeholder-background" v-if="video.active"></div>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-right carousel__chevron" @click="changeVideo('left')"></i>
-                        </div>
-                    </video-carousel>
-                </div>
-            </div>
-        </div>
-        
+        <%- include('partials/slider') %>
+
         <div class="container-ofertas">
+
             <div class="product-section-1">
                 <!-- Products View Left -->
-                <div class="product-section__portrays">
-                    <% for(let i = 0; i < featuredProducts.length; i++) { %>
+            <div class="product-section__portrays">
                     <div class="product-section__box">
-                        <a href="/product/detail/<%= featuredProducts[i].id %>" alt="<%= featuredProducts[i].title %>"><img src="img/uploads/productsImage/<%= featuredProducts[i].image %>"></a>
-                        <div class="cartel-oferta"><p><%= featuredProducts[i].DESC %>% OFF<p></div>
-                    </div>
-                    <% } %>
-
-                    <div class="product-section__horizontal-boxes">
-                        <div class="product-section__horizontal-boxes">
-                            <% for(let i = 0; i < featuredProductsHorizontal.length; i++) { %>
-                                <div class="product-section__box--horizontal">
-                                    <a href="/product/detail/<%= featuredProductsHorizontal[i].id %>"><img src="/img/uploads/productsImage/<%= featuredProductsHorizontal[i].imagen_horizontal %>" alt="gta"></a>
-                                    <div class="cartel-oferta__horizontal"><p><%= featuredProductsHorizontal[i].DESC %>% OFF<p></div>
-                                </div>
+                        <% let primerDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                        <a href="/product/detail/<%=discounts[primerDescuento].games.id %>">
+                            <% for(let k = 0; k < discounts[primerDescuento].games.images.length; k++) { %>
+                                <%  if( discounts[primerDescuento].games.images[k].location == "default" ){ %>
+                                            <img src="../../img/uploads/productsImage/<%= discounts[primerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                <% } %>
                             <% } %>
+                        </a>
+                        <div class="cartel-oferta">
+                            <p> <%=discounts[primerDescuento].percentage_discount%>% OFF<p>
+                        </div>
+                    </div>
+                
+            <div class="product-section__horizontal-boxes">
+                <div class="product-section__horizontal-boxes">
+                    
+                    <% let segundoDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                    <% while(segundoDescuento == primerDescuento){ %>
+                        <%   segundoDescuento =  Math.floor(Math.random() * discounts.length) %>
+                        <% } %> 
+                                <div class="product-section__box--horizontal ">
+                                    <a href="/product/detail/<%=discounts[segundoDescuento].games.id %>">
+                                        <% for(let k = 0; k <discounts[segundoDescuento].games.images.length; k++) { %>
+                                            <%  if( discounts[segundoDescuento].games.images[k].location == "imagen_horizontal" ){ %>
+                                                <img src="../../img/uploads/productsImage/<%= discounts[segundoDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                            <% } %>
+                                        <% } %>
+                                    </a>
+                                    <div class="cartel-oferta__horizontal">
+                                        <p><%=discounts[segundoDescuento].percentage_discount%> OFF<p>
+                                    </div>
+                                </div>
+                                <% let tercerDescuento =  Math.floor(Math.random() * discounts.length) %> 
+                                <% while(tercerDescuento == segundoDescuento || tercerDescuento == primerDescuento){ %>
+                                    <%   tercerDescuento =  Math.floor(Math.random() * discounts.length) %>
+                                    <% } %>
+                                <div class="product-section__box--horizontal ">
+                                    <a href="/product/detail/<%=discounts[tercerDescuento].games.id %>">
+                                        <% for(let k = 0; k <discounts[tercerDescuento].games.images.length; k++) { %>
+                                            <%  if( discounts[tercerDescuento].games.images[k].location == "imagen_horizontal" ){ %>
+                                                <img src="../../img/uploads/productsImage/<%=discounts[tercerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                            <% } %>
+                                        <% } %>
+                                    </a>
+                                    <div class="cartel-oferta__horizontal">
+                                        <p><%=discounts[tercerDescuento].percentage_discount%> OFF<p>
+                                    </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-        <div class="product-section-2">
-                <!-- Products View Right -->
-                <div class="product-section-2__portrays">
-                    <% for(let i = 0; i < featured2.length; i++) { %>
-                    <div class="product-section-2__box product-section-2__box--1">
-                        <a href="/product/detail/<%= featured2[i].id %>"><img src="img/uploads/productsImage/<%= featured2[i].image %>" alt="fifa"></a>
-                    </div>
-                    <% } %>
 
-                    <% for(let i = 0; i < featured3.length; i++) { %>
-                    <div class="product-section-2__box product-section-2__box--2">
-                        <a href="/product/detail/<%= featured3[i].id %>"><img src="img/uploads/productsImage/<%= featured3[i].image %>" alt="gta"></a>
-                    </div>
+            <div class="product-section-2">
+            <!-- Products View Right -->
+            <div class="product-section-2__portrays">
+                <% for(let i = 0; i < allCategories.length; i++){ %>
+                    <%  if(allCategories[i].name == "Featured" ){ %>
+                            <div class="product-section-2__box product-section-2__box--1">
+                                <a href="/product/detail/<%= allCategories[i].games[1].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[1].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[1].images[k].location == "default" ){ %>
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[1].images[k].img_url %>" alt="imagen/miniatura">
+                                     <% } %>
+                                    <% } %>
+                                </a>
+                            </div>
+                            <div class="product-section-2__box product-section-2__box--2">
+                                <a href="/product/detail/<%= allCategories[i].games[2].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[2].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[2].images[k].location == "default" ){ %>
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[2].images[k].img_url %>" alt="imagen/miniatura">
+                                     <% } %>
+                                    <% } %>
+                                </a>
+                            </div>
+                            <div class="product-section-2__box product-section-2__box--3">
+                                <a href="/product/detail/<%= allCategories[i].games[3].id %>">
+                                    <% for(let k = 0; k < allCategories[i].games[3].images.length; k++) { %>
+                                        <%  if( allCategories[i].games[3].images[k].location == "default" ){ %>
+                                            <img src="../../img/uploads/productsImage/<%= allCategories[i].games[3].images[k].img_url %>" alt="imagen/miniatura">
+                                     <% } %>
+                                    <% } %>
+                                </a>
+                            </div>
                     <% } %>
+                <% } %>
+            </div>
+        </div>
 
-                    <% for(let i = 0; i < featured4.length; i++) { %>
-                    <div class="product-section-2__box product-section-2__box--3">
-                        <a href="/product/detail/<%= featured4[i].id %>"><img src="img/uploads/productsImage/<%= featured4[i].image %>" alt="csgo"></a>
-                    </div>
-                    <% } %>
-                </div>   
-        </div>
-        </div>
+    </div>     
+
 
 
         <div class="juegos-container">
+
             <aside class="juegos-container__aside">
-                <ul class="juegos-container__list">                   
+                <ul class="juegos-container__list">
                     <li class="juegos-container__item"><a href="#">Géneros</a></li>
                     <li class="juegos-container__item"><a href="#">Plataformas</a></li>
                     <li class="juegos-container__item"><a href="#">Ofertas</a></li>
@@ -118,31 +125,41 @@
                     <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
                 </ul>
             </aside>
+
+
             <section class="juegos-container__all-products">
-                <h2 class="juegos-container__title">Juegos</h2>
+                <h2 class="juegos-container__title">Recientes</h2>
                 <div class="juegos-container__products-container">
-                    <% for(let i = 0; i < bestSells.length; i++) { %>
-                    <a href="/product/detail/<%= products[i].id %>">
-                        <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <img src="img/uploads/productsImage/<%= products[i].image %>" alt="">
-                            </div>
-                            <p><%= bestSells[i].title %></p>
-                            <p><%= bestSells[i].price %>$</p>
-                        </article>
-                    </a>
+                    <% for(let i = 0; i < allCategories.length; i++) { %>
+                        <%  if(allCategories[i].name == "News" ){ %>
+                            <% for(let j = 0; j < allCategories[i].games.length; j++) { %>
+                                <a href="/product/detail/<%= allCategories[i].games[j].id %>">
+                                    <article class="juegos-container__product">
+                                        <div class="juegos-container__img-cont">
+                                            <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
+                                                <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
+                                                    <img src="../../img/uploads/productsImage/<%=allCategories[i].games[j].images[k].img_url%>" alt="imagen/miniatura">
+                                                <% } %>
+                                            <% } %>
+                                        </div>
+                                        <p><%= allCategories[i].games[j].title%></p>
+                                        <p><%= allCategories[i].games[j].price %>$</p>
+                                    </article>
+                                </a>
+                            <% } %>
+                        <% } %>
                     <% } %>
                 </div>
             </section>
         </div>
     </div>
-        
-        <!-- Products -->
+    <!-- Products -->
 
-     <!-- Footer -->
-     <%- include('partials/footer') %>
- 
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+
     <!-- Scripts -->
     <%- include('partials/scripts') %>
 </body>
+
 </html>

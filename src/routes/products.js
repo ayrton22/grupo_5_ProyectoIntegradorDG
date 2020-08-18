@@ -9,16 +9,21 @@ const controller = require('../controllers/productsController.js');
 const uploadImageProductMiddleware = require('../middlewares/uploadImageProductMiddlware')
 
 // Router, controller and middleware usage
-router.get('/:id_genero?', controller.list);
+router.get('/', controller.list);
 
 router.get('/detail/:id', controller.detail);
-router.delete('/detail/:id', controller.destroy)
+router.delete('/detail/:id', controller.destroy);
+
+router.get('/genres/:id_genero?', controller.genres);
 
 router.get('/load', controller.load);
 router.post('/load', uploadImageProductMiddleware.any() ,controller.store);
 
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', controller.update);
+
+router.get('/search', controller.search);
+router.post('/search', controller.productSearch);
 
 // Module export
 module.exports = router;

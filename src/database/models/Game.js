@@ -2,7 +2,7 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Games';
 
     let cols = {
-        id: {
+          id: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
@@ -53,11 +53,11 @@ module.exports = (sequelize, dataTypes) => {
           },
           stock_user: {
               type: dataTypes.INTEGER(100),
-              allowNull: false
+              allowNull: true
           },
           stock_admin: {
             type: dataTypes.INTEGER(100),
-            allowNull: false
+              allowNull: true
         }
     };
 
@@ -92,7 +92,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true
       });
 
-      Game.hasMany(models.User_sales, {
+      Game.hasMany(models.User_Sales, {
         as: 'user_sales',
         foreignKey: "id_game"
       });
@@ -109,7 +109,6 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: 'id_category',
         timestamps: true
       })
-
       Game.belongsToMany(models.Platforms, {
         as: 'platforms',
         through: 'games_platforms',
@@ -117,6 +116,11 @@ module.exports = (sequelize, dataTypes) => {
         otherKey: 'id_platform',
         timestamps: true
       })
+      Game.hasMany(models.Discounts, {
+        as: 'discounts',
+        foreignKey: 'id_game'
+      });
+
     };
 
     return Game;

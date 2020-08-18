@@ -3,11 +3,15 @@
     <%- include('partials/head', {title: 'Detalle de producto'}) %>
 <body>
     <%- include('partials/header') %>
-    <div onclick="containerHide()" class="container mt-3 padding-cont-detalle">
+    <div class="container mt-3 padding-cont-detalle">
         <div class="detalle-container">
             <div class="detalle-container__mediaInfo">
                 <div class="detalle-container__part-1 arrow">
-                    <div class="vista " ><img class="oculto" src="<%= productDetail.images[1].img_url %>" alt="imagen-gameplay" id="current">
+                    <%   let i = 0 %>
+                  <%   while(productDetail.images[i].location != "imagen_horizontal"){ %>
+                         <% i++ %>
+                    <% } %>
+                    <div class="vista " ><img class="oculto" src="../../img/uploads/productsImage/<%= productDetail.images[i].img_url %>" alt="imagen-gameplay" id="current">
                     <iframe class="detalle-container__video" name="videos" src="https://www.youtube.com/embed/<%=productDetail.video%>"  frameborder="0"></iframe>
                     </div> 
                     <div class="detalle-container__contenedor-slider">
@@ -16,12 +20,16 @@
                         </button>
                         <div class="contenedor-carrusel">
                             <div class="imagen-gameplay principal">
-                                <img class="videoPreview" src="<%= productDetail.images[1].img_url %>" alt="imagen-gameplay">
-                                <img class="logo videoPreview oculto" src="../../img/Logos/playvideo.png" alt="logo">
+                                <%  i = 0 %>
+                                <%   while(productDetail.images[i].location != "imagen_detalle"){ %>
+                                    <% i++ %>
+                                <% } %>
+                                <img class="videoPreview" src=" ../../img/uploads/productsImage/<%=productDetail.images[i].img_url %>" alt="imagen-gameplay">
+                                <img class="logo videoPreview" src="../../img/Logos/playvideo.png" alt="logo">
                             </div>
                             <% for(let i = 0; i < productDetail.images.length; i++) { %>
                                 <% if(productDetail.images[i].location == "carousel") {%>
-                                    <div class="imagen-gameplay"><img src="<%= productDetail.images[i].img_url %>" alt="imagen-gameplay"></div>
+                                    <div class="imagen-gameplay"><img src=" ../../img/uploads/productsImage/<%= productDetail.images[i].img_url %>" alt="imagen-gameplay"></div>
                             <% } %>
                             <% } %>
                         </div>
@@ -32,7 +40,11 @@
                 </div>
                 <article class="detalle-container__part-2">
                        <div class="">
-                        <img class="imagen-detalle" src="<%= productDetail.images[1].img_url %>" alt="">
+                        <% for(let i = 0; i < productDetail.images.length; i++) { %>
+                            <%  if( productDetail.images[i].location == "imagen_horizontal" ){ %>
+                                <img class="imagen-detalle" src="../../img/uploads/productsImage/<%= productDetail.images[i].img_url %>" alt="imagen-horizontal">
+                            <% } %>
+                        <% } %>
                        </div>
                        <h3><%= productDetail.description %></h3>
                        <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productDetail.rating %></div>
@@ -77,7 +89,7 @@
                                 <span class="span-detail informacion">Etiquetas:</span>
                                 <div class="generos-button">
                                 <% for(let i = 0; i < productDetail.genres.length; i++){ %>
-                                    <button class="detail--action-button generos-button"><a href="/product/<%= productDetail.genres[i].id %>"><%= productDetail.genres[i].name %> </a></button>
+                                    <button class="detail--action-button generos-button"><a href="/product/genres/<%= productDetail.genres[i].id %>"><%= productDetail.genres[i].name %> </a></button>
                                 <% } %>
                             </div>
                             </div>
@@ -114,7 +126,7 @@
                             <div class="juegos-container__img-cont">
                                 <% for(let j = 0; j < products[random].images.length; j++) { %>
                                     <% if(products[random].images[j].location == "default") {%>
-                                    <img src="<%= products[random].images[j].img_url %>" alt="imagen-detalle">
+                                    <img src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="imagen-detalle">
                                 <% } %>
                                 <% } %>
                             </div>
@@ -136,7 +148,7 @@
                             <div class="juegos-container__img-cont">
                                 <% for(let j = 0; j < products[random].images.length; j++) { %>
                                     <% if(products[random].images[j].location == "default") {%>
-                                    <img src="<%= products[random].images[j].img_url %>" alt="imagen-detalle">
+                                    <img src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="imagen-detalle">
                                 <% } %>
                                 <% } %>
                             </div>

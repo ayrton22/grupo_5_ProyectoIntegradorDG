@@ -67,8 +67,12 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true
       });
       
-      User.hasMany(models.Messages, {
-        as: 'message',
+      User.hasMany(models.Questions, {
+        as: 'questions',
+        foreignKey: "id_user"
+      });
+      User.hasMany(models.Replys, {
+        as: 'replys',
         foreignKey: "id_user"
       });
 
@@ -77,10 +81,11 @@ module.exports = (sequelize, dataTypes) => {
         foreignKey: "id_user"
       });
 
-      User.hasMany(models.User_sales, {
+      User.hasMany(models.User_Sales, {
         as: 'user_sales',
         foreignKey: "id_seller_user"
       });
+     
     }
     return User;
 }

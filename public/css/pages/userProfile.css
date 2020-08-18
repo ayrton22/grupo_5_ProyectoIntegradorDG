@@ -298,7 +298,28 @@ button.container-profile-button:hover:before {
     margin: 1rem 0;
 }
 
+.container-profile-pays-transaction-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-track {
+    background: #1f3058;
+  }
+  
+  /* Handle */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-thumb {
+    background: #fe0034;
+  }
+
 .pays-rows {
+    min-width: 700px;
+    height: 60px;
     background-color: #00A6FF;
     padding: 1rem;
     border-radius: 8px;

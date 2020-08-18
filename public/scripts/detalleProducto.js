@@ -34,12 +34,11 @@ function imgClick(e) {
     if(e.target.classList.contains('videoPreview')){
         vistaVideo.classList.remove('oculto');
         vistaImg.classList.add('oculto');
-        logo.classList.add('oculto');
+        logo.classList.add('bordeado');
     }
     else{
     vistaImg.classList.remove('oculto');
     vistaVideo.classList.add('oculto');
-    logo.classList.remove('oculto');
     }
     //change the imagen to src of clicked image
     current.src = e.target.src;

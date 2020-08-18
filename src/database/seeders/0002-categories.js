@@ -24,22 +24,22 @@ module.exports = {
         },
         {
           id: 4,
-          name: 'on-sale',
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
-          id: 5,
           name: 'Early-bird',
           createdAt: new Date(),
           updatedAt: new Date()
         },
         {
-          id: 6,
-          name: 'Outstanding',
+          id: 5,
+          name: 'Featured',
           createdAt: new Date(),
           updatedAt: new Date()
         },
+        {
+          id: 6,
+          name: 'News',
+          createdAt: new Date(),
+          updatedAt: new Date()
+        }
 
       ],{});
   },

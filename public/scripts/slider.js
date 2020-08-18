@@ -1,4 +1,16 @@
-let videoIds = ["JSapXD9vxYA", "vgQNOIhRsV4", "oz-O74SmTSQ", "ZOgBVR21pWg", "GTRRJkfo5Xs"];
+let videoIds = [];
+const juegos = document.querySelectorAll('.datos_slider div');
+
+juegos.forEach(function(element){
+	videoIds.push({
+		id:element.children[0].innerText,
+		video:element.children[1].innerText,
+		title:element.children[2].innerText,
+		description: element.children[3].innerText,
+		imagen: element.children[4].innerText,
+	});
+});
+
 
 Vue.component('video-carousel', {
 	data: function() {
@@ -22,6 +34,7 @@ Vue.component('video-carousel', {
 		changeVideo: function(direction, position) {
 			if(direction == "left") {
 				this.currentVideo--;
+				
 				if(this.currentVideo < 0) {
 					this.currentVideo = 4;
 				}
@@ -62,25 +75,52 @@ Vue.component('video-carousel', {
 		}
 	},
 	mounted: function() {
-		//Generate array of fake carousel videos
-		for (i=0; i<5; i++) {
-			let videoId = videoIds[i];
-			let videoEmbed = "https://www.youtube.com/embed/" + videoId + "?autoplay=1";
-			let videoImage = "https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg";
-			let channelImage = "https://yt3.ggpht.com/a-/AAuE7mCXgsNVSlp9-BLuKFoaAqKxpjJ0T1NB1yJzdQ=s288-mo-c-c0xffffffff-rj-k-no";
-			let video = {
-				thumbnail: videoImage,
-				embed: videoEmbed,
-				position: this.videoPositions[i],
-				videoId: videoId,
-				active: false,
-				channelImage: channelImage,
-				channelName: "New Game Plus",
-				channelTitle: "Running through some sweet Ninty covers",
-				channelViews: 2345
-			}
+
+		//Generate randoms carrusel videos
+			let arraynumrandom = [];
+			let verificador = 0;
+			while(arraynumrandom.length < 5)
+			{
+				let random = Math.floor(Math.random() * videoIds.length);
+				if (arraynumrandom.length == 0){
+					arraynumrandom.push(random);
+					this.videos.push({
+						thumbnail: videoIds[random].imagen,
+						embed: "https://www.youtube.com/embed/" + videoIds[random].video,
+						position: this.videoPositions[arraynumrandom.length-1],
+						videoId: arraynumrandom.length-1,
+						active: false,
+						channelImage: "https://yt3.ggpht.com/a-/AAuE7mCXgsNVSlp9-BLuKFoaAqKxpjJ0T1NB1yJzdQ=s288-mo-c-c0xffffffff-rj-k-no",
+						channelName: videoIds[random].title,
+						channelTitle: "Running through some sweet Ninty covers",
+						channelDescription: videoIds[random].description,
+						channelDetail: videoIds[random].id
+					});
+				} else {
+					for(let j = 0; j < arraynumrandom.length; j++){
+						if(random != arraynumrandom[j]){
+							verificador++;
+						}
+					if(verificador == arraynumrandom.length){ 
+						arraynumrandom.push(random);
+						this.videos.push({
+							thumbnail: videoIds[random].imagen,
+							embed: "https://www.youtube.com/embed/" + videoIds[random].video,
+							position: this.videoPositions[arraynumrandom.length-1],
+							videoId: arraynumrandom.length-1,
+							active: false,
+							channelImage: "https://yt3.ggpht.com/a-/AAuE7mCXgsNVSlp9-BLuKFoaAqKxpjJ0T1NB1yJzdQ=s288-mo-c-c0xffffffff-rj-k-no",
+							channelName: videoIds[random].title,
+							channelTitle: "Running through some sweet Ninty covers",
+							channelDescription: videoIds[random].description,
+							channelDetail: videoIds[random].id
+						});
+					}
+				
+					}
+				verificador = 0;
+				}
 			
-			this.videos.push(video);
 		}
 	}
 });

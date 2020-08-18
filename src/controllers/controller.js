@@ -2,6 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const db = require('../database/models');
+
 
 // JSON Parse
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
@@ -12,34 +14,42 @@ products = JSON.parse(products);
 
 // Controller usage in module export
 module.exports = {
-    
     home: function(req, res) {
-        let masVendido = products.filter(function(elemento) {
-			return elemento.category == "mas-vendidos";
+		let productCategory = db.Categories.findAll({
+			include: [{association: 'games',
+			include: [{association: 'images'}]
+		}],order: [
+			[ 'games', 'title', 'asc']]
+	});
+	let productsDiscounts = db.Discounts.findAll({
+		include: [{association: 'games',include: [{association: 'images' }]
+	}]
+	});
+
+	Promise.all([productCategory,productsDiscounts])
+
+	.then(function(resultado){
+		for(let i = 0; i < resultado[0].length ; i++ ){
+			if(resultado[0][i].name == "News"){
+				res.render('home', {
+					allCategories: resultado[0],
+					discounts:resultado[1],
+					gamesSlider: resultado[0][i].games
+				})
+			}
+		}
+	})
+	.catch(function(error) {
+			res.send(error)
 		});
-        let destacado = products.filter(function(elemento) {
-			return elemento.category == "Destacado";
-		});
-		let destacadoHorizontal = products.filter(function(elemento) {
-			return elemento.category == "Destacado-horizontal";
-        });
-        let destacado2 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-2";
-        });
-        let destacado3 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-3";
-        });
-        let destacado4 = products.filter(function(elemento) {
-			return elemento.category == "Destacado-4";
-		});
-        res.render('home', {
-            products: products,
-            bestSells: masVendido,
-            featuredProducts: destacado,
-            featuredProductsHorizontal: destacadoHorizontal,
-            featured2: destacado2,
-            featured3: destacado3,
-            featured4: destacado4
-        },)
-    },
+	},
+
+	pruebaCheckboxView: function (req, res){
+		res.render('Zprueba');
+	},
+
+	pruebaCheckbox: function (req, res){
+		res.send(req.body.chec)
+	}
+        
 }

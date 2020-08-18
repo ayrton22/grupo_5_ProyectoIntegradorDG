@@ -27,12 +27,12 @@
     {
         "image": "overwatch13.jpg",
         "gameId" : 1,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch14.png",
         "gameId" : 1,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch15.jpg",
@@ -92,12 +92,12 @@
     {
         "image": "godOfWar13.jpg",
         "gameId" : 2,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "godOfWar14.jpg",
         "gameId" : 2,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "godOfWar15.jpg",
@@ -157,12 +157,12 @@
     {
         "image": "uncharted13.jpeg",
         "gameId" : 3,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "uncharted14.jpg",
         "gameId" : 3,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "uncharted15.jpg",
@@ -222,12 +222,12 @@
     {
         "image": "titanfall13.jpg",
         "gameId" : 4,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "titanfall14.png",
         "gameId" : 4,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "titanfall15.jpg",
@@ -287,12 +287,12 @@
     {
         "image": "bloodborne3.jpeg",
         "gameId" : 5,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "bloodborne5.jpg",
         "gameId" : 5,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "bloodborne11.jpg",
@@ -352,12 +352,12 @@
     {
         "image": "wow13.jpg",
         "gameId" : 6,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "wow14.jpg",
         "gameId" : 6,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "wow15.jpg",
@@ -417,12 +417,12 @@
     {
         "image": "battlefield-13.jpg",
         "gameId" : 7,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "battlefield-14.webp",
         "gameId" : 7,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "battlefield-15.jpeg",
@@ -482,12 +482,12 @@
     {
         "image": "codAW13.jpeg",
         "gameId" : 8,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "codAW14.jpg",
         "gameId" : 8,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "codAW15.jpeg",
@@ -547,12 +547,12 @@
     {
         "image": "farcry13.webp",
         "gameId" : 9,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "farcry14.jpg",
         "gameId" : 9,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "farcry15.jpg",
@@ -612,12 +612,12 @@
     {
         "image": "halo4-13.jpeg",
         "gameId" : 10,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "halo4-14.jpg",
         "gameId" : 10,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "halo4-15.jpg",
@@ -677,12 +677,12 @@
     {
         "image": "residentEvil13.webp",
         "gameId" : 11,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "residentEvil14.jpg",
         "gameId" : 11,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "residentEvil15.jpg",
@@ -742,12 +742,12 @@
     {
         "image": "tombRaider13.jpg",
         "gameId" : 12,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "tombRaider14.jpeg",
         "gameId" : 12,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "tombRaider15.jpg",
@@ -807,12 +807,12 @@
     {
         "image": "fifa2013.jpeg",
         "gameId" : 13,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "fifa2014.jpeg",
         "gameId" : 13,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "fifa205.jpg",
@@ -872,12 +872,12 @@
     {
         "image": "gtaV13.jpg",
         "gameId" : 14,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "gtaV14.jpg",
         "gameId" : 14,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "gtaV15.jpg",
@@ -937,12 +937,12 @@
     {
         "image": "csgo13.jpg",
         "gameId" : 15,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "csgo14.jpg",
         "gameId" : 15,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "csgo15.jpg",
@@ -1002,12 +1002,12 @@
     {
         "image": "needForSpeed13.jpg",
         "gameId" : 16,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "needForSpeed14.jpg",
         "gameId" : 16,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "needForSpeed15.jpg",
@@ -1067,12 +1067,12 @@
     {
         "image": "skyrim13.jpg",
         "gameId" : 17,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "skyrim14.jpeg",
         "gameId" : 17,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "skyrim15.jpg",
@@ -1132,12 +1132,12 @@
     {
         "image": "starWarsBattlefront13.jpg",
         "gameId" : 18,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "starWarsBattlefront14.jpg",
         "gameId" : 18,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "starWarsBattlefront15.jpg",
@@ -1197,12 +1197,12 @@
     {
         "image": "amongtree4.jpg",
         "gameId" : 19,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "amongtree5.jpg",
         "gameId" : 19,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "amongtree6.jpg",
@@ -1262,12 +1262,12 @@
     {
         "image": "missleCommand3.jpg",
         "gameId" : 20,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "missleCommand4.jpg",
         "gameId" : 20,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "missleCommand5.jpg",
@@ -1327,12 +1327,12 @@
     {
         "image": "dota13.jpg",
         "gameId" : 21,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "dota14.jpg",
         "gameId" : 21,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "dota15.jpeg",
@@ -1392,12 +1392,12 @@
     {
         "image": "minecraft3.png",
         "gameId" : 22,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "minecraft4.png",
         "gameId" : 22,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "minecraft5.png",
@@ -1457,12 +1457,12 @@
     {
         "image": "doom3.jpg",
         "gameId" : 23,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "doom4.jpg",
         "gameId" : 23,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "doom5.jpg",
@@ -1522,12 +1522,12 @@
     {
         "image": "destiny13.webp",
         "gameId" : 24,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "destiny14.jpeg",
         "gameId" : 24,
-        "ubicacion": "carrusel"
+        "ubicacion": "carousel"
     },
     {
         "image": "destiny15.jpg",

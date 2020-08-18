@@ -34,6 +34,7 @@ router.get('/cart', controller.cart);
 router.get('/thanks', controller.thankYouPage);
 
 router.get('/logout', authMiddleware  ,controller.logout);
+router.get('/community',controller.community);
 
 // Module export
 module.exports = router;

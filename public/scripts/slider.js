@@ -96,11 +96,11 @@ Vue.component('video-carousel', {
 						channelDescription: videoIds[random].description,
 						channelDetail: videoIds[random].id
 					});
-				}else{
+				} else {
 					for(let j = 0; j < arraynumrandom.length; j++){
 						if(random != arraynumrandom[j]){
 							verificador++;
-					}
+						}
 					if(verificador == arraynumrandom.length){ 
 						arraynumrandom.push(random);
 						this.videos.push({
@@ -115,11 +115,11 @@ Vue.component('video-carousel', {
 							channelDescription: videoIds[random].description,
 							channelDetail: videoIds[random].id
 						});
-				}
+					}
 				
-				}
+					}
 				verificador = 0;
-			}
+				}
 			
 		}
 	}

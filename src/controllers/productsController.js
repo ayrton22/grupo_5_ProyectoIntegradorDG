@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const { AsyncLocalStorage } = require('async_hooks');
+const { reset } = require('nodemon');
 
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
@@ -14,7 +15,7 @@ module.exports = {
     list: function(req,res) {
 		db.Games.findAll({
 			include: [{association: 'images'}], order:[['title', 'ASC']]
-			})
+		})
 		.then(function(products){
 			res.render('productList', {
 				products: products,
@@ -22,7 +23,7 @@ module.exports = {
 		})
 		.catch(function(error) {
 				res.send(error)
-			});
+		});
 	},
 	
 	detail: function(req, res) {
@@ -204,5 +205,37 @@ module.exports = {
 				res.redirect('/')
 			}
 		}
+	},
+
+	search: (req, res) => {
+		res.render('productSearch')
+	},
+
+	productSearch: (req, res) => {
+		db.Games.findAll({
+			include: [{association: 'images'},
+			{association: 'platforms'},
+			{association: 'genres'}]
+		},{
+			where: {
+				title: {
+					[db.Sequelize.Op.like]: "%" + req.body.buscar + "%"
+				}
+			},
+			order: [
+				['title', 'DESC']
+			]
+		})
+		.then( function (resultado) {
+			res.render('productSearch', {
+				buscado: resultado,
+				consulta: req.body.buscar
+			})
+		})
+		.catch(function (err){
+			res.send(
+				err
+			)
+		})
 	}
 }

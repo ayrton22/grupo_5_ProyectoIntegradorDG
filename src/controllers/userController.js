@@ -12,13 +12,17 @@ const db = require('../database/models');
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 users = JSON.parse(users);
 
+
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Transactions.findAll({
-            include:[{association: 'transactions_games'}
-            ]          
-		})
+        db.Categories.findAll({
+			include: [{association: 'games',through: {
+                attributes: ['id','id_game', 'createdAt','updatedAt'],
+                order: [['id_game', 'DESC']]
+                },
+            include: [{association: 'images'}]}]
+	})
         .then(function(result) {
             res.send(result)
         })

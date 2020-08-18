@@ -303,20 +303,6 @@ button.container-profile-button:hover:before {
     overflow-y: auto;
 }
 
-.container-profile-pays-transaction-wrapper::-webkit-scrollbar {
-    width: 10px;
-  }
-
-/* Track */
-.container-profile-pays-transaction-wrapper::-webkit-scrollbar-track {
-    background: #1f3058;
-  }
-  
-  /* Handle */
-.container-profile-pays-transaction-wrapper::-webkit-scrollbar-thumb {
-    background: #fe0034;
-  }
-
 .pays-rows {
     min-width: 700px;
     height: 60px;

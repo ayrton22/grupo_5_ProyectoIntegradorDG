@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Lista de productos'}) %>
+
+<body>
+
+    <%- include('partials/header') %>
+    
+    <div class="container juegos-container mt-5">
+      <aside class="juegos-container__aside juegos-container__aside2">
+          <ul class="juegos-container__list">                   
+              <li class="juegos-container__item"><a href="#">Géneros</a></li>
+              <li class="juegos-container__item"><a href="#">Plataformas</a></li>
+              <li class="juegos-container__item"><a href="#">Ofertas</a></li>
+              <li class="juegos-container__item"><a href="#">Comunidad</a></li>
+              <li class="juegos-container__item"><a href="#">Próximamente</a></li>
+              <li class="juegos-container__item"><a href="#">Recomendaciones</a></li>
+              <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
+          </ul>
+      </aside>
+      <% if((typeof buscado && typeof consulta) != 'undefined'){ %>
+      <section class="juegos-container__all-products">
+        <h2 class="juegos-container__title">resultados a tu busqueda</h2>
+          <div class="juegos-container__products-container ">
+            <% for(let i = 0; i < buscado.length; i++) { %>
+                <a href="/product/detail/<%= buscado[i].id %>">
+                    <article class="juegos-container__product">
+                        <div class="juegos-container__img-cont">
+                            <% for(let j = 0; j < buscado[i].images.length; j++) { %>
+                                <% if(buscado[i].images[j].location == "default") {%>
+                                <img src="../../img/uploads/productsImage/<%= buscado[i].images[j].img_url%>" alt="imagen/miniatura">
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <p><%= buscado[i].title %></p>
+                        <p><%= buscado[i].price %>$</p>
+                    </article>
+                </a>
+                <% } %>
+          </div>
+      </section>
+      <% } %>
+  </div>
+
+     <!-- Footer -->
+     <%- include('partials/footer') %>
+     <!-- Scripts -->
+     <%- include('partials/scripts') %>
+</body>
+</html>

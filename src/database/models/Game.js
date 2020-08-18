@@ -53,11 +53,11 @@ module.exports = (sequelize, dataTypes) => {
           },
           stock_user: {
               type: dataTypes.INTEGER(100),
-              allowNull: false
+              allowNull: true
           },
           stock_admin: {
             type: dataTypes.INTEGER(100),
-            allowNull: false
+              allowNull: true
         }
     };
 

@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
 const { AsyncLocalStorage } = require('async_hooks');
+const { reset } = require('nodemon');
+const { reduceRight } = require('../validations/loginValidation');
 
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
@@ -14,7 +16,7 @@ module.exports = {
     list: function(req,res) {
 		db.Games.findAll({
 			include: [{association: 'images'}], order:[['title', 'ASC']]
-			})
+		})
 		.then(function(products){
 			res.render('productList', {
 				products: products,
@@ -22,7 +24,7 @@ module.exports = {
 		})
 		.catch(function(error) {
 				res.send(error)
-			});
+		});
 	},
 	
 	detail: function(req, res) {
@@ -86,43 +88,55 @@ module.exports = {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let gameId = db.Games.max('id') + 1;
-		
 		db.Games.create({
-            id: gameId,
             title: req.body.title,
             description: req.body.description,
-            medium_description: req.body.medium_description,
-            big_description: req.body.big_description,
+            descriptionMedium: req.body.medium_description,
+            descriptionBig: req.body.big_description,
 			price: req.body.price,
 			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
 			classification: req.body.classification,
-			rating: req.body.rating
+			rating: req.body.rating,
+			stock_admin: 2,
+			stock_user: 2
 		})
+		.then((resultado) => {
+			let gameId = resultado.id;
 
-		let namesInputVideo = [];
+			let arrayImages = [];
 
-		for(i = 0; i < req.files.length; i++){
-			namesInputVideo.push(req.files[i].fieldname)
-		}
-
-		db.Images.create({
-			location: (req.files.fieldname == 'image') ? 'default' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'imagen_detalle') ? 'imagen_detalle' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'imagen_horizontal') ? 'imagen_horizontal' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'carousel') ? 'carousel' : null, id_game: gameId, img_url: req.files.filename * 10
-		}) 
-		db.Games_Genres.create({
-			id_game: gameId, id_genre: Number(req.body.genre)
-		})
-		db.Games_Categories.create({
-			id_game: gameId, id_category: Number(req.body.category)
-		})
-		db.Games_Platforms.create({
-			 id_game: gameId, id_platform: Number(req.body.platform)
+			for(let i = 0; i < req.files.length; i++){
+				let image = {
+					location: req.files[i].fieldname,
+					img_url: req.files[i].filename,
+					id_game: gameId 
+				}
+				arrayImages.push(image)
+			}
+			db.Images.bulkCreate(arrayImages)
+			.then((resutado) => {
+				let genresGame = [];
+				for(let i = 0; i < req.body.genre.length; i++){
+					genresGame.push({
+						id_game: gameId,
+						id_genre: Number(req.body.genre[i]),
+					})
+				}
+				db.Games_Genres.bulkCreate(genresGame)
+				.then(() => {
+						db.Games_Categories.create({
+							id_game: gameId, id_category: Number(req.body.category)
+						})
+						.then(() => {
+						   db.Games_Platforms.create({
+								id_game: gameId, id_platform: Number(req.body.platform)
+						   })
+						})
+				})
+			})
 		})
 		.then(function (resultado){
 			res.redirect('/')
@@ -204,5 +218,37 @@ module.exports = {
 				res.redirect('/')
 			}
 		}
+	},
+
+	search: (req, res) => {
+		res.render('productSearch')
+	},
+
+	productSearch: (req, res) => {
+		db.Games.findAll({
+			include: [{association: 'images'},
+			{association: 'platforms'},
+			{association: 'genres'}]
+		},{
+			where: {
+				title: {
+					[db.Sequelize.Op.like]: "%" + req.body.buscar + "%"
+				}
+			},
+			order: [
+				['title', 'DESC']
+			]
+		})
+		.then( function (resultado) {
+			res.render('productSearch', {
+				buscado: resultado,
+				consulta: req.body.buscar
+			})
+		})
+		.catch(function (err){
+			res.send(
+				err
+			)
+		})
 	}
 }

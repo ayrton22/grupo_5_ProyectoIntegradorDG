@@ -19,7 +19,9 @@ module.exports = {
 			include: [{association: 'games',
 			include: [{association: 'images'}]
 		}],order: [
-			[ 'games', 'title', 'asc']]
+			[ 'updatedAt', 'asc'],
+			[ 'games', 'title', 'asc'],
+			]
 	});
 	let productsDiscounts = db.Discounts.findAll({
 		include: [{association: 'games',include: [{association: 'images' }]

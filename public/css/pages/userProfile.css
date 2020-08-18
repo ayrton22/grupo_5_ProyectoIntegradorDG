@@ -1,52 +1,97 @@
-.container-profile {
-    font-size: 1.4rem;
-    background-image: linear-gradient(to bottom, #223052, #191E29);
-    margin: 6rem auto;
-    width: 30%;
+.container-user {
+    display: flex;
+    justify-content: center;
     align-content: center;
-    border-radius: 5px;
-    padding: 1rem 2rem;
+    align-items: center;
+    height: 80rem
+}
+
+.container-profile {
+    display: flex;
+    background-color: #2D4681;
+    border-radius: 8px;
     box-shadow: 0 0 10px 3px #010100;
+    width: 120rem
 }
 
-.profile-avatar-container{
-    border-radius: 10px;
-    overflow: hidden;
+.container-profile-aside {
+    width: 23%;
+    background-color: #00A6FF;
+    padding: 2rem 1.5rem;
+    border-radius: 8px 0 0 8px;
+    font-size: 24px;
+    box-shadow: 3px 0 5px #001927;
 }
 
-.profile-avatar{
+.container-profile-aside ul li:hover {
+    transition: .3s ease;
+    background-color: #fe0034;
+    padding: 0 1rem;
+}
+
+.container-profile-aside ul li {
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 8px;
+    transition: .3s ease;
+}
+
+.container-profile-general {
+    display: flex;
+    justify-content: space-between;
+    width: 78%;
+    padding: 2rem 3rem;
+}
+
+.container-profile-general-info {
     width: 100%;
-    height: 40rem;
+    margin-left: 3rem;
+    margin-right: 5rem;
 }
 
-.container-profile h1 {
-    padding: 3rem 0;
-    font-size: 42px;
+.container-profile-general-info h1 {
+    font-size: 36px;
+    margin-bottom: 3rem;
 }
 
-.profile-subtitle {
-    font-size: 30px;
-    padding: 1rem 0;
-    border-bottom: 1px solid black;
-    width: 90%;
+.container-profile-general-info--list {
+    font-size: 20px;
+    color: #c1c1c2;
+    margin: 2rem 0;
 }
 
-.profile-button {
+.container-profile-general-info--list li{
+    margin: 2rem 0;
+}
+
+.container-profile-general-info--list li span {
+    display: block;
+    color: white;
+    margin: .8rem 0;
+    text-align: right;
+    font-size: 1.5rem
+}
+
+.container-profile-general-info a {
+    margin: 15rem;
+}
+
+button.container-profile-button {
     position: relative;
+    background-color: white;
     font-size: 1.6em;
     background-color: #2568AC;
     color: white;
-    border-radius: 5px;
+    border-radius: var(--button-border-radius);
     border: none;
-    margin: 1.5rem 11rem;
     padding: 1rem 5rem;
     cursor: pointer;
     z-index: 1;
     transition: .2s ease-in;
     transition: .4s;
 }
-
-.profile-button:before {
+  
+button.container-profile-button:before {
     content: "";
     position: absolute;
     background-color: var(--button-bg-color);
@@ -57,13 +102,296 @@
     width: 100%;
     z-index: -1;
     transition: .2s ease-in;
-}
-
-.profile-button:hover:before {
+  }
+  
+button.container-profile-button:hover:before {
     height: 100%;
 }
 
-.profile-button a {
-    text-decoration: none;
+.container-profile-general-separation {
+    color: #fe0034;
+    background-color: #fe0034;
+    height: 49rem;
+    margin: .5rem 5rem;
+    border-radius: 5px;
+}
+
+.container-profile-general-profile {
+    margin-right: 1rem;
+    text-align: center;
+    width: 22rem
+}
+
+.container-profile-general-profile div img {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+
+.svg-avatar {
+    position: absolute;
+    top: 23rem;
+    right: 39.1rem;
+    z-index: 1;
+    width: 20rem;
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.svg-avatar-active {
+    opacity: 40%;
+}
+
+.container-profile-general-profile h2.profile-name {
+    font-size: 28px;
+    margin: 1rem 0;
+}
+
+.container-profile-general-profile h2.profile-pass {
+    font-size: 28px;
+    margin-top: 5rem ;
+    text-align: left;
+}
+
+.container-profile-general-profile h3.profile-username {
+    font-size: 20px;
+    color: #c1c1c2 ;
+}
+
+.container-profile-general-profile h3.profile-pass {
+    font-size: 24px;
+    color: #c1c1c2;
+    text-align: left;
+}
+
+.container-profile-general-profile h3.profile-pass i {
+    font-size: 20px;
     color: white;
+    margin-left: 5rem;
+    cursor: pointer;
+}
+
+.container-profile-general-profile a.profile-session {
+    text-decoration: none;
+}
+
+
+.container-profile-general-profile a.profile-session p {
+    margin-top: 6rem;
+    text-align: right;
+    font-size: 22px;
+    color: #e92d37;
+    transition: .2s ease;
+}
+
+.container-profile-general-profile a.profile-session p:hover {
+    color: #c9111a;
+}
+
+
+
+/* Games section */
+
+.container-profile-games {
+    width: 78%;
+    padding: 2rem 3rem;
+    margin: 0 2.5rem;
+}
+
+.container-profile-games h1 {
+    font-size: 36px;
+    margin-bottom: 3rem;
+}
+
+.container-profile-games-input {
+    border-radius: 8px;
+    border: solid 1.5px white;
+    background-color: #314981;
+    padding: .5rem;
+    width: 400px;
+    font-size: 20px;
+}
+
+.container-profile-games-list {
+    max-height: 400px;
+    margin: 2rem 0;
+    display: flex;
+    overflow-y: auto;
+}
+
+.container-profile-games-list::-webkit-scrollbar {
+    width: 5px;
+  }
+
+/* Track */
+.container-profile-games-list::-webkit-scrollbar-track {
+    background: #1f3058;
+  }
+  
+  /* Handle */
+.container-profile-games-list::-webkit-scrollbar-thumb {
+    background: #fe0034;
+  }
+
+.container-profile-games-single {
+    min-width: 250px;
+    height: 350px;
+    background-color: #00A6FF;
+    text-align: center;
+    margin: 2rem 2rem 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px 3px #1f3058;
+}
+
+.container-profile-games-single-img img {
+    width: 50%;
+    margin-top: 1rem;
+    box-shadow: 0 3px 5px 3px #1f3058;
+}
+
+.container-profile-games-single-info {
+    margin: .5rem;
+    text-align: left;
+}
+
+.container-profile-games-single-info h2 {
+    font-size: 24px;
+}
+
+.container-profile-games-separation {
+    color: #fe0034;
+    background-color: #fe0034;
+    width: 70rem;
+    height: 5px;
+    margin: 2rem 0;
+    border-radius: 5px;
+}
+
+.container-games-info {
+    margin: 2rem 0;
+}
+
+.container-games-info h3 a {
+    text-decoration: none;
+    color: rgb(146, 140, 140);
+}
+
+
+/* Payments section */
+
+.container-profile-pays {
+    width: 78%;
+    padding: 2rem 3rem;
+    margin: 0 2.5rem;
+}
+
+.container-profile-pays h1 {
+    font-size: 36px;
+    margin-bottom: 3rem;
+}
+
+.pays-first-row {
+    background-color: #fe0034;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.container-profile-pays-transaction-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-track {
+    background: #1f3058;
+  }
+  
+  /* Handle */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-thumb {
+    background: #fe0034;
+  }
+
+.pays-rows {
+    min-width: 700px;
+    height: 60px;
+    background-color: #00A6FF;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: .5rem 0;
+}
+
+
+/* Settings section */
+
+.container-profile-settings {
+    width: 78%;
+    padding: 2rem 3rem;
+    margin: 0 2.5rem;
+    text-align: center;
+}
+
+.container-profile-settings h1 {
+    font-size: 36px;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.container-profile-settings h3 {
+    color: #e92d37;
+    margin: 1rem 0;
+}
+
+button.container-profile-button-logout {
+    position: relative;
+    background-color: white;
+    font-size: 1.6em;
+    background-color: #c9111a;
+    color: white;
+    border-radius: var(--button-border-radius);
+    border: none;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+  
+button.container-profile-button-logout:before {
+    content: "";
+    position: absolute;
+    background-color: #fe0034;
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+  }
+  
+button.container-profile-button-logout:hover:before {
+    height: 100%;
+}
+
+
+
+
+/* State classes */
+
+.active-flex {
+    display: flex;
+}
+
+.active-block {
+    display: block;
+}
+
+.inactive {
+    display: none;
 }

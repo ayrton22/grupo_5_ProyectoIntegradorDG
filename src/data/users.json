@@ -19,11 +19,15 @@
     "password": "$2b$10$/BOt6uNY6wHgkvSf7VhbeufJZwdkGw8xQxIubbx3r58Gt5lDSfxoS"
 }, {
     "id": 3,
-    "first_name": "Ayrton",
-    "last_name": "Peralta",
-    "username": "vamosaver",
-    "email": "themasterayrx@hotmail.com",
-    "password": "$2b$10$WI1v/BT.nG3mQ625Ht9.Q.t54DbN.yaoUWggrEuYY/KuMfbt/sUEq"
+    "first_name": "Joaquin",
+    "last_name": "Perles",
+    "username": "Joaco4052",
+    "email": "joaquiperles@live.com",
+    "password": "$2b$10$WI1v/BT.nG3mQ625Ht9.Q.t54DbN.yaoUWggrEuYY/KuMfbt/sUEq",
+    "gender": "H",
+    "birth_date": "2001-06-07",
+    "address": "Argentina, Buenos Aires, Tigre, Av de los lagos 5850",
+    "avatar": "Detail-upload.jpg"
 }, {
     "id": "4",
     "first_name": "Ayrton",

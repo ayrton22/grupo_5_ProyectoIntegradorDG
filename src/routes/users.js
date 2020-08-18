@@ -27,7 +27,7 @@ router.put('/edit/:id', uploadImageMiddleware.any() ,controller.update);
 router.get('/login', controller.login);
 router.post('/login', loginValidation, controller.confirm);
 
-router.get('/profile/:id/', authMiddleware ,  authMiddleware2 , controller.profile); 
+router.get('/profile/:id/', /*authMiddleware ,  authMiddleware2 ,*/ controller.profile); 
 
 router.get('/cart', controller.cart);
 

@@ -92,7 +92,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: true
       });
 
-      Game.hasMany(models.UserSales, {
+      Game.hasMany(models.User_Sales, {
         as: 'user_sales',
         foreignKey: "id_game"
       });

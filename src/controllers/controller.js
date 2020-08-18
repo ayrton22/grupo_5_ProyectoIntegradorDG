@@ -40,7 +40,7 @@ module.exports = {
 		});
 	},
 
-	ruebaCheckboxView: function (req, res){
+	pruebaCheckboxView: function (req, res){
 		res.render('Zprueba');
 	},
 

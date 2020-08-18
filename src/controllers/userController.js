@@ -16,8 +16,8 @@ users = JSON.parse(users);
 module.exports = {
     prueba: function(req, res) {
         db.Transactions.findAll({
-			include:[{association: 'transactions_games' ,include:[{association: 'images'}]} 
-        ]
+            include:[{association: 'transactions_games'}
+            ]          
 		})
         .then(function(result) {
             res.send(result)

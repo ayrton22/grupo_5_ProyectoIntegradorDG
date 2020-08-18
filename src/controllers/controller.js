@@ -29,11 +29,15 @@ module.exports = {
 	Promise.all([productCategory,productsDiscounts])
 
 	.then(function(resultado){
-			res.render('home', {
-			allCategories: resultado[0],
-			discounts:resultado[1],
-			gamesSlider: resultado[0][0].games
-		})
+		for(let i = 0; i < resultado[0].length ; i++ ){
+			if(resultado[0][i].name == "News"){
+				res.render('home', {
+					allCategories: resultado[0],
+					discounts:resultado[1],
+					gamesSlider: resultado[0][i].games
+				})
+			}
+		}
 	})
 	.catch(function(error) {
 			res.send(error)

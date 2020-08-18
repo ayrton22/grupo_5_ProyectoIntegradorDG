@@ -140,7 +140,7 @@ module.exports = {
 							for(let i = 0; i < req.body.platform.length; i++){
 								platformGame.push({
 									id_game: gameId,
-									id_platform: Number(req.body.platform[i]),
+									id_platform: Number(req.body.platform[i])
 								})
 							}
 						    db.Games_Platforms.bulkCreate(platformGame)

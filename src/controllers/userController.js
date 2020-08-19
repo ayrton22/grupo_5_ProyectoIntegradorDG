@@ -16,13 +16,7 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Categories.findAll({
-			include: [{association: 'games',through: {
-                attributes: ['id','id_game', 'createdAt','updatedAt'],
-                order: [['id_game', 'DESC']]
-                },
-            include: [{association: 'images'}]}]
-	})
+        db.Users.findAll()
         .then(function(result) {
             res.send(result)
         })
@@ -39,17 +33,18 @@ module.exports = {
     save: function(req, res) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-            let newUser = {
-                id: users.length + 1,
+
+            db.Users.create({
                 first_name: req.body.name,
                 last_name: req.body.surname,
                 username: req.body.username,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10)
-            };
-            users.push(newUser);
-            fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users))
-            res.redirect('/user/login');
+            })
+            .then(function() {
+                res.redirect('/user/login')
+            })
+
         } else {
             res.render('userRegister', {
                 errors: errors.mapped(),
@@ -63,28 +58,43 @@ module.exports = {
     confirm: function(req, res, next) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-        for(let i = 0; i < users.length; i++) {
-            if(users[i].username == req.body.username && bcrypt.compareSync(req.body.password, users[i].password)) {
-                req.session.usernameUser = users[i].username
-                if(req.body.remember != undefined){
-                    res.cookie('authRemember', users[i].username, {maxAge: 60000 * 10})
+
+            db.Users.findAll()
+            .then(function(result) {
+
+                for(let i = 0; i < result.length; i++) {
+
+                    if(result[i].username == req.body.username && bcrypt.compareSync(req.body.password, result[i].password)) {
+
+                        req.session.usernameUser = result[i].username
+
+                        if(req.body.remember != undefined){
+
+                            res.cookie('authRemember', result[i].username, {maxAge: 60000 * 10})
+
+                        }
+
+                        return res.redirect('/user/profile/' + result[i].id)
+                        
+                    } 
+
                 }
-                return res.redirect('/user/profile/' + users[i].id)
-            } 
+                return res.render('userLogin', {
+                    errors: {
+                        username: {
+                            msg: 'Credenciales inválidas. Inserta un email o usuario registrado y su respectica contraseña'
+                        }
+                    }
+                });
+
+            });
+
+        } else {
+            res.render('userLogin', {
+                errors: errors.mapped(),
+                old: req.body
+            });
         }
-        return res.render('userLogin', {
-            errors: {
-                username: {
-                    msg: 'Credenciales inválidas. Inserta un email o usuario registrado y su respectica contraseña'
-                }
-            }
-        })
-    } else {
-        res.render('userLogin', {
-            errors: errors.mapped(),
-            old: req.body
-        });
-    }
     },
 
     logout: function (req, res){

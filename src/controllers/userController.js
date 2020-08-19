@@ -148,8 +148,20 @@ module.exports = {
     thankYouPage: function(req, res){
         res.render('thankYouPage');
     },
+
     community: function(req,res){
         res.render('community.ejs');
+    },
 
+    buyFormChoose: (req, res) => {
+        res.render('buyFormChoose.ejs');
+    },
+
+    buyFormDeliveryView: (req, res) => {
+        res.render('buyFormDelivery');
+    }, 
+
+    buyFormLocalView: (req, res) => {
+        res.render('buyFormLocal');
     }
 }

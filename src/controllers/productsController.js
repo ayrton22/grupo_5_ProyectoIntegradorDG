@@ -2,9 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-const { AsyncLocalStorage } = require('async_hooks');
-const { reset } = require('nodemon');
-const { reduceRight } = require('../validations/loginValidation');
 
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
@@ -126,7 +123,7 @@ module.exports = {
 					})
 				}
 				db.Games_Genres.bulkCreate(genresGame)
-				.then(() => {
+				.then((resultado) => {
 					let categoryGame = [];
 					for(let i = 0; i < req.body.category.length; i++){
 					categoryGame.push({
@@ -135,7 +132,7 @@ module.exports = {
 					})
 					}
 					 	db.Games_Categories.bulkCreate(categoryGame)
-						.then(() => {
+						.then((resultado) => {
 							let platformGame = [];
 							for(let i = 0; i < req.body.platform.length; i++){
 								platformGame.push({
@@ -154,13 +151,12 @@ module.exports = {
     },
 	
     edit: function(req, res) {
-		for(let i = 0; i < products.length; i++) {
-            if(req.params.id == products[i].id) {
-                return res.render('productEdit', {
-                    product: products[i]
-                })
-            }
-        } res.redirect('/product');
+		let productDetail = db.Games.findByPk(req.params.id,{
+			include: [{association: 'images'},
+			{association: 'platforms'},
+			{association: 'genres'}]
+		});
+
 	},
 	
 	update: function(req, res) {
@@ -186,29 +182,26 @@ module.exports = {
 		}
 	},
 
-	search: (req, res) => {
-		res.render('productSearch')
-	},
+	// search: (req, res) => {
+	// 	res.render('productSearch')
+	// },
 
 	productSearch: (req, res) => {
 		db.Games.findAll({
-			include: [{association: 'images'},
-			{association: 'platforms'},
-			{association: 'genres'}]
-		},{
+			include: { all: true },
 			where: {
 				title: {
-					[db.Sequelize.Op.like]: "%" + req.body.buscar + "%"
+					[db.Sequelize.Op.like]: `%${req.query.buscar}%`
 				}
 			},
 			order: [
 				['title', 'DESC']
 			]
 		})
-		.then( function (resultado) {
+		.then(function (resultado) {
 			res.render('productSearch', {
 				buscado: resultado,
-				consulta: req.body.buscar
+				consulta: req.query.buscar
 			})
 		})
 		.catch(function (err){

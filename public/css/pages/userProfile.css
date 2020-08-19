@@ -378,6 +378,6 @@ button.container-profile-button-logout:hover:before {
     display: block;
 }
 
-.inactive {
+.inactiveUserProfile {
     display: none;
 }

@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
 const {check, validationResult, body} = require('express-validator');
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
-usuarios = JSON.parse(usuarios);
+const db = require('../database/models');
+
+let users = db.Users.findAll().then(result => { return result })
+
 
 module.exports = [
     check('name')
@@ -22,8 +22,8 @@ module.exports = [
 
     body('username')
         .custom(function(value) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].username == value) {
+        for(let i = 0; i < users.length; i++) {
+            if(users[i].username == value) {
                 return false;
             }
         }
@@ -36,8 +36,8 @@ module.exports = [
 
     body('email')
         .custom(function(value) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].email == value) {
+        for(let i = 0; i < users.length; i++) {
+            if(users[i].email == value) {
                 return false;
             }
         }

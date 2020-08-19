@@ -188,7 +188,7 @@ module.exports = {
 
 	productSearch: (req, res) => {
 		db.Games.findAll({
-			include: { all: true },
+			include: [{association: 'images'}] /*{ all: true }*/,
 			where: {
 				title: {
 					[db.Sequelize.Op.like]: `%${req.query.buscar}%`

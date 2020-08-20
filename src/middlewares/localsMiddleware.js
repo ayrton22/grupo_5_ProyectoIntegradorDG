@@ -1,5 +1,5 @@
 function localsMiddleware(req, res, next) {
-    if(req.session.user) {
+    if(req.session.usernameUser) {
         res.locals.localUser = "session";
         next()
     } else {

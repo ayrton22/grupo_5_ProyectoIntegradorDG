@@ -5,18 +5,17 @@ const path = require('path');
 // JSON PARSE
 const db = require('../database/models');
 
-let users = db.Users.findAll().then(result => { return result })
-
-function authMiddleware2 (req, res, next){
+async function authMiddleware2 (req, res, next){
+    let users = await db.Users.findAll().then(result => { return result })
     let url = req.params;
     let usuarioAigualar;
 
     for(let i = 0; i < users.length; i++){
         if(url.id == users[i].id){
-           usuarioAigualar = users[i].username
+            usuarioAigualar = users[i].username
         }
     }
-
+    
     if(req.session.usernameUser != usuarioAigualar){
         return res.render('error')
     } else {

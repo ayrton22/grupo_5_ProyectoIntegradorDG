@@ -23,6 +23,7 @@ router.post('/register', registerValidation, passwordRepassMiddleware ,controlle
 
 router.get('/edit/:id?', controller.edit);
 router.put('/edit/:id', uploadImageMiddleware.any() ,controller.update);
+router.post('/delete/:id', controller.delete);
 
 router.get('/login', controller.login);
 router.post('/login', loginValidation, controller.confirm);

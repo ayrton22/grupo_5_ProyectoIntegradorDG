@@ -64,7 +64,7 @@ module.exports = {
                     if(result[i].username == req.body.username && bcrypt.compareSync(req.body.password, result[i].password)) {
                         req.session.usernameUser = result[i].username
                         if(req.body.remember != undefined){
-                            res.cookie('authRemember', result[i].username, {maxAge: 60000 * 10})
+                            res.cookie('authRemember', result[i].username, {maxAge: 60000 * 10 * 5})
                         }       
                         return res.redirect('/user/profile/' + result[i].id)
                     } 
@@ -126,6 +126,17 @@ module.exports = {
             return res.render('userProfile', {
                 user: result
             })
+        })
+    },
+
+    delete: function(req, res) {
+        db.Users.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(result) {
+            res.redirect('/');
         })
     },
 

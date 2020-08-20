@@ -6,32 +6,382 @@
     <!-- Header -->
 
     <%- include('partials/header') %>
+    <div class="container-user">
 
-    <div class="container container-profile">
-        <h1>Hola <%= user.first_name %></h1>
-    </div>
+        <div class="container-profile">
+        
+            <aside class="container-profile-aside">
+                <ul type="none" >
+                    <li id="general">General</li>
+                    <li id="games">Tus juegos</li>
+                    <li id="pays">Historial de pagos</li>
+                    <li id="settings">Configuración</li>
+                </ul>
+            </aside>
+    
+            <div class="container-profile-general active-flex">
+    
+                <div class="container-profile-general-info">
+    
+                        <h1>Información General</h1>
+    
+                            <ul class="container-profile-general-info--list" type="none">
+                                <li>Fecha de nacimiento: <span><%= user.birth_date %></span></li>
+                                <li>Email: <span><%= user.email %></span></li>
+                                <li>Dirección: <span><%= user.address %></span></li>
+                                <li>Género: <span><%= user.gender %></span></li>
+                            </ul>
 
-    <div class="container container-profile">
-        <div class="profile-avatar-container">
-            <img class="profile-avatar" src="/img/uploads/avatars/<%= user.avatar %>" alt="">
+                        <a href="/user/edit/<%= user.id %>"><button type="button" class="container-profile-button mt-5">Editar datos</button></a>
+    
+                </div>
+
+                <div class="container-profile-general-separation"> ll </div>
+    
+                <div class="container-profile-general-profile">
+                    <div>
+                        <img src="/img/uploads/avatars/avatar.jpg" alt="" id="avatar">
+                        <svg id="svg" class="svg-avatar inactiveUserProfile" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320"><defs><style>.a{fill:#707070;}.b{fill:#fff;font-size:43px;font-family:SegoeUI, Segoe UI;}</style></defs><circle class="a" cx="160" cy="160" r="160"/><text class="b" transform="translate(81 178)"><tspan x="0" y="0">Cambiar</tspan></text></svg>
+                        <input type="file" id="avatar" style="visibility: hidden;">
+                    </div>
+                    <h2 class="profile-name"><%= user.first_name %> <%= user.last_name %></h2>
+                    <h3 class="profile-username"><%= user.username %></h3>
+                    <h2 class="profile-pass">Contraseña:</h2>
+                    <h3 class="profile-pass">....................<i class="fas fa-pencil-alt"></i></h3>
+                    <a href="/user/logout" class="profile-session"><p>Cerrar sesión</p></a>
+                </div>
+    
+            </div>
+
+            <div class="container-profile-games inactiveUserProfile">
+
+               <h1>Tus juegos</h1>
+            
+               <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
+
+               <div class="container-profile-games-list">
+
+                    <div class="container-profile-games-single">
+
+                        <div class="container-profile-games-single-img">
+                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
+                        </div>
+                        <div class="container-profile-games-single-info">
+
+                            <h2>Among Trees</h2>
+                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
+                            <h3><i class="fas fa-desktop"></i></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="container-profile-games-single">
+
+                        <div class="container-profile-games-single-img">
+                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
+                        </div>
+                        <div class="container-profile-games-single-info">
+
+                            <h2>Among Trees</h2>
+                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
+                            <h3><i class="fas fa-desktop"></i></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="container-profile-games-single">
+
+                        <div class="container-profile-games-single-img">
+                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
+                        </div>
+                        <div class="container-profile-games-single-info">
+
+                            <h2>Among Trees</h2>
+                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
+                            <h3><i class="fas fa-desktop"></i></h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="container-profile-games-single">
+
+                        <div class="container-profile-games-single-img">
+                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
+                        </div>
+                        <div class="container-profile-games-single-info">
+
+                            <h2>Among Trees</h2>
+                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
+                            <h3><i class="fas fa-desktop"></i></h3>
+
+                        </div>
+
+                    </div>
+
+               </div>
+
+               <!--<div class="container-profile-games-separation"> . </div>-->
+
+               <div class="container-games-info">
+
+                   <h2>Items en carrito: 5</h2>
+                   <h3><a href="/user/cart">Ir a tu carrito de compras</a></h3>
+               </div>
+
+            </div>
+
+            <div class="container-profile-pays inactiveUserProfile">
+                
+                <h1>Historial de transacciones</h1>
+
+                <div class="row pays-first-row">
+                    <div class="col-2">
+                        <h2>Fecha</h2>
+                    </div>
+                    <div class="col-4">
+                        <h2>Juego</h2>
+                    </div>
+                    <div class="col-3">
+                        <h2>Comprador</h2>
+                    </div>
+                    <div class="col-2">
+                        <h2>Vendedor</h2>
+                    </div>
+                    <div class="col-1">
+                        <h2>Precio</h2>
+                    </div>
+                </div>
+
+                <div class="container-profile-pays-transaction-wrapper">
+
+                    <div class="row pays-rows">
+
+                        <div class="col-2">
+                            <h3>2020-05-05</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Star Wars - Battlefront IV</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Joaquin Perles</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Elimer Duarte</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$19.99</h3>
+                        </div>
+    
+                    </div>
+    
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+    
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2020-05-05</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Star Wars - Battlefront IV</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Joaquin Perles</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Elimer Duarte</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$19.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                    <div class="row pays-rows">
+    
+                        <div class="col-2">
+                            <h3>2019-03-26</h3>
+                        </div>
+                        <div class="col-4">
+                            <h3>Fifa 20</h3>
+                        </div>
+                        <div class="col-3">
+                            <h3>Benjamin Barreiro</h3>
+                        </div>
+                        <div class="col-2">
+                            <h3>Ayrton Peralta</h3>
+                        </div>
+                        <div class="col-1">
+                            <h3>$28.99</h3>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="container-profile-settings inactiveUserProfile">
+
+                <h1>Configuración de cuenta</h1>
+
+                <form action="">
+                    
+                    <button type="button" class="container-profile-button-logout mt-5">Dar de baja tu cuenta</button>
+                    <h3> Esta accion borrará tu cuenta permamentemente y no habrá forma de recuperarla</h3>
+
+                </form>
+
+            </div>
+    
         </div>
-        <h2 class="profile-subtitle">Nombre: <%= user.first_name %></h2>
-        <h2 class="profile-subtitle">Apellido: <%= user.last_name %></h2>
-        <h2 class="profile-subtitle">Nombre de usuario: <%= user.username %></h2>
+
     </div>
 
-    <div class="container container-profile">
-        <h2 class="profile-subtitle">Email: <%= user.email %></h2>
-        <h2 class="profile-subtitle">Fecha de nacimiento: <%= user.birth_date %></h2>
-        <h2 class="profile-subtitle">Dirección: <%= user.address %></h2>
-    </div>
-    <div class="container container-profile">
-        <button class="profile-button" type="button"><a href="/user/edit/<%= user.id %>">Editar Información</a></button>
-        <a class="profile-button" type="button" href="/user/logout">Cerrar sesión</a>
-    </div>
     <!-- Footer -->
     <%- include('partials/footer') %>
     <!-- Scripts -->
+    <script src="/scripts/userProfile.js"></script>
     <%- include('partials/scripts') %>
 </body>
 </html>

@@ -2,7 +2,6 @@
 const fs = require('fs');
 const path = require('path');
 const db = require('../database/models');
-const { AsyncLocalStorage } = require('async_hooks');
 
 // JSON Parse
 let products = fs.readFileSync(path.join(__dirname, '../data/products.json'), 'utf8');
@@ -14,7 +13,7 @@ module.exports = {
     list: function(req,res) {
 		db.Games.findAll({
 			include: [{association: 'images'}], order:[['title', 'ASC']]
-			})
+		})
 		.then(function(products){
 			res.render('productList', {
 				products: products,
@@ -22,7 +21,7 @@ module.exports = {
 		})
 		.catch(function(error) {
 				res.send(error)
-			});
+		});
 	},
 	
 	detail: function(req, res) {
@@ -86,43 +85,65 @@ module.exports = {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
 
-		let gameId = db.Games.max('id') + 1;
-		
 		db.Games.create({
-            id: gameId,
             title: req.body.title,
             description: req.body.description,
-            medium_description: req.body.medium_description,
-            big_description: req.body.big_description,
+            descriptionMedium: req.body.medium_description,
+            descriptionBig: req.body.big_description,
 			price: req.body.price,
 			video: videoCode,
 			editor: req.body.editor,
 			launch_date: req.body.launch_date,
 			developer: req.body.developer,
 			classification: req.body.classification,
-			rating: req.body.rating
+			rating: req.body.rating,
+			stock_admin: 2,
+			stock_user: 2
 		})
+		.then((resultado) => {
+			let gameId = resultado.id;
 
-		let namesInputVideo = [];
+			let arrayImages = [];
 
-		for(i = 0; i < req.files.length; i++){
-			namesInputVideo.push(req.files[i].fieldname)
-		}
-
-		db.Images.create({
-			location: (req.files.fieldname == 'image') ? 'default' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'imagen_detalle') ? 'imagen_detalle' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'imagen_horizontal') ? 'imagen_horizontal' : null, id_game: gameId, img_url: req.files.filename,
-			location: (req.files.fieldname == 'carousel') ? 'carousel' : null, id_game: gameId, img_url: req.files.filename * 10
-		}) 
-		db.Games_Genres.create({
-			id_game: gameId, id_genre: Number(req.body.genre)
-		})
-		db.Games_Categories.create({
-			id_game: gameId, id_category: Number(req.body.category)
-		})
-		db.Games_Platforms.create({
-			 id_game: gameId, id_platform: Number(req.body.platform)
+			for(let i = 0; i < req.files.length; i++){
+				let image = {
+					location: req.files[i].fieldname,
+					img_url: req.files[i].filename,
+					id_game: gameId 
+				}
+				arrayImages.push(image)
+			}
+			db.Images.bulkCreate(arrayImages)
+			.then((resutado) => {
+				let genresGame = [];
+ 				for(let i = 0; i < req.body.genre.length; i++){
+					genresGame.push({
+						id_game: gameId,
+						id_genre: Number(req.body.genre[i]),
+					})
+				}
+				db.Games_Genres.bulkCreate(genresGame)
+				.then((resultado) => {
+					let categoryGame = [];
+					for(let i = 0; i < req.body.category.length; i++){
+					categoryGame.push({
+						id_game: gameId,
+						id_category: Number(req.body.category[i]),
+					})
+					}
+					db.Games_Categories.bulkCreate(categoryGame)
+					.then((resultado) => {
+						let platformGame = [];
+						for(let i = 0; i < req.body.platform.length; i++){
+							platformGame.push({
+								id_game: gameId,
+								id_platform: Number(req.body.platform[i])
+							})
+						}
+						db.Games_Platforms.bulkCreate(platformGame)
+					})
+				})
+			})
 		})
 		.then(function (resultado){
 			res.redirect('/')
@@ -130,13 +151,42 @@ module.exports = {
     },
 	
     edit: function(req, res) {
-		for(let i = 0; i < products.length; i++) {
-            if(req.params.id == products[i].id) {
-                return res.render('productEdit', {
-                    product: products[i]
-                })
-            }
-        } res.redirect('/product');
+		let categorias = db.Categories.findAll();
+		let generos = db.Genres.findAll();
+		let platforms = db.Platforms.findAll();
+		
+		/*let genero = db.Games_Genres.findByPk(req.params.id, {
+			games_genre: (req.params.id == db.Games_Genres.id_game) ? db.Games_Genres.id_genre : null
+		})
+
+		let categoria = db.Games_Categories.findByPk(req.params.id, {
+			games_category: (req.params.id == db.Games_Categories.id_game) ? db.Games_Categories.id_category : null
+		})
+
+		let plataforma = db.Games_Platforms.findByPk(req.params.id, {
+			games_platform: (req.params.id == db.Games_Platforms.id_game) ? db.Games_Categories.id_platform : null
+		})*/
+
+		db.Games.findByPk(req.params.id,{
+			include: [{association: 'images'},
+			{association: 'platforms'},
+			{association: 'genres'},
+			{association: 'categories'},
+			/*{association: 'games_genres'},
+			{association: 'games_categories'},
+			{association: 'games_platforms'}*/
+			]})
+		.then(function(productEdit){
+			res.render('productEdit', {
+				productEdit: productEdit,
+				gameGenre: generos,
+				gameCategory: categorias,
+				gamePlatform: platforms,
+				/*games_genres: genero,
+				games_categories: categoria,
+				games_platforms: plataforma*/
+			});
+		})
 	},
 	
 	update: function(req, res) {
@@ -149,50 +199,6 @@ module.exports = {
 
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
-
-		let editedProduct = {
-            id: req.params.id,
-            title: req.body.title,
-            description: req.body.description,
-            medium_description: req.body.medium_description,
-            big_description: req.body.big_description,
-			price: req.body.price,
-			image: productToEdit.image,
-			imagen_horizontal: productToEdit.imagen_horizontal,
-			image1: productToEdit.image1,
-			image2: productToEdit.image2,
-			image3: productToEdit.image3,
-			image4: productToEdit.image4,
-			image5: productToEdit.image5,
-			image6: productToEdit.image6,
-			image7: productToEdit.image7,
-			image8: productToEdit.image8,
-			image9: productToEdit.image9,
-			image10: productToEdit.image10,
-			imagen_detalle: productToEdit.imagen_detalle,
-			video: videoCode,
-			editor: req.body.editor,
-			launch_date: req.body.launch_date,
-			developer: req.body.developer,
-			tags: req.body.tags,
-			classification: req.body.classification,
-			category: productToEdit.category,
-			rating: req.body.rating,
-			playstation: (req.body.plataformPlay == 'on') ? 'si' : 'no',
-			xbox: (req.body.plataformXbox == 'on') ? 'si' : 'no',
-			pc: (req.body.plataformPc == 'on') ? 'si' : 'no',
-			icon_playstation: productToEdit.icon_playstation,
-			icon_xbox: productToEdit.icon_xbox,
-			icon_pc: productToEdit.icon_pc
-        };
-        
-        for(let i = 0; i < products.length; i++) {
-            if(products[i].id == req.params.id ) {
-                products[i] = editedProduct;
-                fs.writeFileSync(path.join(__dirname, '../data/products.json'), JSON.stringify(products))
-                return res.redirect('/product/detail/' + editedProduct.id)
-            }
-        }
 	},
 
     destroy: (req, res) => {
@@ -204,5 +210,30 @@ module.exports = {
 				res.redirect('/')
 			}
 		}
+	},
+
+	productSearch: (req, res) => {
+		db.Games.findAll({
+			include: [{association: 'images'}] /*{ all: true }*/,
+			where: {
+				title: {
+					[db.Sequelize.Op.like]: `%${req.query.buscar}%`
+				}
+			},
+			order: [
+				['title', 'DESC']
+			]
+		})
+		.then(function (resultado) {
+			res.render('productSearch', {
+				buscado: resultado,
+				consulta: req.query.buscar
+			})
+		})
+		.catch(function (err){
+			res.send(
+				err
+			)
+		})
 	}
 }

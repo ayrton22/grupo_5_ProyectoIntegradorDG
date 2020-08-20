@@ -22,5 +22,7 @@ router.post('/load', uploadImageProductMiddleware.any() ,controller.store);
 router.get('/edit/:id', controller.edit);
 router.put('/edit/:id', controller.update);
 
+router.get('/search', controller.productSearch);
+
 // Module export
 module.exports = router;

@@ -27,7 +27,7 @@ router.put('/edit/:id', uploadImageMiddleware.any() ,controller.update);
 router.get('/login', controller.login);
 router.post('/login', loginValidation, controller.confirm);
 
-router.get('/profile/:id/', authMiddleware ,  authMiddleware2 , controller.profile); 
+router.get('/profile/:id/', authMiddleware ,  authMiddleware2,  controller.profile); 
 
 router.get('/cart', controller.cart);
 
@@ -35,6 +35,10 @@ router.get('/thanks', controller.thankYouPage);
 
 router.get('/logout', authMiddleware  ,controller.logout);
 router.get('/community',controller.community);
+
+router.get('/buyFormChoose', controller.buyFormChoose);
+router.get('/buyFormDelivery', controller.buyFormDeliveryView);
+router.get('/buyFormLocal', controller.buyFormLocalView);
 
 // Module export
 module.exports = router;

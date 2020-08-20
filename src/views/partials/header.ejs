@@ -22,7 +22,7 @@
         </div>
         <div class="header-nav__right">
             <!-- Nav Items Right -->
-                <form action="" class="header-nav__form">
+                <form action="/product/search<%= (typeof consulta != 'undefined') ? '?buscar=' + consulta : null %>" class="header-nav__form" method="GET">
                     <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
                     <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                 </form>

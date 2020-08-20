@@ -4,7 +4,7 @@
 <body>
     <!-- Header -->
     <%- include('partials/header') %>
-
+    
     <div class="container pb-3 container-productLoader">
         <form class="productLoader-form" action="" enctype="multipart/form-data" method="POST">
 
@@ -14,11 +14,11 @@
                     </div>
                     <div class="col-6 pb-5">
                         <label for="title" class="productLoader-form-label">Título del juego: </label>
-                        <input type="text" name="title" class="productLoader-form-input">
+                        <input type="text" name="title" class="productLoader-form-input title">
                     </div>
                     <div class="col-6 pb-5">
                         <label for="estado" class="productLoader-form-label">Estado del juego: </label>
-                        <select class="productLoader-form-input" name="estado">
+                        <select class="productLoader-form-input state" name="estado">
                             <option selected hidden>Elija el estado</option>
                             <option value="1">Muy malo</option>
                             <option value="2">Muy usado</option>
@@ -30,7 +30,7 @@
                     <div class="col-6 pb-5">
                         <label for="platforms" class="productLoader-form-label">Plataformas: </label>
                         <% for(let i = 0; i < gamePlatform.length; i++) { %>
-                        <input type="checkbox" name="platform" value="<%= gamePlatform[i].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i].name %></label><br>
+                        <input type="checkbox" name="platform" value="<%= gamePlatform[i].id %>" class="productLoader-form-checkbox platformCheckbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i].name %></label><br>
                         <% } %>
                     </div>
                     <button type="button" class="productLoader-form-button--next"><a href="#form2">Siguiente</a></button>
@@ -106,19 +106,19 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productLoader-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label><br>
-                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
+                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox paymentMethod"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox paymentMethod"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox paymentMethod"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label><br>
+                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox paymentMethod"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productLoader-form-label">Opciones de entrega de Producto: </label>
-                    <input type="checkbox" value="Delivery" name="receive" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="receive">Delivery</label><br>
-                    <input type="checkbox" value="Buscar" name="receive" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="receive">Buscar</label>
+                    <input type="checkbox" value="Delivery" name="receive" class="productLoader-form-checkbox deliveryOption"> <label class="productLoader-checkbox-label" for="receive">Delivery</label><br>
+                    <input type="checkbox" value="Buscar" name="receive" class="productLoader-form-checkbox deliveryOption"> <label class="productLoader-checkbox-label" for="receive">Buscar</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="price" class="productLoader-form-label">Precio del juego</label>
-                    <input type="text" name="price" class="productLoader-form-input">
+                    <input type="text" name="price" class="productLoader-form-input price">
                 </div>
                 <button type="button" class="productLoader-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
@@ -130,27 +130,27 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="description" class="productLoader-form-label">Descripcion de juego: </label>
-                    <textarea cols="55" rows="6" name="description" class="productLoader-form-input__textarea"></textarea>
+                    <textarea cols="55" rows="6" name="description" class="productLoader-form-input__textarea description"></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="medium_description" class="productLoader-form-label">Descripcion mediana: </label>
-                    <textarea cols="55" rows="6" name="medium_description" class="productLoader-form-input__textarea"></textarea>
+                    <textarea cols="55" rows="6" name="medium_description" class="productLoader-form-input__textarea mediumDescription"></textarea>
                 </div>
                 <div class="col-12 pb-5">
                     <label for="big_description" class="productLoader-form-label">Descripcion grande: </label>
-                    <textarea cols="55" rows="6"  name="big_description" class="productLoader-form-input__bigTextarea"></textarea>
+                    <textarea cols="55" rows="6"  name="big_description" class="productLoader-form-input__bigTextarea largeDescription"></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="editor" class="productLoader-form-label">Editora: </label>
-                    <input type="text" name="editor" class="productLoader-form-input">
+                    <input type="text" name="editor" class="productLoader-form-input editor">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="developer" class="productLoader-form-label">Desarrolladora: </label>
-                    <input type="text" name="developer" class="productLoader-form-input">
+                    <input type="text" name="developer" class="productLoader-form-input developer">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
-                    <input type="date" name="launch_date" class="productLoader-form-input">
+                    <input type="date" name="launch_date" class="productLoader-form-input launchDate">
                 </div>
                 <button type="button" class="productLoader-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>
@@ -160,22 +160,22 @@
                 <div class="col-6 pb-5">
                     <label for="category" class="productLoader-form-label">Categorias: </label>
                     <% for(let i = 0; i < gameCategory.length; i++) { %>
-                    <input type="checkbox" value="<%= gameCategory[i].id %>" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i].id %>" name="category" class="productLoader-form-checkbox category"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i].name %></label><br>
                     <% } %>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productLoader-form-label">Etiquetas: </label>
                     <% for(let i = 0; i < gameGenre.length; i++) { %>
-                        <input type="checkbox" value="<%= gameGenre[i].id %>" name="genre" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i].id %>" name="genre" class="productLoader-form-checkbox tag"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i].name %></label><br>
                     <% } %>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productEdit-form-input">
+                    <input type="text" name="classification" class="productEdit-form-input classification">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productLoader-form-label">Puntaje: </label>
-                    <input type="text" name="rating" class="productLoader-form-input">
+                    <input type="number" name="rating" class="productLoader-form-input score">
                 </div>
                 <button type="button" class="productLoader-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
                 <button type="submit" class="productLoader-form-button--submit mb-5">Cargar producto</button>
@@ -189,5 +189,6 @@
     <!-- Scripts -->
     <%- include('partials/scripts') %>
     <script src="/scripts/photoUpload.js"></script>
+    <script src="/scripts/productLoad.js"></script>
 </body>
 </html>

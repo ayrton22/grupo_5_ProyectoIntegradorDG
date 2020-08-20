@@ -13,11 +13,11 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="title" class="productEdit-form-label">Titulo del juego: </label>
-                    <input type="text" name="title" class="productEdit-form-input" value="<%= product.title %>" />
+                    <input type="text" name="title" class="productEdit-form-input title" value="<%= product.title %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="estado" class="productEdit-form-label">Estado del juego: </label>
-                    <select class="productEdit-form-input" name="estado">
+                    <select class="productEdit-form-input state" name="estado">
                         <option selected hidden>Elija el estado</option>
                         <option value="1">Muy malo</option>
                         <option value="2">Muy usado</option>
@@ -29,19 +29,19 @@
                 <div class="col-6 pb-5">
                     <label for="platforms" class="productEdit-form-label">Plataformas: </label>
                     <% if(product.pc == "si" ) { %>
-                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">PC</label><br/>
+                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label platformCheckbox1" for="platforms">PC</label><br/>
                     <% } else { %>
-                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">PC</label><br/>
+                        <input type="checkbox" name="plataformPc" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label platformCheckbox2" for="platforms">PC</label><br/>
                     <% } %>
                     <% if(product.xbox == "si" ) { %>
-                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br/>
+                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label platformCheckbox3" for="platforms">Xbox</label><br/>
                     <% } else { %>
-                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">Xbox</label><br/>
+                        <input type="checkbox" name="plataformXbox" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label platformCheckbox4" for="platforms">Xbox</label><br/>
                     <% } %>
                     <% if(product.playstation == "si" ) { %>
-                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
+                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" checked /> <label class="productEdit-checkbox-label platformCheckbox5" for="platforms">Playstation</label>
                     <% } else { %>
-                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="platforms">Playstation</label>
+                        <input type="checkbox" name="plataformPlay" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label platformCheckbox6" for="platforms">Playstation</label>
                     <% } %>
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form2">Siguiente</a></button>
@@ -123,19 +123,19 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productEdit-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
-                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br/>
+                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox paymentMethod1" /> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox paymentMethod2" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox paymentMethod3" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
+                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label paymentMethod4" for="pagos">American Express</label><br/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productEdit-form-label">Opciones de entrega de Product: </label>
-                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br/>
-                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="receive">Buscar</label>
+                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox deliveryOption1" /> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br/>
+                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label deliveryOption2" for="receive">Buscar</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="price" class="productEdit-form-label">Precio del juego</label>
-                    <input type="text" name="price" class="productEdit-form-input" value="<%= product.price %>" />
+                    <input type="text" name="price" class="productEdit-form-input price" value="<%= product.price %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
@@ -147,27 +147,27 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="description" class="productEdit-form-label">Descripcion de juego: </label>
-                    <textarea cols="55" rows="6" name="description" class="productEdit-form-input__textarea" value=""><%= product.description %></textarea>
+                    <textarea cols="55" rows="6" name="description" class="productEdit-form-input__textarea gameDescription" value=""><%= product.description %></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="medium_description" class="productEdit-form-label">Descripcion mediana: </label>
-                    <textarea cols="55" rows="6" type="text" name="medium_description" class="productEdit-form-input__textarea" value=""><%= product.medium_description %></textarea>
+                    <textarea cols="55" rows="6" type="text" name="medium_description" class="productEdit-form-input__textarea gameMediumDescription" value=""><%= product.medium_description %></textarea>
                 </div>
                 <div class="col-12 pb-5">
                     <label for="mbig_description" class="productEdit-form-label">Descripcion grande: </label>
-                    <textarea cols="55" rows="6" type="text" name="big_description" class="productEdit-form-input__bigTextarea" value=""><%= product.big_description %></textarea>
+                    <textarea cols="55" rows="6" type="text" name="big_description" class="productEdit-form-input__bigTextarea gameLargeDescription" value=""><%= product.big_description %></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="editor" class="productEdit-form-label">Editora: </label>
-                    <input type="text" name="editor" class="productEdit-form-input" value="<%= product.editor %>" />
+                    <input type="text" name="editor" class="productEdit-form-input gameEditor" value="<%= product.editor %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="developer" class="productEdit-form-label">Desarrolladora: </label>
-                    <input type="text" name="developer" class="productEdit-form-input" value="<%= product.developer %>" />
+                    <input type="text" name="developer" class="productEdit-form-input gameDeveloper" value="<%= product.developer %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="launch_date" class="productEdit-form-label">Fecha de lanzamiento: </label>
-                    <input type="text" name="launch_date" class="productEdit-form-input" value="<%= product.launch_date %>" />
+                    <input type="text" name="launch_date" class="productEdit-form-input launchDate" value="<%= product.launch_date %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>
@@ -176,24 +176,24 @@
             <div id="form5" class="row productEdit-form-5">
                 <div class="col-6 pb-5">
                     <label for="category" class="productEdit-form-label">Categorias: </label>
-                    <input type="checkbox" value="Accion" name="category" class="productEdit-form-checkbox"/> <label class="productEdit-checkbox-label" for="category">Acción</label><br/>
-                    <input type="checkbox" value="Aventura" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Aventura</label><br/>
-                    <input type="checkbox" value="Carreras" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Carreras</label><br/>
-                    <input type="checkbox" value="Deportes" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Deportes</label><br/>
-                    <input type="checkbox" value="Arcade" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Arcade</label><br/>
-                    <input type="checkbox" value="Simulacion" name="category" class="productEdit-form-checkbox"/><label class="productEdit-checkbox-label" for="category">Simulacion</label>
+                    <input type="checkbox" value="Accion" name="category" class="productEdit-form-checkbox category1"/> <label class="productEdit-checkbox-label" for="category">Acción</label><br/>
+                    <input type="checkbox" value="Aventura" name="category" class="productEdit-form-checkbox category2"/><label class="productEdit-checkbox-label" for="category">Aventura</label><br/>
+                    <input type="checkbox" value="Carreras" name="category" class="productEdit-form-checkbox category3"/><label class="productEdit-checkbox-label" for="category">Carreras</label><br/>
+                    <input type="checkbox" value="Deportes" name="category" class="productEdit-form-checkbox category4"/><label class="productEdit-checkbox-label" for="category">Deportes</label><br/>
+                    <input type="checkbox" value="Arcade" name="category" class="productEdit-form-checkbox category5"/><label class="productEdit-checkbox-label" for="category">Arcade</label><br/>
+                    <input type="checkbox" value="Simulacion" name="category" class="productEdit-form-checkbox category6"/><label class="productEdit-checkbox-label" for="category">Simulacion</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productEdit-form-label">Etiquetas: </label>
-                    <input type="text" name="tags" class="productEdit-form-input" value="<%= product.tags %>"/>
+                    <input type="text" name="tags" class="productEdit-form-input tag" value="<%= product.tags %>"/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productEdit-form-input" value="<%= product.classification %>"/>
+                    <input type="text" name="classification" class="productEdit-form-input classification" value="<%= product.classification %>"/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productEdit-form-label">Puntaje: </label>
-                    <input type="text" name="rating" class="productEdit-form-input" value="<%= product.rating %>"/>
+                    <input type="text" name="rating" class="productEdit-form-input score" value="<%= product.rating %>"/>
                 </div>
                     <button type="button" class="productEdit-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
                     <button type="submit" class="productEdit-form-button--submit mb-5">Confirmar edición</button>

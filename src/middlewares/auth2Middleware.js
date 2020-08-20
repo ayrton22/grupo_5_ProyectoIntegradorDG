@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 // JSON PARSE
+const db = require('../database/models');
 
-let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
-users = JSON.parse(users);
+let users = db.Users.findAll().then(result => { return result })
 
 function authMiddleware2 (req, res, next){
     let url = req.params;

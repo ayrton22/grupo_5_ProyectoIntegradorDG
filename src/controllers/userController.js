@@ -73,7 +73,7 @@ module.exports = {
                             res.cookie('authRemember', result[i].username, {maxAge: 60000 * 10})
 
                         }
-
+                        
                         return res.redirect('/user/profile/' + result[i].id)
                         
                     } 

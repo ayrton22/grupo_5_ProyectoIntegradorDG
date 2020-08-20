@@ -10,12 +10,15 @@ module.exports = [
     check('password')
         .isLength({min: 6, max: 20}).withMessage('Puede ser que hayas escrito mal tu contraseña'),
     body('username')
-        .custom(function(value) {
-            for(let i = 0; i < users.length; i++) {
-                if(users[i].username == value) {
-                    return true;
+        .custom(async function(value) {
+            let usuario = await db.Users.findOne({ where:{ username:value } })
+            .then(function (elUsuario){
+                if(elUsuario){
+                    return true
+                } else {
+                    return false
                 }
-            }
-            return false
+            })
+            return usuario
         }).withMessage('Este nombre de usuario no está registrado!')
 ]

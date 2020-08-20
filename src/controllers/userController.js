@@ -104,55 +104,41 @@ module.exports = {
     },
 
     edit: function(req, res) {
-        for(let i = 0; i < users.length; i++) {
-            if(req.params.id == users[i].id) {
-                return res.render('userEdit', {
-                    user: users[i]
-                })
-            }
-        } res.redirect('/user/register');
+        db.Users.findByPk(req.params.id)
+        .then(function(result) {
+            res.render('userEdit', {
+                user: result
+            })
+        })
     },
     
     update: function(req, res) {
-        let userToEdit;
-        for(i = 0; i < users.length; i++){
-            if(users[i].id ==  req.params.id){
-                userToEdit = users[i]
-            }
-        }
-        
-        let editedUser = {
-            id: req.params.id,
+
+        db.Users.update({
             first_name: req.body.name,
             last_name: req.body.surname,
-            username: userToEdit.username,
             email: req.body.email,
-            gender: req.body.gender,
-            password: userToEdit.password,
             birth_date: req.body.date,
-            age: Date.now() - req.body.date,
-            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home}`,
-            avatar: req.files[0].filename
-        };
-        
-        for(let i = 0; i < users.length; i++) {
-            if(users[i].id == req.params.id) {
-                users[i] = editedUser;
-                fs.writeFileSync(path.join(__dirname, '../data/users.json'), JSON.stringify(users));
-                req.session.usernameUser = editedUser.username;
-                return res.redirect('/user/profile/' + editedUser.id)
+            gender: req.body.gender,
+            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `
+
+        }, {
+            where: {
+                id: req.params.id
             }
-        }
+        })
+        .then(function(result) {
+            res.redirect('/user/profile/' + req.params.id)
+        })
     },
 
     profile: function(req, res) {
-        for(let i = 0; i < users.length; i++) {
-            if(req.params.id == users[i].id) {
-                return res.render('userProfile', {
-                    user: users[i]
-                })
-            }
-        }
+        db.Users.findByPk(req.params.id)
+        .then(function(result) {
+            return res.render('userProfile', {
+                user: result
+            })
+        })
     },
 
     thankYouPage: function(req, res){

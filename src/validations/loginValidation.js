@@ -2,8 +2,6 @@ const {check, validationResult, body} = require('express-validator');
 
 const db = require('../database/models');
 
-let users = db.Users.findAll().then(result => { return result })
-
 module.exports = [
     check('username')
         .isLength({min: 5, max: 20}).withMessage('Puede ser que hayas escrito mal tu nombre de usuario'),

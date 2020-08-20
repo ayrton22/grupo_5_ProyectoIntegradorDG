@@ -25,7 +25,7 @@ module.exports = {
         }
       },
       message: {
-        type: Sequelize.DataTypes.STRING(500),
+        type: Sequelize.DataTypes.TEXT,
         allowNull: false
       },
       createdAt: Sequelize.DataTypes.DATE,

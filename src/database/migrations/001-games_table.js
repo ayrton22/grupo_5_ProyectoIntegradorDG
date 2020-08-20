@@ -13,15 +13,15 @@ module.exports = {
         allowNull: false
       },
       description: {
-        type: Sequelize.DataTypes.STRING(100),
+        type: Sequelize.DataTypes.TEXT,
         allowNull: false,
       },
       descriptionMedium: {
-        type: Sequelize.DataTypes.STRING(600),
+        type: Sequelize.DataTypes.TEXT,
         allowNull: false,
       },
       descriptionBig: {
-        type: Sequelize.DataTypes.STRING(400),
+        type: Sequelize.DataTypes.TEXT,
         allowNull: false,
       },
       price: {

@@ -12,15 +12,15 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
           },
           description: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.TEXT,
             allowNull: false
           },
           descriptionMedium: {
-            type: dataTypes.STRING(600),
+            type: dataTypes.TEXT,
             allowNull: false
           },
           descriptionBig: {
-            type: dataTypes.STRING(400),
+            type: dataTypes.TEXT,
             allowNull: false
           },
           price: {

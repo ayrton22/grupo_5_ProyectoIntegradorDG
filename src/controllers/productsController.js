@@ -155,7 +155,7 @@ module.exports = {
 		let generos = db.Genres.findAll();
 		let platforms = db.Platforms.findAll();
 		
-		/*let genero = db.Games_Genres.findByPk(req.params.id, {
+		let genero = db.Games_Genres.findByPk(req.params.id, {
 			games_genre: (req.params.id == db.Games_Genres.id_game) ? db.Games_Genres.id_genre : null
 		})
 
@@ -165,7 +165,7 @@ module.exports = {
 
 		let plataforma = db.Games_Platforms.findByPk(req.params.id, {
 			games_platform: (req.params.id == db.Games_Platforms.id_game) ? db.Games_Categories.id_platform : null
-		})*/
+		})
 
 		db.Games.findByPk(req.params.id,{
 			include: [{association: 'images'},
@@ -182,9 +182,9 @@ module.exports = {
 				gameGenre: generos,
 				gameCategory: categorias,
 				gamePlatform: platforms,
-				/*games_genres: genero,
+				games_genres: genero,
 				games_categories: categoria,
-				games_platforms: plataforma*/
+				games_platforms: plataforma
 			});
 		})
 	},

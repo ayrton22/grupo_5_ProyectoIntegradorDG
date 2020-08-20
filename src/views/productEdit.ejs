@@ -72,8 +72,8 @@
                         <div class="col-8">
                             <div class="form2-containerEdit--photo__left">
                                 <% for(let i = 0; i < productEdit.length; i++) { %>
-                                        <img class="productEdit-form-uploadImage" id="one" src="/img/uploads/productsImage/<%= (productEdit[i].images[i].location == 'default') ? productEdit[i].images[i].img_url : null %>" alt="" />
-                                        <input type="file" id="one" style="display: none;" name="image1"/>
+                                        <img class="productEdit-form-uploadImage" id="one" src="/img/uploads/productsImage/<%= (productEdit[i].images[i].location == 'carousel') ? productEdit[i].images[i].img_url : null %>" alt="" />
+                                        <input type="file" id="one" style="display: none;" name="carousel"/>
                                 <% } %>
                             </div>
                         </div>

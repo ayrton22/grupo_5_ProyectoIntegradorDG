@@ -19,7 +19,6 @@ module.exports = [
 
     body('username')
         .custom(async function(value) {
-
         let users = await db.Users.findAll().then(result => { return result })
 
         for(let i = 0; i < users.length; i++) {

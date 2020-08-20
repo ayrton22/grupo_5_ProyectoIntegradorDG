@@ -1,9 +1,6 @@
 const {check, validationResult, body} = require('express-validator');
 const db = require('../database/models');
 
-let users = db.Users.findAll().then(result => { return result })
-
-
 module.exports = [
     check('name')
         .isAlpha()
@@ -21,7 +18,10 @@ module.exports = [
             .withMessage('Tu nombre de usuario tiene que tener entre 5 y 20 caracteres'),
 
     body('username')
-        .custom(function(value) {
+        .custom(async function(value) {
+
+        let users = await db.Users.findAll().then(result => { return result })
+
         for(let i = 0; i < users.length; i++) {
             if(users[i].username == value) {
                 return false;
@@ -35,13 +35,15 @@ module.exports = [
             .withMessage('Tenés que insertar un email válido'),
 
     body('email')
-        .custom(function(value) {
-        for(let i = 0; i < users.length; i++) {
-            if(users[i].email == value) {
-                return false;
-            }
-        }
-            return true
+        .custom(async function(value) {
+            await db.Users.findAll()
+            .then(function (resultado){
+                if(resultado.email == value) {
+                    return false;
+                } else {
+                    return true
+                }
+            })
         }).withMessage('Este mail ya está registrado!'),
             
     check('password')

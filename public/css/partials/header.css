@@ -1,7 +1,8 @@
 .header{
     width: 100%;
     padding: 2.5rem 12rem;
-    background-image: var(--secodary-bg-color);
+    background-image: linear-gradient(to right, #171A21, #2D4681);
+    background-size: cover;
     margin-top: 0;
 }
 

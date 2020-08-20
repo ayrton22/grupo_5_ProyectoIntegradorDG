@@ -116,7 +116,7 @@ module.exports = {
 			db.Images.bulkCreate(arrayImages)
 			.then((resutado) => {
 				let genresGame = [];
-				for(let i = 0; i < req.body.genre.length; i++){
+ 				for(let i = 0; i < req.body.genre.length; i++){
 					genresGame.push({
 						id_game: gameId,
 						id_genre: Number(req.body.genre[i]),
@@ -131,17 +131,17 @@ module.exports = {
 						id_category: Number(req.body.category[i]),
 					})
 					}
-					 	db.Games_Categories.bulkCreate(categoryGame)
-						.then((resultado) => {
-							let platformGame = [];
-							for(let i = 0; i < req.body.platform.length; i++){
-								platformGame.push({
-									id_game: gameId,
-									id_platform: Number(req.body.platform[i])
-								})
-							}
-						    db.Games_Platforms.bulkCreate(platformGame)
-						})
+					db.Games_Categories.bulkCreate(categoryGame)
+					.then((resultado) => {
+						let platformGame = [];
+						for(let i = 0; i < req.body.platform.length; i++){
+							platformGame.push({
+								id_game: gameId,
+								id_platform: Number(req.body.platform[i])
+							})
+						}
+						db.Games_Platforms.bulkCreate(platformGame)
+					})
 				})
 			})
 		})
@@ -151,12 +151,42 @@ module.exports = {
     },
 	
     edit: function(req, res) {
-		let productDetail = db.Games.findByPk(req.params.id,{
+		let categorias = db.Categories.findAll();
+		let generos = db.Genres.findAll();
+		let platforms = db.Platforms.findAll();
+		
+		/*let genero = db.Games_Genres.findByPk(req.params.id, {
+			games_genre: (req.params.id == db.Games_Genres.id_game) ? db.Games_Genres.id_genre : null
+		})
+
+		let categoria = db.Games_Categories.findByPk(req.params.id, {
+			games_category: (req.params.id == db.Games_Categories.id_game) ? db.Games_Categories.id_category : null
+		})
+
+		let plataforma = db.Games_Platforms.findByPk(req.params.id, {
+			games_platform: (req.params.id == db.Games_Platforms.id_game) ? db.Games_Categories.id_platform : null
+		})*/
+
+		db.Games.findByPk(req.params.id,{
 			include: [{association: 'images'},
 			{association: 'platforms'},
-			{association: 'genres'}]
-		});
-
+			{association: 'genres'},
+			{association: 'categories'},
+			/*{association: 'games_genres'},
+			{association: 'games_categories'},
+			{association: 'games_platforms'}*/
+			]})
+		.then(function(productEdit){
+			res.render('productEdit', {
+				productEdit: productEdit,
+				gameGenre: generos,
+				gameCategory: categorias,
+				gamePlatform: platforms,
+				/*games_genres: genero,
+				games_categories: categoria,
+				games_platforms: plataforma*/
+			});
+		})
 	},
 	
 	update: function(req, res) {
@@ -181,10 +211,6 @@ module.exports = {
 			}
 		}
 	},
-
-	// search: (req, res) => {
-	// 	res.render('productSearch')
-	// },
 
 	productSearch: (req, res) => {
 		db.Games.findAll({

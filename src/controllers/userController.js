@@ -18,17 +18,17 @@ module.exports = {
     prueba: function(req, res) {
         db.Users.findAll()
         .then(function(result) {
-            res.send(result)
+            res.send(result);
         })
         .catch(function(error) {
-            res.send(error)
+            res.send(error);
         })
     },
     cart: function(req, res){
-        res.render('userCart')
+        res.render('userCart');
     },
     register: function(req, res) {
-        res.render('userRegister')
+        res.render('userRegister');
     },
     save: function(req, res) {
         let errors = validationResult(req);
@@ -58,26 +58,16 @@ module.exports = {
     confirm: function(req, res, next) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-
             db.Users.findAll()
             .then(function(result) {
-
                 for(let i = 0; i < result.length; i++) {
-
                     if(result[i].username == req.body.username && bcrypt.compareSync(req.body.password, result[i].password)) {
-
                         req.session.usernameUser = result[i].username
-
                         if(req.body.remember != undefined){
-
                             res.cookie('authRemember', result[i].username, {maxAge: 60000 * 10})
-
-                        }
-                        
+                        }       
                         return res.redirect('/user/profile/' + result[i].id)
-                        
                     } 
-
                 }
                 return res.render('userLogin', {
                     errors: {
@@ -86,9 +76,7 @@ module.exports = {
                         }
                     }
                 });
-
             });
-
         } else {
             res.render('userLogin', {
                 errors: errors.mapped(),

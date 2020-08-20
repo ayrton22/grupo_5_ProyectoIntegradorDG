@@ -142,7 +142,7 @@
 .carousel__overlay .big-play {
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
     font-size: 4rem;
@@ -270,7 +270,7 @@
 .description-slider{
     display: flex;
     width: 40%;
-    background-color: #ffff;
+    background-color: rgba(0, 0, 0, 0);
     padding: 1rem;
     position: absolute;
     left: 65.4%;
@@ -321,4 +321,8 @@
     .prime-banner {
         width: calc(100vw - 3rem);
     }
+}
+
+.prueba_opacity{
+    opacity: 0;
 }

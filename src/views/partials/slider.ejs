@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="carousel__overlay-text">
                                         <div class="carousel__overlay-name">
-                                            {{video.channelName}}
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -40,13 +40,14 @@
                                 </i>
                                 <div class="description-slider">
                                     <article>
-                                        <p class="description">
+                                        <p class="description prueba_opacity">
                                             {{video.channelDescription}}
+                                            
                                         </p>
                                         <div class="buttons-cont">
                                             <i class="fa fa-desktop plataform" aria-hidden="true"></i>
                                             <div class="a-btn ">
-                                                <a class="more " href="/product/">Ver más</a>
+                                                <a class="more " :href="'/product/detail/'+video.channelDetail">Ver más</a>
                                             </div>
                                         </div>
                                     </article>

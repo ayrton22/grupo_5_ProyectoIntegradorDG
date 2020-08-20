@@ -23,57 +23,57 @@ Vue.component('video-carousel', {
 				1 : "secondary secondary-left",
 				2 : "main",
 				3 : "secondary secondary-right",
-				4 : "tertiary tertiary-right"
+				4 : "tertiary tertiary-right",
+				5 : "no visible"
 			}
 		}
 	},
 	computed: {
 		
 	},
-	methods: {
-		changeVideo: function(direction, position) {
-			if(direction == "left") {
-				this.currentVideo--;
-				
-				if(this.currentVideo < 0) {
-					this.currentVideo = 4;
-				}
-				
-			} else if (direction == "right") {
-				this.currentVideo++;
-				if(this.currentVideo > 4) {
-					this.currentVideo = 0;
-				}
-			} else {
-				switch(position) {
-					case 'secondary secondary-right':
-						this.changeVideo('left');
-						break;
-					case 'secondary secondary-left':
-						this.changeVideo('right');
-						break;
-					case 'tertiary tertiary-right':
-						this.changeVideo('left');
-						this.changeVideo('left');
-						break;
-					case 'tertiary tertiary-left':
-						this.changeVideo('right');
-						this.changeVideo('right');
-						break;
-				}
+	methods:{
+		 changeVideo: function(direction, position, noVisible) {
+		if(direction == "left") {
+			this.currentVideo--;
+			if(this.currentVideo < 0) {
+				this.currentVideo = 4;
 			}
 			
-			this.videos.forEach((video, i)=>{
-				video.active = false;
-				let newIndex = i+this.currentVideo;
-				if(newIndex > 4) {
-					newIndex %= 5;
-				}
-				video.position = this.videoPositions[newIndex];
-			});
-			
+		} else if (direction == "right") {
+			this.currentVideo++;
+			if(this.currentVideo > 4) {
+				this.currentVideo = 0;
+			}
+		} else {
+			switch(position) {
+				case 'secondary secondary-right':
+					this.changeVideo('left');
+					break;
+				case 'secondary secondary-left':
+					this.changeVideo('right');
+					break;
+				case 'tertiary tertiary-right':
+					this.changeVideo('left');
+					this.changeVideo('left');
+					break;
+				case 'tertiary tertiary-left':
+					this.changeVideo('right');
+					this.changeVideo('right');
+					break;
+			}
 		}
-	},
+		
+		this.videos.forEach((video, i)=>{
+			video.active = false;
+			let newIndex = i+this.currentVideo;
+			if(newIndex > 4) {
+				newIndex %= 5;
+			}
+			video.position = this.videoPositions[newIndex];
+		});
+		
+	}
+},
 	mounted: function() {
 
 		//Generate randoms carrusel videos
@@ -96,11 +96,11 @@ Vue.component('video-carousel', {
 						channelDescription: videoIds[random].description,
 						channelDetail: videoIds[random].id
 					});
-				} else {
+				}else{
 					for(let j = 0; j < arraynumrandom.length; j++){
 						if(random != arraynumrandom[j]){
 							verificador++;
-						}
+					}
 					if(verificador == arraynumrandom.length){ 
 						arraynumrandom.push(random);
 						this.videos.push({
@@ -115,11 +115,11 @@ Vue.component('video-carousel', {
 							channelDescription: videoIds[random].description,
 							channelDetail: videoIds[random].id
 						});
-					}
-				
-					}
-				verificador = 0;
 				}
+				
+				}
+				verificador = 0;
+			}
 			
 		}
 	}

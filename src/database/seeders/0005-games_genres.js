@@ -23,10 +23,15 @@ for(let i = 1; i <=24 ;i++){
     while(genero4 == genero3 || genero4 == genero2 || genero4 == genero1 ){
       genero4 = (Math.floor(Math.random() * 13) + 1);
     };
+    let genero5 = (Math.floor(Math.random() * 13) + 1);
+    while(genero5 == genero4 || genero5 == genero3 || genero5 == genero2 || genero5 == genero1){
+      genero5 = (Math.floor(Math.random() * 13) + 1);
+    };
     generos.push(genero1);
     generos.push(genero2);
     generos.push(genero3);
     generos.push(genero4);
+    generos.push(genero5);
   
       for(let j = 0; j< generos.length; j++){
         dandoGeneros.push({

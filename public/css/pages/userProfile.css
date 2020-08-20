@@ -377,7 +377,3 @@ button.container-profile-button-logout:hover:before {
 .active-block {
     display: block;
 }
-
-.inactive {
-    display: none;
-}

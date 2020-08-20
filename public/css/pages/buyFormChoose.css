@@ -1,0 +1,34 @@
+.conteainer-buyFormChoose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65rem;
+}
+
+.box-buyFormChoose__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 30rem;
+    width: 45rem;
+    background-image: var(--secodary-bg-color);
+}
+
+.box-buyFormChoose__op1--modifer{
+    margin-bottom: 2rem;
+}
+
+.box-buyFormChoose__op{
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    text-decoration: none !important;
+    color: #ffff;
+    background-color: brown;
+    font-size: 1.7rem;
+}
+
+.box-buyFormChoose__op:hover{
+    color: #ffff !important;
+}

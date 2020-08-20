@@ -1,8 +1,6 @@
 const {check, validationResult, body} = require('express-validator');
-const fs = require('fs');
-const path = require('path');
-let usuarios = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
-usuarios = JSON.parse(usuarios);
+
+const db = require('../database/models');
 
 module.exports = [
     check('username')
@@ -10,12 +8,15 @@ module.exports = [
     check('password')
         .isLength({min: 6, max: 20}).withMessage('Puede ser que hayas escrito mal tu contraseña'),
     body('username')
-        .custom(function(value) {
-        for(let i = 0; i < usuarios.length; i++) {
-            if(usuarios[i].username == value) {
-                return true;
-            }
-        }
-            return false
+        .custom(async function(value) {
+            let usuario = await db.Users.findOne({ where:{ username:value } })
+            .then(function (elUsuario){
+                if(elUsuario){
+                    return true
+                } else {
+                    return false
+                }
+            })
+            return usuario
         }).withMessage('Este nombre de usuario no está registrado!')
 ]

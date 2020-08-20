@@ -27,15 +27,15 @@ window.addEventListener('load', function() {
     generalSelect.addEventListener('click', function() {
 
         gamesInfo.classList.remove('active-block');
-        gamesInfo.classList.add('inactive');
+        gamesInfo.classList.add('inactiveUserProfile');
 
         paysInfo.classList.remove('active-block');
-        paysInfo.classList.add('inactive');
+        paysInfo.classList.add('inactiveUserProfile');
 
         settingsInfo.classList.remove('active-block');
-        settingsInfo.classList.add('inactive');
+        settingsInfo.classList.add('inactiveUserProfile');
 
-        generalInfo.classList.remove('inactive');
+        generalInfo.classList.remove('inactiveUserProfile');
         generalInfo.classList.add('active-flex');
 
     });
@@ -43,15 +43,15 @@ window.addEventListener('load', function() {
     gamesSelect.addEventListener('click', function() {
 
         generalInfo.classList.remove('active-flex');
-        generalInfo.classList.add('inactive');
+        generalInfo.classList.add('inactiveUserProfile');
 
         paysInfo.classList.remove('active-block');
-        paysInfo.classList.add('inactive');
+        paysInfo.classList.add('inactiveUserProfile');
 
         settingsInfo.classList.remove('active-block');
-        settingsInfo.classList.add('inactive');
+        settingsInfo.classList.add('inactiveUserProfile');
 
-        gamesInfo.classList.remove('inactive');
+        gamesInfo.classList.remove('inactiveUserProfile');
         gamesInfo.classList.add('active-block');
 
     });
@@ -59,30 +59,30 @@ window.addEventListener('load', function() {
     paysSelect.addEventListener('click', function() {
 
         generalInfo.classList.remove('active-flex');
-        generalInfo.classList.add('inactive');
+        generalInfo.classList.add('inactiveUserProfile');
 
         gamesInfo.classList.remove('active-block');
-        gamesInfo.classList.add('inactive');
+        gamesInfo.classList.add('inactiveUserProfile');
 
         settingsInfo.classList.remove('active-block');
-        settingsInfo.classList.add('inactive');
+        settingsInfo.classList.add('inactiveUserProfile');
 
-        paysInfo.classList.remove('inactive');
+        paysInfo.classList.remove('inactiveUserProfile');
         paysInfo.classList.add('active-block');
     })
 
     settingsSelect.addEventListener('click', function() {
 
         gamesInfo.classList.remove('active-block');
-        gamesInfo.classList.add('inactive');
+        gamesInfo.classList.add('inactiveUserProfile');
 
         paysInfo.classList.remove('active-block');
-        paysInfo.classList.add('inactive');
+        paysInfo.classList.add('inactiveUserProfile');
 
         generalInfo.classList.remove('active-flex');
-        generalInfo.classList.add('inactive');
+        generalInfo.classList.add('inactiveUserProfile');
 
-        settingsInfo.classList.remove('inactive');
+        settingsInfo.classList.remove('inactiveUserProfile');
         settingsInfo.classList.add('active-block');
 
     });
@@ -94,12 +94,12 @@ window.addEventListener('load', function() {
     });
 
     avatarImage.addEventListener('mouseover', function() {
-        avatarSVG.classList.remove('inactive');
+        avatarSVG.classList.remove('inactiveUserProfile');
         avatarSVG.classList.add('svg-avatar-active')
     });
 
     avatarImage.addEventListener('mouseout', function() {
         avatarSVG.classList.remove('svg-avatar-active')
-        avatarSVG.classList.add('inactive');
+        avatarSVG.classList.add('inactiveUserProfile');
     })
 })

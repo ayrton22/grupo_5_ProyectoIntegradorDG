@@ -36,5 +36,9 @@ router.get('/thanks', controller.thankYouPage);
 router.get('/logout', authMiddleware  ,controller.logout);
 router.get('/community',controller.community);
 
+router.get('/buyFormChoose', controller.buyFormChoose);
+router.get('/buyFormDelivery', controller.buyFormDeliveryView);
+router.get('/buyFormLocal', controller.buyFormLocalView);
+
 // Module export
 module.exports = router;

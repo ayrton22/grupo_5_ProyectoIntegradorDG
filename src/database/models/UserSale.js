@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
       },
       id_game: {
         type: dataTypes.INTEGER(100).UNSIGNED,
-        allowNull: false,
+        allowNull: true,
         references: {
           model: 'Games',
           key: 'id'

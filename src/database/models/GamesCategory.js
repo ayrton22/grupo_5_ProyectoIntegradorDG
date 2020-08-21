@@ -6,15 +6,15 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER(100).UNSIGNED,
             primaryKey: true,
             autoIncrement: true
-          },
-          id_game: {
+        },
+        id_game: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
-          },
-          id_category: {
+        },
+        id_category: {
             type: dataTypes.INTEGER(10).UNSIGNED,
             allowNull: false
-          }
+        }
     };
 
     let config = {

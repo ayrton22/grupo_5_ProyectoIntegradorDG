@@ -28,9 +28,17 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="platforms" class="productEdit-form-label">Plataformas: </label>
-                    <% for(let i = 0; i < gamePlatform.length; i++) { %>
-                        <input <%= (productEdit.games_platforms.id_platform == gamePlatform[i].id) ? checked : null %> type="checkbox" name="platform" value="<%= gamePlatform[i].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i].name %></label><br>
-                    <% } %>
+                    <% platforms.forEach(function(platform) { %>
+                        <input
+                            type="checkbox"
+                            name="platform"
+                            value="<%= platform.id %>" class="productLoader-form-checkbox"
+                            <% productEdit.platforms.forEach(function(elemento) { %>
+                                <%= (elemento.id == platform.id) ? 'checked' : "" %>
+                            <% }) %>
+                        />
+                        <label class="productLoader-checkbox-label" for="platforms"><%= platform.name %></label><br>
+                    <% }) %>
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form2">Siguiente</a></button>
             </div>    
@@ -44,11 +52,19 @@
                     <div class="row form2-containerEdit">
                         <div class="col-4">
                             <div class="form2-containerEdit--portray">
-                                <img data-status="active" class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= (productEdit.images.location == 'default') ? productEdit.images.img_url : null %>" alt=""/>
+                                    <% productEdit.images.forEach(element => { %>
+                                        <% if(element.location == "default") { %>
+                                            <img data-status="active" class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                        <% } %>
+                                    <% }) %>
                                 <input type="file" id="portray" style="display: none;" name="image"/>
                                 <div id="portrayZoom" class="inactive_portray">
                                     <i class="fas fa-times"></i>
-                                    <img class="productEdit-form-uploadImage--portray" style="cursor: default;" src="/img/uploads/productsImage/<%= (productEdit.images.location == 'default') ? productEdit.images.img_url : null %>" alt=""/>
+                                    <% productEdit.images.forEach(element => { %>
+                                        <% if(element.location == "default") { %>
+                                            <img data-status="active" class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                        <% } %>
+                                    <% }) %>
                                     <form action="">
                                         <button type="button" class="productEdit-form-button--next">Borrar foto</button>
                                     </form>
@@ -63,7 +79,12 @@
                                 <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%= productEdit.video %>"/>
                             </div>
                             <div class="row form2-containerEdit--horizontal">
-                                <img class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= (productEdit.images.location == 'imagen_horizontal') ? productEdit.images.img_url : null %>" alt=""/>
+                                <% productEdit.images.forEach((element, position) => { %>
+                                    <% if(element.location == "imagen_horizontal") { %>
+                                        <img class="productEdit-form-uploadImage--horizontal" id="image_<%= position %>" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
+                                        <input type="file" id="input_<%= position %>" style="display: none;" name="carousel"/>
+                                    <% } %>
+                                <% }) %>
                                 <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal"/>
                             </div>
                         </div>
@@ -71,15 +92,21 @@
                     <div class="row form2-containerEdit">
                         <div class="col-8">
                             <div class="form2-containerEdit--photo__left">
-                                <% for(let i = 0; i < productEdit.length; i++) { %>
-                                        <img class="productEdit-form-uploadImage" id="one" src="/img/uploads/productsImage/<%= (productEdit[i].images[i].location == 'carousel') ? productEdit[i].images[i].img_url : null %>" alt="" />
-                                        <input type="file" id="one" style="display: none;" name="carousel"/>
-                                <% } %>
+                                <% productEdit.images.forEach((element, position) => { %>
+                                    <% if(element.location == "carousel") { %>
+                                        <img class="productEdit-form-uploadImage" id="image_<%= position %>" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
+                                        <input type="file" id="input_<%= position %>" style="display: none;" name="carousel"/>
+                                    <% } %>
+                                <% }) %>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form2-containerEdit--photo__right">
-                                <img class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= (productEdit.images.location == 'imagen_detalle') ? productEdit.images.img_url : null %>" alt="" />
+                                <% productEdit.images.forEach(element => { %>
+                                    <% if(element.location == "imagen_detalle") { %>
+                                        <img data-status="active" class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                    <% } %>
+                                <% }) %>
                                 <input type="file" id="detail" style="display: none;" name="imagen_detalle" />
                             </div>
                         </div>
@@ -148,19 +175,37 @@
             <div id="form5" class="row productEdit-form-5">
                 <div class="col-6 pb-5">
                     <label for="category" class="productEdit-form-label">Categorias: </label>
-                    <% for(let i = 0; i < gameCategory.length; i++) { %>
-                        <input <%= (productEdit.games_categories.id_category == gameCategory[i].id) ? checked : null %> type="checkbox" value="<%= gameCategory[i].id %>" name="category" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i].name %></label><br>
-                    <% } %>
+                    <% categories.forEach(function(category) { %>
+                        <input
+                            type="checkbox"
+                            name="category"
+                            value="<%= category.id %>" class="productLoader-form-checkbox"
+                            <% productEdit.categories.forEach(function(elemento) { %>
+                                <%= (elemento.id == category.id) ? 'checked' : "" %>
+                            <% }) %>
+                            
+                        />
+                        <label class="productLoader-checkbox-label" for="category"><%= category.name %></label><br>
+                    <% }) %>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productEdit-form-label">Etiquetas: </label>
-                    <% for(let i = 0; i < gameGenre.length; i++) { %>
-                        <input <%= (productEdit.games_genres.id_genre == gameGenre[i].id) ? checked : null %> type="checkbox" value="<%= gameGenre[i].id %>" name="genre" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i].name %></label><br>
-                    <% } %>
+                    <% genres.forEach(function(genre) { %>
+                        <input
+                            type="checkbox"
+                            name="genre"
+                            value="<%= genre.id %>" class="productLoader-form-checkbox"
+                            <% productEdit.genres.forEach(function(elemento) { %>
+                                <%= (elemento.id == genre.id) ? 'checked' : "" %>
+                            <% }) %>
+                            
+                        />
+                        <label class="productLoader-checkbox-label" for="genre"><%= genre.name %></label><br>
+                    <% }) %>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    
+                    <input type="text" name="classification" class="productEdit-form-input classification" value="<%= productEdit.classification %>">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productEdit-form-label">Puntaje: </label>

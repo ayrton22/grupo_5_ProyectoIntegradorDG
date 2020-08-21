@@ -154,39 +154,25 @@ module.exports = {
 		let categorias = db.Categories.findAll();
 		let generos = db.Genres.findAll();
 		let platforms = db.Platforms.findAll();
-		
-		let genero = db.Games_Genres.findByPk(req.params.id, {
-			games_genre: (req.params.id == db.Games_Genres.id_game) ? db.Games_Genres.id_genre : null
-		})
 
-		let categoria = db.Games_Categories.findByPk(req.params.id, {
-			games_category: (req.params.id == db.Games_Categories.id_game) ? db.Games_Categories.id_category : null
-		})
-
-		let plataforma = db.Games_Platforms.findByPk(req.params.id, {
-			games_platform: (req.params.id == db.Games_Platforms.id_game) ? db.Games_Categories.id_platform : null
-		})
-
-		db.Games.findByPk(req.params.id,{
-			include: [{association: 'images'},
-			{association: 'platforms'},
-			{association: 'genres'},
-			{association: 'categories'},
-			/*{association: 'games_genres'},
-			{association: 'games_categories'},
-			{association: 'games_platforms'}*/
+		Promise.all([categorias, generos, platforms])
+		.then(function ([categoria, genero, plataforma]){
+			db.Games.findByPk(req.params.id,{
+				include: [{association: 'images'},
+				{association: 'platforms'},
+				{association: 'genres'},
+				{association: 'categories'}
 			]})
-		.then(function(productEdit){
-			res.render('productEdit', {
-				productEdit: productEdit,
-				gameGenre: generos,
-				gameCategory: categorias,
-				gamePlatform: platforms,
-				games_genres: genero,
-				games_categories: categoria,
-				games_platforms: plataforma
-			});
+			.then(function(productEdit){
+				res.render('productEdit', {
+					productEdit: productEdit,
+					categories: categoria,
+					genres: genero,
+					platforms: plataforma
+				});
+			})			
 		})
+
 	},
 	
 	update: function(req, res) {

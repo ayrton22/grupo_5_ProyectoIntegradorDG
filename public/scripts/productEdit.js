@@ -3,7 +3,6 @@ window.addEventListener('load', function(){
     
     formulario.addEventListener('submit', function(event){
             event.preventDefault();
-            alert("Hay campos sin completar");
             let errors = [];
 
             let gameTitle = document.querySelector("input.title");

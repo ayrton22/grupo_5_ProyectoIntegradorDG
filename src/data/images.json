@@ -17,22 +17,22 @@
     {
         "image": "overwatch11.jpg",
         "gameId" : 1,
-        "ubicacion": "carousel0"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch12.jpg",
         "gameId" : 1,
-        "ubicacion": "carousel1"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch13.jpg",
         "gameId" : 1,
-        "ubicacion": "carousel2"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch14.png",
         "gameId" : 1,
-        "ubicacion": "carousel3"
+        "ubicacion": "carousel"
     },
     {
         "image": "overwatch15.jpg",

@@ -1,9 +1,8 @@
-window.addEventListener('load', function(){
+/*window.addEventListener('load', function(){
     let formulario = this.document.querySelector("productEdit-form");
     
     formulario.addEventListener('submit', function(event){
             event.preventDefault();
-            alert("Hay campos sin completar");
             let errors = [];
 
             let gameTitle = document.querySelector("input.title");
@@ -128,4 +127,4 @@ window.addEventListener('load', function(){
                 errors.push("El campo 'Puntaje' no debe estar vacío")
             }
     });
-})
+})*/

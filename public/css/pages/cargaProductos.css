@@ -3,6 +3,10 @@
     margin: 6rem auto;
 }
 
+div.errors {
+    color: red;
+}
+
 form.productLoader-form {
     padding: 7rem 0;
 }

@@ -176,15 +176,80 @@ module.exports = {
 	},
 	
 	update: function(req, res) {
-		let productToEdit;
-        for(i = 0; i < products.length; i++){
-            if(products[i].id ==  req.params.id){
-                productToEdit = products[i]
-            }
-		}
-
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
+
+		db.Games.update({
+            title: req.body.title,
+            description: req.body.description,
+            descriptionMedium: req.body.medium_description,
+            descriptionBig: req.body.big_description,
+			price: req.body.price,
+			video: videoCode,
+			editor: req.body.editor,
+			launch_date: req.body.launch_date,
+			developer: req.body.developer,
+			classification: req.body.classification,
+			rating: req.body.rating,
+			stock_admin: 2,
+			stock_user: 2
+		},
+		{
+			where: {
+				id: req.params.id
+			}
+		})
+		.then((resultado) => {
+			let gameId = resultado.id;
+
+			let arrayImages = [];
+
+			for(let i = 0; i < req.files.length; i++){
+				let image = {
+					location: req.files[i].fieldname,
+					img_url: req.files[i].filename,
+					id_game: gameId 
+				}
+				arrayImages.push(image)
+			}
+			db.Images.update(arrayImages)
+			.then((resutado) => {
+				let genresGame = [];
+ 				for(let i = 0; i < req.body.genre.length; i++){
+					genresGame.push({
+						id_game: gameId,
+						id_genre: Number(req.body.genre[i]),
+					})
+				}
+				db.Games_Genres.update(genresGame)
+				.then((resultado) => {
+					let categoryGame = [];
+					for(let i = 0; i < req.body.category.length; i++){
+					categoryGame.push({
+						id_game: gameId,
+						id_category: Number(req.body.category[i]),
+					})
+					}
+					db.Games_Categories.update(categoryGame)
+					.then((resultado) => {
+						let platformGame = [];
+						for(let i = 0; i < req.body.platform.length; i++){
+							platformGame.push({
+								id_game: gameId,
+								id_platform: Number(req.body.platform[i])
+							})
+						}
+						db.Games_Platforms.update(platformGame)
+					})
+				})
+			})
+		})
+		.then(function (resultado){
+			res.redirect('/')
+		})
+		.catch(function (error){
+			res.send(error)
+		})
 	},
 
     destroy: (req, res) => {

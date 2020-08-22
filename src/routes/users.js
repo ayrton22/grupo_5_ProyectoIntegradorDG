@@ -30,7 +30,7 @@ router.post('/login', loginValidation, controller.confirm);
 
 router.get('/profile/:id/', authMiddleware ,  authMiddleware2,  controller.profile); 
 
-router.get('/cart', controller.cart);
+router.get('/cart', authMiddleware, controller.cart);
 
 router.get('/thanks', controller.thankYouPage);
 

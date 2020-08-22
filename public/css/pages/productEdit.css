@@ -309,6 +309,62 @@ div.active_portray i {
     cursor: pointer;
 }
 
+div.inactive_horizontal {
+    display: none;
+    position: absolute;
+}
+
+div.active_horizontal {
+    display: block;
+    position: absolute;
+    left: -22rem;
+    top: 20rem;
+    z-index: 10;
+    transform: scale(1.9);
+}
+
+div.active_horizontal button {
+    position: absolute;
+    bottom: .5rem;
+    left: 24rem;
+    font-size: 14px;
+    padding: .3rem 1.5rem;
+}
+
+div.active_horizontal i {
+    position: absolute;
+    top: 1.5rem;
+    right: .4rem;
+    color: black;
+    cursor: pointer;
+}
+
+div.inactive_detail {
+    display: none;
+    position: absolute;
+}
+
+div.active_detail {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    transform: scale(1.9);
+}
+
+div.active_detail button {
+    position: absolute;
+    font-size: 14px;
+    padding: .3rem 1.5rem;
+}
+
+div.active_detail i {
+    position: absolute;
+    color: black;
+    cursor: pointer;
+}
+
 .productEdit-form-input--link-video{
     width: 88% !important;
 }

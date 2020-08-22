@@ -33,9 +33,16 @@ window.addEventListener('load', function() {
     let image10Input = qs('input#ten');
 
     let portrayZoom = qs('div#portrayZoom');
-    let portrayZoomImg = qs('div#portrayZoom img');
     let portrayCross = qs('div#portrayZoom i');
     let portrayBtn = qs('div#portrayZoom button');
+
+    let horizontalZoom = qs('div#horizontalZoom');
+    let horizontalCross = qs('div#horizontalZoom i');
+    let horizontalBtn = qs('div#horizontalZoom button');
+
+    let detailZoom = qs('div#detailZoom');
+    let detailCross = qs('div#detailZoom i');
+    let detailBtn = qs('div#detailZoom button');
 
 
     portrayPhoto.addEventListener('click', function() {
@@ -62,43 +69,52 @@ window.addEventListener('load', function() {
         };
     });
 
-    /*horizontalPhoto.addEventListener('click', function() {
-        horizontalInput.click()
+    horizontalPhoto.addEventListener('click', function() {
+
+        if (horizontalPhoto.dataset.status == "active") {
+
+            horizontalZoom.classList.remove('inactive_horizontal');
+            horizontalZoom.classList.add('active_horizontal');
+
+            horizontalCross.addEventListener('click', function() {
+                horizontalZoom.classList.remove('active_horizontal');
+                horizontalZoom.classList.add('inactive_horizontal');
+            });
+
+            horizontalBtn.addEventListener('click', function() {
+                horizontalPhoto.dataset.status = "inactive"
+                horizontalPhoto.src = "/img/Logos/horizontal-upload.jpg"
+                horizontalZoom.classList.remove('active_horizontal');
+                horizontalZoom.classList.add('inactive_horizontal');
+            });
+
+        } else {
+            horizontalInput.click();
+        };
     });
 
     detailPhoto.addEventListener('click', function() {
-        detailInput.click()
-    });
 
-    image1.addEventListener('click', function() {
-        image1Input.click()
+        if (detailPhoto.dataset.status == "active") {
+
+            detailZoom.classList.remove('inactive_detail');
+            detailZoom.classList.add('active_detail');
+
+            detailCross.addEventListener('click', function() {
+                detailZoom.classList.remove('active_detail');
+                detailZoom.classList.add('inactive_detail');
+            });
+
+            detailBtn.addEventListener('click', function() {
+                detailPhoto.dataset.status = "inactive"
+                detailPhoto.src = "/img/Logos/detail-upload.jpg"
+                detailZoom.classList.remove('active_detail');
+                detailZoom.classList.add('inactive_detail');
+            });
+
+        } else {
+            detailInput.click();
+        };
     });
-    image2.addEventListener('click', function() {
-        image2Input.click()
-    });
-    image3.addEventListener('click', function() {
-        image3Input.click()
-    });
-    image4.addEventListener('click', function() {
-        image4Input.click()
-    });
-    image5.addEventListener('click', function() {
-        image5Input.click()
-    });
-    image6.addEventListener('click', function() {
-        image6Input.click()
-    });
-    image7.addEventListener('click', function() {
-        image7Input.click()
-    });
-    image8.addEventListener('click', function() {
-        image8Input.click()
-    });
-    image9.addEventListener('click', function() {
-        image9Input.click()
-    });
-    image10.addEventListener('click', function() {
-        image10Input.click()
-    });*/
 
 })

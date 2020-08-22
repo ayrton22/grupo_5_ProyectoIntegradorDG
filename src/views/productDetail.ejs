@@ -121,19 +121,28 @@
                     <% let random = Math.floor(Math.random() * products.length) %>
                     <%  if ((arraynumrandom.length == 0) && (random != productDetail.id - 1)) { %>
                     <%  arraynumrandom.push(random) %>
-                    <a href="/product/detail/<%= products[random].id %>">
+                    <article class="juegos-container__redirection juegos-container__redirection--modifer">
                         <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <% for(let j = 0; j < products[random].images.length; j++) { %>
-                                    <% if(products[random].images[j].location == "default") {%>
-                                    <img src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="imagen-detalle">
-                                <% } %>
-                                <% } %>
-                            </div>
-                            <p><%= products[random].title %></p>
-                            <p><%= products[random].price %>$</p>
+                                <div class="juegos-container__animation">
+                                    <div class="card__side juegos-container__img-cont">
+                                        <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                            <%  if( products[random].images[j].location == "default" ){ %>
+                                            <img class="juegos-container__img" src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="">
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    <div class="card__side juegos-container__back-part">
+                                        <div class="juegos-container__back-part--part1">
+                                            <p class="juegos-container__back-part--part1-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem suscipit, reiciendis dolor, assumenda ea architecto iste enim aliquid, velit quam voluptatem quia natus facilis ullam?</p>
+                                            <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>
+                                        </div>
+                                        <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="juegos-container__buy-button" href="#">BUY</a>
+                                    </div>
+                                </div>
+                            <p class="juegos-container__product-name"><%= products[random].title %><br><%= products[random].price %>$</p>
                         </article>
-                    </a>
+                    </article>
                     <%  }else{ %>
                     <% for(let i = 0; i < arraynumrandom.length; i++) { %>
                     <%  if(random != arraynumrandom[i]){  %>
@@ -143,19 +152,28 @@
                     <%  } %>
                     <%  if((verificador == arraynumrandom.length) && (random != productDetail.id - 1) ){  %>
                     <%  arraynumrandom.push(random) %>
-                    <a href="/product/detail/<%= products[random].id %>">
+                    <article class="juegos-container__redirection juegos-container__redirection--modifer">
                         <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <% for(let j = 0; j < products[random].images.length; j++) { %>
-                                    <% if(products[random].images[j].location == "default") {%>
-                                    <img src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="imagen-detalle">
-                                <% } %>
-                                <% } %>
-                            </div>
-                            <p><%= products[random].title %></p>
-                            <p><%= products[random].price %>$</p>
+                                <div class="juegos-container__animation">
+                                    <div class="card__side juegos-container__img-cont">
+                                        <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                            <%  if( products[random].images[j].location == "default" ){ %>
+                                            <img class="juegos-container__img" src="../../img/uploads/productsImage/<%= products[random].images[j].img_url %>" alt="">
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    <div class="card__side juegos-container__back-part">
+                                        <div class="juegos-container__back-part--part1">
+                                            <p class="juegos-container__back-part--part1-p"><%= products[random].description %></p>
+                                            <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>
+                                        </div>
+                                        <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="juegos-container__buy-button" href="#">BUY</a>
+                                    </div>
+                                </div>
+                            <p class="juegos-container__product-name"><%= products[random].title %><br><%= products[random].price %>$</p>
                         </article>
-                    </a>
+                    </article>
                     <% } %>
                     <% } %>
                     <%  verificador = 0 %>

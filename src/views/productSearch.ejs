@@ -26,19 +26,28 @@
                 <h2>No encontramos coincidencias con tu busqueda</h2>
             <% } else { %>
                 <% for(let i = 0; i < buscado.length; i++) { %>
-                    <a href="/product/detail/<%= buscado[i].id %>">
+                    <article class="juegos-container__redirection">
                         <article class="juegos-container__product">
-                            <div class="juegos-container__img-cont">
-                                <% for(let j = 0; j < buscado[i].images.length; j++) { %>
-                                    <% if(buscado[i].images[j].location == "default") {%>
-                                    <img src="../../img/uploads/productsImage/<%= buscado[i].images[j].img_url%>" alt="imagen/miniatura">
-                                <% } %>
-                                <% } %>
-                            </div>
-                            <p><%= buscado[i].title %></p>
-                            <p><%= buscado[i].price %>$</p>
+                                <div class="juegos-container__animation">
+                                    <div class="card__side juegos-container__img-cont">
+                                        <% for(let k = 0; k < buscado[i].images.length; k++) { %>
+                                            <%  if( buscado[i].images[k].location == "default" ){ %>
+                                            <img class="juegos-container__img" src="../../img/uploads/productsImage/<%= buscado[i].images[k].img_url%>" alt="">
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    <div class="card__side juegos-container__back-part">
+                                        <div class="juegos-container__back-part--part1">
+                                            <p class="juegos-container__back-part--part1-p"><%= buscado[i].description %></p>
+                                            <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= buscado[i].id %>">ver mas</a>
+                                        </div>
+                                        <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <a class="juegos-container__buy-button" href="#">BUY</a>
+                                    </div>
+                                </div>
+                            <p class="juegos-container__product-name"><%= buscado[i].title %><br><%= buscado[i].price %>$</p>
                         </article>
-                    </a>
+                    </article>
                 <% } %>
             <% } %>
           </div>

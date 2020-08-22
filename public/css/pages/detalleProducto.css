@@ -95,9 +95,6 @@ div .compra {
 
 .otros-juegos {
     margin-bottom: 1rem;
-    margin-left: 4rem;
-    grid-column-gap: 12.5rem;
-    grid-row-gap: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
@@ -111,17 +108,17 @@ div .compra {
     margin: 0;
 }
 
-.otros-juegos a{
-    width: 20rem;
-    height: 35rem;
-}
-
 .otros-juegos a article div{
     margin-bottom: 1rem;
 }
 
 .otros-juegos a {
     text-decoration: none;
+}
+
+.juegos-container__redirection--modifer{
+    margin-left: 4rem;
+    margin-right: 0 !important;
 }
 /*
 text-decoration: none;

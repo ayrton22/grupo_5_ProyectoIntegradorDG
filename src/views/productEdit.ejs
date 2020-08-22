@@ -139,7 +139,9 @@
                                     
                                     <% for(let i = 3; i < 13; i++ ) { %>
                                         <% if(productEdit.images[i].location == "carousel") { %>
-                                            <div class="inactive-single-image-container">
+
+                                            <div class="inactive-single-image-container" name="single-image-carousel">
+
                                                 <i class="fas fa-times" name="carouselZoomCross"></i>
                                                 <img data-status="active" class="productEdit-form-uploadImage" name="carouselZoom" src="/img/uploads/productsImage/<%= productEdit.images[i].img_url %>" alt="" />
                                                 <button type="button" class="productEdit-form-button--next" name="carouselZoomBtn">Borrar foto</button>
@@ -147,6 +149,7 @@
                                         <% } else { %>
                                             <img class="productLoader-form-uploadImage" name="carouselZoom" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <% } %>
+
                                     <% } %>
                                     
                                 </div>

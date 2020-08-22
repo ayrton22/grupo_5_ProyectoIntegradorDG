@@ -10,16 +10,15 @@ window.addEventListener('load', function() {
 
     let imagesArray = document.getElementsByName('carousel');
 
-    let imagesArray = document.getElementsByName('carouselZoom');
-
     let inputsArray = document.getElementsByName('carouselInput');
 
     let crossArray = document.getElementsByName('carouselZoomCross');
 
     let btnArray = document.getElementsByName('carouselZoomBtn');
 
-    let generalZoomArray = document.getElementsByClassName('inactive-single-image-container');
+    let generalZoomArray = document.getElementsByName('single-image-carousel');
 
+    console.log(generalZoomArray);
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
     let detailInput = qs('input#detail');
@@ -35,8 +34,6 @@ window.addEventListener('load', function() {
     let detailZoom = qs('div#detailZoom');
     let detailCross = qs('div#detailZoom i');
     let detailBtn = qs('div#detailZoom button');
-
-    console.log(imagesArray);
 
     portrayPhoto.addEventListener('click', function() {
 
@@ -111,38 +108,38 @@ window.addEventListener('load', function() {
         };
     });
 
-    imagesArray.forEach(function(element) {
+    imagesArray.forEach(function(element, position) {
         element.addEventListener('click', function() {
 
             if (element.dataset.status == "active") {
                 
                 generalZoomArray.forEach(function(subElement) {
                     
-                    subElement[element].classList.remove('inactive-single-image-container');
-                    subElement[element].classList.add('active-single-image-container');
+                    subElement[position].classList.remove('inactive-single-image-container');
+                    subElement[position].classList.add('active-single-image-container');
                     
                 });
 
-                crossArray.forEach(function(subElement) {
+                crossArray.forEach(function() {
                     
                     generalZoomArray.forEach(function(subElement) {
                     
-                        subElement[element].classList.remove('inactive-single-image-container');
-                        subElement[element].classList.add('active-single-image-container');
+                        subElement[element].classList.remove('active-single-image-container');
+                        subElement[element].classList.add('inactive-single-image-container');
                         
                     });    
 
                 });
 
-                btnArray.forEach(function(subElement) {
+                btnArray.forEach(function() {
                     
                     element.dataset.status = "inactive";
                     element.src = "/img/Logos/Photo-upload.jpg"
 
                     generalZoomArray.forEach(function(subElement) {
                     
-                        subElement[element].classList.remove('inactive-single-image-container');
-                        subElement[element].classList.add('active-single-image-container');
+                        subElement[element].classList.remove('active-single-image-container');
+                        subElement[element].classList.add('inactive-single-image-container');
                         
                     });    
                     

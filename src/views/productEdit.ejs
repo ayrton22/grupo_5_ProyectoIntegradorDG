@@ -58,9 +58,7 @@
                                         <% } %>
                                     <% }) %>
                                 <input type="file" id="portray" style="display: none;" name="image" value="<%= productEdit.images[0].img_url %>" >
-
                                 <div id="portrayZoom" class="inactive_portray">
-
                                     <i class="fas fa-times"></i>
                                     <% productEdit.images.forEach(element => { %>
                                         <% if(element.location == "default") { %>
@@ -69,7 +67,6 @@
                                     <% }) %>
                                         <button type="button" class="productEdit-form-button--next">Borrar foto</button>
                                 </div>
-
                             </div>
 
                         </div>
@@ -86,13 +83,9 @@
                             <div class="row form2-containerEdit--horizontal">
 
                                 <% productEdit.images.forEach((element) => { %>
-
                                     <% if(element.location == "imagen_horizontal") { %>
-
                                         <img data-status="active" class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
-
                                     <% } %>
-
                                 <% }) %>
 
                                 <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal" value="<%= productEdit.images[1].img_url %>">

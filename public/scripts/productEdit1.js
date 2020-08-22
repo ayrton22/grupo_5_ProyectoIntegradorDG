@@ -132,8 +132,6 @@ window.addEventListener('load', function(){
                 ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
             }
             
-        } else {
-            alert('El producto se cargó correctamente')
         }
     });
 })*/

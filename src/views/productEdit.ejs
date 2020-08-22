@@ -57,58 +57,142 @@
                                             <img data-status="active" class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
                                         <% } %>
                                     <% }) %>
-                                <input type="file" id="portray" style="display: none;" name="image"/>
+                                <input type="file" id="portray" style="display: none;" name="image" value="<%= productEdit.images[0].img_url %>" >
+
                                 <div id="portrayZoom" class="inactive_portray">
+
                                     <i class="fas fa-times"></i>
                                     <% productEdit.images.forEach(element => { %>
                                         <% if(element.location == "default") { %>
-                                            <img data-status="active" class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                            <img class="productEdit-form-uploadImage--portray" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
                                         <% } %>
                                     <% }) %>
                                         <button type="button" class="productEdit-form-button--next">Borrar foto</button>
                                 </div>
+
                             </div>
+
                         </div>
+
                         <div class="col-8">
+
                             <div class="row form2-containerEdit--video">
                                 <iframe class="productEdit-form-uploadVideo" src="https://www.youtube.com/embed/<%= productEdit.video %>" frameborder="0"></iframe>
                             </div>
                             <div class="row form2-containerEdit--link-video">
                                 <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%= productEdit.video %>"/>
                             </div>
+
                             <div class="row form2-containerEdit--horizontal">
-                                <% productEdit.images.forEach((element, position) => { %>
+
+                                <% productEdit.images.forEach((element) => { %>
+
                                     <% if(element.location == "imagen_horizontal") { %>
-                                        <img class="productEdit-form-uploadImage--horizontal" id="image_<%= position %>" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
-                                        <input type="file" id="input_<%= position %>" style="display: none;" name="carousel"/>
+
+                                        <img data-status="active" class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
+
                                     <% } %>
+
                                 <% }) %>
-                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal"/>
+
+                                <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal" value="<%= productEdit.images[1].img_url %>">
+
+                                <div id="horizontalZoom" class="inactive_horizontal">
+                                    
+                                    <i class="fas fa-times"></i>
+                                    <% productEdit.images.forEach(element => { %>
+                                        <% if(element.location == "imagen_horizontal") { %>
+                                            <img data-status="active" class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                        <% } %>
+                                    <% }) %>
+                                    
+                                        <button type="button" class="productEdit-form-button--next">Borrar foto</button>
+                                    
+                                </div>
+
                             </div>
+
                         </div>
+                        
                     </div>
+
+
+
+
                     <div class="row form2-containerEdit">
                         <div class="col-8">
                             <div class="form2-containerEdit--photo__left">
-                                <% productEdit.images.forEach((element, position) => { %>
-                                    <% if(element.location == "carousel") { %>
-                                        <img class="productEdit-form-uploadImage" id="image_<%= position %>" src="/img/uploads/productsImage/<%= element.img_url %>" alt="" />
-                                        <input type="file" id="input_<%= position %>" style="display: none;" name="carousel"/>
+
+                                <% for(let i = 3; i < 13; i++ ) { %>
+                                    <% if(productEdit.images[i].location == "carousel") { %>
+                                        <img data-status="active" class="productEdit-form-uploadImage" name="carousel" src="/img/uploads/productsImage/<%= productEdit.images[i].img_url %>" alt="" />
+                                    <% } else { %>
+                                        <img data-status="inactive" class="productLoader-form-uploadImage" name="carousel" src="/img/Logos/Photo-upload.jpg" alt="">
                                     <% } %>
-                                <% }) %>
+                                <% } %>
+                                            
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[3].img_url %>">
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[4].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[5].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[6].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[7].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[8].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[9].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[10].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[11].img_url %>"/>
+                                <input type="file" name="carouselInput" style="display: none;" value="<%= productEdit.images[12].img_url %>"/>
+
+                                <div id="carouselZoom">
+                                    
+                                    <% for(let i = 3; i < 13; i++ ) { %>
+                                        <% if(productEdit.images[i].location == "carousel") { %>
+                                            <div class="inactive-single-image-container">
+                                                <i class="fas fa-times" name="carouselZoomCross"></i>
+                                                <img data-status="active" class="productEdit-form-uploadImage" name="carouselZoom" src="/img/uploads/productsImage/<%= productEdit.images[i].img_url %>" alt="" />
+                                                <button type="button" class="productEdit-form-button--next" name="carouselZoomBtn">Borrar foto</button>
+                                            </div>
+                                        <% } else { %>
+                                            <img class="productLoader-form-uploadImage" name="carouselZoom" src="/img/Logos/Photo-upload.jpg" alt="">
+                                        <% } %>
+                                    <% } %>
+                                    
+                                </div>
+
                             </div>
+
                         </div>
+
                         <div class="col-4">
+
                             <div class="form2-containerEdit--photo__right">
+
                                 <% productEdit.images.forEach(element => { %>
                                     <% if(element.location == "imagen_detalle") { %>
                                         <img data-status="active" class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
                                     <% } %>
                                 <% }) %>
-                                <input type="file" id="detail" style="display: none;" name="imagen_detalle" />
+
+                                <input type="file" id="detail" style="display: none;" name="imagen_detalle" value="<%= productEdit.images[2].img_url %>" >
+                                
+                                <div id="detailZoom" class="inactive_detail">
+                                    
+                                    <i class="fas fa-times"></i>
+                                    <% productEdit.images.forEach(element => { %>
+                                        <% if(element.location == "imagen_detalle") { %>
+                                            <img data-status="active" class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" />
+                                        <% } %>
+                                    <% }) %>
+                                    
+                                    <button type="button" class="productEdit-form-button--next">Borrar foto</button>
+                                    
+                                </div>
+
                             </div>
+
                         </div>
+
                         <button type="button" class="productEdit-form-button--next mb-5 mt-5"><a href="#form3">Siguiente</a></button>
+
                     </div>
                 </div>
             </div>

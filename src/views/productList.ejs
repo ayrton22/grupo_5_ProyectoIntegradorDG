@@ -22,19 +22,28 @@
         <h2 class="juegos-container__title">All Games</h2>
           <div class="juegos-container__products-container ">
             <% for(let i = 0; i < products.length; i++) { %>
-                <a href="/product/detail/<%= products[i].id %>">
+                <article class="juegos-container__redirection">
                     <article class="juegos-container__product">
-                        <div class="juegos-container__img-cont">
-                            <% for(let j = 0; j < products[i].images.length; j++) { %>
-                                <% if(products[i].images[j].location == "default") {%>
-                                <img src="../../img/uploads/productsImage/<%= products[i].images[j].img_url%>" alt="imagen/miniatura">
-                            <% } %>
-                            <% } %>
-                        </div>
-                        <p><%= products[i].title %></p>
-                        <p><%= products[i].price %>$</p>
+                            <div class="juegos-container__animation">
+                                <div class="card__side juegos-container__img-cont">
+                                    <% for(let j = 0; j < products[i].images.length; j++) { %>
+                                        <%  if( products[i].images[j].location == "default" ){ %>
+                                        <img class="juegos-container__img" src="../../img/uploads/productsImage/<%= products[i].images[j].img_url %>" alt="">
+                                        <% } %>
+                                    <% } %>
+                                </div>
+                                <div class="card__side juegos-container__back-part">
+                                    <div class="juegos-container__back-part--part1">
+                                        <p class="juegos-container__back-part--part1-p"><%= products[i].description %></p>
+                                        <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[i].id  %>">ver mas</a>
+                                    </div>
+                                    <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                    <a class="juegos-container__buy-button" href="#">BUY</a>
+                                </div>
+                            </div>
+                        <p class="juegos-container__product-name"><%= products[i].title %><br><%= products[i].price %>$</p>
                     </article>
-                </a>
+                </article>
                 <% } %>
           </div>
       </section>

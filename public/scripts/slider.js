@@ -86,7 +86,7 @@ Vue.component('video-carousel', {
 					arraynumrandom.push(random);
 					this.videos.push({
 						thumbnail: videoIds[random].imagen,
-						embed: "https://www.youtube.com/embed/" + videoIds[random].video,
+						embed: "https://www.youtube.com/embed/" + videoIds[random].video + "?autoplay=1",
 						position: this.videoPositions[arraynumrandom.length-1],
 						videoId: arraynumrandom.length-1,
 						active: false,
@@ -105,7 +105,7 @@ Vue.component('video-carousel', {
 						arraynumrandom.push(random);
 						this.videos.push({
 							thumbnail: videoIds[random].imagen,
-							embed: "https://www.youtube.com/embed/" + videoIds[random].video,
+							embed: "https://www.youtube.com/embed/" + videoIds[random].video + "?autoplay=1",
 							position: this.videoPositions[arraynumrandom.length-1],
 							videoId: arraynumrandom.length-1,
 							active: false,

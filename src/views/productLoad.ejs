@@ -6,6 +6,12 @@
     <%- include('partials/header') %>
     
     <div class="container pb-3 container-productLoader">
+
+        <div class="errors">
+            <ul>
+
+            </ul>
+        </div>
         <form class="productLoader-form" action="" enctype="multipart/form-data" method="POST">
 
             <div id="form1" class="row productLoader-form-1">
@@ -55,7 +61,7 @@
                                 <!--<input type="text" id="video" class="productLoader-form-uploadImage--video-input" name="video">-->
                             </div>
                             <div class="row form2-containerEdit--link-video form2-containerEdit--link-video2">
-                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
+                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video productEdit-form-input--link-video2 videoLink" name="video" placeholder="Link del video">
                             </div>
                             <div class="row form2-containerLoader--horizontal">
                                 <img class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
@@ -150,7 +156,7 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
-                    <input type="date" name="launch_date" class="productLoader-form-input launchDate">
+                    <input type="text" name="launch_date" class="productLoader-form-input launchDate">
                 </div>
                 <button type="button" class="productLoader-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>

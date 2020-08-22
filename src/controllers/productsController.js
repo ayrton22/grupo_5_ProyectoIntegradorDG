@@ -273,8 +273,7 @@ module.exports = {
 															})
 														}
 														db.Games_Categories.bulkCreate(categoryGame)
-															//.then(function (resultado) {
-															//if(req.body.imagen_horizontal)
+
 															.then(function (resultado) {
 
 																res.redirect('/product/detail/' + req.params.id);

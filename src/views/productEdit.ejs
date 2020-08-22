@@ -155,7 +155,7 @@
 
                                         <% if(productEdit.images[i].location == "carousel") { %>
 
-                                            <div class="inactive-single-image-container">
+                                            <div class="inactive-single-image-container" name="single-image-carousel">
 
                                                 <i class="fas fa-times" name="carouselZoomCross"></i>
                                                 <img data-status="active" class="productEdit-form-uploadImage" name="carouselZoom" src="/img/uploads/productsImage/<%= productEdit.images[i].img_url %>" alt="" />
@@ -168,6 +168,7 @@
                                             <img class="productLoader-form-uploadImage" name="carouselZoom" src="/img/Logos/Photo-upload.jpg" alt="">
     
                                         <% } %>
+
                                     <% } %>
                                     
                                 </div>

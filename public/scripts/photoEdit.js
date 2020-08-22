@@ -10,16 +10,16 @@ window.addEventListener('load', function() {
 
     let imagesArray = document.getElementsByName('carousel');
 
-    let imagesArray = document.getElementsByName('carouselZoom');
-
     let inputsArray = document.getElementsByName('carouselInput');
 
     let crossArray = document.getElementsByName('carouselZoomCross');
 
     let btnArray = document.getElementsByName('carouselZoomBtn');
 
-    let generalZoomArray = document.getElementsByClassName('inactive-single-image-container');
+    let generalZoomArray = document.getElementsByName('single-image-carousel');
 
+    console.log(generalZoomArray);
+    console.log(crossArray);
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
     let detailInput = qs('input#detail');
@@ -35,8 +35,6 @@ window.addEventListener('load', function() {
     let detailZoom = qs('div#detailZoom');
     let detailCross = qs('div#detailZoom i');
     let detailBtn = qs('div#detailZoom button');
-
-    console.log(imagesArray);
 
     portrayPhoto.addEventListener('click', function() {
 
@@ -118,12 +116,16 @@ window.addEventListener('load', function() {
                 
                 generalZoomArray.forEach(function(subElement) {
                     
-                    subElement[element].classList.remove('inactive-single-image-container');
-                    subElement[element].classList.add('active-single-image-container');
+                    if(element == subElement) {
+
+                        subElement.classList.remove('inactive-single-image-container');
+                        subElement.classList.add('active-single-image-container');
+                        
+                    }
                     
                 });
 
-                crossArray.forEach(function(subElement) {
+                crossArray.forEach(function() {
                     
                     generalZoomArray.forEach(function(subElement) {
                     
@@ -134,7 +136,7 @@ window.addEventListener('load', function() {
 
                 });
 
-                btnArray.forEach(function(subElement) {
+                btnArray.forEach(function() {
                     
                     element.dataset.status = "inactive";
                     element.src = "/img/Logos/Photo-upload.jpg"

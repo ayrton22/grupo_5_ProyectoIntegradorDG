@@ -131,27 +131,37 @@
 
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Recientes</h2>
+                
                 <div class="juegos-container__products-container">
                     <% for(let i = 0; i < allCategories.length; i++) { %>
                         <%  if(allCategories[i].name == "News" ){ %>
                             <% for(let j = 0; j < allCategories[i].games.length; j++) { %>
-                                <a href="/product/detail/<%= allCategories[i].games[j].id %>">
+                                <article class="juegos-container__redirection">
                                     <article class="juegos-container__product">
-                                        <div class="juegos-container__img-cont">
-                                            <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
-                                                <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
-                                                    <img src="../../img/uploads/productsImage/<%=allCategories[i].games[j].images[k].img_url%>" alt="imagen/miniatura">
-                                                <% } %>
-                                            <% } %>
-                                        </div>
-                                        <p><%= allCategories[i].games[j].title%></p>
-                                        <p><%= allCategories[i].games[j].price %>$</p>
+                                            <div class="juegos-container__animation">
+                                                <div class="card__side juegos-container__img-cont">
+                                                    <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
+                                                        <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
+                                                        <img class="juegos-container__img" src="../../img/uploads/productsImage/<%=allCategories[i].games[j].images[k].img_url%>" alt="">
+                                                        <% } %>
+                                                    <% } %>
+                                                </div>
+                                                <div class="card__side juegos-container__back-part">
+                                                    <div class="juegos-container__back-part--part1">
+                                                        <p class="juegos-container__back-part--part1-p"><%= allCategories[i].games[j].description %></p>
+                                                        <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= allCategories[i].games[j].id %>">ver mas</a>
+                                                    </div>
+                                                    <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                                    <a class="juegos-container__buy-button" href="#">BUY</a>
+                                                </div>
+                                            </div>
+                                        <p class="juegos-container__product-name"><%= allCategories[i].games[j].title %><br><%= allCategories[i].games[j].price %>$</p>
                                     </article>
-                                </a>
+                                </article>
                             <% } %>
                         <% } %>
                     <% } %>
-                </div>
+                </div>        
             </section>
         </div>
     </div>

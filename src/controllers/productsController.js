@@ -230,12 +230,12 @@ module.exports = {
 			})
 			.then(function (resultado) {
 				db.Games_Genres.destroy({
-						where: {
-							id_game: req.params.id
-						}
-					})
-					.then((resutado) => {
-						let genresGame = [];
+					where: {
+						id_game: req.params.id
+					}
+				})
+				.then((resutado) => {
+				    let genresGame = [];
 						for (let i = 0; i < req.body.genre.length; i++) {
 							genresGame.push({
 								id_game: req.params.id,
@@ -243,53 +243,50 @@ module.exports = {
 							})
 						}
 						db.Games_Genres.bulkCreate(genresGame)
-							.then((resultado) => {
-								db.Games_Platforms.destroy({
-										where: {
-											id_game: req.params.id
-										}
-									})
-									.then((resutado) => {
-										let platformGame = [];
-										for (let i = 0; i < req.body.platform.length; i++) {
-											platformGame.push({
-												id_game: req.params.id,
-												id_platform: Number(req.body.platform[i])
-											})
-										}
-										db.Games_Platforms.bulkCreate(platformGame)
-											.then((resultado) => {
-												db.Games_Categories.destroy({
-														where: {
-															id_game: req.params.id
-														}
-													})
-													.then((resultado) => {
-														let categoryGame = [];
-														for (let i = 0; i < req.body.category.length; i++) {
-															categoryGame.push({
-																id_game: req.params.id,
-																id_category: Number(req.body.category[i])
-															})
-														}
-														db.Games_Categories.bulkCreate(categoryGame)
-															//.then(function (resultado) {
-															//if(req.body.imagen_horizontal)
-															.then(function (resultado) {
-
-																res.redirect('/product/detail/' + req.params.id);
-															})
-															.catch(function (error) {
-																res.send(error)
-																//})
-
-															})
-
-													})
-											})
-									})
+						.then((resultado) => {
+							db.Games_Platforms.destroy({
+									where: {
+										id_game: req.params.id
+									}
 							})
-					})
+							.then((resutado) => {
+								let platformGame = [];
+									for (let i = 0; i < req.body.platform.length; i++) {
+										platformGame.push({
+											id_game: req.params.id,
+												id_platform: Number(req.body.platform[i])
+										})
+									}
+									db.Games_Platforms.bulkCreate(platformGame)
+									.then((resultado) => {
+										db.Games_Categories.destroy({
+												where: {
+													id_game: req.params.id
+												}
+										})
+										.then((resultado) => {
+											let categoryGame = [];
+												for (let i = 0; i < req.body.category.length; i++) {
+													categoryGame.push({
+														id_game: req.params.id,
+														id_category: Number(req.body.category[i])
+													})
+												}
+												db.Games_Categories.bulkCreate(categoryGame)
+													//.then(function (resultado) {
+													//if(req.body.imagen_horizontal)
+												.then(function (resultado) {
+													res.redirect('/product/detail/' + req.params.id);
+												})
+												.catch(function (error) {
+													res.send(error)
+													//})
+												})
+										})
+								})
+							})
+						})
+				})
 			})
 	},
 

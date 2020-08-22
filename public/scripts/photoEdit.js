@@ -19,7 +19,6 @@ window.addEventListener('load', function() {
     let generalZoomArray = document.getElementsByName('single-image-carousel');
 
     console.log(generalZoomArray);
-    console.log(crossArray);
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
     let detailInput = qs('input#detail');
@@ -109,19 +108,15 @@ window.addEventListener('load', function() {
         };
     });
 
-    imagesArray.forEach(function(element) {
+    imagesArray.forEach(function(element, position) {
         element.addEventListener('click', function() {
 
             if (element.dataset.status == "active") {
                 
                 generalZoomArray.forEach(function(subElement) {
                     
-                    if(element == subElement) {
-
-                        subElement.classList.remove('inactive-single-image-container');
-                        subElement.classList.add('active-single-image-container');
-                        
-                    }
+                    subElement[position].classList.remove('inactive-single-image-container');
+                    subElement[position].classList.add('active-single-image-container');
                     
                 });
 
@@ -129,8 +124,8 @@ window.addEventListener('load', function() {
                     
                     generalZoomArray.forEach(function(subElement) {
                     
-                        subElement[element].classList.remove('inactive-single-image-container');
-                        subElement[element].classList.add('active-single-image-container');
+                        subElement[element].classList.remove('active-single-image-container');
+                        subElement[element].classList.add('inactive-single-image-container');
                         
                     });    
 
@@ -143,8 +138,8 @@ window.addEventListener('load', function() {
 
                     generalZoomArray.forEach(function(subElement) {
                     
-                        subElement[element].classList.remove('inactive-single-image-container');
-                        subElement[element].classList.add('active-single-image-container');
+                        subElement[element].classList.remove('active-single-image-container');
+                        subElement[element].classList.add('inactive-single-image-container');
                         
                     });    
                     

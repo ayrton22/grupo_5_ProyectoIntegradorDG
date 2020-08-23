@@ -9,13 +9,6 @@ window.addEventListener('load', function() {
     let detailPhoto = qs('img.productEdit-form-uploadImage--detail');
     let imagesArray = document.querySelectorAll('.carouselcontenedor');
 
-  //  let inputsArray = document.getElementsByName('carouselInput');
-
-   // let crossArray = document.getElementsByName('carouselZoomCross');
-
-   // let btnArray = document.getElementsByName('carouselZoomBtn');
-
-   // let generalZoomArray = document.getElementsByName('single-image-carousel');
 
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
@@ -117,21 +110,30 @@ window.addEventListener('load', function() {
     function imgClick(e) {    
            if(e.target.dataset.status == "active") {
                 carouselImg.src = e.target.src;
-                carouselBtn.removeAttribute('disabled');
+                carouselBtn.name = e.target.nextElementSibling.nextElementSibling.name
+               console.log(carouselBtn);
                 carouselZoom.classList.remove('inactive_carousel');
                 carouselZoom.classList.add('active_carousel');
-    
+
+
+
+
                 carouselCross.addEventListener('click', function() {
-                    
+                    carouselBtn.disabled = "true"
                     carouselZoom.classList.remove('active_carousel');
                     carouselZoom.classList.add('inactive_carousel');
                     });
-                
+
+
                 carouselBtn.addEventListener('click', function() {
-                    e.target.dataset.status = "inactive"
-                    e.target.src = "/img/Logos/detail-upload.jpg"
-                    carouselZoom.classList.remove('active_carousel');
-                    carouselZoom.classList.add('inactive_carousel');
+                    if(e.target.nextElementSibling.nextElementSibling.name == carouselBtn.name){
+                        e.target.dataset.status = "inactive"
+                        e.target.src = "/img/Logos/detail-upload.jpg"
+                        carouselZoom.classList.remove('active_carousel');
+                        carouselZoom.classList.add('inactive_carousel');
+
+                    }
+                    
                 });
     
             } else {

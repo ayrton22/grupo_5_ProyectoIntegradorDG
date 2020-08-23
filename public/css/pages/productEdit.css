@@ -419,16 +419,16 @@ div.inactive_carousel {
 div.active_carousel {
     display: block;
     position: absolute;
-    left: 20rem;
-    top: 20rem;
+    left: 10rem;
+    top: 21rem;
     z-index: 10;
     transform: scale(1.9);
 }
 
 div.active_carousel button {
     position: absolute;
-    bottom: .5rem;
-    left: 24rem;
+    bottom: 1rem;
+    left: 0.5rem;
     font-size: 14px;
     padding: .3rem 1.5rem;
 }

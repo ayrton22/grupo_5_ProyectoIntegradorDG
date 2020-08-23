@@ -20,7 +20,7 @@ router.get('/load', controller.load);
 router.post('/load', uploadImageProductMiddleware.any() ,controller.store);
 
 router.get('/edit/:id', controller.edit);
-router.put('/edit/:id', controller.update);
+router.put('/edit/:id', uploadImageProductMiddleware.any() ,controller.update);
 
 router.get('/search', controller.productSearch);
 

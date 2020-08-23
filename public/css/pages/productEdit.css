@@ -398,10 +398,9 @@ div.active-single-image-container i {
 
 
 
-
-
-
-
+.boton-imagen{
+    display: none;
+}
 
 .productEdit-form-input--link-video{
     width: 88% !important;
@@ -412,3 +411,35 @@ div.active-single-image-container i {
     margin-bottom: 2rem;
 }
 
+div.inactive_carousel {
+    display: none;
+    position: absolute;
+}
+
+div.active_carousel {
+    display: block;
+    position: absolute;
+    left: 20rem;
+    top: 20rem;
+    z-index: 10;
+    transform: scale(1.9);
+}
+
+div.active_carousel button {
+    position: absolute;
+    bottom: .5rem;
+    left: 24rem;
+    font-size: 14px;
+    padding: .3rem 1.5rem;
+}
+
+div.active_carousel i {
+    position: absolute;
+    top: 1.5rem;
+    right: .4rem;
+    color: black;
+    cursor: pointer;
+}
+div .carouselcontenedor{
+    display: inline;
+}

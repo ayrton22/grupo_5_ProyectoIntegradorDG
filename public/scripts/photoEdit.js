@@ -7,18 +7,16 @@ window.addEventListener('load', function() {
     let portrayPhoto = qs('img.productEdit-form-uploadImage--portray');
     let horizontalPhoto = qs('img.productEdit-form-uploadImage--horizontal');
     let detailPhoto = qs('img.productEdit-form-uploadImage--detail');
+    let imagesArray = document.querySelectorAll('.carouselcontenedor');
 
-    let imagesArray = document.getElementsByName('carousel');
+  //  let inputsArray = document.getElementsByName('carouselInput');
 
-    let inputsArray = document.getElementsByName('carouselInput');
+   // let crossArray = document.getElementsByName('carouselZoomCross');
 
-    let crossArray = document.getElementsByName('carouselZoomCross');
+   // let btnArray = document.getElementsByName('carouselZoomBtn');
 
-    let btnArray = document.getElementsByName('carouselZoomBtn');
+   // let generalZoomArray = document.getElementsByName('single-image-carousel');
 
-    let generalZoomArray = document.getElementsByName('single-image-carousel');
-
-    console.log(generalZoomArray);
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
     let detailInput = qs('input#detail');
@@ -34,6 +32,13 @@ window.addEventListener('load', function() {
     let detailZoom = qs('div#detailZoom');
     let detailCross = qs('div#detailZoom i');
     let detailBtn = qs('div#detailZoom button');
+
+    let carouselZoom = qs('div#carouselZoom');
+    let carouselCross = qs('div#carouselZoom i');
+    let carouselBtn = qs('div#carouselZoom button');
+    let carouselImg = qs('div#carouselZoom img');
+
+
 
     portrayPhoto.addEventListener('click', function() {
 
@@ -108,52 +113,34 @@ window.addEventListener('load', function() {
         };
     });
 
-    imagesArray.forEach(function(element, position) {
-        element.addEventListener('click', function() {
-
-            if (element.dataset.status == "active") {
+    imagesArray.forEach(div => div.addEventListener('click', imgClick));
+    function imgClick(e) {    
+           if(e.target.dataset.status == "active") {
+                carouselImg.src = e.target.src;
+                carouselBtn.removeAttribute('disabled');
+                carouselZoom.classList.remove('inactive_carousel');
+                carouselZoom.classList.add('active_carousel');
+    
+                carouselCross.addEventListener('click', function() {
+                    
+                    carouselZoom.classList.remove('active_carousel');
+                    carouselZoom.classList.add('inactive_carousel');
+                    });
                 
-                generalZoomArray.forEach(function(subElement) {
-                    
-                    subElement[position].classList.remove('inactive-single-image-container');
-                    subElement[position].classList.add('active-single-image-container');
-                    
+                carouselBtn.addEventListener('click', function() {
+                    e.target.dataset.status = "inactive"
+                    e.target.src = "/img/Logos/detail-upload.jpg"
+                    carouselZoom.classList.remove('active_carousel');
+                    carouselZoom.classList.add('inactive_carousel');
                 });
-
-                crossArray.forEach(function() {
-                    
-                    generalZoomArray.forEach(function(subElement) {
-                    
-                        subElement[element].classList.remove('active-single-image-container');
-                        subElement[element].classList.add('inactive-single-image-container');
-                        
-                    });    
-
-                });
-
-                btnArray.forEach(function() {
-                    
-                    element.dataset.status = "inactive";
-                    element.src = "/img/Logos/Photo-upload.jpg"
-
-                    generalZoomArray.forEach(function(subElement) {
-                    
-                        subElement[element].classList.remove('active-single-image-container');
-                        subElement[element].classList.add('inactive-single-image-container');
-                        
-                    });    
-                    
-                })
-
+    
             } else {
-
-                inputsArray.forEach(function(subElement) {
-                    subElement[element].click()
-                })
-
+                e.target.nextElementSibling.click(); 
             };
-
-        })
-    })
+            
+   }
+        
+    
+   
 
 })

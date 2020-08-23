@@ -1,4 +1,4 @@
-/*window.addEventListener('load', function(){
+window.addEventListener('load', function(){
     let formulario = this.document.querySelector("productEdit-form");
     
     formulario.addEventListener('submit', function(event){
@@ -127,4 +127,4 @@
                 errors.push("El campo 'Puntaje' no debe estar vacío")
             }
     });
-})*/
+})

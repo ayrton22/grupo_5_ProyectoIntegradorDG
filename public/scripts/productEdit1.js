@@ -5,131 +5,131 @@ function qs(elemento) {
 window.addEventListener('load', function(){
     let formulario = qs("productEdit-form");
 
-    let title = qs("input.title");
+    let title = qs("input.titleEdit");
 
-    let state = qs("select.state");
+    let state = qs("select.stateEdit");
 
-    let platform = qs("input.platformCheckbox");
+    let platform = qs("input.platformCheckboxEdit");
 
-    let videoLink = qs("input.videoLink");
+    let videoLink = qs("input.videoLinkEdit");
 
-    let paymentMethod = document.querySelectorAll("input.paymentMethod").checked
+    let paymentMethod = document.querySelectorAll("input.paymentMethodEdit").checked
 
-    let deliveryOption = document.querySelectorAll("input.deliveryOption");
+    let deliveryOption = document.querySelectorAll("input.deliveryOptionEdit");
 
-    let price = qs("input.price");
+    let price = qs("input.priceEdit");
 
-    let description = qs("textarea.description");
+    let description = qs("textarea.descriptionEdit");
 
-    let mediumDescription = qs("textarea.mediumDescription");
+    let mediumDescription = qs("textarea.mediumDescriptionEdit");
 
-    let largeDescription = qs("textarea.largeDescription");
+    let largeDescription = qs("textarea.largeDescriptionEdit");
 
-    let editor = qs("input.editor");
+    let editor = qs("input.editorEdit");
 
-    let developer = qs("input.developer");
+    let developer = qs("input.developerEdit");
 
-    let launchDate = qs("input.launchDate");
+    let launchDate = qs("input.launchDateEdit");
 
-    let category = qs("input.category");
+    let category = qs("input.categoryEdit");
 
-    let tag = qs("input.tag");
+    let tag = qs("input.tagEdit");
 
-    let classification = qs("input.classification");
+    let classification = qs("input.classificationEdit");
 
-    let score = qs("input.score");
+    let score = qs("input.scoreEdit");
 
-    let errors = [];
+    let errorsEdit = [];
 
 
     if(isEmpty(title)){
-        errors.push("El campo 'Título del juego' no debe estar vacío");
+        errorsEdit.push("El campo 'Título del juego' no debe estar vacío");
     }else if(title.length < 5){
-        errors.push("El campo 'Titulo del juego' debe tener al menos 5 caracteres");
+        errorsEdit.push("El campo 'Titulo del juego' debe tener al menos 5 caracteres");
     }
 
     if(state.value < 1){
-        errors.push("Debes seleccionar un estado del juego")
+        errorsEdit.push("Debes seleccionar un estado del juego")
     }
 
     if(platform.value < 1){
-        errors.push("Debes marcar al menos una plataforma")
+        errorsEdit.push("Debes marcar al menos una plataforma")
     }
 
     if(isEmpty(videoLink)){
-        errors.push("Debes escribir un link de un video de Youtube")
+        errorsEdit.push("Debes escribir un link de un video de Youtube")
     }
 
     if(paymentMethod.value == null){
-        errors.push("Debes marcar al menos un método de pago")
+        errorsEdit.push("Debes marcar al menos un método de pago")
     }
 
     if(deliveryOption == null){
-        errors.push("Debes marcar al menos una opción de entrega del producto");
+        errorsEdit.push("Debes marcar al menos una opción de entrega del producto");
     }
 
     if(isEmpty(price)){
-        errors.push("El campo 'precio' no debe estar vacío")
+        errorsEdit.push("El campo 'precio' no debe estar vacío")
     }else if(price != Number){
-        errors.push("El campo 'precio' debe contener números solamente")
+        errorsEdit.push("El campo 'precio' debe contener números solamente")
     }
 
     if(description.length < 20){
-        errors.push("El campo 'Descripción del juego' no debe tener menos de 20 caracteres")
+        errorsEdit.push("El campo 'Descripción del juego' no debe tener menos de 20 caracteres")
     }else if(description == ""){
-        errors.push("El campo 'Descripción del juego' no debe estar vacío")
+        errorsEdit.push("El campo 'Descripción del juego' no debe estar vacío")
     }
 
     if(mediumDescription == ""){
-        errors.push("El campo 'Descripción mediana' no debe estar vacío")
+        errorsEdit.push("El campo 'Descripción mediana' no debe estar vacío")
     }
 
     if(largeDescription == ""){
-        errors.push("El campo 'Descripción grande' no debe estar vacío")
+        errorsEdit.push("El campo 'Descripción grande' no debe estar vacío")
     }
 
     if(isEmpty(editor)){
-        errors.push("El campo 'Editora' no debe estar vacío")
+        errorsEdit.push("El campo 'Editora' no debe estar vacío")
     }
 
     if(isEmpty(developer)){
-        errors.push("El campo 'Desarrolladora' no debe estar vacío")
+        errorsEdit.push("El campo 'Desarrolladora' no debe estar vacío")
     }
 
     if(isEmpty(launchDate)){
-        errors.push("El campo 'Fecha de lanzamiento' no debe estar vacío")
+        errorsEdit.push("El campo 'Fecha de lanzamiento' no debe estar vacío")
     }
 
     if(isEmpty(category)){
-        errors.push("Debes marcar al menos una categoría");
+        errorsEdit.push("Debes marcar al menos una categoría");
     }
 
     if(isEmpty(tag)){
-        errors.push("Debes marcar al menos una etiqueta");
+        errorsEdit.push("Debes marcar al menos una etiqueta");
     }
 
     if(isEmpty(classification)){
-        errors.push("El campo 'Clasificación' no debe estar vacío")
+        errorsEdit.push("El campo 'Clasificación' no debe estar vacío")
     }
 
     if(isEmpty(score)){
-        errors.push("El campo 'Puntaje' no debe estar vacío")
+        errorsEdit.push("El campo 'Puntaje' no debe estar vacío")
     }else if(score > 10){
-        errors.push("El campo 'Puntaje' no debe no debe ser mayor a 10")
+        errorsEdit.push("El campo 'Puntaje' no debe no debe ser mayor a 10")
     }
 
 
     
     formulario.addEventListener('submit', function(event){
-        if(errors > 0){
+        if(errorsEdit > 0){
         
             event.preventDefault();
 
-            let ulErrors = document.querySelector("div.errors ul");
+            let ulErrorsEdit = document.querySelector("div.errorsEdit ul");
 
-            for(let i=0; i < errors.length; i++){
+            for(let i=0; i < errorsEdit.length; i++){
 
-                ulErrors.innerHTML += "<li>" + errors[i] + "</li>"
+                ulErrorsEdit.innerHTML += "<li>" + errorsEdit[i] + "</li>"
             }
             
         }

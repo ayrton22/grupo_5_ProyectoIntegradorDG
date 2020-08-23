@@ -46,5 +46,18 @@ module.exports = [
         .isLength({max: 50})
             .withMessage('este campo no puede tener mas de 50 caracteres'),
     
-    check('')
+    check('launch_date')
+        .matches(regx),
+    
+    check('classification')
+        .not().isEmpty()
+            .withMessage('el campo no puede estar vacio')
+        .isLength({max: 3})
+            .withMessage('superaste el minimo de caracteres'),
+    
+    check('rating')
+        .not().isEmpty()
+            .withMessage('el campo no puede estar vacio')
+        .isLength({max: 4})
+            .withMessage('superaste el minimo de caracteres')
 ]

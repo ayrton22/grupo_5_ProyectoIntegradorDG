@@ -124,7 +124,6 @@ window.addEventListener('load', function() {
                     carouselZoom.classList.add('inactive_carousel');
                     });
 
-
                 carouselBtn.addEventListener('click', function() {
                     if(e.target.nextElementSibling.nextElementSibling.name == carouselBtn.name){
                         e.target.dataset.status = "inactive"

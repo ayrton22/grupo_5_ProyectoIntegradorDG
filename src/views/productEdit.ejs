@@ -123,7 +123,7 @@
                                 <% for(let i = 0; i < 10; i++ ) { %>
                                     <% if( i < carrusel.length) { %>
                                         <div class="carouselcontenedor">
-                                        <img data-status="active" class="productEdit-form-uploadImage--carousel activecarousel" name="carousel" src="/img/uploads/productsImage/<%=carrusel[i].img_url %>" alt="">
+                                        <img data-status="active" class="productEdit-form-uploadImage--carousel activecarousel" name="carousel<%=i%>" src="/img/uploads/productsImage/<%=carrusel[i].img_url %>" alt="">
                                         <input type="file" name="carouselInput" class="boton-imagen" value="<%=carrusel[i].img_url%>">
                                         <button type="button" class="productEdit-form-button--next boton-imagen"  name="carouselBootom<%=i%> ">Borrar foto</button>
                                         </div>

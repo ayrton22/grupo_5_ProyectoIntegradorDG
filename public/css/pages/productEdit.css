@@ -291,13 +291,14 @@ div.active_portray {
     bottom: -30rem;
     margin: 80%;
     z-index: 10;
+    height: 500px;
     transform: scale(1.5);
 }
 
 div.active_portray button {
     position: absolute;
     bottom: .5rem;
-    left: 13rem;
+    left: 9rem;
     font-size: 18px;
     padding: .5rem 2rem;
 }
@@ -318,24 +319,25 @@ div.inactive_horizontal {
 div.active_horizontal {
     display: block;
     position: absolute;
-    left: -22rem;
-    top: 20rem;
+    left: -11rem;
+    top: 25rem;
+    width: 500px;
     z-index: 10;
-    transform: scale(1.9);
+    transform: scale(1.4);
 }
 
 div.active_horizontal button {
     position: absolute;
     bottom: .5rem;
-    left: 34.1rem;
-    font-size: 14px;
-    padding: .3rem 1.5rem;
+    left: 18rem;
+    font-size: 20px;
+    padding: .5rem 1.5rem;
 }
 
 div.active_horizontal i {
     position: absolute;
     top: 1.5rem;
-    right: 8rem;
+    right: 1.5rem;
     color: black;
     cursor: pointer;
 }
@@ -348,9 +350,9 @@ div.inactive_detail {
 div.active_detail {
     display: block;
     position: absolute;
-    width: 25rem;
-    left: -20rem;
-    top: -20rem;
+    width: 375px;
+    left: -36rem;
+    top: -35rem;
     z-index: 10;
     transform: scale(1.9);
 }
@@ -359,15 +361,15 @@ div.active_detail button {
     position: absolute;
     font-size: 14px;
     padding: .3rem 1.5rem;
-    left: 8rem;
-    top: 10rem;
+    left: 13rem;
+    bottom: .5rem;
 }
 
 div.active_detail i {
     position: absolute;
     color: black;
     cursor: pointer;
-    left: 22rem;
+    right: 1rem;
     top: 1rem;
 }
 div.active_detail img{
@@ -399,8 +401,8 @@ div.active_carousel {
     width: 40rem;
     display: block;
     position: absolute;
-    left: 30rem;
-    top: -32rem;
+    left: 27rem;
+    top: -36rem;
     z-index: 10;
     transform: scale(1.9);
 }

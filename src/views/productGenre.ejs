@@ -28,19 +28,28 @@
 
       <div class="juegos-container__products-container">
           <% for(let i = 0; i < genres.games.length; i++) { %>
-          <a href="/product/detail/<%= genres.games[i].id %>">
-              <article class="juegos-container__product">
-                  <div class="juegos-container__img-cont">
-                      <% for(let j = 0; j < genres.games[i].images.length; j++) { %>
-                          <% if(genres.games[i].images[j].location == "default") {%>
-                          <img src="../../img/uploads/productsImage/<%= genres.games[i].images[j].img_url %>" alt="imagen/miniatura">
-                      <% } %>
-                      <% } %>
-                  </div>
-                  <p><%= genres.games[i].title %></p>
-                  <p><%= genres.games[i].price %>$</p>
-              </article>
-          </a>
+          <article class="juegos-container__redirection">
+            <article class="juegos-container__product">
+                    <div class="juegos-container__animation">
+                        <div class="card__side juegos-container__img-cont">
+                            <% for(let j = 0; j < genres.games[i].images.length; j++) { %>
+                                <%  if(genres.games[i].images[j].location == "default"){ %>
+                                <img class="juegos-container__img" src="../../img/uploads/productsImage/<%= genres.games[i].images[j].img_url %>" alt="">
+                                <% } %>
+                            <% } %>
+                        </div>
+                        <div class="card__side juegos-container__back-part">
+                            <div class="juegos-container__back-part--part1">
+                                <p class="juegos-container__back-part--part1-p"><%= genres.games[i].description %></p>
+                                <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= genres.games[i].id %>">ver mas</a>
+                            </div>
+                            <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                            <a class="juegos-container__buy-button" href="#">BUY</a>
+                        </div>
+                    </div>
+                <p class="juegos-container__product-name"><%= genres.games[i].title %><br><%= genres.games[i].price %>$</p>
+            </article>
+        </article>
           <% } %>
     </div>
 

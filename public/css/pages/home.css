@@ -156,10 +156,13 @@ div.product-section-1 {
     transform: scale(1.03);
 }
 
+/*JUEGOS CONTAINER*/
+
 .juegos-container{
     display: flex;
     padding: 0 25rem;
-    justify-content: space-around;
+    justify-content: center;
+    padding-bottom: 8rem;
 }
 
 .juegos-container .juegos-container__aside{
@@ -167,27 +170,117 @@ div.product-section-1 {
     margin-top: 5.8rem;
 }
 
-
-.juegos-container .juegos-container__products-container{
+div.juegos-container__products-container{
     display: grid;
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.juegos-container .juegos-container__products-container a{
+article.juegos-container__redirection{
     text-decoration: none;
     margin-right: 4rem;
     margin-bottom: 2rem;
-    width: 20rem;
-    height: 40rem;
+    width: 25rem;
 }
 
-.juegos-container .juegos-container__products-container a article .juegos-container__img-cont{
-    width: 20rem;
-    height: 30rem;
+article.juegos-container__product{
+    width: 100%;
+}
+
+div.juegos-container__animation{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    transition: all .8s;
+    position: relative;
     margin-bottom: 1rem;
+    height: 35rem;
+    width: 25rem;
 }
 
-.juegos-container .juegos-container__products-container a article .juegos-container__img-cont img{
+div.juegos-container__back-part{
+    transform: rotateY(180deg);
+    transition: all .8s;
+    backface-visibility: hidden;
+    background-color: #233256;
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.juegos-container__img-cont{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+div.juegos-container__animation:hover div.juegos-container__img-cont{
+    transform: rotateY(180deg);
+}
+
+div.juegos-container__animation:hover div.juegos-container__back-part{
+    transform: rotateY(0deg);
+    box-shadow: 0 1px 6px 5px #000;
+}
+
+a.juegos-container__shopping-cart{
+    position: absolute;
+    top: 280px;
+    left: 15px;
+    text-decoration: none;
+    color: #ffff;
+    background-color: #00A6FF;
+    padding: .8rem;
+    border-radius: 4px;
+    font-size: 1.6rem;
+}
+
+a.juegos-container__buy-button{
+    position: absolute;
+    top: 280px;
+    left: 60px;
+    text-decoration: none;
+    color: #ffff;
+    background-color: #00A6FF;
+    padding: .8rem;
+    border-radius: 4px;
+    font-size: 1.7rem;
+}
+
+div.juegos-container__img-cont{
+    transition: all .8s;
+}
+
+p.juegos-container__back-part--part1-p{
+    text-decoration: none;
+    color: grey;
+    font-size: 1.5rem;
+}
+
+a.juegos-container__back-part--part1-a{
+    float: right;
+    text-decoration: none;
+    color: white;
+    border-bottom: 2px solid #00A6FF;
+    font-size: 1.8rem;
+    transition: all 200ms;
+    position: absolute;
+    right: 20px;
+    top: 180px;
+}
+
+a.juegos-container__back-part--part1-a:hover{
+    background-color: black;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px 4px black;
+}
+
+img.juegos-container__img{
     height: 100%;
     width: 100%;
 }
@@ -204,39 +297,23 @@ div.product-section-1 {
 
 .juegos-container__title{
     border-bottom: 2px solid #2D4681;
-    width: 25rem;
+    width: 8rem;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
 }
 
-.juegos-container .juegos-container__all-products .juegos-container__products-container a:hover img{
+.juegos-container .juegos-container__all-products .juegos-container__products-container .juegos-container__redirection:hover img{
     box-shadow: 0 1px 6px 5px #000;
-    transition: all .2s;
 }
 
-.juegos-container .juegos-container__all-products .juegos-container__products-container a .juegos-container__product p{
+p.juegos-container__product-name{
     text-decoration: none;
     color: #ffff;
     font-size: 1.5rem;
-    margin: 0;
-}
-
-.juegos-container__product{
-    position: relative;
+    width: 80%;
 }
 
 .absolute{
     top: 0;
     position: absolute;
-}
-
-.juegos-container2 {
-    padding-top: 10rem;
-    padding-bottom: 10rem;
-    padding-left: 50rem;
-    position: relative;
-}
-
-.juegos-container__aside2{
-    left: 35rem;
 }

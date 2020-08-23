@@ -365,6 +365,43 @@ div.active_detail i {
     cursor: pointer;
 }
 
+div.inactive-single-image-container {
+    display: none;
+    position: absolute;
+}
+
+div.active-single-image-container {
+    display: block;
+    position: absolute;
+    left: -22rem;
+    top: 20rem;
+    z-index: 10;
+    transform: scale(1.9);
+}
+
+div.active-single-image-container button {
+    position: absolute;
+    bottom: .5rem;
+    left: 24rem;
+    font-size: 14px;
+    padding: .3rem 1.5rem;
+}
+
+div.active-single-image-container i {
+    position: absolute;
+    top: 1.5rem;
+    right: .4rem;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+
+.boton-imagen{
+    display: none;
+}
+
 .productEdit-form-input--link-video{
     width: 88% !important;
 }
@@ -372,4 +409,37 @@ div.active_detail i {
 .form2-containerEdit--link-video{
     margin-left: 11rem;
     margin-bottom: 2rem;
+}
+
+div.inactive_carousel {
+    display: none;
+    position: absolute;
+}
+
+div.active_carousel {
+    display: block;
+    position: absolute;
+    left: 10rem;
+    top: 21rem;
+    z-index: 10;
+    transform: scale(1.9);
+}
+
+div.active_carousel button {
+    position: absolute;
+    bottom: 1rem;
+    left: 0.5rem;
+    font-size: 14px;
+    padding: .3rem 1.5rem;
+}
+
+div.active_carousel i {
+    position: absolute;
+    top: 1.5rem;
+    right: .4rem;
+    color: black;
+    cursor: pointer;
+}
+div .carouselcontenedor{
+    display: inline;
 }

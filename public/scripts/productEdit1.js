@@ -1,4 +1,4 @@
-function qs(elemento) {
+/*function qs(elemento) {
     return document.querySelector(elemento);
 }
 
@@ -134,4 +134,4 @@ window.addEventListener('load', function(){
             
         }
     });
-})
+})*/

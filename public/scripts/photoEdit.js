@@ -7,30 +7,19 @@ window.addEventListener('load', function() {
     let portrayPhoto = qs('img.productEdit-form-uploadImage--portray');
     let horizontalPhoto = qs('img.productEdit-form-uploadImage--horizontal');
     let detailPhoto = qs('img.productEdit-form-uploadImage--detail');
-    let image1 = qs('img#one');
-    let image2 = qs('img#two');
-    let image3 = qs('img#three');
-    let image4 = qs('img#four');
-    let image5 = qs('img#five');
-    let image6 = qs('img#six');
-    let image7 = qs('img#seven');
-    let image8 = qs('img#eight');
-    let image9 = qs('img#nine');
-    let image10 = qs('img#ten');
+    let imagesArray = document.querySelectorAll('.carouselcontenedor');
+
+  //  let inputsArray = document.getElementsByName('carouselInput');
+
+   // let crossArray = document.getElementsByName('carouselZoomCross');
+
+   // let btnArray = document.getElementsByName('carouselZoomBtn');
+
+   // let generalZoomArray = document.getElementsByName('single-image-carousel');
 
     let portrayInput = qs('input#portray');
     let horizontalInput = qs('input#horizontal');
     let detailInput = qs('input#detail');
-    let image1Input = qs('input#one');
-    let image2Input = qs('input#two');
-    let image3Input = qs('input#three');
-    let image4Input = qs('input#four');
-    let image5Input = qs('input#five');
-    let image6Input = qs('input#six');
-    let image7Input = qs('input#seven');
-    let image8Input = qs('input#eight');
-    let image9Input = qs('input#nine');
-    let image10Input = qs('input#ten');
 
     let portrayZoom = qs('div#portrayZoom');
     let portrayCross = qs('div#portrayZoom i');
@@ -43,6 +32,12 @@ window.addEventListener('load', function() {
     let detailZoom = qs('div#detailZoom');
     let detailCross = qs('div#detailZoom i');
     let detailBtn = qs('div#detailZoom button');
+
+    let carouselZoom = qs('div#carouselZoom');
+    let carouselCross = qs('div#carouselZoom i');
+    let carouselBtn = qs('div#carouselZoom button');
+    let carouselImg = qs('div#carouselZoom img');
+
 
 
     portrayPhoto.addEventListener('click', function() {
@@ -101,6 +96,7 @@ window.addEventListener('load', function() {
             detailZoom.classList.add('active_detail');
 
             detailCross.addEventListener('click', function() {
+
                 detailZoom.classList.remove('active_detail');
                 detailZoom.classList.add('inactive_detail');
             });
@@ -116,5 +112,35 @@ window.addEventListener('load', function() {
             detailInput.click();
         };
     });
+
+    imagesArray.forEach(div => div.addEventListener('click', imgClick));
+    function imgClick(e) {    
+           if(e.target.dataset.status == "active") {
+                carouselImg.src = e.target.src;
+                carouselBtn.removeAttribute('disabled');
+                carouselZoom.classList.remove('inactive_carousel');
+                carouselZoom.classList.add('active_carousel');
+    
+                carouselCross.addEventListener('click', function() {
+                    
+                    carouselZoom.classList.remove('active_carousel');
+                    carouselZoom.classList.add('inactive_carousel');
+                    });
+                
+                carouselBtn.addEventListener('click', function() {
+                    e.target.dataset.status = "inactive"
+                    e.target.src = "/img/Logos/detail-upload.jpg"
+                    carouselZoom.classList.remove('active_carousel');
+                    carouselZoom.classList.add('inactive_carousel');
+                });
+    
+            } else {
+                e.target.nextElementSibling.click(); 
+            };
+            
+   }
+        
+    
+   
 
 })

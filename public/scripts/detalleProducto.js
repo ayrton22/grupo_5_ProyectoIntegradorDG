@@ -1,4 +1,5 @@
 //Carousel script
+window.addEventListener('load', function() {
 const current = document.querySelector('#current');
 const fila = document.querySelector('.contenedor-carrusel');
 const imagenes = document.querySelectorAll('.imagen-gameplay img');
@@ -18,9 +19,7 @@ flechaIzquierda.addEventListener('click', () => {
     fila.scrollLeft -= fila.offsetWidth;
 });
 
-/*setInterval(()=>{
-    fila.scrollLeft += fila.offsetWidth;
-},10000)*/
+
 
 //carousel imagen script
 
@@ -53,3 +52,38 @@ function imgClick(e) {
 }
 
 
+//deleting games
+
+document.querySelector('.eliminar-juego').addEventListener('click', (e) => {
+    e.preventDefault();
+    const img = document.querySelector('.imagen-detalle');
+    console.log(img.src)
+    const form = event.target.form;
+    Swal.fire({
+    title: 'Seguro que desea borrar?',
+    imageUrl:img.src,
+    imageHeight: 500,
+    width: '40%',
+    background: 'var(--secodary-bg-color)',
+    text: "No se puede deshacer esta accion!",
+    cancelButtonText: 'Cancelar',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Borrar!'
+  }).then((result) => {
+    if (result.value) {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        form.submit()
+    }
+  })
+});
+
+
+})

@@ -55,7 +55,7 @@
                             </div>
                             <img v-if="!video.active" :src="video.thumbnail" alt="" class="carousel__video-picture">
                             <iframe v-if="video.active" id="ytplayer" type="text/html" width="100%" height="100%"
-                            :src="video.embed" frameborder="0"></iframe>
+                            :src="video.embed" frameborder="0" allow="autoplay; encrypted-media"></iframe>
                                 
                                 
                             <div class="carousel__placeholder-background" v-if="video.active"></div>

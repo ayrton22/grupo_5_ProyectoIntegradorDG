@@ -17,7 +17,7 @@ const controller = require('../controllers/userController');
 
 // Route, controller, middleware and validation usage
 
-router.get('/prueba/', controller.prueba);
+router.get('/prueba/:id', controller.prueba);
 router.get('/register', controller.register);
 router.post('/register', registerValidation, passwordRepassMiddleware ,controller.save);
 
@@ -30,7 +30,7 @@ router.post('/login', loginValidation, controller.confirm);
 
 router.get('/profile/:id/', authMiddleware ,  authMiddleware2,  controller.profile); 
 
-router.get('/cart', controller.cart);
+router.get('/cart', authMiddleware, controller.cart);
 
 router.get('/thanks', controller.thankYouPage);
 

@@ -35,6 +35,7 @@ router.get('/cart', authMiddleware, controller.cart);
 router.get('/thanks', controller.thankYouPage);
 
 router.get('/logout', authMiddleware  ,controller.logout);
+
 router.get('/community',controller.community);
 
 router.get('/buyFormChoose', controller.buyFormChoose);

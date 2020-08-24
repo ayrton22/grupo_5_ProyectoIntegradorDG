@@ -1,0 +1,42 @@
+.body-error::after {
+    content: "";
+    background-image: url('/img/error-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+
+.container-error {
+    display: flex;
+    justify-content: center;
+    margin: 20%;
+    text-align: center;
+}
+
+.container-error-div h1 {
+    font-size: 60px;
+    color: #2493a1;
+}
+
+.container-error-div h2 {
+    font-size: 36px;
+}
+
+.container-error-div h3 {
+    font-size: 28px;
+}
+
+.container-error-div h3 a {
+    text-decoration: none;
+    color: crimson;
+}
+
+.container-error-div h3 a:hover {
+    color: rgb(245, 45, 85);
+}

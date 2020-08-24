@@ -6,18 +6,28 @@
     <%- include('partials/header') %>
 
     <div class="container pb-3 container-productEdit">
+
+        
+
         <form class="productEdit-form" action="/product/edit/<%= productEdit.id %>?_method=put" method="POST">
             <div id="form1" class="row productEdit-form-1">
+                <div class="errorsEdit1">
+                    <ul></ul>
+                </div>
                 <div class="col-12">
                     <h1>Edición de Producto</h1>
                 </div>
+
                 <div class="col-6 pb-5">
-                    <label for="title" class="productEdit-form-label">Titulo del juego: </label>
-                    <input type="text" name="title" class="productEdit-form-input" value="<%= productEdit.title %>" />
+                    <label for="title" class="productEdit-form-label">Titulo del juego: 
+                        <input type="text" name="title" class="productEdit-form-input titleEdit" value="<%= productEdit.title %>"/>
+                    </label>
+                    <small class="errorTitle"></small>
                 </div>
+
                 <div class="col-6 pb-5">
                     <label for="estado" class="productEdit-form-label">Estado del juego: </label>
-                    <select class="productEdit-form-input state" name="estado">
+                    <select class="productEdit-form-input stateEdit" name="estado">
                         <option selected hidden>Elija el estado</option>
                         <option value="1">Muy malo</option>
                         <option value="2">Muy usado</option>
@@ -32,7 +42,7 @@
                         <input
                             type="checkbox"
                             name="platform"
-                            value="<%= platform.id %>" class="productLoader-form-checkbox"
+                            value="<%= platform.id %>" class="productLoader-form-checkbox platformCheckboxEdit"
                             <% productEdit.platforms.forEach(function(elemento) { %>
                                 <%= (elemento.id == platform.id) ? 'checked' : "" %>
                             <% }) %>
@@ -45,6 +55,9 @@
 
 
             <div id="form2" class="row productEdit-form-2">
+                <div class="errorsEdit2">
+                    <ul></ul>
+                </div>
                 <div class="col-12">
                     <h1>Mostrá tu juego:</h1>
                 </div>
@@ -78,7 +91,7 @@
                                 <iframe class="productEdit-form-uploadVideo" src="https://www.youtube.com/embed/<%= productEdit.video %>" frameborder="0"></iframe>
                             </div>
                             <div class="row form2-containerEdit--link-video">
-                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%= productEdit.video %>"/>
+                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video videoLinkEdit" name="video" value="https://www.youtube.com/watch?v=<%= productEdit.video %>"/>
                             </div>
 
                             <div class="row form2-containerEdit--horizontal">
@@ -175,69 +188,79 @@
 
 
             <div id="form3" class="row productEdit-form-3">
+                <div class="errorsEdit3">
+                    <ul></ul>
+                </div>
                 <div class="col-12">
                     <h1>Características de Pago:</h1>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productEdit-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox paymentMethod1" /> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox paymentMethod2" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox paymentMethod3" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
-                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label paymentMethod4" for="pagos">American Express</label><br/>
+                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox paymentMethodEdit" /> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox paymentMethodEdit" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox paymentMethodEdit" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
+                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox paymentMethodEdit" /> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br/>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productEdit-form-label">Opciones de entrega de Product: </label>
-                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox deliveryOption1" /> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br/>
-                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label deliveryOption2" for="receive">Buscar</label>
+                    <input type="checkbox" value="Delivery" name="receive" class="productEdit-form-checkbox deliveryOptionEdit" /> <label class="productEdit-checkbox-label" for="receive">Delivery</label><br/>
+                    <input type="checkbox" value="Buscar" name="receive" class="productEdit-form-checkbox deliveryOptionEdit" /> <label class="productEdit-checkbox-label" for="receive">Buscar</label>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="price" class="productEdit-form-label">Precio del juego</label>
-                    <input type="text" name="price" class="productEdit-form-input" value="<%= productEdit.price %>" />
+                    <input type="text" name="price" class="productEdit-form-input priceEdit" value="<%= productEdit.price %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form4">Siguiente</a></button>
             </div>
 
 
             <div id="form4" class="row productEdit-form-4">
+                <div class="errorsEdit4">
+                    <ul></ul>
+                </div>
                 <div class="col-12">
                     <h1>Descripción del juego:</h1>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="description" class="productEdit-form-label">Descripcion de juego: </label>
-                    <textarea cols="55" rows="6" name="description" class="productEdit-form-input__textarea" value=""><%= productEdit.description %></textarea>
+                    <textarea cols="55" rows="6" name="description" class="productEdit-form-input__textarea descriptionEdit" value=""><%= productEdit.description %></textarea>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="medium_description" class="productEdit-form-label">Descripcion mediana: </label>
-                    <textarea cols="55" rows="6" type="text" name="medium_description" class="productEdit-form-input__textarea" value=""><%= productEdit.descriptionMedium %></textarea>
+                    <textarea cols="55" rows="6" type="text" name="medium_description" class="productEdit-form-input__textarea mediumDescriptionEdit" value=""><%= productEdit.descriptionMedium %></textarea>
                 </div>
                 <div class="col-12 pb-5">
                     <label for="mbig_description" class="productEdit-form-label">Descripcion grande: </label>
-                    <textarea cols="55" rows="6" type="text" name="big_description" class="productEdit-form-input__bigTextarea" value=""><%= productEdit.descriptionBig %></textarea>
+                    <textarea cols="55" rows="6" type="text" name="big_description" class="productEdit-form-input__bigTextarea largeDescriptionEdit" value=""><%= productEdit.descriptionBig %></textarea>
                 </div>
+                <small class="errorDescription"></small>
                 <div class="col-6 pb-5">
                     <label for="editor" class="productEdit-form-label">Editora: </label>
-                    <input type="text" name="editor" class="productEdit-form-input" value="<%= productEdit.editor %>" />
+                    <input type="text" name="editor" class="productEdit-form-input editorEdit" value="<%= productEdit.editor %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="developer" class="productEdit-form-label">Desarrolladora: </label>
-                    <input type="text" name="developer" class="productEdit-form-input" value="<%= productEdit.developer %>" />
+                    <input type="text" name="developer" class="productEdit-form-input developerEdit" value="<%= productEdit.developer %>" />
                 </div>
                 <div class="col-6 pb-5">
                     <label for="launch_date" class="productEdit-form-label">Fecha de lanzamiento: </label>
-                    <input type="text" name="launch_date" class="productEdit-form-input" value="<%= productEdit.launch_date %>" />
+                    <input type="text" name="launch_date" class="productEdit-form-input launchDateEdit" value="<%= productEdit.launch_date %>" />
                 </div>
                 <button type="button" class="productEdit-form-button--next"><a href="#form5">Siguiente</a></button>
             </div>
 
 
             <div id="form5" class="row productEdit-form-5">
+                <div class="errorsEdit5">
+                    <ul></ul>
+                </div>
                 <div class="col-6 pb-5">
                     <label for="category" class="productEdit-form-label">Categorias: </label>
                     <% categories.forEach(function(category) { %>
                         <input
                             type="checkbox"
                             name="category"
-                            value="<%= category.id %>" class="productLoader-form-checkbox"
+                            value="<%= category.id %>" class="productLoader-form-checkbox categoryEdit"
                             <% productEdit.categories.forEach(function(elemento) { %>
                                 <%= (elemento.id == category.id) ? 'checked' : "" %>
                             <% }) %>
@@ -252,7 +275,7 @@
                         <input
                             type="checkbox"
                             name="genre"
-                            value="<%= genre.id %>" class="productLoader-form-checkbox"
+                            value="<%= genre.id %>" class="productLoader-form-checkbox tagEdit"
                             <% productEdit.genres.forEach(function(elemento) { %>
                                 <%= (elemento.id == genre.id) ? 'checked' : "" %>
                             <% }) %>
@@ -263,14 +286,14 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productEdit-form-input classification" value="<%= productEdit.classification %>">
+                    <input type="text" name="classification" class="productEdit-form-input classificationEdit" value="<%= productEdit.classification %>">
                 </div>
                 <div class="col-6 pb-5">
                     <label for="rating" class="productEdit-form-label">Puntaje: </label>
-                    <input type="text" name="rating" class="productEdit-form-input" value="<%= productEdit.rating %>"/>
+                    <input type="text" name="rating" class="productEdit-form-input scoreEdit" value="<%= productEdit.rating %>"/>
                 </div>
                     <button type="button" class="productEdit-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
-                    <button type="submit" class="productEdit-form-button--submit mb-5">Confirmar edición</button>
+                    <button type="submit" class="productEdit-form-button--submit mb-5" id="buttonEdit">Confirmar edición</button>
             </div>
         </form>
     </div>
@@ -281,5 +304,6 @@
     <!-- Scripts -->
     <%- include('partials/scripts') %>
     <script src="/scripts/photoEdit.js"></script>
+    <script src="/scripts/product2.js"></script>
 </body>
 </html>

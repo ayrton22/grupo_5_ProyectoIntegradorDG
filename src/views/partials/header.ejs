@@ -26,12 +26,33 @@
                     <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
                     <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                 </form>
-                <a href="/user/register" class="user nav__icons"><i class="fas fa-user-plus"></i></a>
-                <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
-                <a href="/user/cart" class="nav__icons nav__icons--cart">
-                    <span class="icon-cart__products">2</span>
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
+
+                <div class="nav__right-profile-options">
+                    <i class="fas fa-user-alt nav__right-profile-options-icon"></i>
+                    <div class="nav__right-profile-dropdown inactive-profile-dropdown">
+                        <ul type="none">
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/register" class="nav__icons"><i class="fas fa-user-plus"></i> Registrarse</a>
+                            </li>
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in"></i> Iniciar sesión</a>
+                            </li>
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/cart" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
+                            </li>
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/cart" class="nav__icons"><i class="fas fa-shopping-cart"></i> Ver tu carrito</a>
+                            </li>
+
+                            <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
+                                <a href="/user/cart" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                            </li>
+                        </ul>
+                        
+                        
+                        
+                    </div>
+                </div>
                 <ul>
                     <li class="header-nav__language-item">
                         <button onclick="myFunction2()" class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>

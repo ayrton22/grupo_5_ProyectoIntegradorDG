@@ -5,15 +5,38 @@
     align-items: center;
 }
 
-.container2-buyDelivery{
+.container2-buyDelivery {
     display: flex;
-    min-height: 32rem;
-    min-width: 70rem;
+    min-height: 40rem;
+    min-width: 100rem;
     justify-content: space-between;
+    background-color: #2D4681;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 3px #010212;
+    margin: 10rem;
 }
 
 .buyDelivery__title-cont{
     margin-bottom: 2rem;
+}
+
+h1.buyDelivery__title {
+    font-size: 42px;
+}
+
+.buyDelivery__inputs-cont-single label {
+    font-size: 24px;
+}
+
+.buyDelivery__inputs-cont-single p input {
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: white white white white;
+    font-size: 16px;
+    padding: .5rem 1rem;
+    width: 30rem;
+    color: white;
 }
 
 .buyDelivery__line{
@@ -38,6 +61,8 @@
     flex-direction: column;
     align-items: center;
     min-height: 40rem;
+    margin-top: 7rem;
+    margin-right: 3rem;
 }
 
 .buyDelivery__slider-i{
@@ -110,7 +135,8 @@
 
 .buyDelivery__img-product{
     height: 20rem;
-    min-width: 20rem;
+    min-width: 15rem;
+    margin: 0 2.5rem;
 }
 
 .buyDelivery__line-2{
@@ -123,6 +149,40 @@
     margin-top: 1rem;
 }
 
-.buyDelivery__continue-btn{
-    margin-top: auto;
+.buyDelivery__continue-btn button {
+    position: relative;
+    background-color: white;
+    font-size: 1.6em;
+    background-color: #2568AC;
+    color: white;
+    border-radius: var(--button-border-radius);
+    border: none;
+    padding: 1rem 5rem;
+    margin-top: 20rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.buyDelivery__continue-btn button {
+    text-decoration: none;
+    color: white;
+}
+  
+.buyDelivery__continue-btn button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+  }
+  
+.buyDelivery__continue-btn button:hover:before {
+    height: 100%;
 }

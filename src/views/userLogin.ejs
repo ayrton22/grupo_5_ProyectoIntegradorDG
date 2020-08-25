@@ -13,11 +13,13 @@
             <label class="signIn-form-label" for="username">Nombre de usuario:</label>
             <input type="text" class="form-control" id="signIn-form-input" name="username">
             <small><%= (typeof errors != 'undefined' && errors.username) ? errors.username.msg : '' %></small>
+            <small><%= (typeof errors != 'undefined' && errors.usernamePass) ? errors.usernamePass.msg : '' %></small>
           </div>
           <div class="form-group">
             <label class="signIn-form-label" for="password">Contraseña:</label>
             <input type="password" class="form-control" id="signIn-form-input" name="password">
             <small><%= (typeof errors != 'undefined' && errors.password) ? errors.password.msg : '' %></small>
+            <small><%= (typeof errors != 'undefined' && errors.usernamePass) ? errors.usernamePass.msg : '' %></small>
           </div>
           <div class="form-group">
             <div class="form-check">

@@ -19,14 +19,15 @@ module.exports = [
 
     body('username')
         .custom(async function(value) {
-        let users = await db.Users.findAll().then(result => { return result })
-
-        for(let i = 0; i < users.length; i++) {
-            if(users[i].username == value) {
-                return false;
-            }
-        }
-            return true
+            let usuario = await db.Users.findOne({ where:{ username: value } })
+              .then(function(elUsuario){
+                if (elUsuario){
+                  return false
+                } else {
+                  return true
+                }
+              })
+              return usuario 
         }).withMessage('Este nombre de usuario ya está en uso'),
         
     check('email')
@@ -35,15 +36,16 @@ module.exports = [
 
     body('email')
         .custom(async function(value) {
-            await db.Users.findAll()
-            .then(function (resultado){
-                if(resultado.email == value) {
-                    return false;
+            let usuario = await db.Users.findOne({ where:{ email: value } })
+              .then(function(elUsuario){
+                if (elUsuario){
+                  return false
                 } else {
-                    return true
+                  return true
                 }
-            })
-        }).withMessage('Este mail ya está registrado!'),
+              })
+              return usuario
+        }).withMessage('Esta direccion de E-Mail ya está en uso'),
             
     check('password')
         .isLength({min: 6, max: 20})

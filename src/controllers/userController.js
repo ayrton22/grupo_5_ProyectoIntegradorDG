@@ -24,7 +24,6 @@ module.exports = {
             res.render('userProfile',{
                 user: result
             }
-               
             );
         })
         .catch(function(error) {
@@ -208,6 +207,10 @@ module.exports = {
 
     buyFormLocalView: (req, res) => {
         res.render('buyFormLocal');
+    },
+
+    paymentMethodView: (req, res) => {
+        res.render('paymentMethodForm');
     }
 }
 

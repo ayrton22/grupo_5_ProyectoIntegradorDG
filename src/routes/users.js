@@ -32,15 +32,16 @@ router.get('/profile/:id/', authMiddleware ,  authMiddleware2, controller.profil
 
 router.get('/cart/:id',/* authMiddleware*/ controller.cart);
 
-router.get('/thanks', controller.thankYouPage);
+router.get('/thanks', authMiddleware ,controller.thankYouPage);
 
 router.get('/logout', authMiddleware  ,controller.logout);
 
 router.get('/community',controller.community);
 
-router.get('/buyFormChoose', controller.buyFormChoose);
-router.get('/buyFormDelivery', controller.buyFormDeliveryView);
-router.get('/buyFormLocal', controller.buyFormLocalView);
+router.get('/buyFormChoose', authMiddleware, controller.buyFormChoose);
+router.get('/buyFormDelivery', authMiddleware ,controller.buyFormDeliveryView);
+router.get('/buyFormLocal', authMiddleware ,controller.buyFormLocalView);
+router.get('/paymentMethodForm', authMiddleware ,controller.paymentMethodView);
 
 // Module export
 module.exports = router;

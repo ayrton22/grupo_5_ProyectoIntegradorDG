@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
           },
           delivery: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.TEXT,
             allowNull: false,
             defaultValue: 'Online'
           },

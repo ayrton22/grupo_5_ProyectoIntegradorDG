@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    error
+
+    <%- include('partials/head', {title: 'Inicio'}) %>
+
+<body class="body-error">
+    <div class="container-error">
+
+        <div class="container-error-div">
+            <h1>Error 404</h1>
+            <h2>Lo sentimos, no pudimos encontrar la pagina que estabas buscando</h1>
+            <h3><a href="/">Ir al sitio inicial</a></h2>
+
+        </div>
+    </div>
 </body>
 </html>

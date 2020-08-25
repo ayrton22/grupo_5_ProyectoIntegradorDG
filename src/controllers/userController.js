@@ -37,7 +37,6 @@ module.exports = {
     save: function(req, res) {
         let errors = validationResult(req);
         if(errors.isEmpty()) {
-
             db.Users.create({
                 first_name: req.body.name,
                 last_name: req.body.surname,
@@ -48,7 +47,6 @@ module.exports = {
             .then(function() {
                 res.redirect('/user/login')
             })
-
         } else {
             res.render('userRegister', {
                 errors: errors.mapped(),
@@ -77,7 +75,7 @@ module.exports = {
                     } 
                 return res.render('userLogin', {
                     errors: {
-                        username: {
+                        usernamePass: {
                             msg: 'Credenciales inválidas. Inserta un email o usuario registrado y su respectica contraseña'
                         }
                     }
@@ -166,3 +164,5 @@ module.exports = {
         res.render('buyFormLocal');
     }
 }
+
+

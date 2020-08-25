@@ -5,68 +5,119 @@
     <%- include('partials/header') %>
     
     <div class="container-buyDelivery">
-        <div class="buyDelivery__left-section">
-            <form class="buyDelivery__form" action="">
-                <div>
-                    <h1 class="buyDelivery__title">Informacion Personal</h1>
-                    <div class="buyDelivery__line"></div>
-                </div>
-                <div class="buyDelivery__inputs-cont">
-                    <div class="">
-                        <label for="purchaserName">Nombre y apellido</label>
-                        <p>
-                            <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
-                        </p>
+        <div class="container2-buyDelivery">
+            <div class="buyDelivery__left-section">
+                <form class="buyDelivery__form" action="">
+                    <div class="buyDelivery__title-cont">
+                        <h1 class="buyDelivery__title">Informacion Personal</h1>
+                        <div class="buyDelivery__line"></div>
                     </div>
-                    <div class="">
-                        <label for="purchaserName">Codigo postal</label>
-                        <p>
-                            <input name="purchaserName" type="text" placeholder="ej: 1281"> 
-                        </p>
+                    <div class="buyDelivery__inputs-cont">
+                        <div class="">
+                            <label for="purchaserName">Nombre y apellido</label>
+                            <p>
+                                <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
+                            </p>
+                        </div>
+                        <div class="">
+                            <label for="purchaserPostalCode">Codigo postal</label>
+                            <p>
+                                <input name="purchaserPostalCode" type="text" placeholder="ej: 1281"> 
+                            </p>
+                        </div>
+    
+                        <div class="buyDelivery__group">
+                                <div class="">
+                                    <label for="purchaserState">Provincia</label>
+                                    <p>
+                                        <input name="purchaserState" type="text" placeholder="ej: Buenos Aires"> 
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <label for="purchaserLocation">Localidad / Barrio</label>
+                                    <p>
+                                        <input name="purchaserLocation" type="text" placeholder="ej: San Isidro"> 
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <label for="purchaserStreet">Calle</label>
+                                    <p>
+                                        <input name="purchaserStreet" type="text" placeholder="ej: Diego Palma 2345"> 
+                                    </p>
+                                </div>
+                                <div class="">
+                                    <label for="purchaserAdress">Numero</label>
+                                    <p>
+                                        <input name="purchaserAdress" type="text" placeholder="ej: 345 (numero de la direccion de tu residencia)"> 
+                                    </p>
+                                </div>
+                        </div>
+    
+                        <div class="">
+                            <label for="purchaserFlat">Piso/Dpto (opcional)</label>
+                            <p>
+                                <input name="purchaserFlat" type="text"> 
+                            </p>
+                        </div>
+                        <div class="">
+                            <label for="purchaserPhone">Telefono de contacto</label>
+                            <p>
+                                <input name="purchaserPhone" type="text" placeholder="ej: +54 1146783490"> 
+                            </p>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+    
+            <div class="buyDelivery__right-section">
+                <div class="buyDelivery__slider-i">
+
+                </div>
+                <div class="buyDeliver__position-relative">
+                    <div class="buyDelivery__arrow-left">
+                        <i class="fas fa-angle-left"></i>
                     </div>
 
-                    <div class="">
-                            <div class="">
-                                <label for="purchaserName">Nombre y apellido</label>
-                                <p>
-                                    <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
-                                </p>
+                    <div class="buyDelivery__carousel-games">
+                        <div class="buyDelivery__game">
+                            <div class="buyDelivery__img-cont">
+                                <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/overwatch.jpg" alt="">
                             </div>
-                            <div class="">
-                                <label for="purchaserName">Codigo postal</label>
-                                <p>
-                                    <input name="purchaserName" type="text" placeholder="ej: 1281"> 
-                                </p>
+                            <p>Titulo del juego</p>
+                            <div class="buyDelivery__line-2"></div>
+                            <p class="buyDelivery__price-modifer">Precio del juego</p>
+                            <p class="">Cantidad: 1</p>
+                        </div>
+    
+                        <div class="buyDelivery__game">
+                            <div class="buyDelivery__img-cont">
+                                <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/overwatch.jpg" alt="">
                             </div>
-                            <div class="">
-                                <label for="purchaserName">Nombre y apellido</label>
-                                <p>
-                                    <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
-                                </p>
+                            <p>Titulo del juego</p>
+                            <div class="buyDelivery__line-2"></div>
+                            <p class="buyDelivery__price-modifer">Precio del juego</p>
+                            <p class="">Cantidad: 1</p>
+                        </div>
+    
+                        <div class="buyDelivery__game">
+                            <div class="buyDelivery__img-cont">
+                                <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/overwatch.jpg" alt="">
                             </div>
-                            <div class="">
-                                <label for="purchaserName">Codigo postal</label>
-                                <p>
-                                    <input name="purchaserName" type="text" placeholder="ej: 1281"> 
-                                </p>
-                            </div>
+                            <p>Titulo del juego</p>
+                            <div class="buyDelivery__line-2"></div>
+                            <p class="buyDelivery__price-modifer">Precio del juego</p>
+                            <p class="">Cantidad: 1</p>
+                        </div>
                     </div>
 
-                    <div class="">
-                        <label for="purchaserName">Nombre y apellido</label>
-                        <p>
-                            <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
-                        </p>
-                    </div>
-                    <div class="">
-                        <label for="purchaserName">Codigo postal</label>
-                        <p>
-                            <input name="purchaserName" type="text" placeholder="ej: 1281"> 
-                        </p>
+                    <div class="buyDelivery__arrow-right">
+                        <i class="fas fa-angle-right"></i>
                     </div>
                 </div>
-            </form> 
+
+            </div>
         </div>
+        
     </div>
 
     <%- include('partials/footer') %>

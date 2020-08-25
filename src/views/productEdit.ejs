@@ -90,19 +90,14 @@
                                     <% } %>
                                 <% }) %>
 
-                                
-
-                                <div id="horizontalZoom" class="inactive_horizontal">
-                                    
+                                <div id="horizontalZoom" class="inactive_horizontal">     
                                     <i class="fas fa-times"></i>
                                     <% productEdit.images.forEach(element => { %>
                                         <% if(element.location == "imagen_horizontal") { %>
                                             <img data-status="active" class="productEdit-form-uploadImage--horizontal" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" >
                                         <% } %>
                                     <% }) %>
-                                    
-                                        <button type="button" class="productEdit-form-button--next">Borrar foto</button>
-                                    
+                                        <button type="button" class="productEdit-form-button--next">Borrar foto</button>                                 
                                 </div>
 
                             </div>
@@ -131,7 +126,6 @@
                                         <div class="carouselcontenedor">
                                         <img data-status="inactive" class="productEdit-form-uploadImage--carousel activecarousel name="carousel" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <input type="file" name="carouselInput" class="boton-imagen" value="i"/>
-                                        
                                     </div>
                                     <% } %>
                                 <% } %>

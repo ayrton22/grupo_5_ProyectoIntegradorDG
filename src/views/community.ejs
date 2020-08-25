@@ -14,7 +14,7 @@
 
                 <div class="community-single-conversation">
                     <div class="community-question">
-                        <p><%= element.users.first_name %> <%= element.users.last_name %> <span>Responder</span></p>
+                        <p><img src="/img/uploads/avatars/<%= element.users.avatar %>" alt=""> <%= element.users.first_name %> <%= element.users.last_name %> <span>Responder</span></p>
                         <h2><%= element.message %></h2>
                         <h3><%= element.createdAt %></h3>
                     </div>
@@ -24,7 +24,7 @@
                         <% if(subElement.id_question == element.id) { %>
 
                             <div class="community-answer">
-                                <p><%= subElement.users.first_name %> <%= subElement.users.last_name %></p>
+                                <p><img src="/img/uploads/avatars/<%= subElement.users.avatar %>" alt=""> <%= subElement.users.first_name %> <%= subElement.users.last_name %></p>
                                 <h3><%= subElement.message %></h3>
                                 <h4><%= element.createdAt %></h4>
                             </div>

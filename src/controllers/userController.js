@@ -12,6 +12,11 @@ const db = require('../database/models');
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 users = JSON.parse(users);
 
+
+// Avatars
+
+const imgArray = ['Avatar_default_1.jpg', 'Avatar_default_2.jpg', 'Avatar_default_3.jpg', 'Avatar_default_4.jpg', 'Avatar_default_5.jpg', 'Avatar_default_6.jpg', 'Avatar_default_7.jpg', 'Avatar_default_8.jpg'];
+
 //order: [[ 'createdAt', 'Desc']]
 // Controller usage in module export
 module.exports = {
@@ -44,7 +49,8 @@ module.exports = {
                 last_name: req.body.surname,
                 username: req.body.username,
                 email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10)
+                password: bcrypt.hashSync(req.body.password, 10),
+                avatar: imgArray[Math.floor(Math.random() * (8 - 0) + 0)]
             })
             .then(function() {
                 res.redirect('/user/login')
@@ -120,8 +126,8 @@ module.exports = {
             email: req.body.email,
             birth_date: req.body.date,
             gender: req.body.gender,
-            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `
-
+            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `,
+            avatar: req.body.avatar
         }, {
             where: {
                 id: req.params.id

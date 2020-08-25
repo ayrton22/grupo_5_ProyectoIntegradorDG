@@ -28,6 +28,12 @@
     margin-right: 100px;
 }
 
+.community-question img {
+    width: 8rem;
+    border-radius: 100vh;
+    margin-right: 1rem;
+}
+
 .community-question p {
     display: flex;
     flex-direction: row;
@@ -62,6 +68,12 @@
     box-shadow: 0 0 5px 3px #4c485a;
     margin: 1.5rem 0;
     margin-left: 100px;
+}
+
+.community-answer img {
+    width: 8rem;
+    border-radius: 100vh;
+    margin-right: 1rem;
 }
 
 .community-answer p {

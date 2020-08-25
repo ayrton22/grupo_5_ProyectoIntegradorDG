@@ -60,14 +60,14 @@
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
 
                <div class="container-profile-games-list">
-                <% if(user.user_sales.leng != 0){%>
+                <% if(user.user_sales.length != 0){%>
                     <%  user.user_sales.forEach((element)=>{%>
                         <div class="container-profile-games-single">
                             <a href="/product/detail/<%=element.games.id%>">
                             <div class="container-profile-games-single-img">
                                <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
                             </div>
-                        </a>
+                            </a>
                             <div class="container-profile-games-single-info">
     
                                 <h2><%= element.games.title %></h2>
@@ -76,15 +76,20 @@
                                 
                             </div>
                         
-                        <span>Estatus:<%= element.status_transaction %></span>
-                        <span>Delivery: <%= element.delivery_type%></span>
-                    </div>
+                            <span>Estatus:<%= element.status_transaction %></span>
+                            <span>Delivery: <%= element.delivery_type%></span>
+                        </div>
                     <% })%>
-                <% } else {%>
-                    
+                <% } else { %>
                     
                     <% } %> 
 
+                    <div class="container-profile-games-add">
+                        <a href="/product">
+                            <h2>Buscá más juegos</h2>
+                            <img src="/img/Logos/Add-game.png" alt=""> 
+                        </a>
+                    </div>
 
              </div>
 

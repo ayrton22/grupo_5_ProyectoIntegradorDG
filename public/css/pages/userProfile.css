@@ -235,7 +235,7 @@ button.container-profile-button:hover:before {
   }
 
 .container-profile-games-single {
-    min-width: 250px;
+    width: 250px;
     height: 350px;
     background-color: #00A6FF;
     text-align: center;
@@ -244,9 +244,13 @@ button.container-profile-button:hover:before {
     box-shadow: 0 3px 5px 3px #1f3058;
 }
 
+.container-profile-games-single-img {
+    width: 200px;
+}
+
 .container-profile-games-single-img img {
-    width: 50%;
-    margin-top: 1rem;
+    height: 200px;
+    margin: 1rem 1rem 0 4.3rem;
     box-shadow: 0 3px 5px 3px #1f3058;
 }
 
@@ -257,6 +261,37 @@ button.container-profile-button:hover:before {
 
 .container-profile-games-single-info h2 {
     font-size: 24px;
+}
+
+.container-profile-games-add {
+    width: 250px;
+    height: 350px;
+    background-color: #099dec;
+    text-align: center;
+    margin: 2rem 2rem 0 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px 3px #1f3058;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.container-profile-games-add a {
+    text-decoration: none;
+    color: white;
+}
+
+.container-profile-games-add a h2 {
+    font-size: 24px;
+    padding: 5rem 0;
+    text-decoration: none;
+}
+
+.container-profile-games-add a img {
+    width: 100%;
+}
+
+.container-profile-games-add:hover {
+    opacity: 1;
 }
 
 .container-profile-games-separation {

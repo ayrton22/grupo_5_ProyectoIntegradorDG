@@ -23,7 +23,6 @@ module.exports = {
             res.render('userProfile',{
                 user: result
             }
-               
             );
         })
         .catch(function(error) {

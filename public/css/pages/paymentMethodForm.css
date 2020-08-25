@@ -1,0 +1,6 @@
+.container-paymentMethod{
+    min-height: 65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

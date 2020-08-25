@@ -14,7 +14,7 @@
                 <ul type="none" >
                     <li id="general">General</li>
                     <li id="games">Tus juegos</li>
-                    <li id="pays">Historial de pagos</li>
+                    <li id="pays">Historial de compras</li>
                     <li id="settings">Configuración</li>
                 </ul>
             </aside>
@@ -60,40 +60,69 @@
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
 
                <div class="container-profile-games-list">
-                <% if(user.user_sales.leng != 0){%>
-                    <%  user.user_sales.forEach((element)=>{%>
-                        <div class="container-profile-games-single">
-                            <a href="/product/detail/<%=element.games.id%>">
-                            <div class="container-profile-games-single-img">
-                               <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                    <% if(user.user_sales.length != 0){%>
+
+                        <%  user.user_sales.forEach((element)=> {%>
+
+                            <div class="container-profile-games-single">
+                                <% if (element.status_transaction == 'Sold') { %>
+                                    <i class="fas fa-info-circle games-single-detailInfo"></i>
+                                <% } else { %>
+                                    <a href="/product/edit/<%= element.games.id %>"><i class="far fa-edit games-single-edit"></i></a>
+                                    <i class="far fa-trash-alt games-single-delete"></i>
+                                    <form action="/product/detail/<%= element.games.id %>?_method=delete" method="POST" class="games-delete-form inactive-games-delete-form">
+                                        <h2>¿Estas seguro de querer eliminar este producto?</h1>
+                                        <h3>Esta acción es permanente y el juego no podrá recuperarse</h2>
+
+                                        <button type="submit" class="games-delete-form-button1">Confirmar</button>
+                                        <button type="button" class="games-delete-form-button2">Cancelar</button>
+                                    </form>
+                                <% } %>
+                                <a href="/product/detail/<%= element.games.id %>">
+                                <div class="container-profile-games-single-img">
+                                <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                                </div>
+                                </a>
+
+                                <div class="container-profile-games-single-info">
+        
+                                    <h2><%= element.games.title %></h2>
+                                    <div class="container-profile-games-single-info-sub">
+                                        <h4> <%=element.price %>$</h4>
+                                        <h3><i class="fas fa-desktop"></i></h3> 
+                                        <span>Estatus: <%= element.status_transaction %> </span>       
+
+                                    </div>
+
+                                </div>
+        
                             </div>
+
+                        <% })%>
+
+                    <% }%>
+
+                    <div class="container-profile-games-add">
+                        <a href="/product">
+                            <h2>Vender otro juego</h2>
+                            <img src="/img/Logos/Add-game.png" alt=""> 
                         </a>
-                            <div class="container-profile-games-single-info">
-    
-                                <h2><%= element.games.title %></h2>
-                                <h4> <%=element.price %>$</h1>
-                                <h3><i class="fas fa-desktop"></i></h3> 
-                                
-                            </div>
-                        
-                        <span>Estatus:<%= element.status_transaction %></span>
-                        <span>Delivery: <%= element.delivery_type%></span>
                     </div>
-                    <% })%>
-                <% } else {%>
-                    
-                    
-                    <% } %> 
 
+                </div>
 
-             </div>
-
-               <!--<div class="container-profile-games-separation"> . </div>-->
-               <div class="container-games-info">
-
-                   <h2>Items en carrito: <%=user.user_sales.length%></h2>
-                   <h3><a href="/user/cart">Ir a tu carrito de compras</a></h3>
-               </div>
+                <div class="games-detailInfo inactive-games-detailInfo">
+                    <i class="fas fa-times-circle"></i>
+                    <h1>Title</h1>
+                    <h2>Comprado por Joaco</h2>
+                    <h3>Fecha: Hoy</h3>
+                    <h3>Tipo de delivery: No se</h3>
+                </div>
+                
+                <div class="container-games-info">
+                    <h2>Items en carrito: <%=user.user_sales.length%></h2>
+                    <h3><a href="/user/cart/<%=user.id%>">Ir a tu carrito de compras</a></h3>
+                </div>
 
             </div>
 
@@ -105,221 +134,72 @@
                     <div class="col-2">
                         <h2>Fecha</h2>
                     </div>
-                    <div class="col-4">
-                        <h2>Juego</h2>
+                    <div class="col-3">
+                        <h2>Articulo(s)</h2>
                     </div>
                     <div class="col-3">
-                        <h2>Comprador</h2>
+                        <h2>Entrega</h2>
                     </div>
                     <div class="col-2">
                         <h2>Vendedor</h2>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         <h2>Precio</h2>
                     </div>
                 </div>
 
                 <div class="container-profile-pays-transaction-wrapper">
+                    <%  user.transactions.forEach((element)=> {%>
+                        <div class="row pays-rows">
+                            <div class="col-2">
+                                <h3><%=element.createdAt.getDate()%>/<%= element.createdAt.getMonth()+1%>/<%= element.createdAt.getFullYear()%></h3>
+                            </div>
+                            <%   if( element.transactions_games.length > 1){%> 
+                                <div class="col-2">
+                                    <h3><%=element.transactions_games.length%> Juegos Comprados</h3>
+                                </div>
+                                <% } else {%>
+                                    <div class="col-2">
+                                        <h3><%=element.transactions_games[0].title%></h3>
+                                    </div>
 
-                    <div class="row pays-rows">
+                                    <%  }%>
+                                <div class="col-4">
+                                <h3><%=element.delivery%></h3>
+                            </div>
+                            <div class="col-2">
+                                <h3>Hose Of Games</h3>
+                            </div>
+                            <div class="col-2">
+                                <h3>$<%=element.total_cost%>  </h3>
+                            </div>
+                        </div>
+                    <% })%>
 
-                        <div class="col-2">
-                            <h3>2020-05-05</h3>
+                    <%  user.purchases.forEach((element)=> {%>
+                        <div class="row pays-rows">
+                            <div class="col-2">
+                                <h3><%=element.createdAt.getDate()%>/<%= element.createdAt.getMonth()+1%>/<%= element.createdAt.getFullYear()%></h3>
+                            </div>
+                                <div class="col-2">
+                                    <h3><%=element.games.title%></h3>
+                                </div>
+                                <div class="col-4">
+                                <h3><%=element.delivery_type%></h3>
+                            </div>
+                            <div class="col-2">
+                                <h3><%=element.users_sellers.username%></h3>
+                            </div>
+                            <div class="col-2">
+                                <h3>$<%=element.price%>  </h3>
+                            </div>
                         </div>
-                        <div class="col-4">
-                            <h3>Star Wars - Battlefront IV</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Joaquin Perles</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Elimer Duarte</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$19.99</h3>
-                        </div>
-    
-                    </div>
-    
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-    
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2020-05-05</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Star Wars - Battlefront IV</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Joaquin Perles</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Elimer Duarte</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$19.99</h3>
-                        </div>
-    
-                    </div>
+                    <% })%>
 
-                    <div class="row pays-rows">
+                    
     
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
+                    
     
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
-
-                    <div class="row pays-rows">
-    
-                        <div class="col-2">
-                            <h3>2019-03-26</h3>
-                        </div>
-                        <div class="col-4">
-                            <h3>Fifa 20</h3>
-                        </div>
-                        <div class="col-3">
-                            <h3>Benjamin Barreiro</h3>
-                        </div>
-                        <div class="col-2">
-                            <h3>Ayrton Peralta</h3>
-                        </div>
-                        <div class="col-1">
-                            <h3>$28.99</h3>
-                        </div>
-    
-                    </div>
 
                 </div>
 
@@ -328,6 +208,8 @@
             <div class="container-profile-settings inactiveUserProfile">
 
                 <h1>Configuración de cuenta</h1>
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>

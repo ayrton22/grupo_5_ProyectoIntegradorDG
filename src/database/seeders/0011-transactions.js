@@ -9,6 +9,7 @@ for(let i = 1; i <=25; i++){
     id_user: Math.floor(Math.random() * 25) + 1,
     total_cost: faker.commerce.price(1000,50000),
     status: "Finished",
+    delivery: String(faker.address.country() + ', ' + faker.address.state() + ', ' + faker.address.city() + ', ' + faker.address.streetAddress()), 
     payment: faker.lorem.word(),
     createdAt: new Date(),
     updatedAt: new Date()

@@ -7,7 +7,7 @@
 
 .container2-buyDelivery{
     display: flex;
-    height: 32rem;
+    min-height: 32rem;
     min-width: 70rem;
     justify-content: space-between;
 }
@@ -21,6 +21,10 @@
     background-color: darkblue;
 }
 
+.buyDelivery__icon{
+    margin-left: 1.7rem;
+}
+
 .buyDelivery__group{
     display: grid;
     grid-template-rows: repeat(2, 1fr);
@@ -28,8 +32,12 @@
     grid-column-gap: 3rem;
 }
 
-.buyDelivery__right-section{
+.buyDelivery__right-section{ 
     align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 40rem;
 }
 
 .buyDelivery__slider-i{
@@ -113,4 +121,8 @@
 
 .buyDelivery__price-modifer{
     margin-top: 1rem;
+}
+
+.buyDelivery__continue-btn{
+    margin-top: auto;
 }

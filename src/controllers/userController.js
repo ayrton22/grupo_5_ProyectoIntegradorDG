@@ -16,14 +16,14 @@ users = JSON.parse(users);
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findByPk(req.params.id, {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}]},
+        db.Users.findByPk(req.params.id, 
+            {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}] },
         {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
-            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]}]})
+            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]},{association: 'games_shooping_cart',attributes:['id','title']}]})
         .then(function(result) {
             res.render('userProfile',{
                 user: result
             }
-               
             );
         })
         .catch(function(error) {
@@ -133,11 +133,19 @@ module.exports = {
     },
 
     profile: function(req, res) {
-        db.Users.findByPk(req.params.id)
+        db.Users.findByPk(req.params.id, 
+            {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}] },
+        {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
+            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]},{association: 'games_shooping_cart',attributes:['id','title']}]})
         .then(function(result) {
-            return res.render('userProfile', {
+            res.render('userProfile',{
                 user: result
-            })
+            }
+               
+            );
+        })
+        .catch(function(error) {
+            res.send(error);
         })
     },
 
@@ -199,6 +207,10 @@ module.exports = {
 
     buyFormLocalView: (req, res) => {
         res.render('buyFormLocal');
+    },
+
+    paymentMethodView: (req, res) => {
+        res.render('paymentMethodForm');
     }
 }
 

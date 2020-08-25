@@ -20,7 +20,16 @@ window.addEventListener('load', function() {
 
     let avatarImage = qs('img#avatar');
     let avatarInput = qs('input#avatar');
-    let avatarSVG = qs('svg#svg')
+    let avatarSVG = qs('svg#svg');
+
+    // Pop-ups
+    let gameInfoIcon = document.querySelectorAll('i.games-single-detailInfo');
+    let gameDetail = qs('div.games-detailInfo');
+    let gameDetailCross = qs('div.games-detailInfo i')
+
+    let deleteIcon = document.querySelectorAll('i.games-single-delete');
+    let deleteForm = qs('form.games-delete-form');
+    let deleteBtn = qs('button.games-delete-form-button2')
 
     // Event Listeners
 
@@ -101,5 +110,32 @@ window.addEventListener('load', function() {
     avatarImage.addEventListener('mouseout', function() {
         avatarSVG.classList.remove('svg-avatar-active')
         avatarSVG.classList.add('inactiveUserProfile');
+    });
+
+
+    gameInfoIcon.forEach(element => {
+        element.addEventListener('click', function() {
+            gameDetail.classList.remove('inactive-games-detailInfo');
+            gameDetail.classList.add('active-games-detailInfo');
+        });
     })
+
+    gameDetailCross.addEventListener('click', function() {
+        gameDetail.classList.remove('active-games-detailInfo');
+        gameDetail.classList.add('inactive-games-detailInfo');
+    });
+
+
+    deleteIcon.forEach(element => {
+        element.addEventListener('click', function() {
+            deleteForm.classList.remove('inactive-games-delete-form');
+            deleteForm.classList.add('active-games-delete-form');
+        });
+    });
+
+    deleteBtn.addEventListener('click', function() {
+        deleteForm.classList.remove('active-games-delete-form');
+        deleteForm.classList.add('inactive-games-delete-form');
+    });
+
 })

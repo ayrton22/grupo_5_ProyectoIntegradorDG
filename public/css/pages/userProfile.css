@@ -393,6 +393,8 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-games-add {
+    display: flex;
+    flex-direction: column;
     min-width: 250px;
     max-width: 250px;
     height: 370px;
@@ -416,7 +418,7 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-games-add a img {
-    width: 100%;
+    width: 24rem;
 }
 
 .container-profile-games-add:hover {

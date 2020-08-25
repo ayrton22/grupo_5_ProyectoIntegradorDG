@@ -14,6 +14,11 @@ window.addEventListener('load', function(){
     let inputPlataforma = qs('input#platformLoad').checked;
     let errorPlataforma = qs('#errPlatformLoad');
 
+    let inputVideoLink = qs('input#videoLinkLoad')
+    let errorVideoLink = qs('#errVideoLinkLoad')
+    let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
+
+
     let inputDelivery = qs('input#deliveryLoad').checked;
     let inputDelivery = qs('input#buscarLoad').checked;
     let errorEntrega = qs('#errEntregaLoad');
@@ -74,6 +79,12 @@ window.addEventListener('load', function(){
         if(!inputPlataforma){
             errores.plataforma = "Debes marcar al menos uno";
         }
+        if(inputVideoLink.value.length < 1){
+            errores.videoLink = "Este campo es obligatorio"
+        } else {
+            if(inputVideoLink.value.match(regexVideo) == null){
+                errores.videoLink = "Debes ingresar un link de un video de Youtube"
+            }}
         if(!inputDelivery && !inputBuscar){
             errores.entrega = "Debes marcar al menos una opción";
         }
@@ -130,6 +141,7 @@ window.addEventListener('load', function(){
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : '';
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
+            errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';
             errorPrecio.innerText = (errores.precio) ? errores.precio : '';
             errorDescripcion.innerText = (errores.descripcion) ? errores.descripcion : '';

@@ -24,6 +24,11 @@ module.exports = {
         type: Sequelize.DataTypes.STRING(10),
         allowNull: false
       },
+      delivery: {
+        type: Sequelize.DataTypes.TEXT,
+        allowNull: false,
+        defaultValue: 'Online'
+      },
       payment: {
         type: Sequelize.DataTypes.STRING(50),
         allowNull: false

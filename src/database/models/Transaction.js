@@ -19,10 +19,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(10),
             allowNull: false
           },
+          delivery: {
+            type: dataTypes.TEXT,
+            allowNull: false,
+            defaultValue: 'Online'
+          },
           payment: {
             type: dataTypes.STRING(50),
             allowNull: false
           }
+
          
     };
 

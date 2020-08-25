@@ -5,17 +5,53 @@
 <body>
     <%- include('partials/header') %>
 
-    <div class="container">
+    <div class="container-community">
+        <h1>Conversaciones de la comunidad</h1>
 
+        <div class="community-conversations">
+
+            <% questions.forEach(element => { %>
+
+                <div class="community-single-conversation">
+                    <div class="community-question">
+                        <p><%= element.users.first_name %> <%= element.users.last_name %> <span>Responder</span></p>
+                        <h2><%= element.message %></h2>
+                        <h3><%= element.createdAt %></h3>
+                    </div>
+
+                    <% replies.forEach(subElement => { %>
+
+                        <% if(subElement.id_question == element.id) { %>
+
+                            <div class="community-answer">
+                                <p><%= subElement.users.first_name %> <%= subElement.users.last_name %></p>
+                                <h3><%= subElement.message %></h3>
+                                <h4><%= element.createdAt %></h4>
+                            </div>
+
+                        <% } %>
+
+                    <% }) %>
+                </div>
+
+            <% }) %>
+        </div>
+  
     </div>
+
+    <div class="community-answer-form inactive-answer-form">
+        <h1>Posteá tu respuesta</h1>
+        <form action="">
+            <textarea name="answer" cols="30" rows="10"></textarea>
+        </form> 
+    </div> 
 
     <!-- Footer -->
     <%- include('partials/footer') %>
 
     <!-- Scripts -->
     <%- include('partials/scripts') %>
-    
-    <script src="/scripts/script.js"></script>
+    <script src="/scripts/community.js"></script>
 </body>
 
 </html>

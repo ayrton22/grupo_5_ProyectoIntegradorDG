@@ -9,6 +9,8 @@ const controller = require('../controllers/controller');
 router.get('/', controller.home);
 router.get('/pruebacheckbox', controller.pruebaCheckboxView);
 router.post('/pruebacheckbox', controller.pruebaCheckbox)
-
+router.get('/error', function(req, res) {
+    res.render('error')
+})
 // Module export
 module.exports = router;

@@ -1,130 +1,150 @@
+function qs(elemento){
+    document.querySelector(elemento);
+}
+
 window.addEventListener('load', function(){
-    let formulario = this.document.querySelector("productEdit-form");
+    let formulario = qs('form');
+
+    let inputTitulo = qs('input#titleEdit');
+    let errorTitulo = qs('#errTitleEdit');
+
+    let selectEstado = qs('select#stateEdit');
+    let errorEstado = qs('#errStateEdit');
+
+    let inputPlataforma = qs('input#platformEdit').checked;
+    let errorPlataforma = qs('#errPlatformEdit');
+
+    let inputDelivery = qs('input#deliveryEdit').checked;
+    let inputDelivery = qs('input#buscarEdit').checked;
+    let errorEntrega = qs('#errEntregaEdit');
+
+    let inputPrecio = qs('input#priceEdit');
+    let errorPrecio = qs('#errPriceEdit');
+    let regexPrecio = /^[0-9.,]+$/;
+
+    let textareaDescripcion = qs('textarea#descriptionEdit');
+    let errorDescripcion = qs('#errDescriptionEdit');
+
+    let textareaDescripcionMediana = qs('textarea#descriptionMediumEdit');
+    let errorDescripcionMediana = qs('#errDescriptionMediumEdit');
+
+    let textareaDescripcionGrande = qs('textarea#descriptionLargeEdit');
+    let errorDescripcionGrande = qs('#errDescriptionLargeEdit');
+
+    let inputEditora = qs('input#editorEdit');
+    let errorEditora = qs('#errEditorEdit');
+
+    let inputDesarroladora = qs('input#developerEdit');
+    let errorDesarrolladora = qs('#errDeveloperEdit');
+
+    let inputFecha = qs('input#launchDateEdit');
+    let errorFecha = qs('#errLaunchDateEdit');
+
+    let inputCategorias = qs('input#categoryEdit').checked;
+    let errorCategorias = qs('#errCategoryEdit');
+
+    let inputEtiquetas = qs('input#tagEdit').checked;
+    let errorEtiquetas = qs('#errTagEdit');
+
     
-    formulario.addEventListener('submit', function(event){
-            event.preventDefault();
-            let errors = [];
+    let inputClasificacion = qs('input#classificationEdit');
+    let errorClasificacion = qs('#errClassificationEdit');
+    let regexClasificacion = /^[0-9 ()+]+$/;
 
-            let gameTitle = document.querySelector("input.title");
-            if(gameTitle.value == ""){
-                errors.push("El campo 'Título del juego' no debe estar vacío")
+    let inputPuntaje = qs('input#ratingEdit');
+    let errorPuntaje = qs('#errRatingEdit');
+    let regexPuntaje = /^[0-9.]+$/;
+
+    let btnEnviar = qs("form button[type='submit']");
+
+    
+    btnEnviar.addEventListener('click', function(event){
+        event.preventDefault();
+
+        let errores = {}
+
+        console.log();
+
+        if(inputTitulo.value.length < 5){
+            errores.titulo = "Como mínimo 5 caracteres";
+        }
+        if(selectEstado.value == null){
+            errores.estado = "Debes seleccionar al menos uno";
+        }
+        if(!inputPlataforma){
+            errores.plataforma = "Debes marcar al menos uno";
+        }
+        if(!inputDelivery && !inputBuscar){
+            errores.entrega = "Debes marcar al menos una opción";
+        }
+        if(inputPrecio.value.length < 1){
+            errores.precio = "Este campo es obligatorio";
+        } else {
+            if(inputPrecio.value.match(regexPrecio) == null){
+                errores.precio = "El precio solo puedo contener números, comas y puntos";
             }
-
-            let gameState = document.querySelector("select.state");
-            if(gameState.value != null){
-                errors.push("Debes seleccionar un estado del juego")
+        }
+        if(textareaDescripcion.value.length < 20){
+            errores.descripcion = "Como mínimo 20 caracteres";
+        }
+        if(textareaDescripcionMediana.value.length < 30){
+            errores.descripcionMediana = "Como mínimo 30 caracteres";
+        }
+        if(textareaDescripcionGrande.value.length < 50){
+            errores.descripcionGrande = "Como mínimo 50 caracteres";
+        }
+        if(inputEditora.value.length < 1){
+            errores.editora = "Este campo es obligatorio";
+        }
+        if(inputDesarroladora.value.length < 1){
+            errores.desarrolladora = "Este campo es obligatorio";
+        }
+        if(inputFecha.value.length < 15){
+            errores.fecha = "Fecha invalida, debe contener mínimo 15 caracteres. Ejemplo: Lun 06 Ene 2014"
+        }
+        if(!inputCategorias){
+            errores.categorias = "Debes marcar al menos uno";
+        }
+        if(!inputEtiquetas){
+            errores.etiquetas = "Debes marcar al menos uno";
+        }
+        if(inputClasificacion.value.length < 2 && inputClasificacion.value.length > 3){
+            errores.clasificacion = "Este campo debe tener entre 2 y 3 caracteres. Ejemplo: +16";
+        } else {
+            if(inputClasificacion.value.match(regexClasificacion) == null){
+                errores.precio = "El precio solo puedo contener números y el símbolo de sumar(+). Ejemplo: +12";
             }
-
-            let platform1 = document.querySelector("input.platformCheckbox1").checked
-            let platform2 = document.querySelector("input.platformCheckbox2").checked
-            let platform3 = document.querySelector("input.platformCheckbox3").checked
-            let platform4 = document.querySelector("input.platformCheckbox4").checked
-            let platform5 = document.querySelector("input.platformCheckbox5").checked
-            let platform6 = document.querySelector("input.platformCheckbox6").checked
-
-            let platform = [platform1, platform2, platform3, platform4, platform5, platform6];
-
-            for(let i = 0; i <= platform.length; i++){
-                if(platform[i] == true){
-                    console.log();
-                } else {
-                    errors.push("Debes marcar al menos una plataforma");
-                };
-            };
-
-            let paymentMethod1 = document.querySelector("input.paymentMethod1").checked
-            let paymentMethod2 = document.querySelector("input.paymentMethod2").checked
-            let paymentMethod3 = document.querySelector("input.paymentMethod3").checked
-            let paymentMethod4 = document.querySelector("input.paymentMethod4").checked
-
-            let paymentMethod = [paymentMethod1, paymentMethod2, paymentMethod3, paymentMethod4];
-
-            for(let i = 0; i <= paymentMethod.length; i++){
-                if(paymentMethod[i] == true){
-                    console.log();
-                } else {
-                    errors.push("Debes marcar al menos un método de pago");
-                };
-            };
-
-            let deliveryOption1 = document.querySelector("input.deliveryOption1").checked
-            let deliveryOption2 = document.querySelector("input.deliveryOption2").checked
-
-            let deliveryOption = [deliveryOption1, deliveryOption2];
-
-            for(let i = 0; i <= deliveryOption.length; i++){
-                if(deliveryOption[i] == true){
-                    console.log();
-                } else {
-                    errors.push("Debes marcar al menos una opción de entrega del producto");
-                };
-            };
-
-            let productPrice = document.querySelector("input.price")
-            if(productPrice.value == ""){
-                errors.push("El campo 'precio' no debe estar vacío")
+        }
+        if(inputPuntaje.value.length != 4){
+            errores.puntaje = "Este campo debe tener 4 caracteres"
+        } else {
+            if(inputPuntaje.value.match(regexPuntaje) == null){
+                errores.puntaje = "El puntaje solo puede tener números y un punto(.). Ejemplo: 4.50"
             }
+        }
 
-            let gameDescription = document.querySelector("input.gameDescription")
-            if(gameDescription.value == ""){
-                errors.push("El campo 'Descripción del juego' no debe estar vacío")
-            }
 
-            let gameMediumDescription = document.querySelector("input.gameMediumDescription")
-            if(gameMediumDescription.value == ""){
-                errors.push("El campo 'Descripción mediana' no debe estar vacío")
-            }
-
-            let gameLargeDescription = document.querySelector("input.gameLargeDescription")
-            if(gameLargeDescription.value == ""){
-                errors.push("El campo 'Descripción grande' no debe estar vacío")
-            }
-
-            let gameEditor = document.querySelector("input.gameEditor")
-            if(gameEditor.value == ""){
-                errors.push("El campo 'Editora' no debe estar vacío")
-            }
-
-            let gameDeveloper = document.querySelector("input.gameDeveloper")
-            if(gameDeveloper.value == ""){
-                errors.push("El campo 'Desarrolladora' no debe estar vacío")
-            }
-
-            let launchDate = document.querySelector("input.launchDate")
-            if(launchDate.value == ""){
-                errors.push("El campo 'Fecha de lanzamiento' no debe estar vacío")
-            }
-
-            let category1 = document.querySelector("input.category1").checked
-            let category2 = document.querySelector("input.category2").checked
-            let category3 = document.querySelector("input.category3").checked
-            let category4 = document.querySelector("input.category4").checked
-            let category5 = document.querySelector("input.category5").checked
-            let category6 = document.querySelector("input.category6").checked
-
-            let category = [category1, category2, category3, category4, category5, category6];
-
-            for(let i = 0; i <= category.length; i++){
-                if(category[i] == true){
-                    console.log();
-                } else {
-                    errors.push("Debes marcar al menos una categoría");
-                };
-            };
-
-            let tag = document.querySelector("input.tag")
-            if(tag.value == ""){
-                errors.push("El campo 'Etiquetas' no debe estar vacío")
-            }
-
-            let classification = document.querySelector("input.classification")
-            if(classification.value == ""){
-                errors.push("El campo 'Clasificación' no debe estar vacío")
-            }
-
-            let score = document.querySelector("input.score")
-            if(score.value == ""){
-                errors.push("El campo 'Puntaje' no debe estar vacío")
-            }
-    });
+        if(Object.keys(errores).length >= 1){
+            //console.log('Hay errores');
+            //console.log(errores);
+            errorTitulo.innerText = (errores.titulo) ? errores.titulo : '';
+            errorEstado.innerText = (errores.estado) ? errores.estado : '';
+            errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
+            errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';
+            errorPrecio.innerText = (errores.precio) ? errores.precio : '';
+            errorDescripcion.innerText = (errores.descripcion) ? errores.descripcion : '';
+            errorDescripcionMediana.innerText = (errores.descripcionMediana) ? errores.descripcionMediana : '';
+            errorDescripcionGrande.innerText = (errores.descripcionGrande) ? errores.descripcionGrande : '';
+            errorEditora.innerText = (errores.editora) ? errores.editora : '';
+            errorDesarrolladora.innerText = (errores.desarrolladora) ? errores.desarrolladora : '';
+            errorFecha.innerText = (errores.fecha) ? errores.fecha : '';
+            errorCategorias.innerText = (errores.categorias) ? errores.categorias : '';
+            errorEtiquetas.innerText = (errores.etiquetas) ? errores.etiquetas : '';
+            errorClasificacion.innerText = (errores.clasificacion) ? errores.clasificacion : '';
+            errorPuntaje.innerText = (errores.puntaje) ? errores.puntaje : '';
+        } else {
+            // envio el formulario
+            alert('El formulario se ha enviado');
+        }
+    })
 })

@@ -158,8 +158,37 @@ module.exports = {
         res.render('thankYouPage');
     },
 
-    community: function(req,res){
-        res.render('community.ejs');
+    community: function(req,res) {
+
+        let Questions = db.Questions.findAll({
+			include: [{
+					association: 'users'
+				},
+				{
+					association: 'replys'
+				}
+			]
+        })
+
+		let Replies = db.Replys.findAll({
+			include: [{
+					association: 'users'
+				}
+			]
+        });
+        
+		Promise.all([Questions, Replies])
+
+			.then(function (result) {
+                //return res.send(result)
+				res.render('community', {
+                    questions: result[0],
+                    replies: result[1]
+                });
+			})
+			.catch(function (error) {
+				res.send(error)
+			});
     },
 
     buyFormChoose: (req, res) => {

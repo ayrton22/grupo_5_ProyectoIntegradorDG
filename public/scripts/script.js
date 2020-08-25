@@ -14,7 +14,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
     function myFunction2() {
         document.getElementById("drop-cont2").classList.toggle("show2");
-     }
+    }
+
+    function myFunction3() {
+      document.querySelector(".inactive-profile-dropdown").classList.toggle("show3");
+  }
   
   window.onclick = function(event) {
     if (!event.target.matches('.header-nav__dropdown-button')) {
@@ -38,4 +42,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           }
         }
     }
+
+    if (!event.target.matches('.nav__right-profile-options-icon')) {
+      var dropdowns3 = document.getElementsByClassName("inactive-profile-dropdown");
+      var k;
+      for (k = 0; k < dropdowns3.length; k++) {
+        var openDropdown3 = dropdowns3[k];
+        if (openDropdown3.classList.contains('show3')) {
+          openDropdown3.classList.remove('show3');
+        }
+      }
+  }
  }

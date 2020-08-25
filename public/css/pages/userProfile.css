@@ -396,6 +396,7 @@ button.container-profile-button:hover:before {
     display: flex;
     flex-direction: column;
     min-width: 250px;
+    max-width: 250px;
     height: 370px;
     background-color: #099dec;
     text-align: center;

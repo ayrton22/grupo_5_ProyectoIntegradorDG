@@ -28,7 +28,7 @@ router.post('/delete/:id', controller.delete);
 router.get('/login', controller.login);
 router.post('/login', loginValidation, controller.confirm);
 
-router.get('/profile/:id/', authMiddleware ,  authMiddleware2,  controller.profile); 
+router.get('/profile/:id/', /*authMiddleware ,  authMiddleware2,*/  controller.profile); 
 
 router.get('/cart', authMiddleware, controller.cart);
 

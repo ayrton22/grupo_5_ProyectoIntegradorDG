@@ -60,29 +60,47 @@
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
 
                <div class="container-profile-games-list">
-                <% if(user.user_sales.length != 0){%>
-                    <%  user.user_sales.forEach((element)=>{%>
-                        <div class="container-profile-games-single">
-                            <a href="/product/detail/<%=element.games.id%>">
-                            <div class="container-profile-games-single-img">
-                               <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                    <% if(user.user_sales.length != 0){%>
+
+                        <%  user.user_sales.forEach((element)=> {%>
+
+                            <div class="container-profile-games-single">
+                                <% if (element.status_transaction == 'Sold') { %>
+                                    <i class="fas fa-info-circle games-single-detailInfo"></i>
+                                <% } else { %>
+                                    <a href="/product/edit/<%= element.games.id %>"><i class="far fa-edit games-single-edit"></i></a>
+                                    <i class="far fa-trash-alt games-single-delete"></i>
+                                    <form action="/product/detail/<%= element.games.id %>?_method=delete" method="POST" class="games-delete-form inactive-games-delete-form">
+                                        <h2>¿Estas seguro de querer eliminar este producto?</h1>
+                                        <h3>Esta acción es permanente y el juego no podrá recuperarse</h2>
+
+                                        <button type="submit" class="games-delete-form-button1">Confirmar</button>
+                                        <button type="button" class="games-delete-form-button2">Cancelar</button>
+                                    </form>
+                                <% } %>
+                                <a href="/product/detail/<%= element.games.id %>">
+                                <div class="container-profile-games-single-img">
+                                <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                                </div>
+                                </a>
+
+                                <div class="container-profile-games-single-info">
+        
+                                    <h2><%= element.games.title %></h2>
+                                    <div class="container-profile-games-single-info-sub">
+                                        <h4> <%=element.price %>$</h4>
+                                        <h3><i class="fas fa-desktop"></i></h3> 
+                                        <span>Estatus: <%= element.status_transaction %> </span>       
+
+                                    </div>
+
+                                </div>
+        
                             </div>
-                            </a>
-                            <div class="container-profile-games-single-info">
-    
-                                <h2><%= element.games.title %></h2>
-                                <h4> <%=element.price %>$</h1>
-                                <h3><i class="fas fa-desktop"></i></h3> 
-                                
-                            </div>
-                        
-                            <span>Estatus:<%= element.status_transaction %></span>
-                            <span>Delivery: <%= element.delivery_type%></span>
-                        </div>
-                    <% })%>
-                <% } else { %>
-                    
-                    <% } %> 
+
+                        <% })%>
+
+                    <% }%>
 
                     <div class="container-profile-games-add">
                         <a href="/product">
@@ -91,14 +109,21 @@
                         </a>
                     </div>
 
-             </div>
+                </div>
 
-               <!--<div class="container-profile-games-separation"> . </div>-->
-               <div class="container-games-info">
+                <div class="games-detailInfo inactive-games-detailInfo">
+                    <i class="fas fa-times-circle"></i>
+                    <h1>Title</h1>
+                    <h2>Comprado por Joaco</h2>
+                    <h3>Fecha: Hoy</h3>
+                    <h3>Tipo de delivery: No se</h3>
+                </div>
 
-                   <h2>Items en carrito: <%=user.user_sales.length%></h2>
-                   <h3><a href="/user/cart">Ir a tu carrito de compras</a></h3>
-               </div>
+                <div class="container-games-info">
+
+                    <h2>Items en carrito: <%=user.user_sales.length%></h2>
+                    <h3><a href="/user/cart">Ir a tu carrito de compras</a></h3>
+                </div>
 
             </div>
 
@@ -333,6 +358,8 @@
             <div class="container-profile-settings inactiveUserProfile">
 
                 <h1>Configuración de cuenta</h1>
+                <br>
+                <br>
                 <br>
                 <br>
                 <br>

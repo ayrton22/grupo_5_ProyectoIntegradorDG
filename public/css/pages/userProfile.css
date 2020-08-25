@@ -15,7 +15,7 @@
 }
 
 .container-profile-aside {
-    width: 23%;
+    width: 270px;
     background-color: #00A6FF;
     padding: 2rem 1.5rem;
     border-radius: 8px 0 0 8px;
@@ -36,10 +36,14 @@
     transition: .3s ease;
 }
 
+
+/* General Section */
+
 .container-profile-general {
     display: flex;
     justify-content: space-between;
-    width: 78%;
+    width: 75%;
+    height: 650px;
     padding: 2rem 3rem;
 }
 
@@ -51,17 +55,17 @@
 
 .container-profile-general-info h1 {
     font-size: 36px;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
 }
 
 .container-profile-general-info--list {
     font-size: 20px;
     color: #c1c1c2;
-    margin: 2rem 0;
+    margin: 3rem 0;
 }
 
 .container-profile-general-info--list li{
-    margin: 2rem 0;
+    margin: 4rem 0;
 }
 
 .container-profile-general-info--list li span {
@@ -111,7 +115,7 @@ button.container-profile-button:hover:before {
 .container-profile-general-separation {
     color: #fe0034;
     background-color: #fe0034;
-    height: 49rem;
+    height: 60rem;
     margin: .5rem 5rem;
     border-radius: 5px;
 }
@@ -145,12 +149,12 @@ button.container-profile-button:hover:before {
 
 .container-profile-general-profile h2.profile-name {
     font-size: 28px;
-    margin: 1rem 0;
+    margin: 2rem 0;
 }
 
 .container-profile-general-profile h2.profile-pass {
     font-size: 28px;
-    margin-top: 5rem ;
+    margin-top: 7rem ;
     text-align: left;
 }
 
@@ -178,7 +182,7 @@ button.container-profile-button:hover:before {
 
 
 .container-profile-general-profile a.profile-session p {
-    margin-top: 6rem;
+    margin-top: 10rem;
     text-align: right;
     font-size: 22px;
     color: #e92d37;
@@ -194,7 +198,9 @@ button.container-profile-button:hover:before {
 /* Games section */
 
 .container-profile-games {
-    width: 78%;
+    position: relative;
+    width: 72%;
+    height: 650px;
     padding: 2rem 3rem;
     margin: 0 2.5rem;
 }
@@ -214,10 +220,11 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-games-list {
-    max-height: 400px;
-    margin: 2rem 0;
+    max-height: 450px;
+    margin: 1rem 0;
     display: flex;
     overflow-y: auto;
+    padding: 1rem .5rem;
 }
 
 .container-profile-games-list::-webkit-scrollbar {
@@ -235,27 +242,129 @@ button.container-profile-button:hover:before {
   }
 
 .container-profile-games-single {
-    width: 250px;
-    height: 350px;
+    position: relative;
+    min-width: 250px;
+    height: 370px;
+    margin-right: 3rem;
     background-color: #00A6FF;
     text-align: center;
-    margin: 2rem 2rem 0 2rem;
     border-radius: 8px;
     box-shadow: 0 3px 5px 3px #1f3058;
 }
 
+.games-single-detailInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 24px;
+    color: #484d53;
+    padding: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.games-single-detailInfo:hover {
+    transform: scale(1.2);
+}
+
+.games-single-edit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size: 24px;
+    color: #19233b;
+    padding: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.games-single-edit:hover {
+    transform: scale(1.2);
+}
+
+.games-single-delete {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    z-index: 1;
+    font-size: 24px;
+    color: #c9111a;
+    padding: 1rem;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.games-delete-form {
+    position: absolute;
+    z-index: -2;
+    top: 40rem;
+    left: 15rem;
+    background-color: #1f3058;
+    box-shadow: 0 0 5px 3px #19233b;
+    width: 500px;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: .3s ease-out;
+}
+
+.games-delete-form h3 {
+    margin: 2rem 0;
+    color: #fe0034;;
+}
+
+.games-delete-form-button1 {
+    background-color: #fe0034;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    margin-right: .5rem;
+    margin-top: 2rem;
+}
+
+.games-delete-form-button2 {
+    background-color: #00A6FF;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    color: white;
+    margin-left: .5rem;
+}
+
+
+.inactive-games-delete-form {
+    display: none;
+    opacity: 0;
+}
+
+.active-games-delete-form {
+    z-index: 2;
+    top: 5rem;
+    opacity: 1;
+}
+
+.games-single-delete:hover {
+    transform: scale(1.2);
+}
+
 .container-profile-games-single-img {
     width: 200px;
+    height: 200px;
+    margin: 1rem auto;
 }
 
 .container-profile-games-single-img img {
+    width: 150px;
     height: 200px;
-    margin: 1rem 1rem 0 4.3rem;
     box-shadow: 0 3px 5px 3px #1f3058;
 }
 
 .container-profile-games-single-info {
-    margin: .5rem;
+    margin: 1rem;
     text-align: left;
 }
 
@@ -263,12 +372,31 @@ button.container-profile-button:hover:before {
     font-size: 24px;
 }
 
+.container-profile-games-single-info-sub {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1rem 2rem;
+}
+
+.container-profile-games-single-info-sub h4 {
+    font-size: 18px;
+    text-align: right;
+}
+
+.container-profile-games-single-info-sub h3 {
+    text-align: right;
+}
+
+.container-profile-games-single-info-sub span {
+    font-size: 14px;
+}
+
 .container-profile-games-add {
-    width: 250px;
-    height: 350px;
+    min-width: 250px;
+    height: 370px;
     background-color: #099dec;
     text-align: center;
-    margin: 2rem 2rem 0 2rem;
     border-radius: 8px;
     box-shadow: 0 3px 5px 3px #1f3058;
     opacity: 0.8;
@@ -294,17 +422,44 @@ button.container-profile-button:hover:before {
     opacity: 1;
 }
 
-.container-profile-games-separation {
-    color: #fe0034;
-    background-color: #fe0034;
-    width: 70rem;
-    height: 5px;
-    margin: 2rem 0;
-    border-radius: 5px;
+.games-detailInfo {
+    position: absolute;
+    z-index: -2;
+    top: 40rem;
+    left: 22rem;
+    background-color: #1f3058;
+    box-shadow: 0 0 5px 3px #19233b;
+    width: 500px;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: .3s ease-out;
+}
+
+.games-detailInfo i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.games-detailInfo i:hover {
+    color: rgb(173, 169, 169);
+}
+
+.inactive-games-detailInfo {
+    opacity: 0;
+}
+
+.active-games-detailInfo {
+    z-index: 2;
+    top: 15rem;
+    opacity: 1;
 }
 
 .container-games-info {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .container-games-info h3 a {
@@ -316,7 +471,8 @@ button.container-profile-button:hover:before {
 /* Payments section */
 
 .container-profile-pays {
-    width: 78%;
+    width: 72%;
+    height: 650px;
     padding: 2rem 3rem;
     margin: 0 2.5rem;
 }
@@ -334,9 +490,23 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-pays-transaction-wrapper {
-    max-height: 500px;
+    max-height: 460px;
     overflow-y: auto;
 }
+
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar {
+    width: 10px;
+  }
+
+/* Track */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-track {
+    background: #1f3058;
+  }
+  
+  /* Handle */
+.container-profile-pays-transaction-wrapper::-webkit-scrollbar-thumb {
+    background: #fe0034;
+  }
 
 .pays-rows {
     min-width: 700px;
@@ -351,7 +521,8 @@ button.container-profile-button:hover:before {
 /* Settings section */
 
 .container-profile-settings {
-    width: 78%;
+    width: 72%;
+    height: 650px;
     padding: 2rem 3rem;
     margin: 0 2.5rem;
     text-align: center;

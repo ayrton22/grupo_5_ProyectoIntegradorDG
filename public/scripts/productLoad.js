@@ -68,8 +68,6 @@ window.addEventListener('load', function(){
 
         let errores = {}
 
-        console.log();
-
         if(inputTitulo.value.length < 5){
             errores.titulo = "Como mínimo 5 caracteres";
         }

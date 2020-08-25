@@ -28,7 +28,7 @@
                             <ul class="container-profile-general-info--list" type="none">
                                 <li>Fecha de nacimiento: <span><%= user.birth_date %></span></li>
                                 <li>Email: <span><%= user.email %></span></li>
-                                <li>Dirección: <span><%= user.address %></span></li>
+                                <li>Dirección: <span><%= user.address%></span></li>
                                 <li>Género: <span><%= user.gender %></span></li>
                             </ul>
 
@@ -60,74 +60,38 @@
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
 
                <div class="container-profile-games-list">
-
-                    <div class="container-profile-games-single">
-
-                        <div class="container-profile-games-single-img">
-                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
-                        </div>
-                        <div class="container-profile-games-single-info">
-
-                            <h2>Among Trees</h2>
-                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
-                            <h3><i class="fas fa-desktop"></i></h3>
-
-                        </div>
-
+                <% if(user.user_sales.leng != 0){%>
+                    <%  user.user_sales.forEach((element)=>{%>
+                        <div class="container-profile-games-single">
+                            <a href="/product/detail/<%=element.games.id%>">
+                            <div class="container-profile-games-single-img">
+                               <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                            </div>
+                        </a>
+                            <div class="container-profile-games-single-info">
+    
+                                <h2><%= element.games.title %></h2>
+                                <h4> <%=element.price %>$</h1>
+                                <h3><i class="fas fa-desktop"></i></h3> 
+                                
+                            </div>
+                        
+                        <span>Estatus:<%= element.status_transaction %></span>
+                        <span>Delivery: <%= element.delivery_type%></span>
                     </div>
+                    <% })%>
+                <% } else {%>
+                    
+                    
+                    <% } %> 
 
-                    <div class="container-profile-games-single">
 
-                        <div class="container-profile-games-single-img">
-                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
-                        </div>
-                        <div class="container-profile-games-single-info">
-
-                            <h2>Among Trees</h2>
-                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
-                            <h3><i class="fas fa-desktop"></i></h3>
-
-                        </div>
-
-                    </div>
-
-                    <div class="container-profile-games-single">
-
-                        <div class="container-profile-games-single-img">
-                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
-                        </div>
-                        <div class="container-profile-games-single-info">
-
-                            <h2>Among Trees</h2>
-                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
-                            <h3><i class="fas fa-desktop"></i></h3>
-
-                        </div>
-
-                    </div>
-
-                    <div class="container-profile-games-single">
-
-                        <div class="container-profile-games-single-img">
-                            <img src="/img/uploads/productsImage/amongtree12.webp" alt="">
-                        </div>
-                        <div class="container-profile-games-single-info">
-
-                            <h2>Among Trees</h2>
-                            <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat temporibus modi enim ipsam aperiam sed nulla nam. Deleniti, nisi enim.</h1>
-                            <h3><i class="fas fa-desktop"></i></h3>
-
-                        </div>
-
-                    </div>
-
-               </div>
+             </div>
 
                <!--<div class="container-profile-games-separation"> . </div>-->
-
                <div class="container-games-info">
 
-                   <h2>Items en carrito: 5</h2>
+                   <h2>Items en carrito: <%=user.user_sales.length%></h2>
                    <h3><a href="/user/cart">Ir a tu carrito de compras</a></h3>
                </div>
 

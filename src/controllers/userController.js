@@ -12,11 +12,13 @@ const db = require('../database/models');
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
 users = JSON.parse(users);
 
-
+//order: [[ 'createdAt', 'Desc']]
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findByPk(req.params.id)
+        db.Users.findByPk(req.params.id, {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}]},
+        {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
+            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]}]})
         .then(function(result) {
             res.render('userProfile',{
                 user: result
@@ -65,7 +67,13 @@ module.exports = {
             db.Users.findOne({
                 where:{
                     username: req.body.username
-                }
+                },
+                include: [{
+					association: 'transactions'
+                },
+                {
+					association: 'user_sales'
+				}]
             })
             .then(function(result) {
                     if(result.username == req.body.username && bcrypt.compareSync(req.body.password, result.password)) {

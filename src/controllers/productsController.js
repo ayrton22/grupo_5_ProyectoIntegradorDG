@@ -209,7 +209,6 @@ module.exports = {
 	update: function (req, res) {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
-		return res.send(req.body)
 		db.Games.update({
 				title: req.body.title,
 				description: req.body.description,

@@ -8,29 +8,22 @@ const {check, validationResult, body} = require('express-validator');
 
 const db = require('../database/models');
 
-// JSON Parse
-let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
-users = JSON.parse(users);
-
-//order: [[ 'createdAt', 'Desc']]
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findByPk(req.params.id, 
-            {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}] },
-        {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
-            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]},{association: 'games_shooping_cart',attributes:['id','title']}]})
-        .then(function(result) {
-            res.render('userProfile',{
-                user: result
-            }
-            );
+        db.Users.findByPk(req.params.id,{
+            include:[{association:'games_shooping_cart'}]
+        }).then(function(result) {
+            res.send(result);
         })
         .catch(function(error) {
             res.send(error);
         })
     },
     cart: function(req, res){
+        db.Users.findByPk(req.params.id,{
+            include:[{association:'games_shooping_cart'}]
+        })
         res.render('userCart');
     },
     register: function(req, res) {

@@ -199,6 +199,10 @@ module.exports = {
 
     buyFormLocalView: (req, res) => {
         res.render('buyFormLocal');
+    },
+
+    paymentMethodView: (req, res) => {
+        res.render('paymentMethodForm');
     }
 }
 

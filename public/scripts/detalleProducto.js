@@ -84,6 +84,4 @@ document.querySelector('.eliminar-juego').addEventListener('click', (e) => {
     }
   })
 });
-
-
 })

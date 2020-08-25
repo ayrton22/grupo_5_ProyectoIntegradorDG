@@ -41,6 +41,7 @@ router.get('/community',controller.community);
 router.get('/buyFormChoose', controller.buyFormChoose);
 router.get('/buyFormDelivery', controller.buyFormDeliveryView);
 router.get('/buyFormLocal', controller.buyFormLocalView);
+router.get('/paymentMethodForm', controller.paymentMethodView);
 
 // Module export
 module.exports = router;

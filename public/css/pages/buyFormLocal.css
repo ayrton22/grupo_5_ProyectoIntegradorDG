@@ -1,3 +1,44 @@
-.container-buyFormLocal{
+.container-buyLocal{
     min-height: 65rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-buyLocal2{
+    min-width: 110rem;
+    justify-content: space-between;
+    display: flex;
+}
+
+.buyLocal__left-section{
+    display: flex;
+}
+
+.buyLocal__info-part1{
+    margin-right: 5rem;
+}
+
+.buyLocal__title-cont{
+    margin-bottom: 2rem;
+}
+
+.buyLocal__line{
+    height: .2rem;
+    width: 100%;
+    background-color: darkblue;
+}
+
+.buyLocal__icon{
+    margin-left: 1.7rem;
+}
+
+.buyLocal__right-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buyLocal__continue-btn{
+    margin-top: auto;
 }

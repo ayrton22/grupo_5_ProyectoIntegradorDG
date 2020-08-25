@@ -36,7 +36,8 @@
     margin-bottom: 3rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
     padding: 2rem;
-    height: fit-content;
+    height: 75rem;
+    overflow-y: scroll;
 }
 
 .carrito-container__info .carrito-container__info-cliente{

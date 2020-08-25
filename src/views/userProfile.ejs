@@ -60,7 +60,7 @@
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
 
                <div class="container-profile-games-list">
-                <% if(user.user_sales.leng != 0){%>
+                <% if(user.user_sales.length != 0){%>
                     <%  user.user_sales.forEach((element)=>{%>
                         <div class="container-profile-games-single">
                             <a href="/product/detail/<%=element.games.id%>">

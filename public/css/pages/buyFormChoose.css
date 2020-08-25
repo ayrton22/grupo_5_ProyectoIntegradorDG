@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 65rem;
+    min-height: 65rem;
 }
 
 .box-buyFormChoose__container{
@@ -17,6 +17,7 @@
 }
 
 .box-buyFormChoose__op1--modifer{
+    margin-top: 2rem;
     margin-bottom: 2rem;
 }
 

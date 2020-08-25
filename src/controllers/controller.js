@@ -52,6 +52,10 @@ module.exports = {
 
 	pruebaCheckbox: function (req, res){
 		res.send(req.body.chec)
-	}
+	},
+
+	/*error: function(req, res) {
+		res.render('error')
+	}*/
         
 }

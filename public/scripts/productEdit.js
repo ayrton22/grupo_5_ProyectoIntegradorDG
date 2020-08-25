@@ -1,8 +1,9 @@
-function qs(elemento){
-    document.querySelector(elemento);
-}
-
 window.addEventListener('load', function(){
+
+    function qs(elemento){
+        document.querySelector(elemento);
+    }
+
     let formulario = qs('form');
 
     let inputTitulo = qs('input#titleEdit');
@@ -11,15 +12,15 @@ window.addEventListener('load', function(){
     let selectEstado = qs('select#stateEdit');
     let errorEstado = qs('#errStateEdit');
 
-    let inputPlataforma = qs('input#platformEdit').checked;
+    let inputPlataforma = qs('input#platformEdit');
     let errorPlataforma = qs('#errPlatformEdit');
 
     let inputVideoLink = qs('input#videoLinkEdit')
     let errorVideoLink = qs('#errVideoLinkEdit')
     let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
 
-    let inputDelivery = qs('input#deliveryEdit').checked;
-    let inputDelivery = qs('input#buscarEdit').checked;
+    let inputDelivery = qs('input#deliveryEdit');
+    let inputBuscar = qs('input#buscarEdit');
     let errorEntrega = qs('#errEntregaEdit');
 
     let inputPrecio = qs('input#priceEdit');
@@ -44,10 +45,10 @@ window.addEventListener('load', function(){
     let inputFecha = qs('input#launchDateEdit');
     let errorFecha = qs('#errLaunchDateEdit');
 
-    let inputCategorias = qs('input#categoryEdit').checked;
+    let inputCategorias = qs('input#categoryEdit');
     let errorCategorias = qs('#errCategoryEdit');
 
-    let inputEtiquetas = qs('input#tagEdit').checked;
+    let inputEtiquetas = qs('input#tagEdit');
     let errorEtiquetas = qs('#errTagEdit');
 
     
@@ -59,15 +60,16 @@ window.addEventListener('load', function(){
     let errorPuntaje = qs('#errRatingEdit');
     let regexPuntaje = /^[0-9.]+$/;
 
-    let btnEnviar = qs("form button[type='submit']");
+    let btnEnviar = document.getElementById("buttonEdit");
 
-    
+    console.log(btnEnviar);
+
     btnEnviar.addEventListener('click', function(event){
         event.preventDefault();
 
         let errores = {}
 
-        console.log();
+        console.log(btnEnviar);
 
         if(inputTitulo.value.length < 5){
             errores.titulo = "Como mínimo 5 caracteres";
@@ -156,6 +158,7 @@ window.addEventListener('load', function(){
         } else {
             // envio el formulario
             alert('El formulario se ha enviado');
+            btnEnviar.click();
         }
     })
 })

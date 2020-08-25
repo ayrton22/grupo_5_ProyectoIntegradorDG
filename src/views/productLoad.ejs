@@ -10,11 +10,12 @@
             <div id="form1" class="row productLoader-form-1">
                     <div class="col-12">
                         <h1>Carga de Producto:</h1>
+                        <h2>Test</h2>
                     </div>
                     <div class="col-6 pb-5">
                         <label for="title" class="productLoader-form-label">Título del juego: </label>
-                        <input type="text" name="title" class="productLoader-form-input" id="titleLoad">
-                        <small class="text-danger" id="errTitle"></small>
+                        <input type="text" name="title" value="8" class="productLoader-form-input" id="prueba">
+                        <small class="text-danger" id="errTitleLoad"></small>
                     </div>
                     <div class="col-6 pb-5">
                         <label for="estado" class="productLoader-form-label">Estado del juego: </label>
@@ -28,7 +29,7 @@
                         </select>
                         <small class="text-danger" id="errStateLoad"></small>
                     </div>
-                    <div class="col-6 pb-5">
+                    <div class="col-6 pb-5 plataformasProductLoad">
                         <label for="platforms" class="productLoader-form-label">Plataformas: </label>
                         <% for(let i = 0; i < gamePlatform.length; i++) { %>
                         <input type="checkbox" name="platform" id="platformLoad" value="<%= gamePlatform[i].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i].name %></label><br>
@@ -198,7 +199,7 @@
                     <small class="text-danger" id="errRatingLoad"></small>
                 </div>
                 <button type="button" class="productLoader-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
-                <button type="submit" class="productLoader-form-button--submit mb-5">Cargar producto</button>
+                <button type="submit" id="buttonLoad" class="productLoader-form-button--submit mb-5">Cargar producto</button>
             </div>
         </form>
     </div>

@@ -1,74 +1,78 @@
-function qs(elemento){
-    document.querySelector(elemento);
-}
-
 window.addEventListener('load', function(){
+
+    function qs(elemento){
+        document.querySelector(elemento);
+    }
+
     let formulario = qs('form');
 
-    let inputTitulo = qs('input#titleLoad');
-    let errorTitulo = qs('#errTitleLoad');
+    let inputTitulo = document.getElementById("prueba");
+    console.log(inputTitulo);
+    let errorTitulo = document.getElementById('errTitleLoad');
+    console.log(errorTitulo);
 
-    let selectEstado = qs('select#stateLoad');
-    let errorEstado = qs('#errStateLoad');
+    let selectEstado = document.getElementById('stateLoad');
+    let errorEstado = document.getElementById('errStateLoad');
 
-    let inputPlataforma = qs('input#platformLoad').checked;
-    let errorPlataforma = qs('#errPlatformLoad');
+    let inputPlataforma = document.getElementById('.plataformasProductLoad platformLoad');
+    let errorPlataforma = document.getElementById('errPlatformLoad');
 
-    let inputVideoLink = qs('input#videoLinkLoad')
-    let errorVideoLink = qs('#errVideoLinkLoad')
+    let inputVideoLink = document.getElementById('videoLinkLoad')
+    let errorVideoLink = document.getElementById('errVideoLinkLoad')
     let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
 
 
-    let inputDelivery = qs('input#deliveryLoad').checked;
-    let inputDelivery = qs('input#buscarLoad').checked;
-    let errorEntrega = qs('#errEntregaLoad');
+    let inputDelivery = document.getElementById('deliveryLoad');
+    let inputBuscar = document.getElementById('buscarLoad');
+    let errorEntrega = document.getElementById('errEntregaLoad');
 
-    let inputPrecio = qs('input#priceLoad');
-    let errorPrecio = qs('#errPriceLoad');
+    let inputPrecio = document.getElementById('priceLoad');
+    let errorPrecio = document.getElementById('errPriceLoad');
     let regexPrecio = /^[0-9.,]+$/;
 
-    let textareaDescripcion = qs('textarea#descriptionLoad');
-    let errorDescripcion = qs('#errDescriptionLoad');
+    let textareaDescripcion = document.getElementById('descriptionLoad');
+    let errorDescripcion = document.getElementById('errDescriptionLoad');
 
-    let textareaDescripcionMediana = qs('textarea#descriptionMediumLoad');
-    let errorDescripcionMediana = qs('#errDescriptionMediumLoad');
+    let textareaDescripcionMediana = document.getElementById('descriptionMediumLoad');
+    let errorDescripcionMediana = document.getElementById('errDescriptionMediumLoad');
 
-    let textareaDescripcionGrande = qs('textarea#descriptionLargeLoad');
-    let errorDescripcionGrande = qs('#errDescriptionLargeLoad');
+    let textareaDescripcionGrande = document.getElementById('descriptionLargeLoad');
+    let errorDescripcionGrande = document.getElementById('errDescriptionLargeLoad');
 
-    let inputEditora = qs('input#editorLoad');
-    let errorEditora = qs('#errEditorLoad');
+    let inputEditora = document.getElementById('editorLoad');
+    let errorEditora = document.getElementById('errEditorLoad');
 
-    let inputDesarroladora = qs('input#developerLoad');
-    let errorDesarrolladora = qs('#errDeveloperLoad');
+    let inputDesarroladora = document.getElementById('developerLoad');
+    let errorDesarrolladora = document.getElementById('errDeveloperLoad');
 
-    let inputFecha = qs('input#launchDateLoad');
-    let errorFecha = qs('#errLaunchDateLoad');
+    let inputFecha = document.getElementById('launchDateLoad');
+    let errorFecha = document.getElementById('errLaunchDateLoad');
 
-    let inputCategorias = qs('input#categoryLoad').checked;
-    let errorCategorias = qs('#errCategoryLoad');
+    let inputCategorias = document.getElementById('categoryLoad');
+    let errorCategorias = document.getElementById('errCategoryLoad');
 
-    let inputEtiquetas = qs('input#tagLoad').checked;
-    let errorEtiquetas = qs('#errTagLoad');
+    let inputEtiquetas = document.getElementById('tagLoad');
+    let errorEtiquetas = document.getElementById('errTagLoad');
 
     
-    let inputClasificacion = qs('input#classificationLoad');
-    let errorClasificacion = qs('#errClassificationLoad');
+    let inputClasificacion = document.getElementById('classificationLoad');
+    let errorClasificacion = document.getElementById('errClassificationLoad');
     let regexClasificacion = /^[0-9 ()+]+$/;
 
-    let inputPuntaje = qs('input#ratingLoad');
-    let errorPuntaje = qs('#errRatingLoad');
+    let inputPuntaje = document.getElementById('ratingLoad');
+    let errorPuntaje = document.getElementById('errRatingLoad');
     let regexPuntaje = /^[0-9.]+$/;
 
-    let btnEnviar = qs("form button[type='submit']");
+    let btnEnviar = document.getElementById('buttonLoad');
 
-    
+    console.log(btnEnviar);
+
     btnEnviar.addEventListener('click', function(event){
         event.preventDefault();
 
         let errores = {}
 
-        console.log();
+        console.log(inputTitulo);
 
         if(inputTitulo.value.length < 5){
             errores.titulo = "Como mínimo 5 caracteres";
@@ -138,7 +142,7 @@ window.addEventListener('load', function(){
         if(Object.keys(errores).length >= 1){
             //console.log('Hay errores');
             //console.log(errores);
-            errorTitulo.innerText = (errores.titulo) ? errores.titulo : '';
+            errorTitulo.innerText = (errores.titulo) ? errores.titulo : "";
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
@@ -157,6 +161,7 @@ window.addEventListener('load', function(){
         } else {
             // envio el formulario
             alert('El formulario se ha enviado');
+            btnEnviar.click();
         }
     })
 })

@@ -29,16 +29,18 @@
 }
 
 .community-question p {
-    display: inline;
+    display: flex;
+    flex-direction: row;
     font-size: 32px;
     margin-left: 1rem;
+    align-items: center;
 }
 
-.community-question span {
+.community-question p span {
     font-size: 28px;
-    text-align: right;
     color: #fc234f;
     cursor: pointer;
+    margin-left: auto;
 }
 
 .community-question h2 {

@@ -6,20 +6,21 @@
     <%- include('partials/header') %>
     
     <div class="container pb-3 container-productLoader">
-        <form class="productLoader-form" action="" enctype="multipart/form-data" method="POST">
+        <form id="form" class="productLoader-form" action="" enctype="multipart/form-data" method="POST">
             <div id="form1" class="row productLoader-form-1">
                     <div class="col-12">
                         <h1>Carga de Producto:</h1>
+                        <h2>Test</h2>
                     </div>
                     <div class="col-6 pb-5">
                         <label for="title" class="productLoader-form-label">Título del juego: </label>
-                        <input type="text" name="title" class="productLoader-form-input" id="titleLoad">
-                        <small class="text-danger" id="errTitle"></small>
+                        <input type="text" name="title" value="" class="productLoader-form-input" id="titleLoad">
+                        <small class="text-danger" id="errTitleLoad"></small>
                     </div>
                     <div class="col-6 pb-5">
                         <label for="estado" class="productLoader-form-label">Estado del juego: </label>
                         <select class="productLoader-form-input" id="stateLoad" name="estado">
-                            <option selected hidden>Elija el estado</option>
+                            <option value="estandar" selected hidden>Elija el estado</option>
                             <option value="1">Muy malo</option>
                             <option value="2">Muy usado</option>
                             <option value="3">Usado</option>
@@ -31,7 +32,9 @@
                     <div class="col-6 pb-5">
                         <label for="platforms" class="productLoader-form-label">Plataformas: </label>
                         <% for(let i = 0; i < gamePlatform.length; i++) { %>
-                        <input type="checkbox" name="platform" id="platformLoad" value="<%= gamePlatform[i].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i].name %></label><br>
+                        <input type="checkbox" name="platform" id="platformLoad0" value="<%= gamePlatform[i = 0].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i = 0].name %></label><br>
+                        <input type="checkbox" name="platform" id="platformLoad1" value="<%= gamePlatform[i = 1].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i = 1].name %></label><br>
+                        <input type="checkbox" name="platform" id="platformLoad2" value="<%= gamePlatform[i = 2].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i = 2].name %></label><br>
                         <% } %>
                         <small class="text-danger" id="errPlatformLoad"></small>
                     </div>
@@ -58,7 +61,7 @@
                             </div>
                             <div class="row form2-containerEdit--link-video form2-containerEdit--link-video2">
                                 <input type="text" id="videoLinkLoad" class="productEdit-form-input productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
-                                <small class="" id="errVideoLinkLoad"></small>
+                                <small class="text-danger" id="errVideoLinkLoad"></small>
                             </div>
                             <div class="row form2-containerLoader--horizontal">
                                 <img class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
@@ -109,14 +112,11 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productLoader-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
-                    <small class=""></small>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
-                    <small class=""></small>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label><br>
-                    <small class=""></small>
-                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
-                    <small class=""></small>
+                    <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad0"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad1"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad2"> <label class="productLoader-checkbox-label" for="pagos">Mastercard</label><br>
+                    <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad3"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
+                    <small class="text-danger"id="errPaymentMethodLoad"></small>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productLoader-form-label">Opciones de entrega de Producto: </label>
@@ -176,14 +176,31 @@
                 <div class="col-6 pb-5">
                     <label for="category" class="productLoader-form-label">Categorias: </label>
                     <% for(let i = 0; i < gameCategory.length; i++) { %>
-                    <input type="checkbox" value="<%= gameCategory[i].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 0].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad0"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 0].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 1].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad1"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 1].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 2].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad2"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 2].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 3].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad3"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 3].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 4].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad4"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 4].name %></label><br>
+                    <input type="checkbox" value="<%= gameCategory[i = 5].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad5"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 5].name %></label><br>
                     <% } %>
                     <small class="text-danger" id="errCategoryLoad"></small>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="tags" class="productLoader-form-label">Etiquetas: </label>
                     <% for(let i = 0; i < gameGenre.length; i++) { %>
-                        <input type="checkbox" value="<%= gameGenre[i].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 0].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad0"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 0].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 1].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad1"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 1].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 2].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad2"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 2].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 3].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad3"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 3].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 4].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad4"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 4].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 5].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad5"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 5].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 6].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad6"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 6].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 7].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad7"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 7].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 8].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad8"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 8].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 9].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad9"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 9].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 10].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad10"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 10].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 11].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad11"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 11].name %></label><br>
+                        <input type="checkbox" value="<%= gameGenre[i = 12].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad12"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 12].name %></label><br>
                     <% } %>
                     <small class="text-danger" id="errTagLoad"></small>
                 </div>
@@ -198,7 +215,7 @@
                     <small class="text-danger" id="errRatingLoad"></small>
                 </div>
                 <button type="button" class="productLoader-form-button--next mb-5"><a href="#form1">Volver arriba</a></button>
-                <button type="submit" class="productLoader-form-button--submit mb-5">Cargar producto</button>
+                <button type="submit" id="buttonLoad" class="productLoader-form-button--submit mb-5">Cargar producto</button>
             </div>
         </form>
     </div>

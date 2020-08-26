@@ -1,0 +1,33 @@
+@media (max-width: 1200px) {
+
+    .container-signIn {
+        width: 500px;
+    }
+
+    input#signIn-form-input {
+        width: 400px;
+        height: 35px;
+        font-size: 16px;
+    }
+      
+
+}
+
+@media (max-width: 600px) {
+
+    .container-signIn {
+        width: 350px;
+    }
+
+    input#signIn-form-input {
+        width: 300px;
+    }
+
+    label.signIn-form-label {
+        margin-left: 0;
+      }
+
+}
+
+
+

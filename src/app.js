@@ -52,7 +52,7 @@ app.use('/product', productsRouter);
 app.use('/user', userRouter);
 
 // Server Listening
-app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000"));
+app.listen(3000, () => console.log("Servidor corriendo en el puerto 3000, 8111 o 8889 :)"));
 
 app.use((req, res, next) => {
     res.status(404).render('error')

@@ -165,15 +165,33 @@ div.product-section-1 {
     padding-bottom: 8rem;
 }
 
+li.juegos-container__item{
+    cursor: pointer;
+}
+
 .juegos-container .juegos-container__aside{
     background-image: var(--secodary-bg-color);
     margin-right: 10rem;
     margin-top: 5.8rem;
     min-height: 10rem;
     padding: 2rem;
+    border-radius: 10px;
+    width: 16rem;
+    margin-bottom: 3rem;
 }
 
-.juegos-container__item
+.juegos-container__sub-list{
+    display: none;
+    opacity: 0;
+    transition: transform 1s;
+    margin-left: 3rem;
+}
+
+.juegos-container-aside-active{
+    display: block !important;
+    opacity: 1 !important;
+    transition: transform 1s !important;
+}
 
 div.juegos-container__products-container{
     display: grid;

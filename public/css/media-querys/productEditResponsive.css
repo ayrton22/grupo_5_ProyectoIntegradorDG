@@ -64,6 +64,15 @@
         height: 15rem;
     }
 
+    small.text-danger {
+        font-size: 16px;
+    }
+
+    small.text-danger-video {
+        font-size: 16px;
+        margin-left: 8rem;
+    }
+
     img.productEdit-form-uploadImage--horizontal {
         height: 14rem;
 
@@ -200,9 +209,13 @@
         margin-left: -6rem;
     }
 
+    small.text-danger-video {
+        margin-left: 2rem;
+    }
+
     img.productEdit-form-uploadImage--horizontal {
         width: 36rem;
-        height: 14rem;
+        height: 12rem;
         margin-left: -8rem;
     }
 

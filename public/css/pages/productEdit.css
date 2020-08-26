@@ -80,6 +80,17 @@ label.productEdit-checkbox-label {
     font-size: 20px;
 }
 
+small.text-danger {
+    font-size: 20px;
+    margin-left: 2rem;
+}
+
+small.text-danger-video {
+    font-size: 20px;
+    margin-left: 8rem;
+    color: crimson;
+}
+
 button.productEdit-form-button--submit {
     background-color: white;
     font-size: 1.6em;
@@ -266,7 +277,8 @@ img.productEdit-form-uploadImage--detail {
     right: 5.7rem;
     border-radius: 5px;
     box-shadow: 0 0 5px 2px #010212;
-    width: 100%;
+    width: 30rem;
+    height: 17rem;
     cursor: pointer;
 }
 

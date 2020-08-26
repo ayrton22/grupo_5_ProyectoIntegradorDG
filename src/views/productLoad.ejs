@@ -10,14 +10,18 @@
             <div id="form1" class="row productLoader-form-1">
                     <div class="col-12">
                         <h1>Carga de Producto:</h1>
-                        <h2>Test</h2>
                     </div>
+<<<<<<< HEAD
                     <div class="col-6 pb-5">
                         <label id="labelTitleLoad" for="title" class="productLoader-form-label">Título del juego: </label>
+=======
+                    <div class="col-12 col-md-6 pb-5">
+                        <label for="title" class="productLoader-form-label">Título del juego: </label>
+>>>>>>> c8cc9c4a6098939380a7ef70a41655212012167b
                         <input type="text" name="title" value="" class="productLoader-form-input" id="titleLoad">
                         <small class="text-danger" id="errTitleLoad"></small>
                     </div>
-                    <div class="col-6 pb-5">
+                    <div class="col-12 col-md-6 pb-5">
                         <label for="estado" class="productLoader-form-label">Estado del juego: </label>
                         <select class="productLoader-form-input" id="stateLoad" name="estado">
                             <option value="estandar" selected hidden>Elija el estado</option>
@@ -29,7 +33,7 @@
                         </select>
                         <small class="text-danger" id="errStateLoad"></small>
                     </div>
-                    <div class="col-6 pb-5">
+                    <div class="col-12 col-md-6 pb-5">
                         <label for="platforms" class="productLoader-form-label">Plataformas: </label>
                         <% for(let i = 0; i < gamePlatform.length; i++) { %>
                         <input type="checkbox" name="platform" id="platformLoad0" value="<%= gamePlatform[i = 0].id %>" class="productLoader-form-checkbox"> <label class="productLoader-checkbox-label" for="platforms"><%= gamePlatform[i = 0].name %></label><br>
@@ -48,21 +52,26 @@
                 </div>
                 <div class="form2-containerLoader-all">
                     <div class="row form2-containerLoader">
-                        <div class="col-4">
+                        <div class="col-12 col-md-4">
                             <div class="form2-containerLoader--portray">
                                 <img id="imgPortrayLoad" class="productLoader-form-uploadImage--portray" src="/img/Logos/Portray-upload.jpg" alt="">
                                 <input type="file" id="portray" style="display: none;" name="default">
                                 <small class="" id="errImgPortrayLoad"></small>
                             </div>
                         </div>
-                        <div class="col-8">
+                        <div class="col-12 col-md-8">
                             <div class="row form2-containerLoader--video">
                                 <img class="productLoader-form-uploadImage--video" src="/img/Logos/Video-upload.jpg" alt="">
                                 <!--<input type="text" id="video" class="productLoader-form-uploadImage--video-input" name="video">-->
                             </div>
                             <div class="row form2-containerEdit--link-video form2-containerEdit--link-video2">
+<<<<<<< HEAD
                                 <input type="text" id="videoLinkLoad" class="productEdit-form-input productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
                                 <small class="" id="errVideoLinkLoad"></small>
+=======
+                                <input type="text" id="videoLinkLoad" class="productLoader-form-input-video productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
+                                <small class="text-danger-video" id="errVideoLinkLoad"></small>
+>>>>>>> c8cc9c4a6098939380a7ef70a41655212012167b
                             </div>
                             <div class="row form2-containerLoader--horizontal">
                                 <img class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
@@ -71,7 +80,7 @@
                         </div>
                     </div>
                     <div class="row form2-containerLoader">
-                        <div class="col-8">
+                        <div class="col-12 col-md-8">
                             <div class="form2-containerLoader--photo__left">
                                 <img class="productLoader-form-uploadImage" id="one" src="/img/Logos/Photo-upload.jpg" alt="">
                                 <input type="file" id="one" style="display: none;" name="carousel">
@@ -95,7 +104,7 @@
                                 <input type="file" id="ten" style="display: none;" name="carousel">
                             </div>
                         </div>
-                        <div class="col-4">
+                        <div class="col-12 col-md-4">
                             <div class="form2-containerLoader--photo__right">
                                 <img class="productLoader-form-uploadImage--detail" src="/img/Logos/Detail-upload.jpg" alt="">
                                 <input type="file" id="detail" style="display: none;" name="imagen_detalle">
@@ -111,7 +120,7 @@
                 <div class="col-12">
                     <h1>Características de pago:</h1>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="pagos" class="productLoader-form-label">Metodos de pago aceptados: </label>
                     <input type="checkbox" value="Visa" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad0"> <label class="productLoader-checkbox-label" for="pagos">Visa</label><br>
                     <input type="checkbox" value="MercadoPago" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad1"> <label class="productLoader-checkbox-label" for="pagos">Mercado Pago</label><br>
@@ -119,15 +128,15 @@
                     <input type="checkbox" value="American" name="pagos" class="productLoader-form-checkbox" id="paymentMethodLoad3"> <label class="productLoader-checkbox-label" for="pagos">American Express</label><br>
                     <small class="text-danger"id="errPaymentMethodLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="receive" class="productLoader-form-label">Opciones de entrega de Producto: </label>
                     <input type="checkbox" value="Delivery" name="receive" class="productLoader-form-checkbox" id="deliveryLoad"> <label class="productLoader-checkbox-label" for="receive">Delivery</label><br>
                     <small class=""></small>
                     <input type="checkbox" value="Buscar" name="receive" class="productLoader-form-checkbox" id="buscarLoad"> <label class="productLoader-checkbox-label" for="receive">Buscar</label><br>
                     <small class="text-danger" id="errEntregaLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
-                    <label for="price" class="productLoader-form-label">Precio del juego</label>
+                <div class="col-12 col-md-6 pb-5">
+                    <label for="price" class="productLoader-form-label">Precio del juego:</label>
                     <input type="text" name="price" class="productLoader-form-input" id="priceLoad">
                     <small class="text-danger" id="errPriceLoad"></small>
                 </div>
@@ -139,12 +148,12 @@
                 <div class="col-12">
                     <h1>Descripcion del juego:</h1>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="description" class="productLoader-form-label">Descripcion de juego: </label>
                     <textarea cols="55" rows="6" name="description" class="productLoader-form-input__textarea" id="descriptionLoad"></textarea>
                     <small class="text-danger" id="errDescriptionLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="medium_description" class="productLoader-form-label">Descripcion mediana: </label>
                     <textarea cols="55" rows="6" name="medium_description" class="productLoader-form-input__textarea" id="descriptionMediumLoad"></textarea>
                     <small class="text-danger" id="errDescriptionMediumLoad"></small>
@@ -154,17 +163,17 @@
                     <textarea cols="55" rows="6"  name="big_description" class="productLoader-form-input__bigTextarea" id="descriptionLargeLoad"></textarea>
                     <small class="text-danger" id="errDescriptionLargeLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="editor" class="productLoader-form-label">Editora: </label>
                     <input type="text" name="editor" class="productLoader-form-input" id="editorLoad">
                     <small class="text-danger" id="errEditorLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="developer" class="productLoader-form-label">Desarrolladora: </label>
                     <input type="text" name="developer" class="productLoader-form-input" id="developerLoad">
                     <small class="text-danger" id="errDeveloperLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="launch_date" class="productLoader-form-label">Fecha de lanzamiento: </label>
                     <input type="text" name="launch_date" class="productLoader-form-input" id="launchDateLoad" placeholder="ej: 12/20/23">
                     <small class="text-danger" id="errLaunchDateLoad"></small>
@@ -174,7 +183,7 @@
 
 
             <div id="form5" class="row productLoader-form-5">
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="category" class="productLoader-form-label">Categorias: </label>
                     <% for(let i = 0; i < gameCategory.length; i++) { %>
                     <input type="checkbox" value="<%= gameCategory[i = 0].id %>" name="category" class="productLoader-form-checkbox" id="categoryLoad0"> <label class="productLoader-checkbox-label" for="category"><%= gameCategory[i = 0].name %></label><br>
@@ -186,7 +195,7 @@
                     <% } %>
                     <small class="text-danger" id="errCategoryLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="tags" class="productLoader-form-label">Etiquetas: </label>
                     <% for(let i = 0; i < gameGenre.length; i++) { %>
                         <input type="checkbox" value="<%= gameGenre[i = 0].id %>" name="genre" class="productLoader-form-checkbox" id="tagLoad0"> <label class="productLoader-checkbox-label" for="genre"><%= gameGenre[i = 0].name %></label><br>
@@ -205,12 +214,12 @@
                     <% } %>
                     <small class="text-danger" id="errTagLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="classification" class="productEdit-form-label">Clasificacion: </label>
-                    <input type="text" name="classification" class="productEdit-form-input" id="classificationLoad">
+                    <input type="text" name="classification" class="productLoader-form-input" id="classificationLoad">
                     <small class="text-danger" id="errClassificationLoad"></small>
                 </div>
-                <div class="col-6 pb-5">
+                <div class="col-12 col-md-6 pb-5">
                     <label for="rating" class="productLoader-form-label">Puntaje: </label>
                     <input type="text" name="rating" class="productLoader-form-input" id="ratingLoad">
                     <small class="text-danger" id="errRatingLoad"></small>

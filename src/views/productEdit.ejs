@@ -25,7 +25,7 @@
                 <div class="col-6 pb-5">
                     <label for="estado" class="productEdit-form-label">Estado del juego: </label>
                     <select class="productEdit-form-input" name="estado" id="stateEdit">
-                        <option selected hidden>Elija el estado</option>
+                        <option value="estandarEdit" selected hidden>Elija el estado</option>
                         <option value="1">Muy malo</option>
                         <option value="2">Muy usado</option>
                         <option value="3">Usado</option>
@@ -181,14 +181,11 @@
                 </div>
                 <div class="col-6 pb-5">
                     <label for="pagos" class="productEdit-form-label">Metodos de pago aceptados: </label>
-                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox"/> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
-                    <small class=""></small>
-                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
-                    <small class=""></small>
-                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
-                    <small class=""></small>
-                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" /> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br/>
-                    <small class=""></small>
+                    <input type="checkbox" value="Visa" name="pagos" class="productEdit-form-checkbox" id="paymentMethodEdit0"/> <label class="productEdit-checkbox-label" for="pagos">Visa</label><br/>
+                    <input type="checkbox" value="MercadoPago" name="pagos" class="productEdit-form-checkbox" id="paymentMethodEdit1"/> <label class="productEdit-checkbox-label" for="pagos">Mercado Pago</label><br/>
+                    <input type="checkbox" value="Mastercard" name="pagos" class="productEdit-form-checkbox" id="paymentMethodEdit2"/> <label class="productEdit-checkbox-label" for="pagos">Mastercard</label><br/>
+                    <input type="checkbox" value="American" name="pagos" class="productEdit-form-checkbox" id="paymentMethodEdit3"/> <label class="productEdit-checkbox-label" for="pagos">American Express</label><br/>
+                    <small class="text-danger" id="errPaymentMethodEdit"></small>
                 </div>
                 <div class="col-6 pb-5">
                     <label for="receive" class="productEdit-form-label">Opciones de entrega de Product: </label>

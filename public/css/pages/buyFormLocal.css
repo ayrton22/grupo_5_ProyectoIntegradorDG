@@ -7,8 +7,14 @@
 
 .container-buyLocal2{
     min-width: 110rem;
+    min-height: 50rem;
     justify-content: space-between;
     display: flex;
+    background-color: #2D4681;
+    box-shadow: 0 0 10px 3px #010212;
+    padding: 3rem;
+    border-radius: 8px;
+    margin: 10rem 0;
 }
 
 .buyLocal__left-section{
@@ -29,6 +35,23 @@
     background-color: darkblue;
 }
 
+.buyLocal__single-info {
+    margin: 2rem 0;
+}
+
+.buyLocal__single-info h2 {
+    font-size: 24px;
+}
+
+.buyLocal__single-info h4 {
+    font-size: 16px;
+}
+
+.buyLocal__info-part2 {
+    margin-top: 10rem;
+    margin-left: 1rem;
+}
+
 .buyLocal__icon{
     margin-left: 1.7rem;
 }
@@ -37,6 +60,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10rem;
+    margin-right: 5rem;
 }
 
 .buyLocal__continue-btn{

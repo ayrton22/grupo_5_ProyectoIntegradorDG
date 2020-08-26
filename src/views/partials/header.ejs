@@ -31,22 +31,31 @@
                     <i onclick="myFunction3()" class="fas fa-user-alt nav__right-profile-options-icon"></i>
                     <div class="nav__right-profile-dropdown inactive-profile-dropdown">
                         <ul type="none">
-                            <li class="nav__right-profile-dropdown-single">
-                                <a href="/user/register" class="nav__icons"><i class="fas fa-user-plus"></i> Registrarse</a>
-                            </li>
-                            <li class="nav__right-profile-dropdown-single">
-                                <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in"></i> Iniciar sesión</a>
-                            </li>
-                            <li class="nav__right-profile-dropdown-single">
-                                <a href="/user/cart" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
-                            </li>
-                            <li class="nav__right-profile-dropdown-single">
-                                <a href="/user/cart" class="nav__icons"><i class="fas fa-shopping-cart"></i> Ver tu carrito</a>
-                            </li>
 
-                            <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
-                                <a href="/user/cart" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-                            </li>
+                            <%# if(typeOf res.locals.username != undefined) { %>
+
+                                <li class="nav__right-profile-dropdown-single">
+                                    <a href="/user/cart" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
+                                </li>
+                                <li class="nav__right-profile-dropdown-single">
+                                    <a href="/user/cart" class="nav__icons"><i class="fas fa-shopping-cart"></i> Ver tu carrito</a>
+                                </li>
+    
+                                <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
+                                    <a href="/user/cart" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                                </li>
+
+                            <%# } else { %>
+
+                                <li class="nav__right-profile-dropdown-single">
+                                    <a href="/user/register" class="nav__icons"><i class="fas fa-user-plus"></i> Registrarse</a>
+                                </li>
+                                <li class="nav__right-profile-dropdown-single">
+                                    <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in"></i> Iniciar sesión</a>
+                                </li>
+
+                            <%# } %>
+                                
                         </ul>
                     </div>
                 </div>

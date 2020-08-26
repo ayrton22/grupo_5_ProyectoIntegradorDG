@@ -9,13 +9,15 @@ function localsMiddleware(req, res, next) {
         })
         .then(function(result) {
             res.locals.localUser = {
-                avatar: result.avatar
+                id: result.id,
+                avatar: result.avatar,
+                privilegios: result.admin
             }
-            next();
         })        
-    } else {
-        res.redirect('/user/login')
+    } else if(req.url == '/user') {
+        res.redirect('/user/login');
     }
+    
+    next();
 }
-
 module.exports = localsMiddleware;

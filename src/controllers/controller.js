@@ -36,7 +36,7 @@ module.exports = {
 				res.render('home', {
 					allCategories: resultado[0],
 					discounts:resultado[1],
-					gamesSlider: resultado[0][i].games
+					gamesSlider: resultado[0][i].games,
 				})
 			}
 		}

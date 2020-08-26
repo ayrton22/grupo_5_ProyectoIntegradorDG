@@ -36,7 +36,18 @@
                                             <% } %>
                                         <% } %>
                                     </div>
-                                    <div class="card__side juegos-container__back-part">
+                                    <div class="card__side juegos-container__back-part"
+                                    
+                                    <% for(let k = 0; k < buscado[i].images.length; k++) { %>
+                                        <%  if( buscado[i].images[k].location == "default" ){ %>
+                                            style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),url('../../img/uploads/productsImage/<%= buscado[i].images[k].img_url%>');
+                                                   background-size: cover;
+                                                   background-position: center center;
+                                                  "
+                                        <% } %>
+                                    <% } %>
+
+                                    >
                                         <div class="juegos-container__back-part--part1">
                                             <p class="juegos-container__back-part--part1-p"><%= buscado[i].description %></p>
                                             <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= buscado[i].id %>">ver mas</a>

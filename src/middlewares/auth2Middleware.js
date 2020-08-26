@@ -1,8 +1,4 @@
-// Modules
-const fs = require('fs');
-const path = require('path');
 
-// JSON PARSE
 const db = require('../database/models');
 
 async function authMiddleware2 (req, res, next){

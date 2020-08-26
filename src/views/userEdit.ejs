@@ -13,11 +13,9 @@
 
             <h2>General</h2>
 
-            <input class="userEdit-form-input" type="hidden" value="<%= user.username %>" name="username">
-
-            <div class="area">
+            <div class="userEdit-form-img-container">
                 <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= user.avatar %>" alt="avatar">
-                <input type="file" id="upload" name="avatar">
+                <input type="file" id="upload" style="display: none;" name="avatar" value="<%= user.avatar %>">
             </div>
 
             <label class="userEdit-form-label" for="name">Nombre</label>
@@ -87,6 +85,6 @@
         <%- include('partials/footer') %>
         <!-- Scripts -->
         <%- include('partials/scripts') %>
-        <script src="scripts/fileDrop.js"></script>   
+        <script src="/scripts/userEdit.js"></script>
     </body>
     </html>

@@ -166,9 +166,14 @@ div.product-section-1 {
 }
 
 .juegos-container .juegos-container__aside{
+    background-image: var(--secodary-bg-color);
     margin-right: 10rem;
     margin-top: 5.8rem;
+    min-height: 10rem;
+    padding: 2rem;
 }
+
+.juegos-container__item
 
 div.juegos-container__products-container{
     display: grid;

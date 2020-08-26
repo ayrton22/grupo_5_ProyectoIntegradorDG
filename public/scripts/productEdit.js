@@ -11,8 +11,16 @@ window.addEventListener('load', function(){
     let inputPlataforma2 = document.getElementById('Pc');
     let errorPlataforma = document.getElementById('errPlatformEdit');
 
-    let inputVideoLink = document.getElementById('videoLinkEdit')
-    let errorVideoLink = document.getElementById('errVideoLinkEdit')
+    // Inicio variables imagenes
+    let img = "/img/Logos/Portray-upload.jpg";
+    let imgPortrayEdit1 = document.getElementById('imgPortrayEdit1');
+    //let imgPortrayEdit0 = document.getElementById('imgPortrayEdit0').getAttribute('src');
+    console.log(imgPortrayEdit1)
+    let errorImgPortrayEdit = document.getElementById('errImgPortraysEdit');
+    // Fin variables imagenes
+
+    let inputVideoLink = document.getElementById('videoLinkEdit');
+    let errorVideoLink = document.getElementById('errVideoLinkEdit');
     let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
 
     let inputMetodoPago0 = document.getElementById('paymentMethodEdit0');
@@ -97,6 +105,15 @@ window.addEventListener('load', function(){
         if(inputPlataforma0.checked == false && inputPlataforma1.checked == false && inputPlataforma2.checked == false){
             errores.plataforma = "Debes marcar al menos uno";
         }
+        //Trabajando en imagenes
+        
+        if(imgPortrayEdit1 != null){
+            imgPortrayEdit1.getAttribute('src');
+            if(imgPortrayEdit1 == img){
+                errores.imgPerfil = "Debes seleccionar una imagen para este campo";
+            }
+        }
+        //Fin imagenes
         if(inputVideoLink.value.length < 1){
             errores.videoLink = "Este campo es obligatorio"
         } else {
@@ -162,6 +179,9 @@ window.addEventListener('load', function(){
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : '';
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
+            //errores imagenes empieza aca
+            errorImgPortrayEdit.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
+            //errores imagenes termina acá
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';

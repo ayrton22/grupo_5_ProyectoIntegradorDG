@@ -11,6 +11,12 @@ window.addEventListener('load', function(){
     let inputPlataforma2 = document.getElementById('platformLoad2');
     let errorPlataforma = document.getElementById('errPlatformLoad');
 
+    // Variables imagenes
+    let img = "/img/Logos/Portray-upload.jpg";
+    let imgPortrayLoad = document.getElementById('imgPortrayLoad').getAttribute('src');
+    let errorImgPortrayLoad = document.getElementById('errImgPortrayLoad');
+    // Fin variables imagenes
+
     let inputVideoLink = document.getElementById('videoLinkLoad')
     let errorVideoLink = document.getElementById('errVideoLinkLoad')
     let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
@@ -95,6 +101,11 @@ window.addEventListener('load', function(){
         if(inputPlataforma0.checked == false && inputPlataforma1.checked == false && inputPlataforma2.checked == false){
             errores.plataforma = "Debes marcar al menos uno";
         }
+        //Imagenes
+        if(imgPortrayLoad == img){
+            errores.imgPerfil = "Debes seleccionar una imagen para este campo";
+        }
+        // Fin imagenes
         if(inputVideoLink.value.length < 1){
             errores.videoLink = "Este campo es obligatorio"
         } else {
@@ -157,9 +168,14 @@ window.addEventListener('load', function(){
         if(Object.keys(errores).length >= 1){
             //console.log('Hay errores');
             //console.log(errores);
+
+            //Con if ternario se escibe sobre etiquetas small nada mas
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : "";
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
+            // errores imagenes
+            errorImgPortrayLoad.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
+            // fin errores imagenes
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';

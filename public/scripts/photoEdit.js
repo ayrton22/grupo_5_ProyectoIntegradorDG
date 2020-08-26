@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
     portrayPhoto.addEventListener('click', function() {
 
         if (portrayPhoto.dataset.status == "active") {
-            carouselInput.value = portrayPhoto.id;
+            carouselInput.value = portrayPhoto.name;
             Swal.fire({
                 width: '40%',
                 background: 'var(--secodary-bg-color)',
@@ -60,7 +60,7 @@ window.addEventListener('load', function() {
     horizontalPhoto.addEventListener('click', function() {
 
         if (horizontalPhoto.dataset.status == "active") {
-            carouselInput.value = horizontalPhoto.id;
+            carouselInput.value = horizontalPhoto.name;
             Swal.fire({
                 width: '40%',
                 background: 'var(--secodary-bg-color)',
@@ -99,7 +99,7 @@ window.addEventListener('load', function() {
     detailPhoto.addEventListener('click', function() {
        
         if (detailPhoto.dataset.status == "active") {
-            carouselInput.value = detailPhoto.id;
+            carouselInput.value = detailPhoto.name;
             Swal.fire({
                 width: '40%',
                 background: 'var(--secodary-bg-color)',
@@ -148,7 +148,7 @@ window.addEventListener('load', function() {
     imagesArray.forEach(div => div.addEventListener('click', imgClick));
     function imgClick(e) {    
            if(e.target.dataset.status == "active") {
-            carouselInput.value = e.target.id;
+            carouselInput.value = e.target.name;
             console.log(carouselInput)
             Swal.fire({
                 width: '40%',

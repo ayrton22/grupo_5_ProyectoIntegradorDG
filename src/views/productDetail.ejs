@@ -131,7 +131,18 @@
                                             <% } %>
                                         <% } %>
                                     </div>
-                                    <div class="card__side juegos-container__back-part">
+                                    <div class="card__side juegos-container__back-part"
+                                    
+                                    <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                        <%  if( products[random].images[j].location == "default" ){ %>
+                                            style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),url('../../img/uploads/productsImage/<%= products[random].images[j].img_url %>');
+                                                   background-size: cover;
+                                                   background-position: center center;
+                                                   "
+                                        <% } %>
+                                    <% } %>
+
+                                    >
                                         <div class="juegos-container__back-part--part1">
                                             <p class="juegos-container__back-part--part1-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem suscipit, reiciendis dolor, assumenda ea architecto iste enim aliquid, velit quam voluptatem quia natus facilis ullam?</p>
                                             <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>
@@ -162,7 +173,17 @@
                                             <% } %>
                                         <% } %>
                                     </div>
-                                    <div class="card__side juegos-container__back-part">
+                                    <div class="card__side juegos-container__back-part"
+                                    
+                                    <% for(let j = 0; j < products[random].images.length; j++) { %>
+                                        <%  if( products[random].images[j].location == "default" ){ %>
+                                            style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),url('../../img/uploads/productsImage/<%= products[random].images[j].img_url %>');
+                                                   background-size: cover;
+                                                   "
+                                        <% } %>
+                                    <% } %>
+
+                                    >
                                         <div class="juegos-container__back-part--part1">
                                             <p class="juegos-container__back-part--part1-p"><%= products[random].description %></p>
                                             <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>

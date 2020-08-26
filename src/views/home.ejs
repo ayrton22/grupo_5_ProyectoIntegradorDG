@@ -146,7 +146,18 @@
                                                         <% } %>
                                                     <% } %>
                                                 </div>
-                                                <div class="card__side juegos-container__back-part">
+                                                <div class="card__side juegos-container__back-part" 
+
+                                                <% for(let k = 0; k < allCategories[i].games[j].images.length; k++) { %>
+                                                    <%  if( allCategories[i].games[j].images[k].location == "default" ){ %>
+                                                        style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),url('../../img/uploads/productsImage/<%= allCategories[i].games[j].images[k].img_url %>');
+                                                               background-size: cover;
+                                                               background-position: center center;
+                                                               "
+                                                    <% } %>
+                                                <% } %>
+
+                                                >
                                                     <div class="juegos-container__back-part--part1">
                                                         <p class="juegos-container__back-part--part1-p"><%= allCategories[i].games[j].description %></p>
                                                         <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= allCategories[i].games[j].id %>">ver mas</a>

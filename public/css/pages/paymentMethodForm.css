@@ -4,3 +4,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.container2-paymentMethod{
+    min-height: 40rem;
+    display: flex;
+    align-items: center;
+}

@@ -1,18 +1,14 @@
 window.addEventListener('load', function(){
 
-    function qs(elemento){
-        document.querySelector(elemento);
-    }
-
-    let formulario = document.getElementById('form');
-
     let inputTitulo = document.getElementById('titleEdit');
     let errorTitulo = document.getElementById('errTitleEdit');
 
     let selectEstado = document.getElementById('stateEdit');
     let errorEstado = document.getElementById('errStateEdit');
 
-    let inputPlataforma = document.getElementById('platformEdit');
+    let inputPlataforma0 = document.getElementById('PlayStation');
+    let inputPlataforma1 = document.getElementById('Xbox');
+    let inputPlataforma2 = document.getElementById('Pc');
     let errorPlataforma = document.getElementById('errPlatformEdit');
 
     let inputVideoLink = document.getElementById('videoLinkEdit')
@@ -51,10 +47,27 @@ window.addEventListener('load', function(){
     let inputFecha = document.getElementById('launchDateEdit');
     let errorFecha = document.getElementById('errLaunchDateEdit');
 
-    let inputCategorias = document.getElementById('categoryEdit');
+    let inputCategorias0 = document.getElementById('Best-sellers');
+    let inputCategorias1 = document.getElementById('Free-to-play');
+    let inputCategorias2 = document.getElementById('Coming-soon');
+    let inputCategorias3 = document.getElementById('Early-bird');
+    let inputCategorias4 = document.getElementById('Featured');
+    let inputCategorias5 = document.getElementById('News');
     let errorCategorias = document.getElementById('errCategoryEdit');
 
-    let inputEtiquetas = document.getElementById('tagEdit');
+    let inputEtiquetas0 = document.getElementById('First-Person');
+    let inputEtiquetas1 = document.getElementById('MMO');
+    let inputEtiquetas2 = document.getElementById('Action');
+    let inputEtiquetas3 = document.getElementById('Adventure');
+    let inputEtiquetas4 = document.getElementById('Roleplay');
+    let inputEtiquetas5 = document.getElementById('Shooter');
+    let inputEtiquetas6 = document.getElementById('Survival');
+    let inputEtiquetas7 = document.getElementById('Horror');
+    let inputEtiquetas8 = document.getElementById('Sports');
+    let inputEtiquetas9 = document.getElementById('Racing');
+    let inputEtiquetas10 = document.getElementById('Third person');
+    let inputEtiquetas11 = document.getElementById('Indie');
+    let inputEtiquetas12 = document.getElementById('MOBA');
     let errorEtiquetas = document.getElementById('errTagEdit');
 
     
@@ -68,14 +81,12 @@ window.addEventListener('load', function(){
 
     let btnEnviar = document.getElementById("buttonEdit");
 
-    console.log(btnEnviar);
+    let formulario = document.getElementById('form');
 
-    btnEnviar.addEventListener('click', function(event){
+    formulario.addEventListener('submit', function(event){
         event.preventDefault();
 
         let errores = {}
-
-        console.log(btnEnviar);
 
         if(inputTitulo.value.length < 5){
             errores.titulo = "Como mínimo 5 caracteres";
@@ -83,7 +94,7 @@ window.addEventListener('load', function(){
         if(selectEstado.value == "estandarEdit"){
             errores.estado = "Debes seleccionar al menos uno";
         }
-        if(inputPlataforma.value == false){
+        if(inputPlataforma0.checked == false && inputPlataforma1.checked == false && inputPlataforma2.checked == false){
             errores.plataforma = "Debes marcar al menos uno";
         }
         if(inputVideoLink.value.length < 1){
@@ -123,10 +134,10 @@ window.addEventListener('load', function(){
         if(inputFecha.value.length < 15){
             errores.fecha = "Fecha invalida, debe contener mínimo 15 caracteres. Ejemplo: Lun 06 Ene 2014"
         }
-        if(inputCategorias.checked == false){
+        if(inputCategorias0.checked == false && inputCategorias1.checked == false && inputCategorias2.checked == false && inputCategorias3.checked == false && inputCategorias4.checked == false && inputCategorias5.checked == false){
             errores.categorias = "Debes marcar al menos uno";
         }
-        if(inputEtiquetas.checked == false){
+        if(inputEtiquetas0.checked == false && inputEtiquetas1.checked == false && inputEtiquetas2.checked == false && inputEtiquetas3.checked == false && inputEtiquetas4.checked == false && inputEtiquetas5.checked == false && inputEtiquetas6.checked == false && inputEtiquetas7.checked == false && inputEtiquetas8.checked == false && inputEtiquetas9.checked == false && inputEtiquetas10.checked == false && inputEtiquetas11.checked == false && inputEtiquetas12.checked == false){
             errores.etiquetas = "Debes marcar al menos uno";
         }
         if(inputClasificacion.value.length < 2 && inputClasificacion.value.length > 3){
@@ -165,10 +176,13 @@ window.addEventListener('load', function(){
             errorEtiquetas.innerText = (errores.etiquetas) ? errores.etiquetas : '';
             errorClasificacion.innerText = (errores.clasificacion) ? errores.clasificacion : '';
             errorPuntaje.innerText = (errores.puntaje) ? errores.puntaje : '';
+
+            alert('Tienes campos incompletos y/o errores en los campos que llenaste');
+            
         } else {
             // envio el formulario
-            alert('El formulario se ha enviado');
-            btnEnviar.click();
+            formulario.submit();
+            alert('El formulario se envió');
         }
     })
 })

@@ -1,7 +1,5 @@
 window.addEventListener('load', function(){
 
-    let formulario = document.getElementById('form');
-
     let inputTitulo = document.getElementById("titleLoad");
     let errorTitulo = document.getElementById('errTitleLoad');
 
@@ -81,9 +79,9 @@ window.addEventListener('load', function(){
     let errorPuntaje = document.getElementById('errRatingLoad');
     let regexPuntaje = /^[0-9.]+$/;
 
-    let btnEnviar = document.getElementById('buttonLoad');
+    let formulario = document.getElementById('form');
 
-    btnEnviar.addEventListener('click', function(event){
+    formulario.addEventListener('submit', function(event){
         event.preventDefault();
 
         let errores = {}
@@ -176,10 +174,13 @@ window.addEventListener('load', function(){
             errorEtiquetas.innerText = (errores.etiquetas) ? errores.etiquetas : '';
             errorClasificacion.innerText = (errores.clasificacion) ? errores.clasificacion : '';
             errorPuntaje.innerText = (errores.puntaje) ? errores.puntaje : '';
+
+            alert('Tienes campos incompletos y/o errores en los campos que llenaste');
+            
         } else {
             // envio el formulario
             alert('El formulario se ha enviado');
-            btnEnviar.click();
+            formulario.submit();
         }
     })
 })

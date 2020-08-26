@@ -404,7 +404,7 @@ div.active_detail img{
     margin-bottom: 2rem;
 }
 
-div.inactive_carousel {
+div.inactive_carousel{
     display: none;
     position: absolute;
 }
@@ -413,8 +413,8 @@ div.active_carousel {
     width: 40rem;
     display: block;
     position: absolute;
-    left: 27rem;
-    top: -36rem;
+    left: 70rem;
+    top: 140rem;
     z-index: 10;
     transform: scale(1.9);
 }

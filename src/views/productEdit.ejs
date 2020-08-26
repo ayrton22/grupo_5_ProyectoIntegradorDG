@@ -66,11 +66,12 @@
                                     <% return element.location == "default"  %>
                                         <% }) %>
                                     <% if(portray.length != 0) { %>
-                                        <img data-status="active" class="productEdit-form-uploadImage--portray" id="<%=portray[0].id%>" src="/img/uploads/productsImage/<%= portray[0].img_url%>" alt="" >
+                                        <img id="imgPortrayEdit0" data-status="active" class="productEdit-form-uploadImage--portray" name="<%=portray[0].id%>" src="/img/uploads/productsImage/<%= portray[0].img_url%>" alt="" >
                                     <% }else{ %>
-                                        <img data-status="inactive" class="productEdit-form-uploadImage--portray" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
+                                        <img id="imgPortrayEdit1" data-status="inactive" class="productEdit-form-uploadImage--portray" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <input type="file" id="portray" style="display: none;" name="imagen" value="null">
                                         <% } %>
+                                        <small class="text-danger" id="errImgPortrayEdit"></small>
                             </div>
 
                         </div>
@@ -81,16 +82,21 @@
                                 <iframe class="productEdit-form-uploadVideo" src="https://www.youtube.com/embed/<%= productEdit.video %>" frameborder="0"></iframe>
                             </div>
                             <div class="row form2-containerEdit--link-video">
-                                <input type="text" id="video" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%=productEdit.video%>"/>
+                                <input type="text" id="videoLinkEdit" class="productEdit-form-input productEdit-form-input--link-video" name="video" value="https://www.youtube.com/watch?v=<%=productEdit.video%>"/>
                             </div>
+                            <small id="errVideoLinkEdit" class=""></small>
+                            <small class="" id="errVideoLinkEdit"></small>
+                            <small class="text-danger-video" id="errVideoLinkEdit"></small>
+
                             <small class=""></small>
+
 
                             <div class="row form2-containerEdit--horizontal">
                                 <% let horizontal = productEdit.images.filter(function(element){ %>
                                     <% return element.location == "imagen_horizontal"  %>
                                         <% }) %>
                                     <% if(horizontal.length != 0) { %>
-                                        <img data-status="active" class="productEdit-form-uploadImage--horizontal" id="<%=horizontal[0].id%>" src="/img/uploads/productsImage/<%= horizontal[0].img_url%>" alt="" >
+                                        <img data-status="active" class="productEdit-form-uploadImage--horizontal" id="" name="<%=horizontal[0].id%>" src="/img/uploads/productsImage/<%= horizontal[0].img_url%>" alt="" >
                                     <% }else{ %>
                                         <img data-status="inactive" class="productEdit-form-uploadImage--horizontal" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal"value="null">
@@ -113,7 +119,7 @@
                                 <% for(let i = 0; i < 10; i++ ) { %>
                                     <% if( i < carrusel.length) { %>
                                         <div class="carouselcontenedor">
-                                        <img data-status="active" id="<%=carrusel[i].id%>" class="productEdit-form-uploadImage--carousel activecarousel" name="carousel<%=i%>" src="/img/uploads/productsImage/<%=carrusel[i].img_url %>" alt="">
+                                        <img data-status="active" id="" class="productEdit-form-uploadImage--carousel activecarousel" name="<%=carrusel[i].id %>" src="/img/uploads/productsImage/<%=carrusel[i].img_url %>" alt="">
                                         </div>
                                     <% } else { %>
                                         <div class="carouselcontenedor">
@@ -132,7 +138,7 @@
                                     <% return element.location == "imagen_detalle"  %>
                                         <% }) %>
                                     <% if(detail.length != 0) { %>
-                                        <img data-status="active" class="productEdit-form-uploadImage--detail" id="<%=detail[0].id%>" src="/img/uploads/productsImage/<%= detail[0].img_url%>" alt="" >
+                                        <img data-status="active" class="productEdit-form-uploadImage--detail" id="" name="<%=detail[0].id%>" src="/img/uploads/productsImage/<%= detail[0].img_url%>" alt="" >
                                     <% }else{ %>
                                         <img data-status="inactive" class="productEdit-form-uploadImage--detail" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <input type="file" id="detail" style="display: none;" name="imagen_detalle"value="null">

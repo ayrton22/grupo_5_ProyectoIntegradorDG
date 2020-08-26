@@ -9,6 +9,8 @@ const connectLivereload = require('connect-Livereload');
 const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
+const localsMiddleware = require('./middlewares/localsMiddleware');
+
 
 // Authentications
 const authCookieMiddleware = require('./middlewares/authCookieMiddleware');
@@ -21,9 +23,11 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(session({secret: 'May the force be with you!'}));
+
 app.use(cookieParser());
 app.use(methodOverride('_method'));
 app.use(authCookieMiddleware);
+app.use(localsMiddleware);
 
 /*let livereloadServer = livereload.createServer();
 livereloadServer.watch(publicDirectory);

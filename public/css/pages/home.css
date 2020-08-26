@@ -161,7 +161,7 @@ div.product-section-1 {
 
 .product-section-horizontal__description{
     transform: translateY(-200px);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     word-break: break-word;
     font-size: 1.15rem;
     font-weight: 700;
@@ -170,7 +170,7 @@ div.product-section-1 {
 .product-section-horizontal__price{
     position: absolute;
     transform: translateX(200px);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     bottom: 28px;
     right: 10px;
     border-radius: 5px;
@@ -184,7 +184,7 @@ div.product-section-1 {
 .product-section-horizontal__more-info{
     position: absolute;
     transform: translateY(200px);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     bottom: 20px;
     left: 160px;
     color: #ffff !important;
@@ -197,7 +197,7 @@ div.product-section-1 {
 .product-section-horizontal__shopping-cart{
     position: absolute;
     transform: translateX(200px);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     bottom: 0px;
     right: 60px;
     text-decoration: none;
@@ -211,7 +211,7 @@ div.product-section-1 {
 .product-section-horizontal__buy-button{
     position: absolute;
     transform: translateX(200px);
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     bottom: 0;
     right: 10px;
     text-decoration: none;

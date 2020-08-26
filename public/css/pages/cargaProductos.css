@@ -160,6 +160,20 @@ input.productLoader-form-input {
     font-size: 20px;
 }
 
+input.productLoader-form-input-video {
+    display: block;
+    margin-left: 1rem;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: solid 1.5px white;
+    background-color: #314981;
+    padding: 2rem;
+    color: white;
+    width: 90%;
+    height: 35%;
+    font-size: 20px;
+}
+
 textarea.productLoader-form-input__textarea {
     display: block;
     margin-left: 1rem;

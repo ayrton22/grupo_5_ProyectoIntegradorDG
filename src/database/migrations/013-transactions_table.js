@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false
       },
       delivery: {
-        type: Sequelize.DataTypes.STRING(50),
+        type: Sequelize.DataTypes.TEXT,
         allowNull: false,
         defaultValue: 'Online'
       },

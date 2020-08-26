@@ -38,7 +38,18 @@
                                 <% } %>
                             <% } %>
                         </div>
-                        <div class="card__side juegos-container__back-part">
+                        <div class="card__side juegos-container__back-part"
+                        
+                        <% for(let j = 0; j < genres.games[i].images.length; j++) { %>
+                            <%  if(genres.games[i].images[j].location == "default"){ %>
+                                style="background-image: linear-gradient(to right bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.9)),url('../../img/uploads/productsImage/<%= genres.games[i].images[j].img_url %>');
+                                       background-size: cover;
+                                       background-position: center center;
+                                       "
+                            <% } %>
+                        <% } %>
+
+                        >
                             <div class="juegos-container__back-part--part1">
                                 <p class="juegos-container__back-part--part1-p"><%= genres.games[i].description %></p>
                                 <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= genres.games[i].id %>">ver mas</a>

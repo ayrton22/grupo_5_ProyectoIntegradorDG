@@ -2,7 +2,7 @@
     font-size: 1.4rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
     margin: 6rem auto;
-    width: 30%;
+    width: 650px;
     align-content: center;
     border-radius: 5px;
     box-shadow: 0 0 10px 3px #010212;
@@ -35,7 +35,7 @@ input#register-form-input {
     border-radius: 8px;
     border: none;
     padding: 0 10px;
-  }
+}
 
   input.valid{
     background-color: green;

@@ -3,7 +3,8 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    height: 80rem
+    height: 80rem;
+    margin: 6rem auto;
 }
 
 .container-profile {
@@ -47,11 +48,11 @@
     padding: 2rem 3rem;
 }
 
-.container-profile-general-info {
-    width: 100%;
-    margin-left: 3rem;
-    margin-right: 5rem;
-}
+    .container-profile-general-info {
+        width: 100%;
+        margin-left: 3rem;
+        margin-right: 5rem;
+    }
 
 .container-profile-general-info h1 {
     font-size: 36px;
@@ -131,20 +132,6 @@ button.container-profile-button:hover:before {
     height: 20rem;
     border-radius: 10rem;
     cursor: pointer;
-}
-
-.svg-avatar {
-    position: absolute;
-    top: 23rem;
-    right: 39.1rem;
-    z-index: 1;
-    width: 20rem;
-    opacity: 0;
-    transition: .5s ease;
-}
-
-.svg-avatar-active {
-    opacity: 40%;
 }
 
 .container-profile-general-profile h2.profile-name {

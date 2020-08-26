@@ -20,7 +20,6 @@ window.addEventListener('load', function() {
 
     let avatarImage = qs('img#avatar');
     let avatarInput = qs('input#avatar');
-    let avatarSVG = qs('svg#svg');
 
     // Pop-ups
     let gameInfoIcon = document.querySelectorAll('i.games-single-detailInfo');
@@ -98,18 +97,8 @@ window.addEventListener('load', function() {
 
 
 
-    avatarSVG.addEventListener('click', function() {
+    avatarImage.addEventListener('click', function() {
         avatarInput.click();
-    });
-
-    avatarImage.addEventListener('mouseover', function() {
-        avatarSVG.classList.remove('inactiveUserProfile');
-        avatarSVG.classList.add('svg-avatar-active')
-    });
-
-    avatarImage.addEventListener('mouseout', function() {
-        avatarSVG.classList.remove('svg-avatar-active')
-        avatarSVG.classList.add('inactiveUserProfile');
     });
 
 

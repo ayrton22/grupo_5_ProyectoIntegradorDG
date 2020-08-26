@@ -1,0 +1,42 @@
+@media (max-width: 1200px) {
+
+    .container-register{
+        margin: 6rem auto;
+        width: 500px;
+    }
+
+    input#register-form-input {
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .register-form-button {
+        font-size: 20px;
+        padding: .5rem 3rem;
+        margin: 1rem 4rem;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container-register{
+        margin: 6rem auto;
+        width: 350px;
+    }
+
+    input#register-form-input {
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .register-form-button {
+        font-size: 20px;
+        padding: .5rem 3rem;
+        margin: 1rem 4rem;
+        min-width: 200px;
+    }
+}
+
+
+

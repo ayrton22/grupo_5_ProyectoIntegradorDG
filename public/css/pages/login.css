@@ -2,7 +2,7 @@
   font-size: 1.4rem;
   background-image: linear-gradient(to bottom, #223052, #191E29);
   margin: 6rem auto;
-  width: 30%;
+  width: 650px;
   align-content: center;
   border-radius: 5px;
   box-shadow: 0 0 10px 3px #010212;
@@ -11,7 +11,6 @@
 
 form.signIn-form {
   align-self: center;
-  margin: 0 2rem;
   padding-top: 5rem;
 }
 
@@ -25,12 +24,14 @@ label.signIn-form-label {
   display: block;
   font-size: 1.6em;
   margin: 10px 0;
+  margin-left: 2rem;
 }
 
 input#signIn-form-input {
   display: block;
-  width: 100%;
+  width: 550px;
   height: 45px;
+  margin: 0 auto;
   margin-bottom: 15px;
   font-size: 20px;
   border-radius: 8px;

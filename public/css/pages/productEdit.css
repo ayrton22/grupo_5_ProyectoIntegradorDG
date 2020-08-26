@@ -297,7 +297,7 @@ div.active_portray {
 
 div.active_portray button {
     position: absolute;
-    bottom: .5rem;
+    bottom: .5rem;      
     left: 9rem;
     font-size: 18px;
     padding: .5rem 2rem;

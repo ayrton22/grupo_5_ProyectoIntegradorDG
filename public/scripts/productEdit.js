@@ -1,81 +1,89 @@
-function qs(elemento){
-    document.querySelector(elemento);
-}
-
 window.addEventListener('load', function(){
-    let formulario = qs('form');
 
-    let inputTitulo = qs('input#titleEdit');
-    let errorTitulo = qs('#errTitleEdit');
+    function qs(elemento){
+        document.querySelector(elemento);
+    }
 
-    let selectEstado = qs('select#stateEdit');
-    let errorEstado = qs('#errStateEdit');
+    let formulario = document.getElementById('form');
 
-    let inputPlataforma = qs('input#platformEdit').checked;
-    let errorPlataforma = qs('#errPlatformEdit');
+    let inputTitulo = document.getElementById('titleEdit');
+    let errorTitulo = document.getElementById('errTitleEdit');
 
-    let inputVideoLink = qs('input#videoLinkEdit')
-    let errorVideoLink = qs('#errVideoLinkEdit')
+    let selectEstado = document.getElementById('stateEdit');
+    let errorEstado = document.getElementById('errStateEdit');
+
+    let inputPlataforma = document.getElementById('platformEdit');
+    let errorPlataforma = document.getElementById('errPlatformEdit');
+
+    let inputVideoLink = document.getElementById('videoLinkEdit')
+    let errorVideoLink = document.getElementById('errVideoLinkEdit')
     let regexVideo = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/gi;
 
-    let inputDelivery = qs('input#deliveryEdit').checked;
-    let inputDelivery = qs('input#buscarEdit').checked;
-    let errorEntrega = qs('#errEntregaEdit');
+    let inputMetodoPago0 = document.getElementById('paymentMethodEdit0');
+    let inputMetodoPago1 = document.getElementById('paymentMethodEdit1');
+    let inputMetodoPago2 = document.getElementById('paymentMethodEdit2');
+    let inputMetodoPago3 = document.getElementById('paymentMethodEdit3');
+    let errorMetodoPago = document.getElementById('errPaymentMethodEdit');
 
-    let inputPrecio = qs('input#priceEdit');
-    let errorPrecio = qs('#errPriceEdit');
+    let inputDelivery = document.getElementById('deliveryEdit');
+    let inputBuscar = document.getElementById('buscarEdit');
+    let errorEntrega = document.getElementById('errEntregaEdit');
+
+    let inputPrecio = document.getElementById('priceEdit');
+    let errorPrecio = document.getElementById('errPriceEdit');
     let regexPrecio = /^[0-9.,]+$/;
 
-    let textareaDescripcion = qs('textarea#descriptionEdit');
-    let errorDescripcion = qs('#errDescriptionEdit');
+    let textareaDescripcion = document.getElementById('descriptionEdit');
+    let errorDescripcion = document.getElementById('errDescriptionEdit');
 
-    let textareaDescripcionMediana = qs('textarea#descriptionMediumEdit');
-    let errorDescripcionMediana = qs('#errDescriptionMediumEdit');
+    let textareaDescripcionMediana = document.getElementById('descriptionMediumEdit');
+    let errorDescripcionMediana = document.getElementById('errDescriptionMediumEdit');
 
-    let textareaDescripcionGrande = qs('textarea#descriptionLargeEdit');
-    let errorDescripcionGrande = qs('#errDescriptionLargeEdit');
+    let textareaDescripcionGrande = document.getElementById('descriptionLargeEdit');
+    let errorDescripcionGrande = document.getElementById('errDescriptionLargeEdit');
 
-    let inputEditora = qs('input#editorEdit');
-    let errorEditora = qs('#errEditorEdit');
+    let inputEditora = document.getElementById('editorEdit');
+    let errorEditora = document.getElementById('errEditorEdit');
 
-    let inputDesarroladora = qs('input#developerEdit');
-    let errorDesarrolladora = qs('#errDeveloperEdit');
+    let inputDesarroladora = document.getElementById('developerEdit');
+    let errorDesarrolladora = document.getElementById('errDeveloperEdit');
 
-    let inputFecha = qs('input#launchDateEdit');
-    let errorFecha = qs('#errLaunchDateEdit');
+    let inputFecha = document.getElementById('launchDateEdit');
+    let errorFecha = document.getElementById('errLaunchDateEdit');
 
-    let inputCategorias = qs('input#categoryEdit').checked;
-    let errorCategorias = qs('#errCategoryEdit');
+    let inputCategorias = document.getElementById('categoryEdit');
+    let errorCategorias = document.getElementById('errCategoryEdit');
 
-    let inputEtiquetas = qs('input#tagEdit').checked;
-    let errorEtiquetas = qs('#errTagEdit');
+    let inputEtiquetas = document.getElementById('tagEdit');
+    let errorEtiquetas = document.getElementById('errTagEdit');
 
     
-    let inputClasificacion = qs('input#classificationEdit');
-    let errorClasificacion = qs('#errClassificationEdit');
+    let inputClasificacion = document.getElementById('classificationEdit');
+    let errorClasificacion = document.getElementById('errClassificationEdit');
     let regexClasificacion = /^[0-9 ()+]+$/;
 
-    let inputPuntaje = qs('input#ratingEdit');
-    let errorPuntaje = qs('#errRatingEdit');
+    let inputPuntaje = document.getElementById('ratingEdit');
+    let errorPuntaje = document.getElementById('errRatingEdit');
     let regexPuntaje = /^[0-9.]+$/;
 
-    let btnEnviar = qs("form button[type='submit']");
+    let btnEnviar = document.getElementById("buttonEdit");
 
-    
+    console.log(btnEnviar);
+
     btnEnviar.addEventListener('click', function(event){
         event.preventDefault();
 
         let errores = {}
 
-        console.log();
+        console.log(btnEnviar);
 
         if(inputTitulo.value.length < 5){
             errores.titulo = "Como mínimo 5 caracteres";
         }
-        if(selectEstado.value == null){
+        if(selectEstado.value == "estandarEdit"){
             errores.estado = "Debes seleccionar al menos uno";
         }
-        if(!inputPlataforma){
+        if(inputPlataforma.value == false){
             errores.plataforma = "Debes marcar al menos uno";
         }
         if(inputVideoLink.value.length < 1){
@@ -84,7 +92,10 @@ window.addEventListener('load', function(){
             if(inputVideoLink.value.match(regexVideo) == null){
                 errores.videoLink = "Debes ingresar un link de un video de Youtube"
             }}
-        if(!inputDelivery && !inputBuscar){
+        if(inputMetodoPago0.checked == false && inputMetodoPago1.checked == false && inputMetodoPago2.checked == false && inputMetodoPago3.checked == false){
+            errores.metodoPago = "Debes marcar al menos uno"
+        }
+        if(inputDelivery.checked == false && inputBuscar.checked == false){
             errores.entrega = "Debes marcar al menos una opción";
         }
         if(inputPrecio.value.length < 1){
@@ -112,21 +123,21 @@ window.addEventListener('load', function(){
         if(inputFecha.value.length < 15){
             errores.fecha = "Fecha invalida, debe contener mínimo 15 caracteres. Ejemplo: Lun 06 Ene 2014"
         }
-        if(!inputCategorias){
+        if(inputCategorias.checked == false){
             errores.categorias = "Debes marcar al menos uno";
         }
-        if(!inputEtiquetas){
+        if(inputEtiquetas.checked == false){
             errores.etiquetas = "Debes marcar al menos uno";
         }
         if(inputClasificacion.value.length < 2 && inputClasificacion.value.length > 3){
             errores.clasificacion = "Este campo debe tener entre 2 y 3 caracteres. Ejemplo: +16";
         } else {
             if(inputClasificacion.value.match(regexClasificacion) == null){
-                errores.precio = "El precio solo puedo contener números y el símbolo de sumar(+). Ejemplo: +12";
+                errores.precio = "La clasificación solo puedo contener números y el símbolo de sumar(+). Ejemplo: +12";
             }
         }
         if(inputPuntaje.value.length != 4){
-            errores.puntaje = "Este campo debe tener 4 caracteres"
+            errores.puntaje = "Este campo debe tener 4 caracteres. Ejemplo: 4.00"
         } else {
             if(inputPuntaje.value.match(regexPuntaje) == null){
                 errores.puntaje = "El puntaje solo puede tener números y un punto(.). Ejemplo: 4.50"
@@ -141,6 +152,7 @@ window.addEventListener('load', function(){
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
+            errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';
             errorPrecio.innerText = (errores.precio) ? errores.precio : '';
             errorDescripcion.innerText = (errores.descripcion) ? errores.descripcion : '';
@@ -156,6 +168,7 @@ window.addEventListener('load', function(){
         } else {
             // envio el formulario
             alert('El formulario se ha enviado');
+            btnEnviar.click();
         }
     })
 })

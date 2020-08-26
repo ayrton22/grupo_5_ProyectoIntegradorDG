@@ -10,3 +10,13 @@
     display: flex;
     align-items: center;
 }
+
+.paymentMethod__title-cont{
+    margin-bottom: 2rem;
+}
+
+.paymentMethod__line{
+    height: .2rem;
+    width: 100%;
+    background-color: darkblue;
+}

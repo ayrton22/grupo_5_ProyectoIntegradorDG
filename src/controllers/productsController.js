@@ -401,5 +401,18 @@ module.exports = {
 					err
 				)
 			})
+	},
+	imgDestroy:(req,res)=>{
+		db.Images.destroy({
+			where: {
+				id_game: req.params.id,
+				id: req.body.idImagen
+			}
+		}).then(function (resultado) {
+			res.redirect('/product/edit/'+req.params.id);
+		})
+		.catch(function (error) {
+			res.send(error)
+		})
 	}
 }

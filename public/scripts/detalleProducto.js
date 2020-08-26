@@ -73,13 +73,6 @@ document.querySelector('.eliminar-juego').addEventListener('click', (e) => {
     confirmButtonText: 'Borrar!'
   }).then((result) => {
     if (result.value) {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-          })
         form.submit()
     }
   })

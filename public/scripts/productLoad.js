@@ -157,6 +157,8 @@ window.addEventListener('load', function(){
         if(Object.keys(errores).length >= 1){
             //console.log('Hay errores');
             //console.log(errores);
+
+            //Con if ternario se escibe sobre etiquetas small nada mas
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : "";
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';

@@ -29,3 +29,10 @@
 @import url('./partials/header.css');
 @import url('./partials/footer.css');
 @import url('./partials/slider.css');
+
+/* Media queries */
+
+@import url('./media-querys/userRegisterResponsive.css');
+@import url('./media-querys/userLoginResponsive.css');
+@import url('./media-querys/userProfileResponsive.css');
+@import url('./media-querys/productEditResponsive.css');

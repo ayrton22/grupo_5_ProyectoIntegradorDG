@@ -1,0 +1,18 @@
+@media (max-width: 1200px) {
+
+    .container-signIn {
+        width: 500px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .container-signIn {
+        width: 350px;
+    }
+
+}
+
+
+

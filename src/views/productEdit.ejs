@@ -140,11 +140,13 @@
                                     </div>
                                     <% } %>
                                 <% } %>
+                                <form class="productLoader-form" action="" enctype="multipart/form-data" method="POST"></form>
                                  <div id="carouselZoom" class=" inactive_carousel ">
                                         <i class="fas fa-times" name="carouselZoomCross"></i>
                                         <img data-status="active" class="productEdit-form-uploadImage" name="carouselZoom" src="" alt="" >
                                         <button type="button" class="productEdit-form-button--next"  name="carouselZoomBtn">Borrar foto</button>
                                  </div>
+                                </form>
                             </div>
 
                         </div>
@@ -154,7 +156,7 @@
                                 <% productEdit.images.forEach(element => { %>
                                     <% if(element.location == "imagen_detalle") { %>
                                         <img data-status="active" class="productEdit-form-uploadImage--detail" src="/img/uploads/productsImage/<%= element.img_url%>" alt="" >
-                                        <input type="file" id="detail" style="display: none;" name="imagen_detalle"  value="<%= element.img_url %>" >
+                                        <input type="submit" id="detail" style="display: none;" name="imagen_detalle"  value="<%= element.img_url %>" >
                                     <% } %>
                                 <% }) %>
 

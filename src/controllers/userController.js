@@ -7,6 +7,7 @@ const {check, validationResult, body} = require('express-validator');
 // Database
 
 const db = require('../database/models');
+const { param } = require('../routes/users');
 
 // JSON Parse
 let users = fs.readFileSync(path.join(__dirname, '../data/users.json'), 'utf8');
@@ -37,11 +38,38 @@ module.exports = {
         })
     },
     cart: function(req, res){
-        db.Users.findByPk(req.params.id,{
-            include:[{association:'games_shooping_cart'}]
+        db.Users.findByPk(req.params.id,{attributes: ['id','first_name','last_name','avatar','username','address'],
+            include:[{association:'games_shooping_cart', attributes: ['id','title','price','editor','classification','rating'],include:[{association: 'images',where:{location: "default"}}]}]
         })
-        res.render('userCart');
+        .then((result) => {
+            res.render('userCart',{
+                user: result
+            });
+        })
+        
     },
+    addGamesCart:function(req, res){
+        
+        db.Games_Users.create({
+            id_game: req.body.juego,
+            id_user: req.params.id
+        })
+        .then((resultado) => {
+            res.redirect('/user/cart/'+req.params.id);
+        })
+        
+    },
+    removeGamesCart: function(req, res){
+        db.Games_Users.destroy({where:{
+            id_game: req.body.juego,
+            id_user: req.params.id
+        }
+        })
+        .then((resultado) => {
+            res.redirect('/user/cart/'+req.params.id);
+        })
+    },
+
     register: function(req, res) {
         res.render('userRegister');
     },

@@ -45,7 +45,7 @@ module.exports = {
 			res.send(error)
 		});
 	},
-
+	
 	pruebaCheckboxView: function (req, res){
 		res.render('Zprueba');
 	},

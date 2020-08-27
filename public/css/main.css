@@ -39,3 +39,8 @@
 @import url('./media-querys/productLoadResponsive.css');
 @import url('./media-querys/headerResponsive.css');
 @import url('./media-querys/homeResponsive.css');
+@import url('./media-querys/footerResponsive.css');
+@import url('./media-querys/userEditResponsive.css');
+@import url('./media-querys/communityResponsive.css');
+@import url('./media-querys/userCartResponsive.css');
+@import url('./media-querys/productDetailResponsive.css');

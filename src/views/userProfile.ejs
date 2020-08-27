@@ -52,11 +52,24 @@
                         <img src="/img/uploads/avatars/<%= user.avatar %>" alt="" id="avatar">
                         <input type="file" id="avatar" style="visibility: hidden;">
                     </div>
+
                     <h2 class="profile-name"><%= user.first_name %> <%= user.last_name %></h2>
                     <h3 class="profile-username"><%= user.username %></h3>
                     <h2 class="profile-pass">Contraseña:</h2>
                     <h3 class="profile-pass">....................<i class="fas fa-pencil-alt"></i></h3>
                     <a href="/user/logout" class="profile-session"><p>Cerrar sesión</p></a>
+
+                    <form id="passwordChangeForm" action="/user/edit/<%= user.id %>?_method=put" enctype="multipart/form-data" method="POST"" class="general-profile-password-change inactive-password-change">
+                        <i class="fas fa-times-circle"></i>
+                        <label class="profile-password-change-label" for="password">Nueva contraseña</label>
+                        <p class="password-error1"></p>
+                        <p class="password-error2"></p>
+                        <input id="password-profile" class="profile-password-change-input" type="password" name="password" id="password">
+                        <label class="profile-password-change-label" for="repassword">Confirmar contraseña</label>
+                        <p class="repassword-error"></p>
+                        <input id="repassword-profile" class="profile-password-change-input" type="password" name="repassword" id="repassword"> 
+                        <button class="container-profile-button" type="submit">Cambiar</button>
+                    </form>
                 </div>
     
             </div>

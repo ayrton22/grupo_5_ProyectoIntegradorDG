@@ -13,10 +13,22 @@ window.addEventListener('load', function(){
 
     // Inicio variables imagenes
     let img = "/img/Logos/Portray-upload.jpg";
+
     let imgPortrayEdit1 = document.getElementById('imgPortrayEdit1');
-    //let imgPortrayEdit0 = document.getElementById('imgPortrayEdit0').getAttribute('src');
     console.log(imgPortrayEdit1)
-    let errorImgPortrayEdit = document.getElementById('errImgPortraysEdit');
+    let errorImgPortrayEdit = document.getElementById('errImgPortrayEdit');
+
+
+    let img1 = "/img/Logos/Photo-upload.jpg"
+    let imgHorizontalEdit2 = document.getElementById('imgHorizontalEdit2');
+    let errorImgHorizontalEdit = document.getElementById('errImgHorizontalEdit');
+
+    let img2 = "/img/Logos/Photo-upload.jpg"
+
+    let imgRightEdit3 = document.getElementById('imgRightEdit3');
+    let errorImgRightEdit = document.getElementById('errImgRightEdit');
+
+    let regexImagenEdit = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i
     // Fin variables imagenes
 
     let inputVideoLink = document.getElementById('videoLinkEdit');
@@ -106,13 +118,25 @@ window.addEventListener('load', function(){
             errores.plataforma = "Debes marcar al menos uno";
         }
         //Trabajando en imagenes
-        
-        if(imgPortrayEdit1 != null){
-            imgPortrayEdit1.getAttribute('src');
-            if(imgPortrayEdit1 == img){
-                errores.imgPerfil = "Debes seleccionar una imagen para este campo";
+
+
+        const delay = 10000;
+        const miIntervalo = setInterval(miFuncion, delay)
+        function miFuncion(){
+            if(imgPortrayEdit1 != null){
+                errores.imgPerfil = "Debes colocar una imagen";
             }
         }
+        clearInterval(miIntervalo);
+
+        if(imgHorizontalEdit2 != null){
+            errores.imgHorizontal = "Debes colocar una imagen";
+        }
+        
+        if(imgRightEdit3 != null){
+            errores.imgRight = "Debes colocar una imagen";
+        }
+
         //Fin imagenes
         if(inputVideoLink.value.length < 1){
             errores.videoLink = "Este campo es obligatorio"
@@ -181,6 +205,11 @@ window.addEventListener('load', function(){
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
             //errores imagenes empieza aca
             errorImgPortrayEdit.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
+
+            errorImgHorizontalEdit.innerText = (errores.imgHorizontal) ? errores.imgHorizontal : '';
+
+            errorImgRightEdit.innerText = (errores.imgRight) ? errores.imgRight : '';
+
             //errores imagenes termina acá
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
@@ -201,8 +230,10 @@ window.addEventListener('load', function(){
             
         } else {
             // envio el formulario
-            formulario.submit();
-            alert('El formulario se envió');
+            setTimeout(function(){
+                formulario.submit();
+                alert('El formulario se envió');
+            })
         }
     })
 })

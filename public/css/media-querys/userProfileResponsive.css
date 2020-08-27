@@ -49,6 +49,10 @@
         width: 22rem
     }
 
+    .general-profile-password-change {
+        left: 30rem;
+    }
+
 
     /* Games section */
 
@@ -224,6 +228,10 @@
     .container-profile-general-profile {
         margin-left: 2rem;
         width: 22rem
+    }
+
+    .general-profile-password-change {
+        left: 8rem;
     }
 
     /* Games section */
@@ -445,6 +453,10 @@
     .container-profile-general-profile div img {
         width: 15rem;
         height: 15rem;
+    }
+
+    .general-profile-password-change {
+        left: -4rem;
     }
 
     /* Games section */

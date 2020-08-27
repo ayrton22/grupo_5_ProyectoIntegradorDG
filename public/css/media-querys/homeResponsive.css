@@ -36,6 +36,7 @@
 
     .product-section-2{
         height: 90rem;
+        margin-right: 0;
     }
 
     .product-section-2 .product-section-2__portrays .product-section-2__box--1{
@@ -61,30 +62,68 @@
         align-items: center;
     }
 
-    @media screen and (max-width: 700px){
-        .main-content,
-        .prime-banner {
-        width: calc(100vw - 10rem);
-        }   
-        .carousel__video{
-            width: 40rem !important;
-        }
+    article.juegos-container__redirection{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .main-content,
+    .prime-banner {
+    width: calc(100vw - 10rem);
+    }   
+    .carousel__video{
+        width: 40rem !important;
+    }
+}
+
+@media screen and (max-width: 750px){
+    div.product-section-1{
+        margin-bottom: 0;
+        margin-right: 0;
+        height: 60rem;
+        justify-content: center;
+        align-items: center;
     }
 
-    @media screen and (max-width: 600px){
-        .main-content,
-        .prime-banner {
-        width: calc(100vw - 15rem);
-        } 
-
-        .carousel__video{
-            width: 35rem !important;
-        }
+    .product-section-1 .product-section__portrays{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    @media screen and (max-width: 450px){
-        .carousel__video{
-            width: 29rem !important;
-        }
+    .product-section-1 .product-section__portrays .product-section__horizontal-boxes .product-section__box--horizontal{
+        width: 38rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__box{
+        width: 22rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__box{
+        margin-bottom: 3rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__horizontal-boxes{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .main-content,
+    .prime-banner {
+    width: calc(100vw - 15rem);
+    } 
+
+    .carousel__video{
+        width: 35rem !important;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .carousel__video{
+        width: 29rem !important;
     }
 }

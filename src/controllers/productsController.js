@@ -106,6 +106,7 @@ module.exports = {
 	store: function (req, res) {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
+		res.send(req.body);
 
 		db.Games.create({
 				title: req.body.title,

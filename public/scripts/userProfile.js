@@ -41,6 +41,10 @@ window.addEventListener('load', function() {
     let deleteForm = qs('form.games-delete-form');
     let deleteBtn = qs('button.games-delete-form-button2')
 
+    let passwordIcon = qs('h3.profile-pass i');
+    let passwordForm = qs('form.general-profile-password-change');
+    let passwordCross = qs('form.general-profile-password-change i')
+
     // Event Listeners
 
     generalSelect.addEventListener('click', function() {
@@ -169,6 +173,17 @@ window.addEventListener('load', function() {
 
     });
 
+    passwordIcon.addEventListener('click', function() {
+        passwordForm.classList.remove('inactive-password-change');
+        passwordForm.classList.add('active-password-change');
+    })
+
+    passwordCross.addEventListener('click', function() {
+
+        passwordForm.classList.remove('active-password-change');
+        passwordForm.classList.add('inactive-password-change');
+    })
+
 
 
     avatarImage.addEventListener('click', function() {
@@ -220,5 +235,48 @@ window.addEventListener('load', function() {
             }
         })
     }
+
+
+    let passwordChangeForm = document.getElementById('passwordChangeForm');
+
+    let passwordInput = document.getElementById('password-profile');
+    let repasswordInput = document.getElementById('repassword-profile');
+
+    let passwordError1 = qs('p.password-error1')
+    let passwordError2 = qs('p.password-error2')
+    let repasswordError = qs('p.repassword-error')
+
+    passwordChangeForm.addEventListener('submit', function(event){
+        event.preventDefault();
+
+        let errores = {}
+
+        if(passwordInput.value.length = 0) {
+            errores.noPassword = "Este campo no puede estar incompleto"
+        }
+
+        if(passwordInput.value.length < 6 || passwordInput.value.length > 20 ){
+            errores.password = "La contraseña debe tener entre 6 y 20 caracteres";
+        }
+        if(passwordInput.value != repasswordInput.value){
+            errores.repassword = "Las contraseñas no coinciden";
+        }
+
+        if(Object.keys(errores).length >= 1){
+            //console.log('Hay errores');
+            //console.log(errores);
+
+            passwordError1.innerText = (errores.noPassword) ? errores.noPassword : "";
+            passwordError2.innerText = (errores.password) ? errores.password : "";
+            repasswordError.innerText = (errores.repassword) ? errores.repassword : "";
+
+            alert('No se pudo actualizar la contraseña');
+            
+        } else {
+            // envio el passwordChangeForm
+            alert('Se ha actualizado la contraseña');
+            passwordForm.submit();
+        }
+    })
 
 })

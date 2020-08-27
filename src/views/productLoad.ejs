@@ -11,13 +11,8 @@
                     <div class="col-12">
                         <h1>Carga de Producto:</h1>
                     </div>
-<<<<<<< HEAD
-                    <div class="col-6 pb-5">
-                        <label id="labelTitleLoad" for="title" class="productLoader-form-label">Título del juego: </label>
-=======
                     <div class="col-12 col-md-6 pb-5">
                         <label for="title" class="productLoader-form-label">Título del juego: </label>
->>>>>>> c8cc9c4a6098939380a7ef70a41655212012167b
                         <input type="text" name="title" value="" class="productLoader-form-input" id="titleLoad">
                         <small class="text-danger" id="errTitleLoad"></small>
                     </div>
@@ -56,7 +51,7 @@
                             <div class="form2-containerLoader--portray">
                                 <img id="imgPortrayLoad" class="productLoader-form-uploadImage--portray" src="/img/Logos/Portray-upload.jpg" alt="">
                                 <input type="file" id="portray" style="display: none;" name="default">
-                                <small class="" id="errImgPortrayLoad"></small>
+                                <small class="text-danger" id="errImgPortrayLoad"></small>
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
@@ -65,17 +60,13 @@
                                 <!--<input type="text" id="video" class="productLoader-form-uploadImage--video-input" name="video">-->
                             </div>
                             <div class="row form2-containerEdit--link-video form2-containerEdit--link-video2">
-<<<<<<< HEAD
-                                <input type="text" id="videoLinkLoad" class="productEdit-form-input productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
-                                <small class="" id="errVideoLinkLoad"></small>
-=======
                                 <input type="text" id="videoLinkLoad" class="productLoader-form-input-video productEdit-form-input--link-video productEdit-form-input--link-video2" name="video" placeholder="Link del video">
                                 <small class="text-danger-video" id="errVideoLinkLoad"></small>
->>>>>>> c8cc9c4a6098939380a7ef70a41655212012167b
                             </div>
                             <div class="row form2-containerLoader--horizontal">
-                                <img class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
+                                <img id="imgH2" class="productLoader-form-uploadImage--horizontal" src="/img/Logos/Horizontal-upload.jpg" alt="">
                                 <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal">
+                                <small class="text-danger" id="errImgH2"></small>
                             </div>
                         </div>
                     </div>
@@ -83,31 +74,33 @@
                         <div class="col-12 col-md-8">
                             <div class="form2-containerLoader--photo__left">
                                 <img class="productLoader-form-uploadImage" id="one" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="one" style="display: none;" name="carousel">
+                                <input type="file" id="one" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="two" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="two" style="display: none;" name="carousel">
+                                <input type="file" id="two" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="three" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="three" style="display: none;" name="carousel">
+                                <input type="file" id="three" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="four" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="four" style="display: none;" name="carousel">
+                                <input type="file" id="four" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="five" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="five" style="display: none;" name="carousel">
+                                <input type="file" id="five" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="six" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="six" style="display: none;" name="carousel">
+                                <input type="file" id="six" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="seven" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="seven" style="display: none;" name="carousel">
+                                <input type="file" id="seven" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="eight" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="eight" style="display: none;" name="carousel">
+                                <input type="file" id="eight" style="display: none;" name="carousel" value="">
                                 <img class="productLoader-form-uploadImage" id="nine" src="/img/Logos/Photo-upload.jpg" alt="">
-                                <input type="file" id="nine" style="display: none;" name="carrousel">
+                                <input type="file" id="nine" style="display: none;" name="carrousel" value="">
                                 <img class="productLoader-form-uploadImage" id="ten" src="/img/Logos/Photo-upload.jpg" alt="">
                                 <input type="file" id="ten" style="display: none;" name="carousel">
+                                <small class="text-danger" id="errImgCarousel"></small>
                             </div>
                         </div>
                         <div class="col-12 col-md-4">
                             <div class="form2-containerLoader--photo__right">
-                                <img class="productLoader-form-uploadImage--detail" src="/img/Logos/Detail-upload.jpg" alt="">
+                                <img id="imgRightLoad" class="productLoader-form-uploadImage--detail" src="/img/Logos/Detail-upload.jpg" alt="">
                                 <input type="file" id="detail" style="display: none;" name="imagen_detalle">
+                                <small class="text-danger" id="errImgRightLoad"></small>
                             </div>
                         </div>
                         <button type="button" class="productLoader-form-button--next mb-5 mt-5"><a href="#form3">Siguiente</a></button>

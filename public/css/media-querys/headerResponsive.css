@@ -1,0 +1,128 @@
+@media only screen and (max-width: 1600px){
+    .header .header-nav__right{
+        width: 70rem;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    .header .header-nav__right{
+        width: 65rem;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+
+    .header{
+        padding: 2.5rem 5rem;
+    }
+
+    .header-nav{
+        flex-wrap: wrap;
+    }
+
+    .header .header-nav__left{
+        margin-bottom: 3rem;
+        width: 100%;
+    }
+
+    .header .header-nav .header-nav__left div.header-nav__logo{
+        margin-right: auto;
+    }
+
+    .header .header-nav__right{
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .header .header-nav__right form{
+        order: 1;
+        width: 100%;
+    }
+
+    .header .header-nav__right .header-nav__form{
+        margin-right: 0;
+    }
+}
+
+@media only screen and (max-width: 1300px){
+    .nav__right-profile-dropdown{
+        top: -3rem !important;
+        left: 11rem !important;
+        padding: 0rem;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .header-nav{
+        flex-direction: column;
+    }
+
+    .header .header-nav__left{
+        flex-direction: column;
+    }
+
+    .hamburguer-menu{
+        display: flex !important;
+    }
+
+    .header .header-nav .header-nav__left ul.header-nav__list {
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        background: #262626;
+        order: -1;
+        margin-left: auto;    
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        right: -330px;
+        z-index: 5000;
+        width: 33rem;
+        border-radius: 20% 0 0 60%;
+        transition: right .8s cubic-bezier(1, 0, 0, 1);
+        opacity: 0.99;
+    }
+
+    .header-nav__sub-list{
+        left: -110px !important;
+        top: 10px !important;
+    }
+
+    .change-line-sub{
+        right: 0 !important;
+    }
+
+    .header .header-nav .header-nav__left .header-nav__list .header-nav__item {
+        width: 10rem;
+        margin-left: 11rem;
+    }
+
+    .header .header-nav .header-nav__left .header-nav__list .header-nav__item:first-child{
+        margin-top: 40rem;
+    }
+
+    .header .header-nav__right{
+        flex-wrap: wrap;
+        margin-right: auto;
+    }
+
+    .nav__right-profile-options{
+        width: 100%;
+    }
+
+    .header .header-nav__right .header-nav__form{
+        margin-top: 2rem;
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    @media only screen and (max-width: 600px){
+        .nav__right-profile-dropdown-single a {
+            font-size: 17px;
+        }
+    }
+}
+
+

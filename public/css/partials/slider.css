@@ -141,7 +141,7 @@
 
 .carousel__overlay .big-play {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -267,6 +267,11 @@
     border-radius: 5px;
 }
 /*====================*//*====================*/
+
+.carousel__video.main{
+    position: relative;
+}
+
 .description-slider{
     display: flex;
     width: 40%;
@@ -274,7 +279,7 @@
     padding: 1rem;
     position: absolute;
     left: 65.4%;
-    top: -6%;
+    top: 220px;
     height: 111.5%;
     border-radius: 3px;
 }
@@ -296,13 +301,21 @@
     margin-top: 1.8rem;
 }
 
-.description-slider .buttons-cont i{
+.description-slider .buttons-cont .buttons-cont-platformsss{
+    position: absolute;
+    left: -120px;
     color: #000;
     margin-right: auto;
     font-size: 2rem;
+    background-color: var(--button-bg-color);
+    padding: 2px;
+    border-radius: 5px;
 }
 
+
 .description-slider .buttons-cont .a-btn{
+    right: 10px;
+    position: absolute;
     background-color: var(--button-bg-color);
     padding: 5px;
     border-radius: var(--button-border-radius);
@@ -315,14 +328,10 @@
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1150px) {
-
-    .main-content,
-    .prime-banner {
-        width: calc(100vw - 3rem);
-    }
-}
-
 .prueba_opacity{
     opacity: 0;
+}
+
+.carousel-home__arrow{
+    z-index: 99999;
 }

@@ -20,7 +20,7 @@
         <div class="main-content">
             <video-carousel inline-template class="carousel">
                 <div>
-                    <i class="fas fa-chevron-left carousel__chevron" @click="changeVideo('right')"></i>
+                    <i class="carousel-home__arrow fas fa-chevron-left carousel__chevron" @click="changeVideo('right')"></i>
                     <div class="carousel__content">
                         <div class="carousel__video" v-for="(video, i) in videos" :class="video.position">
                             <div @click="changeVideo(0, video.position)" class="inactive" v-if="!video.active">
@@ -40,12 +40,12 @@
                                 </i>
                                 <div class="description-slider">
                                     <article>
-                                        <p class="description prueba_opacity">
-                                            {{video.channelDescription}}
-                                            
-                                        </p>
                                         <div class="buttons-cont">
-                                            <i class="fa fa-desktop plataform" aria-hidden="true"></i>
+                                            <div class="buttons-cont-platformsss">
+                                                <i class="fa fa-desktop plataform" aria-hidden="true"></i>
+                                                <i class="fa fa-desktop plataform" aria-hidden="true"></i>
+                                                <i class="fa fa-desktop plataform" aria-hidden="true"></i>
+                                            </div>
                                             <div class="a-btn ">
                                                 <a class="more " :href="'/product/detail/'+video.channelDetail">Ver más</a>
                                             </div>
@@ -61,7 +61,7 @@
                             <div class="carousel__placeholder-background" v-if="video.active"></div>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right carousel__chevron" @click="changeVideo('left')"></i>
+                    <i class="carousel-home__arrow fas fa-chevron-right carousel__chevron" @click="changeVideo('left')"></i>
                 </div>
             </video-carousel>
         </div>

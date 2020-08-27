@@ -43,7 +43,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     }
 
-    if (!event.target.matches('.nav__right-profile-options-icon')) {
+    if (!event.target.matches('.nav__right-profile-options-imgCont')) {
       var dropdowns3 = document.getElementsByClassName("inactive-profile-dropdown");
       var k;
       for (k = 0; k < dropdowns3.length; k++) {

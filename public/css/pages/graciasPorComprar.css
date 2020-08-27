@@ -2,9 +2,11 @@
     font-size: 1.7rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
     margin: 6rem auto;
-    width: 40%;
+    margin-bottom: 19rem;
+    width: 400px;
     align-content: center;
     border-radius: 5px;
+    padding: 1rem;
 }
 
 h1.message-box__content--title {
@@ -23,4 +25,16 @@ p.message-box__content--body--text {
 a.message-box__content--body__link {
     text-decoration:none;
     color: white;
+}
+
+button.thanksButton {
+    background-color: white;
+    font-size: 24px;
+    color: white;
+    border-radius: var(--button-border-radius);
+    background-color: #00A6FF;
+    border: none;
+    padding: 1rem 3rem;
+    margin-left: 11rem;
+    cursor: pointer;
 }

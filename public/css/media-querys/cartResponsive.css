@@ -1,0 +1,78 @@
+@media (max-width: 1200px) {
+    .carrito-container__aside {
+        width: 250px;
+    }
+
+    .carrito-container__aside ul li img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .carrito-container__info {
+        width: 300px;
+    }
+
+    .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__img-cont img {
+        width: 10rem;
+    }
+
+    .carrito-container__resumen {
+        width: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+
+    .user-cart-header-container {
+        display: block;
+    }
+
+    .carrito-container .carrito-container__aside {
+        display: none;
+    }
+
+    .carrito-container__aside ul li img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .carrito-container__info {
+        width: 500px;
+    }
+
+    .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__img-cont img {
+        width: 10rem;
+    }
+
+    .carrito-container__resumen {
+        width: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    .carrito-container .carrito-container__aside {
+        display: none;
+    }
+
+    .carrito-container__aside ul li img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .carrito-container {
+        display: block;
+    }
+
+    .carrito-container__info {
+        width: 375px;
+    }
+
+    .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__img-cont img {
+        width: 10rem;
+    }
+
+    .carrito-container__resumen {
+        width: 375px;
+        margin-bottom: 4rem;
+    }
+}

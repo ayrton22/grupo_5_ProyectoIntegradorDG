@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('partials/head', {title: 'Carrito de Compras'}) %>
 <body>
-
+    <div class="user-cart-header-container"><%- include('partials/header') %></div>
     <div class="carrito-container">
         <div class="carrito-container__aside">
             <ul class="carrito-container__list">
@@ -11,10 +11,9 @@
 
                     <h3 class="profile-username"><%=user.username%></h3>
                 </div></div></li>
-                <li class="carrito-container__item"><a href="#">Juegos</a></li>
-                <li class="carrito-container__item"><a href="#">Noticias</a></li>
-                <li class="carrito-container__item"><a href="#">Acerca De</a></li>
-                <li class="carrito-container__item"><a href="#">Descarga la App</a></li>
+                <li class="carrito-container__item"><a href="/product">Juegos</a></li>
+                <li class="carrito-container__item"><a href="/user/community">Comunidad</a></li>
+                <li class="carrito-container__item"><a href="/user/profile/<%=locals.localUser.id%>">Tu perfil</a></li>
                 <li class="carrito-container__item"><a href="#">Soporte</a></li>
             </ul>
             <div class="header-cart__nav">
@@ -29,11 +28,10 @@
                 <div class="carrito-container__articulos">
                     <div class="carrito-container__juego">
                         <div class="carrito-container__img-cont">
-                           <a href="/product/detail/<%=element.id%>"><img src="../../img/uploads/productsImage/<%= element.images[0].img_url%> " alt=""></a> 
+                           <a href="/product/detail/<%=element.id%>"><img class="cart-image-single" src="../../img/uploads/productsImage/<%= element.images[0].img_url%> " alt=""></a> 
                         </div>
 
                         <div>
-                        <p><%= element.title %></p>
                         <p><%= element.title %></p>
                         <p>Precio: $<%= element.price%></p>
                         </div>

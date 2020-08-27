@@ -12,21 +12,26 @@ window.addEventListener('load', function(){
     let errorPlataforma = document.getElementById('errPlatformEdit');
 
     // Inicio variables imagenes
-    let img = "/img/Logos/Portray-upload.jpg";
 
-    let imgPortrayEdit1 = document.getElementById('imgPortrayEdit1');
-    console.log(imgPortrayEdit1)
+    let divPortray = document.querySelector('#divPortray img');
+    console.log(divPortray);
+    let inputPE = document.querySelector('input#portray');
+    let imgPortray = "/img/Logos/Photo-upload.jpg"
+    let inputPortrayEdit = document.getElementById('portray');
     let errorImgPortrayEdit = document.getElementById('errImgPortrayEdit');
 
-
-    let img1 = "/img/Logos/Photo-upload.jpg"
-    let imgHorizontalEdit2 = document.getElementById('imgHorizontalEdit2');
+    let divHorizontal = document.querySelector('#divHorizontal img');
+    let inputHE = document.querySelector('input#horizontal');
+    let inputHorizontalEdit = document.getElementById('horizontal');
     let errorImgHorizontalEdit = document.getElementById('errImgHorizontalEdit');
 
-    let img2 = "/img/Logos/Photo-upload.jpg"
+    let divDetail = document.querySelector('#divDetail img');
+    let inputDE = document.querySelector('input#detail');
+    let errorImgDetailEdit = document.getElementById('errImgRightEdit');
 
-    let imgRightEdit3 = document.getElementById('imgRightEdit3');
-    let errorImgRightEdit = document.getElementById('errImgRightEdit');
+    let divCarousel = document.querySelector('#divCarousel img');
+    let inputCE = document.querySelectorAll('input#carouselEdit');
+    let errorImgCarouselEdit = document.getElementById('errInputCarouselEdit');
 
     let regexImagenEdit = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i
     // Fin variables imagenes
@@ -119,23 +124,25 @@ window.addEventListener('load', function(){
         }
         //Trabajando en imagenes
 
-
-        const delay = 10000;
-        const miIntervalo = setInterval(miFuncion, delay)
-        function miFuncion(){
-            if(imgPortrayEdit1 != null){
+        console.log(inputPortrayEdit)
+       
+        if(inputPE != undefined){
+            console.log(inputPE)
+            if(inputPE.value.length == 0){
                 errores.imgPerfil = "Debes colocar una imagen";
             }
         }
-        clearInterval(miIntervalo);
+        if(inputHE != undefined){
+            if(inputHE.value.length == 0){
+                errores.imgHorizontal = "Debes colocar una imagen";
+            }
+        }
+        if(inputDE != undefined){
+            if(inputDE.value.length == 0){
+                errores.imgRight = "Debes colocar una imagen";
+            }
+        }
 
-        if(imgHorizontalEdit2 != null){
-            errores.imgHorizontal = "Debes colocar una imagen";
-        }
-        
-        if(imgRightEdit3 != null){
-            errores.imgRight = "Debes colocar una imagen";
-        }
 
         //Fin imagenes
         if(inputVideoLink.value.length < 1){
@@ -208,7 +215,7 @@ window.addEventListener('load', function(){
 
             errorImgHorizontalEdit.innerText = (errores.imgHorizontal) ? errores.imgHorizontal : '';
 
-            errorImgRightEdit.innerText = (errores.imgRight) ? errores.imgRight : '';
+            errorImgDetailEdit.innerText = (errores.imgRight) ? errores.imgRight : '';
 
             //errores imagenes termina acá
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';

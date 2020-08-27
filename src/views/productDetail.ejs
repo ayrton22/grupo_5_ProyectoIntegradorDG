@@ -50,9 +50,14 @@
                        <div class="detalle-container__rating"><i class="fas fa-star mb-2 rating"></i> <%= productDetail.rating %></div>
                        <p><%= productDetail.price %>$</p>
                        <div class="botones-administrador">
-                        <button class="detail--action-button"><a href="/product/edit/<%= productDetail.id %>">EDITAR PRODUCTO</a></button>
-                        <form action="/product/detail/<%= productDetail.id %>?_method=delete" method="POST" style="display: inline-flex">
-                        <button type="submit" class="detail--action-button eliminar-juego">ELIMINAR</button>
+                          <%    if(locals.localUser != undefined){%>
+                            <%    if(locals.localUser.admin){%>
+                                <button class="detail--action-button"><a href="/product/edit/<%= productDetail.id %>">EDITAR PRODUCTO</a></button>
+                                <form action="/product/detail/<%= productDetail.id %>?_method=delete" method="POST" style="display: inline-flex">
+                                <button type="submit" class="detail--action-button eliminar-juego">ELIMINAR</button>
+                                <%   }%>
+                         <%  }%>
+                        
                         </form>
                        </div>
                        <div class="detalle-container__plataform-buyButtons">

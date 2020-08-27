@@ -73,7 +73,7 @@
                         <%  user.user_sales.forEach((element)=> {%>
 
                             <div class="container-profile-games-single">
-                                <% if (element.status_transaction == 'Sld') { %>
+                                <% if (element.status_transaction == 'Sold') { %>
                                     <i class="fas fa-info-circle games-single-detailInfo"></i>
                                 <% } else { %>
                                     <a href="/product/edit/<%= element.games.id %>"><i class="far fa-edit games-single-edit"></i></a>
@@ -204,10 +204,6 @@
                         </div>
                     <% })%>
 
-                    
-    
-                    
-    
 
                 </div>
 
@@ -228,8 +224,6 @@
                     
                     <button type="submit" class="container-profile-button-logout mt-5">Dar de baja tu cuenta</button>
                     <h3> Esta accion borrará tu cuenta permamentemente y no habrá forma de recuperarla</h3>
-
-
                 </form>
                 <br>
                 <br>

@@ -12,7 +12,7 @@
             <h1>Editar o agregar información</h1>
 
             <h2>General</h2>
-
+            <input class="userEdit-form-input" type="hidden" value="<%=user.username%>" name="username">
             <div class="userEdit-form-img-container">
                 <img class="profile-avatar-img-edit" src="/img/uploads/avatars/<%= user.avatar %>" alt="avatar">
                 <input type="file" id="upload" style="display: none;" name="avatar" value="<%= user.avatar %>">

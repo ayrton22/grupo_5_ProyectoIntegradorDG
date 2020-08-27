@@ -33,33 +33,6 @@
                     </div>
                     <div class="nav__right-profile-dropdown">
                         <ul type="none">
-<<<<<<< HEAD
-
-                            <%# if(typeOf res.locals.username != undefined) { %>
-
-                                <li class="nav__right-profile-dropdown-single">
-                                    <a href="/user/cart" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
-                                </li>
-                                <li class="nav__right-profile-dropdown-single">
-                                    <a href="/user/cart" class="nav__icons"><i class="fas fa-shopping-cart"></i> Ver tu carrito</a>
-                                </li>
-    
-                                <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
-                                    <a href="/user/cart" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-                                </li>
-
-                            <%# } else { %>
-
-                                <li class="nav__right-profile-dropdown-single">
-                                    <a href="/user/register" class="nav__icons"><i class="fas fa-user-plus"></i> Registrarse</a>
-                                </li>
-                                <li class="nav__right-profile-dropdown-single">
-                                    <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in"></i> Iniciar sesión</a>
-                                </li>
-
-                            <%# } %>
-                                
-=======
                             <li class="nav__right-profile-dropdown-single">
                                 <a href="/user/profile/<%=locals.localUser.id%>" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
                             </li>
@@ -70,7 +43,6 @@
                             <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
                                 <a href="/user/logout" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
                             </li>
->>>>>>> 3c8a6361710cd81f2fd029c71b79e46de0d2bc25
                         </ul>
                     </div>
                 </div>

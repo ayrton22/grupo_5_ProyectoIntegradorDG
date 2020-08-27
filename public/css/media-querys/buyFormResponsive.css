@@ -1,0 +1,248 @@
+@media  (max-width: 1200px) {
+    .container2-buyDelivery {
+        width: 750px;
+        height: 90rem;
+    }
+
+    .buyDelivery__group{
+        display: block;
+    }
+
+    h1.buyDelivery__title {
+        width: 400px;
+        font-size: 36px;
+    }
+
+    .buyDelivery__right-section {
+        margin-top: 10rem;
+        margin-right: 7rem;
+    }
+
+    .buyDelivery__continue-btn button {
+        margin-top: 38rem;
+        margin-left: 5rem;
+    }
+
+
+
+    /* Local form */
+
+    .container-buyLocal {
+        margin: 2rem auto;
+        width: 750px;
+        height: 75rem;
+    }
+
+    .container-buyLocal2{
+        position: relative;
+        width: 750px;
+        height: 75rem;
+    }
+
+    .buyLocal__info-part1 {
+        margin-right: 0;
+    }
+
+    .buyLocal__single-info h2 {
+        font-size: 20px;
+    }
+
+    .buyLocal__single-info h4 {
+        font-size: 14px;
+    }
+
+    .buyLocal__info-part2 {
+        width: 300px;
+    }
+
+    .buyLocal__info-part2 iframe {
+        width: 250px;
+        height: 300;
+    }
+}
+
+@media  (max-width: 800px) {
+
+    .container2-buyDelivery {
+        position: relative;
+        width: 525px;
+        height: 75rem;
+    }
+
+    .buyDelivery__inputs-cont {
+        position: relative;
+    }
+
+    .buyDelivery__group{
+        display: grid;
+        position: absolute;
+        top: 38rem;
+    }
+
+    h1.buyDelivery__title {
+        width: 400px;
+        font-size: 36px;
+    }
+
+    .buyDelivery__inputs-cont-single label {
+        font-size: 20px;
+    }
+
+    .buyDelivery__inputs-cont-single p input {
+        width: 215px;
+        font-size: 14px;
+    }
+
+    .buyDelivery__right-section {
+        position: absolute;
+        right: -4rem;
+    }
+
+    .buyDelivery__continue-btn button {
+        margin-top: 25rem;
+    }
+
+
+
+        /* Local form */
+
+        .container-buyLocal {
+            margin: 2rem auto;
+            width: 525px;
+            height: 102rem;
+        }
+    
+        .container-buyLocal2{
+            width: 525px;
+            height: 102rem;
+        }
+    
+        .buyLocal__info-part1 {
+            margin-right: 0;
+        }
+    
+        .buyLocal__single-info h2 {
+            font-size: 20px;
+        }
+    
+        .buyLocal__single-info h4 {
+            font-size: 14px;
+        }
+    
+        .buyLocal__info-part2 {
+            width: 300px;
+        }
+    
+        .buyLocal__info-part2 iframe {
+            width: 250px;
+            height: 300;
+        }
+        .buyLocal__right-section {
+            position: absolute;
+            bottom: 0;
+        }
+    
+        .buyLocal__continue-btn {
+            position: absolute;
+            bottom: 10rem;
+            left: 30rem;
+        }
+}
+
+@media  (max-width: 550px) {
+    .container2-buyDelivery {
+        position: relative;
+        width: 375px;
+        height: 129rem;
+    }
+
+    .buyDelivery__inputs-cont {
+        position: relative;
+        margin-top: 36rem;
+    }
+
+    .buyDelivery__group{
+        display: block;     
+    }
+
+    h1.buyDelivery__title {
+        width: 400px;
+        font-size: 32px;
+    }
+
+    .buyDelivery__inputs-cont-single label {
+        font-size: 20px;
+    }
+
+    .buyDelivery__inputs-cont-single p input {
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .buyDelivery__right-section {
+        position: absolute;
+        top: 0;
+        right: 1.5rem;
+    }
+
+    .buyDelivery__continue-btn button {
+        margin-top: 80rem;
+        margin-right: 0;
+    }
+
+    /* Local form */
+
+    .container-buyLocal {
+        margin: 2rem auto;
+        width: 375px;
+        height: 110rem;
+    }
+
+    .container-buyLocal2{
+        width: 375px;
+        height: 110rem;
+    }
+
+    .buyLocal__info-part1 {
+        margin-right: 0;
+    }
+
+    .buyLocal__single-info h2 {
+        font-size: 20px;
+    }
+
+    .buyLocal__single-info h4 {
+        font-size: 14px;
+    }
+
+    .buyLocal__info-part2 {
+        display: none;
+    }
+
+    .buyLocal__right-section {
+        position: absolute;
+        bottom: -4rem;
+        left: 8rem;
+    }
+
+    .buyLocal__continue-btn {
+        position: relative;
+        margin-left: -58rem;
+        margin-top: -6rem;
+    }
+
+
+    .container-paymentMethod {
+        width: 375px;
+    }
+
+    .paymentMethod__title-cont h1 {
+        font-size: 20px;
+        width: 350px;
+        margin-bottom: 2rem;
+    }
+
+    .payment-button {
+        margin-left: 9rem;
+    }
+}

@@ -6,7 +6,7 @@
     <%- include('partials/header') %>
 
     <div class="container-community">
-        <h1>Conversaciones de la comunidad</h1>
+        <h1 id="community-top">Conversaciones de la comunidad</h1>
 
         <div class="community-conversations">
 
@@ -36,15 +36,10 @@
 
             <% }) %>
         </div>
+
+        <a href="#community-top"><button type="button" class="community-button"> Volver arriba</button></a>
   
     </div>
-
-    <div class="community-answer-form inactive-answer-form">
-        <h1>Posteá tu respuesta</h1>
-        <form action="">
-            <textarea name="answer" cols="30" rows="10"></textarea>
-        </form> 
-    </div> 
 
     <!-- Footer -->
     <%- include('partials/footer') %>

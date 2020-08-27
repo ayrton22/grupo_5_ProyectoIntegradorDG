@@ -23,14 +23,15 @@ router.post('/register', registerValidation, passwordRepassMiddleware ,controlle
 
 router.get('/edit/:id?', controller.edit);
 router.put('/edit/:id', uploadImageMiddleware.any() ,controller.update);
-router.post('/delete/:id', controller.delete);
+router.delete('/delete/:id', controller.delete);
 
 router.get('/login', controller.login);
 router.post('/login', loginValidation, controller.confirm);
 
 router.get('/profile/:id/', authMiddleware ,  authMiddleware2, controller.profile); 
 
-router.get('/cart/:id',/* authMiddleware*/ controller.cart);
+router.get('/cart/:id',authMiddleware, controller.cart);
+router.post('/cart/:id',authMiddleware, controller.addGamesCart);
 
 router.get('/thanks', authMiddleware ,controller.thankYouPage);
 

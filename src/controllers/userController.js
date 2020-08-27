@@ -36,6 +36,10 @@ module.exports = {
         })
         res.render('userCart');
     },
+    addGamesCart:function(req, res){
+        
+    },
+
     register: function(req, res) {
         res.render('userRegister');
     },

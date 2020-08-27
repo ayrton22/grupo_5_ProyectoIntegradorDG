@@ -11,36 +11,7 @@
 
     <div class="container juegos-container generos">
     
-        <div class="container-container__aside-cont">
-            <aside class="juegos-container__aside">
-                <ul class="juegos-container__list">
-                    <li class="juegos-container__item juegos-container__item--genres">Géneros <i class="fas fa-angle-right"></i>
-                        <ul class="juegos-container__sub-list juegos-container__sub-list--genres" type="none">
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                        </ul>
-                    </li>
-                    <li class="juegos-container__item juegos-container__item--platforms">Plataformas <i class="fas fa-angle-right"></i>
-                        <ul class="juegos-container__sub-list juegos-container__sub-list--platforms" type="none">
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                        </ul>
-                    </li>
-                    <li class="juegos-container__item juegos-container__item--categories">Categorias <i class="fas fa-angle-right"></i>
-                        <ul class="juegos-container__sub-list juegos-container__sub-list--categories" type="none">
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                            <li>lorem</li>
-                        </ul>
-                    </li>
-                </ul>
-            </aside>
-        </div>
+        <%- include('partials/aside') %>
 
       <section class="juegos-container__all-products">
       <h2 class="juegos-container__title"> <%= genres.name.toUpperCase() %></h2>

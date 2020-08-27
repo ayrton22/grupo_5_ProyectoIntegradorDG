@@ -21,10 +21,16 @@ const imgArray = ['Avatar_default_1.jpg', 'Avatar_default_2.jpg', 'Avatar_defaul
 // Controller usage in module export
 module.exports = {
     prueba: function(req, res) {
-        db.Users.findByPk(req.params.id,{
-            include:[{association:'games_shooping_cart'}]
-        }).then(function(result) {
-            res.send(result);
+        db.Users.findByPk(req.params.id, 
+            {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}] },
+        {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
+            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]},{association: 'games_shooping_cart',attributes:['id','title']}]})
+        .then(function(result) {
+            res.render('userProfile',{
+                user: result
+            }
+               
+            );
         })
         .catch(function(error) {
             res.send(error);

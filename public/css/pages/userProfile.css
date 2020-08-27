@@ -9,6 +9,7 @@
 
 .container-profile {
     display: flex;
+    position: relative;
     background-color: #2D4681;
     border-radius: 8px;
     box-shadow: 0 0 10px 3px #010100;
@@ -17,12 +18,13 @@
 
 .container-profile-aside {
     width: 270px;
-    background-color: #00A6FF;
+    background-color: #0b93dd;
     padding: 2rem 1.5rem;
     border-radius: 8px 0 0 8px;
     font-size: 24px;
     box-shadow: 3px 0 5px #001927;
 }
+
 
 .container-profile-aside ul li:hover {
     transition: .3s ease;
@@ -36,6 +38,39 @@
     border-radius: 8px;
     transition: .3s ease;
 }
+
+.container-profile-aside-responsive {
+    display: none;
+    position: absolute;
+    background-color: #0b93dd;
+    bottom: 0;
+    height: 65px;
+    width: 500px;
+    box-shadow: 3px 0 5px #001927;
+    border-radius: 0 0 8px 8px;
+}
+.container-profile-aside-responsive ul li {
+    display: inline-block;
+    padding: 1rem;
+    margin-left: 4rem;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container-profile-aside-responsive ul li i {
+    padding: 1rem;
+    transition: .3s ease;
+    border-radius: 6px;
+    color: #fe0034;
+}
+
+.container-profile-aside-responsive ul li i:hover {
+    transition: .3s ease;
+    background-color: #fe0034;
+    color: white;
+}
+
 
 
 /* General Section */
@@ -114,6 +149,7 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-general-separation {
+    width: 8px;
     color: #fe0034;
     background-color: #fe0034;
     height: 60rem;

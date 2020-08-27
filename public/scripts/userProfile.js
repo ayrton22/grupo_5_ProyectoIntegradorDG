@@ -10,11 +10,22 @@ window.addEventListener('load', function() {
     let paysSelect = qs('li#pays');
     let settingsSelect = qs('li#settings');
 
+    // Listado Responsive
+    let generalRSelect = qs('li#general-responsive');
+    let gamesRSelect = qs('li#games-responsive');
+    let paysRSelect = qs('li#pays-responsive');
+    let settingsRSelect = qs('li#settings-responsive');
+
     // Secciones
     let generalInfo = qs('div.container-profile-general');
     let gamesInfo = qs('div.container-profile-games');
     let paysInfo = qs('div.container-profile-pays');
     let settingsInfo = qs('div.container-profile-settings')
+
+
+    // Sub secciones
+
+    let generalSubIndo = qs('div.container-profile-general')
 
     // Avatar Image, SVG and Input
 
@@ -48,7 +59,43 @@ window.addEventListener('load', function() {
 
     });
 
+    generalRSelect.addEventListener('click', function() {
+
+        gamesInfo.classList.remove('active-block');
+        gamesInfo.classList.add('inactiveUserProfile');
+
+        paysInfo.classList.remove('active-block');
+        paysInfo.classList.add('inactiveUserProfile');
+
+        settingsInfo.classList.remove('active-block');
+        settingsInfo.classList.add('inactiveUserProfile');
+
+        generalInfo.classList.remove('inactiveUserProfile');
+        generalInfo.classList.add('active-flex');
+
+        if(window.matchMedia("(max-width: 550px)").matches) {
+            generalSubInfo.style.display = "block";
+        }
+
+    });
+
     gamesSelect.addEventListener('click', function() {
+
+        generalInfo.classList.remove('active-flex');
+        generalInfo.classList.add('inactiveUserProfile');
+
+        paysInfo.classList.remove('active-block');
+        paysInfo.classList.add('inactiveUserProfile');
+
+        settingsInfo.classList.remove('active-block');
+        settingsInfo.classList.add('inactiveUserProfile');
+
+        gamesInfo.classList.remove('inactiveUserProfile');
+        gamesInfo.classList.add('active-block');
+
+    });
+
+    gamesRSelect.addEventListener('click', function() {
 
         generalInfo.classList.remove('active-flex');
         generalInfo.classList.add('inactiveUserProfile');
@@ -79,7 +126,38 @@ window.addEventListener('load', function() {
         paysInfo.classList.add('active-block');
     })
 
+    paysRSelect.addEventListener('click', function() {
+
+        generalInfo.classList.remove('active-flex');
+        generalInfo.classList.add('inactiveUserProfile');
+
+        gamesInfo.classList.remove('active-block');
+        gamesInfo.classList.add('inactiveUserProfile');
+
+        settingsInfo.classList.remove('active-block');
+        settingsInfo.classList.add('inactiveUserProfile');
+
+        paysInfo.classList.remove('inactiveUserProfile');
+        paysInfo.classList.add('active-block');
+    })
+
     settingsSelect.addEventListener('click', function() {
+
+        gamesInfo.classList.remove('active-block');
+        gamesInfo.classList.add('inactiveUserProfile');
+
+        paysInfo.classList.remove('active-block');
+        paysInfo.classList.add('inactiveUserProfile');
+
+        generalInfo.classList.remove('active-flex');
+        generalInfo.classList.add('inactiveUserProfile');
+
+        settingsInfo.classList.remove('inactiveUserProfile');
+        settingsInfo.classList.add('active-block');
+
+    });
+
+    settingsRSelect.addEventListener('click', function() {
 
         gamesInfo.classList.remove('active-block');
         gamesInfo.classList.add('inactiveUserProfile');

@@ -309,6 +309,15 @@ div.product-section-1 {
     transition: all .5s;
 }
 
+.product-section-2__box{
+    position: relative;
+}
+
+.product-section-2__data{
+    position: absolute;
+    top: 0;
+}
+
 .product-section-2 .product-section-2__portrays .product-section-2__box--1{
     height: 100%;
     transform: translateX(12rem);
@@ -453,7 +462,7 @@ div.juegos-container__animation:hover div.juegos-container__back-part{
     box-shadow: 0 1px 6px 5px #000;
 }
 
-a.juegos-container__shopping-cart{
+.juegos-container__shopping-cart{
     position: absolute;
     top: 280px;
     left: 15px;

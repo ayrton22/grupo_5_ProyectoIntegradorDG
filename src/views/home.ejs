@@ -21,13 +21,20 @@
             <div class="product-section__portrays">
                     <div class="product-section__box">
                         <% let primerDescuento =  Math.floor(Math.random() * discounts.length) %> 
-                        <a href="/product/detail/<%=discounts[primerDescuento].games.id %>">
+                        <article>
                             <% for(let k = 0; k < discounts[primerDescuento].games.images.length; k++) { %>
                                 <%  if( discounts[primerDescuento].games.images[k].location == "default" ){ %>
                                             <img src="../../img/uploads/productsImage/<%= discounts[primerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                            <div class="product-section__data">
+                                                <p class="product-section__description"><%= discounts[primerDescuento].games.description %></p>
+                                                <p class="product-section__price">$<%= discounts[primerDescuento].games.price %></p>
+                                                <a class="product-section__more-info" href="/product/detail/<%=discounts[primerDescuento].games.id %>">ver mas</a>
+                                                <a class="product-section__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                                <a class="product-section__buy-button" href="/user/buyFormChoose">BUY</a>
+                                            </div>
                                 <% } %>
                             <% } %>
-                        </a>
+                        </article>
                         <div class="cartel-oferta">
                             <p> <%=discounts[primerDescuento].percentage_discount%>% OFF<p>
                         </div>
@@ -40,14 +47,21 @@
                     <% while(segundoDescuento == primerDescuento){ %>
                         <%   segundoDescuento =  Math.floor(Math.random() * discounts.length) %>
                         <% } %> 
-                                <div class="product-section__box--horizontal ">
-                                    <a href="/product/detail/<%=discounts[segundoDescuento].games.id %>">
+                                <div class="product-section__box--horizontal">
+                                    <article>
                                         <% for(let k = 0; k <discounts[segundoDescuento].games.images.length; k++) { %>
                                             <%  if( discounts[segundoDescuento].games.images[k].location == "imagen_horizontal" ){ %>
                                                 <img src="../../img/uploads/productsImage/<%= discounts[segundoDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                                <div class="product-section-horizontal__data">
+                                                    <p class="product-section-horizontal__description"><%= discounts[segundoDescuento].games.description %></p>
+                                                    <p class="product-section-horizontal__price">$<%= discounts[segundoDescuento].games.price %></p>
+                                                    <a class="product-section-horizontal__more-info" href="/product/detail/<%=discounts[segundoDescuento].games.id %>">ver mas</a>
+                                                    <a class="product-section-horizontal__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                                    <a class="product-section-horizontal__buy-button" href="/user/buyFormChoose">BUY</a>
+                                                </div>
                                             <% } %>
                                         <% } %>
-                                    </a>
+                                    </aarticle>
                                     <div class="cartel-oferta__horizontal">
                                         <p><%=discounts[segundoDescuento].percentage_discount%>% OFF<p>
                                     </div>
@@ -57,13 +71,20 @@
                                     <%   tercerDescuento =  Math.floor(Math.random() * discounts.length) %>
                                     <% } %>
                                 <div class="product-section__box--horizontal ">
-                                    <a href="/product/detail/<%=discounts[tercerDescuento].games.id %>">
+                                    <article>
                                         <% for(let k = 0; k <discounts[tercerDescuento].games.images.length; k++) { %>
                                             <%  if( discounts[tercerDescuento].games.images[k].location == "imagen_horizontal" ){ %>
                                                 <img src="../../img/uploads/productsImage/<%=discounts[tercerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
+                                                <div class="product-section-horizontal__data">
+                                                    <p class="product-section-horizontal__description"><%= discounts[tercerDescuento].games.description %></p>
+                                                    <p class="product-section-horizontal__price">$<%= discounts[tercerDescuento].games.price %></p>
+                                                    <a class="product-section-horizontal__more-info" href="/product/detail/<%=discounts[tercerDescuento].games.id %>">ver mas</a>
+                                                    <a class="product-section-horizontal__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                                    <a class="product-section-horizontal__buy-button" href="/user/buyFormChoose">BUY</a>
+                                                </div>
                                             <% } %>
                                         <% } %>
-                                    </a>
+                                    </article>
                                     <div class="cartel-oferta__horizontal">
                                         <p><%=discounts[tercerDescuento].percentage_discount%>% OFF<p>
                                     </div>
@@ -116,18 +137,36 @@
 
         <div class="juegos-container">
 
-            <aside class="juegos-container__aside">
-                <ul class="juegos-container__list">
-                    <li class="juegos-container__item"><a href="#">Géneros</a></li>
-                    <li class="juegos-container__item"><a href="#">Plataformas</a></li>
-                    <li class="juegos-container__item"><a href="#">Ofertas</a></li>
-                    <li class="juegos-container__item"><a href="#">Comunidad</a></li>
-                    <li class="juegos-container__item"><a href="#">Próximamente</a></li>
-                    <li class="juegos-container__item"><a href="#">Recomendaciones</a></li>
-                    <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
-                </ul>
-            </aside>
-
+            <div class="container-container__aside-cont">
+                <aside class="juegos-container__aside">
+                    <ul class="juegos-container__list">
+                        <li class="juegos-container__item juegos-container__item--genres">Géneros <i class="fas fa-angle-right"></i>
+                            <ul class="juegos-container__sub-list juegos-container__sub-list--genres" type="none">
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ul>
+                        </li>
+                        <li class="juegos-container__item juegos-container__item--platforms">Plataformas <i class="fas fa-angle-right"></i>
+                            <ul class="juegos-container__sub-list juegos-container__sub-list--platforms" type="none">
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ul>
+                        </li>
+                        <li class="juegos-container__item juegos-container__item--categories">Categorias <i class="fas fa-angle-right"></i>
+                            <ul class="juegos-container__sub-list juegos-container__sub-list--categories" type="none">
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                                <li>lorem</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </aside>
+            </div>
 
             <section class="juegos-container__all-products">
                 <h2 class="juegos-container__title">Recientes</h2>
@@ -189,7 +228,6 @@
             <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.js'></script>
 			<script src='https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.18/chance.min.js'></script>
 			<script src='https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.min.js'></script>
-			<script src="./script.js"></script>
 </body>
 
 </html>

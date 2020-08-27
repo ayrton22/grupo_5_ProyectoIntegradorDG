@@ -245,4 +245,13 @@
     .payment-button {
         margin-left: 9rem;
     }
+
+
+    .container .message-box {
+        width: 375px;
+    }
+
+    button.thanksButton {
+        margin-left: 7rem;
+    }
 }

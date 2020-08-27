@@ -114,6 +114,10 @@
         margin-left: -4rem;
     }
 
+    .games-detailInfo {
+        left: 0;
+    }
+
 
     /* Payments */
 
@@ -283,6 +287,11 @@
         left: 2rem;
     }
 
+    .games-detailInfo {
+        width: 400px;
+        left: 2rem;
+    }
+
 
     /* Payments */
 
@@ -358,7 +367,11 @@
         margin-bottom: 1rem;
         height: 1200px;
     }
-    
+
+    .container-profile-class-none{
+        display: none !important;
+    }
+
     .container-profile-general-info {
         width: 100px;
         margin-left: -1rem;
@@ -520,6 +533,15 @@
 
     .container-games-info h3 {
         width: 300px;
+    }
+
+    .games-detailInfo {
+        width: 325px;
+        left: 0;
+    }
+
+    .games-detailInfo h1 {
+        margin-left: 1rem;
     }
 
 

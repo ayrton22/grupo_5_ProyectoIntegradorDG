@@ -22,6 +22,11 @@ window.addEventListener('load', function() {
     let paysInfo = qs('div.container-profile-pays');
     let settingsInfo = qs('div.container-profile-settings')
 
+
+    // Sub secciones
+
+    let generalSubInfo = qs('div.container-profile-general')
+
     // Avatar Image, SVG and Input
 
     let avatarImage = qs('img#avatar');
@@ -66,8 +71,8 @@ window.addEventListener('load', function() {
         settingsInfo.classList.add('inactiveUserProfile');
 
         generalInfo.classList.remove('inactiveUserProfile');
-        generalInfo.classList.add('active-flex');
 
+        generalInfo.classList.add('active-flex');
     });
 
     gamesSelect.addEventListener('click', function() {
@@ -195,5 +200,25 @@ window.addEventListener('load', function() {
         deleteForm.classList.remove('active-games-delete-form');
         deleteForm.classList.add('inactive-games-delete-form');
     });
+
+    if(window.matchMedia("(max-width: 550px)").matches) {
+        gamesRSelect.addEventListener('click', () => {
+            generalSubInfo.classList.add('container-profile-class-none')
+        })
+
+        paysRSelect.addEventListener('click', () => {
+            generalSubInfo.classList.add('container-profile-class-none')
+        })
+
+        settingsRSelect.addEventListener('click', () => {
+            generalSubInfo.classList.add('container-profile-class-none')
+        })
+
+        generalRSelect .addEventListener('click', () => {
+            if(generalSubInfo.classList.contains('container-profile-class-none')){
+                generalSubInfo.classList.remove('container-profile-class-none')
+            }
+        })
+    }
 
 })

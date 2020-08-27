@@ -449,9 +449,9 @@ button.container-profile-button:hover:before {
 
 .games-detailInfo {
     position: absolute;
-    z-index: -2;
-    top: 40rem;
-    left: 22rem;
+    z-index: 10;
+    top: 25rem;
+    left: 16rem;
     background-color: #1f3058;
     box-shadow: 0 0 5px 3px #19233b;
     width: 500px;

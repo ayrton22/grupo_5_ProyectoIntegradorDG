@@ -89,7 +89,7 @@ module.exports = {
                         if(req.body.remember != undefined){
                             res.cookie('authRemember', result.username, {maxAge: 60000 * 10 * 5})
                         }       
-                        return res.redirect('/user/profile/' + result.id)
+                        return res.redirect('/')
                     } 
                 return res.render('userLogin', {
                     errors: {
@@ -110,7 +110,7 @@ module.exports = {
     logout: function (req, res){
         req.session.destroy();
         res.cookie('authRemember', ''.email, {maxAge: -1});
-        res.redirect('/user/login');
+        res.redirect('/');
     },
 
     edit: function(req, res) {

@@ -26,11 +26,14 @@
                     <input class="search-input" type="text" name="buscar" id="" placeholder="Buscar productos, marcas y más">
                     <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
                 </form>
-
+                <% if(locals.localUser != undefined){%>
                 <div class="nav__right-profile-options">
-                    <i onclick="myFunction3()" class="fas fa-user-alt nav__right-profile-options-icon"></i>
-                    <div class="nav__right-profile-dropdown inactive-profile-dropdown">
+                    <div class="nav__right-profile-options-imgCont">
+                        <img onclick="myFunction3()" src="../../../img/uploads/avatars/<%=locals.localUser.avatar%>" alt="imagen-user">
+                    </div>
+                    <div class="nav__right-profile-dropdown">
                         <ul type="none">
+<<<<<<< HEAD
 
                             <%# if(typeOf res.locals.username != undefined) { %>
 
@@ -56,9 +59,34 @@
 
                             <%# } %>
                                 
+=======
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/profile/<%=locals.localUser.id%>" class="nav__icons"><i class="far fa-address-card"></i> Ir a tu perfil</a>
+                            </li>
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/cart/<%=locals.localUser.id%>" class="nav__icons"><i class="fas fa-shopping-cart"></i> Ver tu carrito</a>
+                            </li>
+
+                            <li id="profile-dropdown-5" class="nav__right-profile-dropdown-single">
+                                <a href="/user/logout" class="nav__icons"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                            </li>
+>>>>>>> 3c8a6361710cd81f2fd029c71b79e46de0d2bc25
                         </ul>
                     </div>
                 </div>
+                <% }else{%>
+                    <div class="nav__right-profile-options">
+                        <ul type="none" class="nav__right-ulProfileOptions">
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/login" class="nav__icons"><i class="fa fa-sign-in"></i> Iniciar sesión</a>
+                            </li>
+                            <li class="nav__right-profile-dropdown-single">
+                                <a href="/user/register" class="nav__icons"><i class="fas fa-user-plus"></i> Registrarse</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                <% }%>
                 <ul style='display: none;'>
                     <li class="header-nav__language-item">
                         <button onclick="myFunction2()" class="header-nav__language-dropdown">IDIOMA<i class="fas fa-caret-down header-nav__language-dropdown-icon"></i></button>

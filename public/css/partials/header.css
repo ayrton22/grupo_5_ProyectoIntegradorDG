@@ -195,6 +195,17 @@ ul.show {
 .nav__right-profile-options {
     position: relative;
 }
+.nav__right-profile-options-imgCont{
+    height: 10rem;
+    width: 10rem;
+    overflow: hidden;
+    border-radius: 100vh;
+    z-index: 5000;
+    cursor: pointer;
+}
+.nav__right-profile-options-imgCont img{
+    width: 100%;
+}
 
 .nav__right-profile-options-icon {
     font-size: 24px;
@@ -209,11 +220,12 @@ ul.show {
     background-color:#37405f;
     border-radius: 5px;
     width: 200px;
-    top: 5rem;
-    left: -6rem;
+    top: 11rem;
+    left: -4.8rem;
     color: white;
     text-decoration: none;
     padding: 1rem;
+    display: none;
 }
 
 .nav__right-profile-dropdown-single {
@@ -233,10 +245,6 @@ ul.show {
 
 .nav__right-profile-dropdown-single:hover {
     background-color: #545e83;
-}
-
-.inactive-profile-dropdown {
-    display: none;
 }
 
 .active-profile-dropdown {
@@ -299,10 +307,17 @@ ul.show2 {
     display: block !important;
 }
 
-div.show3 {
+.show3 {
     display: block !important;
 }
 
 .header .header-nav__right .header-nav__language-sub-lis .header-nav__language-sub-item:last-child{
     margin-bottom: 0;
+}
+.nav__right-ulProfileOptions{
+    display: flex;
+    align-items: center;
+}
+ul.nav__right-ulProfileOptions , ul.header-nav__list{
+    margin-bottom: 0 !important;
 }

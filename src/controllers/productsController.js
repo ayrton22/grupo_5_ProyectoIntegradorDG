@@ -87,6 +87,28 @@ module.exports = {
 				res.send(error)
 			});
 	},
+	categories: function (req, res) {
+		db.Categories.findByPk(req.params.id_category, {
+				include: [{
+					association: 'games',
+					include: [{
+						association: 'images'
+					}]
+				}],
+				order: [
+					['games', 'title', 'asc']
+				]
+			})
+			.then(function (category) {
+				res.render('categories', {
+					categories: category,
+					gamesSlider: category.games
+				});
+			})
+			.catch(function (error) {
+				res.send(error)
+			});
+	},
 
 	load: function (req, res) {
 		let categorias = db.Categories.findAll();

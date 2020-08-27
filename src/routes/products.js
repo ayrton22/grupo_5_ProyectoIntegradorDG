@@ -14,7 +14,9 @@ router.get('/', controller.list);
 router.get('/detail/:id', controller.detail);
 router.delete('/detail/:id', controller.destroy);
 
-router.get('/genres/:id_genero?', controller.genres);
+router.get('/genres/:id_genero', controller.genres);
+router.get('/categories/:id_category', controller.categories);
+
 
 router.get('/load', controller.load);
 router.post('/load', uploadImageProductMiddleware.any() ,controller.store);

@@ -18,7 +18,7 @@
                     <ul id="myDropdown" class="header-nav__sub-list">
                         <li class="header-nav__sub-item"><a href="/product">TODOS LOS JUEGOS</a></li>
                         <% locals.localAside.categories.forEach((element)=>{%>
-                            <li class="header-nav__sub-item"><a href="/product/<%=element.id %>"><%= element.name %></a></li>
+                            <li class="header-nav__sub-item"><a href="/product/categories/<%=element.id %>"><%= element.name %></a></li>
                        <% }) %> 
                     </ul>
                 </li>

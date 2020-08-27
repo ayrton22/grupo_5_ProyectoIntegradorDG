@@ -11,17 +11,36 @@
 
     <div class="container juegos-container generos">
     
-      <aside class="juegos-container__aside juegos-container__aside2">
-          <ul class="juegos-container__list">                   
-              <li class="juegos-container__item " ><a href="#">Géneros</a></li>
-              <li class="juegos-container__item"><a href="#">Plataformas</a></li>
-              <li class="juegos-container__item"><a href="#">Ofertas</a></li>
-              <li class="juegos-container__item"><a href="#">Comunidad</a></li>
-              <li class="juegos-container__item"><a href="#">Próximamente</a></li>
-              <li class="juegos-container__item"><a href="#">Recomendaciones</a></li>
-              <li class="juegos-container__item"><a href="#">(Filtrados)</a></li>
-          </ul>
-      </aside>
+        <div class="container-container__aside-cont">
+            <aside class="juegos-container__aside">
+                <ul class="juegos-container__list">
+                    <li class="juegos-container__item juegos-container__item--genres">Géneros <i class="fas fa-angle-right"></i>
+                        <ul class="juegos-container__sub-list juegos-container__sub-list--genres" type="none">
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                        </ul>
+                    </li>
+                    <li class="juegos-container__item juegos-container__item--platforms">Plataformas <i class="fas fa-angle-right"></i>
+                        <ul class="juegos-container__sub-list juegos-container__sub-list--platforms" type="none">
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                        </ul>
+                    </li>
+                    <li class="juegos-container__item juegos-container__item--categories">Categorias <i class="fas fa-angle-right"></i>
+                        <ul class="juegos-container__sub-list juegos-container__sub-list--categories" type="none">
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                            <li>lorem</li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+        </div>
 
       <section class="juegos-container__all-products">
       <h2 class="juegos-container__title"> <%= genres.name.toUpperCase() %></h2>
@@ -54,7 +73,9 @@
                                 <p class="juegos-container__back-part--part1-p"><%= genres.games[i].description %></p>
                                 <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= genres.games[i].id %>">ver mas</a>
                             </div>
-                            <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                            <form  class="" action="/user/cart/<%= genres.games[i].id  %>?_method=post" method="POST">
+                                <button class="juegos-container__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                            </form>
                             <a class="juegos-container__buy-button" href="/user/buyFormChoose">BUY</a>
                         </div>
                     </div>

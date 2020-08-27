@@ -17,7 +17,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
 
     function myFunction3() {
-      document.querySelector(".inactive-profile-dropdown").classList.toggle("show3");
+      document.querySelector(".nav__right-profile-options .nav__right-profile-dropdown").classList.toggle("show3");
   }
   
   window.onclick = function(event) {
@@ -43,8 +43,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     }
 
-    if (!event.target.matches('.nav__right-profile-options-icon')) {
-      var dropdowns3 = document.getElementsByClassName("inactive-profile-dropdown");
+    if (!event.target.matches('.nav__right-profile-options-imgCont img')) {
+      var dropdowns3 = document.getElementsByClassName("nav__right-profile-dropdown");
       var k;
       for (k = 0; k < dropdowns3.length; k++) {
         var openDropdown3 = dropdowns3[k];

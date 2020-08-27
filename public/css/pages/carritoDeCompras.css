@@ -95,6 +95,7 @@
 }
 
 .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont{
+    display: flex;
     margin-left: 6rem;
 }
 
@@ -105,6 +106,7 @@
 }
 
 .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont .carrito-container__select{
+    height: 2.6rem;
     margin-right: 2rem;
 }
 

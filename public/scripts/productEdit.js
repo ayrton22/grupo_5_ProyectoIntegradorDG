@@ -19,12 +19,16 @@ window.addEventListener('load', function(){
     let errorImgPortrayEdit = document.getElementById('errImgPortrayEdit');
 
 
+    let img1 = "/img/Logos/Photo-upload.jpg"
     let imgHorizontalEdit2 = document.getElementById('imgHorizontalEdit2');
     let errorImgHorizontalEdit = document.getElementById('errImgHorizontalEdit');
 
+    let img2 = "/img/Logos/Photo-upload.jpg"
 
     let imgRightEdit3 = document.getElementById('imgRightEdit3');
     let errorImgRightEdit = document.getElementById('errImgRightEdit');
+
+    let regexImagenEdit = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i
     // Fin variables imagenes
 
     let inputVideoLink = document.getElementById('videoLinkEdit');
@@ -114,26 +118,23 @@ window.addEventListener('load', function(){
             errores.plataforma = "Debes marcar al menos uno";
         }
         //Trabajando en imagenes
-        
-        if(imgPortrayEdit1 != null){
-            imgPortrayEdit1.getAttribute('src');
-            if(imgPortrayEdit1 == img){
-                errores.imgPerfil = "Debes seleccionar una imagen para este campo";
+
+
+        const delay = 10000;
+        const miIntervalo = setInterval(miFuncion, delay)
+        function miFuncion(){
+            if(imgPortrayEdit1 != null){
+                errores.imgPerfil = "Debes colocar una imagen";
             }
         }
+        clearInterval(miIntervalo);
 
         if(imgHorizontalEdit2 != null){
-            imgHorizontalEdit2.getAttribute('src');
-            if(imgHorizontalEdit2 == img){
-                errores.imgHorizontal = "Debes seleccionar una imagen para este campo";
-            }
+            errores.imgHorizontal = "Debes colocar una imagen";
         }
-
+        
         if(imgRightEdit3 != null){
-            imgRightEdit3.getAttribute('src');
-            if(imgRightEdit3 == img){
-                errores.imgRight = "Debes seleccionar una imagen para este campo";
-            }
+            errores.imgRight = "Debes colocar una imagen";
         }
 
         //Fin imagenes
@@ -229,8 +230,10 @@ window.addEventListener('load', function(){
             
         } else {
             // envio el formulario
-            formulario.submit();
-            alert('El formulario se envió');
+            setTimeout(function(){
+                formulario.submit();
+                alert('El formulario se envió');
+            })
         }
     })
 })

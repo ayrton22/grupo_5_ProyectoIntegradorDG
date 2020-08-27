@@ -15,7 +15,6 @@
 </div>
 </div>
 <form  class="transaction-form" action="/user/buyForm/<%=locals.localUser.id%>?_method=post" method="POST">
-
 <div class="inactived-form-contenedor buyDelivery">
     <div class="container-buyDelivery">
         <div class="container2-buyDelivery">
@@ -222,8 +221,8 @@
                                 <h2><%=game.title%></h2>
                                 <div class="buyDelivery__line-2"></div>
                                 <h3 class="buyDelivery__price-modifer"><%=game.price%></h3>
-                                <input type="text" class="boton-imagen" name="gameIdId" value="<%=game.id%>">
-                                <input type="text" class="boton-imagen" name="gameIdId" value="final">
+                                <input type="text" class="boton-imagen" name="gameId" value="<%=game.id%>">
+                                <input type="text" class="boton-imagen" name="gameId" value="final">
                             </div>
     
                            <%}%>

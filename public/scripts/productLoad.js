@@ -15,6 +15,49 @@ window.addEventListener('load', function(){
     let img = "/img/Logos/Portray-upload.jpg";
     let imgPortrayLoad = document.getElementById('imgPortrayLoad').getAttribute('src');
     let errorImgPortrayLoad = document.getElementById('errImgPortrayLoad');
+
+    let img1 = "/img/Logos/Horizontal-upload.jpg";
+    let imgH2 = document.getElementById('imgH2').getAttribute('src');
+    let errorImgH2 = document.getElementById('errImgH2');
+
+    let img2 = "/img/Logos/Detail-upload.jpg";
+    let imgRightLoad = document.getElementById('imgRightLoad').getAttribute('src');
+    let errorImgRightLoad = document.getElementById('errImgRightLoad');
+
+    let imgCarousel1 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel1 = document.getElementById("one");
+
+    let imgCarousel2 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel2 = document.getElementById("two");
+
+    let imgCarousel3 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel3 = document.getElementById("three");
+
+    let imgCarousel4 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel4 = document.getElementById("four");
+
+    let imgCarousel5 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel5 = document.getElementById("five");
+
+    let imgCarousel6 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel6 = document.getElementById("six");
+
+    let imgCarousel7 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel7 = document.getElementById("seven");
+
+    let imgCarousel8 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel8 = document.getElementById("eight");
+
+    let imgCarousel9 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel9 = document.getElementById("nine");
+
+    let imgCarousel10 = "/img/Logos/Photo-upload.jpg";
+    let imagenesCarousel10 = document.getElementById("ten");
+    
+    
+    errorImgCarousel = document.getElementById('errImgCarousel');
+
+    let regexImagenLoad = /\.(gif|jpe?g|tiff?|png|webp|bmp)$/i;
     // Fin variables imagenes
 
     let inputVideoLink = document.getElementById('videoLinkLoad')
@@ -89,6 +132,14 @@ window.addEventListener('load', function(){
 
     formulario.addEventListener('submit', function(event){
         event.preventDefault();
+        /*let contador = 0;
+        imagenesCarousel.forEach((element) => {
+            console.log(element.value)
+            if(element.value != ""){
+                contador++
+            }
+        })
+        console.log(contador)*/
 
         let errores = {}
 
@@ -102,12 +153,39 @@ window.addEventListener('load', function(){
             errores.plataforma = "Debes marcar al menos uno";
         }
         //Imagenes
+
         if(imgPortrayLoad == img){
             errores.imgPerfil = "Debes seleccionar una imagen para este campo";
+        } else {
+            if(imgPortrayLoad.match(regexImagenLoad) == null){
+                errores.imgPerfil = "Debes seleccionar un formato válido (jpg, jpeg, png o gif)";
+            }
         }
+        if(imgH2 == img1){
+            errores.imgH = "Debes seleccionar una imagen para este campo";
+        } else {
+            if(imgH2.match(regexImagenLoad) == null){
+                errores.imgH = "Debes seleccionar un formato válido (jpg, jpeg, png o gif)";
+            }
+        }
+        if(imgRightLoad == img2){
+            errores.right = "Debes seleccionar una imagen para este campo";
+        } else {
+            if(imgRightLoad.match(regexImagenLoad) == null){
+                errores.right = "Debes seleccionar un formato válido (jpg, jpeg, png o gif)";
+            }
+        }
+
+        // img carousel
+        if(imagenesCarousel1.getAttribute('src') == imgCarousel1 && imagenesCarousel2.getAttribute('src') == imgCarousel2 && imagenesCarousel3.getAttribute('src') == imgCarousel3 && imagenesCarousel4.getAttribute('src') == imgCarousel4 && imagenesCarousel5.getAttribute('src') == imgCarousel5 && imagenesCarousel6.getAttribute('src') == imgCarousel6 && imagenesCarousel7.getAttribute('src') == imgCarousel7 && imagenesCarousel8.getAttribute('src') == imgCarousel8 && imagenesCarousel9.getAttribute('src') == imgCarousel9 && imagenesCarousel10.getAttribute('src') == imgCarousel10){
+            errores.carousel = "Debes completar todo el carousel con imagenes"
+        }        
+        
+        
+
         // Fin imagenes
         if(inputVideoLink.value.length < 1){
-            errores.videoLink = "Este campo es obligatorio"
+            errores.videoLink = "Debes incluir un link de Youtube"
         } else {
             if(inputVideoLink.value.match(regexVideo) == null){
                 errores.videoLink = "Debes ingresar un link de un video de Youtube"
@@ -173,9 +251,10 @@ window.addEventListener('load', function(){
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : "";
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
-            // errores imagenes
             errorImgPortrayLoad.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
-            // fin errores imagenes
+            errorImgH2.innerText = (errores.imgH) ? errores.imgH : '';
+            errorImgRightLoad.innerText = (errores.right) ? errores.right : '';
+            errorImgCarousel.innerText = (errores.carousel) ? errores.carousel : '';
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';

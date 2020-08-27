@@ -48,6 +48,7 @@
     width: 500px;
     box-shadow: 3px 0 5px #001927;
     border-radius: 0 0 8px 8px;
+    z-index: 10;
 }
 .container-profile-aside-responsive ul li {
     display: inline-block;

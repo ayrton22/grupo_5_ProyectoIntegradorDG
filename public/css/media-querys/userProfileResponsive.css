@@ -342,9 +342,14 @@
     /* General Section */
 
     .container-profile-general {
+        display: block;
         width: 100px;
         margin-bottom: 1rem;
         height: 1200px;
+    }
+
+    .container-profile-class-none{
+        display: none !important;
     }
 
     .container-profile-general-info {

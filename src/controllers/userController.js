@@ -21,22 +21,6 @@ const imgArray = ['Avatar_default_1.jpg', 'Avatar_default_2.jpg', 'Avatar_defaul
 //order: [[ 'createdAt', 'Desc']]
 // Controller usage in module export
 module.exports = {
-    prueba: function(req, res) {
-        db.Users.findByPk(req.params.id, 
-            {include: [{association: 'transactions', include:[{association: 'transactions_games',attributes: ['id','title','price']}] },
-        {association: 'user_sales',include:[{association: 'games', attributes: ['id','title','price'], include:[{association: 'images',where: {
-            location: 'default'}}]}]},{association: 'purchases',include:[{association: 'games',attributes:['id','title','price']},{association: 'users_sellers', attributes: ['id','username','email']}]},{association: 'games_shooping_cart',attributes:['id','title']}]})
-        .then(function(result) {
-            res.render('userProfile',{
-                user: result
-            }
-               
-            );
-        })
-        .catch(function(error) {
-            res.send(error);
-        })
-    },
     cart: function(req, res){
         db.Users.findByPk(req.params.id,{attributes: ['id','first_name','last_name','avatar','username','address'],
             include:[{association:'games_shooping_cart', attributes: ['id','title','price','editor','classification','rating'],include:[{association: 'images',where:{location: "default"}}]}]
@@ -151,37 +135,23 @@ module.exports = {
     },
     
     update: function(req, res) {
-        if(req.body.name) {
-
-            db.Users.update({
-                first_name: req.body.name,
-                last_name: req.body.surname,
-                email: req.body.email,
-                birth_date: req.body.date,
-                gender: req.body.gender,
-                address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `,
-                avatar: req.body.avatar
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(function(result) {
-                res.redirect('/user/profile/' + req.params.id)
-            })
-
-        } else {
-            db.Users.update({
-                password: bcrypt.hashSync(req.body.password, 10)
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-            .then(function(result) {
-                res.redirect('/user/profile/' + req.params.id)
-            })
-        }
+        db.Users.update({
+            
+            first_name: req.body.name,
+            last_name: req.body.surname,
+            email: req.body.email,
+            birth_date: req.body.date,
+            gender: req.body.gender,
+            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `,
+            avatar: req.files[0].filename
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(function(result) {
+            res.redirect('/user/profile/' + req.params.id)
+        })
     },
 
     profile: function(req, res) {
@@ -272,37 +242,31 @@ module.exports = {
                 total_cost: Number(req.body.total_cost),
                 delivery: "Sucursal",
                 payment: "credit Cart",
-                status: "finished"
+                status: "Finished"
             }).then(function(resultado){
                 let games = [];
                 for(let i = 0; i < req.body.gameId.length;i++){
-                    if(req.body.gameId[i] != "final"){
+                    if(req.body.gameId[i] !== "final"){
                         games.push({
-                            id_game: Number(req.body.game[i]),
+                            id_game: Number(req.body.gameId[i]),
                             id_transaction: resultado.id
                         })
                     }
                 }
                 db.Games_Transactions.bulkCreate(games)
                 .then(function(result){
-                    let gamesCart = [];
-                for(let i = 0; i < req.body.gameId.length;i++){
-                    if(req.body.gameId[i] != "final"){
-                        games.push({
-                            id_game: Number(req.body.game[i]),
-                            id_user: req.params.id
-                        })
-                    }
-                }
-                    db.Games_Users.bulkDelete(gamesCart)
-                    .then(function(result){
-                        res.redirect('/user/profile/'+req.params.id);
+                db.Games_Users.destroy({where:{
+                    id_user:req.params.id
+                }})
+                .then(function(result){
+                    res.redirect('/user/thanks');
+                })
+                .catch(function (error) {
+                    res.send(error);
                     })
                 })
-            })
-
-        
-    
+                })
+            
 }
 
 

@@ -53,12 +53,16 @@
             <div class="carrito-container__resumen-dato">
                 <span>Resumen del pedido</span>
             </div>
-            <p>total de los productos: <span>$200</span></p>
+            <p>Cantidad: <span><%=user.games_shooping_cart.length%></span></p>
+
             <p>Envio: <span>$20</span></p>
-            <p>Total del pedido: <span>$220</span></p>
-            <p>PesosArg(aprox): <span>$14100</span></p>
+            <% let contador = 0 %> 
+            <%user.games_shooping_cart.forEach((element)=>{%>
+              <%contador += Number(element.price)%>
+                <% })%>
+            <p>Total del pedido: <span>$<%=contador%></span></p>
                 <div class="carrito-container__btn-container">
-                    <button onclick="window.location.href='/user/buyFormChoose'" class="carrito-container__btn">Comprar</button>
+                    <button onclick="window.location.href='/user/buyForm'" class="carrito-container__btn">Comprar</button>
                 </div>
         </div>
     </div>

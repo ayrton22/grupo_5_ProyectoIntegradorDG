@@ -170,8 +170,10 @@
                 </div>
 
                 <div class="container-profile-pays-transaction-wrapper">
+                    
                     <%  user.transactions.forEach((element)=> {%>
                         <div class="row pays-rows">
+                            
                             <div class="col-2 responsive-out">
                                 <h3><%=element.createdAt.getDate()%>/<%= element.createdAt.getMonth()+1%>/<%= element.createdAt.getFullYear()%></h3>
                             </div>

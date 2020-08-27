@@ -17,7 +17,6 @@ const controller = require('../controllers/userController');
 
 // Route, controller, middleware and validation usage
 
-router.get('/prueba/:id', controller.prueba);
 router.get('/register', controller.register);
 router.post('/register', registerValidation, passwordRepassMiddleware ,controller.save);
 

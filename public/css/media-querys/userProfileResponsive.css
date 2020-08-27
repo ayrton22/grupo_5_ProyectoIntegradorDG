@@ -477,6 +477,11 @@
         height: 40px;
     }
 
+    a.profile-games-new-game {
+        font-size: 14px;
+        width: 300px;
+    }
+
     .container-profile-games-list {
         width: 350px;
         max-height: 375px;

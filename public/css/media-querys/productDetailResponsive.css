@@ -1,0 +1,256 @@
+@media screen and (max-width: 1300px){
+
+    .detalle-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detalle-container__mediaInfo{
+        flex-direction: column;
+    }
+
+    .detalle-container__mediaInfo{
+        width: 80rem;
+    }
+
+    .detalle-container__data-description{
+        flex-direction: column;
+    }
+
+    .detalle-container__more-games {
+        flex-direction: column;
+     }
+
+     .span-detail{
+        margin-bottom: 5rem;
+    }
+
+    .juegos-container__redirection--modifer{
+        margin-left: 0;
+    }
+
+    .vista{
+        width: 76rem;
+    }
+
+    .detalle-container__contenedor-slider{
+        width: 760px;
+    }
+
+    .detalle-container__contenedor-slider{
+        margin-bottom: 3rem;
+    }
+
+    .botones-administrador{
+        margin-bottom: 4rem;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .otros-juegos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .span-detail{
+        margin-right: 10rem;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .detalle-container__mediaInfo{
+        width: 74rem;
+    }
+
+    .vista{
+        width: 70rem;
+    }
+
+    .detalle-container__contenedor-slider{
+        width: 700px;
+    }
+
+    .detalle-container__data-description{
+        width: 70rem;
+    }
+
+    .detalle-container__full-info{
+        width: 70rem;
+    }
+
+    div.texto-container div.texto-informativo{
+        width: 70rem;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .detalle-container__mediaInfo{
+        width: 60rem;
+    }
+
+    .vista{
+        width: 56rem;
+    }
+
+    .detalle-container__contenedor-slider{
+        width: 560px;
+    }
+
+    .detalle-container__data-description{
+        width: 50rem;
+    }
+
+    .detalle-container__full-info{
+        width: 50rem;
+    }
+
+    div.texto-container div.texto-informativo{
+        width: 50rem;
+    }
+
+    .contenedor-carrusel .imagen-gameplay{
+        min-width: 33.3333%;
+    }
+
+    .detalle-container__devInfo{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .detalle-container__devInfo div{
+        width: 3rem;
+    }
+
+    .detalle-container__full-info{
+        width: 7rem;
+    }
+
+    .detalle-container__devInfo{
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .otros-juegos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 800px){
+    .detalle-container__mediaInfo{
+        width: 40rem;
+    }
+
+    .vista{
+        width: 36rem;
+    }
+
+    .detalle-container__contenedor-slider{
+        width: 360px;
+    }
+
+    .detalle-container__data-description{
+        width: 40rem;
+    }
+
+    .detalle-container__full-info{
+        width: 40rem;
+    }
+
+    div.texto-container div.texto-informativo{
+        width: 40rem;
+    }
+
+    .contenedor-carrusel .imagen-gameplay{
+        min-width: 33.3333%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .detalle-container__more-games{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .span-detail{
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .juegos-container__redirection--modifer{
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 992px){
+    .detalle-container-super-principal {
+         max-width: none !important; 
+    }
+}
+
+
+@media (min-width: 768px){
+    .detalle-container-super-principal {
+        max-width: none !important; 
+    }
+}
+
+
+@media (min-width: 576px){
+    .detalle-container-super-principal {
+        max-width: none !important; 
+    }
+}
+
+
+
+@media (min-width: 992px){
+    .detalle-container-super-principal {
+        max-width: none !important; 
+    }
+}
+
+
+
+@media (min-width: 768px){
+    .detalle-container-super-principal {
+        max-width: none !important; 
+    }
+}
+
+
+
+@media (min-width: 576px){
+    .detalle-container-super-principal {
+        max-width: none !important; 
+    }
+}
+
+@media screen and (max-width: 600px){
+    .detalle-container__mediaInfo{
+        width: 30rem;
+    }
+
+    .vista{
+        width: 26rem;
+    }
+
+    .detalle-container__contenedor-slider{
+        width: 260px;
+    }
+
+    .detalle-container__data-description{
+        width: 20rem;
+    }
+
+    .detalle-container__full-info{
+        width: 20rem;
+    }
+
+    div.texto-container div.texto-informativo{
+        width: 20rem;
+    }
+
+    .contenedor-carrusel .imagen-gameplay{
+        min-width: 50%;
+    }
+}

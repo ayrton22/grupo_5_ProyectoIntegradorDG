@@ -11,10 +11,9 @@
 
                     <h3 class="profile-username"><%=user.username%></h3>
                 </div></div></li>
-                <li class="carrito-container__item"><a href="#">Juegos</a></li>
-                <li class="carrito-container__item"><a href="#">Noticias</a></li>
-                <li class="carrito-container__item"><a href="#">Acerca De</a></li>
-                <li class="carrito-container__item"><a href="#">Descarga la App</a></li>
+                <li class="carrito-container__item"><a href="/product">Juegos</a></li>
+                <li class="carrito-container__item"><a href="/user/community">Comunidad</a></li>
+                <li class="carrito-container__item"><a href="/user/profile/<%=locals.localUser.id%>">Tu perfil</a></li>
                 <li class="carrito-container__item"><a href="#">Soporte</a></li>
             </ul>
             <div class="header-cart__nav">

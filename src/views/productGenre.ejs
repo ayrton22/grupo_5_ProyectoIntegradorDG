@@ -44,7 +44,9 @@
                                 <p class="juegos-container__back-part--part1-p"><%= genres.games[i].description %></p>
                                 <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= genres.games[i].id %>">ver mas</a>
                             </div>
-                            <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                            <form  class="" action="/user/cart/<%= genres.games[i].id  %>?_method=post" method="POST">
+                                <button class="juegos-container__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                            </form>
                             <a class="juegos-container__buy-button" href="/user/buyFormChoose">BUY</a>
                         </div>
                     </div>

@@ -6,11 +6,14 @@
 }
 
 .carrito-container .carrito-container__aside{
+    display: flex;
+    flex-direction: column;
     padding: 5rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
 }
 
 .carrito-container .carrito-container__aside .carrito-container__list{
+    margin-bottom: auto;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -95,6 +98,7 @@
 }
 
 .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont{
+    display: flex;
     margin-left: 6rem;
 }
 
@@ -105,6 +109,7 @@
 }
 
 .carrito-container .carrito-container__info .carrito-container__articulos .carrito-container__juego .carrito-container__select-cont .carrito-container__select{
+    height: 2.6rem;
     margin-right: 2rem;
 }
 
@@ -145,4 +150,10 @@ div.carrito-container__btn-container{
 
 .carrito-container .carrito-container__resumen{
     background-image: var(--secodary-bg-color);
+}
+div.header-cart__nav{
+    width: 20rem;
+}
+div.header-cart__nav img{
+    width: 100%;
 }

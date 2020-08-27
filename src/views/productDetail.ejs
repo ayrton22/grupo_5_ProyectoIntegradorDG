@@ -147,7 +147,9 @@
                                             <p class="juegos-container__back-part--part1-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem suscipit, reiciendis dolor, assumenda ea architecto iste enim aliquid, velit quam voluptatem quia natus facilis ullam?</p>
                                             <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>
                                         </div>
-                                        <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <form  class="" action="/user/cart/<%= products[random].id %>?_method=post" method="POST">
+                                            <button class="juegos-container__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                        </form>
                                         <a class="juegos-container__buy-button" href="/user/buyFormChoose">BUY</a>
                                     </div>
                                 </div>
@@ -188,7 +190,9 @@
                                             <p class="juegos-container__back-part--part1-p"><%= products[random].description %></p>
                                             <a class="juegos-container__back-part--part1-a" href="/product/detail/<%= products[random].id %>">ver mas</a>
                                         </div>
-                                        <a class="juegos-container__shopping-cart" href="/user/cart"><i class="fas fa-shopping-cart"></i></a>
+                                        <form  class="" action="/user/cart/<%= products[random].id %>?_method=post" method="POST">
+                                            <button class="juegos-container__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                        </form>
                                         <a class="juegos-container__buy-button" href="/user/buyFormChoose">BUY</a>
                                     </div>
                                 </div>

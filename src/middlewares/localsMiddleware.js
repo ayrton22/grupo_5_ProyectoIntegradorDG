@@ -24,7 +24,7 @@ function localsMiddleware(req, res, next) {
                 avatar: result.avatar,
                 privilegios: result.admin
             }
-        })        
+        })      
     } 
     next();
 }

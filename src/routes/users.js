@@ -32,6 +32,7 @@ router.get('/profile/:id/', authMiddleware ,  authMiddleware2, controller.profil
 
 router.get('/cart/:id',authMiddleware, controller.cart);
 router.post('/cart/:id',authMiddleware, controller.addGamesCart);
+router.delete('/cart/:id',authMiddleware, controller.removeGamesCart);
 
 router.get('/thanks', authMiddleware ,controller.thankYouPage);
 

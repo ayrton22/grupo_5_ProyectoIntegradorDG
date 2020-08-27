@@ -73,7 +73,7 @@
                         <%  user.user_sales.forEach((element)=> {%>
 
                             <div class="container-profile-games-single">
-                                <% if (element.status_transaction == 'Sld') { %>
+                                <% if (element.status_transaction == 'Sold') { %>
                                     <i class="fas fa-info-circle games-single-detailInfo"></i>
                                 <% } else { %>
                                     <a href="/product/edit/<%= element.games.id %>"><i class="far fa-edit games-single-edit"></i></a>

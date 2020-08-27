@@ -22,11 +22,6 @@ window.addEventListener('load', function() {
     let paysInfo = qs('div.container-profile-pays');
     let settingsInfo = qs('div.container-profile-settings')
 
-
-    // Sub secciones
-
-    let generalSubIndo = qs('div.container-profile-general')
-
     // Avatar Image, SVG and Input
 
     let avatarImage = qs('img#avatar');
@@ -72,10 +67,6 @@ window.addEventListener('load', function() {
 
         generalInfo.classList.remove('inactiveUserProfile');
         generalInfo.classList.add('active-flex');
-
-        if(window.matchMedia("(max-width: 550px)").matches) {
-            generalSubInfo.style.display = "block";
-        }
 
     });
 

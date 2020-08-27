@@ -48,7 +48,9 @@
     width: 500px;
     box-shadow: 3px 0 5px #001927;
     border-radius: 0 0 8px 8px;
+    z-index: 10;
 }
+
 .container-profile-aside-responsive ul li {
     display: inline-block;
     padding: 1rem;
@@ -321,8 +323,8 @@ button.container-profile-button:hover:before {
 
 .games-delete-form {
     position: absolute;
-    z-index: -2;
-    top: 40rem;
+    z-index: 2;
+    top: 5rem;
     left: 15rem;
     background-color: #1f3058;
     box-shadow: 0 0 5px 3px #19233b;
@@ -361,13 +363,10 @@ button.container-profile-button:hover:before {
 
 .inactive-games-delete-form {
     display: none;
-    opacity: 0;
 }
 
 .active-games-delete-form {
-    z-index: 2;
-    top: 5rem;
-    opacity: 1;
+    display: block;
 }
 
 .games-single-delete:hover {
@@ -475,13 +474,11 @@ button.container-profile-button:hover:before {
 }
 
 .inactive-games-detailInfo {
-    opacity: 0;
+    display: none;
 }
 
 .active-games-detailInfo {
-    z-index: 2;
-    top: 15rem;
-    opacity: 1;
+    display: block;
 }
 
 .container-games-info {

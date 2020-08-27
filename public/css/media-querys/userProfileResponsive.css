@@ -105,6 +105,11 @@
         margin-left: -1rem;
     }
 
+    .games-delete-form {
+        width: 400px;
+        left: 4rem;
+    }
+
     .container-games-info {
         margin-left: -4rem;
     }
@@ -175,7 +180,7 @@
 
     .container-profile-general {
         width: 100px;
-        margin-bottom: 5rem;
+        margin-bottom: 0;
     }
 
     .container-profile-general-info {
@@ -194,7 +199,7 @@
     }
     
     .container-profile-general-info--list li{
-        margin: 3rem 0;
+        margin: 2rem 0;
         width: 200px;
     }
 
@@ -209,7 +214,7 @@
     .container-profile-general-separation {
         margin-left: 11rem;
         margin-top: 3rem;
-        height: 55rem;
+        height: 50rem;
     }
 
     .container-profile-general-profile {
@@ -270,6 +275,12 @@
 
     .container-profile-games-single-info span {
         margin-left: -1rem;
+    }
+
+    .games-delete-form {
+        width: 400px;
+        height: 230px;
+        left: 2rem;
     }
 
 
@@ -339,19 +350,20 @@
         margin-left: 1.7rem;
     }
 
+    
     /* General Section */
-
+    
     .container-profile-general {
         width: 100px;
         margin-bottom: 1rem;
         height: 1200px;
     }
-
+    
     .container-profile-general-info {
         width: 100px;
         margin-left: -1rem;
     }
-
+    
     .container-profile-general-info h1 {
         font-size: 28px;
         margin-bottom: 3rem;
@@ -368,7 +380,7 @@
     }
 
     .container-profile-general-info a {
-        margin-left: 5rem;
+        margin-left: 7rem;
     }
 
     button.container-profile-button {
@@ -376,14 +388,12 @@
     }
 
     .container-profile-general-separation {
-        width: 350px;
-        height: 6px;
-        margin-left: -2rem;
+        display: none;
     }
 
     .container-profile-general-profile {
-        margin-left: 2rem;
-        width: 22rem
+        position: absolute;
+        top: 60rem;
     }
 
     .container-profile-general-profile div {
@@ -483,6 +493,25 @@
 
     .container-profile-games-single-info span {
         margin-left: -1rem;
+    }
+    
+    .games-delete-form {
+        width: 325px;
+        height: 175px;
+        left: 1rem;
+    }
+
+    .games-delete-form h2 {
+        font-size: 18px;
+    }
+
+    .games-delete-form h3 {
+        font-size: 14px;
+    }
+
+    .games-delete-form button {
+        font-size: 14px;
+        margin-top: -1rem;
     }
 
     .container-games-info h2 {

@@ -14,10 +14,7 @@ function localsMiddleware(req, res, next) {
                 privilegios: result.admin
             }
         })        
-    } else if(req.url == '/user') {
-        res.redirect('/user/login');
-    }
-    
+    } 
     next();
 }
 module.exports = localsMiddleware;

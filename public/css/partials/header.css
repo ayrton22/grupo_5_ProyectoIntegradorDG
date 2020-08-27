@@ -195,6 +195,15 @@ ul.show {
 .nav__right-profile-options {
     position: relative;
 }
+.nav__right-profile-options-imgCont{
+    width: 10rem;
+    overflow: hidden;
+    border-radius: 100vh;
+    cursor: pointer;
+}
+.nav__right-profile-options-imgCont img{
+    width: 100%;
+}
 
 .nav__right-profile-options-icon {
     font-size: 24px;
@@ -305,4 +314,11 @@ div.show3 {
 
 .header .header-nav__right .header-nav__language-sub-lis .header-nav__language-sub-item:last-child{
     margin-bottom: 0;
+}
+.nav__right-ulProfileOptions{
+    display: flex;
+    align-items: center;
+}
+ul.nav__right-ulProfileOptions , ul.header-nav__list{
+    margin-bottom: 0 !important;
 }

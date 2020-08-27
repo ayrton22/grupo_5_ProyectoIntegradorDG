@@ -210,7 +210,6 @@ module.exports = {
 	update: function (req, res) {
 		let url = new URL(req.body.video);
 		let videoCode = new URLSearchParams(url.search).get("v");
-		return res.send(req.body)
 		db.Games.update({
 				title: req.body.title,
 				description: req.body.description,
@@ -230,6 +229,19 @@ module.exports = {
 					id: req.params.id
 				}
 			})
+			.then(function (resultado) {
+													
+				let arrayImages = [];
+					for (let i = 0; i < req.files.length; i++) {
+					let image = {
+					location: req.files[i].fieldname,
+					img_url: req.files[i].filename,
+					id_game: req.params.id
+				}
+			arrayImages.push(image)
+				}
+			db.Images.bulkCreate(arrayImages)
+			
 			.then(function (resultado) {
 				db.Games_Genres.destroy({
 					where: {
@@ -275,21 +287,19 @@ module.exports = {
 													})
 												}
 												db.Games_Categories.bulkCreate(categoryGame)
-													//.then(function (resultado) {
-													//if(req.body.imagen_horizontal)
+
+												
 												.then(function (resultado) {
 													res.redirect('/product/detail/' + req.params.id);
 												})
-												.catch(function (error) {
-													res.send(error)
-													//})
-												})
+												
+												
 										})
 								})
 							})
 						})
 				})
-			})
+			})	})
 	},
 
 	destroy: (req, res) => {

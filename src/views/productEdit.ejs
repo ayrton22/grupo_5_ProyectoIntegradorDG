@@ -9,7 +9,7 @@
 
         
 
-        <form id="form" class="productEdit-form" action="/product/edit/<%= productEdit.id %>?_method=put" method="POST">
+        <form id="form" class="productEdit-form" enctype="multipart/form-data" action="/product/edit/<%= productEdit.id %>?_method=put" method="POST">
             <div id="form1" class="row productEdit-form-1">
                 <div class="col-12">
                     <h1>Edición de Producto</h1>
@@ -69,7 +69,7 @@
                                         <img id="imgPortrayEdit0" data-status="active" class="productEdit-form-uploadImage--portray" name="<%=portray[0].id%>" src="/img/uploads/productsImage/<%= portray[0].img_url%>" alt="" >
                                     <% }else{ %>
                                         <img id="imgPortrayEdit1" data-status="inactive" class="productEdit-form-uploadImage--portray" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
-                                        <input type="file" id="portray" style="display: none;" name="imagen" value="null">
+                                        <input type="file" id="portray" style="display: none;" name="default" value="null">
                                         <% } %>
                                         <small class="text-danger" id="errImgPortrayEdit"></small>
                             </div>
@@ -122,8 +122,8 @@
                                         </div>
                                     <% } else { %>
                                         <div class="carouselcontenedor">
-                                        <img data-status="inactive" class="productEdit-form-uploadImage--carousel activecarousel name="carousel" src="/img/Logos/Photo-upload.jpg" alt="">
-                                        <input type="file" name="carouselInput" class="boton-imagen" value="<% i %> "/>
+                                        <img data-status="inactive" class="productEdit-form-uploadImage--carousel activecarousel" name="carousel" src="/img/Logos/Photo-upload.jpg" alt="">
+                                        <input type="file" name="carousel" class="boton-imagen" value="<%i%> "/>
                                     </div>
                                     <% } %>
                                 <% } %>

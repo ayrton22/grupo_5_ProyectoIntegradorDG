@@ -2,6 +2,12 @@ div .compra {
     height: 9rem;
 }
 
+.detalle-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .detalle-container__mediaInfo{
     position: relative;
     display: flex;
@@ -10,6 +16,7 @@ div .compra {
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 10px 3px #010212;
+    width: 111rem;
 }
 
 .detalle-container__part-1{
@@ -76,7 +83,7 @@ div .compra {
 
 .span-detail {
     color: grey;
-    margin-right: auto;
+    margin-right: 11rem;
 }
 
 .detalle-container__full-info{
@@ -87,6 +94,7 @@ div .compra {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 2rem;
+    margin-bottom: 7rem;
 }
 
 .detalle-container__more-games{
@@ -97,6 +105,7 @@ div .compra {
     margin-bottom: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
     align-items: center;
     padding-bottom: 6rem;
 }

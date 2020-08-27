@@ -1,3 +1,35 @@
+.hamburguer-menu{
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 50000;
+    cursor: pointer;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.hamburguer-menu__line{
+    width: 100%;
+    height: 3px;
+    background-color: chocolate;
+    transition: all .8s;
+}
+
+.change-line .hamburguer-menu__line--1{
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+
+.change-line .hamburguer-menu__line--2{
+    opacity: 0;
+}
+
+.change-line .hamburguer-menu__line--3{
+    transform: rotateZ(405deg) translate(-8px, -6px);
+}
+
 .header{
     width: 100%;
     padding: 2.5rem 12rem;
@@ -17,7 +49,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    min-width: 80rem;
+    min-width: 60rem;
 }
 
 .header-nav__item {

@@ -1,0 +1,129 @@
+@media screen and (max-width: 1500px){
+
+    .container-ofertas{
+        flex-direction: column;
+    }
+
+    div.product-section-1{
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+
+    .product-section-2{
+        margin-bottom: 10rem;
+        margin-top: 10rem;
+        margin-right: 8rem;
+    }
+
+    .juegos-container .juegos-container__products-container{
+        grid-template-columns: repeat(2, 1fr);
+    } 
+}
+
+@media only screen and (max-width: 1150px) {
+    .main-content,
+    .prime-banner {
+        width: calc(100vw - 5rem);
+    }
+}
+
+@media screen and (max-width: 900px){
+
+    .product-section-2 .product-section-2__portrays{
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .product-section-2{
+        height: 90rem;
+        margin-right: 0;
+    }
+
+    .product-section-2 .product-section-2__portrays .product-section-2__box--1{
+        transform: translateX(0px) !important;
+    }
+
+    .product-section-2 .product-section-2__portrays .product-section-2__box--2{
+        transform: translateX(0px) !important;
+    }
+
+    .product-section-2 .product-section-2__portrays .product-section-2__box--3{
+        transform: translateX(0px) !important;
+    }
+
+    .juegos-container .juegos-container__products-container{
+        grid-template-columns: 1fr;
+    } 
+
+    .juegos-container{
+        flex-direction: column;
+        padding: 0rem 10rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    article.juegos-container__redirection{
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .main-content,
+    .prime-banner {
+    width: calc(100vw - 10rem);
+    }   
+    .carousel__video{
+        width: 40rem !important;
+    }
+}
+
+@media screen and (max-width: 750px){
+    div.product-section-1{
+        margin-bottom: 0;
+        margin-right: 0;
+        height: 60rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-section-1 .product-section__portrays{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__horizontal-boxes .product-section__box--horizontal{
+        width: 38rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__box{
+        width: 22rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__box{
+        margin-bottom: 3rem;
+    }
+
+    .product-section-1 .product-section__portrays .product-section__horizontal-boxes{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .main-content,
+    .prime-banner {
+    width: calc(100vw - 15rem);
+    } 
+
+    .carousel__video{
+        width: 35rem !important;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .carousel__video{
+        width: 29rem !important;
+    }
+}

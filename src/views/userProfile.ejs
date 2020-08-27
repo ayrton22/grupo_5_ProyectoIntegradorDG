@@ -79,7 +79,9 @@
                <h1>Tus juegos</h1>
             
                <input class="container-profile-games-input" type="text" id="games" placeholder="Buscá en tus juegos...">
-
+               <% if( user.admin == 1) { %>
+                    <h2><a href="/product/load" class="profile-games-new-game">Cargar juego</a></h2>
+               <% } %>
                <div class="container-profile-games-list">
                     <% if(user.user_sales.length != 0){%>
 

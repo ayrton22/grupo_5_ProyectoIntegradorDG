@@ -297,6 +297,12 @@ button.container-profile-button:hover:before {
     font-size: 20px;
 }
 
+a.profile-games-new-game {
+    text-decoration: none;
+    color: #001927;
+    padding: 1rem 0;
+}
+
 .container-profile-games-list {
     max-height: 450px;
     margin: 1rem 0;

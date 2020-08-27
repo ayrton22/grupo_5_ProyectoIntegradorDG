@@ -40,10 +40,9 @@ router.get('/logout', authMiddleware  ,controller.logout);
 
 router.get('/community',controller.community);
 
-router.get('/buyFormChoose', authMiddleware, controller.buyFormChoose);
-router.get('/buyFormDelivery', authMiddleware ,controller.buyFormDeliveryView);
-router.get('/buyFormLocal', authMiddleware ,controller.buyFormLocalView);
-router.get('/paymentMethodForm', authMiddleware ,controller.paymentMethodView);
+router.get('/buyForm/:id?', authMiddleware, controller.buyForm);
+router.post('/buyForm/:id', authMiddleware, controller.transactionsForm);
+
 
 // Module export
 module.exports = router;

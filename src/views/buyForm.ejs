@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head', {title: 'Buy Form Choose'}) %>
+<body>
+    <div class="contenedor-pagina">
+    <%- include('partials/header') %>
+<div class="chooseForm">
+<div class="conteainer-buyFormChoose ">
+        <div class="box-buyFormChoose__container">
+            <button  class="box-buyFormChoose__op" id="btnDomicilio" type="button" >Enviar a mi domicilio</button>
+            <button  class="box-buyFormChoose__op box-buyFormChoose__op1--modifer" id="btnSucursal" type="button" >Retirar en Sucursal</button>
+            <button  class="box-buyFormChoose__op" id="btnOnline" type="button">Online</button>
+        </div>
+    </div>
+</div>
+</div>
+<form  class="transaction-form" action="/user/buyForm/<%=locals.localUser.id%>?_method=post" method="POST">
+
+<div class="inactived-form-contenedor buyDelivery">
+    <div class="container-buyDelivery">
+        <div class="container2-buyDelivery">
+            <div class="buyDelivery__left-section">
+                    <div class="buyDelivery__title-cont">
+                        <h1 class="buyDelivery__title">Informacion Personal</h1>
+                        <div class="buyDelivery__line"></div>
+                    </div>
+                    <div class="buyDelivery__inputs-cont">
+                        <div class="buyDelivery__inputs-cont-single">
+                            <label for="purchaserName">Nombre y apellido <i class="buyDelivery__icon far fa-address-card"></i></label>
+                            <p>
+                                <input name="purchaserName" type="text" placeholder="ej: Gonzalo Perez Diaz"> 
+                            </p>
+                        </div>
+                        <div class="buyDelivery__inputs-cont-single">
+                            <label for="purchaserPostalCode">Codigo postal <i class="buyDelivery__icon fas fa-map-marked-alt"></i></label>
+                            <p>
+                                <input name="purchaserPostalCode" type="text" placeholder="ej: 1281"> 
+                            </p>
+                        </div>
+    
+                        <div class="buyDelivery__group">
+                                <div class="buyDelivery__inputs-cont-single">
+                                    <label for="purchaserState">Provincia <i class="buyDelivery__icon fa fa-map-marker" aria-hidden="true"></i></label>
+                                    <p>
+                                        <input name="purchaserState" type="text" placeholder="ej: Buenos Aires"> 
+                                    </p>
+                                </div>
+                                <div class="buyDelivery__inputs-cont-single">
+                                    <label for="purchaserLocation">Localidad / Barrio <i class="buyDelivery__icon fas fa-city"></i></label>
+                                    <p>
+                                        <input name="purchaserLocation" type="text" placeholder="ej: San Isidro"> 
+                                    </p>
+                                </div>
+                                <div class="buyDelivery__inputs-cont-single">
+                                    <label for="purchaserStreet">Calle <i class="buyDelivery__icon fas fa-street-view"></i></label>
+                                    <p>
+                                        <input name="purchaserStreet" type="text" placeholder="ej: Diego Palma 2345"> 
+                                    </p>
+                                </div>
+                                <div class="buyDelivery__inputs-cont-single">
+                                    <label for="purchaserAdress">Numero <i class="buyDelivery__icon fas fa-map-pin"></i></label>
+                                    <p>
+                                        <input name="purchaserAdress" type="text" placeholder="ej: 345 (numero de la direccion de tu residencia)"> 
+                                    </p>
+                                </div>
+                        </div>
+    
+                        <div class="buyDelivery__inputs-cont-single">
+                            <label for="purchaserFlat">Piso/Dpto (opcional) <i class="buyDelivery__icon far fa-building"></i></label>
+                            <p>
+                                <input name="purchaserFlat" type="text"> 
+                            </p>
+                        </div>
+                        <div class="buyDelivery__inputs-cont-single">
+                            <label for="purchaserPhone">Telefono de contacto <i class="buyDelivery__icon fas fa-phone-square"></i></label>
+                            <p>
+                                <input name="purchaserPhone" id="purchaserPhone2" type="text" placeholder="ej: +54 1146783490"> 
+                            </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="buyDelivery__right-section">
+                <div class="buyDelivery__slider-i">
+                </div>
+                <div class="buyDeliver__position-relative">
+                    <div class="buyDelivery__arrow-left">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+
+                    <div class="buyDelivery__carousel-games">
+                     <%   if(game == undefined){%>
+                        <% locals.localUser.cart.forEach((element)=>{%>
+                            <div class="buyDelivery__game">
+                                <div class="buyDelivery__img-cont">
+                                    <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/<%=element.images[0].img_url%>" alt="">
+                                </div>
+                                <h2><%=element.title%></h2>
+                                <div class="buyDelivery__line-2"></div>
+                                <h3 class="buyDelivery__price-modifer"><%=element.price%></h3>
+                            </div>
+                        <%}) %> 
+                        
+                       <% }else{%>
+                        <div class="buyDelivery__game">
+                            <div class="buyDelivery__img-cont">
+                                <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/<%= game.images[0].img_url %>" alt="">
+                            </div>
+                            <h2><%=game.title%></h2>
+                            <div class="buyDelivery__line-2"></div>
+                            <h3 class="buyDelivery__price-modifer"><%=game.price%></h3>
+                        </div>
+
+                       <%}%>
+
+                    </div>
+
+                    <div class="buyDelivery__arrow-right">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="buyDelivery__continue-btn">
+                    <button class="bntContinuar2" type="button">Continuar</button>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<div class="inactived-form-contenedor buyLocal">
+    <div class="container-buyLocal">
+        <div class="container-buyLocal2">
+            <div class="buyLocal__left-section">
+                <div class="buyLocal__info-part1">
+                    <div class="buyLocal__info">
+                        <div class="buyLocal__title-cont">
+                            <h1>Informacion del local</h1>
+                            <div class="buyLocal__line"></div>
+                        </div>
+                        <div class="buyLocal__adress">
+                            <div class="buyLocal__single-info">
+                                <h2>Calle <i class="buyLocal__icon fas fa-street-view"></i></h2>
+                                <h4>ad lorem ipsum</h4>
+                            </div>
+
+                            <div class="buyLocal__single-info">
+                                <h2>Codigo postal <i class="buyLocal__icon fas fa-map-marked-alt"></i></h2>
+                                <h4>8453</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Numero <i class="buyLocal__icon fas fa-map-pin"></i></h2>
+                                <h4>3214</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Numero de piso <i class="buyLocal__icon far fa-building"></i></h2>
+                                <h4>4°C</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Localidad / barrio <i class="buyLocal__icon fas fa-city"></i></h2>
+                                <h4>Belgrano</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Provincia <i class="buyLocal__icon fa fa-map-marker" aria-hidden="true"></i></h2> 
+                                <h4>C.A.B.A</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>WhatSaap <i class="buyLocal__icon fa fa-whatsapp" aria-hidden="true"></i></h2> 
+                                <h4>+54 1134248956</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Correo electronico <i class="buyLocal__icon fas fa-envelope-square"></i></h2> 
+                                <h4>houseofgames@hotmail.com</h4>
+                            </div>
+    
+                            <div class="buyLocal__single-info">
+                                <h2>Instagram <i class="buyLocal__icon fab fa-instagram"></i></h2>
+                                <h4>@hog</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+
+                <div class="buyLocal__info-part2">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878894506!2d-58.38375908417492!3d-34.603734465007136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1sen!2sar!4v1598328415031!5m2!1sen!2sar" width="400" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+
+            <div class="buyLocal__right-section">
+                <div class="buyDelivery__slider-i">
+
+                </div>
+                <div class="buyDeliver__position-relative">
+                    <div class="buyDelivery__arrow-left">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+
+                    <div class="buyDelivery__carousel-games">
+                        <%   if(game == undefined){%>
+                            <% locals.localUser.cart.forEach((element)=>{%>
+                                <div class="buyDelivery__game">
+                                    <div class="buyDelivery__img-cont">
+                                        <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/<%=element.images[0].img_url%>" alt="">
+                                    </div>
+                                    <h2><%=element.title%></h2>
+                                    <div class="buyDelivery__line-2"></div>
+                                    <h3 class="buyDelivery__price-modifer"><%=element.price%></h3>
+                                    <input type="text" class="boton-imagen" name="gameId" value="<%=element.id%>">
+                                </div>
+                            <%})%> 
+                            
+                           <% }else{%>
+                            <div class="buyDelivery__game">
+                                <div class="buyDelivery__img-cont">
+                                    <img class="buyDelivery__img-product" src="../../img/uploads/productsImage/<%=game.images[0].img_url%>" alt="">
+                                </div>
+                                <h2><%=game.title%></h2>
+                                <div class="buyDelivery__line-2"></div>
+                                <h3 class="buyDelivery__price-modifer"><%=game.price%></h3>
+                                <input type="text" class="boton-imagen" name="gameIdId" value="<%=game.id%>">
+                                <input type="text" class="boton-imagen" name="gameIdId" value="final">
+                            </div>
+    
+                           <%}%>
+    
+                    </div>
+
+                    <div class="buyDelivery__arrow-right">
+                        <i class="fas fa-angle-right"></i>
+                    </div>
+                </div>
+                <div class="buyDelivery__continue-btn">
+                    <button class="bntContinuar" type="button">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="inactived-form-contenedor paymentMethod">
+    <div class="container-paymentMethod">
+        <div class="container2-paymentMethod">
+            <div class="paymentMethod__cont">
+                <div class="paymentMethod__title-cont">
+                    <h1>Metodo de pago / Finalizando compra</h1>
+                    <%   if(game == undefined){%>
+
+                        <% let=cotal_cost = 0%>
+                        <%locals.localUser.cart.forEach(function(element){%>
+                           <% cotal_cost += Number(element.price) %>
+                        <%})%>
+                        <div>
+                        <p>Monto total: <%=cotal_cost %> </p>
+                        <input type="text" name="total_cost" value="<%=cotal_cost%>">
+                    </div>
+                        <%}else{%>
+                            <div>
+                            <p>Monto total: <%=game.price%> </p>
+                                <input type="text" name="total_cost" value="<%=game.price%>">
+                            </div>
+                        <%}%>
+
+                    <div class="paymentMethod__line"></div>
+                </div>
+                   <div class="">
+                        <div>
+                            <label for="">Numero de Tarjeta</label>
+                            <p>
+                                <input type="text">
+                            </p>
+                        </div>
+
+                        <div>
+                            <label for="">Fecha de Expiracion</label>
+                            <p>
+                                <input type="date">
+                            </p>
+                        </div>
+
+                        <div>
+                            <label for="">CVC</label>
+                            <p>
+                            <input type="text">
+                            </p>
+                        </div>
+                   </div>
+                   <input type="text" class="boton-imagen" id="tipoTransaction" name="transaction" value="">
+                   <button type="submit">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+    <%- include('partials/footer') %>
+
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+    <script src="/scripts/buyForm.js"></script> 
+</body>
+</html>

@@ -13,7 +13,7 @@ function localsMiddleware(req, res, next) {
         }
     })
     if(req.session.usernameUser) {
-        db.Users.findOne({
+        db.Users.findOne({include:[{association:'games_shooping_cart',include:[{association:'images',where:{location:"default"}}]}],
             where: {
                 username: req.session.usernameUser
             }
@@ -22,7 +22,8 @@ function localsMiddleware(req, res, next) {
             res.locals.localUser = {
                 id: result.id,
                 avatar: result.avatar,
-                privilegios: result.admin
+                privilegios: result.admin,
+                cart:result.games_shooping_cart
             }
         })      
     } 

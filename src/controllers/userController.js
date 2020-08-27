@@ -235,21 +235,61 @@ module.exports = {
 			});
     },
 
-    buyFormChoose: (req, res) => {
-        res.render('buyFormChoose.ejs');
+    buyForm: (req, res) => {
+        if(req.params.id == undefined){
+            res.render('buyForm',{
+                game: undefined
+            });
+        }else{
+            db.Games.findByPk(req.params.id,{include:[{association:'images',where:{
+                location: "default"
+            }}]})
+            .then((result)=>{
+                res.render('buyForm',{
+                game: result
+            });
+            })
+        }
+        
     },
+    transactionsForm: (req, res) => {
+            db.Transactions.create({
+                id_user: req.params.id,
+                total_cost: Number(req.body.total_cost),
+                delivery: "Sucursal",
+                payment: "credit Cart",
+                status: "finished"
+            }).then(function(resultado){
+                let games = [];
+                for(let i = 0; i < req.body.gameId.length;i++){
+                    if(req.body.gameId[i] != "final"){
+                        games.push({
+                            id_game: Number(req.body.game[i]),
+                            id_transaction: resultado.id
+                        })
+                    }
+                }
+                db.Games_Transactions.bulkCreate(games)
+                .then(function(result){
+                    let gamesCart = [];
+                for(let i = 0; i < req.body.gameId.length;i++){
+                    if(req.body.gameId[i] != "final"){
+                        games.push({
+                            id_game: Number(req.body.game[i]),
+                            id_user: req.params.id
+                        })
+                    }
+                }
+                    db.Games_Users.bulkDelete(gamesCart)
+                    .then(function(result){
+                        res.redirect('/user/profile/'+req.params.id);
+                    })
+                })
+            })
 
-    buyFormDeliveryView: (req, res) => {
-        res.render('buyFormDelivery');
-    }, 
-
-    buyFormLocalView: (req, res) => {
-        res.render('buyFormLocal');
-    },
-
-    paymentMethodView: (req, res) => {
-        res.render('paymentMethodForm');
-    }
+        
+    
 }
 
 
+}

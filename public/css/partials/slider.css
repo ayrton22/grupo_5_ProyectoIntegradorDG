@@ -28,6 +28,7 @@
     align-items: center;
     justify-content: space-evenly;
     align-self: center;
+    z-index: 0;
 }
 
 .carousel__chevron {

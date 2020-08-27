@@ -33,3 +33,7 @@
 .box-buyFormChoose__op:hover{
     color: #ffff !important;
 }
+
+.inactived-form-contenedor{
+    display: none;
+}

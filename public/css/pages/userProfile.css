@@ -218,6 +218,59 @@ button.container-profile-button:hover:before {
     color: #c9111a;
 }
 
+.general-profile-password-change {
+    position: absolute;
+    z-index: 10;
+    top: 20rem;
+    left: 40rem;
+    background-color: #1f3058;
+    box-shadow: 0 0 5px 3px #19233b;
+    width: 350px;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: .3s ease-out;
+}
+
+.general-profile-password-change i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.general-profile-password-change i:hover {
+    color: rgb(173, 169, 169);
+}
+
+.profile-password-change-label {
+    display: block;
+    font-size: 24px;
+    width: 300px;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.profile-password-change-input {
+    display: block;
+    height: 35px;
+    width: 275px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+    margin-left: 1rem;
+    margin-bottom: 4rem;
+}
+
+.inactive-password-change {
+    display: none;
+}
+
+.active-password-change {
+    display: block;
+}
+
 
 
 /* Games section */

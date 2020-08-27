@@ -123,23 +123,37 @@ module.exports = {
     },
     
     update: function(req, res) {
+        if(req.body.name) {
 
-        db.Users.update({
-            first_name: req.body.name,
-            last_name: req.body.surname,
-            email: req.body.email,
-            birth_date: req.body.date,
-            gender: req.body.gender,
-            address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `,
-            avatar: req.body.avatar
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-        .then(function(result) {
-            res.redirect('/user/profile/' + req.params.id)
-        })
+            db.Users.update({
+                first_name: req.body.name,
+                last_name: req.body.surname,
+                email: req.body.email,
+                birth_date: req.body.date,
+                gender: req.body.gender,
+                address: `${req.body.address_country}, ${req.body.address_province}, ${req.body.address_city}, ${req.body.address_home} `,
+                avatar: req.body.avatar
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(function(result) {
+                res.redirect('/user/profile/' + req.params.id)
+            })
+
+        } else {
+            db.Users.update({
+                password: bcrypt.hashSync(req.body.password, 10)
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(function(result) {
+                res.redirect('/user/profile/' + req.params.id)
+            })
+        }
     },
 
     profile: function(req, res) {

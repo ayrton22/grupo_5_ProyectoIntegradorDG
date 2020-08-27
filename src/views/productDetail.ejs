@@ -51,7 +51,7 @@
                        <p><%= productDetail.price %>$</p>
                        <div class="botones-administrador">
                           <%    if(locals.localUser != undefined){%>
-                            <%    if(locals.localUser.admin){%>
+                            <%    if(locals.localUser.privilegios){%>
                                 <button class="detail--action-button"><a href="/product/edit/<%= productDetail.id %>">EDITAR PRODUCTO</a></button>
                                 <form action="/product/detail/<%= productDetail.id %>?_method=delete" method="POST" style="display: inline-flex">
                                 <button type="submit" class="detail--action-button eliminar-juego">ELIMINAR</button>

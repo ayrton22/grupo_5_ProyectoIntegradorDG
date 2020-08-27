@@ -7,14 +7,14 @@
 
 .container2-buyDelivery {
     display: flex;
-    min-height: 40rem;
-    min-width: 100rem;
+    height: 72rem;
+    width: 100rem;
     justify-content: space-between;
     background-color: #2D4681;
     padding: 3rem;
     border-radius: 8px;
     box-shadow: 0 0 10px 3px #010212;
-    margin: 10rem;
+    margin: 5rem auto;
 }
 
 .buyDelivery__title-cont{

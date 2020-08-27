@@ -17,7 +17,6 @@ const controller = require('../controllers/userController');
 
 // Route, controller, middleware and validation usage
 
-router.get('/prueba/:id', controller.prueba);
 router.get('/register', controller.register);
 router.post('/register', registerValidation, passwordRepassMiddleware ,controller.save);
 
@@ -40,10 +39,9 @@ router.get('/logout', authMiddleware  ,controller.logout);
 
 router.get('/community',controller.community);
 
-router.get('/buyFormChoose', authMiddleware, controller.buyFormChoose);
-router.get('/buyFormDelivery', authMiddleware ,controller.buyFormDeliveryView);
-router.get('/buyFormLocal', authMiddleware ,controller.buyFormLocalView);
-router.get('/paymentMethodForm', authMiddleware ,controller.paymentMethodView);
+router.get('/buyForm/:id?', authMiddleware, controller.buyForm);
+router.post('/buyForm/:id', authMiddleware, controller.transactionsForm);
+
 
 // Module export
 module.exports = router;

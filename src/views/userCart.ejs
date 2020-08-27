@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('partials/head', {title: 'Carrito de Compras'}) %>
 <body>
-
+    <div class="user-cart-header-container"><%- include('partials/header') %></div>
     <div class="carrito-container">
         <div class="carrito-container__aside">
             <ul class="carrito-container__list">
@@ -29,11 +29,10 @@
                 <div class="carrito-container__articulos">
                     <div class="carrito-container__juego">
                         <div class="carrito-container__img-cont">
-                           <a href="/product/detail/<%=element.id%>"><img src="../../img/uploads/productsImage/<%= element.images[0].img_url%> " alt=""></a> 
+                           <a href="/product/detail/<%=element.id%>"><img class="cart-image-single" src="../../img/uploads/productsImage/<%= element.images[0].img_url%> " alt=""></a> 
                         </div>
 
                         <div>
-                        <p><%= element.title %></p>
                         <p><%= element.title %></p>
                         <p>Precio: $<%= element.price%></p>
                         </div>
@@ -54,12 +53,16 @@
             <div class="carrito-container__resumen-dato">
                 <span>Resumen del pedido</span>
             </div>
-            <p>total de los productos: <span>$200</span></p>
+            <p>Cantidad: <span><%=user.games_shooping_cart.length%></span></p>
+
             <p>Envio: <span>$20</span></p>
-            <p>Total del pedido: <span>$220</span></p>
-            <p>PesosArg(aprox): <span>$14100</span></p>
+            <% let contador = 0 %> 
+            <%user.games_shooping_cart.forEach((element)=>{%>
+              <%contador += Number(element.price)%>
+                <% })%>
+            <p>Total del pedido: <span>$<%=contador%></span></p>
                 <div class="carrito-container__btn-container">
-                    <button onclick="window.location.href='/user/buyFormChoose'" class="carrito-container__btn">Comprar</button>
+                    <button onclick="window.location.href='/user/buyForm'" class="carrito-container__btn">Comprar</button>
                 </div>
         </div>
     </div>

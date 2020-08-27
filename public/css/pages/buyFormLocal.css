@@ -6,8 +6,8 @@
 }
 
 .container-buyLocal2{
-    min-width: 110rem;
-    min-height: 50rem;
+    width: 110rem;
+    height: 75rem;
     justify-content: space-between;
     display: flex;
     background-color: #2D4681;
@@ -66,4 +66,43 @@
 
 .buyLocal__continue-btn{
     margin-top: auto;
+}
+
+
+.buyLocal__continue-btn button {
+    position: relative;
+    background-color: white;
+    font-size: 1.6em;
+    background-color: #2568AC;
+    color: white;
+    border-radius: var(--button-border-radius);
+    border: none;
+    padding: 1rem 5rem;
+    margin-top: 20rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.buyLocal__continue-btn button {
+    text-decoration: none;
+    color: white;
+}
+  
+.buyLocal__continue-btn button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+  }
+  
+.buyLocal__continue-btn button:hover:before {
+    height: 100%;
 }

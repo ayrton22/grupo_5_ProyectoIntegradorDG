@@ -17,9 +17,9 @@
                     <button onclick="myFunction()" class="header-nav__dropdown-button">JUEGOS<i class="fas fa-caret-down header-nav__dropdown-icon"></i></button>
                     <ul id="myDropdown" class="header-nav__sub-list">
                         <li class="header-nav__sub-item"><a href="/product">TODOS LOS JUEGOS</a></li>
-                        <li class="header-nav__sub-item"><a href="#">POPULARES</a></li>
-                        <li class="header-nav__sub-item"><a href="#">OFERTAS</a></li>
-                        <li class="header-nav__sub-item"><a href="#">FREE TO PLAY</a></li>
+                        <% locals.localAside.categories.forEach((element)=>{%>
+                            <li class="header-nav__sub-item"><a href="/product/<%=element.id %>"><%= element.name %></a></li>
+                       <% }) %> 
                     </ul>
                 </li>
                 <li class="header-nav__item"><a href="/user/community">Comunidad</a></li>

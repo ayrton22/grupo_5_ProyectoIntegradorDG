@@ -2,7 +2,7 @@
     font-size: 1.4rem;
     background-image: linear-gradient(to bottom, #223052, #191E29);
     margin: 6rem auto;
-    width: 30%;
+    width: 800px;
     align-content: center;
     border-radius: 5px;
     box-shadow: 0 0 10px 3px #010212;
@@ -11,7 +11,7 @@
 form.userEdit-form {
     align-self: center;
     margin: 0 2rem;
-    padding-top: 5rem;
+    padding: 5rem 2rem 4rem 4rem;
 }
 
 form.userEdit-form h1 {

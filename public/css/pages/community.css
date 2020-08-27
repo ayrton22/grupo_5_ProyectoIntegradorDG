@@ -1,6 +1,7 @@
 .container-community {
     background-color: #2D4681;
-    margin: 5% 16%;
+    margin: 5rem auto;
+    width: 1300px;
     border-radius: 10px;
     box-shadow: 0 0 10px 3px #010100;
 }
@@ -100,6 +101,40 @@
     width: 600px;
     margin: auto;
     z-index: 1;
+}
+
+.community-button {
+    position: relative;
+    font-size: 24px;
+    background-color: #2568AC;
+    width: 300px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 3rem 48rem;
+    padding: 1rem 5rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: .2s ease-in;
+    transition: .4s;
+}
+
+.community-button:before {
+    content: "";
+    position: absolute;
+    background-color: var(--button-bg-color);
+    border-radius: 5px;
+    left: 0;
+    bottom: 0;
+    height: 0px;
+    width: 100%;
+    z-index: -1;
+    transition: .2s ease-in;
+
+}
+
+.community-button:hover:before {
+    height: 100%;
 }
 
 .inactive-answer-form {

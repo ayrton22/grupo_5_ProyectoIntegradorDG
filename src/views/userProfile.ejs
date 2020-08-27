@@ -18,6 +18,15 @@
                     <li id="settings">Configuración</li>
                 </ul>
             </aside>
+
+            <aside class="container-profile-aside-responsive">
+                <ul type="none" >
+                    <li id="general-responsive"><i class="far fa-address-card"></i></li>
+                    <li id="games-responsive"><i class="fas fa-gamepad"></i></li>
+                    <li id="pays-responsive"><i class="fas fa-history"></i></li>
+                    <li id="settings-responsive"><i class="fas fa-user-cog"></i></li>
+                </ul>
+            </aside>
     
             <div class="container-profile-general active-flex">
     
@@ -32,22 +41,35 @@
                                 <li>Género: <span><%= user.gender %></span></li>
                             </ul>
 
-                        <a href="/user/edit/<%= user.id %>"><button type="button" class="container-profile-button mt-5">Editar datos</button></a>
+                        <a href="/user/edit/<%= user.id %>"><button type="button" class="container-profile-button">Editar datos</button></a>
     
                 </div>
 
-                <div class="container-profile-general-separation"> ll </div>
+                <div class="container-profile-general-separation"> . </div>
     
                 <div class="container-profile-general-profile">
                     <div>
                         <img src="/img/uploads/avatars/<%= user.avatar %>" alt="" id="avatar">
                         <input type="file" id="avatar" style="visibility: hidden;">
                     </div>
+
                     <h2 class="profile-name"><%= user.first_name %> <%= user.last_name %></h2>
                     <h3 class="profile-username"><%= user.username %></h3>
                     <h2 class="profile-pass">Contraseña:</h2>
                     <h3 class="profile-pass">....................<i class="fas fa-pencil-alt"></i></h3>
                     <a href="/user/logout" class="profile-session"><p>Cerrar sesión</p></a>
+
+                    <form id="passwordChangeForm" action="/user/edit/<%= user.id %>?_method=put" enctype="multipart/form-data" method="POST"" class="general-profile-password-change inactive-password-change">
+                        <i class="fas fa-times-circle"></i>
+                        <label class="profile-password-change-label" for="password">Nueva contraseña</label>
+                        <p class="password-error1"></p>
+                        <p class="password-error2"></p>
+                        <input id="password-profile" class="profile-password-change-input" type="password" name="password" id="password">
+                        <label class="profile-password-change-label" for="repassword">Confirmar contraseña</label>
+                        <p class="repassword-error"></p>
+                        <input id="repassword-profile" class="profile-password-change-input" type="password" name="repassword" id="repassword"> 
+                        <button class="container-profile-button" type="submit">Cambiar</button>
+                    </form>
                 </div>
     
             </div>
@@ -79,7 +101,7 @@
                                 <% } %>
                                 <a href="/product/detail/<%= element.games.id %>">
                                 <div class="container-profile-games-single-img">
-                                <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
+                                    <img src="../../img/uploads/productsImage/<%=element.games.images[0].img_url%>" alt=""> 
                                 </div>
                                 </a>
 
@@ -130,19 +152,19 @@
                 <h1>Historial de transacciones</h1>
 
                 <div class="row pays-first-row">
-                    <div class="col-2">
+                    <div class="col-2 responsive-out">
                         <h2>Fecha</h2>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4 col-md-3">
                         <h2>Articulo(s)</h2>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 responsive-out">
                         <h2>Entrega</h2>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4 col-md-2">
                         <h2>Vendedor</h2>
                     </div>
-                    <div class="col-2">
+                    <div class="col-4 col-md-2">
                         <h2>Precio</h2>
                     </div>
                 </div>
@@ -150,26 +172,26 @@
                 <div class="container-profile-pays-transaction-wrapper">
                     <%  user.transactions.forEach((element)=> {%>
                         <div class="row pays-rows">
-                            <div class="col-2">
+                            <div class="col-2 responsive-out">
                                 <h3><%=element.createdAt.getDate()%>/<%= element.createdAt.getMonth()+1%>/<%= element.createdAt.getFullYear()%></h3>
                             </div>
                             <%   if( element.transactions_games.length > 1){%> 
-                                <div class="col-2">
+                                <div class="col-4 col-md-2">
                                     <h3><%=element.transactions_games.length%> Juegos Comprados</h3>
                                 </div>
                                 <% } else {%>
-                                    <div class="col-2">
+                                    <div class="col-4 col-md-2">
                                         <h3><%=element.transactions_games[0].title%></h3>
                                     </div>
 
                                     <%  }%>
-                                <div class="col-4">
+                                <div class="col-4 responsive-out">
                                 <h3><%=element.delivery%></h3>
                             </div>
-                            <div class="col-2">
-                                <h3>Hose Of Games</h3>
+                            <div class="col-4 col-md-2">
+                                <h3>House Of Games</h3>
                             </div>
-                            <div class="col-2">
+                            <div class="col-4 col-md-2">
                                 <h3>$<%=element.total_cost%>  </h3>
                             </div>
                         </div>
@@ -177,28 +199,24 @@
 
                     <%  user.purchases.forEach((element)=> {%>
                         <div class="row pays-rows">
-                            <div class="col-2">
+                            <div class="col-2 responsive-out">
                                 <h3><%=element.createdAt.getDate()%>/<%= element.createdAt.getMonth()+1%>/<%= element.createdAt.getFullYear()%></h3>
                             </div>
-                                <div class="col-2">
+                                <div class="col-4 col-md-2">
                                     <h3><%=element.games.title%></h3>
                                 </div>
-                                <div class="col-4">
+                                <div class="col-4 responsive-out">
                                 <h3><%=element.delivery_type%></h3>
                             </div>
-                            <div class="col-2">
+                            <div class="col-4 col-md-2">
                                 <h3><%=element.users_sellers.username%></h3>
                             </div>
-                            <div class="col-2">
+                            <div class="col-4 col-md-2">
                                 <h3>$<%=element.price%>  </h3>
                             </div>
                         </div>
                     <% })%>
 
-                    
-    
-                    
-    
 
                 </div>
 
@@ -219,8 +237,6 @@
                     
                     <button type="submit" class="container-profile-button-logout mt-5">Dar de baja tu cuenta</button>
                     <h3> Esta accion borrará tu cuenta permamentemente y no habrá forma de recuperarla</h3>
-
-
                 </form>
                 <br>
                 <br>

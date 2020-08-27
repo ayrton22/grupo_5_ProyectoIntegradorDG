@@ -1,0 +1,39 @@
+@media (max-width: 991px) {
+    .container-userEdit  {
+        width: 700px;
+    }
+}
+
+@media (max-width: 767px) {
+    .container-userEdit  {
+        width: 525px;
+    }
+    
+    form.userEdit-form {
+        align-self: center;
+        margin: 0 1rem;
+        padding: 5rem 2rem 3rem 3rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .container-userEdit  {
+        width: 375px;
+    }
+    
+    form.userEdit-form {
+        align-self: center;
+        margin: 0 1rem;
+        padding: 4rem 0;
+    }
+
+    form.userEdit-form h1 {
+        width: 350px;
+        font-size: 32px;
+        margin-left: -2rem;
+    }
+
+    form.userEdit-form h2 {
+        margin-left: 0;
+    }
+}

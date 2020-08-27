@@ -7,9 +7,9 @@
         <div class="carrito-container__aside">
             <ul class="carrito-container__list">
                 <li class="carrito-container__item"><div class="container-profile-general-profile"> <div>
-                    <img src="/img/uploads/avatars/avatar.jpg" alt="" id="avatar">
-                    <h3 class="profile-username">Pedro  </h3>
-                   
+                    <img src="/img/uploads/avatars/<%=user.avatar%>" alt="" id="avatar">
+
+                    <h3 class="profile-username"><%=user.username%></h3>
                 </div></div></li>
                 <li class="carrito-container__item"><a href="#">Juegos</a></li>
                 <li class="carrito-container__item"><a href="#">Noticias</a></li>
@@ -17,59 +17,37 @@
                 <li class="carrito-container__item"><a href="#">Descarga la App</a></li>
                 <li class="carrito-container__item"><a href="#">Soporte</a></li>
             </ul>
+            <div class="header-cart__nav">
+                <a href="/"><img src="../../img/House_of_GamesLOGO.png" alt="Logo-image"></a>
+            </div>
         </div>
-
         <div class="carrito-container__info">
-            <div class="carrito-conta+iner__dato">
-                Envio
-            </div>
-            <div class="carrito-container__info-cliente">
-                <div>
-                    <p class="carrito-container__nombre">Jeremias Luis Rodruigez De Leon</p>
-                    <p>Vicente Lopez, Agustin alvarez 2896, Capital, Buenos Aires, Argentina, 2397</p>
-                </div>
-                <a href="#">cambiar</a>
-            </div>
-            <div class="carrito-container__dato">
-                Pago
-            </div>
-            <div class="carrito-container__info-cliente carrito-container__info-cliente--x">
-                <div>
-                    <img src="//main.cdn.wish.com/web/81b0afc94040/dist/cozy/03cf202c4e8213362898b37ef37265da.png">
-                    <p>*** Expira el 8/2034</p>
-                </div>
-                <a href="#">cambiar</a>
-            </div>
-
             <div class="carrito-container__dato carrito-container__dato--margin">
                 Articulos del carrito
             </div>
-            <div class="carrito-container__articulos">
-                <div class="carrito-container__juego">
-                    <div class="carrito-container__img-cont">
-                        <img src="../../img/uploads/productsImage/ResidentEvil.jpeg" alt="">
-                    </div>
+            <%user.games_shooping_cart.forEach((element)=>{%>
+                <div class="carrito-container__articulos">
+                    <div class="carrito-container__juego">
+                        <div class="carrito-container__img-cont">
+                           <a href="/product/detail/<%=element.id%>"><img src="../../img/uploads/productsImage/<%= element.images[0].img_url%> " alt=""></a> 
+                        </div>
 
-                    <div>
-                    <p>Nombre del juego</p>
-                    <p>Plataforma</p>
-                    <p>Estado: ???</p>
-                    <p>Precio: $$$</p>
-                    </div>
-
-                    <div class="carrito-container__select-cont">
-                        <select class="carrito-container__select" id="inputGroupSelect01">
-                            <option selected hidden>Cantidad...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                        <form action="">
-                            <button type="submit" class="carrito-container__btn">Quitar</button>
-                        </form>
+                        <div>
+                        <p><%= element.title %></p>
+                        <p><%= element.title %></p>
+                        <p>Precio: $<%= element.price%></p>
+                        </div>
+                        <div class="carrito-container__select-cont">
+                            <form  action="/user/cart/<%=user.id%>?_method=delete" method="POST">
+                                <input name="juego" class="boton-imagen" value="<%=element.id%>">
+                                <button type="submit" class="carrito-container__btn">Quitar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+           <% })%>
+            
         </div>
 
         <div class="carrito-container__resumen">

@@ -14,7 +14,6 @@ footer div.footer div.footer-list__left {
 
 footer div.footer div ul {
     list-style-type: none;
-    
 }
 
 footer div.footer div ul.footer-list__items li {
@@ -91,6 +90,9 @@ h4.info {
     border: none;
 }
 
+.footer-nav__logo {
+    display: none;
+}
 
 
 

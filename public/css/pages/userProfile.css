@@ -9,6 +9,7 @@
 
 .container-profile {
     display: flex;
+    position: relative;
     background-color: #2D4681;
     border-radius: 8px;
     box-shadow: 0 0 10px 3px #010100;
@@ -17,12 +18,13 @@
 
 .container-profile-aside {
     width: 270px;
-    background-color: #00A6FF;
+    background-color: #0b93dd;
     padding: 2rem 1.5rem;
     border-radius: 8px 0 0 8px;
     font-size: 24px;
     box-shadow: 3px 0 5px #001927;
 }
+
 
 .container-profile-aside ul li:hover {
     transition: .3s ease;
@@ -36,6 +38,41 @@
     border-radius: 8px;
     transition: .3s ease;
 }
+
+.container-profile-aside-responsive {
+    display: none;
+    position: absolute;
+    background-color: #0b93dd;
+    bottom: 0;
+    height: 65px;
+    width: 500px;
+    box-shadow: 3px 0 5px #001927;
+    border-radius: 0 0 8px 8px;
+    z-index: 10;
+}
+
+.container-profile-aside-responsive ul li {
+    display: inline-block;
+    padding: 1rem;
+    margin-left: 4rem;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container-profile-aside-responsive ul li i {
+    padding: 1rem;
+    transition: .3s ease;
+    border-radius: 6px;
+    color: #fe0034;
+}
+
+.container-profile-aside-responsive ul li i:hover {
+    transition: .3s ease;
+    background-color: #fe0034;
+    color: white;
+}
+
 
 
 /* General Section */
@@ -114,6 +151,7 @@ button.container-profile-button:hover:before {
 }
 
 .container-profile-general-separation {
+    width: 8px;
     color: #fe0034;
     background-color: #fe0034;
     height: 60rem;
@@ -178,6 +216,59 @@ button.container-profile-button:hover:before {
 
 .container-profile-general-profile a.profile-session p:hover {
     color: #c9111a;
+}
+
+.general-profile-password-change {
+    position: absolute;
+    z-index: 10;
+    top: 20rem;
+    left: 40rem;
+    background-color: #1f3058;
+    box-shadow: 0 0 5px 3px #19233b;
+    width: 350px;
+    border-radius: 8px;
+    padding: 2rem;
+    transition: .3s ease-out;
+}
+
+.general-profile-password-change i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.general-profile-password-change i:hover {
+    color: rgb(173, 169, 169);
+}
+
+.profile-password-change-label {
+    display: block;
+    font-size: 24px;
+    width: 300px;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+.profile-password-change-input {
+    display: block;
+    height: 35px;
+    width: 275px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 10px;
+    margin-left: 1rem;
+    margin-bottom: 4rem;
+}
+
+.inactive-password-change {
+    display: none;
+}
+
+.active-password-change {
+    display: block;
 }
 
 
@@ -285,8 +376,8 @@ button.container-profile-button:hover:before {
 
 .games-delete-form {
     position: absolute;
-    z-index: -2;
-    top: 40rem;
+    z-index: 2;
+    top: 5rem;
     left: 15rem;
     background-color: #1f3058;
     box-shadow: 0 0 5px 3px #19233b;
@@ -325,13 +416,10 @@ button.container-profile-button:hover:before {
 
 .inactive-games-delete-form {
     display: none;
-    opacity: 0;
 }
 
 .active-games-delete-form {
-    z-index: 2;
-    top: 5rem;
-    opacity: 1;
+    display: block;
 }
 
 .games-single-delete:hover {
@@ -414,9 +502,9 @@ button.container-profile-button:hover:before {
 
 .games-detailInfo {
     position: absolute;
-    z-index: -2;
-    top: 40rem;
-    left: 22rem;
+    z-index: 10;
+    top: 25rem;
+    left: 16rem;
     background-color: #1f3058;
     box-shadow: 0 0 5px 3px #19233b;
     width: 500px;
@@ -439,13 +527,11 @@ button.container-profile-button:hover:before {
 }
 
 .inactive-games-detailInfo {
-    opacity: 0;
+    display: none;
 }
 
 .active-games-detailInfo {
-    z-index: 2;
-    top: 15rem;
-    opacity: 1;
+    display: block;
 }
 
 .container-games-info {

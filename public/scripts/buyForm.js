@@ -68,6 +68,7 @@ window.addEventListener('load', function() {
     };
 //-----------------------------------------------------------------------------------------------------------------------------------
         btn_domicilio.addEventListener('click', () => {
+            
             buyDelivery.classList.remove('inactived-form-contenedor');
             buy_sucursal.classList.add('inactived-form-contenedor');
             buy_online.classList.add('inactived-form-contenedor');

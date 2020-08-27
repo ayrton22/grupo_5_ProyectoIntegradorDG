@@ -27,7 +27,7 @@
                                             <img src="../../img/uploads/productsImage/<%= discounts[primerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
                                             <div class="product-section__data">
                                                 <p class="product-section__description"><%= discounts[primerDescuento].games.description %></p>
-                                                <p class="product-section__price">$<%= discounts[primerDescuento].games.price %></p>
+                                                <p class="product-section__price">$<%= ((discounts[primerDescuento].games.price - (discounts[primerDescuento].percentage_discount * discounts[primerDescuento].games.price) / 100)).toFixed(2) %></p>
                                                 <a class="product-section__more-info" href="/product/detail/<%=discounts[primerDescuento].games.id %>">ver mas</a>
                                                 <form  class="" action="/user/cart/<%=discounts[primerDescuento].games.id %>?_method=post" method="POST">
                                                     <button class="product-section__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
@@ -56,7 +56,7 @@
                                                 <img src="../../img/uploads/productsImage/<%= discounts[segundoDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
                                                 <div class="product-section-horizontal__data">
                                                     <p class="product-section-horizontal__description"><%= discounts[segundoDescuento].games.description %></p>
-                                                    <p class="product-section-horizontal__price">$<%= discounts[segundoDescuento].games.price %></p>
+                                                    <p class="product-section-horizontal__price">$<%= ((discounts[segundoDescuento].games.price - (discounts[primerDescuento].percentage_discount * discounts[segundoDescuento].games.price) / 100)).toFixed(2)%></p>
                                                     <a class="product-section-horizontal__more-info" href="/product/detail/<%=discounts[segundoDescuento].games.id %>">ver mas</a>
                                                     <form  class="" action="/user/cart/<%=discounts[segundoDescuento].games.id %>?_method=post" method="POST">
                                                         <button class="product-section-horizontal__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
@@ -67,7 +67,7 @@
                                         <% } %>
                                     </aarticle>
                                     <div class="cartel-oferta__horizontal">
-                                        <p><%=discounts[segundoDescuento].percentage_discount%>% OFF<p>
+                                        <p><%= discounts[segundoDescuento].percentage_discount %>% OFF<p>
                                     </div>
                                 </div>
                                 <% let tercerDescuento =  Math.floor(Math.random() * discounts.length) %> 
@@ -81,9 +81,9 @@
                                                 <img src="../../img/uploads/productsImage/<%=discounts[tercerDescuento].games.images[k].img_url %>" alt="imagen/miniatura">
                                                 <div class="product-section-horizontal__data">
                                                     <p class="product-section-horizontal__description"><%= discounts[tercerDescuento].games.description %></p>
-                                                    <p class="product-section-horizontal__price">$<%= discounts[tercerDescuento].games.price %></p>
+                                                    <p class="product-section-horizontal__price">$<%= ((discounts[tercerDescuento].games.price - (discounts[primerDescuento].percentage_discount * discounts[tercerDescuento].games.price) / 100)).toFixed(2) %></p>
                                                     <a class="product-section-horizontal__more-info" href="/product/detail/<%=discounts[tercerDescuento].games.id %>">ver mas</a>
-                                                    <form  class="" action="/user/cart/<%=discounts[tercerDescuento].games.id %>?_method=post" method="POST">
+                                                    <form  class="" action="/user/cart/<%= discounts[tercerDescuento].games.id %>?_method=post" method="POST">
                                                         <button class="product-section-horizontal__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
                                                     </form>
                                                     <a class="product-section-horizontal__buy-button" href="/user/buyFormChoose">BUY</a>
@@ -92,7 +92,7 @@
                                         <% } %>
                                     </article>
                                     <div class="cartel-oferta__horizontal">
-                                        <p><%=discounts[tercerDescuento].percentage_discount%>% OFF<p>
+                                        <p><%= discounts[tercerDescuento].percentage_discount %>% OFF<p>
                                     </div>
                                 </div>
                         </div>
@@ -115,7 +115,7 @@
                                                 <p class="product-section-2__price">$<%= allCategories[i].games[1].price %></p>
                                                 <a class="product-section-2__more-info" href="/product/detail/<%= allCategories[i].games[1].id %>">ver mas</a>
                                                 <form  class="" action="/user/cart/<%= allCategories[i].games[1].id %>?_method=post" method="POST">
-                                                    <button class="product-section-2__buy-button" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                                    <button class="product-section-2__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
                                                 </form>
                                                 <a class="product-section-2__buy-button" href="/user/buyFormChoose">BUY</a>
                                             </div>
@@ -133,7 +133,7 @@
                                                 <p class="product-section-2__price">$<%= allCategories[i].games[2].price %></p>
                                                 <a class="product-section-2__more-info" href="/product/detail/<%= allCategories[i].games[2].id %>">ver mas</a>
                                                 <form  class="" action="/user/cart/<%= allCategories[i].games[2].id %>?_method=post" method="POST">
-                                                    <button class="product-section-2__buy-button" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                                    <button class="product-section-2__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
                                                 </form>
                                                 <a class="product-section-2__buy-button" href="/user/buyFormChoose">BUY</a>
                                             </div>
@@ -148,10 +148,10 @@
                                             <img src="../../img/uploads/productsImage/<%= allCategories[i].games[3].images[k].img_url %>" alt="imagen/miniatura">
                                             <div class="product-section-2__data">
                                                 <p class="product-section-2__description"><%= allCategories[i].games[3].description %></p>
-                                                <p class="product-section-2__price">$<%= allCategories[i].games[3].description %></p>
+                                                <p class="product-section-2__price">$<%= allCategories[i].games[3].price %></p>
                                                 <a class="product-section-2__more-info" href="/product/detail/<%= allCategories[i].games[3].id %>">ver mas</a>
                                                 <form  class="" action="/user/cart/<%= allCategories[i].games[3].id %>?_method=post" method="POST">
-                                                    <button class="product-section-2__buy-button" type="submit"><i class="fas fa-shopping-cart"></i></button>
+                                                    <button class="product-section-2__shopping-cart" type="submit"><i class="fas fa-shopping-cart"></i></button>
                                                 </form>
                                                 <a class="product-section-2__buy-button" href="/user/buyFormChoose">BUY</a>
                                             </div>

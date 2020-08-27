@@ -40,6 +40,7 @@
 
     .container-profile-general-separation {
         margin: .5rem 1rem;
+        width: 10px;
   
     }
 
@@ -47,42 +48,158 @@
         margin-left: 1rem;
         width: 22rem
     }
+
+
+    /* Games section */
+
+    .container-profile-games {
+        width: 400px
+    }
+
+    .container-profile-games-input {
+        width: 425px;
+        margin-left: -3.5rem;
+    }
+
+    .container-profile-games-list {
+        width: 500px;
+        max-height: 400px;
+        margin-left: -4rem;
+        margin-bottom: 3rem;
+    }
+
+    .container-profile-games-single {
+        min-width: 225px;
+        height: 350px;
+    }
+
+    .container-profile-games-single-img img {
+        margin-left: 3rem;
+    }
+
+    .container-profile-games-add {
+        min-width: 225px;
+        height: 350px;
+    }
+
+    .container-profile-games-add img {
+        margin-left: -1rem;
+    }
+
+    .container-profile-games-single-info h2 {
+        width: 175px;
+        font-size: 20px;
+    }
+
+    .container-profile-games-single-info h4 {
+        display: inline-block;
+        margin-left: -1rem;
+    }
+
+    .container-profile-games-single-info h3 {
+        margin-left: 8rem;
+        display: inline-block;
+    }
+
+    .container-profile-games-single-info span {
+        margin-left: -1rem;
+    }
+
+    .container-games-info {
+        margin-left: -4rem;
+    }
+
+
+    /* Payments */
+
+    .container-profile-pays {
+        width: 400px;
+    }
+
+    .pays-first-row {
+        width: 500px;
+        margin-left: -3rem;
+        padding: .5rem 0;
+    }
+
+    .pays-first-row div h2 {
+        font-size: 16px;
+    }
+
+    .container-profile-pays-transaction-wrapper {
+        width: 500px;
+        margin-left: -3rem;
+    }
+
+    .pays-rows {
+        min-width: 400px;
+        height: 50px;
+    }
+
+    .pays-rows div h3 {
+        font-size: 12px;
+    }
+
+
+    /* Settings */
+
+    .container-profile-settings {
+        width: 400px;
+    }
+
+    .container-profile-settings h1 {
+        width: 400px;
+    }
+
+    .container-profile-settings form {
+        margin-left: 8rem;
+    }
 }
 
 @media (max-width: 800px) {
 
     .container-user {
-        width: 350px;
+        width: 500px;
     }
     
     .container-profile-aside {
-        width: 50px;
+        display: none;
     }
+
+    .container-profile-aside-responsive {
+        display: block;
+    }
+
+
+    /* General Section */
 
     .container-profile-general {
         width: 100px;
+        margin-bottom: 5rem;
     }
 
     .container-profile-general-info {
-        margin-right: 2rem;
         width: 100px;
+        margin-left: -1rem;
     }
 
     .container-profile-general-info h1 {
-        font-size: 28px;
+        font-size: 24px;
         margin-bottom: 3rem;
+        width: 400px;
     }
 
     .container-profile-general-info--list {
-        margin: 1rem 0;
+        margin-bottom: 1rem;
     }
     
     .container-profile-general-info--list li{
-        margin: 2rem 0;
+        margin: 3rem 0;
+        width: 200px;
     }
 
     .container-profile-general-info a {
-        margin: 0;
+        margin-left: 2rem;
     }
 
     button.container-profile-button {
@@ -90,15 +207,356 @@
     }
 
     .container-profile-general-separation {
-        margin: .5rem 1rem;
-  
+        margin-left: 11rem;
+        margin-top: 3rem;
+        height: 55rem;
     }
 
     .container-profile-general-profile {
-        margin-left: 1rem;
+        margin-left: 2rem;
         width: 22rem
     }
+
+    /* Games section */
+
+    .container-profile-games {
+        width: 400px
+    }
+
+    .container-profile-games-input {
+        width: 425px;
+        margin-left: -3.5rem;
+    }
+
+    .container-profile-games-list {
+        width: 450px;
+        max-height: 375px;
+        margin-left: -4rem;
+        margin-bottom: 0;
+    }
+
+    .container-profile-games-single {
+        min-width: 200px;
+        height: 325px;
+    }
+
+    .container-profile-games-single-img img {
+        margin-left: 3rem;
+    }
+
+    .container-profile-games-add {
+        min-width: 200px;
+        height: 325px;
+    }
+
+    .container-profile-games-add img {
+        margin-left: -2rem;
+    }
+
+    .container-profile-games-single-info h2 {
+        width: 175px;
+        font-size: 18px;
+    }
+
+    .container-profile-games-single-info h4 {
+        display: inline-block;
+        margin-left: -1rem;
+    }
+
+    .container-profile-games-single-info h3 {
+        margin-left: 6rem;
+        display: inline-block;
+    }
+
+    .container-profile-games-single-info span {
+        margin-left: -1rem;
+    }
+
+
+    /* Payments */
+
+    .container-profile-pays {
+        width: 400px;
+    }
+
+    .pays-first-row {
+        width: 450px;
+        margin-left: -3rem;
+    }
+
+    .pays-first-row div h2 {
+        font-size: 16px;
+    }
+
+    .container-profile-pays-transaction-wrapper {
+        width: 450px;
+        margin-left: -3rem;
+    }
+
+    .pays-rows {
+        min-width: 400px;
+        height: 50px;
+    }
+
+    .pays-rows div h3 {
+        font-size: 12px;
+    }
+
+    .responsive-out {
+        display: none;
+    }
+
+
+    /* Settings */
+
+    .container-profile-settings {
+        width: 400px;
+    }
+
+    .container-profile-settings h1 {
+        width: 400px;
+    }
+
+    .container-profile-settings form {
+        margin-left: 5rem;
+    }
+
 }
+
+@media (max-width: 550px) {
+
+    .container-user {
+        width: 375px;
+        margin: 28rem auto;
+    }
+
+    .container-profile-aside-responsive {
+        width: 375px;
+    }
+
+    .container-profile-aside-responsive ul li {
+        font-size: 24px;
+        margin-left: 1.7rem;
+    }
+
+    /* General Section */
+
+    .container-profile-general {
+        display: block;
+        width: 100px;
+        margin-bottom: 1rem;
+        height: 1200px;
+    }
+
+    .container-profile-general-info {
+        width: 100px;
+        margin-left: -1rem;
+    }
+
+    .container-profile-general-info h1 {
+        font-size: 28px;
+        margin-bottom: 3rem;
+        width: 350px;
+    }
+
+    .container-profile-general-info--list {
+        margin-bottom: 3rem;
+    }
+    
+    .container-profile-general-info--list li{
+        margin: 3rem 0;
+        width: 340px;
+    }
+
+    .container-profile-general-info a {
+        margin-left: 5rem;
+    }
+
+    button.container-profile-button {
+        width: 200px;
+    }
+
+    .container-profile-general-separation {
+        width: 350px;
+        height: 6px;
+        margin-left: -2rem;
+    }
+
+    .container-profile-general-profile {
+        margin-left: 2rem;
+        width: 22rem
+    }
+
+    .container-profile-general-profile div {
+        margin-top: 2rem;
+        margin-left: 4rem;
+    }
+
+    .container-profile-general-profile h2.profile-name {
+        margin-top: 1rem;
+        margin-left: 3.5rem;
+    }
+
+    .container-profile-general-profile h3.profile-username {
+        margin-left: 2rem;
+    }
+
+    .container-profile-general-profile h2.profile-pass {
+        margin-top: 4rem;
+        margin-left: -3rem;
+    }
+
+    .container-profile-general-profile h3.profile-pass {
+        margin-left: -2rem;
+        width: 300px;
+    }
+
+    .container-profile-general-profile h3.profile-pass i {
+        margin-left: 10rem;
+    }
+
+    .container-profile-general-profile a.profile-session p {
+        margin-top: 4rem;
+        font-size: 28px;
+    }
+
+    .container-profile-general-profile div img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    /* Games section */
+
+    .container-profile-games {
+        width: 100px
+    }
+
+    .container-profile-games h1 {
+        width: 300px;
+        font-size: 28px;
+        margin-left: -2rem;
+    }
+
+    .container-profile-games-input {
+        width: 300px;
+        margin-left: -3.5rem;
+        height: 40px;
+    }
+
+    .container-profile-games-list {
+        width: 350px;
+        max-height: 375px;
+        margin-left: -4rem;
+    }
+
+    .container-profile-games-single {
+        min-width: 200px;
+        height: 325px;
+    }
+
+    .container-profile-games-single-img img {
+        margin-left: 3rem;
+    }
+
+    .container-profile-games-add {
+        min-width: 200px;
+        height: 325px;
+    }
+
+    .container-profile-games-add img {
+        margin-left: -2rem;
+    }
+
+    .container-profile-games-single-info h2 {
+        width: 175px;
+        font-size: 18px;
+    }
+
+    .container-profile-games-single-info h4 {
+        display: inline-block;
+        margin-left: -1rem;
+    }
+
+    .container-profile-games-single-info h3 {
+        margin-left: 6rem;
+        display: inline-block;
+    }
+
+    .container-profile-games-single-info span {
+        margin-left: -1rem;
+    }
+
+    .container-games-info h2 {
+        width: 350px;
+    }
+
+    .container-games-info h3 {
+        width: 300px;
+    }
+
+
+    /* Payments */
+
+    .container-profile-pays {
+        width: 100px;
+    }
+
+    .container-profile-pays h1 {
+        font-size: 28px;
+        width: 350px;
+        margin-left: -3rem;
+    }
+
+    .pays-first-row {
+        width: 325px;
+        margin-left: -3rem;
+    }
+
+    .pays-first-row div h2 {
+        font-size: 16px;
+    }
+
+    .container-profile-pays-transaction-wrapper {
+        width: 325px;
+        margin-left: -3rem;
+    }
+
+    .pays-rows {
+        min-width: 325px;
+        height: 50px;
+    }
+
+    .pays-rows div h3 {
+        font-size: 12px;
+    }
+
+    .responsive-out {
+        display: none;
+    }
+
+
+    /* Settings */
+
+    .container-profile-settings {
+        width: 100px;
+    }
+
+    .container-profile-settings h1 {
+        width: 350px;
+        font-size: 28px;
+        margin-left: -2rem;
+    }
+
+    .container-profile-settings form {
+        width: 300px;
+        margin-left: -2rem;
+    }
+
+}
+
+
+
+
 
 
 

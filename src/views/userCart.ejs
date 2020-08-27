@@ -37,9 +37,9 @@
                         <p><%= element.title %></p>
                         <p>Precio: $<%= element.price%></p>
                         </div>
-    
                         <div class="carrito-container__select-cont">
-                            <form action="">
+                            <form  action="/user/cart/<%=user.id%>?_method=delete" method="POST">
+                                <input name="juego" class="boton-imagen" value="<%=element.id%>">
                                 <button type="submit" class="carrito-container__btn">Quitar</button>
                             </form>
                         </div>

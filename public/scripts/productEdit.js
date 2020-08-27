@@ -13,10 +13,18 @@ window.addEventListener('load', function(){
 
     // Inicio variables imagenes
     let img = "/img/Logos/Portray-upload.jpg";
+
     let imgPortrayEdit1 = document.getElementById('imgPortrayEdit1');
-    //let imgPortrayEdit0 = document.getElementById('imgPortrayEdit0').getAttribute('src');
     console.log(imgPortrayEdit1)
-    let errorImgPortrayEdit = document.getElementById('errImgPortraysEdit');
+    let errorImgPortrayEdit = document.getElementById('errImgPortrayEdit');
+
+
+    let imgHorizontalEdit2 = document.getElementById('imgHorizontalEdit2');
+    let errorImgHorizontalEdit = document.getElementById('errImgHorizontalEdit');
+
+
+    let imgRightEdit3 = document.getElementById('imgRightEdit3');
+    let errorImgRightEdit = document.getElementById('errImgRightEdit');
     // Fin variables imagenes
 
     let inputVideoLink = document.getElementById('videoLinkEdit');
@@ -113,6 +121,21 @@ window.addEventListener('load', function(){
                 errores.imgPerfil = "Debes seleccionar una imagen para este campo";
             }
         }
+
+        if(imgHorizontalEdit2 != null){
+            imgHorizontalEdit2.getAttribute('src');
+            if(imgHorizontalEdit2 == img){
+                errores.imgHorizontal = "Debes seleccionar una imagen para este campo";
+            }
+        }
+
+        if(imgRightEdit3 != null){
+            imgRightEdit3.getAttribute('src');
+            if(imgRightEdit3 == img){
+                errores.imgRight = "Debes seleccionar una imagen para este campo";
+            }
+        }
+
         //Fin imagenes
         if(inputVideoLink.value.length < 1){
             errores.videoLink = "Este campo es obligatorio"
@@ -181,6 +204,11 @@ window.addEventListener('load', function(){
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
             //errores imagenes empieza aca
             errorImgPortrayEdit.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
+
+            errorImgHorizontalEdit.innerText = (errores.imgHorizontal) ? errores.imgHorizontal : '';
+
+            errorImgRightEdit.innerText = (errores.imgRight) ? errores.imgRight : '';
+
             //errores imagenes termina acá
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';

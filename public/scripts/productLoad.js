@@ -15,6 +15,14 @@ window.addEventListener('load', function(){
     let img = "/img/Logos/Portray-upload.jpg";
     let imgPortrayLoad = document.getElementById('imgPortrayLoad').getAttribute('src');
     let errorImgPortrayLoad = document.getElementById('errImgPortrayLoad');
+
+    let img1 = "/img/Logos/Horizontal-upload.jpg";
+    let imgH2 = document.getElementById('imgH2').getAttribute('src');
+    let errorImgH2 = document.getElementById('errImgH2');
+
+    let img2 = "/img/Logos/Detail-upload.jpg";
+    let imgRightLoad = document.getElementById('imgRightLoad').getAttribute('src');
+    let errorImgRightLoad = document.getElementById('errImgRightLoad');
     // Fin variables imagenes
 
     let inputVideoLink = document.getElementById('videoLinkLoad')
@@ -102,12 +110,21 @@ window.addEventListener('load', function(){
             errores.plataforma = "Debes marcar al menos uno";
         }
         //Imagenes
+
         if(imgPortrayLoad == img){
             errores.imgPerfil = "Debes seleccionar una imagen para este campo";
         }
+        if(imgH2 == img1){
+            errores.imgH = "Debes seleccionar una imagen para este campo";
+        }
+        if(imgRightLoad == img2){
+            errores.right = "Debes seleccionar una imagen para este campo";
+        }
+        
+
         // Fin imagenes
         if(inputVideoLink.value.length < 1){
-            errores.videoLink = "Este campo es obligatorio"
+            errores.videoLink = "Debes incluir un link de Youtube"
         } else {
             if(inputVideoLink.value.match(regexVideo) == null){
                 errores.videoLink = "Debes ingresar un link de un video de Youtube"
@@ -173,9 +190,9 @@ window.addEventListener('load', function(){
             errorTitulo.innerText = (errores.titulo) ? errores.titulo : "";
             errorEstado.innerText = (errores.estado) ? errores.estado : '';
             errorPlataforma.innerText = (errores.plataforma) ? errores.plataforma : '';
-            // errores imagenes
             errorImgPortrayLoad.innerText = (errores.imgPerfil) ? errores.imgPerfil : '';
-            // fin errores imagenes
+            errorImgH2.innerText = (errores.imgH) ? errores.imgH : '';
+            errorImgRightLoad.innerText = (errores.right) ? errores.right : '';
             errorVideoLink.innerText = (errores.videoLink) ? errores.videoLink : '';
             errorMetodoPago.innerText = (errores.metodoPago) ? errores.metodoPago : '';
             errorEntrega.innerText = (errores.entrega) ? errores.entrega : '';

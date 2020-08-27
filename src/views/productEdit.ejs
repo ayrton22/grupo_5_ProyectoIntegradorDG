@@ -98,9 +98,10 @@
                                     <% if(horizontal.length != 0) { %>
                                         <img data-status="active" class="productEdit-form-uploadImage--horizontal" id="" name="<%=horizontal[0].id%>" src="/img/uploads/productsImage/<%= horizontal[0].img_url%>" alt="" >
                                     <% }else{ %>
-                                        <img data-status="inactive" class="productEdit-form-uploadImage--horizontal" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
-                                        <input type="file" id="horizontal" style="display: none;" name="imagen_horizontal"value="null">
+                                        <img id="imgHorizontalEdit2" data-status="inactive" class="productEdit-form-uploadImage--horizontal" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
+                                        <input type="file" id="imgHorizontalEdit2" style="display: none;" name="imagen_horizontal"value="null">
                                         <% } %>
+                                        <small class="text-danger" id="errImgHorizontalEdit"></small>
                             </div>
 
                         </div>
@@ -140,9 +141,10 @@
                                     <% if(detail.length != 0) { %>
                                         <img data-status="active" class="productEdit-form-uploadImage--detail" id="" name="<%=detail[0].id%>" src="/img/uploads/productsImage/<%= detail[0].img_url%>" alt="" >
                                     <% }else{ %>
-                                        <img data-status="inactive" class="productEdit-form-uploadImage--detail" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
+                                        <img id="imgRightEdit3" data-status="inactive" class="productEdit-form-uploadImage--detail" name="imagen_detalle" src="/img/Logos/Photo-upload.jpg" alt="">
                                         <input type="file" id="detail" style="display: none;" name="imagen_detalle"value="null">
                                         <% } %>
+                                        <small class="text-danger" id="errImgRightEdit"></small>
                             </div>
                         </div>
                         <button type="button" class="productEdit-form-button--next mb-5 mt-5"><a href="#form3">Siguiente</a></button>

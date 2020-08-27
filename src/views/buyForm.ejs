@@ -234,7 +234,7 @@
                         <i class="fas fa-angle-right"></i>
                     </div>
                 </div>
-                <div class="buyDelivery__continue-btn">
+                <div class="buyLocal__continue-btn">
                     <button class="bntContinuar" type="button">Continuar</button>
                 </div>
             </div>
@@ -255,12 +255,10 @@
                         <%})%>
                         <div>
                         <p>Monto total: <%=cotal_cost %> </p>
-                        <input type="text" name="total_cost" value="<%=cotal_cost%>">
                     </div>
                         <%}else{%>
                             <div>
                             <p>Monto total: <%=game.price%> </p>
-                                <input type="text" name="total_cost" value="<%=game.price%>">
                             </div>
                         <%}%>
 
@@ -268,28 +266,27 @@
                 </div>
                    <div class="">
                         <div>
-                            <label for="">Numero de Tarjeta</label>
+                            <label class="payment-form-label" for="">Numero de Tarjeta</label>
                             <p>
-                                <input type="text">
+                                <input class="payment-form-input" type="text">
                             </p>
                         </div>
 
                         <div>
-                            <label for="">Fecha de Expiracion</label>
+                            <label class="payment-form-label" for="">Fecha de Expiracion</label>
                             <p>
-                                <input type="date">
+                                <input class="payment-form-input" type="date">
                             </p>
                         </div>
 
                         <div>
-                            <label for="">CVC</label>
+                            <label class="payment-form-label" for="">CVC</label>
                             <p>
-                            <input type="text">
+                            <input class="payment-form-input" type="text">
                             </p>
                         </div>
                    </div>
-                   <input type="text" class="boton-imagen" id="tipoTransaction" name="transaction" value="">
-                   <button type="submit">Comprar</button>
+                   <button class="payment-button" type="submit">Comprar</button>
             </div>
         </div>
     </div>

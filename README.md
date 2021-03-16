@@ -84,7 +84,7 @@ Roboto
 
 Home:'/'
 
-Listado de productos: '/roduct'
+Listado de productos: '/product'
 
 Detalle de producto:'/product/detail/:id'
 
